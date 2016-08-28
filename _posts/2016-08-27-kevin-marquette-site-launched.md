@@ -8,8 +8,10 @@ Well. Finally got around to putting this old website together. Neat thing about 
 
 This is a test of the markdown system
 
-    Get-Help markdown
-    
+```posh
+Get-Help markdown
+```
+
 * first item
 * second item
 
