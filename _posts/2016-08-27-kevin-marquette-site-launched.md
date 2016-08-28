@@ -9,7 +9,7 @@ Well. Finally got around to putting this old website together. Neat thing about 
 This is a test of the markdown system
 
 ```posh
-Get-Help markdown
+Get-Help markdown -examples
 ```
 
 * first item
