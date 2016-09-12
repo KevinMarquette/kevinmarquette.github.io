@@ -2,6 +2,7 @@
 layout: post
 title: "PowerShell: Passing variables to remote commands"
 date: 2016-08-28
+tags: [PowerShell, Invoke-Command, Remoting]
 ---
 
 If you have started using `Invoke-Command`, then you have ran into the issue of getting local variables into your remote commands. There is a lot of advice out there on how to do this and some approaches are more clunky than others. First let me show you the problem of scope.
