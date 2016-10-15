@@ -13,7 +13,7 @@ You are welcome to join us for this meeting. I'll post the meetup invite here wh
 
 
 | Session     | Operational Validation with Pester|
-| Description | If you are looking for a way to reduce errors and increase quality of your deployments, Operational validation is a great to complement your existing processes and to add value to your tooling even if you are not doing DevOps. Join me for a primer on Pester in the context of operational validation and I’ll show you validation tests that you can easily add to your own environment. |
+|              | If you are looking for a way to reduce errors and increase quality of your deployments, Operational validation is a great to complement your existing processes and to add value to your tooling even if you are not doing DevOps. Join me for a primer on Pester in the context of operational validation and I’ll show you validation tests that you can easily add to your own environment. |
 | When        | November 3rd 2016 from 6:00PM to 8:00PM |
 | Location    | [Microsoft Store in the Domain ](https://www.microsoft.com/en-us/store/locations/tx/austin/the-domain/store-11) [Map](http://binged.it/GDG7Eg) |
 | Speaker     | Kevin Marquette | 
