@@ -5,8 +5,6 @@ date: 2016-10-28
 tags: [PowerShell,Remoting]
 ---
 
-
-
 Last week I covered silently installing a MSI, the next thing an admin 
 wants to do is install it on a remote system. That is the logical 
 next step. To keep these samples cleaner, I am going to use 
@@ -91,15 +89,14 @@ The general community has moved away from that as a solution
 because it puts your environment at risk. The issue with 
 CredSSP is that your admin credential gets cached on the 
 remote system in a way that gives attackers easy access 
-to it. But there is a better solution called Resource-Based 
-Kerberos Constrained Delegation. 
+to it. [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/)
 
 
 ## Resource-Based Kerberos Constrained Delegation.
 
-Constrained delegation in Server 2012 introduces the concept of controlling delegation of service tickets using a security descriptor rather than an allow list of SPNs. This change simplifies delegation by enabling the resource to determine which security principals are allowed to request tickets on behalf of another user. [PowerShell Remoting Kerberos Double Hop Solved Securely](https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/)
+But there is a better solution called Resource-Based Kerberos Constrained Delegation. Constrained delegation in Server 2012 introduces the concept of controlling delegation of service tickets using a security descriptor rather than an allow list of SPNs. This change simplifies delegation by enabling the resource to determine which security principals are allowed to request tickets on behalf of another user. [PowerShell Remoting Kerberos Double Hop Solved Securely](https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/)
 
-Here is a quick snip of code howing how it works.
+Here is a quick snip of code showing how it works.
 
     # For ServerC in Contoso domain and ServerB in other domain            
     $ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
