@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Microsoft SQL Server
+title: MSSQL Server
 subtitle: Important reference material
 tags: [MSSQL, SQL Server]
 ---
@@ -28,3 +28,15 @@ SQL Server licensing makes choosing the right edition simple and economical. Unl
 
 * [SQL Server 2016 licensing datasheet](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
 * [SQL Server 2016 licensing guide](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
+
+## sp_Blitz – Free SQL Server Health Check Script
+
+You’ve got a Microsoft SQL Server that somebody else built, or that other people have made changes to over the years, and you’re not exactly sure what kind of shape it’s in. Are there dangerous configuration settings that are causing slow performance or unreliability?
+You want a fast, easy, free health check that flags common issues in seconds, and for each warning, gives you a link to a web page with more in-depth advice.
+
+[Brent Ozar's sp_Blitz](https://www.brentozar.com/blitz/)
+
+## SQL Server Community Slack
+General conversations abotu SQL Server
+[Slack #dbatools](https://sqlcommunity.slack.com/messages/dbatools/)
+
