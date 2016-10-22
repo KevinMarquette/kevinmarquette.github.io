@@ -38,5 +38,6 @@ You want a fast, easy, free health check that flags common issues in seconds, an
 
 ## SQL Server Community Slack
 General conversations abotu SQL Server
+
 [Slack #dbatools](https://sqlcommunity.slack.com/messages/dbatools/)
 
