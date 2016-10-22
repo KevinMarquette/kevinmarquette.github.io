@@ -38,7 +38,6 @@ All we are missing is the full path to the MSI.
     msiexec.exe /I c:\installers\SQLIO.msi /quiet
 
 
-
 The next common issue that you run into is needing to wait 
 for the installer to finish. Executing msiexec directly starts 
 the installer but returns control back to the Powershell Script. 
@@ -46,7 +45,6 @@ The way I like to solve this one is with `Start-Process -Wait`.
 It will wait until the process finishes before it lets your 
 script continue. The second thing that `Start-Process` does is 
 ensure that your parameters are processed correctly.
-
 
     Start-Process msiexec.exe -Wait -ArgumentList '/I C:\installers\SQLIO.msi /quiet'
 
