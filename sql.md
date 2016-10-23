@@ -42,7 +42,7 @@ You want a fast, easy, free health check that flags common issues in seconds, an
 [Brent Ozar's sp_Blitz](https://www.brentozar.com/blitz/)
 
 ## SQL Server Community Slack
-General conversations abotu SQL Server
+General conversations about SQL Server
 
 [Slack #dbatools](https://sqlcommunity.slack.com/messages/dbatools/)
 
