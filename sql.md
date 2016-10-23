@@ -18,6 +18,11 @@ SQL Server Management Studio (SSMS) is an integrated environment for accessing, 
 
 [Download SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
 
+## xSqlServer DSC Resources
+The xSQLServer module contains DSC resources for deployment and configuration of SQL Server in a way that is fully compliant with the requirements of System Center.
+
+[xSqlServer](https://github.com/PowerShell/xSQLServer)
+
 ## SQL Server Backup, Integrity Check, and Index and Statistics Maintenance
 The Ola Hallengren SQL Server Maintenance Solution comprises scripts for running backups, integrity checks, and index and statistics maintenance on all editions of Microsoft SQL Server 2005, SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014, and SQL Server 2016. 
 
