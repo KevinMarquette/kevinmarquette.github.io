@@ -41,4 +41,6 @@ The native filtering engine for `Get-WinEvent` is very flexible and offers great
     Get-WinEvent -FilterHashtable @{
         logname='application'
         providername='.Net Runtime' 
-    } 
+    }
+
+Using the `Get-WinEvent -FilterHashtable` is the reccomended way to filter and search the eventlog. [Use FilterHashTable to Filter Event Log with PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2014/06/03/use-filterhashtable-to-filter-event-log-with-powershell/)
