@@ -5,11 +5,14 @@ date: 2016-11-04
 tags: [PowerShell]
 ---
 
+## Creating objects
+
 I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier.
 
     $myObject = [PSCustomObject]@{
         Name     = 'Kevin'
         Language = 'Powershell'
+        State    = 'Texas'
     }
 
 This works well for me because I use hashtables for just about everything. But there are times when I would like Powershell to treat them more like an object and this does it. the first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is not an object.
@@ -33,7 +36,7 @@ Now that we have an object, there are a few more things we can do with it that m
 
     $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 
-I recently discovered another way to do this from this [post by /u/markekraus](https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/). I did a little digging and more posts about the idea from [Adam Bertram](http://www.adamtheautomator.com/building-custom-object-types-powershell-pstypename/) and [Mike Shepard](https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/) where they talks about this approach:
+I recently discovered another way to do this from this [post by /u/markekraus](https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/). I did a little digging and more posts about the idea from [Adam Bertram](http://www.adamtheautomator.com/building-custom-object-types-powershell-pstypename/) and [Mike Shepard](https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/) where they talks about this approach where you can define it inline.
 
     $myObject = [PSCustomObject]@{
         PSTypeName = 'My.Object'
@@ -53,11 +56,11 @@ Powershell decides for us what properties to display by default. A lot of the na
     $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
     $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 
-Now when my object just falls to the shell, it wil only show those properties. 
+Now when my object just falls to the shell, it will only show those properties by default. 
 
 ## Update-TypeData with DefaultPropertySet
 
-This is really nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones](https://www.youtube.com/watch?v=Ab46gHXNm8Q). He was using [Update-TypeData](https://technet.microsoft.com/en-us/library/hh849908.aspx) to specify the default properties
+This is really nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones](https://www.youtube.com/watch?v=Ab46gHXNm8Q). He was using [Update-TypeData](https://technet.microsoft.com/en-us/library/hh849908.aspx) to specify the default properties. 
 
     $TypeData = @{
         TypeName = 'My.Object'
@@ -106,5 +109,4 @@ This works really well if you need your custom object as the property. It will t
 
 Defining the `OutputType` does not do any output validation like you may think it should. Right now it feels like a good practice but I think the only thing that may use is is the ISE.
 
-## In closing
  
