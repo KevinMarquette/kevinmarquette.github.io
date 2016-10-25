@@ -5,13 +5,13 @@ date: 2016-10-25
 tags: [PowerShell,Pester,OVF,DSC]
 ---
 
-If you know me, then you know I have been a fan of [Pester](https://github.com/pester/Pester/wiki) for a long time. I found it to be a great tool and found novel uses for it. I put together a talk on [Pester in Action](https://github.com/KevinMarquette/PesterInAction) a year ago to show how I used it in my environment. The big thing I wanted to get across to people was that it was amazing at validating system configuration and validating a system before you release it. I have seen a lot of community efforts along these same lines. One of these tools deserves a closer look.
+If you know me, then you know I have been a fan of [Pester](https://github.com/pester/Pester/wiki) for a long time. I found it to be a great tool and found novel uses for it. I put together a talk on [Pester in Action](https://github.com/KevinMarquette/PesterInAction) a year ago to show how I used it in my environment. The big thing I wanted to get across to people was that it was amazing at verifying system configuration and validating a system before you release it. I have seen a lot of community efforts along these same lines in the last year. One of these tools deserves a closer look.
 
 ## The [Operational Validation Framework](https://github.com/PowerShell/Operation-Validation-Framework)
 
-It took me a long time to wrap my head around this project at first. I'll admit that I looked at it a few times without really seeing the value of it. At face value, all I saw was a few commands that would find Pester tests and run them. `Invoke-Pester` already does that if you execute it from the root of your tests folder. I went and did my own thing without really digging into it. 
+It took me a long time to wrap my head around this project at first. I'll admit that I looked at it a few times without really seeing the value of it. At face value, all I saw was a few commands that would find Pester tests and run them. `Invoke-Pester` already does that if you execute it from the root of your tests folder. I went and did my own thing without digging into it. 
 
-Recently, I saw a post about [Continuously Testing your Infrastructure with OVF and Microsoft Operations Management Suite](https://dscottraynsford.wordpress.com/2016/10/23/continuously-testing-your-infrastructure-with-ovf-and-microsoft-operations-management-suite/) that did a very nice walk through of using OVF. I was able to see it in action and that was a good thing. 
+Recently, I saw a post about [Continuously Testing your Infrastructure with OVF and Microsoft Operations Management Suite](https://dscottraynsford.wordpress.com/2016/10/23/continuously-testing-your-infrastructure-with-ovf-and-microsoft-operations-management-suite/) that did a very nice walk-through using OVF. I was able to see it in action and that was a good thing. 
 
 ## The Operational Validation Framework explained
 
