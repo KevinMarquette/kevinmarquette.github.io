@@ -9,9 +9,9 @@ If you know me, then you know I have been a fan of [Pester](https://github.com/p
 
 ## The [Operational Validation Framework](https://github.com/PowerShell/Operation-Validation-Framework)
 
-It took me a long time to wrap my head around this project at first. I'll admit that I looked at it a few time without really seeing the value of it. At face value, all I saw was a few commands that would find Pester tests and run them. `Invoke-Pester` already does that if you execute it from the root of your tests folder. I went and did my own thing without really seeing the value. 
+It took me a long time to wrap my head around this project at first. I'll admit that I looked at it a few times without really seeing the value of it. At face value, all I saw was a few commands that would find Pester tests and run them. `Invoke-Pester` already does that if you execute it from the root of your tests folder. I went and did my own thing without really digging into it. 
 
-recently, I saw a post about [Continuously Testing your Infrastructure with OVF and Microsoft Operations Management Suite](https://dscottraynsford.wordpress.com/2016/10/23/continuously-testing-your-infrastructure-with-ovf-and-microsoft-operations-management-suite/) that did a very nice walk through of using OVF. I was able to see it in action and that was a good thing. 
+Recently, I saw a post about [Continuously Testing your Infrastructure with OVF and Microsoft Operations Management Suite](https://dscottraynsford.wordpress.com/2016/10/23/continuously-testing-your-infrastructure-with-ovf-and-microsoft-operations-management-suite/) that did a very nice walk through of using OVF. I was able to see it in action and that was a good thing. 
 
 ## The Operational Validation Framework explained
 
