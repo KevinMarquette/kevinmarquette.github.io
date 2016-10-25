@@ -15,7 +15,7 @@ Recently, I saw a post about [Continuously Testing your Infrastructure with OVF 
 
 ## The Operational Validation Framework explained
 
-This is a very light framework that executes Pester tests that are intended to validate the system. You package your tests into modules for OVF to find them. OVF allows for simple and comprehensive diagnostic tests. You can package both types into the same module. This feels like a good standard that you will see many in the community use for managing Operational Validation.
+This is a very light framework that executes Pester tests that are intended to validate the system. You package your tests into modules for OVF to find them. OVF allows for simple and comprehensive diagnostic tests. You can package both types into the same module. This feels like a good standard that you will see many in the community use for managing operational validation.
 
 Ideally you could run the simple tests on a schedule and feed that into your alerting system. Then save the diagnostic tests for troubleshooting. That is the post above was highlighting. 
 
