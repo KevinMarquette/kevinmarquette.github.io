@@ -37,8 +37,8 @@ You may not see a large performance gain with `Get-ChildItem` but the performanc
 
 
     Get-WinEvent -FilterHashtable @{
-        logname='application'
-        providername='.Net Runtime' 
+        logname='System','Application'
+        Level=1,2
     } 
 
 You can specify multiple properties or values in the hashtable. [Use FilterHashTable to Filter Event Log with PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2014/06/03/use-filterhashtable-to-filter-event-log-with-powershell/) 
