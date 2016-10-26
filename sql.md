@@ -31,8 +31,7 @@ The Ola Hallengren SQL Server Maintenance Solution comprises scripts for running
 ## How to license SQL Server
 SQL Server licensing makes choosing the right edition simple and economical. Unlike other major vendors, there’s no having to pay for expensive add-ons to run your most demanding applications—because every feature and capability is already built in.
 
-* [SQL Server 2016 licensing datasheet](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
-* [SQL Server 2016 licensing guide](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
+* [SQL Server 2016 licensing datasheet and guide](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
 
 ## sp_Blitz – Free SQL Server Health Check Script
 
