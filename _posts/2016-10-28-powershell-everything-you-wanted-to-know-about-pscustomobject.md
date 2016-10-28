@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "Powershell: PSCustomObject"
-date: 2016-11-04
+title: "Powershell: Everything you watned to know about PSCustomObject"
+date: 2016-10-28
 tags: [PowerShell]
 ---
+
+`PSCustomObject`s are a great tool to add into your Powershell toolbelt. Let's jump right in and see what you can do about them.
 
 ## Creating objects
 
@@ -15,7 +17,7 @@ I love using `[PSCustomObject]` in Powershell. Creating a usable object has neve
         State    = 'Texas'
     }
 
-This works well for me because I use hashtables for just about everything. But there are times when I would like Powershell to treat them more like an object and this does it. the first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is not an object.
+This works well for me because I use hashtables for just about everything. But there are times when I would like Powershell to treat hashtables more like an object and this does it. The first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is not an object.
 
 ## Converting a hashtable
 
@@ -28,7 +30,7 @@ While I am on the topic, did you know you could do this:
     }
     $myObject = [pscustomobject]$myHashtable
 
-I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the properties. 
+I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the properties.
 
 ## PSTypeName for custom object types
 
@@ -47,7 +49,7 @@ I recently discovered another way to do this from this [post by /u/markekraus](h
 
 I love how nicely this just fits into the language. Now that we have an object with a proper type name, we can do some more things.
 
-## Default dispaly set
+## Using DefaultPropertySet the long way
 
 Powershell decides for us what properties to display by default. A lot of the native commands have a `.ps1xml` formating file that does all the heavy lifting. From this [post by Boe Prox](https://learn-powershell.net/2013/08/03/quick-hits-set-the-default-property-display-in-powershell-on-custom-objects/), there is a much simpler way for us to do this on our custom object. We can give it a `MemberSet` for it to use.
 
@@ -109,4 +111,5 @@ This works really well if you need your custom object as the property. It will t
 
 Defining the `OutputType` does not do any output validation like you may think it should. Right now it feels like a good practice but I think the only thing that may use is is the ISE.
 
+I hope you learned something and can find a way to work this into your script now.
  
