@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Everything you watned to know about PSCustomObject"
+title: "Powershell: Everything you wanted to know about PSCustomObject"
 date: 2016-10-28
 tags: [PowerShell]
 ---
