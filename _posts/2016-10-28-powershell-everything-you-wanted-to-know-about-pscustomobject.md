@@ -96,7 +96,7 @@ You can now use these custom types for parameters in your functions and scripts.
 
 Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match automattically to save you the step of testing for it in your code. A great example of letting Powershell do what it does best.
 
-## CmdLetBinding OutputType
+## Function OutputType
 
 You can also define an [OutputType](https://technet.microsoft.com/en-us/library/hh847785.aspx) for your advanced functions.
 
