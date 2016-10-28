@@ -9,7 +9,7 @@ tags: [PowerShell]
 
 ## Creating objects
 
-I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier. Becaus of that, I am going to skip over all the other ways you can create an object.
+I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier. Becaus of that, I am going to skip over all the other ways you can create an object but I do need to mention that most of this is Powershell v3.0 and newer.
 
     $myObject = [PSCustomObject]@{
         Name     = 'Kevin'
