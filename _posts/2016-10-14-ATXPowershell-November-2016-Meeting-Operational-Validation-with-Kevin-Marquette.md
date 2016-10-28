@@ -9,10 +9,10 @@ My first presentation to the ATXPowershell User Group was a year ago on using Pe
 
 For our ATXPowershell November meeting, I am taking that topic and expanding on it. I have seen the topic of using Pester for Operational Validation show up in more and more places over the last year. What I like most about it is that this is an easy skill or concept that even people fairly new to Powershell can adopt in their existing environments. This can not only add value right away but also be a great build as you go project that does not require a large investment of time.
 
-You are welcome to join us for this meeting. I'll post the meetup invite here when the group posts it but until then, there is the meeting info:
+You are welcome to join us for this meeting. Please [RSVP on MeetUp](http://www.meetup.com/Austin-PowerShell/events/234995887/) so we know how many are comming and to get notified when future meetings are posted.
 
 
-| Session     | Operational Validation with Pester|
+| Session     | [Operational Validation with Pester](http://www.meetup.com/Austin-PowerShell/events/234995887/)|
 |              | If you are looking for a way to reduce errors and increase quality of your deployments, Operational validation is a great to complement your existing processes and to add value to your tooling even if you are not doing DevOps. Join me for a primer on Pester in the context of operational validation and I’ll show you validation tests that you can easily add to your own environment. |
 | When        | November 3rd 2016 from 6:00PM to 8:00PM |
 | Location    | [Microsoft Store in the Domain ](https://www.microsoft.com/en-us/store/locations/tx/austin/the-domain/store-11) [Map](http://binged.it/GDG7Eg) |
