@@ -5,11 +5,11 @@ date: 2016-10-28
 tags: [PowerShell]
 ---
 
-`PSCustomObject`s are a great tool to add into your Powershell toolbelt. Let's jump right in and see what you can do with them.
+`PSCustomObject`s are a great tool to add into your Powershell toolbelt. Let's start with the basics and work our way into the more advanced features. The idea behind using a `PSCustomObject` is to have a very simple way to create structured data. Take a look at the first example and you will have a better idea what that means.
 
 ## Creating objects
 
-I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier.
+I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier. Becaus of that, I am going to skip over all the other ways you can create an object.
 
     $myObject = [PSCustomObject]@{
         Name     = 'Kevin'
@@ -18,6 +18,10 @@ I love using `[PSCustomObject]` in Powershell. Creating a usable object has neve
     }
 
 This works well for me because I use hashtables for just about everything. But there are times when I would like Powershell to treat hashtables more like an object and this does it. The first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is just a collection of key/value pairs.
+
+You can then access and use the values like you would a normal object.
+
+    $myObject.Name 
 
 ## Converting a hashtable
 
@@ -94,11 +98,11 @@ You can now use these custom types for parameters in your functions and scripts.
 
     param( [PSTypeName('My.Object')]$Data )
 
-Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match automattically to save you the step of testing for it in your code. A great example of letting Powershell do what it does best.
+Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match automatically to save you the step of testing for it in your code. A great example of letting Powershell do what it does best.
 
 ## Function OutputType
 
-You can also define an [OutputType](https://technet.microsoft.com/en-us/library/hh847785.aspx) for your advanced functions.
+You can also define an `OutputType` for your advanced functions.
 
     function Get-MyObject
     {
@@ -108,11 +112,11 @@ You can also define an [OutputType](https://technet.microsoft.com/en-us/library/
             (
                 ...
 
-The OutputType attribute value is only a documentation note. It is not derived from the function code or compared to the actual function output.
+The [OutputType](https://technet.microsoft.com/en-us/library/hh847785.aspx) attribute value is only a documentation note. It is not derived from the function code or compared to the actual function output.
 
 The main reason you would use an output type is so that meta information about your function reflects your intentions. Things like `Get-Command`,`Get-Help` and your development environment can take advantage of that.  If you want more information then take a look at the help for it: [about_Functions_OutputTypeAttribute](https://technet.microsoft.com/en-us/library/hh847785.aspx)
 
-With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your output type. This could catch variables that just fall to the pipe when they shouldn't.
+With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your `OutputType`. This could catch variables that just fall to the pipe when they shouldn't.
 
 ## Closing thoughts
 
