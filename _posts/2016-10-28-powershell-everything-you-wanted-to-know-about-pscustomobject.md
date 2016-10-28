@@ -114,6 +114,7 @@ The main reason you would use an output type is so that meta information about y
 
 With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your output type. This could catch variables that just fall to the pipe when they shouldn't.
 
+## Closing thoughts
 
-I hope you learned something and can find a way to work this into your script now.
+I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`. Just this last week I stumbled upon another one and was surprised that I had not seen it before. I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opporotunity to use them. I hope you learned something and can find a way to work this into your scripts. 
  
