@@ -88,13 +88,13 @@ Something else that I got out of that video was creating script properties for y
 
 You can do this before your object is created or after and it will still work.
 
-## PSCustomObject function parameters with type validation
+## Function parameters
 
-You can now use these custom types for parameters in your functions and scripts.
+You can now use these custom types for parameters in your functions and scripts. You can  have one function create these custom objects and then pass them into other functions.
 
     param( [PSTypeName('My.Object')]$Data )
 
-Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match. You can easily have one function create these custom objects and then pass them into other functions.
+Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match automattically to save you the step of testing for it in your code. A great example of letting Powershell do what it does best.
 
 ## CmdLetBinding OutputType
 
