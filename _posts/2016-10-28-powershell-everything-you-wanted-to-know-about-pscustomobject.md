@@ -30,7 +30,7 @@ While I am on the topic, did you know you could do this:
     }
     $myObject = [pscustomobject]$myHashtable
 
-I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the object properties.
+I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the object properties. One important note is that while this works, it is not an exact equivelent. The bigest difference is that the order of the properties is not preserved.
 
 ## PSTypeName for custom object types
 
