@@ -36,7 +36,7 @@ Get-WinEvent can also read binary or archived logs.
     $path = 'C:\Windows\System32\winevt\Logs\system.evtx'
     Get-WinEvent -Path $Path -MaxEvents 4 
 
-The native filtering engine for `Get-WinEvent` is very flexible and offers great performance gains over filtering on the pipleine. Using the `-FilterHashtable`, we can specify all kinds of things to search for. Most of the values support multiple values for when that is needd.
+The native filtering engine for `Get-WinEvent` is very flexible and offers great performance gains over filtering on the pipleine. Using the `-FilterHashtable`, we can specify all kinds of things to search for. Most of the values support multiple values for when that is needed.
 
     Get-WinEvent -FilterHashtable @{
         logname='application'

@@ -88,9 +88,17 @@ Something else that I got out of that video was creating script properties for y
 
 You can do this before your object is created or after and it will still work.
 
-## Parameter Validation and OutputType
+## PSCustomObject function parameters with type validation
 
-One more thing that comes to mind is parameter validation for an advanced function (This was Adam's example too). You can also define an output type for your advanced functions.
+You can now use these custom types for parameters in your functions and scripts.
+
+    param( [PSTypeName('My.Object')]$Data )
+
+Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match. You can easily have one function create these custom objects and then pass them into other functions.
+
+## CmdLetBinding OutputType
+
+You can also define an [OutputType](https://technet.microsoft.com/en-us/library/hh847785.aspx) for your advanced functions.
 
     function Get-MyObject
     {
@@ -98,18 +106,14 @@ One more thing that comes to mind is parameter validation for an advanced functi
         [CmdletBinding()]
             param
             (
-                [Parameter()]
-                [ValidateNotNullOrEmpty()]
-                [PSTypeName('My.Object')]
-                $MyObject
-            )
-        
-            Write-Output $MyObject
-    }
+                ...
 
-This works really well if you need your custom object as the property. It will throw a validation error if the type does not match. 
+The OutputType attribute value is only a documentation note. It is not derived from the function code or compared to the actual function output.
 
-Defining the `OutputType` does not do any output validation like you may think it should. Right now it feels like a good practice but I think the only thing that may use is is the ISE.
+The main reason you would use an output type is so that meta information about your function reflects your intentions. Things like `Get-Command`,`Get-Help` and your development environment can take advantage of that.  If you want more information then take a look at the help for it: [about_Functions_OutputTypeAttribute](https://technet.microsoft.com/en-us/library/hh847785.aspx)
+
+With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your output type. This could catch variables that just fall to the pipe when they shouldn't.
+
 
 I hope you learned something and can find a way to work this into your script now.
  
