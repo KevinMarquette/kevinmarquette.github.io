@@ -1,10 +1,14 @@
 ---
-layout: default
+layout: page
 title: All posts and pages
 ---
+
+<h3>All Posts</h3>
 {% for post in site.posts %}
-<br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a>
+<br /> {{ post.date }} <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a> {{ post.tags }}
 {% endfor %}
+
+<h3>All Pages</h3>
 {% for page in site.pages %} {% if page.layout != nil %} {% if page.layout != 'feed' %}
 <br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a>
 {% endif %} {% endif %} {% endfor %}
