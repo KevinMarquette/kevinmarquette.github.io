@@ -3,9 +3,9 @@ layout: default
 title: All posts and pages
 ---
 {% for post in site.posts %}
-<br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }%}</a>
+<br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a>
 {% endfor %}
 {% for page in site.pages %} {% if page.layout != nil %} {% if page.layout != 'feed' %}
-<br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }%}</a>
+<br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a>
 {% endif %} {% endif %} {% endfor %}
 
