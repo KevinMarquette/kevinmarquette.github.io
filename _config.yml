@@ -52,12 +52,12 @@ author:
 
 # Select which links to show in the footer
 footer-links-active:
-  rss: true
+  rss: false
   facebook: false
   email: false
   twitter: true
   github: true
-  linkedin: true
+  linkedin: false
   xing: false
   stackoverflow: false
   instagram: false
@@ -67,12 +67,12 @@ footer-links-active:
 share-links-active:
   twitter: true
   facebook: false
-  google: true
-  linkedin: true
+  google: false
+  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "kevinmarquette.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "kevinmarquette.github.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 
