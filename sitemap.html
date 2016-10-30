@@ -9,11 +9,7 @@ title: All posts and pages
 <tr>
     <td> {{ post.date | date: "%B %-d, %Y" }} </td>
     <td><a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</td> 
-    <td>
-        {% for tag in post.tags %}
-        <br>{{ tag }}
-        {% endfor %}
-    </td>
+    <td>{% for tag in post.tags %} {{ tag }} {% endfor %}</td>
 
 </tr>    
 {% endfor %}
