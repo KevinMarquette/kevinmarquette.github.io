@@ -4,10 +4,20 @@ title: All posts and pages
 ---
 
 <h3>All Posts</h3>
+<table>
 {% for post in site.posts %}
-<br /> {{ post.date }} <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a> {{ post.tags }}
-{% endfor %}
+<tr>
+    <td> {{ post.date | date: "%B %-d, %Y" }} </td>
+    <td><a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</td> 
+    <td>
+        {% for tag in post.tags %}
+        <br>{{ tag }}
+        {% endfor %}
+    </td>
 
+</tr>    
+{% endfor %}
+</table>
 <h3>All Pages</h3>
 {% for page in site.pages %} {% if page.layout != nil %} {% if page.layout != 'feed' %}
 <br /> <a href="http://kevinmarquette.github.io{{ post.url | remove: 'index.html' }}">{{ post.title }}</a>
