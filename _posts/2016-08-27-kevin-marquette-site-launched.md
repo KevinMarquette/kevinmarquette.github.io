@@ -1,6 +1,6 @@
 ---
-layout: post_json
-title: "Kevin Marquette, Launches Site (test post)"
+layout: post
+title: "Kevin Marquette, Launches Site"
 date: 2016-08-27
 tags: [intro]
 ---
