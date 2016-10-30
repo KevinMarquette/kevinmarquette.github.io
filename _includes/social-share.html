@@ -8,7 +8,6 @@
 
 {% if any-share-links %}
 <section id = "social-share-section">
-
   <!--- Share on Twitter -->
   {% if site.share-links-active.twitter %}
     <a href="https://twitter.com/intent/tweet?text=@KevinMarquette %23{{page.title}} {{ site.url }}{{ page.url }}"
@@ -16,7 +15,6 @@
       <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
     </a>
   {% endif %}
-
   <!--- Share on Facebook -->
   {% if site.share-links-active.facebook %}
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
@@ -24,7 +22,6 @@
       <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
     </a>
   {% endif %}
-
   <!--- Share on Google Plus -->
   {% if site.share-links-active.google %}
     <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
@@ -32,7 +29,6 @@
       <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
     </a>
   {% endif %}
-
   <!--- Share on LinkedIn -->
   {% if site.share-links-active.linkedin %}
     <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
@@ -40,7 +36,5 @@
       <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
     </a>
   {% endif %}
-
 </section>
-
 {% endif %}

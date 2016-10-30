@@ -1,7 +1,5 @@
 <!-- TODO this file has become a mess, refactor it -->
-
 {% if page.bigimg or page.title %}
-
 {% if page.bigimg %}
   <div id="header-big-imgs" data-num-img={% if page.bigimg.first %}{{ page.bigimg.size }}{% else %}1{% endif %}
     {% for bigimg in page.bigimg %}
@@ -17,7 +15,6 @@
     {% endfor %}
   ></div>
 {% endif %}
-
 <header class="header-section {% if page.bigimg %}has-img{% endif %}">
 {% if page.bigimg %}
 <div class="big-img intro-header">
@@ -69,8 +66,6 @@
   </div>
 </div>
 </header>
-
-
 {% else %}
 <div class="intro-header"></div>
 {% endif %}

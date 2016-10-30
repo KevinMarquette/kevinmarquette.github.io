@@ -1,17 +1,13 @@
 ---
 layout: base
 ---
-
 {% include header.html type="post" %}
-
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
       <article role="main" class="blog-post">
         {{ content }}
       </article>
-
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           Tags:
@@ -24,11 +20,7 @@ layout: base
           {% endif %}
         </div>
       {% endif %}
-
-      {% if page.social-share %}
-        {% include social-share.html %}
-      {% endif %}
-
+      {% if page.social-share %} {% include social-share.html %} {% endif %}
       <ul class="pager blog-pager">
         {% if page.previous.url %}
         <li class="previous">
@@ -41,7 +33,6 @@ layout: base
         </li>
         {% endif %}
       </ul>
-
       {% if page.comments %}
         <div class="disqus-comments">
           {% include disqus.html %}
