@@ -29,9 +29,14 @@ The Ola Hallengren SQL Server Maintenance Solution comprises scripts for running
 [Ola Hallengren SQL Server Maintenance Solution](https://ola.hallengren.com/)
 
 ## How to license SQL Server
-SQL Server licensing makes choosing the right edition simple and economical. Unlike other major vendors, there’s no having to pay for expensive add-ons to run your most demanding applications—because every feature and capability is already built in.
+Make sure you read up on your licensing options for SQL server. Here are some good articles to help understand what you are looking at.
 
-[SQL Server 2016 licensing datasheet and guide](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
+* [SQL Server 2014 Licensing Changes](https://www.brentozar.com/archive/2014/04/sql-server-2014-licensing-changes/) 
+* [Microsoft SQL 2014 Licensing in a VMware environment](https://www.vmguru.com/2015/03/microsoft-sql-2014-licensing-in-a-vmware-environment/)
+* [Recommended Intel Xeon E5-2600 v4 Processors for SQL Server](http://www.sqlskills.com/blogs/glenn/recommended-intel-xeon-e5-2600-v4-processors-for-sql-server/)
+* [Recommended Intel Processors for SQL Server 2014 – March 2015](https://sqlperformance.com/2015/03/system-configuration/recommended-cpus-sql-server-2014)
+* [SQL Server 2016 licensing datasheet and guide](http://download.microsoft.com/download/9/C/6/9C6EB70A-8D52-48F4-9F04-08970411B7A3/SQL_Server_2016_Licensing_Guide_EN_US.pdf)
+* [SQL Server 2014 licensing datasheet and guide](http://go.microsoft.com/fwlink/?LinkId=230678)
 
 ## sp_Blitz – Free SQL Server Health Check Script
 
