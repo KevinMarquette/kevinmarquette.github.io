@@ -31,9 +31,9 @@ You can also update values using an index in the same way.
 I just scratched the surface on arrays but that should put them into the right context as I move onto hashtables.
 
 ## What is a hashtable?
-This is where the fun starts. I am going to start with a basic technical description of what hashtables are in the general sense as used by most programming languages before I shift into the other ways Powershell makes use of them.
+I am going to start with a basic technical description of what hashtables are in the general sense as used by most programming languages before I shift into the other ways Powershell makes use of them.
 
-A hashtable is a data structure much like an array except you store each value (object) using a key. It is a basic key/value store. First, we create an empty hashtable.
+A hashtable is a data structure much like an array, except you store each value (object) using a key. It is a basic key/value store. First, we create an empty hashtable.
 
     $ageList = @{}
 
@@ -45,10 +45,10 @@ Notice the squiggly brackets vs the parenthesis used when defining an array abov
 
     $ageList.add( 'Alex', 9 )
 
-The person's name is the key and their age is the value that I want to store.
+The person's name is the key and their age is the value that I want to save.
 
 ## Using the brackets for access
-Once you add your values to the hashtable, you can pull them back out using the key (instead of using an index like you would have for an array).
+Once you add your values to the hashtable, you can pull them back out using that same key (instead of using a numeric index like you would have for an array).
 
     $ageList['Kevin']
     $ageList['Alex']
@@ -65,17 +65,35 @@ We can use this approach to add or update values into the hashtable too. This is
     $ageList['Alex'] = 9
   
 
-That syntax also works for updating an existing value based on a key. There is another syntax you can use for accessing and updating values that I will cover in a later section. If you are coming to Powershell from another language, these existing examples should fit in with how you may have used them before.  
+There is another syntax you can use for accessing and updating values that I will cover in a later section. If you are coming to Powershell from another language, these existing examples should fit in with how you may have used hashtables before.  
 
 
 ## Creating hashtables with values
 
-So far I have just created an empty hashtable for the examples. You can pre-populate the keys and values when you create them.
+So far I have just created an empty hashtable for these examples. You can pre-populate the keys and values when you create them.
 
     $ageList = @{
         Kevin = 36
         Alex  = 9
     }
+
+## As a lookup table
+The real value of this type of a hashtable is that you can use them as a lookup table. Here is a simple example.
+
+    $environments = @{
+        Prod = 'SrvProd05'
+        QA   = 'SrvQA02'
+        Dev  = 'SrvDev12'
+    }
+
+    $server = $environments[$env]
+
+In this example, you specify an environment for the `$env` variable and it will pick the correct server. You could use a `switch($env){...}` for something like this but this is a nice option.
+
+This gets even better when you dynamically build the lookup table to use it later. So think about using this approach when you need to cross reference something. I think we would see this a lot more if Powershell was not so good at filtering on the pipe with `Where-Object`. If you are ever in a situation where performance matters, this is an approach that needs to be considered. 
+
+I won't say that it is faster, but it does fit into the rule of [If performance matters, test it](https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md).
+
 
 ## Iterating hashtables
 Because a hashtable is a collection of key/value pairs, you have to iterate over it differently than you would an array or normal list of items.
@@ -85,7 +103,7 @@ The first thing to notice is that if you pipe your hashtable, the pipe treats it
     PS:\> $ageList | Measure-Object
     count : 1
 
-Even though the `.count` property tells you how many values it has.
+Even though the `.count` property tells you how many values it contains.
 
     PS:\> $ageList.count
     2
@@ -113,7 +131,7 @@ We are walking each key in the hashtable and then using it to access the value. 
 
 # Hashtable as a collection of properties
 
-So far the type of objects we placed in our hashtable were all the same type of object. I used ages in all those examples and the key was the person's name. This is a great way to look at it when your collection of objects have a name. Another common way to use hashtables in Powershell is to hold a collection of properties where the key is the name of the property. I'll step into that idea in the next set of examples.
+So far the type of objects we placed in our hashtable were all the same type of object. I used ages in all those examples and the key was the person's name. This is a great way to look at it when your collection of objects each have a name. Another common way to use hashtables in Powershell is to hold a collection of properties where the key is the name of the property. I'll step into that idea in this next example.
 
 
 ## Property based access
@@ -150,7 +168,7 @@ Now when you enumerate the keys and values, the will stay in that order.
 # All the fun stuff
 
 ## Inline hashtables
-If are defining a hashtable on one line, you can separate the key/value pairs with a semicolon. 
+When you are defining a hashtable on one line, you can separate the key/value pairs with a semicolon. 
 
     $person = @{ name = 'kevin'; age = 36; }
 
@@ -164,7 +182,7 @@ There are a few cmdlets that support the use of hashtables to create custom or c
         expression = {($_.used + $_.free) / 1GB}
     }
 
-The `name` is what the cmdlet would call that column. The `expression` is a script block that is executed where the `$_` value is the object on the pipe. Here is that script in action:
+The `name` is what the cmdlet would label that column. The `expression` is a script block that is executed where the `$_` value of the object on the pipe. Here is that script in action:
 
     PS:\> $drives = Get-PSDrive | Where Used 
     PS:\> $drives | Select-Object -properties name, $property
@@ -177,10 +195,10 @@ I placed that in a variable but it could just as easily be defined inline and yo
 
     $drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 
-I personally don't like how long that makes commands and it often promotes some bad behaviours that I won't get into. I am more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts. But there is a lot of code out there that does this so I wanted you to be aware of it. I talk about creating `pscustomobject` later on.
+I personally don't like how long that makes commands and it often promotes some bad behaviours that I won't get into. I am more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts. But there is a lot of code out there that does this so I wanted you to be aware of it. I talk about creating a `pscustomobject` later on.
 
 ## Splatting hashtables at cmdlets
-This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hahstable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope. 
+This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope. 
 
     Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 
@@ -197,7 +215,7 @@ Without using splatting, all those things need to be defined on a single line. I
     }
     Add-DhcpServerv4Scope @DHCPScope
 
-Just take a moment to appreciate how easy that is to read. They are the exact same command with all the same values. The second one will be easier to understand and maintain.
+Just take a moment to appreciate how easy that is to read. They are the exact same command with all the same values. The second one will be easier to understand and maintain going forward.
 
 I use splatting any time the command gets too long. I define too long as causing my window to scroll right. If I hit 3 properties for a function, odds are that I will rewrite it using a spatted hashtable.
 
@@ -218,7 +236,7 @@ One of the most common ways I use spatting is to deal with optional parameters t
 
 I start by creating my hashtable with common parameters. Then I add the `$Credential` if it exists. Because I am using splatting here, I only need to have the call to `Get-CIMInstance` in my code once. This design pattern is very clean and can handle lots of optional parameters very easily. 
 
-To be fair, you could also write your commands to allow null values for parameters and handle them correctly. You just don't always have control over the other commands you are calling. 
+To be fair, you could also write your commands to allow null values for parameters. You just don't always have control over the other commands you are calling. 
 
 ## Nested hashtables
 We can also use hashtables as values in our hashtable. 
@@ -231,7 +249,7 @@ We can also use hashtables as values in our hashtable.
     $person.location.city = 'Austin'
     $person.location.state = 'TX'
 
-I start with a basic hashtable containing 2 keys. I added a key called `location` with an empty hashtable. Then I added the last two items to that `location` hashtable. We can do this all inline.
+I started with a basic hashtable containing 2 keys. I added a key called `location` with an empty hashtable. Then I added the last two items to that `location` hashtable. We can do this all inline too.
 
     $person = @{
         name = 'Kevin'
@@ -282,7 +300,7 @@ I tend to use the dot property when I am treating it like a property. Those are 
 Having the ability to nest hashtables gives you a lot of flexitiblity and options.
 
 ## Looking at nested hashtables
-As soon as you start nesting hashtables, you are going to need an easy way to look at them from the console. If I take that last hashtable, I get an output that looks like this:
+As soon as you start nesting hashtables, you are going to need an easy way to look at them from the console. If I take that last hashtable, I get an output that looks like this that only goes so deep:
 
     ps:\> $people
     Name                           Value
@@ -290,7 +308,7 @@ As soon as you start nesting hashtables, you are going to need an easy way to lo
     Kevin                          {age, city}
     Alex                           {age, city}
 
-My goto command for looking at these things is `ConvertTo-JSON` because it is very clean and I have used JSON on other things.
+My goto command for looking at these things is `ConvertTo-JSON` because it is very clean and I frequently use JSON on other things.
 
     PS:\> $people | ConvertTo-JSON
     {
@@ -308,7 +326,7 @@ Even if you don't know JSON, you should be able to see what you are looking for.
 
 
 ## Creating objects
-Sometimes you just need to have an object and using a hashtable to hold properties just is not getting the job done. Most commonly you want to see the keys as column names. A `pscustomobject` makes that very easy.
+Sometimes you just need to have an object and using a hashtable to hold properties just is not getting the job done. Most commonly you want to see the keys as column names. A `pscustomobject` makes that easy.
 
     $person = [pscustomobject]@{
         name = 'Kevin'
@@ -328,7 +346,7 @@ All the reasons you struggle with getting a hashtable to save to a CSV are the s
 
     $person | ForEach-Object{[pscustomobject]$_} | Export-CSV -Path $path
 
-Again, check out my writeup on using `pscustomobject`s.
+Again, check out my writeup on using a `pscustomobject`.
 
 ## Saving a nested hashtable to file
 
@@ -339,7 +357,7 @@ If I need to save a nested hashtable to a file and then read it back in again, I
 
 There are two important points about this method. First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string. The Second is that the imported object is no longer a hashtable. It is now a `pscustomobject` and that can cause issues if your don't expect it.
 
-If you need it to be a hashtable on import, then you need to use the `Import-CliXml` and `Export-CliXml` commands.
+If you need it to be a hashtable on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.
 
 ## Reading directly from a file
 If you have a file that contains a hashtable using Powershell syntax, there is a way to import it directly. 
@@ -350,3 +368,10 @@ If you have a file that contains a hashtable using Powershell syntax, there is a
     $hashtable = (& $scriptBlock) 
 
 It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other powershell commands in it before it executes it.
+
+## Practical example
+I covered a lot of ground very quickly. I want to leave you with one last example that will show a few of these ideas in action. I went hunting through my function and I found this one that was called `Get-VMHostNetworkMap`. It uses PowerCLI map out the networks on a host in a way I want to see them.
+
+
+
+The important details is that the `$vnicLookup` is populated with data and treated as a lookup table later in the script. 
