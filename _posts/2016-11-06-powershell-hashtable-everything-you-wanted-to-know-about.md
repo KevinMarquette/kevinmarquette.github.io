@@ -385,7 +385,7 @@ My go to command for looking at these things is `ConvertTo-JSON` because it is v
                 }
     }
 
-Even if you don't know JSON, you should be able to see what you are looking for. Powershell 5.0 did add a `Format-Custom` command for structured data like this but I still like the JSON view better.
+Even if you don't know JSON, you should be able to see what you are looking for. There is a `Format-Custom` command for structured data like this but I still like the JSON view better.
 
 
 ## Creating objects
