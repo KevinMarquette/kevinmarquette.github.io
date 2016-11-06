@@ -179,6 +179,39 @@ By default, hashtables are not ordered (or sorted). In the traditional context, 
 
 Now when you enumerate the keys and values, they will stay in that order.
 
+## Checking for keys and values
+In most cases, you can just test for the value with something like this:
+
+    if( $person.age ){...}
+
+It is simple but has been the source of many bugs for me because I was overlooking one important detail in my logic. I started to use it to test if a key was present. When the value was `$false` or zero, that statement would return `$false` unexpectedly.
+
+    if( $person.age -ne $null ){...}
+
+This works around that issue for zero values but not $null vs non-existent keys. Most of the time you don't need to make that distinction but there are functions for when you do.
+
+    if( $person.ContainsKey('age') ){...}
+
+We also have a `ContainsValue()` for the situation where you need to test for a value without knowing the key or iterating the whole collection.
+
+## Removing and clearing keys
+You can remove keys with the `.Remove()` function.
+
+    $person.remove('age')
+
+Assigning them a `$null` value just leaves you with a key that has a `$null` value.
+
+A common way to clear a hahstable is to just initalize it to an empty hashtable.
+
+    $person = @{}
+
+While that does work, try to use the `clear()` function instead.
+
+    $person.clear()
+
+This is one of those instances where using the function creates self documenting code and it makes the intentions of the code very clean. 
+
+
 # All the fun stuff
 
 ## Inline hashtables
@@ -261,44 +294,10 @@ Hashtables support the addition opperator to combine two hashtables.
 
 This only works if the two hashtables do not share a key.
 
-## Removing and clearing keys
-You can remove keys with the `.Remove()` function.
-
-    $person.remove('Zip')
-
-Assigning them a `$null` value just leaves you with a key that has a `$null` value.
-
-A common way to clear a hahstable is to just initalize it to an empty hashtable.
-
-    $person = @{}
-
-While that does work, try to use the `clear()` function instead.
-
-    $person.clear()
-
-This is one of those instances where using the function creates self documenting code and it makes the intentions of the code very clean. 
-
-## Checking for keys and values
-In most cases, you can just test for the value with something like this:
-
-    if( $person.age ){...}
-
-It is simple but has been the source of many bugs for me because I was overlooking one important detail in my logic. I started to use it to test if a key was present. When the value was `$false` or zero, that statement would return `$false` unexpectedly.
-
-    if( $person.age -ne $null ){...}
-
-This works around that issue for zero values but not $null vs non-existent keys. Most of the time you don't need to make that distinction but there are functions for when you do.
-
-    if( $person.ContainsKey('age') ){...}
-
-We also have a `ContainsValue()` for the situation where you need to test for a value without knowing the key or iterating the whole collection.
-
-
 ## PSBoundParameters
 [PSBoundParameters](http://tommymaynard.com/quick-learn-the-psboundparameters-automatic-variable-2016/) is an automatic variable that only exists inside the context of a function. It contains all the parameters that the function was called with. This isn't exactly a hashtable but close enough that you can treat it like one. 
 
 That includes removing keys and splatting it to other functions. If you find yourself writing proxy functions, take a closer look at this one.
-
 
 ## Nested hashtables
 We can use hashtables as values inside a hashtable. 
@@ -456,7 +455,7 @@ Technically your key does not have to be a string but they are easier to think a
 ## Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
 
-Here is a list of everything we covered incase you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
+Here is a list of everything we covered in case you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
 
 # Index
 
