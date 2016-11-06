@@ -125,7 +125,7 @@ It is often more useful to enumerate the keys and use them to access the values.
     Kevin is 36 years old
     Alex is 9 years old
 
-Here is the same example with a `foreach(){...}` loop that is easier to see what is going on.
+Here is the same example with a `foreach(){...}` loop.
 
     foreach($key in $ageList.keys)
     {
