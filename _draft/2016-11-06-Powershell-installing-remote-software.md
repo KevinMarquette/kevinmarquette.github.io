@@ -80,7 +80,7 @@ new drive mapping, it will establish authentication.
         \\fileserver\share\installer.exe /silent 
     } 
 
-I used two tricks in that example that I need to point out incase you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) and the second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands). 
+I used two tricks in that example that I need to point out incase you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) and the second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands). I combine both of them when I execute this command `New-PSDrive @using:psdrive`. Those tricks took the hashable from my local session and splatted to the command in the remote session.
 
 ## Don’t use CredSSP
 
