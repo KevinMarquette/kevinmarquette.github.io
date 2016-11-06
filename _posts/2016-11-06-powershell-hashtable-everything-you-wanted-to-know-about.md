@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Everything you wanted to know about PSCustomObject"
+title: "Powershell: Everything you wanted to know about hashtables"
 date: 2016-11-06
 tags: [PowerShell, hashtable]
 ---
