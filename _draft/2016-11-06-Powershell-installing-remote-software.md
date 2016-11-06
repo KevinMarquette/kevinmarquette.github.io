@@ -108,3 +108,26 @@ Here is a quick snip of code showing how it works.
     #To undo the configuration, simply reset ServerC’s attribute to null.
     Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null 
 
+# Other ideas for the more ambitious
+
+That covers the most common approaches that admins take to solving this problem. I do have a few more ideas for you if you are willing to think outside the box. I am not going to get into any details on these. So you are on your own to figure out how to implement them.
+
+## Web download
+
+We could just as easily placed the file you need on a internal web server and downloaded them to the target system before running them.
+
+    Invoke-WebRequest $url -OutFile 'c:\windows\temp\installer.exe'
+
+## Internal repository
+
+The first is to set up a repository and use the new package management commands to deploy applications. `Find-Package` and `Install-Package`. I have not worked with setting up package repository for this purpose so I can't give you any more direction than that.
+
+## Desired State Configuration
+
+The other is to use DSC to deploy and install your software. The easy stuff in DSC is very easy and you would learn a lot going down this path. I don't have enough space here to get into the details of how something like that would work. But you would need a pull server but that is easy to set up. 
+
+Deciding how to get the installer to the target system is the hard part with DSC. You could use the same download from URL or pull from repository idea that I just mentioned. If you set up certificates, then you can provide credentials to a file share for straight file copy. Or you can create a custom DSC Resource and place the files in it. The target system would download it from the pull server like it would other resources.
+
+# In closing
+You have plenty of options to choose from. I would recommend focusing on the ones in the first half of this post. That is what most people start with and there is a lot more help out there if you need it. 
+
