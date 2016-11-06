@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Powershell: Everything you wanted to know about PSCustomObject"
-date: 2016-10-28
-tags: [PowerShell, PSCustomObject]
+date: 2016-11-06
+tags: [PowerShell, hashtable]
 ---
 
 I want to take a step back and talk about [hashtables](https://technet.microsoft.com/en-us/library/hh847780.aspx). I use these all the time now. I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them at first that he had. Hashtables are really important in Powershell so it is good to have a solid understanding of them.
@@ -362,14 +362,14 @@ Sometimes you just need to have an object and using a hashtable to hold properti
     ----  ---
     Kevin  36
 
-I already have very detailed write up for `pscustomobject` that you should go read after this one. It builds on a lot of the thing learned here.
+I already have very detailed write up for [pscustomobject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/) that you should go read after this one. It builds on a lot of the thing learned here.
 
 ## Saving to CSV
 Struggling with getting a hashtable to save to a CSV is one of the difficulties that was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
 
     $person | ForEach-Object{[pscustomobject]$_} | Export-CSV -Path $path
 
-Again, check out my write up on using a `pscustomobject`.
+Again, check out my write up on using a [pscustomobject](2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject).
 
 ## Saving a nested hashtable to file
 
@@ -394,7 +394,7 @@ It imports the contents of the file into a `scriptblock`, then checks to make su
 
 On that note, did you know that a module manifest (the psd1 file) is just a hashtable? 
 
-## Keys are always strings
+## Keys are just strings
 I didn't want to go off on this tengent earlier, but the keys are just strings. So we can put quotes around anything and make it a key. 
 
     $person = @{
@@ -411,6 +411,8 @@ You can do some odd things that you may not have realized you could do.
     $person.$key
 
 Just because you can do something, it does not mean that you should. That last one just looks like a bug waiting to happen and would be easily misunderstood by anyone reading your code.
+
+Technically your key does not have to be a string but they are easier to think about if you only use strings.
 
 ## Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
