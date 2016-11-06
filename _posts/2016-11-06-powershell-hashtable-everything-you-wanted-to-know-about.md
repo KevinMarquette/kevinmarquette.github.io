@@ -458,5 +458,7 @@ I covered a lot of ground very quickly. My hope is that you walk away leaning so
 
 Here is a list of everything we covered incase you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
 
+# Index
+
 * TOC
 {:toc}
