@@ -39,7 +39,7 @@ A hashtable is a data structure much like an array, except you store each value 
 
     $ageList = @{}
 
-Notice the squiggly brackets vs the parenthesis used when defining an array above. Then we add an item by using a key like this:
+Notice the braces vs the parenthesis used when defining an array above. Then we add an item by using a key like this:
 
     $key = 'Kevin'
     $value = 36
@@ -402,10 +402,23 @@ Sometimes you just need to have an object and using a hashtable to hold properti
     ----  ---
     Kevin  36
 
+Even if you don't create it as a `pscustomobject` initially, you can always cast it later when needed.
+
+    $person = @{
+        name = 'Kevin'
+        age  = 36
+    }
+
+     PS:\> [pscustomobject]$person
+   
+    name  age
+    ----  ---
+    Kevin  36
+
 I already have very detailed write up for [pscustomobject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/) that you should go read after this one. It builds on a lot of the thing learned here.
 
 ## Saving to CSV
-Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
+Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can cast it to a `pscustomobject` inline if needed.
 
     $person | ForEach-Object{ [pscustomobject]$_ } | Export-CSV -Path $path
 
