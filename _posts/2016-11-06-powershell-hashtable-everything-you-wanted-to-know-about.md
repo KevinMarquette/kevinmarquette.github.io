@@ -323,7 +323,7 @@ I tend to use the dot property when I am treating it like a property. Those are 
 Having the ability to nest hashtables gives you a lot of flexibility and options.
 
 ## Looking at nested hashtables
-As soon as you start nesting hashtables, you are going to need an easy way to look at them from the console. If I take that last hashtable, I get an output that looks like this that only goes so deep:
+As soon as you start nesting hashtables, you are going to need an easy way to look at them from the console. If I take that last hashtable, I get an output that looks like this and it only goes so deep:
 
     ps:\> $people
     Name                           Value
