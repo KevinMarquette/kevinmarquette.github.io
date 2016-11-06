@@ -171,16 +171,6 @@ And we can add and access attributes on the `$person` like this.
 
 All of a sudden this hashtable starts to feel and act like an object. It is still a collection of things, so all the examples above still apply. We just approach it from a different point of view. 
 
-## Ordered hashtables
-By default, hashtables are not ordered (or sorted). In the traditional context, the order does not matter when you always use a key to access values. You may find that when using it to hold properties that you may want them to stay in the order that you define them. Thankfully, there is a way to do that with the `ordered` keyword.
-
-    $person = [ordered]@{
-        name = 'Kevin'
-        age  = 36
-    }
-
-Now when you enumerate the keys and values, they will stay in that order.
-
 ## Checking for keys and values
 In most cases, you can just test for the value with something like this:
 
@@ -215,6 +205,16 @@ This is one of those instances where using the function creates self documenting
 
 
 # All the fun stuff
+
+## Ordered hashtables
+By default, hashtables are not ordered (or sorted). In the traditional context, the order does not matter when you always use a key to access values. You may find that when using it to hold properties that you may want them to stay in the order that you define them. Thankfully, there is a way to do that with the `ordered` keyword.
+
+    $person = [ordered]@{
+        name = 'Kevin'
+        age  = 36
+    }
+
+Now when you enumerate the keys and values, they will stay in that order.
 
 ## Inline hashtables
 When you are defining a hashtable on one line, you can separate the key/value pairs with a semicolon. 
