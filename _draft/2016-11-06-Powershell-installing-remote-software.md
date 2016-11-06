@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Powershell: Remote install software"
-date: 2016-10-28
+date: 2016-11-06
 tags: [PowerShell,Remoting]
 ---
 
-Last month I covered silently installing a MSI. The next thing an admin 
+Last month I covered [silently installing a MSI](/2016-10-21-powershell-installing-msi-files/). The next thing an admin 
 wants to do is install it on a remote system. That is the logical 
 next step. To keep these samples cleaner, I am going to use 
 a different imaginary installer that is not an MSI. Using `Enter-PSSession` or 
@@ -62,7 +62,7 @@ VM buss (instead of over the network) and you can still copy a file to it.
 
 ## Re-authenticate from the session
 It actually is really easy to re-authenticate if that 
-is that is needed. Just create a credential object and 
+is what is needed. Just create a credential object and 
 pass it into your Invoke-Command. Then use that credential 
 to create a New-PSDrive. Even if you don't use the 
 new drive mapping, it will establish authentication. 
@@ -79,6 +79,8 @@ new drive mapping, it will establish authentication.
         New-PSDrive @using:psdrive
         \\fileserver\share\installer.exe /silent 
     } 
+
+I used two tricks in that example that I need to point out incase you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) and the second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands). 
 
 ## Don’t use CredSSP
 

@@ -5,13 +5,13 @@ date: 2016-10-28
 tags: [PowerShell, PSCustomObject]
 ---
 
-I want to take a step back and talk about hashtables. I use these all the time now. I was teaching someone about them after our user group meeting last night and I realised I had the same confusion about them at first that he had. Hashtables are really important in Powershell so it is good to have a solid understanding of them.
+I want to take a step back and talk about [hashtables](https://technet.microsoft.com/en-us/library/hh847780.aspx). I use these all the time now. I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them at first that he had. Hashtables are really important in Powershell so it is good to have a solid understanding of them.
 
 # Hashtable as a collection of things
 I want you to first see a Hashtable as a collection in the traditional definition of a hashtable. This gives you a fundamental understadning of how they work when they get used for more advanced stuff later. Skipping this understanding is often a source of confusion.
 
 ## What is an array?
-Before I jump into what a Hashtable is, I need to mention arrays first. For the purpose of this discussion, an array is a list or collection of values or objects. 
+Before I jump into what a Hashtable is, I need to mention [arrays](https://technet.microsoft.com/en-us/library/hh847882.aspx) first. For the purpose of this discussion, an array is a list or collection of values or objects. 
 
     $array = @(1,2,3,5,7,11)
 
@@ -96,7 +96,7 @@ I won't say that it is faster, but it does fit into the rule of [If performance 
 
 
 ## Iterating hashtables
-Because a hashtable is a collection of key/value pairs, you have to iterate over it differently than you would an array or normal list of items.
+Because a hashtable is a collection of key/value pairs, you have to iterate over it differently than you would an array or a normal list of items.
 
 The first thing to notice is that if you pipe your hashtable, the pipe treats it like one object.
 
@@ -108,7 +108,7 @@ Even though the `.count` property tells you how many values it contains.
     PS:\> $ageList.count
     2
 
-You get around this pipe limitation by using the `.values` property if all you need is just the values. 
+You get around this issue by using the `.values` property if all you need is just the values. 
 
     PS:\> $ageList.values | Measure-Object -Average
     Count   : 2
@@ -163,7 +163,7 @@ By default, hashtables are not ordered (or sorted). In the traditional context, 
         age  = 36
     }
 
-Now when you enumerate the keys and values, the will stay in that order.
+Now when you enumerate the keys and values, they will stay in that order.
 
 # All the fun stuff
 
@@ -182,7 +182,7 @@ There are a few cmdlets that support the use of hashtables to create custom or c
         expression = {($_.used + $_.free) / 1GB}
     }
 
-The `name` is what the cmdlet would label that column. The `expression` is a script block that is executed where the `$_` value of the object on the pipe. Here is that script in action:
+The `name` is what the cmdlet would label that column. The `expression` is a script block that is executed where `$_` is the value of the object on the pipe. Here is that script in action:
 
     PS:\> $drives = Get-PSDrive | Where Used 
     PS:\> $drives | Select-Object -properties name, $property
@@ -191,18 +191,18 @@ The `name` is what the cmdlet would label that column. The `expression` is a scr
     ----     ------------
     C    238.472652435303
 
-I placed that in a variable but it could just as easily be defined inline and you can shorten `name` to `n` and `expression` to `e`.
+I placed that in a variable but it could just as easily be defined inline and you can shorten `name` to `n` and `expression` to `e` while you are at it.
 
     $drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 
-I personally don't like how long that makes commands and it often promotes some bad behaviours that I won't get into. I am more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts. But there is a lot of code out there that does this so I wanted you to be aware of it. I talk about creating a `pscustomobject` later on.
+I personally don't like how long that makes commands and it often promotes some bad behaviors that I won't get into. I am more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts. But there is a lot of code out there that does this so I wanted you to be aware of it. I talk about creating a `pscustomobject` later on.
 
 ## Splatting hashtables at cmdlets
-This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope. 
+This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope the normal way. 
 
     Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 
-Without using splatting, all those things need to be defined on a single line. It either scrolls off the screen or will wrap where ever it feels like. Now compare that to a command that uses splatting.
+Without using [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx), all those things need to be defined on a single line. It either scrolls off the screen or will wrap where ever it feels like. Now compare that to a command that uses splatting.
 
     $DHCPScope = @{
         Name        = 'TestNetwork'
@@ -215,12 +215,14 @@ Without using splatting, all those things need to be defined on a single line. I
     }
     Add-DhcpServerv4Scope @DHCPScope
 
-Just take a moment to appreciate how easy that is to read. They are the exact same command with all the same values. The second one will be easier to understand and maintain going forward.
+The use of the `@` sign instead of the `$` is what invokes the splat operation.
 
-I use splatting any time the command gets too long. I define too long as causing my window to scroll right. If I hit 3 properties for a function, odds are that I will rewrite it using a spatted hashtable.
+Just take a moment to appreciate how easy that example is to read. They are the exact same command with all the same values. The second one will be easier to understand and maintain going forward. 
+
+I use splatting any time the command gets too long. I define too long as causing my window to scroll right. If I hit 3 properties for a function, odds are that I will rewrite it using a splatted hashtable.
 
 ## Splatting for optional parameters
-One of the most common ways I use spatting is to deal with optional parameters that come from someplace else in my script. Lets say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.
+One of the most common ways I use spatting is to deal with optional parameters that come from someplace else in my script. Let's say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.
 
     $CIMParams = @{
         ClassName = 'Win32_Bios'
@@ -236,10 +238,31 @@ One of the most common ways I use spatting is to deal with optional parameters t
 
 I start by creating my hashtable with common parameters. Then I add the `$Credential` if it exists. Because I am using splatting here, I only need to have the call to `Get-CIMInstance` in my code once. This design pattern is very clean and can handle lots of optional parameters very easily. 
 
-To be fair, you could also write your commands to allow `$null` values for parameters. You just don't always have control over the other commands you are calling. 
+To be fair, you could write your commands to allow `$null` values for parameters. You just don't always have control over the other commands you are calling. 
+
+## Adding hashtables
+Hashtables support the addition opperator to combine two hashtables.
+
+    $person += @{Zip = '78701'}
+
+This only works if the two hashtables do not share a key.
+
+## Removing keys
+You can remove keys with the `.Remove()` function.
+
+    $person.remove('Zip')
+
+Assigning them a `$null` value just leaves you with a key that has a `$null` value.
+
+
+## PSBoundParameters
+[PSBoundParameters](http://tommymaynard.com/quick-learn-the-psboundparameters-automatic-variable-2016/) is an automatic variable that only exists inside the context of a function. It contains all the parameters that the function was called with. This isn't exactly a hashtable but close enough that you can treat it like one. 
+
+That includes removing keys and splatting it to other functions. If you find yourself writing proxy functions, take a closer look at this one.
+
 
 ## Nested hashtables
-We can also use hashtables as values in our hashtable. 
+We can use hashtables as values inside a hashtable. 
 
     $person = @{
         name = 'Kevin'
@@ -289,7 +312,7 @@ This mixes the concept of using hashtables as a collection of objects and a coll
     PS:\> $people['Alex']['City']
     Austin
 
-I tend to use the dot property when I am treating it like a property. Those are generally things I have defined statically in my code and I know them off the top of my head. If I need to walk the list or programatically access the keys, I will use the brackets to provide the key name.
+I tend to use the dot property when I am treating it like a property. Those are generally things I have defined statically in my code and I know them off the top of my head. If I need to walk the list or programmatically access the keys, I will use the brackets to provide the key name.
 
     foreach($name in $people.keys)
     {
@@ -297,7 +320,7 @@ I tend to use the dot property when I am treating it like a property. Those are 
         '{0}, age {1}, is in {2}' -f $name, $person.age, $person.city
     }
 
-Having the ability to nest hashtables gives you a lot of flexitiblity and options.
+Having the ability to nest hashtables gives you a lot of flexibility and options.
 
 ## Looking at nested hashtables
 As soon as you start nesting hashtables, you are going to need an easy way to look at them from the console. If I take that last hashtable, I get an output that looks like this that only goes so deep:
@@ -308,7 +331,7 @@ As soon as you start nesting hashtables, you are going to need an easy way to lo
     Kevin                          {age, city}
     Alex                           {age, city}
 
-My goto command for looking at these things is `ConvertTo-JSON` because it is very clean and I frequently use JSON on other things.
+My go to command for looking at these things is `ConvertTo-JSON` because it is very clean and I frequently use JSON on other things.
 
     PS:\> $people | ConvertTo-JSON
     {
@@ -339,14 +362,14 @@ Sometimes you just need to have an object and using a hashtable to hold properti
     ----  ---
     Kevin  36
 
-I already have very detailed writeup for `pscustomobject` that you should go read after this one. It builds on a lot of the thing learned here.
+I already have very detailed write up for `pscustomobject` that you should go read after this one. It builds on a lot of the thing learned here.
 
 ## Saving to CSV
-All the reasons you struggle with getting a hashtable to save to a CSV are the same as the default view I just talked about above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
+Struggling with getting a hashtable to save to a CSV is one of the difficulties that was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
 
     $person | ForEach-Object{[pscustomobject]$_} | Export-CSV -Path $path
 
-Again, check out my writeup on using a `pscustomobject`.
+Again, check out my write up on using a `pscustomobject`.
 
 ## Saving a nested hashtable to file
 
@@ -369,8 +392,10 @@ If you have a file that contains a hashtable using Powershell syntax, there is a
 
 It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other powershell commands in it before it executes it.
 
+On that note, did you know that a module manifest (the psd1 file) is just a hashtable? 
+
 ## Keys are always strings
-I didn't want to go off on this tanget earlier, but the keys are just strings. So we can put quotes around anything and make it a key. 
+I didn't want to go off on this tengent earlier, but the keys are just strings. So we can put quotes around anything and make it a key. 
 
     $person = @{
         'full name' = 'Kevin Marquette'
@@ -385,15 +410,7 @@ You can do some odd things that you may not have realized you could do.
     $key = 'full name'     
     $person.$key
 
-Just because you can do something, it does not mean that you should. That last one just looks like a bug waiting to happen and would be easily missunderstood by anyone reading your code.
+Just because you can do something, it does not mean that you should. That last one just looks like a bug waiting to happen and would be easily misunderstood by anyone reading your code.
 
-Even if you use an object or an integer as a key, it will get converted to a string first.
-
-
-
-## Practical example
-I covered a lot of ground very quickly. I want to leave you with one last example that will show a few of these ideas in action. I went hunting through my function and I found this one that was called `Get-VMHostNetworkMap`. It uses PowerCLI map out the networks on a host in a way I want to see them.
-
-
-
-The important details is that the `$vnicLookup` is populated with data and treated as a lookup table later in the script. 
+## Anything else?
+I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
