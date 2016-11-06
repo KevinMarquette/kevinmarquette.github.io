@@ -7,9 +7,6 @@ tags: [PowerShell, hashtable]
 
 I want to take a step back and talk about [hashtables](https://technet.microsoft.com/en-us/library/hh847780.aspx). I use these all the time now. I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them at first that he had. Hashtables are really important in Powershell so it is good to have a solid understanding of them.
 
-* TOC
-{:toc}
-
 # Hashtable as a collection of things
 I want you to first see a Hashtable as a collection in the traditional definition of a hashtable. This gives you a fundamental understadning of how they work when they get used for more advanced stuff later. Skipping this understanding is often a source of confusion.
 
@@ -458,3 +455,8 @@ Technically your key does not have to be a string but they are easier to think a
 
 ## Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
+
+Here is a list of everything we covered incase you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
+
+* TOC
+{:toc}
