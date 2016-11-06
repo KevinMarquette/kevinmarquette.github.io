@@ -5,7 +5,7 @@ date: 2016-10-28
 tags: [PowerShell,Remoting]
 ---
 
-Last week I covered silently installing a MSI, the next thing an admin 
+Last month I covered silently installing a MSI. The next thing an admin 
 wants to do is install it on a remote system. That is the logical 
 next step. To keep these samples cleaner, I am going to use 
 a different imaginary installer that is not an MSI. Using `Enter-PSSession` or 
@@ -30,14 +30,14 @@ Or any other network resources for that matter. That second hop is
 anything that requires authentication that is not on the remote system. 
 
 We can either pre-copy the file or re-authenticate on the remote end. 
-First a few common variables to reuse in the rest of the commands.
+First a few common variables to reuse in the rest of the examples.
 
     $file = '\\fileserver\share\installer.exe'
     $computerName = 'server01'
 
 ## Pre-copy file using admin share
 The obvious first approach is to use the admin share of the remote system 
-to push content to a location we can call later. Here I just place it 
+to push content to a location we can access. Here I just place it 
 in the windows temp folder then remotely execute it.
     
     Copy-Item -Path $file -Destination "\\$computername\c$\windows\temp\installer.exe"
@@ -47,7 +47,7 @@ in the windows temp folder then remotely execute it.
 
 ## Pre-copy using PSSession (PS 5.0)
 There is a new feature added in Powershell 5.0 that allows you to copy 
-files over your PSSession. So create a PSSession and just copy the file 
+files using a PSSession. So create a PSSession and just copy the file 
 over it using the syntax below. A cool thing about this approach is that 
 with Powershell 5.0, you can create a PSSession to a guest VM over the 
 VM buss (instead of over the network) and you can still copy a file to it. 
