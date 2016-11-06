@@ -116,7 +116,10 @@ You get around this issue by using the `.values` property if all you need is jus
 
 It is often more useful to enumerate the keys and use them to access the values.
 
-    PS:\> $ageList.keys | ForEach-Object{'{0} is {1} years old' -f $_, $ageList[$_]}
+    PS:\> $ageList.keys | ForEach-Object{
+            $message = '{0} is {1} years old!' -f $_, $ageList[$_]
+            Write-Output $message
+    }
     Kevin is 36 years old
     Alex is 9 years old
 
@@ -124,10 +127,21 @@ Here is the same example with a `foreach(){...}` loop that is easier to see what
 
     foreach($key in $ageList.keys)
     {
-        '{0} is {1} years old' -f $key, $ageList[$key]
+        $message = '{0} is {1} years old' -f $key, $ageList[$key]
+        Write-Output $message
     }
 
 We are walking each key in the hashtable and then using it to access the value. This is a common pattern when working with hashtables as a collection. 
+
+## GetEnumerator()
+That brings us to `GetEnumerator()` for iterating over our hashtable. 
+
+    $ageList.GetEnumerator() | ForEach-Object{
+            $message = '{0} is {1} years old!' -f $_.key, $_.value
+            Write-Output $message
+    }
+
+The enumerator gives you each key/value pair one after another. It was designed specifically for this use case. Thank you to [Mark Kraus](https://get-powershellblog.blogspot.com) for reminding me of this one.
 
 # Hashtable as a collection of properties
 
@@ -247,12 +261,37 @@ Hashtables support the addition opperator to combine two hashtables.
 
 This only works if the two hashtables do not share a key.
 
-## Removing keys
+## Removing and clearing keys
 You can remove keys with the `.Remove()` function.
 
     $person.remove('Zip')
 
 Assigning them a `$null` value just leaves you with a key that has a `$null` value.
+
+A common way to clear a hahstable is to just initalize it to an empty hashtable.
+
+    $person = @{}
+
+While that does work, try to use the `clear()` function instead.
+
+    $person.clear()
+
+This is one of those instances where using the function creates self documenting code and it makes the intentions of the code very clean. 
+
+## Checking for keys and values
+In most cases, you can just test for the value with something like this:
+
+    if( $person.age ){...}
+
+It is simple but has been the source of many bugs for me because I was overlooking one important detail in my logic. I started to use it to test if a key was present. When the value was `$false` or zero, that statement would return `$false` unexpectedly.
+
+    if( $person.age -ne $null ){...}
+
+This works around that issue for zero values but not $null vs non-existent keys. Most of the time you don't need to make that distinction but there are functions for when you do.
+
+    if( $person.ContainsKey('age') ){...}
+
+We also have a `ContainsValue()` for the situation where you need to test for a value without knowing the key or iterating the whole collection.
 
 
 ## PSBoundParameters
