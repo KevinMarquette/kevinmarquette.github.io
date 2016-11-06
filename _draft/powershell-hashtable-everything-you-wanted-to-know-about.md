@@ -148,7 +148,7 @@ Just like the examples above, this will add those keys if they don't exist in th
         age  = 36
     }
 
-Now we can add and access attributes on the `$person` like this.
+And we can add and access attributes on the `$person` like this.
 
     $person.city = 'Austin'
     $person.state = 'TX'
@@ -220,7 +220,7 @@ Just take a moment to appreciate how easy that is to read. They are the exact sa
 I use splatting any time the command gets too long. I define too long as causing my window to scroll right. If I hit 3 properties for a function, odds are that I will rewrite it using a spatted hashtable.
 
 ## Splatting for optional parameters
-One of the most common ways I use spatting is to deal with optional parameters that come from some place else in my script. Lets say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.
+One of the most common ways I use spatting is to deal with optional parameters that come from someplace else in my script. Lets say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.
 
     $CIMParams = @{
         ClassName = 'Win32_Bios'
@@ -236,7 +236,7 @@ One of the most common ways I use spatting is to deal with optional parameters t
 
 I start by creating my hashtable with common parameters. Then I add the `$Credential` if it exists. Because I am using splatting here, I only need to have the call to `Get-CIMInstance` in my code once. This design pattern is very clean and can handle lots of optional parameters very easily. 
 
-To be fair, you could also write your commands to allow null values for parameters. You just don't always have control over the other commands you are calling. 
+To be fair, you could also write your commands to allow `$null` values for parameters. You just don't always have control over the other commands you are calling. 
 
 ## Nested hashtables
 We can also use hashtables as values in our hashtable. 
@@ -368,6 +368,28 @@ If you have a file that contains a hashtable using Powershell syntax, there is a
     $hashtable = (& $scriptBlock) 
 
 It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other powershell commands in it before it executes it.
+
+## Keys are always strings
+I didn't want to go off on this tanget earlier, but the keys are just strings. So we can put quotes around anything and make it a key. 
+
+    $person = @{
+        'full name' = 'Kevin Marquette'
+        '#' = 3978
+    }
+    $person['full name']
+
+You can do some odd things that you may not have realized you could do.
+
+    $person.'full name'
+
+    $key = 'full name'     
+    $person.$key
+
+Just because you can do something, it does not mean that you should. That last one just looks like a bug waiting to happen and would be easily missunderstood by anyone reading your code.
+
+Even if you use an object or an integer as a key, it will get converted to a string first.
+
+
 
 ## Practical example
 I covered a lot of ground very quickly. I want to leave you with one last example that will show a few of these ideas in action. I went hunting through my function and I found this one that was called `Get-VMHostNetworkMap`. It uses PowerCLI map out the networks on a host in a way I want to see them.
