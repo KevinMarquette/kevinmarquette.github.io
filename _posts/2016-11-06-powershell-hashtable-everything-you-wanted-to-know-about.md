@@ -228,13 +228,13 @@ There are a few cmdlets that support the use of hashtables to create custom or c
 
     $property = @{
         name = 'totalSpaceGB'
-        expression = {($_.used + $_.free) / 1GB}
+        expression = { ($_.used + $_.free) / 1GB }
     }
 
 The `name` is what the cmdlet would label that column. The `expression` is a script block that is executed where `$_` is the value of the object on the pipe. Here is that script in action:
 
     PS:\> $drives = Get-PSDrive | Where Used 
-    PS:\> $drives | Select-Object -properties name, $property
+    PS:\> $drives | Select-Object -Properties name, $property
 
     Name     totalSpaceGB
     ----     ------------
@@ -332,11 +332,11 @@ There are many ways to approach the structure of your objects. Here is a second 
 
     $people = @{
         Kevin = @{
-            age = 36
+            age  = 36
             city = 'Austin'
         }
         Alex = @{
-            age = 9
+            age  = 9
             city = 'Austin'
         }
     }
@@ -407,7 +407,7 @@ I already have very detailed write up for [pscustomobject](/2016-10-28-powershel
 ## Saving to CSV
 Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
 
-    $person | ForEach-Object{[pscustomobject]$_} | Export-CSV -Path $path
+    $person | ForEach-Object{ [pscustomobject]$_ } | Export-CSV -Path $path
 
 Again, check out my write up on using a [pscustomobject](2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject).
 
@@ -426,9 +426,9 @@ If you need it to be a hashtable on import, then you need to use the `Export-Cli
 If you have a file that contains a hashtable using Powershell syntax, there is a way to import it directly. 
 
     $content = Get-Content -Path $Path -Raw -ErrorAction Stop
-    $scriptBlock = [scriptblock]::Create($content)
-    $scriptBlock.CheckRestrictedLanguage($allowedCommands, $allowedVariables, $true)
-    $hashtable = (& $scriptBlock) 
+    $scriptBlock = [scriptblock]::Create( $content )
+    $scriptBlock.CheckRestrictedLanguage( $allowedCommands, $allowedVariables, $true )
+    $hashtable = ( & $scriptBlock ) 
 
 It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other powershell commands in it before it executes it.
 
