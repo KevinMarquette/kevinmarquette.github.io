@@ -8,6 +8,7 @@ tags: [PowerShell, hashtable]
 I want to take a step back and talk about [hashtables](https://technet.microsoft.com/en-us/library/hh847780.aspx). I use these all the time now. I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them at first that he had. Hashtables are really important in Powershell so it is good to have a solid understanding of them.
 
 #Table of Contents
+* TOC
 {:toc}
 
 # Hashtable as a collection of things
