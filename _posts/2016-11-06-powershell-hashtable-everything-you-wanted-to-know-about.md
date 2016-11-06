@@ -365,7 +365,7 @@ Sometimes you just need to have an object and using a hashtable to hold properti
 I already have very detailed write up for [pscustomobject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/) that you should go read after this one. It builds on a lot of the thing learned here.
 
 ## Saving to CSV
-Struggling with getting a hashtable to save to a CSV is one of the difficulties that was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
+Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above. Convert your hashtable to a `pscustomobject` and it will save correctly to CSV. It helps if you start with a `pscustomobject` so the column order is preserved. But you can do this if needed.
 
     $person | ForEach-Object{[pscustomobject]$_} | Export-CSV -Path $path
 
