@@ -431,7 +431,7 @@ If I need to save a nested hashtable to a file and then read it back in again, I
     $people | ConvertTo-JSON | Set-Content -Path $path
     $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
-There are two important points about this method. First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string. The Second is that the imported object is no longer a hashtable. It is now a `pscustomobject` and that can cause issues if your don't expect it.
+There are two important points about this method. First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string. The Second is that the imported object is no longer a hashtable. It is now a `pscustomobject` and that can cause issues if you don't expect it.
 
 If you need it to be a hashtable on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.
 
