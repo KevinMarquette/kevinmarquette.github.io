@@ -10,7 +10,7 @@ I want to take a step back and talk about [hashtables](https://technet.microsoft
 [Index](#index)
 
 # Hashtable as a collection of things
-I want you to first see a Hashtable as a collection in the traditional definition of a hashtable. This gives you a fundamental understadning of how they work when they get used for more advanced stuff later. Skipping this understanding is often a source of confusion.
+I want you to first see a Hashtable as a collection in the traditional definition of a hashtable. This gives you a fundamental understanding of how they work when they get used for more advanced stuff later. Skipping this understanding is often a source of confusion.
 
 ## What is an array?
 Before I jump into what a Hashtable is, I need to mention [arrays](https://technet.microsoft.com/en-us/library/hh847882.aspx) first. For the purpose of this discussion, an array is a list or collection of values or objects. 
