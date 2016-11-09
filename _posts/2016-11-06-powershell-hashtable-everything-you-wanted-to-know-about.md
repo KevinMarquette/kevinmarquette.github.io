@@ -296,11 +296,6 @@ Hashtables support the addition opperator to combine two hashtables.
 
 This only works if the two hashtables do not share a key.
 
-## PSBoundParameters
-[PSBoundParameters](http://tommymaynard.com/quick-learn-the-psboundparameters-automatic-variable-2016/) is an automatic variable that only exists inside the context of a function. It contains all the parameters that the function was called with. This isn't exactly a hashtable but close enough that you can treat it like one. 
-
-That includes removing keys and splatting it to other functions. If you find yourself writing proxy functions, take a closer look at this one.
-
 ## Nested hashtables
 We can use hashtables as values inside a hashtable. 
 
@@ -466,6 +461,29 @@ You can do some odd things that you may not have realized you could do.
 Just because you can do something, it does not mean that you should. That last one just looks like a bug waiting to happen and would be easily misunderstood by anyone reading your code.
 
 Technically your key does not have to be a string but they are easier to think about if you only use strings.
+
+## PSBoundParameters
+[PSBoundParameters](http://tommymaynard.com/quick-learn-the-psboundparameters-automatic-variable-2016/) is an automatic variable that only exists inside the context of a function. It contains all the parameters that the function was called with. This isn't exactly a hashtable but close enough that you can treat it like one. 
+
+That includes removing keys and splatting it to other functions. If you find yourself writing proxy functions, take a closer look at this one.
+
+See [about_Automatic_Variables](https://technet.microsoft.com/en-us/library/hh847768.aspx) for more details.
+
+## PSDefaultParameterValues
+This is another automatic variable that lets you assign default values to any cmdlet without changing the cmdlet. Take a look at this example.
+
+    $PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
+
+This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default value for the `Out-File -Encoding` parameter. This is session specific so you should place it in your `$profile`. 
+
+I use this often to pre-assign values that I type quite often. 
+
+This also accepts wildcards so you can set values in bulk. Here are some ways you can use that:
+
+    $PSDefaultParameterValues[ "Get-*:Verbose" ] = $true
+    $PSDefaultParameterValues[ "*:Credential" ] = Get-Credental
+
+See [about_Parameters_Default_Values](https://technet.microsoft.com/en-us/library/hh847819.aspx) for more details.
 
 ## Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
