@@ -16,14 +16,14 @@ Before you dive into remoting, check to see if the command you want to run suppo
 
     Get-CimInstance Win32_BIOS -ComputerName $ComputerName
 
-There are a good number of cmdlets that support specifying a target system without using remoting.
+There are a good number of cmdlets that support specifying a target system already without using remoting.
 
 ## Quickly enabling PSRemoting
-On Windows 8 and Server 2012, remoting should already be enabled by default. For anything older, we still have to enable it with this command. 
+On Server 2012, remoting should already be enabled by default. For anything older, we still have to enable it with this command (as an administrator). 
 
     Enable-PSRemoting
 
-It will perform the needed configuration steps to get PSRemoting enabled. There are lots of scenarios where it isn't this simple and you may need to troubleshoot some things. I have an entire section bellow dedicated to working out connectivity issues below/ 
+It will perform the needed configuration steps to get PSRemoting enabled. There are lots of scenarios where it isn't this simple and you may need to troubleshoot some things. I have an entire section bellow dedicated to working out connectivity issues below.
 
 ## Quick first conneciton
 The first command we are going to work with is `Enter-PSSession`. This creates a remote session with the target system. 
