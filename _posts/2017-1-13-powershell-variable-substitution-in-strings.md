@@ -136,13 +136,6 @@ Look at this example:
 
 It looks very basic but what you don't see is that each time a string is added to `$message` that a whole new string is created. Memory gets allocated, data gets copied and the old one is discarded. Not a big deal when it is only done a few times, but a loop like this would really expose the issue.
 
-Here is a better way to do that:
-
-    $message = foreach($number in 1..10000)
-    {
-        Write-Output " $number"
-    }
-
 ## StringBuilder
 
 StringBuilder is also very popular for building large strings from lots of smaller strings. The reason why is because it just collects all the strings you add to it and only concatenates all of them at the end when you retrieve the value.
@@ -150,11 +143,11 @@ StringBuilder is also very popular for building large strings from lots of small
     $stringBuilder = New-Object -TypeName "System.Text.StringBuilder"
 
     [void]$stringBuilder.Append("Numbers: ")
-    $message += foreach($number in 1..10000)
+    foreach($number in 1..10000)
     {
         [void]$stringBuilder.Append(" $number")
     }
-    $stringBuilder.ToString()
+    $message = $stringBuilder.ToString()
 
 Again, this is something that I am reaching out to .Net for. I don't use it often anymore but it is good to know it is there.
 
