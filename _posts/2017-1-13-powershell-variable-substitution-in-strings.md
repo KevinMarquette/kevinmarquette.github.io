@@ -11,7 +11,7 @@ There are many ways to use variables in strings. I am calling this variable subs
 
 # Concatenation
 
-The the first class of methods can be referred to as concatenation (Appending strings together). It is basically taking several strings and joining them together. There is a long history of using this to build formated strings.
+The the first class of methods can be referred to as concatenation. It is basically taking several strings and joining them together. There is a long history of using this to build formated strings.
 
     $name = 'Kevin Marquette'
     $message = 'Hello, ' + $name
