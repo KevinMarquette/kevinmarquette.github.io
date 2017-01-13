@@ -11,7 +11,7 @@ There are many ways to use variables in strings. I am calling this variable subs
 
 # Concatenation
 
-The the first class of methods can be referred to as concatenation. It is basically taking several strings and joining them together. There is a long history of using this to build formated strings.
+The the first class of methods can be referred to as concatenation (Appending strings together). It is basically taking several strings and joining them together. There is a long history of using this to build formated strings.
 
     $name = 'Kevin Marquette'
     $message = 'Hello, ' + $name
@@ -86,7 +86,7 @@ This is not splatting because I am passing the whole array in, but the idea is s
 
 ## Advanced Formatting
 
-I intentionally called these out as comming from .net because there are lots of formatting options allready well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are build in ways to format various data types.
+I intentionally called these out as comming from .Net because there are lots of formatting options allready well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are build in ways to format various data types.
 
     "{0:yyyyMMdd}" -f (get-date)
     "Population {0:N0}" -f  8175133
@@ -118,7 +118,7 @@ This is often overlooked but a great cmdlet for building a file path.
     $folder = 'Temp'
     Join-Path -Path 'c:\windows' -ChildPath $folder
 
-The great thing about this is it will work out the backslashes correctly when it puts the values together. This is especially important if you are taking values from users or config files. You may be good at being consistant but not eveyone will be.
+The great thing about this is it will work out the backslashes correctly when it puts the values together. This is especially important if you are taking values from users or config files. 
 
 This also goes well with `Split-Path` and `Test-Path`.
 
@@ -134,12 +134,11 @@ Look at this example:
         $message += " $number"
     }
 
-It looks very basic but what you don't see is that each time a string is added to message that a whole new string is created. Memory gets allocated, data gets copied and the old one discarded. Not a big deal when it is only done a few times, but a loop like this would really expose the issue.
+It looks very basic but what you don't see is that each time a string is added to `$message` that a whole new string is created. Memory gets allocated, data gets copied and the old one is discarded. Not a big deal when it is only done a few times, but a loop like this would really expose the issue.
 
 Here is a better way to do that:
 
-    $message = "Numbers: "
-    $message += foreach($number in 1..10000)
+    $message = foreach($number in 1..10000)
     {
         Write-Output " $number"
     }
@@ -157,11 +156,13 @@ StringBuilder is also very popular for building large strings from lots of small
     }
     $stringBuilder.ToString()
 
-Again, this is something that I am reaching out to .net for. I don't use it often but it is good to know it is there.
+Again, this is something that I am reaching out to .Net for. I don't use it often anymore but it is good to know it is there.
 
 # Find and Replace Tokens
 
-That covers it for the stuff built into Powershell. While most of this is to limit your need to roll your own, there are times where you may have large template files where you want to replace strings inside. Here is an example. Let us assume you pulled in a template from a file that has a lot of text.
+That covers it for the stuff built into Powershell. While most of thease features limit your need to roll your own solution, there are times where you may have large template files where you want to replace strings inside.
+
+Let us assume you pulled in a template from a file that has a lot of text.
 
     $letter = Get-Content -Path TemplateLetter.txt -RAW
     $letter = $letter -replace '#FULL_NAME#', 'Kevin Marquette'
@@ -170,14 +171,14 @@ You may have lots of tokens to replace. The trick is to use a very distinct toke
 
 ## Auto Find and Replace Tokens
 
-This is one that I am leaving up to the reader because I don't have a code sample handy for it, but I find it kind of cool. In theory, you could regex parse the template for those tokens. Then reference each token in a lookup hashtable to pull a value for replacement. Just don't expect this to be efficient.
+This is one that I am leaving up to the reader because I don't have a code sample handy for it, but I find it kind of clever. In theory, you could regex parse the template for those tokens. Then reference each token in a lookup hashtable to pull a value for replacement. Just don't expect this to be efficient.
 
-# Whatever works the best for any given situation
+# Whatever works the best for you
 
 I am a fan of the format string approach. I definitely do this with the more complicated strings or if there are multiple variables. On anything that is very short, I may use any one of these. 
 
 ## Anything else?
-I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
+I covered a lot of ground on this one. My hope is that you walk away leaning something new.
 
 Here is a list of everything we covered in case you want to jump back up to something. 
 
