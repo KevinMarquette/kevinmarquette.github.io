@@ -158,20 +158,56 @@ StringBuilder is also very popular for building large strings from lots of small
 
 Again, this is something that I am reaching out to .Net for. I don't use it often anymore but it is good to know it is there.
 
+# Delineation with braces
+
+This is used for suffix concatination within the string. 
+
+    $test = "Bet"
+    $tester = "Better"
+    Write-Host "$test $tester ${test}ter"
+
+Thank you [/u/real_parbold](https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfm6p/) for that one.
+
+Here is an alternate to this approache:
+
+    Write-Host "$test $tester $($test)ter"
+    Write-Host "{0} {1} {0}ter" -f $test, $tester
+
+I personally use format string for this, but this is good to know incase you see it in the wild. 
+
 # Find and replace tokens
 
-That covers it for the stuff built into Powershell. While most of thease features limit your need to roll your own solution, there are times where you may have large template files where you want to replace strings inside.
+While most of thease features limit your need to roll your own solution, there are times where you may have large template files where you want to replace strings inside.
 
 Let us assume you pulled in a template from a file that has a lot of text.
 
     $letter = Get-Content -Path TemplateLetter.txt -RAW
     $letter = $letter -replace '#FULL_NAME#', 'Kevin Marquette'
 
-You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it.
+You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it. 
 
-## Auto find and replace tokens
+I recently found a new way to approach this. I decided to leave this section in here because this is a pattern that is commonly used. 
 
-This is one that I am leaving up to the reader because I don't have a code sample handy for it, but I find it kind of clever. In theory, you could regex parse the template for those tokens. Then reference each token in a lookup hashtable to pull a value for replacement. Just don't expect this to be efficient.
+## ExecutionContext ExpandString
+
+There is a clever way to define a substitution string with single quotes and expand the vaiables later. Look at this example:
+
+    $message = 'Hello, $Name!'
+    $name = 'Kevin Marquette'    
+    $string = $ExecutionContext.InvokeCommand.ExpandString($message)
+
+The call to `.InvokeCommand.ExpandString` on the current execution context will use the variables in the current scope for substitution. The key thing here is that the `$message` can be defined very early before the variables even exist. 
+
+If we expand on that just a little bit, we can perform this substitution over and over wih different values.
+
+    $message = 'Hello, $Name!'
+    $nameList = 'Mark Kraus','Kevin Marquette','Lee Dailey'
+    foreach($name in $nameList){
+        $ExecutionContext.InvokeCommand.ExpandString($message)
+    }
+
+To keep going on this idea; you could be importing a large email template from a text file to do this. I have to thank [Mark Kraus](https://get-powershellblog.blogspot.com/) for this sugestion. 
+
 
 # Whatever works the best for you
 
