@@ -25,7 +25,7 @@ This works out OK when there are very few values to add. Especially so if there 
 
 This is a very simple and common requirement and this is already getting harder to read. 
 
-# Variable Substitution
+# Variable substitution
 
 Powershell has another option that is very easy. You can specify your variables directly in the strings.
 
@@ -33,7 +33,7 @@ Powershell has another option that is very easy. You can specify your variables 
 
 This is where the type of quotes you use on your strings makes a difference. A double quoted string will allow the substitution but a single quoted string will not. There are times you will want one of the other so you have an option.
 
-# Command Substitution
+# Command substitution
 
 Things get a little tricky when you start trying to get the values of properties into a string. This is where many new people get tripped up. First let me show you what they think should work (and at face value almost looks like it should).
 
@@ -50,7 +50,7 @@ Powershell allows you to do command execution inside the string with a special s
 
 This works great for some situations but it can get just as crazy as concatenation if you have just a few variables.
 
-## Command Execution
+## Command execution
 
 I kind of glazed over this really quickly a second ago. You can run commands inside a string.
 
@@ -58,7 +58,7 @@ I kind of glazed over this really quickly a second ago. You can run commands ins
 
 Even though I have this option, I don't like it. It gets cluttered quickly and hard to debug. I will either run the command and save to a variable or use a format string.
 
-# Format String
+# Format string
 
 .Net has a way to format strings that I find to be fairly easy to work with. First let me show you the static method for it before I show you the Powershell shortcut to do the same thing.
 
@@ -72,7 +72,7 @@ What is happening here is that the string is parsed for the tokens `{0}` and `{1
 
 The more complicated the string gets, the more value you will get out of this approach. 
 
-## Format Values as arrays
+## Format values as arrays
 
 If your format line gets too long, you can place your values into an array first.
 
@@ -84,7 +84,7 @@ If your format line gets too long, you can place your values into an array first
 
 This is not splatting because I am passing the whole array in, but the idea is similar.
 
-## Advanced Formatting
+## Advanced formatting
 
 I intentionally called these out as comming from .Net because there are lots of formatting options allready well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are build in ways to format various data types.
 
@@ -158,7 +158,7 @@ StringBuilder is also very popular for building large strings from lots of small
 
 Again, this is something that I am reaching out to .Net for. I don't use it often anymore but it is good to know it is there.
 
-# Find and Replace Tokens
+# Find and replace tokens
 
 That covers it for the stuff built into Powershell. While most of thease features limit your need to roll your own solution, there are times where you may have large template files where you want to replace strings inside.
 
@@ -169,7 +169,7 @@ Let us assume you pulled in a template from a file that has a lot of text.
 
 You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it.
 
-## Auto Find and Replace Tokens
+## Auto find and replace tokens
 
 This is one that I am leaving up to the reader because I don't have a code sample handy for it, but I find it kind of clever. In theory, you could regex parse the template for those tokens. Then reference each token in a lookup hashtable to pull a value for replacement. Just don't expect this to be efficient.
 
