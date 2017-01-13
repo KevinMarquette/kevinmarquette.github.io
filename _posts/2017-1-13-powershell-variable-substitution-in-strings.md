@@ -206,7 +206,7 @@ If we expand on that just a little bit, we can perform this substitution over an
         $ExecutionContext.InvokeCommand.ExpandString($message)
     }
 
-To keep going on this idea; you could be importing a large email template from a text file to do this. I have to thank [Mark Kraus](https://get-powershellblog.blogspot.com/) for this sugestion. 
+To keep going on this idea; you could be importing a large email template from a text file to do this. I have to thank [Mark Kraus](https://get-powershellblog.blogspot.com/) for this [sugestion](https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfia5/). 
 
 
 # Whatever works the best for you
