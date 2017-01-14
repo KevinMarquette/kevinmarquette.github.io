@@ -31,7 +31,7 @@ Powershell has another option that is very easy. You can specify your variables 
 
     $message = "Hello, $first $last."
 
-This is where the type of quotes you use on your strings makes a difference. A double quoted string will allow the substitution but a single quoted string will not. There are times you will want one of the other so you have an option.
+This is where the type of quotes you use on your strings makes a difference. A double quoted string will allow the substitution but a single quoted string will not. There are times you will want one or the other so you have an option.
 
 # Command substitution
 
@@ -153,7 +153,7 @@ Again, this is something that I am reaching out to .Net for. I don't use it ofte
 
 # Delineation with braces
 
-This is used for suffix concatination within the string. Somtimes your variable does not have a clean word boundry. 
+This is used for suffix concatination within the string. Sometimes your variable does not have a clean word boundary. 
 
     $test = "Bet"
     $tester = "Better"
