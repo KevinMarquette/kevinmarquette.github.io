@@ -11,7 +11,7 @@ I also realize that I may have some older ideas baked into my process. I have se
 
 I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by [RamblingCookieMonster](http://ramblingcookiemonster.github.io/) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community and already has a lot of the things I would like to implement. It also helps that he has written many of the things I want to use and has several great blog posts on how to use them.
 
-h3. Getting Started
+# Getting Started
 
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams in script. With the proper helper functions, it would make it very easy to generate graphs on the fly. 
 
@@ -19,9 +19,9 @@ So, lets get started. The first thing is to create a new repository on github ca
 
     git clone https://github.com/KevinMarquette/PSGraphViz.git
 
-h3. Folder Structure
+## Folder Structure
 
-I am going to create a folder structure much like PSDepend for everything to live in. 
+I created a folder structure much like PSDepend for everything to live in. 
 
     PSGraphViz
     ├───Examples
@@ -35,11 +35,11 @@ I am going to take a moment to talk about what we have here as a way to understa
 
 By moving the Module out of the root of the repository, it allows us to have the Examples, Tests, build and publish components outside the module. I like this because they don't need to be a part of the module and my require additional dependencies that the module should not need when deployed. 
 
-h3. Additional files
+# Additional files
 
 There are a lot of additional files I need to point out. I may start with some empty files and build them as I work through each one.
 
-h4. \build.ps1
+## \build.ps1
 Having this file makes it very easy to figure out where to build from. I have used psake before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
 
     param ($Task = 'Default')
@@ -56,41 +56,80 @@ Having this file makes it very easy to figure out where to build from. I have us
     Invoke-psake -buildFile .\psake.ps1 -taskList $Task -nologo
     exit ( [int]( -not $psake.build_success ) )
 
-In this script, we are defaulting to the 'default' task. The psake.ps1 script will have more tasks and the $Task will allow us to run specified build steps if needed. Then it installs and loads all the required modules for the build. I like what I see where so I'll reuse this script as it is. `Set-BuildEnvironment` is new to me, so I need to loop back and figure out what that is doing.
+In this script, we are defaulting to the 'default' task. The psake.ps1 script will have more tasks and the $Task will allow us to run specified build steps if needed. Then it installs and loads all the required modules for the build. I like what I see here, so I'll reuse this script as it is. `Set-BuildEnvironment` is new to me, so I'll to loop back and figure out what that is doing later.
 
-h4. psake.ps1
+## psake.ps1
 
-This is the psake script that runs all the build tasks. I am going to leave this blank for the moment because I want to take my time walking this file. A lot of the magic is happening here. I do see that it has 4 tasks defined. init, test, build, deploy.
+This is the [psake](https://github.com/psake/psake) script that runs all the build tasks. I am going to leave this blank for the moment because I want to take my time walking this file. A lot of the magic is happening here. I do see that it has 4 tasks defined. init, test, build, deploy.
 
-h4. appvoyer.yml
+As I walk the [psake.ps1](https://github.com/RamblingCookieMonster/PSDeploy/blob/master/psake.ps1) script from PSDeploy, it looks very approachable. There are some hooks in there to account for running in a build system and publishing test results from pester to that build. I may be able to barrow this as it is without changing anything.
 
-This is used for automated builds and module deployment. Again, this is something that I want to implement but I plan on looping back to.
+It is too long to post here so check it out on the repo.
 
+## appvoyer.yml
 
+This is used for automated builds. Again, this is something that I want to implement. The RamblingCookieMonster already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
 
-Now I have a folder with a readme.md file in it. I am going to create a quick module manifest.
+I went over to [AppVoyer.com](https://ci.appveyor.com) and created an account. In almost no effort, I had it looking at my projects on GitHub. I ceated a new project in AppVoyer and selected the GraphViz project of mine. Just like that, I have a build system ready to build my module and I have not even checked anything in yet. 
+
+This is the file.
+
+    # See http://www.appveyor.com/docs/appveyor-yml for many more options
+
+    # Allow WMF5 (i.e. PowerShellGallery functionality)
+    os: WMF 5
+
+    # Skip on updates to the readme.
+    # We can force this by adding [skip ci] or [ci skip] anywhere in commit message 
+    skip_commits:
+    message: /updated readme.*|update readme.*s/
+
+    build: false
+
+    #Kick off the CI/CD pipeline
+    test_script:
+    - ps: . .\build.ps1
+
+This yaml file looks fairly basic. I can follow that easy enough and I don't think I need to change anything.
+
+## mkdocs.yml
+
+Up until this point, I have actually worked with or have a general understanding of everything. This file was new to me. At first glance, it looks like it used to build documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does intrest me. I'll loop back on this one later.
+
+## deploy.GraphViz.ps1
+
+After a bit of review, this looks like it allows the build system to deploy the module to the PS Gallery. It needs to be checked into master with a commit message containing `!deploy`. 
+
+    if($ENV:BHProjectName -and $ENV:BHProjectName.Count -eq 1)
+    {
+        Deploy Module {
+            By PSGalleryModule {
+                FromSource $ENV:BHProjectName
+                To PSGallery
+                WithOptions @{
+                    ApiKey = $ENV:NugetApiKey
+                }
+            }
+        }
+    }
+
+I don't think I need to even change anything in this file. I like the way it looks and what it does. That `$ENV:NugetApiKey` is actually my API key for the PS Gallery. I did define that in my appvoyer.com project under environment variables.
+
+# Powershell Gallery
+
+I did need to get an API key for the [Powershell Gallery](https://www.powershellgallery.com/account). Just had to register on the website and the key was right there. Very quick and simple.
+
+# Module Manifest
+
+After all of that, I still don't have a module manifest. I could have started with the manifest, but dropping in all these other files was fairly quick. 
+
+I am going to create a quick module manifest.
 
     $module = @{
         Author = 'Kevin Marquette' 
-        Description = 'GraphViz helper module' 
+        Description = 'GraphViz helper module for generating graph images' 
         RootModule = 'PSGraphViz.psm1'
         Path = 'PSGraphViz.psd1'
     }
     New-ModuleManifest @module
-    Set-Content -Value '' -Path $module.RootModule
 
-Now I have an empty module with nothing in it. 
-
-h3. Next steps
-I already have an idea of some of the modules that I want to incorporate into this one. Here is the list of things that I am looking to incorporate into this module. 
-
-* Pester
-* PSDepends
-* psake
-* BuildHelper
-* PSDeploy
-
-Some of those I have never worked with before so this feels like a great time to learn them. I have worked with others on my own, but I want to investigate how the community is using them for ideas that I have overlooked. And Pester is an old friend of mine.
-
-    
-    
