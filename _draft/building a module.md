@@ -76,6 +76,10 @@ This is the file.
 
     # See http://www.appveyor.com/docs/appveyor-yml for many more options
 
+    environment:
+      NugetApiKey:
+        secure: sqj8QGRYue5Vq3vZm2GdcCttqyOkt7NOheKlnmIUq1UcgVrmDezFArp/2Z1+G3oT
+
     # Allow WMF5 (i.e. PowerShellGallery functionality)
     os: WMF 5
 
@@ -90,11 +94,13 @@ This is the file.
     test_script:
     - ps: . .\build.ps1
 
-This yaml file looks fairly basic. I can follow that easy enough and I don't think I need to change anything.
+This yaml file looks fairly basic with one exception. I'll mention how to get a NewgetApiKey in a moment, but that is something that needs to be secured. I pinged the RamblingCookieMonster on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
+
+I used everything else as it was. 
 
 ## mkdocs.yml
 
-Up until this point, I have actually worked with or have a general understanding of everything. This file was new to me. At first glance, it looks like it used to build documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does intrest me. I'll loop back on this one later.
+Up until this point, I have actually worked with or have a general understanding of everything. This file was new to me. At first glance, it looks like it builds documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does intrest me. I'll loop back on this one in the future.
 
 ## deploy.GraphViz.ps1
 
@@ -113,7 +119,7 @@ After a bit of review, this looks like it allows the build system to deploy the 
         }
     }
 
-I don't think I need to even change anything in this file. I like the way it looks and what it does. That `$ENV:NugetApiKey` is actually my API key for the PS Gallery. I did define that in my appvoyer.com project under environment variables.
+I don't think I need to even change anything in this file. I like the way it looks and what it does. That `$ENV:NugetApiKey` is actually my API key for the PS Gallery. That was securly created and added to the appvoyer.yml.
 
 # Powershell Gallery
 
@@ -121,7 +127,7 @@ I did need to get an API key for the [Powershell Gallery](https://www.powershell
 
 # Module Manifest
 
-After all of that, I still don't have a module manifest. I could have started with the manifest, but dropping in all these other files was fairly quick. 
+After all of that, I still don't have a module manifest. I could have started with the manifest, but dropping in all these other files was fairly quick and I figured there is a lot of general module information available already.
 
 I am going to create a quick module manifest.
 
@@ -132,4 +138,18 @@ I am going to create a quick module manifest.
         Path = 'PSGraphViz.psd1'
     }
     New-ModuleManifest @module
+
+And create a starter psd1 file.
+
+    Set-Content -Value '' -Path $module.RootModule
+
+I'll add some real content to that file as I need it.
+
+# PSDepend
+
+This project will depend on some external binaries for GraphViz. I was looking for a reason to also work with PSDepend and it sounds like a good fit.
+
+## requirements.psd1
+
+First I need to define my requirements. I know there is a zip file for [GraphViz-2.38](http://graphviz.org/pub/graphviz/stable/windows/graphviz-2.38.zip). 
 
