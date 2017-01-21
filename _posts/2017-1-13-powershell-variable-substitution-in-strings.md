@@ -86,7 +86,7 @@ This is not splatting because I am passing the whole array in, but the idea is s
 
 ## Advanced formatting
 
-I intentionally called these out as comming from .Net because there are lots of formatting options allready well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are built in ways to format various data types.
+I intentionally called these out as coming from .Net because there are lots of formatting options already well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are built in ways to format various data types.
 
     "{0:yyyyMMdd}" -f (get-date)
     "Population {0:N0}" -f  8175133
