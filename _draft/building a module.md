@@ -139,17 +139,33 @@ I am going to create a quick module manifest.
     }
     New-ModuleManifest @module
 
-And create a starter psd1 file.
+# pam1 module
+Now we need to create the psm1 file for the module. Normally, you would place all your module code inside the .spm1 file. Technicaly, all you need is a .psm1 file to have a module. Because I like to break out my code into smaller files, the psm1 will be used to load those other files at runtime.
 
-    Set-Content -Value '' -Path $module.RootModule
+This is something I have done for a long time and alreayd have a good module loader. 
 
-I'll add some real content to that file as I need it.
+    Write-Verbose "Importing Functions"
 
-# PSDepend
+    # Import everything in sub folders folder
+    foreach($folder in @('private', 'public', 'classes'))
+    {
+        $root = Join-Path -Path $PSScriptRoot -ChildPath $folder
+        if(Test-Path -Path $root)
+        {
+            $files = Get-ChildItem -Path $root -Filter *.ps1 -Exclude *.tests.ps1
 
-This project will depend on some external binaries for GraphViz. I was looking for a reason to also work with PSDepend and it sounds like a good fit.
+            # dot source each file
+            $files | ForEach-Object{Write-Verbose $_.name; . $_.FullName}
+        }
+    }
 
-## requirements.psd1
+    Export-Modulemember -function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
 
-First I need to define my requirements. I know there is a zip file for [GraphViz-2.38](http://graphviz.org/pub/graphviz/stable/windows/graphviz-2.38.zip). 
+# Functions
+
+Now that we have a loader, we can add a few functions. I'll start with a function to install GraphViz and another to wrap around the dot.exe. Once I get those two created, then I have a minimally viable module where I can add tests. I an also test and validate all the things I did up until this point. 
+
+# In closing
+
+I'll pick create those two functions and add more details in a future post. This all came together quite nicely. 
 
