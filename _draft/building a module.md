@@ -221,7 +221,7 @@ Sometimes I am already on the shell and just commit on the commandline. I also d
 
 I also use some basic branching in my projects but that is not something we need to dive into at the moment.
 
-# Testing
+# Testing and Publishing
 With all of our components in place and having a function we can actually use, I need to see all the pieces working.
 
 ## Pester tests
@@ -305,10 +305,10 @@ I guess everything worked. I love when that happens.
 # In closing
 This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my workflow and approach to figuring this out.
 
-This is the first time I touched several of these components and it all turned out to be a lot easier than I expected. What you don't see is all the mistakes I made along the way. I had things named wrong or pieces missing at various times. At the end of the day, they were fairly easy to sort out. 
+This is the first time I touched several of these components and it all turned out to be a lot easier than I expected. What you don't see are the mistakes I made along the way. I had things named wrong or pieces missing at various times. At the end of the day, they were fairly easy to sort out. 
 
-I do have to give a big thanks to the RamblingCookieMonster for sharing all his work. The code he has in [github](https://github.com/RamblingCookieMonster) and various blog posts is what allowed me to do this so easily.
+I do have to give a big thanks to the [RamblingCookieMonster](http://ramblingcookiemonster.github.io/) for sharing all his work. The code he has in [github](https://github.com/RamblingCookieMonster) and various blog posts is what allowed me to do this so easily.
 
-I have a module that needs a lot of work. Me publishing a working function was only just the beginning.   
+I have a module, but now I need to do the real work. Me publishing a working function was only just the beginning.   
 
 
