@@ -104,7 +104,7 @@ I used everything else as it was (Just had to provide my secure NugetApiKey).
 
 ## Build status in readme.md
 
-One cool thing that I almost overlooked is that Warren has a realtime buid status icon in is project `readme.md`. It looks like this ![Build status](https://ci.appveyor.com/api/projects/status/cgo827o4f74lmf9w/branch/master?svg=true)
+One cool thing that I almost overlooked is that Warren has a realtime buid status icon in his project `readme.md`. It looks like this ![Build status](https://ci.appveyor.com/api/projects/status/cgo827o4f74lmf9w/branch/master?svg=true)
 
 To get that, I had to add this line to the top of my `readme.md`.
 
