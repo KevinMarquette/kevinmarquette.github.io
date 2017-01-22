@@ -12,6 +12,8 @@ I also realize that I may have some older ideas baked into my process. I have se
 
 I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
 
+[Index](#index)
+
 # Getting Started
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams wtih text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
@@ -311,4 +313,7 @@ I do have to give a big thanks to the [RamblingCookieMonster](http://ramblingcoo
 
 I have a module, but now I need to do the real work. Me publishing a working function was only just the beginning.   
 
+# Index
 
+* TOC
+{:toc}
