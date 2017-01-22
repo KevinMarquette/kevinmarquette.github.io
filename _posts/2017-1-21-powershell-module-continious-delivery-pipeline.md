@@ -14,7 +14,21 @@ I am working on a new module and I want to rethink a lot of the things I have do
 
 [Index](#index)
 
-# Getting started
+# Quick overview
+At a high level, we are going to build a new module and put in place several components that make up the CI/CD pipeline. 
+
+* Source control with [Git](https://git-scm.com/) and [GitHub](https://github.com/)
+* Build scripts with [psake](https://github.com/psake/psake)
+* Tests with [Pester](https://github.com/pester/Pester)
+* Publishing to the [Powershell Gallery](https://www.powershellgallery.com/) with [PSDeploy](https://github.com/RamblingCookieMonster/PSDeploy)
+* Automated with [AppVeyor.com](https://www.appveyor.com/)
+
+## Dependencies
+The build script will handle most dependencies and we will create accounts with [AppVeyor.com](https://www.appveyor.com/) and [Powershell Gallery](https://www.powershellgallery.com/) along the way.
+
+The only local component you really need in order to follow along is Git, Powershell 5.0 and Pester. If you run the build script, it will pull down all the other required modules to run the pipeline locally. 
+
+# Getting started building my module
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams with text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
 So, let's get started. The first thing is to create a new repository on github called [PSGraphViz](https://github.com/KevinMarquette/PSGraphViz). If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
@@ -289,7 +303,7 @@ Now we run the build. It should first install all the build related dependencies
     Deploy 00:00:00.0711113
     Total: 00:00:06.2215688
 
-I get a clean build but nothing published to the PSGallery. I am good with that default behaviour.
+I get a clean build but nothing published to the PSGallery. I am good with that default behavior.
 
 ## First AppVeyor build
 
@@ -320,7 +334,7 @@ The only thing left to do after it finishes is check the PSGallery for the modul
 I guess everything worked. I love when that happens.
 
 # In closing
-This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my workflow and approach to figuring this out.
+This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my work flow and approach to figuring this out.
 
 This is the first time I touched several of these components and it all turned out to be a lot easier than I expected. What you don't see are the mistakes I made along the way. I had things named wrong or pieces missing at various times. At the end of the day, they were fairly easy to sort out. 
 
