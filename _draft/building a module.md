@@ -5,23 +5,23 @@ date: 2017-1-11
 tags: [PowerShell,Module]
 ---
 
+# A fresh start
 I have not built a module from scratch in a long time. My process has evolved and I have incorporated a lot of ideas into my process. Most of the time, I copy an existing module and just gut out all the functions. This has worked because each module grows a little more from the last time I built one. 
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
 
-I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by [RamblingCookieMonster](http://ramblingcookiemonster.github.io/) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community and already has a lot of the things I would like to implement. It also helps that he has written many of the things I want to use and has several great blog posts on how to use them.
+I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
 
 # Getting Started
+I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams in text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
-I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams in script. With the proper helper functions, it would make it very easy to generate graphs on the fly. 
-
-So, let's get started. The first thing is to create a new repository on github called PSGraphViz. If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system to work on.
+So, let's get started. The first thing is to create a new repository on github called PSGraphViz. If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
     git clone https://github.com/KevinMarquette/PSGraphViz.git
 
 ## Folder Structure
 
-I created a folder structure much like PSDepend for everything to live in. 
+I created a folder structure much like PSDepend. 
 
     PSGraphViz
     ├───Examples
@@ -31,13 +31,13 @@ I created a folder structure much like PSDepend for everything to live in.
     │   └───Public
     └───Tests
 
-I am going to take a moment to talk about what we have here as a way to understand it better. This already breaks from my approach and I think it does so in a good way. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. I added Classes because I plan on using them for this project. 
+Let's take a moment to talk about what we have here as a way to understand it better. This already breaks from my approach and I think it does so in a good way. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. 
 
-By moving the Module out of the root of the repository, it allows us to have the Examples, Tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. 
+By moving the Module out of the root of the repository, it allows us to have the examples, tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. I like this and I plan on addopting it going forward.
 
 # Additional files and components
 
-There are a lot of additional files I need to point out. I tend to start with empty placeholder files and build them as I work through each one.
+There are a lot of additional files I need to point out. 
 
 ## \build.ps1
 Having this file makes it very easy to figure out where to build from. I have used psake before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
@@ -48,7 +48,7 @@ Having this file makes it very easy to figure out where to build from. I have us
     Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
     Install-Module Psake, PSDeploy, BuildHelpers -force
-    Install-Module Pester -RequiredVersion 3.4.2 -Force
+    Install-Module Pester -Force -SkipPublisherCheck
     Import-Module Psake, BuildHelpers
 
     Set-BuildEnvironment
@@ -62,9 +62,7 @@ In this script, we are defaulting to the 'default' task. The psake.ps1 script wi
 
 This is the [psake](https://github.com/psake/psake) script that runs all the build tasks. A lot of the magic is happening here. It has 4 tasks defined. init, test, build and deploy.
 
-As I walk the [psake.ps1](https://github.com/RamblingCookieMonster/PSDeploy/blob/master/psake.ps1) script from PSDeploy, it looks very approachable. There are some hooks in there to account for running in a build system and publishing test results from pester to that build. I can borrow this as it is without changing anything.
-
-It is a little long to post here so check it out on the repo.
+As I walk the [psake.ps1](https://github.com/RamblingCookieMonster/PSDeploy/blob/master/psake.ps1) script from PSDeploy, it looks very approachable. There are some hooks in there to account for running in a build system and publishing test results from pester to that build. I can borrow this as it is without changing anything. It is a little long to post here so check it out on the repo.
 
 ## Powershell Gallery
 
@@ -72,7 +70,7 @@ I did need to get an API key for the [Powershell Gallery](https://www.powershell
 
 ## appveyor.yml
 
-This is used for automated builds. Again, this is something that I want to implement. The RamblingCookieMonster already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
+This is used for automated builds. Again, this is something that I want to implement. The Warren already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
 
 I went over to [AppVeyor.com](https://ci.appveyor.com) and created an account. In almost no effort, I had it looking at my projects on GitHub. I created a new project in AppVeyor and selected the GraphViz project of mine. Just like that, I have a build system ready to build my module and I have not even checked anything in yet. 
 
@@ -98,7 +96,7 @@ This is the file.
     test_script:
     - ps: . .\build.ps1
 
-This yaml file looks fairly basic with one exception. I'll mention how to get a NewgetApiKey in a moment, but that is something that needs to be secured. I pinged the RamblingCookieMonster on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
+This yaml file looks fairly basic with one exception. I'll mention how to get a NewgetApiKey in a moment, but that is something that needs to be secured. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
 
 I used everything else as it was other than providing my secure NugetApiKey.
 
@@ -270,12 +268,12 @@ The only thing left to do is check the PSGallery for the module.
 I guess everything worked. I love when that happens.
 
 # In closing
-This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details. I more wanted to show you my workflow and approach to figuring this out.
+This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my workflow and approach to figuring this out.
 
 This is the first time I touched several of these components and it all turned out to be a lot easier than I expected. What you don't see is all the mistakes I made along the way. I had things named wrong or pieces missing at various times. At the end of the day, they were fairly easy to sort out. 
 
-I do have to give a big thanks to the RamblingCookieMonster for sharing all his work. The code he has in github and various blog posts is what allowed me to do this so easily.
+I do have to give a big thanks to the RamblingCookieMonster for sharing all his work. The code he has in [github](https://github.com/RamblingCookieMonster) and various blog posts is what allowed me to do this so easily.
 
-With that said, I have a module that needs a lot of work. Publishing a working function was only the beginning.   
+I have a module that needs a lot of work. Me publishing a working function was only just the beginning.   
 
 
