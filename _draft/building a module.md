@@ -211,11 +211,11 @@ Normally I would add this to the `FunctionsToExport` in the module manifest by h
 ## Source control 
 I have been saving into source locally this whole time. This is already part of my workflow.
 
-   #Add all new files
-   git add -A
+    #Add all new files
+    git add -A
 
-   #Commit changes
-   git commit -a -m 'updated project tests'
+    #Commit changes
+    git commit -a -m 'updated project tests'
 
 Sometimes I am already on the shell and just commit on the commandline. I also do a lot of work in [VSCode](https://code.visualstudio.com/) and it has great git integration. I do easily 95% of my git commits from within VSCode.
 
@@ -250,12 +250,29 @@ Now we run the build. It should first install all the build related dependencies
 
     PS:> .\build.ps1
 
+    Executing Build
+    ----------------------------------------------------------------------
+    Executing Deploy
+    ----------------------------------------------------------------------
     Skipping deployment: To deploy, ensure that...
-        * You are in a known build system (Current: Unknown)
-        * You are committing to the master branch (Current: master)
-        * Your commit message includes !deploy (Current: Worked out issue with pester on windows 10 )
+            * You are in a known build system (Current: Unknown)
+            * You are committing to the master branch (Current: master)
+            * Your commit message includes !deploy (Current: Working on the AppVeyor text upload component )
 
-So I get a clean build but nothing published to the PSGallery. I am good with that default behaviour.
+    Build Succeeded!
+
+    ----------------------------------------------------------------------
+    Build Time Report
+    ----------------------------------------------------------------------
+    Name   Duration
+    ----   --------
+    Init   00:00:00.0640305
+    Test   00:00:01.6234376
+    Build  00:00:04.3823107
+    Deploy 00:00:00.0711113
+    Total: 00:00:06.2215688
+
+I get a clean build but nothing published to the PSGallery. I am good with that default behaviour.
 
 ## First AppVeyor build
 
@@ -275,7 +292,7 @@ I am ready to see the AppVeyor system in action. I need a commit that contains `
 
 Give it a few minutes and we should see the build queued at appveyor.com when we log in. Once it starts, we can click on it to see the build output. 
 
-The only thing left to do is check the PSGallery for the module.
+The only thing left to do after it finishes is check the PSGallery for the module.
 
     PS:> Find-Module PSGraphViz
 
