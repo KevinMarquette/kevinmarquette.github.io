@@ -39,7 +39,7 @@ By moving the Module out of the root of the repository, it allows us to have the
 
 There are a lot of additional files I need to point out. 
 
-## \build.ps1
+## build.ps1
 Having this file makes it very easy to figure out where to build from. I have used psake before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
 
     param ($Task = 'Default')
@@ -60,21 +60,21 @@ In this script, we are defaulting to the 'default' task. The psake.ps1 script wi
 
 ## psake.ps1
 
-This is the [psake](https://github.com/psake/psake) script that runs all the build tasks. A lot of the magic is happening here. It has 4 tasks defined. init, test, build and deploy.
+This is the [psake](https://github.com/psake/psake) script that runs all the build tasks. A lot of the magic is happening here. It has 4 tasks defined. `init`, `test`, `build` and `deploy`.
 
 As I walk the [psake.ps1](https://github.com/RamblingCookieMonster/PSDeploy/blob/master/psake.ps1) script from PSDeploy, it looks very approachable. There are some hooks in there to account for running in a build system and publishing test results from pester to that build. I can borrow this as it is without changing anything. It is a little long to post here so check it out on the repo.
 
 ## Powershell Gallery
 
-I did need to get an API key for the [Powershell Gallery](https://www.powershellgallery.com/account). Just had to register on the website and the key was right there. Very quick and simple. I'll show you where to use it here in a moment.
+I did need to get an API key for the [Powershell Gallery](https://www.powershellgallery.com/account). Just had to register on the website and the key was right there. Very quick and simple. I'll show you where to use it in the next section.
 
 ## appveyor.yml
 
-This is used for automated builds. Again, this is something that I want to implement. The Warren already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
+This is used for automated builds. Again, this is something that I want to implement. Warren already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
 
 I went over to [AppVeyor.com](https://ci.appveyor.com) and created an account. In almost no effort, I had it looking at my projects on GitHub. I created a new project in AppVeyor and selected the GraphViz project of mine. Just like that, I have a build system ready to build my module and I have not even checked anything in yet. 
 
-This is the file.
+This is the file I need to place in my local project.
 
     # See http://www.appveyor.com/docs/appveyor-yml for many more options
 
@@ -96,7 +96,7 @@ This is the file.
     test_script:
     - ps: . .\build.ps1
 
-This yaml file looks fairly basic with one exception. I'll mention how to get a NewgetApiKey in a moment, but that is something that needs to be secured. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
+This yaml file looks fairly basic with one exception. That NewgetApiKey my API key for the PSGallery. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
 
 I used everything else as it was other than providing my secure NugetApiKey.
 
@@ -104,7 +104,7 @@ I used everything else as it was other than providing my secure NugetApiKey.
 
 Up until this point, I have actually worked with or have a general understanding of everything. This file was new to me. At first glance, it looks like it builds documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does interest me. I'll loop back on this one in the future.
 
-## deploy.GraphViz.ps1
+## deploy.PSDeploy.ps1
 After a bit of review, this looks like it allows the build system to deploy the module to the PS Gallery. It needs to be checked into master with a commit message containing `!deploy`. 
 
     if($ENV:BHProjectName -and $ENV:BHProjectName.Count -eq 1)
@@ -123,7 +123,7 @@ After a bit of review, this looks like it allows the build system to deploy the 
 I don't think I need to even change anything in this file. I like the way it looks and what it does. That `$ENV:NugetApiKey` is my API key for the PS Gallery. That was securely created and added to the appvoyer.yml.
 
 ## Pester test
-I also need my first prester test. When I run the build script, it dpends on me having tests to. I'll do something simple like validate that the powershell is mostly valid powershell. This is my starter `tests\Project.Tests.ps1`
+I also need my first Pester test. When I run the build script, it dpends on me having passing tests. I'll do something simple like validate that the powershell is mostly valid code. This is my starter `tests\Project.Tests.ps1`
 
     $projectRoot = Resolve-Path "$PSScriptRoot\.."
     $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psm1")
@@ -153,9 +153,9 @@ I also need my first prester test. When I run the build script, it dpends on me 
 
 I defined several variables at the start that I feel like I may need. I am trying really hard to not hardcode paths or project names. I do this so I can easily reuse it in other projects.
 
-It first walks every Powershell file in the project and tries to tokenize it. If that fails, then there is a syntax error someplace. It then performs an import of the module. This is just a quick safety net for some typos and a good starter test for any project.
+The rest of it looks more complicated than it is. It first walks every Powershell file in the project and tries to tokenize it. If that fails, then there is a syntax error someplace. It then performs an import of the module. This is just a quick safety net for some typos and a good starter test for any project.
 
-If we run this right now, only the module import should fail because we have not done that part yet.
+If we run this right now, only the module import should fail because we have not built that part yet.
 
 ## Module manifest
 
@@ -197,16 +197,16 @@ This is something I have done for a long time and already have a good module loa
         }
     }
 
-Export-ModuleMember -function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
+    Export-ModuleMember -function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
 
 
 Because I have a build process, I may end up adding a build step to pull all these external files into the psm1 file at publish time. 
 
 ## Functions
 
-Now that we have a loader, we need to add a few functions. I created a wrapper for the primary executable in GraphViz. Go check out the project if you want to see how I did that one. I called it `Invoke-GraphViz` for now and placed it into the public folder.
+Now that we have a loader, we need to add a few functions. I created a wrapper for the primary executable in GraphViz. Go check out the project if you want to see how I did that one. I called it `Invoke-GraphViz` for now and placed it into the public folder `PSGraphViz\public\invoke-graphviz.ps1`.
 
-I am going to add this to the `FunctionsToExport` in the module manifest by hand. After everything is up and running, the build script should take care of that.
+Normally I would add this to the `FunctionsToExport` in the module manifest by hand. After everything is up and running, the build script should take care of that. That is one of the advantages of having a build process.
 
 ## Source control 
 A quick comment on git. I have been saving into source locally this whole time. 
@@ -221,7 +221,7 @@ Sometimes I am already on the shell and just commit on the commandline. I also d
 
 I do use some basic branching in my projects but that is not something we need to dive into at the moment.
 
-# Local testing
+# Testing
 With all of our components in place and having a function we can actually use, we need to see all the pieces working.
 
 ## Pester tests
