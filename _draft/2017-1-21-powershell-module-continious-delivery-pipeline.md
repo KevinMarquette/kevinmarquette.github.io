@@ -17,7 +17,7 @@ I am working on a new module and I want to rethink a lot of the things I have do
 # Getting started
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams wtih text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
-So, let's get started. The first thing is to create a new repository on github called PSGraphViz. If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
+So, let's get started. The first thing is to create a new repository on github called [PSGraphViz](https://github.com/KevinMarquette/PSGraphViz). If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
     git clone https://github.com/KevinMarquette/PSGraphViz.git
 
