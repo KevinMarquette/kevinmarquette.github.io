@@ -334,7 +334,7 @@ The only thing left to do after it finishes is check the PSGallery for the modul
 I guess everything worked. I love when that happens.
 
 # In closing
-This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my work flow and approach to figuring this out.
+This is really exciting that everything came together so well. Let's take a second and reflect on this. I took a project from the very start and it was published to the PSGallery automatically by the end of this post. I know I covered a lot of ground and skimmed over a lot of details of how these things worked. I more wanted to show you my workflow and approach to figuring this out.
 
 This is the first time I touched several of these components and it all turned out to be a lot easier than I expected. What you don't see are the mistakes I made along the way. I had things named wrong or pieces missing at various times. At the end of the day, they were fairly easy to sort out. 
 
