@@ -98,9 +98,9 @@ This is the file I need to place in my local project.
     test_script:
     - ps: . .\build.ps1
 
-This yaml file looks fairly basic with one exception. That NewgetApiKey my API key for the PSGallery. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use in your files. 
+This yaml file looks fairly basic with one exception, the NewgetApiKey (PSGallery API key). I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use in your files. So just to be clear, this is not your plain text PSGallery api key. That would be very bad. This encrypted with a private key stored in your AppVeyor account.
 
-I used everything else as it was (Just had to provide my secure NugetApiKey).
+I used everything else as it was (Just had to provide my secured NugetApiKey).
 
 ## Build status in readme.md
 
