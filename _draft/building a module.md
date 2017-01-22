@@ -14,14 +14,14 @@ I am working on a new module and I want to rethink a lot of the things I have do
 
 [Index](#index)
 
-# Getting Started
+# Getting started
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams wtih text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
 So, let's get started. The first thing is to create a new repository on github called PSGraphViz. If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
     git clone https://github.com/KevinMarquette/PSGraphViz.git
 
-## Folder Structure
+## Folder structure
 
 I created a folder structure much like PSDepend. 
 
@@ -223,7 +223,7 @@ Sometimes I am already on the shell and just commit on the commandline. I also d
 
 I also use some basic branching in my projects but that is not something we need to dive into at the moment.
 
-# Testing and Publishing
+# Testing and publishing
 With all of our components in place and having a function we can actually use, I need to see all the pieces working.
 
 ## Pester tests
