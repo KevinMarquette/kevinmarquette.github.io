@@ -10,12 +10,12 @@ I have not built a module from scratch in a long time. My process has evolved an
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
 
-I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
+I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. I especially want to incorporate CI/CD (Continious Integration and Continious Delivery) ideas into my pipeline. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
 
 [Index](#index)
 
 # Getting started
-I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams wtih text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
+I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams with text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
 So, let's get started. The first thing is to create a new repository on github called [PSGraphViz](https://github.com/KevinMarquette/PSGraphViz). If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
@@ -35,14 +35,14 @@ I created a folder structure much like PSDepend.
 
 This already breaks from my approach and I think it does so in a good way. Let's take a moment to talk about what we have here as a way to understand it better. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. 
 
-By moving the Module out of the root of the repository, it allows us to have the examples, tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. I like this and I plan on addopting it going forward.
+By moving the Module out of the root of the repository, it allows us to have the examples, tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. I plan on adopting it going forward.
 
 # Additional files and components
 
 There are a lot of additional files I need to walk through. 
 
 ## build.ps1
-Having this file makes it very easy to figure out where to build from. I have used psake before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
+Having this file makes it very easy to figure out where to build from. I have used [psake](https://github.com/psake/psake) before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
 
     param ($Task = 'Default')
 
@@ -62,7 +62,7 @@ In this script, we are defaulting to the 'default' task. The psake.ps1 script wi
 
 ## psake.ps1
 
-This is the [psake](https://github.com/psake/psake) script that runs all the build tasks. A lot of the magic is happening here. It has 4 tasks defined. `init`, `test`, `build` and `deploy`.
+This is the psake script that runs all the build tasks. A lot of the magic is happening here. It has 4 tasks defined. `init`, `test`, `build` and `deploy`.
 
 As I walk the [psake.ps1](https://github.com/RamblingCookieMonster/PSDeploy/blob/master/psake.ps1) script from PSDeploy, it looks very approachable. There are some hooks in there to account for running in a build system and publishing test results from pester to that build. I can borrow this as it is without changing anything. It is a little long to post here so check it out on the repo.
 
@@ -198,7 +198,7 @@ This is something I have done for a long time and already have a good module loa
 
     Write-Verbose "Importing Functions"
 
-    # Import everything in sub folders folder
+    # Import everything in these folders
     foreach($folder in @('private', 'public', 'classes'))
     {
         
