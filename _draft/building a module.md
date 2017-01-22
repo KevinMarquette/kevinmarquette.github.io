@@ -5,7 +5,7 @@ date: 2017-1-11
 tags: [PowerShell,Module]
 ---
 
-# A fresh start
+# A fresh start to building a module
 I have not built a module from scratch in a long time. My process has evolved and I have incorporated a lot of ideas into my process. Most of the time, I copy an existing module and just gut out all the functions. This has worked because each module grows a little more from the last time I built one. 
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
@@ -13,7 +13,7 @@ I also realize that I may have some older ideas baked into my process. I have se
 I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
 
 # Getting Started
-I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams in text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
+I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams wtih text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
 So, let's get started. The first thing is to create a new repository on github called PSGraphViz. If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
@@ -31,13 +31,13 @@ I created a folder structure much like PSDepend.
     │   └───Public
     └───Tests
 
-Let's take a moment to talk about what we have here as a way to understand it better. This already breaks from my approach and I think it does so in a good way. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. 
+This already breaks from my approach and I think it does so in a good way. Let's take a moment to talk about what we have here as a way to understand it better. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. 
 
 By moving the Module out of the root of the repository, it allows us to have the examples, tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. I like this and I plan on addopting it going forward.
 
 # Additional files and components
 
-There are a lot of additional files I need to point out. 
+There are a lot of additional files I need to walk through. 
 
 ## build.ps1
 Having this file makes it very easy to figure out where to build from. I have used psake before and the common pattern is to have a build.ps1 file as a starting point that then calls the psake.ps1 file. 
@@ -72,7 +72,7 @@ I did need to get an API key for the [Powershell Gallery](https://www.powershell
 
 This is used for automated builds. Again, this is something that I want to implement. Warren already has a Guide up talking about how he set it up in [Fun with Github, Pester, and AppVeyor](http://ramblingcookiemonster.github.io/GitHub-Pester-AppVeyor/). 
 
-I went over to [AppVeyor.com](https://ci.appveyor.com) and created an account. In almost no effort, I had it looking at my projects on GitHub. I created a new project in AppVeyor and selected the GraphViz project of mine. Just like that, I have a build system ready to build my module and I have not even checked anything in yet. 
+I went over to [AppVeyor.com](https://ci.appveyor.com) and created an account. With almost no effort, I had it looking at my projects on GitHub. I created a new project in AppVeyor and selected the GraphViz project of mine. Just like that, I have a build system ready to build my module and I have not even checked anything in yet. 
 
 This is the file I need to place in my local project.
 
@@ -96,16 +96,16 @@ This is the file I need to place in my local project.
     test_script:
     - ps: . .\build.ps1
 
-This yaml file looks fairly basic with one exception. That NewgetApiKey my API key for the PSGallery. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use this way. 
+This yaml file looks fairly basic with one exception. That NewgetApiKey my API key for the PSGallery. I pinged Warren on how he handled it and he told me it was encrypted. AppVoyer has a way to [encrypt strings](https://www.appveyor.com/docs/build-configuration/#secure-variables) that you can use in your files. 
 
-I used everything else as it was other than providing my secure NugetApiKey.
+I used everything else as it was (Just had to provide my secure NugetApiKey).
 
 ## mkdocs.yml
 
-Up until this point, I have actually worked with or have a general understanding of everything. This file was new to me. At first glance, it looks like it builds documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does interest me. I'll loop back on this one in the future.
+Up until this point, I have worked with or have a general understanding of these components already. This file was new to me. At first glance, it looks like it builds documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does interest me. I'll loop back on this one in the future.
 
 ## deploy.PSDeploy.ps1
-After a bit of review, this looks like it allows the build system to deploy the module to the PS Gallery. It needs to be checked into master with a commit message containing `!deploy`. 
+After a bit of review, this looks like it allows the build system to deploy the module to the PS Gallery. PSDeploy when it runs, looks for this file for instructions on what to deploy and how. 
 
     if($ENV:BHProjectName -and $ENV:BHProjectName.Count -eq 1)
     {
@@ -159,7 +159,7 @@ If we run this right now, only the module import should fail because we have not
 
 ## Module manifest
 
-After all of that, I still don't have a module manifest. I could have started with the manifest, but dropping in all these other files was fairly quick and I figured there is a lot of general module information available already.
+After all of that, I still don't have a module manifest. I could have started with the manifest, but dropping in all these other files was fairly quick. I figured there is a lot of general module information available already.
 
 Here is a quick module manifest.
 
@@ -200,7 +200,7 @@ This is something I have done for a long time and already have a good module loa
     Export-ModuleMember -function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
 
 
-Because I have a build process, I may end up adding a build step to pull all these external files into the psm1 file at publish time. 
+Because I have a build process, I may end up adding a build step to pull all these external files into the psm1 file at publish time. The module would load faster if it did that. 
 
 ## Functions
 
@@ -209,28 +209,46 @@ Now that we have a loader, we need to add a few functions. I created a wrapper f
 Normally I would add this to the `FunctionsToExport` in the module manifest by hand. After everything is up and running, the build script should take care of that. That is one of the advantages of having a build process.
 
 ## Source control 
-A quick comment on git. I have been saving into source locally this whole time. 
+I have been saving into source locally this whole time. This is already part of my workflow.
 
-   #Add new files
+   #Add all new files
    git add -A
 
-   #Commit other changes
+   #Commit changes
    git commit -a -m 'updated project tests'
 
-Sometimes I am already on the shell and just commit on the commandline. I also do a lot of work in VSCode and it has great git integration. I do easily 95% of my git commits from within VSCode.
+Sometimes I am already on the shell and just commit on the commandline. I also do a lot of work in [VSCode](https://code.visualstudio.com/) and it has great git integration. I do easily 95% of my git commits from within VSCode.
 
-I do use some basic branching in my projects but that is not something we need to dive into at the moment.
+I also use some basic branching in my projects but that is not something we need to dive into at the moment.
 
 # Testing
-With all of our components in place and having a function we can actually use, we need to see all the pieces working.
+With all of our components in place and having a function we can actually use, I need to see all the pieces working.
 
 ## Pester tests
-May as well start with our pester tests. If I run the Project.Tests.ps1 that we created earlier, we should see it pass. We just have basic test coverage at this point.
+May as well start with our Pester tests. If I run the `Tests\Project.Tests.ps1` that we created earlier, we should see everything pass. We just have basic test coverage at this point.
 
-    Invoke-Pester
+    PS:> Invoke-Pester
+
+    Describing General project validation: PSGraphViz
+    [+] Script C:\workspace\PSGraphViz\PSGraphViz\Public\Install-GraphViz.ps1 should be valid powershell 112ms
+    [+] Script C:\workspace\PSGraphViz\PSGraphViz\Public\Invoke-GraphViz.ps1 should be valid powershell 66ms
+    [+] Script C:\workspace\PSGraphViz\PSGraphViz\PSGraphViz.psd1 should be valid powershell 69ms
+    [+] Script C:\workspace\PSGraphViz\PSGraphViz\PSGraphViz.psm1 should be valid powershell 51ms
+    [+] Script C:\workspace\PSGraphViz\Tests\Project.Tests.ps1 should be valid powershell 53ms
+    [+] Script C:\workspace\PSGraphViz\build.ps1 should be valid powershell 55ms
+    [+] Script C:\workspace\PSGraphViz\psake.ps1 should be valid powershell 58ms
+    [+] Script C:\workspace\PSGraphViz\PSGraphViz.PSDeploy.ps1 should be valid powershell 54ms
+    [+] Script C:\workspace\PSGraphViz\requirements.psd1 should be valid powershell 51ms
+    [+] Module 'PSGraphViz' can import cleanly 88ms
+    Tests completed in 662ms
+    Passed: 10 Failed: 0 Skipped: 0 Pending: 0 Inconclusive: 0
+
+Everything ran as expected.
 
 ## First local build
 Now we run the build. It should first install all the build related dependencies from the PSGallery. The build runs but does not publish. I get this message:
+
+    PS:> .\build.ps1
 
     Skipping deployment: To deploy, ensure that...
         * You are in a known build system (Current: Unknown)
