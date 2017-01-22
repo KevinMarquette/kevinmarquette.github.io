@@ -102,6 +102,21 @@ This yaml file looks fairly basic with one exception. That NewgetApiKey my API k
 
 I used everything else as it was (Just had to provide my secure NugetApiKey).
 
+## Build status in readme.md
+
+One cool thing that I almost overlooked is that Warren has a realtime buid status icon in is project `readme.md`. It looks like this ![Build status](https://ci.appveyor.com/api/projects/status/cgo827o4f74lmf9w/branch/master?svg=true)
+
+To get that, I had to add this line to the top of my `readme.md`.
+
+    ![Build status](https://ci.appveyor.com/api/projects/status/cgo827o4f74lmf9w/branch/master?svg=true)
+
+There is a project ID embedded in that first URL. `cgo827o4f74lmf9w`. I found that in AppVeyor.com under project settings in the Webhook URL field. This will be unique for each project.
+
+He also wrapped that in a link to the build status page.
+
+    https://ci.appveyor.com/project/kevinmarquette/PSGraphViz/branch/master
+
+
 ## mkdocs.yml
 
 Up until this point, I have worked with or have a general understanding of these components already. This file was new to me. At first glance, it looks like it builds documentation out of markdown files. I like that idea of that. I think I have enough pieces on my plate, but this does interest me. I'll loop back on this one in the future.
