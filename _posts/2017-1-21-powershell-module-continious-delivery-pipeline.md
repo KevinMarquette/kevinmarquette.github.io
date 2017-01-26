@@ -31,23 +31,23 @@ The only local component you really need in order to follow along is Git, Powers
 # Getting started building my module
 I have been working with [GraphViz](http://graphviz.org/) recently and I really like it. It gives me the ability to generate graphs or diagrams with text. With the proper helper functions, it would make it very easy to generate these graphs on the fly. 
 
-So, let's get started. The first thing is to create a new repository on github called [PSGraphViz](https://github.com/KevinMarquette/PSGraphViz). If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
+So, let's get started. The first thing is to create a new repository on github called [PSGraph](https://github.com/KevinMarquette/PSGraph). If we are going to use source control, we may as well start with it. Once that is created, I clone it to my local system.
 
-    git clone https://github.com/KevinMarquette/PSGraphViz.git
+    git clone https://github.com/KevinMarquette/PSGraph.git
 
 ## Folder structure
 
 I created a folder structure much like PSDepend. 
 
-    PSGraphViz
+    PSGraph
     ├───Examples
-    ├───PSGraphViz
+    ├───PSGraph
     │   ├───Classes
     │   ├───Private
     │   └───Public
     └───Tests
 
-This already breaks from my approach and I think it does so in a good way. Let's take a moment to talk about what we have here as a way to understand it better. First off, the module is not the entire git repo. It will be contained in the sub `PSGraphViz` folder. The `Private` and `Public` folders will contain the functions for the module. 
+This already breaks from my approach and I think it does so in a good way. Let's take a moment to talk about what we have here as a way to understand it better. First off, the module is not the entire git repo. It will be contained in the sub `PSGraph` folder. The `Private` and `Public` folders will contain the functions for the module. 
 
 By moving the Module out of the root of the repository, it allows us to have the examples, tests, build and publish components outside the module. I like this because they don't need to be a part of the module and require additional dependencies that the module should not need when deployed. I plan on adopting it going forward.
 
@@ -128,7 +128,7 @@ There is a project ID embedded in that first URL. `cgo827o4f74lmf9w`. I found th
 
 He also wrapped that in a link to the build status page.
 
-    https://ci.appveyor.com/project/kevinmarquette/PSGraphViz/branch/master
+    https://ci.appveyor.com/project/kevinmarquette/PSGraph/branch/master
 
 
 ## mkdocs.yml
@@ -197,8 +197,8 @@ Here is a quick module manifest.
     $module = @{
         Author = 'Kevin Marquette' 
         Description = 'GraphViz helper module for generating graph images' 
-        RootModule = 'PSGraphViz.psm1'
-        Path = 'PSGraphViz.psd1'
+        RootModule = 'PSGraph.psm1'
+        Path = 'PSGraph.psd1'
         ModuleVersion = '0.0.1'
     }
     New-ModuleManifest @module
@@ -235,7 +235,7 @@ Because I have a build process, I may end up adding a build step to pull all the
 
 ## Functions
 
-Now that we have a loader, we need to add a few functions. I created a wrapper for the primary executable in GraphViz. Go check out the project if you want to see how I did that one. I called it `Invoke-GraphViz` for now and placed it into the public folder `PSGraphViz\public\invoke-graphviz.ps1`.
+Now that we have a loader, we need to add a few functions. I created a wrapper for the primary executable in GraphViz. Go check out the project if you want to see how I did that one. I called it `Invoke-GraphViz` for now and placed it into the public folder `PSGraph\public\invoke-graphviz.ps1`.
 
 Normally I would add this to the `FunctionsToExport` in the module manifest by hand. After everything is up and running, the build script should take care of that. That is one of the advantages of having a build process.
 
@@ -260,17 +260,17 @@ May as well start with our Pester tests. If I run the `Tests\Project.Tests.ps1` 
 
     PS:> Invoke-Pester
 
-    Describing General project validation: PSGraphViz
-    [+] Script C:\workspace\PSGraphViz\PSGraphViz\Public\Install-GraphViz.ps1 should be valid powershell 112ms
-    [+] Script C:\workspace\PSGraphViz\PSGraphViz\Public\Invoke-GraphViz.ps1 should be valid powershell 66ms
-    [+] Script C:\workspace\PSGraphViz\PSGraphViz\PSGraphViz.psd1 should be valid powershell 69ms
-    [+] Script C:\workspace\PSGraphViz\PSGraphViz\PSGraphViz.psm1 should be valid powershell 51ms
-    [+] Script C:\workspace\PSGraphViz\Tests\Project.Tests.ps1 should be valid powershell 53ms
-    [+] Script C:\workspace\PSGraphViz\build.ps1 should be valid powershell 55ms
-    [+] Script C:\workspace\PSGraphViz\psake.ps1 should be valid powershell 58ms
-    [+] Script C:\workspace\PSGraphViz\PSGraphViz.PSDeploy.ps1 should be valid powershell 54ms
-    [+] Script C:\workspace\PSGraphViz\requirements.psd1 should be valid powershell 51ms
-    [+] Module 'PSGraphViz' can import cleanly 88ms
+    Describing General project validation: PSGraph
+    [+] Script C:\workspace\PSGraph\PSGraph\Public\Install-GraphViz.ps1 should be valid powershell 112ms
+    [+] Script C:\workspace\PSGraph\PSGraph\Public\Invoke-GraphViz.ps1 should be valid powershell 66ms
+    [+] Script C:\workspace\PSGraph\PSGraph\PSGraph.psd1 should be valid powershell 69ms
+    [+] Script C:\workspace\PSGraph\PSGraph\PSGraph.psm1 should be valid powershell 51ms
+    [+] Script C:\workspace\PSGraph\Tests\Project.Tests.ps1 should be valid powershell 53ms
+    [+] Script C:\workspace\PSGraph\build.ps1 should be valid powershell 55ms
+    [+] Script C:\workspace\PSGraph\psake.ps1 should be valid powershell 58ms
+    [+] Script C:\workspace\PSGraph\PSGraph.PSDeploy.ps1 should be valid powershell 54ms
+    [+] Script C:\workspace\PSGraph\requirements.psd1 should be valid powershell 51ms
+    [+] Module 'PSGraph' can import cleanly 88ms
     Tests completed in 662ms
     Passed: 10 Failed: 0 Skipped: 0 Pending: 0 Inconclusive: 0
 
@@ -318,18 +318,18 @@ I am ready to see the AppVeyor system in action. I need a commit that contains `
     Writing objects: 100% (23/23), 5.62 KiB | 0 bytes/s, done.
     Total 23 (delta 8), reused 0 (delta 0)
     remote: Resolving deltas: 100% (8/8), completed with 2 local objects.
-    To https://github.com/KevinMarquette/PSGraphViz.git
+    To https://github.com/KevinMarquette/PSGraph.git
     af9aaba..e959142  master -> master
 
 Give it a few minutes and we should see the build queued at appveyor.com when we log in. Once it starts, we can click on it to see the build output. 
 
 The only thing left to do after it finishes is check the PSGallery for the module.
 
-    PS:> Find-Module PSGraphViz
+    PS:> Find-Module PSGraph
 
     Version Name       Repository Description
     ------- ----       ---------- -----------
-    0.0.1   psgraphviz PSGallery  GraphViz helper module
+    0.0.1   PSGraph PSGallery  GraphViz helper module
 
 I guess everything worked. I love when that happens.
 
