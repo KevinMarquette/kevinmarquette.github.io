@@ -61,7 +61,7 @@ A `graph` defines a new graph for us. A `node` is an individual object on the gr
 
 All three command allow you to specify a `[hashtable]` to set various properties. I tell the graph to render left to right. I also give the nodes and the edge a label. Using a label for a node a allows you to use a shortname as a refference but still display a more verbose name in the final graph
 
-## Project flow
+## Example: Project flow
 Let me map out something real so you have a better idea of what these commands can do. This is my project workflow.
 
 ![workflow](/img/flow.png)
@@ -79,7 +79,7 @@ In this graph I set the default node shape to `rectangle`. The next thing I do i
 
 I also gave the first `edge` command a list of nodes. Those nodes are linked in order from first to last.
 
-## A more detailed project flow
+## Example: A more detailed project flow
 
 Here is a second example where I add a few more nodes and use more attributes.
     
@@ -102,7 +102,7 @@ You have full access to all edge, node and graph attributes that the [DOT langua
 # Scripted graphs
 It's one thing to handcraft a graph. If that is all you are doing, you may find it easier to use the native DOT language. The real fun starts when we are scripting the graphs. That was the whole reason I wrote this module.
 
-## Server farm
+## Example: Server farm
 
 Imagine you wanted to diagram a server farm dynamically. I am going to auto generate some server names dynamically, but these could be pulled from your environment. 
 
@@ -130,7 +130,7 @@ With that list of names, we can now quickly produce a graph like this.
 
 I really like how clean that looks. If you play with the number of servers at each level, the graph will adjust to the changes. Because I can provide arrays for each part of the edge command, I can describe the relationship at a higher level. The edge command works out the logic between the individual nodes automatically. 
 
-## Structured data
+## Example: Structured data
 Drawing edges between lists is a great start but we often have data that is structured. Importing an employee CSV and mapping the org chart is a classic use case.
 
 For this example, we are going to walk a folder. Because the body of the graph is just a script block, we can use in line Powershell to create more complicated graphs.
