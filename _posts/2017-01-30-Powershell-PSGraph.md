@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell: PSGraph, A graph module built on GraphViz"
-date: 2000-01-30
+date: 2017-01-30
 tags: [PowerShell,PSGraph,GraphViz]
 ---
 
@@ -26,7 +26,7 @@ Take a look at this example.
         edge -From middle -To end
     } 
 
-We define that we are creating a graph. We draw edges between the nodes `start`,`middle` and `end` in that order. Then we pipe the output to the `Export-PSGraph` so we can see it.
+We define that we are creating a graph. We draw edges between the nodes `start`,`middle` and `end` in that order. 
 
 # Installing PSGraph
 I publish this module to the Powershell Gallery to make it easy to get started. There is only one other dependency and that is GraphViz. Here is how I [get started](http://psgraph.readthedocs.io/en/latest/Quick-Start-Installation-and-Example/).
@@ -62,7 +62,7 @@ A `graph` defines a new graph for us. A `node` is an individual object on the gr
 All three command allow you to specify a `[hashtable]` to set various properties. I tell the graph to render left to right. I also give the nodes and the edge a label. Using a label for a node a allows you to use a shortname as a refference but still display a more verbose name in the final graph
 
 ## Project flow
-Let me map out something real so you have a better idea of what these commands can do. Let's map out my project workflow.
+Let me map out something real so you have a better idea of what these commands can do. This is my project workflow.
 
 ![workflow](/img/flow.png)
 
