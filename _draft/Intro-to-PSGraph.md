@@ -9,6 +9,9 @@ tags: [PowerShell,GraphViz]
 
 I love to visualize things. There are just some patterns that are hard to see in tables of data that can jump out to you when it is visualized. Today, I am going to be working with my new module PSGraph.
 
+* TOC
+{:toc}
+
 ## What is PSGraph
 It is a set of helper functions that makes it easy to generate the DOT files used by the GraphViz engine for making graphs. They handle the language specification so you can just make great graphs.
 
