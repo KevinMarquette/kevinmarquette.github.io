@@ -149,4 +149,4 @@ I first enumerate each node to give it a label. I want to see a short name in th
 
 # What's next?
 
-I have a full set of documentation and examples posted at [psgraph.ReadTheDocs.io](http://psgraph.readthedocs.io/en/latest/). I walk each command in more detail and talk about other commands that I did not cover here. There is a lot of depth to these command but this is more than enough to get you started making cool stuff.
+I have a full set of documentation and examples posted at [psgraph.ReadTheDocs.io](http://psgraph.readthedocs.io/en/latest/) and the source is also posted [https://github.com/KevinMarquette/PSGraph](https://github.com/KevinMarquette/PSGraph). I walk each command in more detail and talk about other commands that I did not cover here. There is a lot of depth to these command but this is more than enough to get you started making cool stuff.
