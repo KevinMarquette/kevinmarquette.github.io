@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Chronometer, Line by line script execution times"
+title: "Powershell: Chronometer, line by line script execution times"
 date: 2017-02-05
 tags: [PowerShell,Chronometer]
 ---
@@ -19,6 +19,7 @@ I decided to do the same thing and measure the time deltas between executions. I
 Because I have the line by line execution times, I also tracked how many times each line was ran. There are also other stats that I collect like average, min and max times.
 
 # Requirements and how to install
+
 ## Powershell 5.0
 This module does require Powershell 5.0. I make use of classes in this module so that is why 5.0 is required.  
 
@@ -30,28 +31,28 @@ I am publishing this to the Powershell Gallery so you can quickly install it fro
 The source is also published to [https://github.com/KevinMarquette/Chronometer](https://github.com/KevinMarquette/Chronometer).
 
 # Format-Chronometer
-The easiest way to understand it is to look at the resulting report. The I will loop back to show you how to run it.
+The easiest way to understand it is to look at the resulting report. Then I will loop back to show you how to run it.
 
 ![Chronometer Report](/img/Chronometer.png)
 
-We can see a few things from this screen shot. Each line of the source file is represented. The numbers on the left side show the total execution, number of executions and then the average execution time. The colors show gray for the lines that were not detected.
+We can see a few things from this report. Each line of the source file is represented. The numbers on the left side show the total execution, number of executions and then the average execution time. The colors show gray for the lines that were not executed.
 
 If you specify multiple files, then it will generate a report for each one.
 
 # Rich Objects
+
 ## MonitoredScript
 While that report is fun to look at, we do have objects to work with. For each file specified, we get the execution time.
 
     Path          : C:\workspace\PSGraph\PSGraph\Public\Set-NodeFormatScript.ps1
-    Line          : {[0003ms,0008,0000ms]  function Set-NodeFormatScript, [0000ms,0008,0000ms]  {, [0013ms,0008,0002ms]      <#, [0000ms,0008,0000ms]          
-                    .Description...}
+    Line          : {[0003ms,0008,0000ms]  function Set-NodeFormatScript, [0000ms,...}
     ExecutionTime : 30
     LinesOfCode   : 21
 
 This execution time includes the time it spent waiting on other calls to come back. I point this out because if you have one slow function that everything calls, then that slowness will be reflected in all calling scripts.
 
 ## ScriptLine
-Each line of the script also has plenty of meta data.
+Each line of the script also has plenty of metadata.
 
     Milliseconds : 1
     HitCount     : 8
@@ -97,7 +98,5 @@ The engine doing the work is fairly simple and limited by what the debugger is t
 
 Monitoring and tracking each line of execution does have some overhead. I tried to minimize that overhead by gathering the data quickly and then post processing it for the deltas later. 
 
-There is also a side effect where the last command in a  file my not measure accurately. 
-
 # What's next?
-This is still a work in progress. I am mostly trying to polish the user experience at the moment. I am trying to make this as easy to work with as possible. Feel free to try it out. 
+This is still a work in progress. I am mostly trying to polish the user experience at the moment. I want to make this as easy to work with as possible. Feel free to try it out. 
