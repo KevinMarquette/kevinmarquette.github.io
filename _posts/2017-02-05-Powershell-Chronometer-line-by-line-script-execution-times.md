@@ -42,7 +42,7 @@ If you specify multiple files, then it will generate a report for each one.
 # Rich objects
 
 ## MonitoredScript
-While that report is fun to look at, we do have objects to work with. For each file specified, we get the execution time.
+While that report is fun to look at, we do have objects to work with. The `Get-Chronometer` command gives us a list of `[MonitoredScript]` objects. For each file specified, we get the execution time.
 
     Path          : C:\workspace\PSGraph\PSGraph\Public\Set-NodeFormatScript.ps1
     Line          : {[0003ms,0008,0000ms]  function Set-NodeFormatScript, [0000ms,...}
@@ -52,7 +52,7 @@ While that report is fun to look at, we do have objects to work with. For each f
 This execution time includes the time it spent waiting on other calls to come back. I point this out because if you have one slow function that everything calls, then that slowness will be reflected in all calling scripts.
 
 ## ScriptLine
-Each line of the script also has plenty of metadata.
+The `[MonitoredScript]` object has a `Line` property that contains all the `[ScriptLine]` objects. Here is a sample from one of those objects.
 
     Milliseconds : 1
     HitCount     : 8
@@ -81,7 +81,7 @@ This will monitor the file in the specified path and then execute the command in
 ## With pester
 I like to combine this with Pester to see code coverage.
 
-    $script = ls C:\workspace\PSGraph\PSGraph -Recurse -Filter *.ps1
+    $script = Get-ChildItem C:\workspace\PSGraph\PSGraph -Recurse -Filter *.ps1
     $Chronometer = @{
         Path = $script.fullname
         Script = {Invoke-Pester C:\workspace\PSGraph}
