@@ -39,7 +39,7 @@ We can see a few things from this report. Each line of the source file is repres
 
 If you specify multiple files, then it will generate a report for each one.
 
-# Rich Objects
+# Rich objects
 
 ## MonitoredScript
 While that report is fun to look at, we do have objects to work with. For each file specified, we get the execution time.
