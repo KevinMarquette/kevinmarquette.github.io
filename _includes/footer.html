@@ -92,24 +92,24 @@
               </span>
             </a>
           </li>
-          {% endif %}
+      {% endif %}
 		  {% if site.footer-links-active.rss %}
-		  <li>
-			<a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="RSS">
-			  <span class="fa-stack fa-lg">
-				<i class="fa fa-circle fa-stack-2x"></i>
-				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-			  </span>
-			</a>
-		  </li>
-          {% endif %}
-        </ul>
-        <p>
-         <a href='http://www.planetpowershell.com/' style="border: 0;" > 
-          <img src='{{ site.url }}/img/planetpowershell-featured-badge.png' />
+        <li>
+        <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="RSS">
+          <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        </li>
+      {% endif %}
+        <li>
+          </li>
+          <a href='http://www.planetpowershell.com/' style="border: 0;" > 
+          <img style='height: 30' src='{{ site.url }}/img/planetpowershell-featured-badge.png' />
          </a>
-        </p>
-        <p class="copyright text-muted">
+        </ul>
+       <p class="copyright text-muted">
 		  {{ site.author.name }}
 		  &nbsp;&bull;&nbsp;
 		  {{ site.time | date: '%Y' }}
