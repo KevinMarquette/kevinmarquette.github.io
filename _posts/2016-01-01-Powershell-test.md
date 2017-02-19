@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Everything you wanted to know about custom attributes"
+title: "Powershell: test post"
 date: 2016-02-19
 tags: [PowerShell,Classes]
 ---
