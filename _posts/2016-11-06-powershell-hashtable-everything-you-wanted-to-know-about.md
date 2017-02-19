@@ -483,7 +483,8 @@ This also accepts wildcards so you can set values in bulk. Here are some ways yo
     $PSDefaultParameterValues[ "Get-*:Verbose" ] = $true
     $PSDefaultParameterValues[ "*:Credential" ] = Get-Credental
 
-See [about_Parameters_Default_Values](https://technet.microsoft.com/en-us/library/hh847819.aspx) for more details.
+For a more in depth breakdown, see this great article on [Automatic Defaults](https://www.simple-talk.com/sysadmin/powershell/powershell-time-saver-automatic-defaults/) by [Michael Sorens](http://cleancode.sourceforge.net/wwwdoc/about.html). 
+
 
 ## Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
