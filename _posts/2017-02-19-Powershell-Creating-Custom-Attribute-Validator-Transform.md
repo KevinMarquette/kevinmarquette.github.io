@@ -7,9 +7,6 @@ tags: [PowerShell, Attribute, Validator, Transform, Class]
 
 Every once and a while I stumble onto something in Powershell that I find interesting and I can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Custom attributes work on <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a> class methods. This will be useful. <a href="https://t.co/8AeopiWH8T">pic.twitter.com/8AeopiWH8T</a></p>&mdash; Brandon Olin (@devblackops) <a href="https://twitter.com/devblackops/status/815747777221099520">January 2, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 * TOC
 {:toc}
 
@@ -337,7 +334,7 @@ These custom validators and transforms truly are advanced features. But if you f
 
 I could see creating a validator to validate the format of a customer ID over and over (instead of a regex match).
 
-Another validator that I am considering building already is one that verifies that a [Hashtable] or a [PSCustomObject] has a specific key (or keys). I often pass in a hashtable that I assume has a set structure to it and this would let be validate those assumptions.
+Another validator that I am considering building already is one that verifies that a `[Hashtable]` or a `[PSCustomObject]` has a specific key (or keys). I often pass in a hashtable that I assume has a set structure to it and this would let be validate those assumptions.
 
 ## Let me know
 If you find a good way to put this information to use, let me know. I would love to see some practical implementations. 
