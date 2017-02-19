@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Kevin Marquette, Old Content 2"
-date: 2016-08-27
+title: "Powershell: Everything you wanted to know about custom attributes"
+date: 2016-02-19
+tags: [PowerShell,Classes]
 ---
 
-If you are looking for all my old posts and content, they are still over on blogger [http://kevinmarquette.blogspot.com](http://kevinmarquette.blogspot.com) . I am going to leave that site up and going even though my new content will be posted here.
+Every once and a while I stumble onto something in Powershell that I find interesting and I can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
+
