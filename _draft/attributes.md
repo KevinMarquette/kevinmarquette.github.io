@@ -243,7 +243,7 @@ Then we run our testcases to see the results
 I use the script and match validators quite often but I do not like the cryptic message. If you truly need a better validator error message, it is worth considering this option.
 
 # ArgumentTransformationAttribute
-A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two that I know of.
+A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two (that are publicly accessible) that I know of.
 
 ### Type Accelerators
 I need to pause for a second and mention [Type Accelerators](https://blogs.technet.microsoft.com/heyscriptingguy/2013/07/08/use-powershell-to-find-powershell-type-accelerators/). These transforms are just like those except with a Type Accelerator, your value becomes that type. A transform can do anything and return any type (as long as it is an `[Object]`). 
@@ -282,7 +282,7 @@ I went hunting for another example and I discovered this [gem](https://github.co
     $path = 'C:\workspace\PSGraph\PSGraph\PSGraph.psd1'
     Get-HashtableFromFile -Path $path
 
-I don't think this was ever intened for us to use this way, but it is cool what is possible. 
+I don't think this was ever intended for us to use this way, but it is cool what is possible.
 
 ## Custom PathTransformAttribute
 We can take everything we learned here and build our own transform. For a simple example, lets create a transform that gives the full path to a file.
