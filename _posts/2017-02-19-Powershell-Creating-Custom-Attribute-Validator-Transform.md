@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Powershell: Custom attrbute deep dive"
+title: "Powershell: Everything you wanted to know about creating custom Attributes and Validators"
 date: 2017-02-19
 tags: [PowerShell, Attribute, Validator, Transform, Class]
 ---
@@ -282,7 +282,7 @@ I went hunting for another example and I discovered this [gem](https://github.co
     $path = 'C:\workspace\PSGraph\PSGraph\PSGraph.psd1'
     Get-HashtableFromFile -Path $path
 
-I don't think this was ever intended for us to use this way, but it is cool what is possible.
+I don't think this was ever intended for us to use this way, but it is a good example of what is possible.
 
 ## Custom PathTransformAttribute
 We can take everything we learned here and build our own transform. For a simple example, lets create a transform that gives the full path to a file.
