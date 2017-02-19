@@ -106,10 +106,10 @@ Remember that attributes are metadata for our code. So it is the class that has 
     $object = [Test]::new()
     $object.GetType().GetCustomAttributes('MyCommand')
 
-The only way to get our attribute is to pull it off of the object type
+The only way to get our attribute from an object is to pull it off of the object type. If you find that this is an issue for you, reconsider the use of an attribute. A class property or function parameter could be a better option for whatever it is you are trying to do.
 
 # What can we do with this?
-The most obvious use to me is giving hints to our testing framework just like in my PSScriptAnalyzer example above. A lot of tests we make in Pester are specific to the functions we are testing, but I often have tests that walk everything.
+The most obvious use to me is giving hints to our testing framework just like in my `PSScriptAnalyzer` example above. A lot of tests we make in Pester are specific to the functions we are testing, but I often have tests that walk everything.
 
 Here is a quick example of all the pieces to make that work.
 
@@ -180,13 +180,15 @@ Then we update our test to check for the attribute. Assume this is a full module
         }
     }
 
-# Limited applications
-I am definitely writing this up as an advanced feature with limited applications. I am sure you can get very creative with this feature. I want to see how far we can push this. 
+## Limited applications
+I am definitely writing this up as an advanced feature with limited applications. I am sure you can get very creative with this feature. I could stop here but I want to see how far we can push this.
+
+What if we found a way to create new attributes that Powershell already understand how to use?
 
 # Custom parameter validator
-I was in the Powershell Slack channel and Joel Bennett mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are a few arguments that Powershell automatically processes that we can implement ourselves.
+I was in the Powershell Slack channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are two attributes that Powershell automatically processes that we can implement ourselves.
 
-# Custom ValidatePathExistsAttribute
+## Custom ValidatePathExistsAttribute
 One thing that I find myself doing quite often is using a `[ValidateScript({Test-Path -Path $_})]` on path parameters. This checks they are valid, except the error message is worthless. So instead of using a script block, we can just implement our own validator.
 
     class ValidatePathExistsAttribute : System.Management.Automation.ValidateArgumentsAttribute
@@ -282,7 +284,7 @@ I went hunting for another example and I discovered this [gem](https://github.co
 
 I don't think this was ever intened for us to use this way, but it is cool what is possible. 
 
-# Custom PathTransformAttribute
+## Custom PathTransformAttribute
 We can take everything we learned here and build our own transform. For a simple example, lets create a transform that gives the full path to a file.
 
     class PathTransformAttribute : System.Management.Automation.ArgumentTransformationAttribute
@@ -337,5 +339,5 @@ I could see creating a validator to validate the format of a customer ID over an
 
 Another validator that I am considering building already is one that verifies that a [Hashtable] or a [PSCustomObject] has a specific key (or keys). I often pass in a hashtable that I assume has a set structure to it and this would let be validate those assumptions.
 
-# Let me know
+## Let me know
 If you find a good way to put this information to use, let me know. I would love to see some practical implementations. 
