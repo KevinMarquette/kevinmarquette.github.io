@@ -13,7 +13,7 @@ Every once and a while I stumble onto something in Powershell that I find intere
 
 We can have a lot of fun with that.
 
-#Index
+# Index
 
 * TOC
 {:toc}
