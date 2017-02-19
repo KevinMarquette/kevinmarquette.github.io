@@ -1,72 +1,338 @@
-﻿# Brandon Olin 
-# @devblackops 
+﻿---
+layout: post
+title: "Powershell: Custom attrbute deep dive"
+date: 2017-02-19
+tags: [PowerShell, Attribute, Validator, Transform, Class]
+---
 
-Class MyCommand : Attribute {
-    [string]$Name
-    [bool] $Hidden = $false
+Every once and a while I stumble onto something in Powershell that I find interesting and I just can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
 
-    MyCommand([string]$Name)
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Custom attributes work on <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a> class methods. This will be useful. <a href="https://t.co/8AeopiWH8T">pic.twitter.com/8AeopiWH8T</a></p>&mdash; Brandon Olin (@devblackops) <a href="https://twitter.com/devblackops/status/815747777221099520">January 2, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+* TOC
+{:toc}
+
+# What is an attribute?
+They allow you to attach additional information to classes, functions and properties. It's metadata for your code. Let me show you some examples.
+
+## Examples in advanced functions
+Powershell already makes use of them in advanced functions. You can specify the `[Property(Mandatory=$true)]` attribute for a property to make it required. You can add the `[ValidateNotNullOrEmpty]` attribute to make sure it has a value. 
+
+    function Do-Something 
     {
-        $this.Name = $Name
+        [cmdletbinding()]
+        param(
+            [Property(Mandatory=$true)]
+            [ValidateNotNullOrEmpty()]
+            $Path
+        )
+        ...
     }
-}
 
-[MyCommand('MyClass')]
-class test {
+## PSScriptAnalyzer hints
+The [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) has a lot of good best practices that it will check. Sometimes you need to do something a little different and you don't want PSScriptAnalyzer complaining. You could exclude that one rule for everything or use an attribute like `[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingInvokeExpression","")]` to [suppress](https://github.com/PowerShell/PSScriptAnalyzer/blob/master/README.md#suppressing-rules) the one occurrence in your script. 
 
-    [MyCommand('MyClassProperty')]
-    $Name = 'TestName'
+# Create your own attribute
+You can also create your own by inheriting from [Attribute](https://msdn.microsoft.com/en-us/library/system.attribute(v=vs.113).aspx).
 
-    [MyCommand('myFunction')]
-    [string] Hello(
-        [MyCommand('myParam')]
-        [string]
-        $Name = "Kevin"
-    )
+     Class MyCommand : Attribute {}
+
+If we create a default constructor, we can pass values into our attribute and access them later.
+
+    Class MyCommand : Attribute {
+        [string]$Name
+
+        MyCommand([string]$Name)
+        {
+            $this.Name = $Name
+        }
+    }
+
+## Attaching our custom attribute
+Then we can attach it to our class, properties and functions like this.
+
+    [MyCommand('MyClass')]
+    class test {
+
+        [MyCommand('MyClassProperty')]
+        $Name = 'TestName'
+
+        [MyCommand('myFunction')]
+        [string] SayHello(
+            [string]
+            $Name = "Kevin"
+        )
+        {
+            return "Hello $name"
+        }
+    }
+
+I attached our attribute in three locations and gave each one a custom value that we can then discover with reflection. Here is an example for an advanced function.
+
+    function Do-Something
     {
-        [MyCommand('other')] 
-        $temp = $null
+        [MyCommand('MyAdvancedFunction')]
+        [cmdletbinding()]
+        param()
+        return $true
+    }
+
+## Accessing our attribute
+Now that we have an attribute and attached it to something, we can use `GetCustomAttributes('MyCommand')` to read our values.
+
+    # on our class
+    [test].GetCustomAttributes('MyCommand')
+
+    # on our class property named Name
+    [test].GetMember('Name').GetCustomAttributes('MyCommand')
+    [test].GetProperty('Name').GetCustomAttributes('MyCommand')
+
+    # on our method named SayHello
+    [test].GetMember('SayHello').GetCustomAttributes('MyCommand')
+    [test].GetMethod('SayHello').GetCustomAttributes('MyCommand')
+
+Advanced functions are a little different but the information is still there.
+
+    $command = Get-Command Do-Something
+    $command.ScriptBlock.Attributes | Where-object {$_.TypeID.Name -eq 'MyCommand'}
+
+I had to filter on the `TypeID.Name` because we will also get the `[cmdletbinding()] attribute too if we don't. 
+
+## It's on the class and not the object
+
+Remember that attributes are metadata for our code. So it is the class that has the attribute attached to it. Every object of that class will have the same attribute.
+
+    $object = [test]::new()
+    $object.GetType().GetCustomAttributes('MyCommand')
+
+The only way to get our attribute is to pull it off of the object type
+
+# What can we do with this?
+The most obvious use to me is giving hints to our testing framework just like in my PSScriptAnalyzer example above. A lot of tests we make in Pester are specific to the functions we are testing, but I often have tests that walk everything.
+
+Here is a quick example of all the pieces to make that work.
+
+## SkipTest attribute
+Here is a new attribute for this example.
+
+    Class SkipTest : Attribute {
+        [string]$TestName
+
+        MyCommand([string]$Name)
+        {
+            $this.TestName = $Name
+        }
+    }
+
+## Sample function
+The we attach it to an advanced function.
+
+    function do-something
+    {
+        [SkipTest('HelpDescription')]
+        [cmdletbinding()]
+        param()
+        return $true
+    }
+
+## Helper function
+I decided to create a helper function to make this easier to work with. 
+
+    function ShouldRunTest
+    {
+        [cmdletbinding()]
+        param(
+            [System.Management.Automation.CommandInfo]
+            $Command,
+
+            [string]
+            $TestName
+        )
+        $SkipTest = $Command.ScriptBlock.Attributes | Where-object {$_.TypeID.Name -eq 'SkipTest'}
         
-        return "Hello $name"
+        if($SkipTest -ne $null -and $SkipTest.TestName -eq $TestName)
+        {
+            return $false
+        }
+
+        return $true
     }
-}
 
-<#
-class MainClass 
-{
-   public static void Main() 
-   {
-      System.Reflection.MemberInfo info = typeof(MyClass);
-      object[] attributes = info.GetCustomAttributes(true);
-      for (int i = 0; i < attributes.Length; i ++)
-      {
-         System.Console.WriteLine(attributes[i]);
-      }
-   } 
-} 
-#>
+This will make our test look a lot cleaner
 
-[test].CustomAttributes | fl *
+## Pester test
+Then we update our test to check for the attribute. Assume this is a full module where we have lots of functions that we are testing but want to exclude just the one above.
 
-[test].CustomAttributes[0].NamedArguments | Get-Member
-[MyCommand] ([test].CustomAttributes[0]) | gm
+    Describe "Help tests for $moduleName" -Tags Build {
 
-# get custom attributes for class
-[test].GetCustomAttributes( 'MyCommand') | fl *
+        $functionList = Get-Command -Module $moduleName
+        
+        foreach($function in $functionList)
+        {         
+            if(ShouldRunTest $function -TestName 'HelpDescription')
+            {
+                it "has a help description" {
+                    $help = $function | %{Get-Help $_.name}
+                    $help.description | Should Not BeNullOrEmpty
+                }
+            }
+        }
+    }
+
+# Limited applications
+I am definitly writting this up as an advanced feature with limited applications. I am sure you can get very creative with this feature. I want to see how far we can push this. 
+
+# Custom parameter validator
+I was in the Powershell Slack channel and Joel Bennett mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are a few arguments that Powershell automatically processes that we can implement ourselves.
+
+# Custom ValidatePathExistsAttribute
+One thing that I find myself doing quite often is using a `[ValidateScript({Test-Path -Path $_})]` on path parameters. This checks they are valid, except the error message is worthless. So instead of using a script block, we can just implement our own validator.
+
+    class ValidatePathExistsAttribute : System.Management.Automation.ValidateArgumentsAttribute
+    {
+        [void]  Validate([object]$arguments, [System.Management.Automation.EngineIntrinsics]$engineIntrinsics)
+        {
+            $path = $arguments
+            if([string]::IsNullOrWhiteSpace($path))
+            {
+                Throw [System.ArgumentNullException]::new()
+            }
+            if(-not (Test-Path -Path $path))
+            {
+                Throw [System.IO.FileNotFoundException]::new()
+            }        
+        }
+    }
+
+The first thing to point out is that I postfix my name with the `Attribute` keyword. When we attach that to our property, we can just call it `[ValidatePathExists]`.
+
+I inherit the `ValidateArgumentsAttribute` and I override the `[void] Validate ([object]$arguments, [System.Management.Automation.EngineIntrinsics]$engineIntrinsics)` function. I figured this out by just looking at the Powershell source for an [example](https://github.com/PowerShell/PowerShell/blob/02b5f357a20e6dee9f8e60e3adb9025be3c94490/src/System.Management.Automation/engine/Attributes.cs#L1222). 
+
+The `$Arguments` contains the value of the property. I have no idea what the `$engineIntrinsics` is, so I just ignore it for now.
+
+I decided to use standard exceptions in this case so the error message is localized. I could just `throw` a custom message needed.
+
+## Use the validator
+Now that we have a custom validator, we can attach it to our property and let Powershell do the rest.
+
+    function do-something
+    {
+        [cmdletbinding()]
+        param(
+            [ValidatePathExists()]
+            $Path
+        )
+        return $Path
+    }	 
+
+Then we run our testcases to see the results
+
+    PS:> do-something -Path 'C:\Windows'
+    C:\Windows
+
+    PS:> do-something -Path 'testvalue'
+    do-something : Cannot validate argument on parameter 'Path'. Unable to find the specified file.
+
+    PS:> do-something -Path $null
+    do-something : Cannot validate argument on parameter 'Path'. Value cannot be null.
+
+## Other reasons to use custom validators
+I use the script and match validators quite often but I do not like the cryptic message. If you truly need a better validator error meassage, it is worth considering this option.
+
+# ArgumentTransformationAttribute
+A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two that I know of.
+
+### Type Accelerators
+I need to pause for a second and mention [Type Accelerators](https://blogs.technet.microsoft.com/heyscriptingguy/2013/07/08/use-powershell-to-find-powershell-type-accelerators/). These transforms are just like those except with a Type Accelerator, your value becomes that type. A transform can do anything and return any type (as long as it is an `[Object]`). 
+
+## [System.Management.Automation.Credential()]
+I ran across this a while back. You can attach this attribute to a parameter. If you pass in a string, then you will be prompted for the password. If you give it a `[PSCredential]`, it will just use that credential. 
+
+    function do-something
+    {
+        [cmdletbinding()]
+        param(
+            [System.Management.Automation.Credential()]
+            $Credential
+        )
+        return $Credential
+    }
+
+    do-something -Credential 'username'
+
+So this attribute transforms a string into something else. Starting with Powershell 5.0, you get this same functionality by specifying the type as `[PSCredential]`.
+
+## [ArgumentToConfigurationDataTransformationAttribute()] 
+I went hunting for another example and I discovered this [gem](https://github.com/PowerShell/PowerShell/blob/02b5f357a20e6dee9f8e60e3adb9025be3c94490/src/System.Management.Automation/DscSupport/CimDSCParser.cs#L278). If you attach this to an attribute, it will allow you to specify a file path. If it discovers a psd1 file, I will transform your parameter into the contents of that psd1 as a hashtable. So it auto imports the hashtable for you. 
 
 
-[test].GetMember('Name').GetCustomAttributes('MyCommand')
-[test].GetMember('Hello').GetCustomAttributes('MyCommand')
-[test].GetMember('Hello').GetParameters().GetCustomAttributes('MyCommand') | Get-Member -Force
+    function Get-HashtableFromFile
+    {
+        [cmdletbinding()]
+        param(
+            [Microsoft.PowerShell.DesiredStateConfiguration.ArgumentToConfigurationDataTransformation()]
+            $Path
+        )
+        return $Path
+    }
 
-[test].GetMethod('Hello') | Get-Member -Force
-[test].GetMethod('Hello') | fl *.GetParameters()
+    $path = 'C:\workspace\PSGraph\PSGraph\PSGraph.psd1'
+    Get-HashtableFromFile -Path $path
 
+I don't think this was ever intened for us to use this way, but it is cool what is possible. 
 
-[MyCommand('other')] 
-$t = [test]::new()
-$T | Get-Member -Force
-$T.gettype().GetCustomAttributes( 'MyCommand')
-$t.psobject.Members | where name -eq name | Get-Member -Force
+# Custom PathTransformAttribute
+We can take everything we learned here and build our own transform. For a simple example, lets create a transform that gives the full path to a file.
 
+    class PathTransformAttribute : System.Management.Automation.ArgumentTransformationAttribute
+    {
+        [object] Transform([System.Management.Automation.EngineIntrinsics]$engineIntrinsics, [object] $inputData)
+        {
+            if($inputData -is [string])
+            {
+                if( -NOT [string]::IsNullOrWhiteSpace($inputData))
+                {
+                    $fullPath = Resolve-Path -Path $inputData -ErrorAction SilentlyContinue
+                    if($fullPath -and -Not [string]::IsNullOrWhiteSpace($inputData))
+                    {
+                        return $fullPath.Path
+                    }                
+                }
+            }
+            $fullName = $inputData.Fullname
+            if($fullName.count -gt 0)
+            {
+                return $fullName
+            }
 
+            throw [System.IO.FileNotFoundException]::new()
+        }
+    }
+
+For this attribute, we inherit from `System.Management.Automation.ArgumentTransformationAttribute` and override the `[object] Transform([System.Management.Automation.EngineIntrinsics]$engineIntrinsics, [object] $inputData)` function.
+
+The inner logic checks for a `[string]` and does a `Resolve-Path` on it. The if it can find a `FullName` property (assuming a file or directory), then it returns that value. 
+
+## Using the transform
+Now we use it just like our validator attribute.
+
+    function Get-Path
+    {
+        [cmdletbinding()]
+        param(
+            [PathTransform()]
+            $Path
+        )
+        return $Path
+    }
+
+# The big picture
+These custom validators and transforms truly are advanced features. But if you find yourself doing the same validation and transformations on certain sets of data across your module, it is worth considering this option. 
+
+I could see creating a validator to validate the format of a customer ID over and over (instead of a regex match).
+
+Another validator that I am considering building already is one that verifies that a hashtable has a specific key (or keys).
+
+# Let me know
+If you find a good way to put this information to use, let me know. I would love to see some practical implementations. 
