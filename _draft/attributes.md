@@ -5,7 +5,7 @@ date: 2017-02-19
 tags: [PowerShell, Attribute, Validator, Transform, Class]
 ---
 
-Every once and a while I stumble onto something in Powershell that I find interesting and I just can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
+Every once and a while I stumble onto something in Powershell that I find interesting and I can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Custom attributes work on <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a> class methods. This will be useful. <a href="https://t.co/8AeopiWH8T">pic.twitter.com/8AeopiWH8T</a></p>&mdash; Brandon Olin (@devblackops) <a href="https://twitter.com/devblackops/status/815747777221099520">January 2, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -109,7 +109,7 @@ Remember that attributes are metadata for our code. So it is the class that has 
 The only way to get our attribute from an object is to pull it off of the object type. If you find that this is an issue for you, reconsider the use of an attribute. A class property or function parameter could be a better option for whatever it is you are trying to do.
 
 # What can we do with this?
-The most obvious use to me is giving hints to our testing framework just like in my `PSScriptAnalyzer` example above. A lot of tests we make in Pester are specific to the functions we are testing, but I often have tests that walk everything.
+The most obvious use to me is giving hints to our testing framework like in my `PSScriptAnalyzer` example above. A lot of tests we make in Pester are specific to the functions we are testing, but I often have tests that walk everything.
 
 Here is a quick example of all the pieces to make that work.
 
@@ -189,7 +189,7 @@ What if we found a way to create new attributes that Powershell already understa
 I was in the Powershell Slack channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are two attributes that Powershell automatically processes that we can implement ourselves.
 
 ## Custom ValidatePathExistsAttribute
-One thing that I find myself doing quite often is using a `[ValidateScript({Test-Path -Path $_})]` on path parameters. This checks they are valid, except the error message is worthless. So instead of using a script block, we can just implement our own validator.
+One thing that I find myself doing quite often is using a `[ValidateScript({Test-Path -Path $_})]` on path parameters. This checks they are valid, except the error message is worthless. So instead of using a script block, we can  implement our own validator.
 
     class ValidatePathExistsAttribute : System.Management.Automation.ValidateArgumentsAttribute
     {
@@ -207,13 +207,13 @@ One thing that I find myself doing quite often is using a `[ValidateScript({Test
         }
     }
 
-The first thing to point out is that I postfix my name with the `Attribute` keyword. When we attach that to our property, we can just call it `[ValidatePathExists]`.
+The first thing to point out is that I postfix my name with the `Attribute` keyword. When we attach that to our property, we can call it `[ValidatePathExists]`.
 
-I inherit the `ValidateArgumentsAttribute` and I override the `[void] Validate ([object]$arguments, [System.Management.Automation.EngineIntrinsics]$engineIntrinsics)` function. I figured this out by just looking at the Powershell source for an [example](https://github.com/PowerShell/PowerShell/blob/02b5f357a20e6dee9f8e60e3adb9025be3c94490/src/System.Management.Automation/engine/Attributes.cs#L1222). 
+I inherit the `ValidateArgumentsAttribute` and I override the `[void] Validate ([object]$arguments, [System.Management.Automation.EngineIntrinsics]$engineIntrinsics)` function. I figured this out by looking at the Powershell source for an [example](https://github.com/PowerShell/PowerShell/blob/02b5f357a20e6dee9f8e60e3adb9025be3c94490/src/System.Management.Automation/engine/Attributes.cs#L1222). 
 
-The `$Arguments` contains the value of the property. I have no idea what the `$engineIntrinsics` is, so I just ignore it for now.
+The `$Arguments` contains the value of the property. I have no idea what the `$engineIntrinsics` is, so I ignore it for now.
 
-I decided to use standard exceptions in this case so the error message is localized. I could just `throw` a custom message needed.
+I decided to use standard exceptions in this case so the error message is localized. I could `throw` a custom message needed.
 
 ## Use the validator
 Now that we have a custom validator, we can attach it to our property and let Powershell do the rest.
@@ -249,7 +249,7 @@ A lesser known attribute built into Powershell is the `ArgumentTransformationAtt
 I need to pause for a second and mention [Type Accelerators](https://blogs.technet.microsoft.com/heyscriptingguy/2013/07/08/use-powershell-to-find-powershell-type-accelerators/). These transforms are just like those except with a Type Accelerator, your value becomes that type. A transform can do anything and return any type (as long as it is an `[Object]`). 
 
 ## [System.Management.Automation.Credential()]
-I ran across this one a while back. You can attach this attribute to a parameter. If you pass in a string, then you will be prompted for the password. If you give it a `[PSCredential]`, it will just use that credential. 
+I ran across this one a while back. You can attach this attribute to a parameter. If you pass in a string, then you will be prompted for the password. If you give it a `[PSCredential]`, it will use that credential. 
 
     function Do-Something
     {
@@ -314,10 +314,10 @@ We can take everything we learned here and build our own transform. For a simple
 
 For this attribute, we inherit from `System.Management.Automation.ArgumentTransformationAttribute` and override the `[object] Transform([System.Management.Automation.EngineIntrinsics]$engineIntrinsics, [object] $inputData)` function.
 
-The inner logic checks for a `[string]` and does a `Resolve-Path` on it. The if it can find a `FullName` property (assuming a file or directory), then it returns the `FullPath`. I decided to throw an error if there was no match but I could have just returned the original object. 
+The inner logic checks for a `[string]` and does a `Resolve-Path` on it. The if it can find a `FullName` property (assuming a file or directory), then it returns the `FullPath`. I decided to throw an error if there was no match but I could have returned the original object. 
 
 ## Using the transform
-Now we use it just like our validator attribute.
+Now we use it like our validator attribute.
 
     function Get-Path
     {
