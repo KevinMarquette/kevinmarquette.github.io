@@ -4,8 +4,13 @@ title: "Powershell: Everything you wanted to know about creating custom Attribut
 date: 2017-02-19
 tags: [PowerShell, Attribute, Validator, Transform, Class]
 ---
-
 Every once and a while I stumble onto something in Powershell that I find interesting and I can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell.
+
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Custom attributes work on <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a> class methods. This will be useful. <a href="https://t.co/8AeopiWH8T">pic.twitter.com/8AeopiWH8T</a></p>&mdash; Brandon Olin (@devblackops) <a href="https://twitter.com/devblackops/status/815747777221099520">January 2, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+We can have a lot of fun with that.
 
 * TOC
 {:toc}
