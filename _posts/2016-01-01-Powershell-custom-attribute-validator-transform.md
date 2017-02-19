@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Creating custom attributes and the practical applications"
+title: "Powershell: Creating custom attributes and practical applications"
 date: 2016-02-19
 tags: [PowerShell,Classes,Attribute,Validator,Transform]
 ---
