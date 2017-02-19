@@ -189,7 +189,7 @@ I am definitely writing this up as an advanced feature with limited applications
 What if we found a way to create new attributes that Powershell already understand how to use?
 
 # Custom parameter validator
-I was in the Powershell Slack channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are two attributes that Powershell automatically processes that we can implement ourselves.
+I was in the [Powershell Slack](https://powershell.slack.com/messages/irc-bridge/) channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. As is turns out, there are two attributes that Powershell automatically processes that we can implement ourselves.
 
 ## Custom ValidatePathExistsAttribute
 One thing that I find myself doing quite often is using a `[ValidateScript({Test-Path -Path $_})]` on path parameters. This checks they are valid, except the error message is worthless. So instead of using a script block, we can  implement our own validator.
