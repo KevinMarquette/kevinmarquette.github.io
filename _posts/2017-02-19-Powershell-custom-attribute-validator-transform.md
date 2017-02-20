@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Creating custom attributes and practical applications"
+title: "Powershell: Creating and using custom attributes"
 date: 2017-02-19
 tags: [PowerShell,Classes,Attribute,Validator,Transform]
 ---
@@ -106,7 +106,7 @@ I had to filter on the `TypeID.Name` because we will also get the `[CmdLetBindin
 
 ## It's on the class and not the object
 
-Remember that attributes are metadata for our code. So it is the class that has the attribute attached to it. Every object of that class will have the same attribute.
+Remember that attributes are metadata for our code. So it is the class that has the attribute attached to it. Every object of that class will have the same attribute with identical values.
 
     $object = [Test]::new()
     $object.GetType().GetCustomAttributes('MyCommand')
@@ -154,9 +154,9 @@ I decided to create a helper function to make this easier to work with.
             [string]
             $TestName
         )
-        $SkipTest = $Command.ScriptBlock.Attributes | Where-object {$_.TypeID.Name -eq 'SkipTest'}
+        $SkipTest = $Command.ScriptBlock.Attributes | Where-object { $_.TypeID.Name -eq 'SkipTest' }
         
-        if($SkipTest -ne $null -and $SkipTest.TestName -eq $TestName)
+        if( ( $SkipTest -ne $null ) -and ( $SkipTest.TestName -eq $TestName ) )
         {
             return $false
         }
@@ -218,7 +218,7 @@ I inherit the `ValidateArgumentsAttribute` and I override the `[void] Validate (
 
 The `$Arguments` contains the value of the property. I have no idea what the `$engineIntrinsics` is, so I ignore it for now.
 
-I decided to use standard exceptions in this case so the error message is localized. I could `throw` a custom message needed.
+I decided to use standard exceptions in this case so the error message is localized. I could `throw` a custom message if needed.
 
 ## Use the validator
 Now that we have a custom validator, we can attach it to our property and let Powershell do the rest.
@@ -245,7 +245,7 @@ Then we run our testcases to see the results
     do-something : Cannot validate argument on parameter 'Path'. Value cannot be null.
 
 ## Other reasons to use custom validators
-I use the script and match validators quite often but I do not like the cryptic message. If you truly need a better validator error message, it is worth considering this option.
+I use the script and match validators quite often but I do not like the cryptic error messages. If you truly need a better validator error message, it is worth considering this option.
 
 # ArgumentTransformationAttribute
 A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two (that are publicly accessible) that I know of.
@@ -301,7 +301,7 @@ We can take everything we learned here and build our own transform. For a simple
                 if( -NOT [string]::IsNullOrWhiteSpace($inputData))
                 {
                     $fullPath = Resolve-Path -Path $inputData -ErrorAction SilentlyContinue
-                    if($fullPath -and -Not [string]::IsNullOrWhiteSpace($inputData))
+                    if($fullPath.count -gt 0 -and -Not [string]::IsNullOrWhiteSpace($fullPath))
                     {
                         return $fullPath.Path
                     }                
@@ -319,7 +319,7 @@ We can take everything we learned here and build our own transform. For a simple
 
 For this attribute, we inherit from `System.Management.Automation.ArgumentTransformationAttribute` and override the `[object] Transform([System.Management.Automation.EngineIntrinsics]$engineIntrinsics, [object] $inputData)` function.
 
-The inner logic checks for a `[string]` and does a `Resolve-Path` on it. The if it can find a `FullName` property (assuming a file or directory), then it returns the `FullPath`. I decided to throw an error if there was no match but I could have returned the original object. 
+The inner logic checks for a `[string]` and does a `Resolve-Path` on it. Then if it can find a `FullName` property (assuming a file or directory), then it returns the `FullPath`. I decided to throw an error if there was no match but I could have returned the original object. 
 
 ## Using the transform
 Now we use it like our validator attribute.
