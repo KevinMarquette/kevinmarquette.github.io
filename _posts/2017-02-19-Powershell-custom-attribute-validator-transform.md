@@ -248,7 +248,7 @@ Then we run our testcases to see the results
 I use the script and match validators quite often but I do not like the cryptic error messages. If you truly need a better validator error message, it is worth considering this option.
 
 # ArgumentTransformationAttribute
-A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two (that are publicly accessible) that I know of.
+A lesser known attribute built into Powershell is the `ArgumentTransformationAttribute`.  This is also one that I discovered when looking at the Powershell source. There are only two (that are publicly accessible) instances that I know of.
 
 ### Type Accelerators
 I need to pause for a second and mention [Type Accelerators](https://blogs.technet.microsoft.com/heyscriptingguy/2013/07/08/use-powershell-to-find-powershell-type-accelerators/). These transforms are just like those except with a Type Accelerator, your value becomes that type. A transform can do anything and return any type (as long as it is an `[Object]`). 
