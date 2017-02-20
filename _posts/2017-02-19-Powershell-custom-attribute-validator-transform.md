@@ -301,7 +301,7 @@ We can take everything we learned here and build our own transform. For a simple
                 if( -NOT [string]::IsNullOrWhiteSpace($inputData))
                 {
                     $fullPath = Resolve-Path -Path $inputData -ErrorAction SilentlyContinue
-                    if($fullPath.count -gt 0 -and -Not [string]::IsNullOrWhiteSpace($fullPath))
+                    if(  ($fullPath.count -gt 0 ) -and ( -Not [string]::IsNullOrWhiteSpace( $fullPath ) ) 
                     {
                         return $fullPath.Path
                     }                
