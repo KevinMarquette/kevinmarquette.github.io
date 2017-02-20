@@ -296,12 +296,12 @@ We can take everything we learned here and build our own transform. For a simple
     {
         [object] Transform([System.Management.Automation.EngineIntrinsics]$engineIntrinsics, [object] $inputData)
         {
-            if($inputData -is [string])
+            if ( $inputData -is [string] )
             {
-                if( -NOT [string]::IsNullOrWhiteSpace($inputData))
+                if ( -NOT [string]::IsNullOrWhiteSpace( $inputData ) )
                 {
                     $fullPath = Resolve-Path -Path $inputData -ErrorAction SilentlyContinue
-                    if(  ($fullPath.count -gt 0 ) -and ( -Not [string]::IsNullOrWhiteSpace( $fullPath ) ) 
+                    if ( ( $fullPath.count -gt 0 ) -and ( -Not [string]::IsNullOrWhiteSpace( $fullPath ) ) 
                     {
                         return $fullPath.Path
                     }                
