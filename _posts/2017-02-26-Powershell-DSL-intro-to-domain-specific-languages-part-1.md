@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Intro to Domain-Specific Languages, DSL Part 1"
+title: "Powershell: Intro to Domain-Specific Languages (DSL)"
 date: 2017-02-26
 tags: [PowerShell, DSL, Domain Specific Language,Advanced]
 ---
