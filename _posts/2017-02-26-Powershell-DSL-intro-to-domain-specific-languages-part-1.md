@@ -12,6 +12,11 @@ This is the first post in a series covering what a DSL is and how to write one.
 * Part 2: Writing a DSL for RDC Manager
 * Part 3: CmdLet based DSL design patterns
 
+# Index
+
+* TOC
+{:toc}
+
 # What exactly is a DSL?
 "A domain-specific language (DSL) is a computer language specialized to a particular application domain. This is in contrast to a general-purpose language (GPL), which is broadly applicable across domains, and lacks specialized features for a particular domain." -[Wikipedia](https://en.wikipedia.org/wiki/Domain-specific_language)
 
@@ -85,11 +90,11 @@ _psraph_
         Edge start,middle,end        
     }
 
-# a DSL in Powershell
+# A DSL in Powershell
 There are two approaches to creating a DSL. The first one uses data sections to limit available commands. The other abuses the mechanics of parameters. It is worth learning both because they can be mixed together.
 
-# Data Sections
-There is a little known keyword in Powershell that lets you define [data section](https://technet.microsoft.com/en-us/library/dd347678.aspx). This is a script block that only contains data unless you specify otherwise. 
+# Data sections
+There is a little known keyword in Powershell that lets you define a [data section](https://technet.microsoft.com/en-us/library/dd347678.aspx). This is a script block that only contains data unless you specify otherwise. 
 
     Data {'Hellow Wolrd'}
 
@@ -110,9 +115,9 @@ Here is an example of how it was used:
 The pattern was to import the contents of a file into a string like the one above and either `Invoke-Expression` on it or create a `[scriptblock]` and run `invoke()`.
 
 ## The original DSL feature
-After traking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of CMDlets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.  
+After tracking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of CmsLets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.  
 
-# CmdLet based DSL Example
+# CmdLet based DSL example
 The most common way we have seen a custom DSL implemented in Powershell is with CmdLets. They tend not to use the noun-verb structure and they make heavy use of positional parameters. Lets take a look at an example from pester.
 
     Describe "Unit Test" {
@@ -129,7 +134,7 @@ At first glance, that looks nothing like Powershell. Let me translate that into 
         }
     }
 
-This looks a little more like the powershell we know, but it still takes advantage of script blocks in a less common way. Here is one more translation that don't nest the scriptblocks.
+This looks a little more like the Powershell we know, but it still takes advantage of the `[scriptblock]` in a less common way. Here is one more translation that don't nest the `[scriptblock]`.
 
     $TestScript = {
         Should -ActualValue "Something" -Be -ExpectedContent "Something"
@@ -139,7 +144,7 @@ This looks a little more like the powershell we know, but it still takes advanta
     }
     Describe -Name "Unit Test" -Fixture $DescribeScript
 
-If you had to write all your tests like that it would be easier to just write your tests with normal Powershell. Hopefully that helps hilights the value of a well written DSL.
+If you had to write all your tests like that it would be easier to just write your tests with normal Powershell. Hopefully that helps show the value of a well written DSL.
 
-# Whats next
+# What's next?
 Next week we will build a DSL based CmdLet to generate rdg files for Microsoft's Remote Desktop Connection Manager. I can't say that we need a DSL for that but it will be a simple example that introduces a few different techniques.
