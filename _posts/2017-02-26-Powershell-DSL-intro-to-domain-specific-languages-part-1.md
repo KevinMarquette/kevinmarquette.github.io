@@ -16,7 +16,7 @@ This is the first post in a series covering what a DSL is and how to write one.
 "A domain-specific language (DSL) is a computer language specialized to a particular application domain. This is in contrast to a general-purpose language (GPL), which is broadly applicable across domains, and lacks specialized features for a particular domain." -[Wikipedia](https://en.wikipedia.org/wiki/Domain-specific_language)
 
 ## Say that again?
-An application domain may be specialized enough that it has it's own language to describe things. Sometimes that does not translate well to the tools we are use to using. There are many ways to approach these problems and using a DSL is one of them.
+An application domain may be specialized enough that it has it's own language to describe things. Sometimes that does not translate well to the tools we are using. We have many ways to approach these problems and using a DSL is one of them.
 
 ## Any good examples?
 HTML, CSS, XML and SQL are all DSLs. Here are some basic snippets.
@@ -46,7 +46,7 @@ _SQL_
 
     Select Name From tablePerson Where ID = 1
 
-In each case they have their own domain of terminology and patterns. We also several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph/) are all implementated as a DSL. 
+In each case they have their own domain of terminology and patterns. We also have several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph/) are all implemented as a DSL. 
 
 _DSC_
 
@@ -80,9 +80,9 @@ _psake_
 
 _psraph_
 
-    graph "myGraph" {
-        node @{shape='rectangle'}
-        edge start,middle,end        
+    Graph "myGraph" {
+        Node @{shape='rectangle'}
+        Edge start,middle,end        
     }
 
 # a DSL in Powershell
