@@ -9,8 +9,8 @@ I always considered myself a Powershell purist. A DSL (Domain-Specific Language)
 
 This is the first post in a series covering what a DSL is and how to write one.
 * Part 1: Intro to Domain-Specific Languages
-* Part 2: Writing a DSL for RDC Manager
-* Part 3: CmdLet based DSL design patterns
+* Part 2: Writing a DSL for RDC Manager (eta 3-5-2017)
+* Part 3: CmdLet based DSL design patterns (eta 3-13-2017)
 
 # Index
 
