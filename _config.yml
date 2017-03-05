@@ -14,7 +14,7 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Kevin Marquette
+title: Kevin Marquette, PowerShell Theory
 
 # Short description of your site
 description: I love to explore and discover how Powershell works.
@@ -87,7 +87,7 @@ timezone: "America/Chicago"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 15
+paginate: 30
 
 kramdown:
   input: GFM
