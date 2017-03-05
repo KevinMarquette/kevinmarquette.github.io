@@ -9,7 +9,7 @@ I always considered myself a Powershell purist. A DSL (Domain-Specific Language)
 
 This is the first post in a series covering what a DSL is and how to write one.
 * Part 1: Intro to Domain-Specific Languages
-* Part 2: Writing a DSL for RDC Manager (eta 3-5-2017)
+* Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: CmdLet based DSL design patterns (eta 3-13-2017)
 
 # Index
@@ -148,3 +148,5 @@ If you had to write all your tests like that it would be easier to just write yo
 
 # What's next?
 Next week we will build a DSL based CmdLet to generate rdg files for Microsoft's Remote Desktop Connection Manager. I can't say that we need a DSL for that but it will be a simple example that introduces a few different techniques.
+
+Continue to part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
