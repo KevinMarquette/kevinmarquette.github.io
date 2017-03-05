@@ -127,11 +127,11 @@ This would be a great start, but I want to spruce it up a bit to give us more fl
             foreach($node in $ComputerName)
             {
                 @"
-        <server>
+          <server>
             <properties>
-            <name>$node</name>
+              <name>$node</name>
             </properties>
-        </server>
+          </server>
     "@
             }
         }
@@ -201,7 +201,7 @@ Right now, this function could be used like this:
 This is where we start to see this looking like a DSL. Because we used positional parameters, we can rewrite this command like this:
 
     Get-RdcGroup ATX {
-        Get-RdcServer Server1,Server1
+        Get-RdcServer Server1,Server2
     }
 
 There is one more little known trick we can use here. Any command that is defined with the `Get` verb will have an automatic weak alias that is just the noun. You can run `Process` and `Get-Process` will be called. We could just rename our commands or even create aliases, but I find this to be a handy shortcut.
@@ -214,11 +214,11 @@ There is one more little known trick we can use here. Any command that is define
 We can also place groups inside our script block. This should let us recreate the original example using our DSL.
 
     RdcGroup GroupATX {
-        RdgGroup GroupDMZ {
+        RdcGroup GroupDMZ {
             RdcServer ServerDMZ01
-            RDCServer ServerDMZ02
+            RdcServer ServerDMZ02
         }
-        RdgGroup GroupInternal {
+        RdcGroup GroupInternal {
         }
     }
 
