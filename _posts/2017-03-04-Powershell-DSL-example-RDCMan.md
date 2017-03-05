@@ -74,7 +74,7 @@ And here is the resulting configuraiton file.
 
 I created this sample with some depth to it so we could see how the hierarchy and multiple elements were handled. We have a lot of good information in here. It looks like a group element can contain multiple group  or server elements. Each group or server element has a properties element for all the metadata about that item.
 
-These are the key pieces of data that we will be generatin today.
+These are the key pieces of data that we will be generating today.
 
     <server>
       <properties>
@@ -94,7 +94,7 @@ There was a lot more stuff in that file, but I think we can abstract it away in 
 
 ## Get-RdcServer
 
-The server element looks really easy. We just need a function that returns that chunk of XML with the correct server name.
+The `Server` element looks really easy. We just need a function that returns that chunk of XML with the correct server name.
 
     function Get-RdcServer
     {
@@ -108,7 +108,7 @@ The server element looks really easy. We just need a function that returns that 
     "@
     }
 
-This would be a great start, but I want to spruce it up a bit to give us more flexibility. Here is a full function that we will use going forward.
+This would be a great start, but I want to spruce it up a bit to give us more flexibility. Here is a full advanced function that we will use going forward.
 
     function Get-RdcServer
     {
@@ -150,7 +150,7 @@ I'll show you how this plays into our DSL in a moment, but first we need one mor
 
 ## Get-RdcGroup
 
-The Group element will be more interesting because we need a way for it to contain other servers or groups. In our example, the child items will either be function calls to `Get-RdcServer` or calls to this new function `Get-RdcGroup`. We will use a `[ScriptBLock]` to hold these child items.
+The `Group` element will be more interesting because we need a way for it to contain other servers or groups. In our example, the child items will either be function calls to `Get-RdcServer` or calls to this new function `Get-RdcGroup`. We will use a `[ScriptBLock]` to hold these child items.
 
 Here is our function for creating the group.
 
@@ -169,8 +169,8 @@ Here is our function for creating the group.
                 Mandatory = $true,
                 Position = 1
             )]
-            [string]
-            $ScriptBlock
+            [scriptblock]
+            $ChildItems
         )
         process
         {
@@ -180,19 +180,19 @@ Here is our function for creating the group.
             <name>$GroupName</name>
           </properties>
     "@
-           $ScriptBlock.Invoke()
+           $ChildItems.Invoke()
 
             '    </group>'
         }
     }
 
-First I specified two parameters. The first one `$GroupName`, will be the name of the group and the `$ScriptBlock` will contain our child items. 
+First I specified two parameters. The first one `$GroupName`, will be the name of the group and the `$ChildItems` will contain our child items. 
 
-The body is really simple in this one. I have two strings that I let fall to the pipeline and I execute that `$ScrptBlock`. Executing the `[ScriptBlock]` will run any commands that we place in there.
+The body is really simple in this one. I have two strings that I let fall to the pipeline and I execute that `$ChildItems`. Executing the `[ScriptBlock]` will run any commands that we place in there.
 
 Right now, this function could be used like this:
 
-    Get-RdcGroup -GroupName 'ATX' -ScriptBlock {
+    Get-RdcGroup -GroupName 'ATX' -ChildItems {
         Get-RdcServer -ComputerName 'Server1'
     }
 
