@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Writing a DSL for RDC Manager"
+title: "Powershell: Writing a DSL for RDC Manager, DSLs Part 2"
 date: 2017-03-04
 tags: [PowerShell, DSL, Domain Specific Language, RDCman, Advanced]
 ---
@@ -10,7 +10,7 @@ I am not sure how many times I have written a script to generate server lists fo
 This is the second post in a series covering what a DSL is and how to write one.
 
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
-* Part 2: Writing a DSL for RDC Manager
+* Part 2: Writing a DSL for RDC Manager (This post)
 * Part 3: CmdLet based DSL design patterns (eta 3-13-2017)
 
 # Index
@@ -204,7 +204,7 @@ This is where we start to see this looking like a DSL. Because we used positiona
         Get-RdcServer Server1,Server2
     }
 
-There is one more little known trick we can use here. Any command that is defined with the `Get` verb will have an automatic weak alias that is just the noun. You can run `Process` and `Get-Process` will be called. We could just rename our commands or even create aliases, but I find this to be a handy shortcut.
+There is one more little known trick we can use here. Any command that is defined with the `Get` verb will have an automatic weak alias that is just the noun. You can run `Service` and `Get-Service` will be called. We could just rename our commands or even create aliases, but I find this to be a handy shortcut.
 
     RdcGroup GroupATX {
         RdcServer Server1
