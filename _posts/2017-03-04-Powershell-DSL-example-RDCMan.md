@@ -170,7 +170,7 @@ Here is our function for creating the group.
                 Position = 1
             )]
             [scriptblock]
-            $ChildItems
+            $ChildItem
         )
         process
         {
@@ -180,19 +180,19 @@ Here is our function for creating the group.
             <name>$GroupName</name>
           </properties>
     "@
-           $ChildItems.Invoke()
+           $ChildItem.Invoke()
 
             '    </group>'
         }
     }
 
-First I specified two parameters. The first one `$GroupName`, will be the name of the group and the `$ChildItems` will contain our child items. 
+First I specified two parameters. The first one `$GroupName`, will be the name of the group and the `$ChildItem` will contain our child items. 
 
-The body is really simple in this one. I have two strings that I let fall to the pipeline and I execute that `$ChildItems`. Executing the `[ScriptBlock]` will run any commands that we place in there.
+The body is really simple in this one. I have two strings that I let fall to the pipeline and I execute that `$ChildItem`. Executing the `[ScriptBlock]` will run any commands that we place in there.
 
 Right now, this function could be used like this:
 
-    Get-RdcGroup -GroupName 'ATX' -ChildItems {
+    Get-RdcGroup -GroupName 'ATX' -ChildItem {
         Get-RdcServer -ComputerName 'Server1'
     }
 
@@ -236,4 +236,4 @@ I have covered as much as I wanted to here for the DSL implementation but I may 
 
 # Where do we go from here
 
-Now that we know what a DSL is and put together something simple, I plan on digging into some design patterns around building more complex DSL solutions in my next post.
+Now that we know what a DSL is and put together something simple, I will dive into some design patterns around building more complex DSL solutions in my next post.
