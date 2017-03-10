@@ -16,7 +16,7 @@ This feature allows you to define your features and specifications in a simple b
 
 # What is Gherkin?
 
-Ghrekin is the specific business readable Domain Specific Language used to create a specification. I honestly don't know much more about it, but I found these references on the topic.
+Gherkin is the specific business readable Domain Specific Language used to create a specification. I honestly don't know much more about it, but I found these references on the topic.
 
 * [Cucumber Wiki/Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
 * [The Truth about BDD](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd)
@@ -40,7 +40,7 @@ Save this as `.\distribution.feature` and now we have a Gherkin style specificat
 
 ## Invoke-Gherkin
 
-Now we need to execute `Invoke-Ghrekin` just like we would Pester. Here is the output from our sample.
+Now we need to execute `Invoke-Gherkin` like we would `Invoke-Pester`. Here is the output from our sample.
 
 ![Gherkin feature only](/img/gherkin-firstrun.png)
 
@@ -134,8 +134,6 @@ You also don't have to have a 1 to 1 mapping between step files and feature file
 Different specifications can have lines map to the same test as long as the text is an exact match. This is good when you have scenarios that have the same dependencies or a lot of overlapping steps.
 
 
-# Why not just use Invoke-Pester?
+# Why not use Invoke-Pester?
 
 Pester is good at a lot of things but it is built around one school of thought. Gherkin approaches the problem from a different prospective. This is just another tool for us to use. I feel like I have only scratched the surface on this but I wanted to shed some light on this feature that is fairly unknown.
-
-
