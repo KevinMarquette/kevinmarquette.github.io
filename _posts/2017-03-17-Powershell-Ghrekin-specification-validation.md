@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Gherkin for plain text specification validation"
+title: "Powershell: Gherkin specification validation"
 date: 2017-03-10
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
@@ -14,7 +14,7 @@ This feature allows you to define your features and specifications in a simple b
 * TOC
 {:toc}
 
-# What is Gherkin
+# What is Gherkin?
 
 Ghrekin is the specific business readable Domain Specific Language used to create a specification. I honestly don't know much more about it, but I found these references on the topic.
 
