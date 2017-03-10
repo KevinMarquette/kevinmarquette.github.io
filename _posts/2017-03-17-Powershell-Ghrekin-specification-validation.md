@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Powershell: Gherkin for plain test specification validation"
-date: 2017-03-04
+title: "Powershell: Gherkin for plain text specification validation"
+date: 2017-03-10
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
 
-Pester has a interesting secret feature that we need to talk about. It support Gherkin style feature specification. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you Pester like pass/fail on each item in the specification. I think this is awesome and more people need to know about it.
+Pester has a interesting secret feature that we need to talk about. It support Gherkin style feature specification. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. 
+
+This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you Pester like pass/fail on each item in the specification. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was added so you may need to update Pester to get it.
 
 # Index
 
@@ -14,18 +16,18 @@ Pester has a interesting secret feature that we need to talk about. It support G
 
 # What is Gherkin
 
-Ghrekin is the specific business readable Domain Specific Language used to create the specification. I honestly don't know much about it, but I found these references on the topic.
+Ghrekin is the specific business readable Domain Specific Language used to create a specification. I honestly don't know much more about it, but I found these references on the topic.
 
 * [Cucumber Wiki/Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
 * [The Truth about BDD](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd)
 * [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
-Even though I don't know much about its origins, I can still show you how it works in Pester.
+Even though I don't know about its origins, I can still show you how it works in Pester.
 
 # Our first specification
 We need to start by creating a specification. These plain text files need to be saved with a `.feature` extension for them to get automatically processed. Here is a simple one we can add to a module.
 
-    Feature: We need distribute our module to the public
+    Feature: We need to distribute our module to the public
         It should be published someplace that is easy to find
 
       Scenario: A user needs to be able to find our module in the PSGallery
@@ -34,7 +36,7 @@ We need to start by creating a specification. These plain text files need to be 
         When The user searches for our module
         Then They can install the module
 
-Save this as `distribution.feature` and now we have a Ghrekin style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
+Save this as `.\distribution.feature` and now we have a Ghrekin style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
 
 ## Invoke-Ghrekin
 
@@ -47,7 +49,7 @@ Because those colors can be hard to read, here is the raw text.
     PS > Invoke-Gherkin
     Testing all features in 'C:\workspace\Chronometer'
 
-    Feature: We need distribute our module to the public
+    Feature: We need to distribute our module to the public
         It should be published someplace that is easy to find
 
       Scenario: A user needs to be able to find our module in the PSGallery
@@ -108,7 +110,7 @@ Now when we run the `Invoke-Ghrekin`, we get this output.
     PS> Invoke-Gherkin
     Testing all features in 'C:\workspace\Chronometer'
 
-    Feature: We need distribute our module to the public
+    Feature: We need to distribute our module to the public
            It should be published someplace that is easy to find
 
       Scenario: A user needs to be able to find our module in the PSGallery
@@ -134,4 +136,6 @@ Different specifications can have lines map to the same test as long as the text
 
 # Why not just use Invoke-Pester?
 
-Pester is good at a lot of things but it is built around one school of thought. Gherkin approaches the problem from a different prospective. This is just another tool for us to use. I feel like I have only scratched the surface on this but I wanted to shed some light on a feature that is fairly unknown.
+Pester is good at a lot of things but it is built around one school of thought. Gherkin approaches the problem from a different prospective. This is just another tool for us to use. I feel like I have only scratched the surface on this but I wanted to shed some light on this feature that is fairly unknown.
+
+

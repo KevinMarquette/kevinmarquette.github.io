@@ -5,6 +5,21 @@ date: 2017-03-04
 tags: [PowerShell, DSL, Design Patterns, Advanced]
 ---
 
+# Cmdlet Alias pattern
+
+This is where you build a normal advanced function but use a short name or alias when calling it. Because you are creating a DSL, you may not honor the verb-noun standard. 
+
+I often use weak aliases. A weak alias is where you use the `Get` verb and use the automatic alias that is only the noun. Just like how you can use the weak alias of `Service` to actually call `Get-Service`. This is a little known feature but it works well for this.
+
+# Item-Group-Parent pattern
+
+This is the pattern we used in the previous post to create the RDCMan DSL. You have an item command that produces a object when invoked. You nest that item command in a group command. This also produces an object when invoked but it also contains all the child objects. Then you optionally have a parent command that contains all the objects and does the final processing.
+
+The key to this pattern is that a `scritpblock` holds all the child commands and those `scriptblock`s get invoked as the command processes. 
+
+# Object-Collector pattern
+
+
 
 # passthu pattern
 
