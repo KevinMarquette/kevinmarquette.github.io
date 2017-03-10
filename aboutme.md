@@ -26,9 +26,9 @@ subtitle: Sr. DevOps Engineer
 I am a Sr. DevOps Engineer for LoanDepot in Orange County, CA. I have been very passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
 
 Social Media
-* https://twitter.com/KevinMarquette
-* https://github.com/KevinMarquette
-* https://www.linkedin.com/in/kevinmarquette
+* [Twitter](https://twitter.com/KevinMarquette)
+* [GitHub](https://github.com/KevinMarquette)
+* [LinkedIn](https://www.linkedin.com/in/kevinmarquette)
 
 Projects
 * [PSGraph](/2017-01-30-Powershell-PSGraph/)
