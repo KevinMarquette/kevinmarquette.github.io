@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Gherkin specification validation"
+title: "Powershell: Gherkin specification validation introduction"
 date: 2017-03-10
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
