@@ -5,9 +5,9 @@ date: 2017-03-10
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
 
-Pester has a interesting secret feature that we need to talk about. It support Gherkin style feature specification. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. 
+Pester has a interesting secret feature that we need to talk about. It support Gherkin style feature specifications. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. 
 
-This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you Pester like pass/fail on each item in the specification. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was added so you may need to update Pester to get it.
+This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you Pester like pass/fail on each item. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was added so you may need to update Pester to get it.
 
 # Index
 
@@ -36,13 +36,13 @@ We need to start by creating a specification. These plain text files need to be 
         When The user searches for our module
         Then They can install the module
 
-Save this as `.\distribution.feature` and now we have a Ghrekin style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
+Save this as `.\distribution.feature` and now we have a Gherkin style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
 
-## Invoke-Ghrekin
+## Invoke-Gherkin
 
 Now we need to execute `Invoke-Ghrekin` just like we would Pester. Here is the output from our sample.
 
-![Ghrekin feature only](/img/ghrekin-firstrun.png)
+![Gherkin feature only](/img/gherkin-firstrun.png)
 
 Because those colors can be hard to read, here is the raw text.
 
@@ -65,7 +65,7 @@ That will enumerate all the feature specifications we have. And run any correspo
 
 # Adding test steps
 
-The set of tests for a Ghrekin feature are called steps. Because of that they need saved in a file with a name ending in `.Steps.ps1`. Now we can start adding some steps into a file.
+The set of tests for a Gherkin feature are called steps. Because of that they need saved in a file with a name ending in `.Steps.ps1`. Now we can start adding some steps into a file.
 
     Given 'We have functions to publish' {
         "$psscriptroot\..\chronometer\public\*.ps1" | Should Exist
@@ -81,7 +81,7 @@ The set of tests for a Ghrekin feature are called steps. Because of that they ne
         { Install-Module chronometer -Scope CurrentUser -WhatIf } | Should Not Throw
     }
  
-You will notice that I created a Pester style test for several lines in the specification. Each one starts with a keyword of `Given`, `And`, `When` or`Then`. (`But` is also a valid keyword). The description is pulled directly from the specification. The `Invoke-Ghrekin` uses that description to make that match.
+You will notice that I created a Pester style test for several lines in the specification. Each one starts with a keyword of `Given`, `And`, `When` or`Then`. (`But` is also a valid keyword). The description is pulled directly from the specification. The `Invoke-Gherkin` uses that description to make that match.
 
 This is what my module looks like now that I added both the feature specification and the step tests.
 
@@ -103,9 +103,9 @@ This is what my module looks like now that I added both the feature specificatio
 
 ## Running the test steps
 
-Now when we run the `Invoke-Ghrekin`, we get this output.
+Now when we run the `Invoke-Gherkin`, we get this output.
 
-![Ghrekin feature passing](/img/ghrekin-pass.png)
+![Gherkin feature passing](/img/gherkin-pass.png)
 
     PS> Invoke-Gherkin
     Testing all features in 'C:\workspace\Chronometer'
