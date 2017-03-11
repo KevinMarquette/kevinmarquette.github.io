@@ -5,9 +5,9 @@ date: 2017-03-10
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
 
-Pester has a interesting secret feature that we need to talk about. It support Gherkin style feature specifications. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. 
+Pester has a interesting secret feature that we need to talk about. It supports Gherkin-style feature specifications. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before. 
 
-This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you Pester like pass/fail on each item. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was added so you may need to update Pester to get it.
+This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you pass/fail results on each item like Pester. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was introduced, so you may need to update Pester to get it.
 
 # Index
 
@@ -19,6 +19,7 @@ This feature allows you to define your features and specifications in a simple b
 Gherkin is the specific business readable Domain Specific Language used to create a specification. I honestly don't know much more about it, but I found these references on the topic.
 
 * [Cucumber Wiki/Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
+* [Cucumber (software) - Wikipedia](https://en.wikipedia.org/wiki/Cucumber_(software)#Gherkin_.28Language.29 )
 * [The Truth about BDD](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd)
 * [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
@@ -36,7 +37,7 @@ We need to start by creating a specification. These plain text files need to be 
         When The user searches for our module
         Then They can install the module
 
-Save this as `.\distribution.feature` and now we have a Gherkin style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
+Save this as `.\distribution.feature` and now we have a Gherkin-style specification. I am going to save this into a `Spec` folder inside my already existing [Chronometer](https://kevinmarquette.github.io/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/) module.
 
 ## Invoke-Gherkin
 
@@ -81,7 +82,7 @@ The set of tests for a Gherkin feature are called steps. Because of that they ne
         { Install-Module chronometer -Scope CurrentUser -WhatIf } | Should Not Throw
     }
  
-You will notice that I created a Pester style test for several lines in the specification. Each one starts with a keyword of `Given`, `And`, `When` or`Then`. (`But` is also a valid keyword). The description is pulled directly from the specification. The `Invoke-Gherkin` uses that description to make that match.
+You will notice that I created a Pester-style test for several lines in the specification. Each one starts with a keyword of `Given`, `And`, `When` or`Then`. (`But` is also a valid keyword). The description is pulled directly from the specification. The `Invoke-Gherkin` uses that description to make that match.
 
 This is what my module looks like now that I added both the feature specification and the step tests.
 
