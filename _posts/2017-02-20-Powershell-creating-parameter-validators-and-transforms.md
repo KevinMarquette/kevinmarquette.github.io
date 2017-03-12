@@ -9,7 +9,7 @@ I was in the [Powershell Slack](https://powershell.slack.com/messages/irc-bridge
 This is the second part in a two part post about attributes. 
 
 * [Part 1: Creating and using custom attributes](/2017-02-19-Powershell-custom-attribute-validator-transform)
-* Part 2: Creating parameter validators and transforms
+* Part 2: Creating parameter validators and transforms (This post)
 
 Before you begin, understand that this is a very advanced technique and we are about to dive very deep into it.
 
