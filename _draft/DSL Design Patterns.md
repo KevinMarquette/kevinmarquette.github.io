@@ -5,37 +5,57 @@ date: 2017-03-04
 tags: [PowerShell, DSL, Design Patterns, Advanced]
 ---
 
-# Cmdlet Alias pattern
+When I was working on my DSL, I found that I had to be more creative with my implementations that I do with normal advanced functions. When it comes to writing a CmdLet, there are lots of community standards and expected behaviors already defined. 
 
-This is where you build a normal advanced function but use a short name or alias when calling it. Because you are creating a DSL, you may not honor the verb-noun standard. 
+When creating a DSL, you may be bending a lot of those best practices to create the best user experience. When optimizing for the user, you may find yourself collecting and processing data in different ways.
 
-I often use weak aliases. A weak alias is where you use the `Get` verb and use the automatic alias that is only the noun. Just like how you can use the weak alias of `Service` to actually call `Get-Service`. This is a little known feature but it works well for this.
+The goal of this post is to show you different approaches you can take in crafting a DSL. 
 
-# Item-Group-Parent pattern
+This is the third post in a series on writing DSLs in PowerShell.
 
-This is the pattern we used in the previous post to create the RDCMan DSL. You have an item command that produces a object when invoked. You nest that item command in a group command. This also produces an object when invoked but it also contains all the child objects. Then you optionally have a parent command that contains all the objects and does the final processing.
-
-The key to this pattern is that a `scritpblock` holds all the child commands and those `scriptblock`s get invoked as the command processes. 
-
-# Object-Collector pattern
+* Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
+* Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
+* Part 3: CmdLet based DSL design patterns
 
 
+# Index
 
-# passthu pattern
+* TOC
+{:toc}
 
-This is a command for the sake of creating a DSL. You may want to have a command with a specific name to fit your DSL but all it does it pass on the values that are given to it. DSLs are often just shorthand for more complex commands.
+# Value passthu
+
+You may want to have a command with a specific name to fit your DSL but all it does it pass on the values that is given to it. DSLs are often shorthand for more complex commands and that is all you are doing here.
 
     function Set-State 
     {
-        param($value)
-        return $value
+        param($State)
+        return $State
     }
 
-This could just as easily be done by creating an alias on `Write-Output`.
+This could alias be done by creating an alias on `Write-Output`.
 
-# simple template pattern
+# Hashtable passthru
 
-This is one of the simplest DSL commands to implement. The idea is that you accept basic parameters, pass them into a template and return the resulting text. Our RdcServer command from the last post is a good example.
+You can also use a DSL to collect more information for use in the module. You can have it build and return a `[hashtable]` of your values. 
+
+    function Get-State 
+    {
+        [cmdletbinding()]
+        param(
+            $State,
+        
+            [scriptblock]
+            $StateScript
+        )
+        return $PSBoundParameters
+    }
+
+The idea with using a passthru type of command is that something else will be collecting this data and processing it.
+
+# Simple template
+
+TThe idea behind a template is that you accept basic parameters, pass them into a template and return the resulting text. Our RdcServer command from the last post is a good example of that.
 
     function Get-RdcServer
     {
@@ -51,9 +71,11 @@ This is one of the simplest DSL commands to implement. The idea is that you acce
 
     RdcServer Server01
 
-# nested template pattern
+I mostly think of returning strings to build a document when using this approach. You can also build more complicated objects to return. This could be a true XML object or any other type of object.
 
-This pattern generally involves using a template for the headder and footer of the content. Then allowing the user to specify a script block to be invoked for the body of the content. Our RdcGroup command from the last post is a good example for this one.
+# Nested template
+
+This pattern generally involves using template data for the header and footer of the content. Then allowing the user to specify a script block to be invoked for the body of the content. Our RdcGroup command from the last week is a good example for this one.
 
     function Get-RdcGroup
     {
@@ -105,42 +127,9 @@ This command can be nested with itself and joined with the simple template patte
 
 This is an example where you execute the `scriptblock` inline as the command is running.
 
-# Hashtable passthru pattern
+# Hahstable builder
 
-One way to use a DSL to collect information for use in the module is to have it build and return a `[hashtable]`. If I was building a state machine, I may want use a DSL to define the states and pass them off to an engine to process.
-
-    function Get-State 
-    {
-        [cmdletbinding()]
-        param(
-            $State,
-        
-            [scriptblock]
-            $StateScript
-        )
-        return $PSBoundParameters
-    }
-
-Here is how it may look in a full state machine:
-
-    StateMachine "Start" {
-
-        State Start {
-            Write-Verbose "Start"
-            Set-State "Monitor"
-        }  
-
-        State Monitor {
-            Write-Verbose "Monitor"
-            Set-State "End"
-        }  
-    }
-
-This is great when you want to specify all the values as parameters to your function. This is also a good example of how you can pass a `scriptblock` up to a parent function to be executed later.
-
-# hahstable builder pattern
-
-A true hashtable builder will allow the user to specify key value pairs and properly convert them to a `hashtable` or `pscustomobject`. It could be implemented like this.
+A true `[hashtable]` builder will allow the user to specify key value pairs and properly convert them to a `hashtable` or `pscustomobject`. It could be implemented like this.
 
     function Get-ServerDetails
     {
@@ -162,9 +151,9 @@ The `scriptblock` is still a key component in the way the command is used. The k
 
 This is a great time to point out that you can modify the contents of the script before you run it.
 
-# hashtable collector pattern
+# hashtable collector
 
-If you have a hashtable passthru or hashtable builder, then you need to also have a collector. This pattern uses a script block to hold the hashtable passthrus. The scriptblock is invoked and the return values are captured. We can use this to complete our statemachine idea.
+If you have a hashtable passthru or hashtable builder, then you need to also have a collector. This pattern uses a script block to hold the hashtable passthrus. The `[scriptblock]` is invoked and the return values are captured. We can use this to complete our statemachine idea.
 
     function Get-StateMachine
     {
@@ -181,7 +170,7 @@ If you have a hashtable passthru or hashtable builder, then you need to also hav
         return $stateEngine        
     }
 
-This example captures all the hashtables that are created when the `$StateScript` is invoked. Performs some processing and then returns the resulting statemachine. 
+This example captures all the hashtables that are created when the `$StateScript` is invoked. It performs some processing and then returns the resulting statemachine. 
 
     StateMachine "Start" {
 
@@ -196,7 +185,7 @@ This example captures all the hashtables that are created when the `$StateScript
         }  
     }
 
-# restricted DSL pattern
+# Restricted DSL
 
 When using a scriptblock, you leave your DSL open to allow any Powershell commands to be ran. You can restrict this to just the DSL commands you specify with the data command.
 
@@ -207,7 +196,7 @@ When using a scriptblock, you leave your DSL open to allow any Powershell comman
 
 This is most valuable when you are defining your DSL to be used in files that are to be executed by Powershell. This allows you to treat your DSL based files more like plain text configs and less like scripts that execute code.
 
-# Internal command pattern
+# Internal or private command
 
 You may have a command that you don't want to export or to be usable outside your DSL implementation. You can do this by defining them inside your container commands. The commands will be valid inside the script block when it is executed.  
 
