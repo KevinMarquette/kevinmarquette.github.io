@@ -7,7 +7,7 @@ subtitle: Everything you ever wanted to know
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
+    <a href="{{ post.url | prepend: site.baseurl }}?utm_source=blog&utm_medium=blog&utm_content=titlelink">
 	  <h2 class="post-title">{{ post.title }}</h2>
 
 	  {% if post.subtitle %}
@@ -23,7 +23,7 @@ subtitle: Everything you ever wanted to know
 
     <div class="post-entry">
       {{ post.content | strip_html | xml_escape | truncatewords: 50 }}
-	  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
+	  <a href="{{ post.url | prepend: site.baseurl }}?utm_source=blog&utm_medium=blog&utm_content=morelink" class="post-read-more">[Read&nbsp;More]</a>
     </div>
 
     {% if post.tags.size > 0 %}
