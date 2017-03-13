@@ -11,7 +11,7 @@ This is the second post in a series covering what a DSL is and how to write one.
 
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
 * Part 2: Writing a DSL for RDC Manager (This post)
-* Part 3: CmdLet based DSL design patterns (eta 3-13-2017)
+* Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
 
 # Index
 
@@ -237,3 +237,5 @@ I have covered as much as I wanted to here for the DSL implementation but I may 
 # Where do we go from here
 
 Now that we know what a DSL is and put together something simple, I will dive into some design patterns around building more complex DSL solutions in my next post.
+
+* Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)

@@ -8,9 +8,9 @@ tags: [PowerShell, DSL, Domain Specific Language,Advanced]
 I always considered myself a Powershell purist. A DSL (Domain-Specific Language) written in Powershell abuses all the rules that I have grown to embrace. I recently found myself building a module that was implemented as a DSL and I really like how it turned out. Not only that, but I also had fun writing it.
 
 This is the first post in a series covering what a DSL is and how to write one.
-* Part 1: Intro to Domain-Specific Languages
+* Part 1: Intro to Domain-Specific Languages (This post)
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
-* Part 3: CmdLet based DSL design patterns (eta 3-13-2017)
+* Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
 
 # Index
 
