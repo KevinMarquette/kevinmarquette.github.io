@@ -139,7 +139,7 @@ A true `[hashtable]` builder will allow the user to specify key value pairs and 
     {
         param([scriptblock]$ScriptBlock)
 
-        $newScript = "@{[ordered]$($ScriptBlock.ToString())}"
+        $newScript = "[ordered]@{$($ScriptBlock.ToString())}"
         $newScriptBlock = [scriptblock]::Create($newScript)
         $newScriptBlock.invoke()
     }
@@ -176,7 +176,7 @@ If you have a hashtable passthru or hashtable builder, then you may need to have
 
 This example captures all the hashtables that are created when the `$StateScript` is invoked. It performs some processing and then returns a statemachine based on this structure:
 
-    StateMachine "Start" {
+    StateMachine {
 
         State Start {
             Write-Verbose "Start"
