@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Powershell: DSL Design Patterns"
+title: "Powershell: DSL design patterns"
 date: 2017-03-13
 tags: [PowerShell, DSL, Design Patterns, Advanced]
 ---
 
-When I was working on my DSL, I found that I had to be more creative with my advanced functions implementations than I do with normal advanced functions. When it comes to writing a script CmdLet, there are lots of community standards and expected behaviors already defined.
+When I was working on my DSL, I found that I had to be more creative with my advanced function implementations than I do with normal advanced functions. When it comes to writing a script CmdLet, there are lots of community standards and expected behaviors already defined.
 
 When creating a DSL, you may be bending a lot of those best practices to create the best user experience. When optimizing for the user, you may find yourself collecting and processing data using different technique.
 
@@ -41,7 +41,7 @@ This could be done by creating an alias on `Write-Output`.
 
 ## Simple template
 
-The idea behind a template is that you accept basic parameters, pass them into a template and return the resulting text. Our RdcServer command from the last post is a good example of that.
+The idea behind a template is that you accept basic parameters, pass them into a template and return the resulting text. Our `RdcServer` command from the last post is a good example of that.
 
     function Get-RdcServer
     {
@@ -57,7 +57,7 @@ The idea behind a template is that you accept basic parameters, pass them into a
 
     RdcServer Server01
 
-I mostly think of returning strings to build a document when using this approach. You can also build more complicated objects to return. This could be a true XML object or any other type of object.
+I mostly think of returning strings to build a document when using this approach. You can also build more complicated objects. This could be a full XML object or any other type of object that ypu are working with.
 
 ## Nested template
 
@@ -95,7 +95,7 @@ This pattern generally involves using template data for the header and footer of
         }
     }
 
-This command can be nested with itself and joined with the simple template pattern.
+This command can be nested with itself and joined with this simple template pattern.
 
     RdcGroup GroupATX {
         RdcServer Server1
@@ -111,11 +111,11 @@ This command can be nested with itself and joined with the simple template patte
         }
     }
 
-This is an example where you execute the `scriptblock` inline as the command is running.
+This is an example where you execute the `scriptblock` inline as the command is running. I mention that because there are situations where you would not execute that `[scriptblock]`
 
 ## Hashtable passthru
 
-You can also use a DSL to easily build a `[hashtable] ` based on the command parameters. This can be a great way to build a validated `[hashtable]` that must have a specific structure.
+You can use a DSL to easily build a `[hashtable] ` based on the command parameters. This can be a great way to build a validated `[hashtable]` that must have a specific structure.
 
     function Get-State 
     {
@@ -157,7 +157,7 @@ This is a great time to point out that you can modify the contents of the script
 
 ## Hashtable collector
 
-If you have a hashtable passthru or hashtable builder, then you need to also have a collector. This pattern uses a script block to hold the hashtable passthru values. The `[scriptblock]` is invoked and the return values are captured. We can use this to flesh out a statemachine.
+If you have a hashtable passthru or hashtable builder, then you may need to have a hashtable collector. This pattern uses a script block to hold the hashtable passthru values. The `[scriptblock]` is invoked and the return values are captured. We can use this to flesh out a statemachine.
 
     function Get-StateMachine
     {
@@ -194,7 +194,7 @@ This example captures all the hashtables that are created when the `$StateScript
 When using a `[scriptblock]`, you leave your DSL open to allow any PowerShell commands to be ran. You can restrict this to the DSL commands you specify with the data command.
 
     
-    $newScript = "DATA -SupportedCommand Get-State,Set-State {$($ScriptBlock.ToString())}"
+    $newScript = "DATA -SupportedCommand Get-State,Set-State {{{0}}}" -f $ScriptBlock.ToString()
     $newScriptBlock = [scriptblock]::Create($newScript)
     $newScriptBlock.invoke()
 
