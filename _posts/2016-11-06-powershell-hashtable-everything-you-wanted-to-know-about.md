@@ -145,6 +145,43 @@ That brings us to `GetEnumerator()` for iterating over our hashtable.
 
 The enumerator gives you each key/value pair one after another. It was designed specifically for this use case. Thank you to [Mark Kraus](https://get-powershellblog.blogspot.com) for reminding me of this one.
 
+## BadEnumeration
+
+One important detail is that you cannot modify a hashtable while it is being enumerated. If we start with our basic `$environments` example:
+
+    $environments = @{
+        Prod = 'SrvProd05'
+        QA   = 'SrvQA02'
+        Dev  = 'SrvDev12'
+    }
+
+And if we decide to set every server to the same value, this will fail.
+
+    $environments.Keys | ForEach-Object {
+        $environments[$_] = 'SrvDev03'
+    } 
+
+    An error occurred while enumerating through a collection: Collection was modified; enumeration operation may not execute.
+    + CategoryInfo          : InvalidOperation: tableEnumerator:HashtableEnumerator) [], RuntimeException
+    + FullyQualifiedErrorId : BadEnumeration
+
+This will also fail even though it looks like it should also be fine:
+
+    foreach($key in $environments.keys) {
+        $environments[$key] = 'SrvDev03'
+    } 
+
+    Collection was modified; enumeration operation may not execute.
+        + CategoryInfo          : OperationStopped: (:) [], InvalidOperationException
+        + FullyQualifiedErrorId : System.InvalidOperationException
+
+The trick to this situation is to clone the keys before doing the enumeration.
+
+    $environments.Keys.Clone() | ForEach-Object {
+        $environments[$_] = 'SrvDev03'
+    } 
+
+
 # Hashtable as a collection of properties
 
 So far the type of objects we placed in our hashtable were all the same type of object. I used ages in all those examples and the key was the person's name. This is a great way to look at it when your collection of objects each have a name. Another common way to use hashtables in Powershell is to hold a collection of properties where the key is the name of the property. I'll step into that idea in this next example.
