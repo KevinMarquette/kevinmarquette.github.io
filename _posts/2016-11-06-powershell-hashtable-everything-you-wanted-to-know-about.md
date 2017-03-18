@@ -463,9 +463,17 @@ If I need to save a nested hashtable to a file and then read it back in again, I
     $people | ConvertTo-JSON | Set-Content -Path $path
     $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
-There are two important points about this method. First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string. The Second is that the imported object is no longer a hashtable. It is now a `pscustomobject` and that can cause issues if you don't expect it.
+There are two important points about this method. First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string. The Second is that the imported object is no longer a `[hashtable]`. It is now a `[pscustomobject]` and that can cause issues if you don't expect it.
 
-If you need it to be a hashtable on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.
+If you need it to be a `[hashtable]` on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.
+
+## Converting JSON to Hashtable
+
+If you need to convert JSON to a `[hashtable]`, there is one way that I know of to do it with the [JavaScriptSerializer](https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx) in .Net.
+
+    $null = [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
+    $JavaScriptSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
+    $JavaScriptSerializer.Deserialize($json,'Hashtable')
 
 ## Reading directly from a file
 If you have a file that contains a hashtable using Powershell syntax, there is a way to import it directly.
@@ -475,12 +483,12 @@ If you have a file that contains a hashtable using Powershell syntax, there is a
     $scriptBlock.CheckRestrictedLanguage( $allowedCommands, $allowedVariables, $true )
     $hashtable = ( & $scriptBlock ) 
 
-It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other powershell commands in it before it executes it.
+It imports the contents of the file into a `scriptblock`, then checks to make sure it does not have any other PowerShell commands in it before it executes it.
 
 On that note, did you know that a module manifest (the psd1 file) is just a hashtable?
 
 ## Keys are just strings
-I didn't want to go off on this tengent earlier, but the keys are just strings. So we can put quotes around anything and make it a key.
+I didn't want to go off on this tangent earlier, but the keys are just strings. So we can put quotes around anything and make it a key.
 
     $person = @{
         'full name' = 'Kevin Marquette'

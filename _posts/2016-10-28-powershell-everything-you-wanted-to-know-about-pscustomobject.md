@@ -36,6 +36,13 @@ While I am on the topic, did you know you could do this:
 
 I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the object properties. One important note is that while this works, it is not an exact equivelent. The bigest difference is that the order of the properties is not preserved.
 
+## Saving to a file
+
+I find the best way to save a hashtable to a file is to save it as JSON. You can import it back into a `[PSCusomObject]`
+
+    $myObject | ConvertTo-Json | Set-Content -Path $Path
+    $myObject = Get-Content -Path $Path | ConvertFrom-Json
+
 ## PSTypeName for custom object types
 
 Now that we have an object, there are a few more things we can do with it that may not be nearly as obvious. First thing we need to do is give it a `PSTypeName`. This is the most common way I see people do it:
