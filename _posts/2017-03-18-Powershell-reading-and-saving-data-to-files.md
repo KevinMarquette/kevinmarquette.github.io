@@ -5,7 +5,7 @@ date: 2017-03-18
 tags: [PowerShell,Basic]
 ---
 
-Saving data to files is a very common task when working with PowerShell. There may be more options that you realize. Lets start from the top and work our way down.
+Saving data to files is a very common task when working with PowerShell. There may be more options than you realize. Lets start from the top and work our way down.
 
 # Index
 
