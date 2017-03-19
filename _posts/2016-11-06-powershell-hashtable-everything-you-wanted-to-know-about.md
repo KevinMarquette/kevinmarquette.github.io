@@ -532,7 +532,7 @@ For a more in depth breakdown, see this great article on [Automatic Defaults](ht
 
 
 ## Anything else?
-I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with Powershell.
+I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with PowerShell.
 
 Here is a list of everything we covered in case you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
 
