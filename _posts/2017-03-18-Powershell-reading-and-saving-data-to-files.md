@@ -86,12 +86,11 @@ For anyone comming from batch file, `Out-File` is the basic replacement for the 
 
 It is a basic command and we have had it for a long time. Here is a second example that shows some of the limitations.
 
-     Get-ChildItem | 
-         Select-Object Name, Length, LastWriteTime, Fullname | 
+     Get-ChildItem |
+         Select-Object Name, Length, LastWriteTime, Fullname |
          Out-File -FilePath $Path
 
 The resulting file looks like this when ran from my temp folder:
-
 
     Name
     Length  LastWriteTime          FullName
@@ -101,7 +100,7 @@ The resulting file looks like this when ran from my temp folder:
     acrord32_sbx                                         9/4/2016 10:18:18 AM   C:\Users\kevin.marqu...
     TCD789A.tmp                                          9/8/2016 12:27:29 AM   C:\Users\kevin.marqu...
 
-You can see that the last column of values is cut short. `Out-File` is processing objects for the console but redirects the output to a file. All the issues you have getting something to format in the console will show up in your output file. The good news is that we have lots of other options for this that I will cover below.
+You can see that the last column of values are cut short. `Out-File` is processing objects for the console but redirects the output to a file. All the issues you have getting something to format in the console will show up in your output file. The good news is that we have lots of other options for this that I will cover below.
 
 ## Save text data with Add-Content
 
