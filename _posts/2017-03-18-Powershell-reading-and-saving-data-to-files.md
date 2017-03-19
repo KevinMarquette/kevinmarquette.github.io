@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Reading and writing to files"
+title: "Powershell: The many ways to read and write to files"
 date: 2017-03-18
 tags: [PowerShell,Basic]
 ---
