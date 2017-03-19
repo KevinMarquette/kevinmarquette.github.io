@@ -22,7 +22,7 @@ We are going to start this off by showing you the commands for working with file
 
     If( Test-Path -Path $Path )
     {
-        ...
+        Do-Stuff -Path $Path
     }
 
 ## Split-Path
@@ -44,11 +44,11 @@ If you need the file or folder at the end of the path, you can use the `-Leaf` a
     PS:> Join-Path -Path $env:temp -ChildPath testing
     C:\Users\kevin.marquete\AppData\Local\Temp\testing
 
-I use this anytime that I am joining locations that are stored in variables. You don't have to worry about how to handle the backslash becuse this takes care of it for you. If you variables both have backspashes in them, it sorts that out too.
+I use this anytime that I am joining locations that are stored in variables. You don't have to worry about how to handle the backslash becuse this takes care of it for you. If your variables both have backslashes in them, it sorts that out too.
 
 ## Resolve-Path
 
-`Resolve-Path` will give you the full path to a location. The important thing is that it will expand wildcard lookups for you. You will get an array of values if there are more than one matches.
+`Resolve-Path` will give you the full path to a location. The important thing is that it will expand wildcard lookups for you. You will get an array of values if there are more than one matche.
 
     Resolve-Path -Path 'c:\users\*\documents'
 
@@ -64,9 +64,9 @@ I commonly use this on any path value that I get as user input into my functions
 
 # Saving and reading data
 
-Now that we have all those helper functions out of the way, we can walk the options we have for saving and reading data.
+Now that we have all those helper CmdLets out of the way, we can talk about the options we have for saving and reading data.
 
-I use the `$Path` and `$Data` variables to repersent your file path and your data in these examples. I do this to keep the samples cleaner and it reflects more how you would use them in a script.
+I use the `$Path` and `$Data` variables to repersent your file path and your data in these examples. I do this to keep the samples cleaner and it better reflects how you would use them in a script.
 
 ## Basic redirection with Out-File
 
@@ -80,7 +80,7 @@ PowerShell was introduced with `Out-File` as the way to save data to files. Here
         The Out-File cmdlet sends output to a file. You can use this cmdlet instead of the redirection operator (>) when you need to use its parameters.
     #>
  
-For anyone comming from batch file, `Out-File` is the basic replacement for the redirection operator `>`. Here is a sample of how to use it.
+For anyone coming from batch file, `Out-File` is the basic replacement for the redirection operator `>`. Here is a sample of how to use it.
 
     'This is some text' | Out-File -FilePath $Path
 
@@ -90,7 +90,7 @@ It is a basic command and we have had it for a long time. Here is a second examp
          Select-Object Name, Length, LastWriteTime, Fullname |
          Out-File -FilePath $Path
 
-The resulting file looks like this when ran from my temp folder:
+The resulting file looks like this when executed from my temp folder:
 
     Name
     Length  LastWriteTime          FullName
@@ -109,7 +109,9 @@ I personally don't use `Out-File` and prefer to use the `Add-Content` and `Set-C
     $data | Add-Content -Path $Path
     Get-Content -Path $Path
 
-These are good all-purpose command as long as performance is no a critical factor in your script. These are great for individual or small content requests. For large sets of data where performance matters more then readability, we can turn to the .Net framework. I will come back to this one.
+`Add-Content` will create and append to files. `Set-Content` will create and overwrite files.
+
+These are good all-purpose commands as long as performance is no a critical factor in your script. They are great for individual or small content requests. For large sets of data where performance matters more than readability, we can turn to the .Net framework. I will come back to this one.
 
 ## Save column based data with Export-CSV
 
@@ -128,7 +130,7 @@ If you want to import Excel data in PowerShell, save it as a CSV and then you ca
 
 ## Save rich object data with Export-CliXml
 
-The `Export-CliXml` command is used to save full objects to a file and then import them again with `Import-CliXml`. This is for objects with nested values or complex datatypes. The raw data will be a verbose serialized object as XML. The nice thing is that you can save a an object to the file and when you import it, you will get that object back.
+The `Export-CliXml` command is used to save full objects to a file and then import them again with `Import-CliXml`. This is for objects with nested values or complex datatypes. The raw data will be a verbose serialized object in XML. The nice thing is that you can save a an object to the file and when you import it, you will get that object back.
 
     Get-Date | Export-Clixml date.clicml
     $date = Import-Clixml .\date.clicml
@@ -138,7 +140,7 @@ The `Export-CliXml` command is used to save full objects to a file and then impo
     -------- -------- ----                                     --------
     True     True     DateTime                                 System.ValueType
 
-You would never need to look at or edit the resulting output file. Here is what the `date.clixml` file looks like:
+This serialized format is not intened for be viewd or edited directly. Here is what the `date.clixml` file looks like:
 
     <Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
         <Obj RefId="0">
@@ -177,7 +179,7 @@ When my data is nested, then I use `ConvertTo-Json` to convert it to JSON. `Conv
     $NewData = Get-Content -Path $Path -Raw | ConvertFrom-Json
     $NewData.Address.State
 
-There are two things to note. The first is that I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. The other is that I use `Get-Content -Raw` to get the data as a single string instead of an array of strings.
+There are two things to note. The first is that I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. This may not be a problem but there is not an easy fix for it. The other is that I use `Get-Content -Raw` to get the data as a single string instead of an array of strings.
 
 Here is the contents of the JSON file from above:
 
@@ -198,11 +200,33 @@ All of those CmdLets are easy to work with. We also have access to .Net for more
 
  That ease of use that the CmdLets provide can come at a small cost in raw performance. It is small enough that you will not notice it for most of the scripting that you do. When that day comes that you need more speed, you will find yourself turning to the native .Net commands. Thankfully they are easy to work with.
 
-    [System.IO.File]::ReadAllLines($Path)
-    
+    [System.IO.File]::ReadAllLines( ( Resolve-Path $Path ) )
+
 This is just like `Get-Content -Path $Path` in that you will end up with a collection full of strings. You can also read the data as a multi-line string.
-    
-    [System.IO.File]::ReadAllText($Path)
+
+    [System.IO.File]::ReadAllText( ( Resolve-Path $Path ) )
+
+The `$Path` must be the full path or it will try to save the file to your `C:\Windows\System32` folder. This is why I use `Resolve-Path` in this example.
+
+## faster writes with System.IO.StreamWriter
+
+On that same note, we can save data fast with `System.IO.StreamWriter`. It is a little bit more complicated but it is manageable.
+
+    try
+    {
+        $stream = [System.IO.StreamWriter]::new( $Path )
+        $data | ForEach-Object{ $stream.WriteLine( $_ ) }
+    }
+    finally
+    {
+        $stream.close()
+    }
+
+We have to open a `StreamWriter` to a `$path`.  Then we walk the data and save each line to the `StreamWriter`. Once we are done, we close the file. This one also requires a full path.
+
+I had to add error handling around this one to make sure the file was closed when we were done. You may want to add a `catch` in there for custom error handling.
+
+This should work very well for string data. If you have issues, you may want to call the `.ToString()` method on the object you are writing to the stream. If you need more flexibility, just know that you have the whole .Net framework available at this point.
 
 ## Saving XML
 
@@ -212,8 +236,7 @@ If you are working with XML files, you can call the `Save()` method on the XML o
     $Path = (join-path $pwd 'File.xml')
     $Xml.Save($Path)
 
-The important thing to remember about this function is that it requires a full path. It will try to save the file to your `C:\Windows\System32` folder if you forget it.
-
+Just like the other .Net methods in System.IO, you need to specify the full path to the file. I use `$pwd` in this example because it is an automatic variable that contains the result of `Get-Location` (local path).
 
 ## Quick note on encoding
 
