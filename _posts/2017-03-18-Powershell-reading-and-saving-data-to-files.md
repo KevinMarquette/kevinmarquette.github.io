@@ -229,7 +229,7 @@ If you are running into issues with encoding, most of the CmdLets support specif
     $PSDefaultParameterValues["Add-Content:Encoding"] = "UTF8"
     $PSDefaultParameterValues["Export-CSV:Encoding"]  = "UTF8"
 
-You can find more on how to use [PSDefaultParameterValues](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=internal#psdefaultparametervalues) in my post on [Hashtables].(https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=internal)
+You can find more on how to use [PSDefaultParameterValues](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=internal#psdefaultparametervalues) in my post on [Hashtables](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=internal).
 
 # Wrapping up
 
