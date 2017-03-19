@@ -64,7 +64,9 @@ I commonly use this on any path value that I get as user input into my functions
 
 # Saving and reading data
 
-Now that we have all those helper functions out of the way, we need to walk the options we have for saving and reading data.
+Now that we have all those helper functions out of the way, we can walk the options we have for saving and reading data.
+
+I use the `$Path` and `$Data` variables to repersent your file path and your data in these examples. I do this to keep the samples cleaner and it reflects more how you would use them in a script.
 
 ## Basic redirection with Out-File
 
