@@ -42,7 +42,7 @@ If you need the file or folder at the end of the path, you can use the `-Leaf` a
 `Join-Path` can join folder and file paths together.
 
     PS:> Join-Path -Path $env:temp -ChildPath testing
-    C:\Users\kevma\AppData\Local\Temp\testing
+    C:\Users\kevin.marquete\AppData\Local\Temp\testing
 
 I use this anytime that I am joining locations that are stored in variables. You don't have to worry about how to handle the backslash becuse this takes care of it for you. If you variables both have backspashes in them, it sorts that out too.
 
@@ -51,6 +51,12 @@ I use this anytime that I am joining locations that are stored in variables. You
 `Resolve-Path` will give you the full path to a location. The important thing is that it will expand wildcard lookups for you. You will get an array of values if there are more than one matches.
 
     Resolve-Path -Path 'c:\users\*\documents'
+
+    Path
+    ----
+    C:\users\kevin.marquette\Documents
+    C:\users\Public\Documents
+
 
 That will enumerate all the local users document folders.
 
