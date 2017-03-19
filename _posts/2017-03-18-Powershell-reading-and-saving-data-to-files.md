@@ -41,7 +41,8 @@ If you need the file or folder at the end of the path, you can use the `-Leaf` a
 
 `Join-Path` can join folder and file paths together.
 
-    Join-Path -Path $Path -ChildPath logfile.log
+    PS:> Join-Path -Path $env:temp -ChildPath testing
+    C:\Users\kevma\AppData\Local\Temp\testing
 
 I use this anytime that I am joining locations that are stored in variables. You don't have to worry about how to handle the backslash becuse this takes care of it for you. If you variables both have backspashes in them, it sorts that out too.
 
