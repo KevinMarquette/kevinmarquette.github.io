@@ -118,9 +118,9 @@ This is often overlooked but a great cmdlet for building a file path.
     $folder = 'Temp'
     Join-Path -Path 'c:\windows' -ChildPath $folder
 
-The great thing about this is it will work out the backslashes correctly when it puts the values together. This is especially important if you are taking values from users or config files. 
+The great thing about this is it will work out the backslashes correctly when it puts the values together. This is especially important if you are taking values from users or config files.
 
-This also goes well with `Split-Path` and `Test-Path`.
+This also goes well with `Split-Path` and `Test-Path`. I also cover these in my post about [reading and saving to files](https://kevinmarquette.github.io/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=internal).
 
 # Strings are arrays
 
