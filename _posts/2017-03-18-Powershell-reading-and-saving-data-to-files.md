@@ -196,7 +196,7 @@ You will notice that this is similar the original hashtable. This is why JSON is
 
 All of those CmdLets are easy to work with. We also have access to .Net for more options.
 
-## Faster reads with System.IO
+## Faster reads with System.IO.File
 
  That ease of use that the CmdLets provide can come at a small cost in raw performance. It is small enough that you will not notice it for most of the scripting that you do. When that day comes that you need more speed, you will find yourself turning to the native .Net commands. Thankfully they are easy to work with.
 
