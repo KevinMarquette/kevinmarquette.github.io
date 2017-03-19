@@ -113,6 +113,14 @@ I personally don't use `Out-File` and prefer to use the `Add-Content` and `Set-C
 
 These are good all-purpose commands as long as performance is no a critical factor in your script. They are great for individual or small content requests. For large sets of data where performance matters more than readability, we can turn to the .Net framework. I will come back to this one.
 
+## Import data with Get-Content
+
+`Get-Content` is the goto command for reading data. By default, this command will read each line of the file. You end up with an array of strings. This also passes down the pipe nicely.
+
+The `-Raw` parameter will bring the entire contents in as a multi-line string. This also performs faster because fewer objects are getting created.
+
+    Get-Content -Path $Path -Raw
+
 ## Save column based data with Export-CSV
 
 If you ever need to save data for Excel, `Export-CSV` is your starting point. This is good for storing an object or basic structured data that can be imported later. The CSV format is comma separated values in a text file. Excel is often the default viewer for CSV files.
@@ -179,7 +187,9 @@ When my data is nested, then I use `ConvertTo-Json` to convert it to JSON. `Conv
     $NewData = Get-Content -Path $Path -Raw | ConvertFrom-Json
     $NewData.Address.State
 
-There are two things to note. The first is that I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. This may not be a problem but there is not an easy fix for it. The other is that I use `Get-Content -Raw` to get the data as a single string instead of an array of strings.
+There is one thing to note. I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. This may not be a problem but there is not an easy fix for it.
+
+Also note the use of the `Get-Content -Raw` in this example. `ConvertFrom-Json` expects one string per object.
 
 Here is the contents of the JSON file from above:
 
@@ -208,9 +218,13 @@ This is just like `Get-Content -Path $Path` in that you will end up with a colle
 
 The `$Path` must be the full path or it will try to save the file to your `C:\Windows\System32` folder. This is why I use `Resolve-Path` in this example.
 
-## faster writes with System.IO.StreamWriter
+Here is an example CmdLet that I built around these .Net calls: [Import-Content](https://github.com/KevinMarquette/PowershellWorkspace/blob/master/Modules/Kevmar/functions/Import-Content.ps1)
 
-On that same note, we can save data fast with `System.IO.StreamWriter`. It is a little bit more complicated but it is manageable.
+## Writes with System.IO.StreamWriter
+
+On that same note, we can also use `System.IO.StreamWriter` to save data. It is not always faster than the native Cmdlets. This one clearly falls into the rule that if performance matters, test it. 
+
+`System.IO.StreamWriter` is also a little bit more complicated than the native CmdLets.
 
     try
     {
@@ -258,3 +272,5 @@ You can find more on how to use [PSDefaultParameterValues](https://kevinmarquett
 # Wrapping up
 
 Working with files is such a common task that you should take the time to get to know these options. Hopefully you saw something new and can put this to use in your own scripts.
+
+Here are two functions that implements the ideas that we talked about
