@@ -86,7 +86,9 @@ For anyone comming from batch file, `Out-File` is the basic replacement for the 
 
 It is a basic command and we have had it for a long time. Here is a second example that shows some of the limitations.
 
-     Get-ChildItem | Select-Object Name, Length, LastWriteTime, Fullname | Out-File -FilePath $Path
+     Get-ChildItem | 
+         Select-Object Name, Length, LastWriteTime, Fullname | 
+         Out-File -FilePath $Path
 
 The resulting file looks like this when ran from my temp folder:
 
