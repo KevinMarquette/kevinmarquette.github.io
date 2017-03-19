@@ -161,7 +161,7 @@ Don't worry about trying to understand it. You are not intended to be digging in
 
 This is another command that I don't find myself using often. If I have a nested or hierarchical dataset, then JSON is my goto way to save that information.
 
-## Save JSON with ConvertTo-Json
+## Save structured data with ConvertTo-Json
 
 When my data is nested, then I use `ConvertTo-Json` to convert it to JSON. `ConvertFrom-Json` will convert it back into an object. These commands do not save or read from files on their own. You will have to turn to `Get-Content` and `Set-Content` for that.
 
