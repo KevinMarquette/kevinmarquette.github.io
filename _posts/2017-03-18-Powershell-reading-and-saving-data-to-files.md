@@ -113,13 +113,28 @@ I personally don't use `Out-File` and prefer to use the `Add-Content` and `Set-C
 
 These are good all-purpose commands as long as performance is no a critical factor in your script. They are great for individual or small content requests. For large sets of data where performance matters more than readability, we can turn to the .Net framework. I will come back to this one.
 
-## Import data with Get-Content
+## Import data with Get-Content -Raw
 
-`Get-Content` is the goto command for reading data. By default, this command will read each line of the file. You end up with an array of strings. This also passes down the pipe nicely.
+`Get-Content` is the goto command for reading data. By default, this command will read each line of the file. You end up with an array of strings. This also passes each one down the pipe nicely.
 
 The `-Raw` parameter will bring the entire contents in as a multi-line string. This also performs faster because fewer objects are getting created.
 
     Get-Content -Path $Path -Raw
+
+### Get-Content -ReadCount
+
+The `-ReadCount` parameter defines how many lines that `Get-Content` will read at once. There are some situations where this can improve the memory overhead of working with larger files.
+
+This generally includes piping the results to something that can process them as they come in and don't need to keep the input data.
+
+    $dataset = @{}
+    Get-Content -Path $path -ReadCount 15 |
+        Where-Object {$PSItem -match 'error'} |
+        ForEach-Object {$dataset[$PSItem] += 1}
+
+This example will count how many times each error shows up in the `$Path`. This pipeline can process each line as it is read from the file.
+
+You may not have code that leverages this often but this is a good option to be aware of.
 
 ## Save column based data with Export-CSV
 
