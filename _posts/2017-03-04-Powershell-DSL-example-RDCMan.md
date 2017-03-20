@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Writing a DSL for RDC Manager, DSLs Part 2"
+title: "Powershell: Writing a DSL for RDC Manager, DSLs part 2"
 date: 2017-03-04
 tags: [PowerShell, DSL, Domain Specific Language, RDCman, Advanced]
 ---

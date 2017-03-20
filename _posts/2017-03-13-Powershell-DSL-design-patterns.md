@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: DSL design patterns"
+title: "Powershell: DSL design patterns, DSLs part 3"
 date: 2017-03-13
 tags: [PowerShell, DSL, Design Patterns, Advanced]
 ---
