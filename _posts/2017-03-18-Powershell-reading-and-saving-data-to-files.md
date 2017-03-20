@@ -121,21 +121,6 @@ The `-Raw` parameter will bring the entire contents in as a multi-line string. T
 
     Get-Content -Path $Path -Raw
 
-### Get-Content -ReadCount
-
-The `-ReadCount` parameter defines how many lines that `Get-Content` will read at once. There are some situations where this can improve the memory overhead of working with larger files.
-
-This generally includes piping the results to something that can process them as they come in and don't need to keep the input data.
-
-    $dataset = @{}
-    Get-Content -Path $path -ReadCount 15 |
-        Where-Object {$PSItem -match 'error'} |
-        ForEach-Object {$dataset[$PSItem] += 1}
-
-This example will count how many times each error shows up in the `$Path`. This pipeline can process each line as it is read from the file.
-
-You may not have code that leverages this often but this is a good option to be aware of.
-
 ## Save column based data with Export-CSV
 
 If you ever need to save data for Excel, `Export-CSV` is your starting point. This is good for storing an object or basic structured data that can be imported later. The CSV format is comma separated values in a text file. Excel is often the default viewer for CSV files.
@@ -189,7 +174,7 @@ This is another command that I don't find myself using often. If I have a nested
 
 ## Save structured data with ConvertTo-Json
 
-When my data is nested, then I use `ConvertTo-Json` to convert it to JSON. `ConvertFrom-Json` will convert it back into an object. These commands do not save or read from files on their own. You will have to turn to `Get-Content` and `Set-Content` for that.
+When my data is nested and I may want to edit it by hand, then I use `ConvertTo-Json` to convert it to JSON. `ConvertFrom-Json` will convert it back into an object. These commands do not save or read from files on their own. You will have to turn to `Get-Content` and `Set-Content` for that.
 
     $Data = @{
         Address = @{
@@ -202,7 +187,7 @@ When my data is nested, then I use `ConvertTo-Json` to convert it to JSON. `Conv
     $NewData = Get-Content -Path $Path -Raw | ConvertFrom-Json
     $NewData.Address.State
 
-There is one thing to note. I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. This may not be a problem but there is not an easy fix for it.
+There is one important thing to note on this example. I used a `[hashtable]` for my `$Data` but `ConvertFrom-Json` returns a `[PSCustomObject]` instead. This may not be a problem but there is not an easy fix for it.
 
 Also note the use of the `Get-Content -Raw` in this example. `ConvertFrom-Json` expects one string per object.
 
@@ -215,11 +200,26 @@ Here is the contents of the JSON file from above:
         }
     }
 
-You will notice that this is similar the original hashtable. This is why JSON is a popular format. It is easy to read and understand. I use this all the time in my own projects.
+You will notice that this is similar the original hashtable. This is why JSON is a popular format. It is easy to read, understand and edit if needed. I use this all the time in my own projects.
 
 # Other options and details
 
-All of those CmdLets are easy to work with. We also have access to .Net for more options.
+All of those CmdLets are easy to work with. We also have some other parameters and access to .Net for more options.
+
+## Get-Content -ReadCount
+
+The `-ReadCount` parameter on `Get-Content` defines how many lines that `Get-Content` will read at once. There are some situations where this can improve the memory overhead of working with larger files.
+
+This generally includes piping the results to something that can process them as they come in and don't need to keep the input data.
+
+    $dataset = @{}
+    Get-Content -Path $path -ReadCount 15 |
+        Where-Object {$PSItem -match 'error'} |
+        ForEach-Object {$dataset[$PSItem] += 1}
+
+This example will count how many times each error shows up in the `$Path`. This pipeline can process each line as it is read from the file.
+
+You may not have code that leverages this often but this is a good option to be aware of.
 
 ## Faster reads with System.IO.File
 
