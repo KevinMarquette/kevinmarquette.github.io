@@ -200,7 +200,7 @@ Here is the contents of the JSON file from above:
         }
     }
 
-You will notice that this is similar the original hashtable. This is why JSON is a popular format. It is easy to read, understand and edit if needed. I use this all the time in my own projects.
+You will notice that this is similar the original hashtable. This is why JSON is a popular format. It is easy to read, understand and edit if needed. I use this all the time for configuration files in my own projects.
 
 # Other options and details
 
