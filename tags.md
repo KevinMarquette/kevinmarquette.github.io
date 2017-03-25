@@ -10,8 +10,6 @@ This is a collection of all the tags I use in my blog and links back to the page
 * TOC
 {:toc}
 
-
-
 # Advanced
 
 * 2017-02-19 [Powershell: Creating and using custom attributes](\2017-02-19-Powershell-custom-attribute-validator-transform)
