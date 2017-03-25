@@ -71,7 +71,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](\2017-01-30-Powershell-PSGraph)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](\2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times)
 
-# Operational Validation
+# Operational-Validation
 
 * 2016-10-14 [ATXPowershell November 2016 Meeting: Operational Validation with Kevin Marquette](\2016-10-14-ATXPowershell-November-2016-Meeting-Operational-Validation-with-Kevin-Marquette)
 * 2016-10-25 [Powershell: Operational Validation Framework](\2016-10-25-Powershell-Operational-Validation-Framework)
