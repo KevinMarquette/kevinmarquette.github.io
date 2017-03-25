@@ -2,7 +2,7 @@
 layout: post
 title: "ATXPowershell November 2016 Meeting: Operational Validation with Kevin Marquette"
 date: 2016-10-14
-tags: [Powershell,Presentation,Pester,Operational Validation]
+tags: [Powershell,Presentation,Pester,Operational-Validation]
 ---
 
 My first presentation to the ATXPowershell User Group was a year ago on using Pester to validate your scripts and modules as you make them. I ended the talk with a quick view of how I use Pester to validate my system deployment configurations. I shared my presentation online and that section of my scripts got a lot of attention. 

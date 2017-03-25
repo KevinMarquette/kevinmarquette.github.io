@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell: Everything you wanted to know about variable substitution in strings"
-date: 2017-1-13
+date: 2017-01-13
 tags: [PowerShell,Strings,Basics]
 ---
 

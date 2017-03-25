@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell: Let's build the CI/CD pipeline for a new module"
-date: 2017-1-21
+date: 2017-01-21
 tags: [PowerShell,Modules]
 ---
 

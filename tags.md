@@ -4,7 +4,6 @@ title: Tags
 ---
 This is a collection of all the tags I use in my blog and links back to the pages that use them.
 
-
 # Index
 
 * TOC
@@ -29,8 +28,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-10-21 [Powershell: Installing MSI files](\2016-10-21-powershell-installing-msi-files)
 * 2016-10-28 [Powershell: Everything you wanted to know about PSCustomObject](\2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject)
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
 * 2017-03-18 [Powershell: The many ways to read and write to files](\2017-03-18-Powershell-reading-and-saving-data-to-files)
-* 2017-1-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
 
 # Chronometer
 
@@ -68,9 +67,9 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Modules
 
 * 2016-10-25 [Powershell: Operational Validation Framework](\2016-10-25-Powershell-Operational-Validation-Framework)
+* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](\2017-1-21-powershell-module-continious-delivery-pipeline)
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](\2017-01-30-Powershell-PSGraph)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](\2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times)
-* 2017-1-21 [Powershell: Let's build the CI/CD pipeline for a new module](\2017-1-21-powershell-module-continious-delivery-pipeline)
 
 # Operational Validation
 
@@ -98,6 +97,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-10-25 [Powershell: Operational Validation Framework](\2016-10-25-Powershell-Operational-Validation-Framework)
 * 2016-10-28 [Powershell: Everything you wanted to know about PSCustomObject](\2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject)
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
+* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](\2017-1-21-powershell-module-continious-delivery-pipeline)
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](\2017-01-30-Powershell-PSGraph)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](\2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times)
 * 2017-02-19 [Powershell: Creating and using custom attributes](\2017-02-19-Powershell-custom-attribute-validator-transform)
@@ -107,8 +108,6 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-13 [Powershell: DSL design patterns, DSLs part 3](\2017-03-13-Powershell-DSL-design-patterns)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](\2017-03-17-Powershell-Gherkin-specification-validation)
 * 2017-03-18 [Powershell: The many ways to read and write to files](\2017-03-18-Powershell-reading-and-saving-data-to-files)
-* 2017-1-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
-* 2017-1-21 [Powershell: Let's build the CI/CD pipeline for a new module](\2017-1-21-powershell-module-continious-delivery-pipeline)
 
 # Presentation
 
@@ -134,7 +133,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 # Strings
 
-* 2017-1-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](\2017-1-13-powershell-variable-substitution-in-strings)
 
 # Validator
 
