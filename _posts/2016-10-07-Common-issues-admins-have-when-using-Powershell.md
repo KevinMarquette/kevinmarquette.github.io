@@ -2,7 +2,7 @@
 layout: post
 title: "Common issues admins have when using Powershell"
 date: 2016-10-07
-tags: [Powershell]
+tags: [Powershell,Presentation]
 ---
 
 We had a great turnout for our Austin Powershell User Group meeting this month. We have been presenting out of the Microsoft store in the Domain for one year now. The Microsoft store has been a good host for us.

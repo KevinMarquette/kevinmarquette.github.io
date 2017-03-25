@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: The many ways to read and write to files"
 date: 2017-03-18
-tags: [PowerShell,Basic]
+tags: [PowerShell,Basics]
 ---
 
 Saving data to files is a very common task when working with PowerShell. There may be more options than you realize. Let's start with the basics and work into the more advanced options.

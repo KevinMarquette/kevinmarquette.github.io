@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Everything you wanted to know about variable substitution in strings"
 date: 2017-1-13
-tags: [PowerShell,variable]
+tags: [PowerShell,Strings,Basics]
 ---
 
 There are many ways to use variables in strings. I am calling this variable substitution but I am referfing to any time you want to format a string to include values from variables. This is something that comes up a lot that I find myself explaining quite often to new scripters.

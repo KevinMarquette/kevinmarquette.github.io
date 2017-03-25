@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Creating and using custom attributes"
 date: 2017-02-19
-tags: [PowerShell,Classes,Attribute,Validator,Transform,Advanced]
+tags: [PowerShell,Classes,Attribute,Validator,Advanced]
 ---
 
 Every once and a while I stumble onto something in Powershell that I find interesting and I can't help but dive deep into it. I saw a tweet by [Brandon Olin](https://twitter.com/devblackops) recently that showed that you can create your own custom attributes in Powershell. 

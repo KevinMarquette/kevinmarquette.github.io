@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: PSGraph, A graph module built on GraphViz"
 date: 2017-01-30
-tags: [PowerShell,PSGraph,GraphViz]
+tags: [PowerShell,PSGraph,Modules,Projects]
 ---
 
 # Let's build some graphs with Powershell and PSGraph

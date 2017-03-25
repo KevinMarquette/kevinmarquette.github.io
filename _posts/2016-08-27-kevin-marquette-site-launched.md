@@ -2,7 +2,7 @@
 layout: post
 title: "Kevin Marquette, Launches Site (test post)"
 date: 2016-08-27
-tags: [intro]
+tags: [Other]
 ---
 
 This is just a test post.

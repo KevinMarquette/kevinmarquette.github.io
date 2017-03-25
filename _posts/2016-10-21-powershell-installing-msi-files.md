@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Installing MSI files"
 date: 2016-10-21
-tags: [PowerShell]
+tags: [PowerShell,Basics]
 ---
 
 The nice thing about Powershell is that you can run any 

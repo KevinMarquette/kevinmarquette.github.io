@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Writing a DSL for RDC Manager, DSLs part 2"
 date: 2017-03-04
-tags: [PowerShell, DSL, Domain Specific Language, RDCman, Advanced]
+tags: [PowerShell, DSL, Advanced]
 ---
 
 I am not sure how many times I have written a script to generate server lists for Microsoft's [Remote Desktop Connection Manager (RDCMan)]((https://www.microsoft.com/en-us/download/confirmation.aspx?id=44989)). I find that it is a very easy script to write many different ways. Writing a Domain-Specific Language (DSL) to generate RDCMan files may not be the best solution for this problem, but generating RDCMan files is a good project for a first DSL.

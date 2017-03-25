@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: DSL design patterns, DSLs part 3"
 date: 2017-03-13
-tags: [PowerShell, DSL, Design Patterns, Advanced]
+tags: [PowerShell, DSL, Advanced]
 ---
 
 When I was working on my DSL, I found that I had to be more creative with my advanced function implementations than I do with normal advanced functions. When it comes to writing a script CmdLet, there are lots of community standards and expected behaviors already defined.

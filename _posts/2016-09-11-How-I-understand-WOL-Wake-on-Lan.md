@@ -2,7 +2,7 @@
 layout: post
 title: "How I understand WOL (Wake on Lan)"
 date: 2016-09-11
-tags: [WOL]
+tags: [WOL,Other]
 ---
 The way WOL works is that the NIC has to receive the magic packet. This packet has a special bit pattern and the MAC address of the NIC. If you want to wake up 5 machines, that is 5 different magic packets. All you have to do is get this packet to the machine.
 
