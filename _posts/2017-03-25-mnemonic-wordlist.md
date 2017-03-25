@@ -119,7 +119,7 @@ Here is a sample from the middle of the list:
     pancake  panda    panel    panic    paradox  pardon   
     paris    parker   parking  parody   partner  passage  
 
-I have reproduced the entire [word list here](\public\mnemonicwordlist.txt) and on [GitHubGist](https://gist.github.com/KevinMarquette/343c2436d24539cc5eabacbfd98ab754) to make it easy to find. It was extracted from the [mn_wordlist.c](https://github.com/singpolyma/mnemonicode/blob/master/mn_wordlist.c) file.
+I have reproduced the entire [word list here](\public\mnemonicwordlist.txt) and on [GitHubGist](https://gist.github.com/KevinMarquette/343c2436d24539cc5eabacbfd98ab754) to make it easy to find. It was extracted from the [mn_wordlist.c](https://github.com/singpolyma/mnemonicode/blob/master/mn_wordlist.c) file in the project.
 
 # Save this for future reference
 
