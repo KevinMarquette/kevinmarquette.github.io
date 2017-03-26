@@ -3,7 +3,7 @@ layout: page
 title: PowerShell
 ---
 
-# Popular PowerShell reference pages
+# Popular reference pages
 
 * [Installing MSIs](\2016-10-21-powershell-installing-msi-files)
 * [Variable substitution](\2017-1-13-powershell-variable-substitution-in-strings)
