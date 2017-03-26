@@ -10,7 +10,7 @@ title: PowerShell
 * [Hashtables](\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about)
 * [PSCustomObject](\2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject)
 
-# My Projects
+# Projects
 
 ## Blog\Research
 
