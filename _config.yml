@@ -24,13 +24,13 @@ description: I love to explore and discover how Powershell works.
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Blog: "blog"
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
     - GitHub Pages: "https://pages.github.com/"
     - MSSQL Server: "sql"
+    - Tags: tags
     - SiteMap: sitemap
-  Author's home: "http://kevinmarquette.github.io"
+  Home: "http://kevinmarquette.github.io"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -121,6 +121,7 @@ exclude:
   - README.md
   - CNAME
   - Vagrantfile
+  - UpdateTags.ps1
 
 # prose.io config
 prose:
