@@ -121,6 +121,10 @@ Here is a sample from the middle of the list:
 
 I have reproduced the entire [word list here](\public\mnemonicwordlist.txt) and on [GitHubGist](https://gist.github.com/KevinMarquette/343c2436d24539cc5eabacbfd98ab754) to make it easy to find. It was extracted from the [mn_wordlist.c](https://github.com/singpolyma/mnemonicode/blob/master/mn_wordlist.c) file in the project.
 
+## Craig G's MnemonicEncodingWordList Project
+
+After I published this post, Craig created a small [project](https://github.com/chelnak/MnemonicEncodingWordList) in PowerShell to work with this list. In that project he has the full list in a [json document](https://github.com/chelnak/MnemonicEncodingWordList/blob/master/mnemonics.json).
+
 # Save this for future reference
 
 I don't have an immediate need for this list, but it took be a bit longer to find it than I expected. I know I could use any word list but this one was carefully crafted and I wanted to preserve it. I hope you find a valuable use for it. I know I am saving this one for later.
