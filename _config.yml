@@ -24,7 +24,7 @@ description: I love to explore and discover how Powershell works.
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Blog: "blog"
+  Blog: "research"
   Resources:
     - GitHub Pages: "https://pages.github.com/"
     - MSSQL Server: "sql"
