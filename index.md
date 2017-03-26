@@ -1,6 +1,6 @@
 ---
 layout: page
-subtitle: PowerShell Theory
+title: PowerShell
 ---
 
 # Popular PowerShell reference pages
