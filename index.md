@@ -14,7 +14,7 @@ subtitle: PowerShell Theory
 
 ## Blog\Research
 
-My primary focus of my [blog](\blog) is PowerShell. I love to learn and research ideas in PowerShell. When I find something interesting or new, I write about those discoveries. I have content for all skill levels. 
+The primary focus of my [blog](\blog) is on PowerShell. I love to learn and research ideas in PowerShell. When I find something interesting or new, I write about those discoveries. There is content for all skill levels. 
 
 When I cover fundamentals, my intention is that everyone walks away learning something. My coverage on [hashtables](\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about) gently introduces hashtables and continues on to take the topic to the most advanced details.
 
