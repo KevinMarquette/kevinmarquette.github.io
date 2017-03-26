@@ -23,14 +23,14 @@ description: I love to explore and discover how Powershell works.
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Blog: "blog"
+  About Me: "/aboutme/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+  Blog: "/blog/?utm_source=blog&utm_medium=blog&utm_content=navbar"
   Resources:
     - GitHub Pages: "https://pages.github.com/"
-    - MSSQL Server: "sql"
-    - Tags: tags
-    - SiteMap: sitemap
-  Home: "http://kevinmarquette.github.io"
+    - MSSQL Server: "/sql/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - Tags: "/tags/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - SiteMap: "/sitemap/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+  Home: "https://kevinmarquette.github.io/?utm_source=blog&utm_medium=blog&utm_content=navbar"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar

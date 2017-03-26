@@ -46,7 +46,7 @@ $taginfo = foreach($key in $keyList)
     Write-Output ''
     foreach($post in $tagList[$key].Values | Sort-Object Date)
     {
-        Write-Output ("* {0} [{1}](\{2})" -f $post.Date, $post.Title, $post.Post)
+        Write-Output ("* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=tags)" -f $post.Date, $post.Title, $post.Post)
     }
 }
 
