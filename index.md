@@ -6,7 +6,7 @@ title: PowerShell
 # Popular reference pages
 
 * [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Variable substitution](/2017-01-13-powershell-variable-substitution-in-strings\?utm_source=blog&utm_medium=blog&utm_content=popref)F
+* [Variable substitution](/2017-01-13-powershell-variable-substitution-in-strings\?utm_source=blog&utm_medium=blog&utm_content=popref)
 * [Hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about\?utm_source=blog&utm_medium=blog&utm_content=popref)
 * [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject\?utm_source=blog&utm_medium=blog&utm_content=popref)
 
