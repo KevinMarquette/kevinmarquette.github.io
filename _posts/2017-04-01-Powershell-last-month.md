@@ -9,7 +9,7 @@ I did a lot more this month than I expected. Here is a breakdown of all the post
 
 # Personal/Community efforts
 
-These are the projects and idea that I do on my own time for the community. Most of my personal projects make it out the community either as a post on this blog or as a contribution on GitHub.
+These are the projects and idea that I do on my own time for the community. Most of my personal projects are published on this blog or as a contribution on GitHub.
 
 * Blog post on [Writing a DSL for RDC Manager, DSLs part 2](https://kevinmarquette.github.io/2017-03-04-Powershell-DSL-example-RDCMan/?utm_source=blog&utm_medium=blog&utm_content=monthly)
 * Blog post on [DSL design patterns, DSLs part 3](https://kevinmarquette.github.io/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=monthly)
@@ -32,4 +32,4 @@ I also put a lot of time into Powershell projects outside of my published commun
 
 # What have you done?
 
-I was inspired to write this post because every month the [/r/Powershell](https://www.reddit.com/r/rpowershell) community has this discussion. Please stop by and join us to share your projects. [What have you done with PowerShell this month? March 2017](https://www.reddit.com/r/PowerShell/comments/62tuch/what_have_you_done_with_powershell_this_month/)
+I was inspired to write this post because every month the [/r/Powershell](https://www.reddit.com/r/PowerShell) community has this discussion. Please stop by and join us to share your projects. [What have you done with PowerShell this month? March 2017](https://www.reddit.com/r/PowerShell/comments/62tuch/what_have_you_done_with_powershell_this_month/)
