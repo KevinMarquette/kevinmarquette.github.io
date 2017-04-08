@@ -15,394 +15,762 @@ I did this by parsing all the .Net 4.6 namespace xml files. All of the content b
 {:toc}
 
 ## Microsoft.CSharp.RuntimeBinder
-### [Microsoft.CSharp.RuntimeBinder.RuntimeBinderException](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
+### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
 
 Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
 
-### [Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException.aspx)
+    [Microsoft.CSharp.RuntimeBinder.RuntimeBinderException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
+
+### Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException
 
 Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
+
+    [Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException.aspx)
 
 ## System
-### [System.AggregateException](http://msdn.microsoft.com/en-us/library/System.AggregateException.aspx)
+### System.AggregateException
 
 Represents one or more errors that occur during application execution.
 
-### [System.ArgumentException](http://msdn.microsoft.com/en-us/library/System.ArgumentException.aspx)
+    [System.AggregateException]::New("Represents one or more errors that occur during application execution.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.AggregateException.aspx)
+
+### System.ArgumentException
 
 The exception that is thrown when one of the arguments provided to a method is not valid.
 
-### [System.ArgumentNullException](http://msdn.microsoft.com/en-us/library/System.ArgumentNullException.aspx)
+    [System.ArgumentException]::New("one of the arguments provided to a method is not valid.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ArgumentException.aspx)
+
+### System.ArgumentNullException
 
 The exception that is thrown when a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument. 
 
-### [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/en-us/library/System.ArgumentOutOfRangeException.aspx)
+    [System.ArgumentNullException]::New("a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ArgumentNullException.aspx)
+
+### System.ArgumentOutOfRangeException
 
 The exception that is thrown when the value of an argument is outside the allowable range of values as defined by the invoked method.
 
-### [System.ArithmeticException](http://msdn.microsoft.com/en-us/library/System.ArithmeticException.aspx)
+    [System.ArgumentOutOfRangeException]::New("the value of an argument is outside the allowable range of values as defined by the invoked method.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ArgumentOutOfRangeException.aspx)
+
+### System.ArithmeticException
 
 The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
 
-### [System.ArrayTypeMismatchException](http://msdn.microsoft.com/en-us/library/System.ArrayTypeMismatchException.aspx)
+    [System.ArithmeticException]::New("The exception that is thrown for errors in an arithmetic, casting, or conversion operation.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ArithmeticException.aspx)
+
+### System.ArrayTypeMismatchException
 
 The exception that is thrown when an attempt is made to store an element of the wrong type within an array. 
 
-### [System.BadImageFormatException](http://msdn.microsoft.com/en-us/library/System.BadImageFormatException.aspx)
+    [System.ArrayTypeMismatchException]::New("an attempt is made to store an element of the wrong type within an array. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ArrayTypeMismatchException.aspx)
+
+### System.BadImageFormatException
 
 The exception that is thrown when the file image of a dynamic link library (DLL) or an executable program is invalid. 
 
-### [System.DataMisalignedException](http://msdn.microsoft.com/en-us/library/System.DataMisalignedException.aspx)
+    [System.BadImageFormatException]::New("the file image of a dynamic link library (DLL) or an executable program is invalid. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.BadImageFormatException.aspx)
+
+### System.DataMisalignedException
 
 The exception that is thrown when a unit of data is read from or written to an address that is not a multiple of the data size. This class cannot be inherited.
 
-### [System.DivideByZeroException](http://msdn.microsoft.com/en-us/library/System.DivideByZeroException.aspx)
+    [System.DataMisalignedException]::New("a unit of data is read from or written to an address that is not a multiple of the data size. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.DataMisalignedException.aspx)
+
+### System.DivideByZeroException
 
 The exception that is thrown when there is an attempt to divide an integral or decimal value by zero.
 
-### [System.DllNotFoundException](http://msdn.microsoft.com/en-us/library/System.DllNotFoundException.aspx)
+    [System.DivideByZeroException]::New("there is an attempt to divide an integral or decimal value by zero.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.DivideByZeroException.aspx)
+
+### System.DllNotFoundException
 
 The exception that is thrown when a DLL specified in a DLL import cannot be found.
 
-### [System.Exception](http://msdn.microsoft.com/en-us/library/System.Exception.aspx)
+    [System.DllNotFoundException]::New("a DLL specified in a DLL import cannot be found.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.DllNotFoundException.aspx)
+
+### System.Exception
 
 Represents errors that occur during application execution.
 
-### [System.FormatException](http://msdn.microsoft.com/en-us/library/System.FormatException.aspx)
+    [System.Exception]::New("Represents errors that occur during application execution.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Exception.aspx)
+
+### System.FormatException
 
 The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
 
-### [System.IndexOutOfRangeException](http://msdn.microsoft.com/en-us/library/System.IndexOutOfRangeException.aspx)
+    [System.FormatException]::New("the format of an argument does not meet the parameter specifications of the invoked method.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.FormatException.aspx)
+
+### System.IndexOutOfRangeException
 
 The exception that is thrown when an attempt is made to access an element of an array with an index that is outside the bounds of the array. This class cannot be inherited.
 
-### [System.InvalidCastException](http://msdn.microsoft.com/en-us/library/System.InvalidCastException.aspx)
+    [System.IndexOutOfRangeException]::New("an attempt is made to access an element of an array with an index that is outside the bounds of the array. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.IndexOutOfRangeException.aspx)
+
+### System.InvalidCastException
 
 The exception that is thrown for invalid casting or explicit conversion.
 
-### [System.InvalidOperationException](http://msdn.microsoft.com/en-us/library/System.InvalidOperationException.aspx)
+    [System.InvalidCastException]::New("The exception that is thrown for invalid casting or explicit conversion.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.InvalidCastException.aspx)
+
+### System.InvalidOperationException
 
 The exception that is thrown when a method call is invalid for the object's current state.
 
-### [System.InvalidTimeZoneException](http://msdn.microsoft.com/en-us/library/System.InvalidTimeZoneException.aspx)
+    [System.InvalidOperationException]::New("a method call is invalid for the object's current state.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.InvalidOperationException.aspx)
+
+### System.InvalidTimeZoneException
 
 The exception that is thrown when time zone information is invalid.
 
-### [System.MemberAccessException](http://msdn.microsoft.com/en-us/library/System.MemberAccessException.aspx)
+    [System.InvalidTimeZoneException]::New("time zone information is invalid.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.InvalidTimeZoneException.aspx)
+
+### System.MemberAccessException
 
 The exception that is thrown when an attempt to access a class member fails.
 
-### [System.MissingMemberException](http://msdn.microsoft.com/en-us/library/System.MissingMemberException.aspx)
+    [System.MemberAccessException]::New("an attempt to access a class member fails.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.MemberAccessException.aspx)
+
+### System.MissingMemberException
 
 The exception that is thrown when there is an attempt to dynamically access a class member that does not exist.
 
-### [System.NotImplementedException](http://msdn.microsoft.com/en-us/library/System.NotImplementedException.aspx)
+    [System.MissingMemberException]::New("there is an attempt to dynamically access a class member that does not exist.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.MissingMemberException.aspx)
+
+### System.NotImplementedException
 
 The exception that is thrown when a requested method or operation is not implemented.
 
-### [System.NotSupportedException](http://msdn.microsoft.com/en-us/library/System.NotSupportedException.aspx)
+    [System.NotImplementedException]::New("a requested method or operation is not implemented.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.NotImplementedException.aspx)
+
+### System.NotSupportedException
 
 The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
 
-### [System.NullReferenceException](http://msdn.microsoft.com/en-us/library/System.NullReferenceException.aspx)
+    [System.NotSupportedException]::New("an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.NotSupportedException.aspx)
+
+### System.NullReferenceException
 
 The exception that is thrown when there is an attempt to dereference a null object reference.
 
-### [System.ObjectDisposedException](http://msdn.microsoft.com/en-us/library/System.ObjectDisposedException.aspx)
+    [System.NullReferenceException]::New("there is an attempt to dereference a null object reference.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.NullReferenceException.aspx)
+
+### System.ObjectDisposedException
 
 The exception that is thrown when an operation is performed on a disposed object.
 
-### [System.OperationCanceledException](http://msdn.microsoft.com/en-us/library/System.OperationCanceledException.aspx)
+    [System.ObjectDisposedException]::New("an operation is performed on a disposed object.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ObjectDisposedException.aspx)
+
+### System.OperationCanceledException
 
 The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.
 
-### [System.OutOfMemoryException](http://msdn.microsoft.com/en-us/library/System.OutOfMemoryException.aspx)
+    [System.OperationCanceledException]::New("The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.OperationCanceledException.aspx)
+
+### System.OutOfMemoryException
 
 The exception that is thrown when there is not enough memory to continue the execution of a program.
 
-### [System.OverflowException](http://msdn.microsoft.com/en-us/library/System.OverflowException.aspx)
+    [System.OutOfMemoryException]::New("there is not enough memory to continue the execution of a program.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.OutOfMemoryException.aspx)
+
+### System.OverflowException
 
 The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
 
-### [System.PlatformNotSupportedException](http://msdn.microsoft.com/en-us/library/System.PlatformNotSupportedException.aspx)
+    [System.OverflowException]::New("an arithmetic, casting, or conversion operation in a checked context results in an overflow.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.OverflowException.aspx)
+
+### System.PlatformNotSupportedException
 
 The exception that is thrown when a feature does not run on a particular platform.
 
-### [System.RankException](http://msdn.microsoft.com/en-us/library/System.RankException.aspx)
+    [System.PlatformNotSupportedException]::New("a feature does not run on a particular platform.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.PlatformNotSupportedException.aspx)
+
+### System.RankException
 
 The exception that is thrown when an array with the wrong number of dimensions is passed to a method.
 
-### [System.TimeoutException](http://msdn.microsoft.com/en-us/library/System.TimeoutException.aspx)
+    [System.RankException]::New("an array with the wrong number of dimensions is passed to a method.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.RankException.aspx)
+
+### System.TimeoutException
 
 The exception that is thrown when the time allotted for a process or operation has expired.
 
-### [System.TypeAccessException](http://msdn.microsoft.com/en-us/library/System.TypeAccessException.aspx)
+    [System.TimeoutException]::New("the time allotted for a process or operation has expired.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.TimeoutException.aspx)
+
+### System.TypeAccessException
 
 The exception that is thrown when a method attempts to use a type that it does not have access to.
 
-### [System.TypeInitializationException](http://msdn.microsoft.com/en-us/library/System.TypeInitializationException.aspx)
+    [System.TypeAccessException]::New("a method attempts to use a type that it does not have access to.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.TypeAccessException.aspx)
+
+### System.TypeInitializationException
 
 The exception that is thrown as a wrapper around the exception thrown by the class initializer. This class cannot be inherited.
 
-### [System.TypeLoadException](http://msdn.microsoft.com/en-us/library/System.TypeLoadException.aspx)
+    [System.TypeInitializationException]::New("The exception that is thrown as a wrapper around the class initializer. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.TypeInitializationException.aspx)
+
+### System.TypeLoadException
 
 The exception that is thrown when type-loading failures occur.
 
-### [System.UnauthorizedAccessException](http://msdn.microsoft.com/en-us/library/System.UnauthorizedAccessException.aspx)
+    [System.TypeLoadException]::New("type-loading failures occur.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.TypeLoadException.aspx)
+
+### System.UnauthorizedAccessException
 
 The exception that is thrown when the operating system denies access because of an I/O error or a specific type of security error.
 
+    [System.UnauthorizedAccessException]::New("the operating system denies access because of an I/O error or a specific type of security error.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.UnauthorizedAccessException.aspx)
+
 ## System.Globalization
-### [System.Globalization.CultureNotFoundException](http://msdn.microsoft.com/en-us/library/System.Globalization.CultureNotFoundException.aspx)
+### System.Globalization.CultureNotFoundException
 
 The exception thrown when a method is invoked which attempts to construct a culture that is not available on the machine.
 
+    [System.Globalization.CultureNotFoundException]::New("a method is invoked which attempts to construct a culture that is not available on the machine.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Globalization.CultureNotFoundException.aspx)
+
 ## System.IO
-### [System.IO.EndOfStreamException](http://msdn.microsoft.com/en-us/library/System.IO.EndOfStreamException.aspx)
+### System.IO.EndOfStreamException
 
 The exception that is thrown when reading is attempted past the end of a stream.
 
-### [System.IO.FileNotFoundException](http://msdn.microsoft.com/en-us/library/System.IO.FileNotFoundException.aspx)
+    [System.IO.EndOfStreamException]::New("reading is attempted past the end of a stream.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.IO.EndOfStreamException.aspx)
+
+### System.IO.FileNotFoundException
 
 The exception that is thrown when an attempt to access a file that does not exist on disk fails.
 
-### [System.IO.InvalidDataException](http://msdn.microsoft.com/en-us/library/System.IO.InvalidDataException.aspx)
+    [System.IO.FileNotFoundException]::New("an attempt to access a file that does not exist on disk fails.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.IO.FileNotFoundException.aspx)
+
+### System.IO.InvalidDataException
 
 The exception that is thrown when a data stream is in an invalid format.
 
-### [System.IO.IOException](http://msdn.microsoft.com/en-us/library/System.IO.IOException.aspx)
+    [System.IO.InvalidDataException]::New("a data stream is in an invalid format.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.IO.InvalidDataException.aspx)
+
+### System.IO.IOException
 
 The exception that is thrown when an I/O error occurs.
 
+    [System.IO.IOException]::New("an I/O error occurs.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.IO.IOException.aspx)
+
 ## System.Net
-### [System.Net.CookieException](http://msdn.microsoft.com/en-us/library/System.Net.CookieException.aspx)
+### System.Net.CookieException
 
 The exception that is thrown when an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.
 
-### [System.Net.ProtocolViolationException](http://msdn.microsoft.com/en-us/library/System.Net.ProtocolViolationException.aspx)
+    [System.Net.CookieException]::New("an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Net.CookieException.aspx)
+
+### System.Net.ProtocolViolationException
 
 The exception that is thrown when an error is made while using a network protocol.
 
-### [System.Net.WebException](http://msdn.microsoft.com/en-us/library/System.Net.WebException.aspx)
+    [System.Net.ProtocolViolationException]::New("an error is made while using a network protocol.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Net.ProtocolViolationException.aspx)
+
+### System.Net.WebException
 
 The exception that is thrown when an error occurs while accessing the network through a pluggable protocol.
 
+    [System.Net.WebException]::New("an error occurs while accessing the network through a pluggable protocol.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Net.WebException.aspx)
+
 ## System.Reflection
-### [System.Reflection.AmbiguousMatchException](http://msdn.microsoft.com/en-us/library/System.Reflection.AmbiguousMatchException.aspx)
+### System.Reflection.AmbiguousMatchException
 
 The exception that is thrown when binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.
 
-### [System.Reflection.ReflectionTypeLoadException](http://msdn.microsoft.com/en-us/library/System.Reflection.ReflectionTypeLoadException.aspx)
+    [System.Reflection.AmbiguousMatchException]::New("binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Reflection.AmbiguousMatchException.aspx)
+
+### System.Reflection.ReflectionTypeLoadException
 
 The exception that is thrown by the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.
 
-### [System.Reflection.TargetInvocationException](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetInvocationException.aspx)
+    [System.Reflection.ReflectionTypeLoadException]::New("the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Reflection.ReflectionTypeLoadException.aspx)
+
+### System.Reflection.TargetInvocationException
 
 The exception that is thrown by methods invoked through reflection. This class cannot be inherited.
 
-### [System.Reflection.TargetParameterCountException](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetParameterCountException.aspx)
+    [System.Reflection.TargetInvocationException]::New("methods invoked through reflection. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetInvocationException.aspx)
+
+### System.Reflection.TargetParameterCountException
 
 The exception that is thrown when the number of parameters for an invocation does not match the number expected. This class cannot be inherited.
 
+    [System.Reflection.TargetParameterCountException]::New("the number of parameters for an invocation does not match the number expected. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetParameterCountException.aspx)
+
 ## System.Resources
-### [System.Resources.MissingManifestResourceException](http://msdn.microsoft.com/en-us/library/System.Resources.MissingManifestResourceException.aspx)
+### System.Resources.MissingManifestResourceException
 
 The exception that is thrown if the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.
 
+    [System.Resources.MissingManifestResourceException]::New("The exception that is thrown if the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Resources.MissingManifestResourceException.aspx)
+
 ## System.Security
-### [System.Security.SecurityException](http://msdn.microsoft.com/en-us/library/System.Security.SecurityException.aspx)
+### System.Security.SecurityException
 
 The exception that is thrown when a security error is detected.
 
-### [System.Security.VerificationException](http://msdn.microsoft.com/en-us/library/System.Security.VerificationException.aspx)
+    [System.Security.SecurityException]::New("a security error is detected.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Security.SecurityException.aspx)
+
+### System.Security.VerificationException
 
 The exception that is thrown when the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.
 
+    [System.Security.VerificationException]::New("the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Security.VerificationException.aspx)
+
 ## System.ServiceModel
-### [System.ServiceModel.ActionNotSupportedException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ActionNotSupportedException.aspx)
+### System.ServiceModel.ActionNotSupportedException
 
 This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.
 
-### [System.ServiceModel.CommunicationException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationException.aspx)
+    [System.ServiceModel.ActionNotSupportedException]::New("This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ActionNotSupportedException.aspx)
+
+### System.ServiceModel.CommunicationException
 
 Represents a communication error in either the service or client application.
 
-### [System.ServiceModel.CommunicationObjectAbortedException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectAbortedException.aspx)
+    [System.ServiceModel.CommunicationException]::New("Represents a communication error in either the service or client application.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationException.aspx)
+
+### System.ServiceModel.CommunicationObjectAbortedException
 
 The exception that is thrown when the call is to an System.ServiceModel.ICommunicationObject object that has aborted.
 
-### [System.ServiceModel.CommunicationObjectFaultedException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx)
+    [System.ServiceModel.CommunicationObjectAbortedException]::New("the call is to an System.ServiceModel.ICommunicationObject object that has aborted.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectAbortedException.aspx)
+
+### System.ServiceModel.CommunicationObjectFaultedException
 
 The exception that is thrown when a call is made to a communication object that has faulted. 
 
-### [System.ServiceModel.EndpointNotFoundException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.EndpointNotFoundException.aspx)
+    [System.ServiceModel.CommunicationObjectFaultedException]::New("a call is made to a communication object that has faulted. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx)
+
+### System.ServiceModel.EndpointNotFoundException
 
 The exception that is thrown when a remote endpoint could not be found or reached.
 
-### [System.ServiceModel.FaultException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.FaultException.aspx)
+    [System.ServiceModel.EndpointNotFoundException]::New("a remote endpoint could not be found or reached.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.EndpointNotFoundException.aspx)
+
+### System.ServiceModel.FaultException
 
 Represents a SOAP fault.
 
-### [System.ServiceModel.InvalidMessageContractException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.InvalidMessageContractException.aspx)
+    [System.ServiceModel.FaultException]::New("Represents a SOAP fault.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.FaultException.aspx)
+
+### System.ServiceModel.InvalidMessageContractException
 
 Represents a message contract that is not valid.
 
-### [System.ServiceModel.MessageHeaderException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MessageHeaderException.aspx)
+    [System.ServiceModel.InvalidMessageContractException]::New("Represents a message contract that is not valid.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.InvalidMessageContractException.aspx)
+
+### System.ServiceModel.MessageHeaderException
 
 The exception that is thrown when the expectations regarding headers of a SOAP message are not satisfied when the message is processed.
 
-### [System.ServiceModel.ProtocolException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ProtocolException.aspx)
+    [System.ServiceModel.MessageHeaderException]::New("the expectations regarding headers of a SOAP message are not satisfied when the message is processed.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MessageHeaderException.aspx)
+
+### System.ServiceModel.ProtocolException
 
 The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.
 
-### [System.ServiceModel.QuotaExceededException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.QuotaExceededException.aspx)
+    [System.ServiceModel.ProtocolException]::New("The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ProtocolException.aspx)
+
+### System.ServiceModel.QuotaExceededException
 
 The exception that is thrown when a message quota has been exceeded.
 
-### [System.ServiceModel.ServerTooBusyException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServerTooBusyException.aspx)
+    [System.ServiceModel.QuotaExceededException]::New("a message quota has been exceeded.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.QuotaExceededException.aspx)
+
+### System.ServiceModel.ServerTooBusyException
 
 The exception that is thrown when a server is too busy to accept a message.
 
-### [System.ServiceModel.ServiceActivationException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServiceActivationException.aspx)
+    [System.ServiceModel.ServerTooBusyException]::New("a server is too busy to accept a message.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServerTooBusyException.aspx)
+
+### System.ServiceModel.ServiceActivationException
 
 The exception that is thrown when a service fails to activate.
 
+    [System.ServiceModel.ServiceActivationException]::New("a service fails to activate.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServiceActivationException.aspx)
+
 ## System.Text
-### [System.Text.DecoderFallbackException](http://msdn.microsoft.com/en-us/library/System.Text.DecoderFallbackException.aspx)
+### System.Text.DecoderFallbackException
 
 The exception that is thrown when a decoder fallback operation fails. This class cannot be inherited.
 
-### [System.Text.EncoderFallbackException](http://msdn.microsoft.com/en-us/library/System.Text.EncoderFallbackException.aspx)
+    [System.Text.DecoderFallbackException]::New("a decoder fallback operation fails. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Text.DecoderFallbackException.aspx)
+
+### System.Text.EncoderFallbackException
 
 The exception that is thrown when an encoder fallback operation fails. This class cannot be inherited.
 
+    [System.Text.EncoderFallbackException]::New("an encoder fallback operation fails. This class cannot be inherited.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Text.EncoderFallbackException.aspx)
+
 ## System.Threading
-### [System.Threading.AbandonedMutexException](http://msdn.microsoft.com/en-us/library/System.Threading.AbandonedMutexException.aspx)
+### System.Threading.AbandonedMutexException
 
 The exception that is thrown when one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.
 
-### [System.Threading.BarrierPostPhaseException](http://msdn.microsoft.com/en-us/library/System.Threading.BarrierPostPhaseException.aspx)
+    [System.Threading.AbandonedMutexException]::New("one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.AbandonedMutexException.aspx)
+
+### System.Threading.BarrierPostPhaseException
 
 The exception that is thrown when the post-phase action of a System.Threading.Barrier fails
 
-### [System.Threading.LockRecursionException](http://msdn.microsoft.com/en-us/library/System.Threading.LockRecursionException.aspx)
+    [System.Threading.BarrierPostPhaseException]::New("the post-phase action of a System.Threading.Barrier fails")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.BarrierPostPhaseException.aspx)
+
+### System.Threading.LockRecursionException
 
 The exception that is thrown when recursive entry into a lock is not compatible with the recursion policy for the lock.
 
-### [System.Threading.SemaphoreFullException](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx)
+    [System.Threading.LockRecursionException]::New("recursive entry into a lock is not compatible with the recursion policy for the lock.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.LockRecursionException.aspx)
+
+### System.Threading.SemaphoreFullException
 
 The exception that is thrown when the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. 
 
-### [System.Threading.SynchronizationLockException](http://msdn.microsoft.com/en-us/library/System.Threading.SynchronizationLockException.aspx)
+    [System.Threading.SemaphoreFullException]::New("the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx)
+
+### System.Threading.SynchronizationLockException
 
 The exception that is thrown when a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.
 
-### [System.Threading.WaitHandleCannotBeOpenedException](http://msdn.microsoft.com/en-us/library/System.Threading.WaitHandleCannotBeOpenedException.aspx)
+    [System.Threading.SynchronizationLockException]::New("a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.SynchronizationLockException.aspx)
+
+### System.Threading.WaitHandleCannotBeOpenedException
 
 The exception that is thrown when an attempt is made to open a system mutex or semaphore that does not exist.
 
+    [System.Threading.WaitHandleCannotBeOpenedException]::New("an attempt is made to open a system mutex or semaphore that does not exist.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.WaitHandleCannotBeOpenedException.aspx)
+
 ## System.Xml
-### [System.Xml.XmlException](http://msdn.microsoft.com/en-us/library/System.Xml.XmlException.aspx)
+### System.Xml.XmlException
 
 Returns detailed information about the last exception.
 
+    [System.Xml.XmlException]::New("Returns detailed information about the last exception.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Xml.XmlException.aspx)
+
 ## System.Collections.Generic
-### [System.Collections.Generic.KeyNotFoundException](http://msdn.microsoft.com/en-us/library/System.Collections.Generic.KeyNotFoundException.aspx)
+### System.Collections.Generic.KeyNotFoundException
 
 The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
 
+    [System.Collections.Generic.KeyNotFoundException]::New("the key specified for accessing an element in a collection does not match any key in the collection.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Collections.Generic.KeyNotFoundException.aspx)
+
 ## System.ComponentModel.DataAnnotations
-### [System.ComponentModel.DataAnnotations.ValidationException](http://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.ValidationException.aspx)
+### System.ComponentModel.DataAnnotations.ValidationException
 
 Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. 
 
+    [System.ComponentModel.DataAnnotations.ValidationException]::New("Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.ValidationException.aspx)
+
 ## System.Diagnostics.Tracing
-### [System.Diagnostics.Tracing.EventSourceException](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Tracing.EventSourceException.aspx)
+### System.Diagnostics.Tracing.EventSourceException
 
 The exception that is thrown when an error occurs during event tracing for Windows (ETW).
 
+    [System.Diagnostics.Tracing.EventSourceException]::New("an error occurs during event tracing for Windows (ETW).")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Tracing.EventSourceException.aspx)
+
 ## System.Net.Http
-### [System.Net.Http.HttpRequestException](http://msdn.microsoft.com/en-us/library/System.Net.Http.HttpRequestException.aspx)
+### System.Net.Http.HttpRequestException
 
 A base class for exceptions thrown by the System.Net.Http.HttpClient and System.Net.Http.HttpMessageHandler classes.
 
+    [System.Net.Http.HttpRequestException]::New("A base class for exceptions thrown by the System.Net.Http.HttpClient and System.Net.Http.HttpMessageHandler classes.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Net.Http.HttpRequestException.aspx)
+
 ## System.Runtime.InteropServices
-### [System.Runtime.InteropServices.COMException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.COMException.aspx)
+### System.Runtime.InteropServices.COMException
 
 The exception that is thrown when an unrecognized HRESULT is returned from a COM method call.
 
-### [System.Runtime.InteropServices.InvalidComObjectException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidComObjectException.aspx)
+    [System.Runtime.InteropServices.COMException]::New("an unrecognized HRESULT is returned from a COM method call.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.COMException.aspx)
+
+### System.Runtime.InteropServices.InvalidComObjectException
 
 The exception thrown when an invalid COM object is used.
 
-### [System.Runtime.InteropServices.InvalidOleVariantTypeException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidOleVariantTypeException.aspx)
+    [System.Runtime.InteropServices.InvalidComObjectException]::New("an invalid COM object is used.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidComObjectException.aspx)
+
+### System.Runtime.InteropServices.InvalidOleVariantTypeException
 
 The exception thrown by the marshaler when it encounters an argument of a variant type that can not be marshaled to managed code.
 
-### [System.Runtime.InteropServices.MarshalDirectiveException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.MarshalDirectiveException.aspx)
+    [System.Runtime.InteropServices.InvalidOleVariantTypeException]::New("the marshaler when it encounters an argument of a variant type that can not be marshaled to managed code.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidOleVariantTypeException.aspx)
+
+### System.Runtime.InteropServices.MarshalDirectiveException
 
 The exception that is thrown by the marshaler when it encounters a System.Runtime.InteropServices.MarshalAsAttribute it does not support.
 
-### [System.Runtime.InteropServices.SafeArrayRankMismatchException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayRankMismatchException.aspx)
+    [System.Runtime.InteropServices.MarshalDirectiveException]::New("the marshaler when it encounters a System.Runtime.InteropServices.MarshalAsAttribute it does not support.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.MarshalDirectiveException.aspx)
+
+### System.Runtime.InteropServices.SafeArrayRankMismatchException
 
 The exception thrown when the rank of an incoming SAFEARRAY does not match the rank specified in the managed signature.
 
-### [System.Runtime.InteropServices.SafeArrayTypeMismatchException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayTypeMismatchException.aspx)
+    [System.Runtime.InteropServices.SafeArrayRankMismatchException]::New("the rank of an incoming SAFEARRAY does not match the rank specified in the managed signature.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayRankMismatchException.aspx)
+
+### System.Runtime.InteropServices.SafeArrayTypeMismatchException
 
 The exception thrown when the type of the incoming SAFEARRAY does not match the type specified in the managed signature.
 
-### [System.Runtime.InteropServices.SEHException](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SEHException.aspx)
+    [System.Runtime.InteropServices.SafeArrayTypeMismatchException]::New("the type of the incoming SAFEARRAY does not match the type specified in the managed signature.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayTypeMismatchException.aspx)
+
+### System.Runtime.InteropServices.SEHException
 
 Represents structured exception handling (SEH) errors. 
 
+    [System.Runtime.InteropServices.SEHException]::New("Represents structured exception handling (SEH) errors. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SEHException.aspx)
+
 ## System.Runtime.Serialization
-### [System.Runtime.Serialization.InvalidDataContractException](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.InvalidDataContractException.aspx)
+### System.Runtime.Serialization.InvalidDataContractException
 
 The exception that is thrown when the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization. 
 
-### [System.Runtime.Serialization.SerializationException](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.SerializationException.aspx)
+    [System.Runtime.Serialization.InvalidDataContractException]::New("the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.InvalidDataContractException.aspx)
+
+### System.Runtime.Serialization.SerializationException
 
 The exception thrown when an error occurs during serialization or deserialization.
 
+    [System.Runtime.Serialization.SerializationException]::New("an error occurs during serialization or deserialization.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.SerializationException.aspx)
+
 ## System.ServiceModel.Security
-### [System.ServiceModel.Security.MessageSecurityException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.MessageSecurityException.aspx)
+### System.ServiceModel.Security.MessageSecurityException
 
 Represents an exception that occurred when there is something wrong with the security applied on a message. 
 
-### [System.ServiceModel.Security.SecurityAccessDeniedException](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.SecurityAccessDeniedException.aspx)
+    [System.ServiceModel.Security.MessageSecurityException]::New("Represents an exception that occurred when there is something wrong with the security applied on a message. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.MessageSecurityException.aspx)
+
+### System.ServiceModel.Security.SecurityAccessDeniedException
 
 Represents the security exception that is thrown when a security authorization request fails.
 
+    [System.ServiceModel.Security.SecurityAccessDeniedException]::New("Represents the security exception that is thrown when a security authorization request fails.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.SecurityAccessDeniedException.aspx)
+
 ## System.Text.RegularExpressions
-### [System.Text.RegularExpressions.RegexMatchTimeoutException](http://msdn.microsoft.com/en-us/library/System.Text.RegularExpressions.RegexMatchTimeoutException.aspx)
+### System.Text.RegularExpressions.RegexMatchTimeoutException
 
 The exception that is thrown when the execution time of a regular expression pattern-matching method exceeds its time-out interval.
 
+    [System.Text.RegularExpressions.RegexMatchTimeoutException]::New("the execution time of a regular expression pattern-matching method exceeds its time-out interval.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Text.RegularExpressions.RegexMatchTimeoutException.aspx)
+
 ## System.Threading.Tasks
-### [System.Threading.Tasks.TaskCanceledException](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskCanceledException.aspx)
+### System.Threading.Tasks.TaskCanceledException
 
 Represents an exception used to communicate task cancellation.
 
-### [System.Threading.Tasks.TaskSchedulerException](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskSchedulerException.aspx)
+    [System.Threading.Tasks.TaskCanceledException]::New("Represents an exception used to communicate task cancellation.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskCanceledException.aspx)
+
+### System.Threading.Tasks.TaskSchedulerException
 
 Represents an exception used to communicate an invalid operation by a System.Threading.Tasks.TaskScheduler.
 
+    [System.Threading.Tasks.TaskSchedulerException]::New("Represents an exception used to communicate an invalid operation by a System.Threading.Tasks.TaskScheduler.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskSchedulerException.aspx)
+
 ## Windows.UI.Xaml
-### [Windows.UI.Xaml.LayoutCycleException](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.LayoutCycleException.aspx)
+### Windows.UI.Xaml.LayoutCycleException
 
 An exception that is thrown by the layout cycle.
 
+    [Windows.UI.Xaml.LayoutCycleException]::New("An exception that is thrown by the layout cycle.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.LayoutCycleException.aspx)
+
 ## Windows.UI.Xaml.Automation
-### [Windows.UI.Xaml.Automation.ElementNotAvailableException](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Automation.ElementNotAvailableException.aspx)
+### Windows.UI.Xaml.Automation.ElementNotAvailableException
 
 The exception that is thrown when an attempt is made to access a UI automation element corresponding to a part of the user interface that is no longer available.
 
-### [Windows.UI.Xaml.Automation.ElementNotEnabledException](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Automation.ElementNotEnabledException.aspx)
+    [Windows.UI.Xaml.Automation.ElementNotAvailableException]::New("an attempt is made to access a UI automation element corresponding to a part of the user interface that is no longer available.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Automation.ElementNotAvailableException.aspx)
+
+### Windows.UI.Xaml.Automation.ElementNotEnabledException
 
 The exception that is thrown when an attempt is made through UI automation to manipulate a control that is not enabled. 
 
+    [Windows.UI.Xaml.Automation.ElementNotEnabledException]::New("an attempt is made through UI automation to manipulate a control that is not enabled. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Automation.ElementNotEnabledException.aspx)
+
 ## Windows.UI.Xaml.Markup
-### [Windows.UI.Xaml.Markup.XamlParseException](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Markup.XamlParseException.aspx)
+### Windows.UI.Xaml.Markup.XamlParseException
 
 The exception that is thrown when an error occurs while parsing Xaml. 
+
+    [Windows.UI.Xaml.Markup.XamlParseException]::New("an error occurs while parsing Xaml. ")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Markup.XamlParseException.aspx)
 
