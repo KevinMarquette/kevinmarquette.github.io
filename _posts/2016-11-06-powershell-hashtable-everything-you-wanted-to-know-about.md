@@ -471,9 +471,9 @@ If you need it to be a `[hashtable]` on import, then you need to use the `Export
 
 If you need to convert JSON to a `[hashtable]`, there is one way that I know of to do it with the [JavaScriptSerializer](https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx) in .Net.
 
-    $null = [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
-    $JavaScriptSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
-    $JavaScriptSerializer.Deserialize($json,'Hashtable')
+    [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
+    $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
+    $JSSerializer.Deserialize($json,'Hashtable')
 
 ## Reading directly from a file
 If you have a file that contains a hashtable using Powershell syntax, there is a way to import it directly.
