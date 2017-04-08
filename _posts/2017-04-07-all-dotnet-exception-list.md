@@ -14,7 +14,6 @@ I did this by parsing all the .Net 4.6.1 Namespace xml files on ym system. All o
 * TOC
 {:toc}
 
-
 ## System
 #### System.AccessViolationException
 
@@ -521,6 +520,77 @@ An exception that is thrown when an operation on a workflow instance is invalid 
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.WorkflowApplicationUnloadedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.WorkflowApplicationUnloadedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationUnloadedException) |
 
+## System.Activities.DynamicUpdate
+#### System.Activities.DynamicUpdate.InstanceUpdateException
+
+Represents an instance update exception.
+
+    throw [System.Activities.DynamicUpdate.InstanceUpdateException]::New('Represents an instance update exception.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.DynamicUpdate.InstanceUpdateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.DynamicUpdate.InstanceUpdateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.DynamicUpdate.InstanceUpdateException) |
+
+## System.Activities.ExpressionParser
+#### System.Activities.ExpressionParser.SourceExpressionException
+
+Represents the exception that is thrown when a text-based expression cannot be converted into an executable form. 
+
+    throw [System.Activities.ExpressionParser.SourceExpressionException]::New('a text-based expression cannot be converted into an executable form.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.ExpressionParser.SourceExpressionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.ExpressionParser.SourceExpressionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.ExpressionParser.SourceExpressionException) |
+
+## System.Activities.Expressions
+#### System.Activities.Expressions.LambdaSerializationException
+
+The exception that is thrown when a XAML serialization attempt is made on a System.Activities.Expressions.LambdaValue`1 or System.Activities.Expressions.LambdaReference`1.
+
+    throw [System.Activities.Expressions.LambdaSerializationException]::New('a XAML serialization attempt is made on a System.Activities.Expressions.LambdaValue`1 or System.Activities.Expressions.LambdaReference`1.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Expressions.LambdaSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Expressions.LambdaSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Expressions.LambdaSerializationException) |
+
+## System.Activities.Presentation.Metadata
+#### System.Activities.Presentation.Metadata.AttributeTableValidationException
+
+Provides the functionality to throw an exception from the System.Activities.Presentation.Metadata.AttributeTableBuilder.ValidateTable method if the metadata provided in the table does not match properties, methods, and events on real types. 
+
+    throw [System.Activities.Presentation.Metadata.AttributeTableValidationException]::New('Provides the functionality to throw an exception from the System.Activities.Presentation.Metadata.AttributeTableBuilder.ValidateTable method if the metadata provided in the table does not match properties, methods, and events on real types.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Presentation.Metadata.AttributeTableValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Presentation.Metadata.AttributeTableValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Presentation.Metadata.AttributeTableValidationException) |
+
+## System.Activities.Statements
+#### System.Activities.Statements.WorkflowTerminatedException
+
+The exception that is thrown when an operation is invoked on a terminated System.Activities.WorkflowApplication.
+
+    throw [System.Activities.Statements.WorkflowTerminatedException]::New('an operation is invoked on a terminated System.Activities.WorkflowApplication.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Statements.WorkflowTerminatedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Statements.WorkflowTerminatedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Statements.WorkflowTerminatedException) |
+
+## System.AddIn.Hosting
+#### System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException
+
+The exception that is thrown when a segment directory is missing from the pipeline directory structure.
+
+    throw [System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException]::New('a segment directory is missing from the pipeline directory structure.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException) |
+
+#### System.AddIn.Hosting.InvalidPipelineStoreException
+
+The exception that is thrown when a directory is not found and the user does not have permission to access the pipeline root path or an add-in path.
+
+    throw [System.AddIn.Hosting.InvalidPipelineStoreException]::New('a directory is not found and the user does not have permission to access the pipeline root path or an add-in path.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.AddIn.Hosting.InvalidPipelineStoreException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AddIn.Hosting.InvalidPipelineStoreException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.InvalidPipelineStoreException) |
+
+## System.Collections.Generic
+#### System.Collections.Generic.KeyNotFoundException
+
+The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
+
+    throw [System.Collections.Generic.KeyNotFoundException]::New('the key specified for accessing an element in a collection does not match any key in the collection.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.KeyNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Collections.Generic.KeyNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Collections.Generic.KeyNotFoundException) |
+
 ## System.ComponentModel
 #### System.ComponentModel.InvalidAsynchronousStateException
 
@@ -562,6 +632,75 @@ Throws an exception for a Win32 error code.
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Win32Exception) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Win32Exception.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Win32Exception) |
 
+## System.ComponentModel.Composition
+#### System.ComponentModel.Composition.ChangeRejectedException
+
+An exception that indicates whether a part has been rejected during composition.
+
+    throw [System.ComponentModel.Composition.ChangeRejectedException]::New('An exception that indicates whether a part has been rejected during composition.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.ChangeRejectedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.ChangeRejectedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ChangeRejectedException) |
+
+#### System.ComponentModel.Composition.CompositionContractMismatchException
+
+The exception that is thrown when the underlying exported value or metadata of a System.Lazy`1 or System.Lazy`2 object cannot be cast to T or TMetadataView, respectively.
+
+    throw [System.ComponentModel.Composition.CompositionContractMismatchException]::New('the underlying exported value or metadata of a System.Lazy`1 or System.Lazy`2 object cannot be cast to T or TMetadataView, respectively.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.CompositionContractMismatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionContractMismatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionContractMismatchException) |
+
+#### System.ComponentModel.Composition.CompositionException
+
+Represents the exception that is thrown when one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.
+
+    throw [System.ComponentModel.Composition.CompositionException]::New('one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.CompositionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionException) |
+
+#### System.ComponentModel.Composition.ImportCardinalityMismatchException
+
+The exception that is thrown when the cardinality of an import is not compatible with the cardinality of the matching exports.
+
+    throw [System.ComponentModel.Composition.ImportCardinalityMismatchException]::New('the cardinality of an import is not compatible with the cardinality of the matching exports.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.ImportCardinalityMismatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.ImportCardinalityMismatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ImportCardinalityMismatchException) |
+
+## System.ComponentModel.Composition.Primitives
+#### System.ComponentModel.Composition.Primitives.ComposablePartException
+
+The exception that is thrown when an error occurs when calling methods on a System.ComponentModel.Composition.Primitives.ComposablePart object.
+
+    throw [System.ComponentModel.Composition.Primitives.ComposablePartException]::New('an error occurs when calling methods on a System.ComponentModel.Composition.Primitives.ComposablePart object.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.Primitives.ComposablePartException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.Primitives.ComposablePartException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.Primitives.ComposablePartException) |
+
+## System.ComponentModel.DataAnnotations
+#### System.ComponentModel.DataAnnotations.ValidationException
+
+Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. 
+
+    throw [System.ComponentModel.DataAnnotations.ValidationException]::New('Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.DataAnnotations.ValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.ValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.DataAnnotations.ValidationException) |
+
+## System.ComponentModel.Design
+#### System.ComponentModel.Design.CheckoutException
+
+The exception that is thrown when an attempt to check out a file that is checked into a source code management program is canceled or fails.
+
+    throw [System.ComponentModel.Design.CheckoutException]::New('an attempt to check out a file that is checked into a source code management program is canceled or fails.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Design.CheckoutException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Design.CheckoutException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.CheckoutException) |
+
+## System.ComponentModel.Design.Serialization
+#### System.ComponentModel.Design.Serialization.CodeDomSerializerException
+
+The exception that is thrown when line number information is available for a serialization error.
+
+    throw [System.ComponentModel.Design.Serialization.CodeDomSerializerException]::New('line number information is available for a serialization error.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Design.Serialization.CodeDomSerializerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Design.Serialization.CodeDomSerializerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.Serialization.CodeDomSerializerException) |
+
 ## System.Configuration
 #### System.Configuration.ConfigurationErrorsException
 
@@ -602,6 +741,24 @@ Provides an exception that is thrown when an invalid type is used with a System.
     throw [System.Configuration.SettingsPropertyWrongTypeException]::New('Provides an exception that is thrown when an invalid type is used with a System.Configuration.SettingsProperty object.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Configuration.SettingsPropertyWrongTypeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.SettingsPropertyWrongTypeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.SettingsPropertyWrongTypeException) |
+
+## System.Configuration.Install
+#### System.Configuration.Install.InstallException
+
+The exception that is thrown when an error occurs during the commit, rollback, or uninstall phase of an installation.
+
+    throw [System.Configuration.Install.InstallException]::New('an error occurs during the commit, rollback, or uninstall phase of an installation.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Configuration.Install.InstallException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.Install.InstallException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Install.InstallException) |
+
+## System.Configuration.Provider
+#### System.Configuration.Provider.ProviderException
+
+The exception that is thrown when a configuration provider error has occurred. This exception class is also used by providers to throw exceptions when internal errors occur within the provider that do not map to other pre-existing exception classes.
+
+    throw [System.Configuration.Provider.ProviderException]::New('a configuration provider error has occurred. This exception class is also used by providers to throw exceptions when internal errors occur within the provider that do not map to other pre-existing exception classes.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Configuration.Provider.ProviderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.Provider.ProviderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Provider.ProviderException) |
 
 ## System.Data
 #### System.Data.ConstraintException
@@ -844,958 +1001,6 @@ Represents the exception that is thrown when you try to return a version of a Sy
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.VersionNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.VersionNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.VersionNotFoundException) |
 
-## System.DirectoryServices
-#### System.DirectoryServices.DirectoryServicesCOMException
-
-Contains extended error information about an error that occurred when the System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[]) method is called. 
-
-    throw [System.DirectoryServices.DirectoryServicesCOMException]::New('Contains extended error information about an error that occurred when the System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[]) method is called.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.DirectoryServices.DirectoryServicesCOMException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.DirectoryServicesCOMException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.DirectoryServicesCOMException) |
-
-## System.EnterpriseServices
-#### System.EnterpriseServices.RegistrationException
-
-The exception that is thrown when a registration error is detected.
-
-    throw [System.EnterpriseServices.RegistrationException]::New('a registration error is detected.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.EnterpriseServices.RegistrationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EnterpriseServices.RegistrationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.RegistrationException) |
-
-#### System.EnterpriseServices.ServicedComponentException
-
-The exception that is thrown when an error is detected in a serviced component.
-
-    throw [System.EnterpriseServices.ServicedComponentException]::New('an error is detected in a serviced component.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.EnterpriseServices.ServicedComponentException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EnterpriseServices.ServicedComponentException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.ServicedComponentException) |
-
-## System.Globalization
-#### System.Globalization.CultureNotFoundException
-
-The exception that is thrown when a method is invoked which attempts to construct a culture that is not available on the machine.
-
-    throw [System.Globalization.CultureNotFoundException]::New('a method is invoked which attempts to construct a culture that is not available on the machine.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Globalization.CultureNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Globalization.CultureNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Globalization.CultureNotFoundException) |
-
-## System.IdentityModel
-#### System.IdentityModel.AsynchronousOperationException
-
-The exception that is thrown when an error occurs during an asynchronous operation.
-
-    throw [System.IdentityModel.AsynchronousOperationException]::New('an error occurs during an asynchronous operation.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.AsynchronousOperationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.AsynchronousOperationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.AsynchronousOperationException) |
-
-#### System.IdentityModel.BadRequestException
-
-The exception that is thrown when a token request (RST) is not understood by the security token service (STS).
-
-    throw [System.IdentityModel.BadRequestException]::New('a token request (RST) is not understood by the security token service (STS).')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.BadRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.BadRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.BadRequestException) |
-
-#### System.IdentityModel.LimitExceededException
-
-The exception that is thrown when a configured limit or quota is exceeded.
-
-    throw [System.IdentityModel.LimitExceededException]::New('a configured limit or quota is exceeded.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.LimitExceededException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.LimitExceededException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.LimitExceededException) |
-
-#### System.IdentityModel.RequestException
-
-The base class for exceptions thrown on request failures.
-
-    throw [System.IdentityModel.RequestException]::New('The base class for exceptions thrown on request failures.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.RequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestException) |
-
-#### System.IdentityModel.RequestFailedException
-
-The exception that is thrown if the specified request (RST) failed due to an external reason that cannot be specifically determined.
-
-    throw [System.IdentityModel.RequestFailedException]::New('the specified request (RST) failed due to an external reason that cannot be specifically determined.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.RequestFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestFailedException) |
-
-#### System.IdentityModel.SecurityMessageSerializationException
-
-The exception that is thrown when an error occurs while serializing a security message.
-
-    throw [System.IdentityModel.SecurityMessageSerializationException]::New('an error occurs while serializing a security message.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.SecurityMessageSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SecurityMessageSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SecurityMessageSerializationException) |
-
-#### System.IdentityModel.SignatureVerificationFailedException
-
-The exception that is thrown when an error occurs while processing a signature
-
-    throw [System.IdentityModel.SignatureVerificationFailedException]::New('an error occurs while processing a signature')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.SignatureVerificationFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SignatureVerificationFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SignatureVerificationFailedException) |
-
-#### System.IdentityModel.UnsupportedTokenTypeBadRequestException
-
-The exception that is thrown when the specified token request (RST) is not understood because of an unknown token type.
-
-    throw [System.IdentityModel.UnsupportedTokenTypeBadRequestException]::New('the specified token request (RST) is not understood because of an unknown token type.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.UnsupportedTokenTypeBadRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.UnsupportedTokenTypeBadRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.UnsupportedTokenTypeBadRequestException) |
-
-## System.IO
-#### System.IO.DirectoryNotFoundException
-
-The exception that is thrown when part of a file or directory cannot be found.
-
-    throw [System.IO.DirectoryNotFoundException]::New('part of a file or directory cannot be found.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.DirectoryNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DirectoryNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DirectoryNotFoundException) |
-
-#### System.IO.DriveNotFoundException
-
-The exception that is thrown when trying to access a drive or share that is not available.
-
-    throw [System.IO.DriveNotFoundException]::New('trying to access a drive or share that is not available.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.DriveNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DriveNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DriveNotFoundException) |
-
-#### System.IO.EndOfStreamException
-
-The exception that is thrown when reading is attempted past the end of a stream.
-
-    throw [System.IO.EndOfStreamException]::New('reading is attempted past the end of a stream.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.EndOfStreamException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.EndOfStreamException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.EndOfStreamException) |
-
-#### System.IO.FileFormatException
-
-The exception that is thrown when an input file or a data stream that is supposed to conform to a certain file format specification is malformed.
-
-    throw [System.IO.FileFormatException]::New('an input file or a data stream that is supposed to conform to a certain file format specification is malformed.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileFormatException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileFormatException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileFormatException) |
-
-#### System.IO.FileLoadException
-
-The exception that is thrown when a managed assembly is found but cannot be loaded.
-
-    throw [System.IO.FileLoadException]::New('a managed assembly is found but cannot be loaded.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileLoadException) |
-
-#### System.IO.FileNotFoundException
-
-The exception that is thrown when an attempt to access a file that does not exist on disk fails.
-
-    throw [System.IO.FileNotFoundException]::New('an attempt to access a file that does not exist on disk fails.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileNotFoundException) |
-
-#### System.IO.InternalBufferOverflowException
-
-The exception thrown when the internal buffer overflows.
-
-    throw [System.IO.InternalBufferOverflowException]::New('the internal buffer overflows.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.InternalBufferOverflowException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InternalBufferOverflowException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InternalBufferOverflowException) |
-
-#### System.IO.InvalidDataException
-
-The exception that is thrown when a data stream is in an invalid format.
-
-    throw [System.IO.InvalidDataException]::New('a data stream is in an invalid format.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.InvalidDataException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InvalidDataException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InvalidDataException) |
-
-#### System.IO.IOException
-
-The exception that is thrown when an I/O error occurs.
-
-    throw [System.IO.IOException]::New('an I/O error occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.IOException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.IOException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.IOException) |
-
-#### System.IO.PathTooLongException
-
-The exception that is thrown when a path or file name is longer than the system-defined maximum length.
-
-    throw [System.IO.PathTooLongException]::New('a path or file name is longer than the system-defined maximum length.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.PathTooLongException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.PathTooLongException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PathTooLongException) |
-
-#### System.IO.PipeException
-
-Thrown when an error occurs within a named pipe.
-
-    throw [System.IO.PipeException]::New('Thrown when an error occurs within a named pipe.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.PipeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.PipeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PipeException) |
-
-## System.Management
-#### System.Management.ManagementException
-
-Represents management exceptions.          
-
-    throw [System.Management.ManagementException]::New('Represents management exceptions.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.ManagementException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.ManagementException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.ManagementException) |
-
-## System.Messaging
-#### System.Messaging.MessageQueueException
-
-The exception that is thrown if a Microsoft Message Queuing internal error occurs.
-
-    throw [System.Messaging.MessageQueueException]::New('a Microsoft Message Queuing internal error occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Messaging.MessageQueueException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Messaging.MessageQueueException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Messaging.MessageQueueException) |
-
-## System.Net
-#### System.Net.CookieException
-
-The exception that is thrown when an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.
-
-    throw [System.Net.CookieException]::New('an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.CookieException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.CookieException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.CookieException) |
-
-#### System.Net.HttpListenerException
-
-The exception that is thrown when an error occurs processing an HTTP request.
-
-    throw [System.Net.HttpListenerException]::New('an error occurs processing an HTTP request.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.HttpListenerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.HttpListenerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.HttpListenerException) |
-
-#### System.Net.ProtocolViolationException
-
-The exception that is thrown when an error is made while using a network protocol.
-
-    throw [System.Net.ProtocolViolationException]::New('an error is made while using a network protocol.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.ProtocolViolationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.ProtocolViolationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.ProtocolViolationException) |
-
-#### System.Net.WebException
-
-The exception that is thrown when an error occurs while accessing the network through a pluggable protocol.
-
-    throw [System.Net.WebException]::New('an error occurs while accessing the network through a pluggable protocol.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.WebException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.WebException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.WebException) |
-
-## System.Printing
-#### System.Printing.PrintCommitAttributesException
-
-The exception that is thrown when an error condition prevents some attributes from being committed by a System.Printing.PrintSystemObject to the actual computer, printer, or device that the object represents.
-
-    throw [System.Printing.PrintCommitAttributesException]::New('an error condition prevents some attributes from being committed by a System.Printing.PrintSystemObject to the actual computer, printer, or device that the object represents.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintCommitAttributesException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintCommitAttributesException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintCommitAttributesException) |
-
-#### System.Printing.PrintingCanceledException
-
-The exception that occurs when code attempts to access a canceled print job.
-
-    throw [System.Printing.PrintingCanceledException]::New('The exception that occurs when code attempts to access a canceled print job.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintingCanceledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingCanceledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingCanceledException) |
-
-#### System.Printing.PrintingNotSupportedException
-
-The exception that is thrown when a printing operation is not supported.
-
-    throw [System.Printing.PrintingNotSupportedException]::New('a printing operation is not supported.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintingNotSupportedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingNotSupportedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingNotSupportedException) |
-
-#### System.Printing.PrintJobException
-
-The exception that occurs when the print job does not run correctly.
-
-    throw [System.Printing.PrintJobException]::New('The exception that occurs when the print job does not run correctly.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintJobException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintJobException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintJobException) |
-
-#### System.Printing.PrintQueueException
-
-The exception that is thrown when an error condition prevents the accessing or creation of a System.Printing.PrintQueue.
-
-    throw [System.Printing.PrintQueueException]::New('an error condition prevents the accessing or creation of a System.Printing.PrintQueue.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintQueueException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintQueueException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintQueueException) |
-
-#### System.Printing.PrintServerException
-
-The exception that occurs when an error condition prevents the accessing or creation of a System.Printing.PrintServer.
-
-    throw [System.Printing.PrintServerException]::New('The exception that occurs when an error condition prevents the accessing or creation of a System.Printing.PrintServer.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintServerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintServerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintServerException) |
-
-#### System.Printing.PrintSystemException
-
-The exception that occurs when an error condition prevents accessing or creating a System.Printing.PrintSystemObject. 
-
-    throw [System.Printing.PrintSystemException]::New('The exception that occurs when an error condition prevents accessing or creating a System.Printing.PrintSystemObject.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintSystemException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintSystemException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintSystemException) |
-
-## System.Reflection
-#### System.Reflection.AmbiguousMatchException
-
-The exception that is thrown when binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.
-
-    throw [System.Reflection.AmbiguousMatchException]::New('binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.AmbiguousMatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.AmbiguousMatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.AmbiguousMatchException) |
-
-#### System.Reflection.CustomAttributeFormatException
-
-The exception that is thrown when the binary format of a custom attribute is invalid.
-
-    throw [System.Reflection.CustomAttributeFormatException]::New('the binary format of a custom attribute is invalid.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.CustomAttributeFormatException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.CustomAttributeFormatException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.CustomAttributeFormatException) |
-
-#### System.Reflection.InvalidFilterCriteriaException
-
-The exception that is thrown in System.Type.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object) when the filter criteria is not valid for the type of filter you are using.
-
-    throw [System.Reflection.InvalidFilterCriteriaException]::New('The exception that is thrown in System.Type.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object) when the filter criteria is not valid for the type of filter you are using.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.InvalidFilterCriteriaException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.InvalidFilterCriteriaException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.InvalidFilterCriteriaException) |
-
-#### System.Reflection.ReflectionTypeLoadException
-
-The exception that is thrown by the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.
-
-    throw [System.Reflection.ReflectionTypeLoadException]::New('the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ReflectionTypeLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.ReflectionTypeLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.ReflectionTypeLoadException) |
-
-#### System.Reflection.TargetException
-
-Represents the exception that is thrown when an attempt is made to invoke an invalid target.
-
-    throw [System.Reflection.TargetException]::New('an attempt is made to invoke an invalid target.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetException) |
-
-#### System.Reflection.TargetInvocationException
-
-The exception that is thrown by methods invoked through reflection. This class cannot be inherited.
-
-    throw [System.Reflection.TargetInvocationException]::New('methods invoked through reflection. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetInvocationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetInvocationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetInvocationException) |
-
-#### System.Reflection.TargetParameterCountException
-
-The exception that is thrown when the number of parameters for an invocation does not match the number expected. This class cannot be inherited.
-
-    throw [System.Reflection.TargetParameterCountException]::New('the number of parameters for an invocation does not match the number expected. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetParameterCountException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetParameterCountException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetParameterCountException) |
-
-## System.Resources
-#### System.Resources.MissingManifestResourceException
-
-The exception that is thrown if the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.
-
-    throw [System.Resources.MissingManifestResourceException]::New('the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Resources.MissingManifestResourceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Resources.MissingManifestResourceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingManifestResourceException) |
-
-#### System.Resources.MissingSatelliteAssemblyException
-
-The exception that is thrown when the satellite assembly for the resources of the default culture is missing.
-
-    throw [System.Resources.MissingSatelliteAssemblyException]::New('the satellite assembly for the resources of the default culture is missing.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Resources.MissingSatelliteAssemblyException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Resources.MissingSatelliteAssemblyException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingSatelliteAssemblyException) |
-
-## System.Security
-#### System.Security.HostProtectionException
-
-The exception that is thrown when a denied host resource is detected.
-
-    throw [System.Security.HostProtectionException]::New('a denied host resource is detected.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.HostProtectionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.HostProtectionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.HostProtectionException) |
-
-#### System.Security.SecurityException
-
-The exception that is thrown when a security error is detected.
-
-    throw [System.Security.SecurityException]::New('a security error is detected.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.SecurityException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.SecurityException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.SecurityException) |
-
-#### System.Security.VerificationException
-
-The exception that is thrown when the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.
-
-    throw [System.Security.VerificationException]::New('the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.VerificationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.VerificationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.VerificationException) |
-
-#### System.Security.XmlSyntaxException
-
-The exception that is thrown when there is a syntax error in XML parsing. This class cannot be inherited.
-
-    throw [System.Security.XmlSyntaxException]::New('there is a syntax error in XML parsing. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.XmlSyntaxException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.XmlSyntaxException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.XmlSyntaxException) |
-
-## System.ServiceModel
-#### System.ServiceModel.ActionNotSupportedException
-
-This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.
-
-    throw [System.ServiceModel.ActionNotSupportedException]::New('This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ActionNotSupportedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ActionNotSupportedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ActionNotSupportedException) |
-
-#### System.ServiceModel.AddressAccessDeniedException
-
-The exception that is thrown when access to the address is denied.
-
-    throw [System.ServiceModel.AddressAccessDeniedException]::New('access to the address is denied.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.AddressAccessDeniedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAccessDeniedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAccessDeniedException) |
-
-#### System.ServiceModel.AddressAlreadyInUseException
-
-The exception that is thrown when an address is unavailable because it is already in use.
-
-    throw [System.ServiceModel.AddressAlreadyInUseException]::New('an address is unavailable because it is already in use.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.AddressAlreadyInUseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAlreadyInUseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAlreadyInUseException) |
-
-#### System.ServiceModel.ChannelTerminatedException
-
-This exception is typically thrown on the client when a channel is terminated due to server closing the associated connection.
-
-    throw [System.ServiceModel.ChannelTerminatedException]::New('This exception is typically thrown on the client when a channel is terminated due to server closing the associated connection.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ChannelTerminatedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ChannelTerminatedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ChannelTerminatedException) |
-
-#### System.ServiceModel.CommunicationException
-
-Represents a communication error in either the service or client application.
-
-    throw [System.ServiceModel.CommunicationException]::New('Represents a communication error in either the service or client application.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationException) |
-
-#### System.ServiceModel.CommunicationObjectAbortedException
-
-The exception that is thrown when the call is to an System.ServiceModel.ICommunicationObject object that has aborted.
-
-    throw [System.ServiceModel.CommunicationObjectAbortedException]::New('the call is to an System.ServiceModel.ICommunicationObject object that has aborted.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationObjectAbortedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectAbortedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectAbortedException) |
-
-#### System.ServiceModel.CommunicationObjectFaultedException
-
-The exception that is thrown when a call is made to a communication object that has faulted. 
-
-    throw [System.ServiceModel.CommunicationObjectFaultedException]::New('a call is made to a communication object that has faulted.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationObjectFaultedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectFaultedException) |
-
-#### System.ServiceModel.EndpointNotFoundException
-
-The exception that is thrown when a remote endpoint could not be found or reached.
-
-    throw [System.ServiceModel.EndpointNotFoundException]::New('a remote endpoint could not be found or reached.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.EndpointNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.EndpointNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.EndpointNotFoundException) |
-
-#### System.ServiceModel.FaultException
-
-Represents a SOAP fault.
-
-    throw [System.ServiceModel.FaultException]::New('Represents a SOAP fault.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.FaultException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.FaultException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.FaultException) |
-
-#### System.ServiceModel.InvalidMessageContractException
-
-Represents a message contract that is not valid.
-
-    throw [System.ServiceModel.InvalidMessageContractException]::New('Represents a message contract that is not valid.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.InvalidMessageContractException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.InvalidMessageContractException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.InvalidMessageContractException) |
-
-#### System.ServiceModel.MessageHeaderException
-
-The exception that is thrown when the expectations regarding headers of a SOAP message are not satisfied when the message is processed.
-
-    throw [System.ServiceModel.MessageHeaderException]::New('the expectations regarding headers of a SOAP message are not satisfied when the message is processed.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MessageHeaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MessageHeaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MessageHeaderException) |
-
-#### System.ServiceModel.MsmqException
-
-Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown by the Message Queuing transport and the Message Queuing integration channel.
-
-    throw [System.ServiceModel.MsmqException]::New('Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown by the Message Queuing transport and the Message Queuing integration channel.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MsmqException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqException) |
-
-#### System.ServiceModel.MsmqPoisonMessageException
-
-Encapsulates the exception that is thrown when the channel detects that the message is a poison message.
-
-    throw [System.ServiceModel.MsmqPoisonMessageException]::New('Encapsulates the channel detects that the message is a poison message.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MsmqPoisonMessageException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqPoisonMessageException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqPoisonMessageException) |
-
-#### System.ServiceModel.PoisonMessageException
-
-An exception that is thrown when the message is deemed poison. A message is poisoned if it fails repeated attempts to deliver the message.
-
-    throw [System.ServiceModel.PoisonMessageException]::New('An exception that is thrown when the message is deemed poison. A message is poisoned if it fails repeated attempts to deliver the message.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.PoisonMessageException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.PoisonMessageException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.PoisonMessageException) |
-
-#### System.ServiceModel.ProtocolException
-
-The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.
-
-    throw [System.ServiceModel.ProtocolException]::New('The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ProtocolException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ProtocolException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ProtocolException) |
-
-#### System.ServiceModel.QuotaExceededException
-
-The exception that is thrown when a message quota has been exceeded.
-
-    throw [System.ServiceModel.QuotaExceededException]::New('a message quota has been exceeded.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.QuotaExceededException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.QuotaExceededException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.QuotaExceededException) |
-
-#### System.ServiceModel.ServerTooBusyException
-
-The exception that is thrown when a server is too busy to accept a message.
-
-    throw [System.ServiceModel.ServerTooBusyException]::New('a server is too busy to accept a message.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ServerTooBusyException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServerTooBusyException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServerTooBusyException) |
-
-#### System.ServiceModel.ServiceActivationException
-
-The exception that is thrown when a service fails to activate.
-
-    throw [System.ServiceModel.ServiceActivationException]::New('a service fails to activate.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ServiceActivationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServiceActivationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServiceActivationException) |
-
-## System.ServiceProcess
-#### System.ServiceProcess.TimeoutException
-
-The exception that is thrown when a specified timeout has expired.
-
-    throw [System.ServiceProcess.TimeoutException]::New('a specified timeout has expired.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceProcess.TimeoutException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceProcess.TimeoutException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceProcess.TimeoutException) |
-
-## System.Text
-#### System.Text.DecoderFallbackException
-
-The exception that is thrown when a decoder fallback operation fails. This class cannot be inherited.
-
-    throw [System.Text.DecoderFallbackException]::New('a decoder fallback operation fails. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Text.DecoderFallbackException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.DecoderFallbackException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.DecoderFallbackException) |
-
-#### System.Text.EncoderFallbackException
-
-The exception that is thrown when an encoder fallback operation fails. This class cannot be inherited.
-
-    throw [System.Text.EncoderFallbackException]::New('an encoder fallback operation fails. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Text.EncoderFallbackException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.EncoderFallbackException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.EncoderFallbackException) |
-
-## System.Threading
-#### System.Threading.AbandonedMutexException
-
-The exception that is thrown when one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.
-
-    throw [System.Threading.AbandonedMutexException]::New('one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.AbandonedMutexException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.AbandonedMutexException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.AbandonedMutexException) |
-
-#### System.Threading.BarrierPostPhaseException
-
-The exception that is thrown when the post-phase action of a System.Threading.Barrier fails
-
-    throw [System.Threading.BarrierPostPhaseException]::New('the post-phase action of a System.Threading.Barrier fails')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.BarrierPostPhaseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.BarrierPostPhaseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.BarrierPostPhaseException) |
-
-#### System.Threading.LockRecursionException
-
-The exception that is thrown when recursive entry into a lock is not compatible with the recursion policy for the lock.
-
-    throw [System.Threading.LockRecursionException]::New('recursive entry into a lock is not compatible with the recursion policy for the lock.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.LockRecursionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.LockRecursionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.LockRecursionException) |
-
-#### System.Threading.SemaphoreFullException
-
-The exception that is thrown when the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. 
-
-    throw [System.Threading.SemaphoreFullException]::New('the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.SemaphoreFullException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SemaphoreFullException) |
-
-#### System.Threading.SynchronizationLockException
-
-The exception that is thrown when a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.
-
-    throw [System.Threading.SynchronizationLockException]::New('a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.SynchronizationLockException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SynchronizationLockException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SynchronizationLockException) |
-
-#### System.Threading.ThreadAbortException
-
-The exception that is thrown when a call is made to the System.Threading.Thread.Abort(System.Object) method. This class cannot be inherited.
-
-    throw [System.Threading.ThreadAbortException]::New('a call is made to the System.Threading.Thread.Abort(System.Object) method. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadAbortException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadAbortException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadAbortException) |
-
-#### System.Threading.ThreadInterruptedException
-
-The exception that is thrown when a System.Threading.Thread is interrupted while it is in a waiting state.
-
-    throw [System.Threading.ThreadInterruptedException]::New('a System.Threading.Thread is interrupted while it is in a waiting state.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadInterruptedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadInterruptedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadInterruptedException) |
-
-#### System.Threading.ThreadStartException
-
-The exception that is thrown when a failure occurs in a managed thread after the underlying operating system thread has been started, but before the thread is ready to execute user code.
-
-    throw [System.Threading.ThreadStartException]::New('a failure occurs in a managed thread after the underlying operating system thread has been started, but before the thread is ready to execute user code.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadStartException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStartException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStartException) |
-
-#### System.Threading.ThreadStateException
-
-The exception that is thrown when a System.Threading.Thread is in an invalid System.Threading.Thread.ThreadState for the method call.
-
-    throw [System.Threading.ThreadStateException]::New('a System.Threading.Thread is in an invalid System.Threading.Thread.ThreadState for the method call.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStateException) |
-
-#### System.Threading.WaitHandleCannotBeOpenedException
-
-The exception that is thrown when an attempt is made to open a system mutex or semaphore that does not exist.
-
-    throw [System.Threading.WaitHandleCannotBeOpenedException]::New('an attempt is made to open a system mutex or semaphore that does not exist.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.WaitHandleCannotBeOpenedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.WaitHandleCannotBeOpenedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.WaitHandleCannotBeOpenedException) |
-
-## System.Transactions
-#### System.Transactions.TransactionAbortedException
-
-The exception that is thrown when an operation is attempted on a transaction that has already been rolled back, or an attempt is made to commit the transaction and the transaction aborts. 
-
-    throw [System.Transactions.TransactionAbortedException]::New('an operation is attempted on a transaction that has already been rolled back, or an attempt is made to commit the transaction and the transaction aborts.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionAbortedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionAbortedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionAbortedException) |
-
-#### System.Transactions.TransactionException
-
-The exception that is thrown when you attempt to do work on a transaction that cannot accept new work.  
-
-    throw [System.Transactions.TransactionException]::New('you attempt to do work on a transaction that cannot accept new work.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionException) |
-
-#### System.Transactions.TransactionInDoubtException
-
-The exception that is thrown when an operation is attempted on a transaction that is in doubt, or an attempt is made to commit the transaction and the transaction becomes InDoubt. 
-
-    throw [System.Transactions.TransactionInDoubtException]::New('an operation is attempted on a transaction that is in doubt, or an attempt is made to commit the transaction and the transaction becomes InDoubt.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionInDoubtException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionInDoubtException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionInDoubtException) |
-
-#### System.Transactions.TransactionManagerCommunicationException
-
-The exception that is thrown when a resource manager cannot communicate with the transaction manager.
-
-    throw [System.Transactions.TransactionManagerCommunicationException]::New('a resource manager cannot communicate with the transaction manager.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionManagerCommunicationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionManagerCommunicationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionManagerCommunicationException) |
-
-#### System.Transactions.TransactionPromotionException
-
-The exception that is thrown when a promotion fails.
-
-    throw [System.Transactions.TransactionPromotionException]::New('a promotion fails.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionPromotionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionPromotionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionPromotionException) |
-
-## System.Web
-#### System.Web.HttpCompileException
-
-The exception that is thrown when a compiler error occurs.
-
-    throw [System.Web.HttpCompileException]::New('a compiler error occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpCompileException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpCompileException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpCompileException) |
-
-#### System.Web.HttpException
-
-Describes an exception that occurred during the processing of HTTP requests.
-
-    throw [System.Web.HttpException]::New('Describes an exception that occurred during the processing of HTTP requests.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpException) |
-
-#### System.Web.HttpParseException
-
-The exception that is thrown when a parse error occurs.
-
-    throw [System.Web.HttpParseException]::New('a parse error occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpParseException) |
-
-#### System.Web.HttpRequestValidationException
-
-The exception that is thrown when a potentially malicious input string is received from the client as part of the request data. This class cannot be inherited.
-
-    throw [System.Web.HttpRequestValidationException]::New('a potentially malicious input string is received from the client as part of the request data. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpRequestValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpRequestValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpRequestValidationException) |
-
-#### System.Web.HttpUnhandledException
-
-The exception that is thrown when a generic exception occurs.
-
-    throw [System.Web.HttpUnhandledException]::New('a generic exception occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpUnhandledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpUnhandledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpUnhandledException) |
-
-## System.Windows
-#### System.Windows.ResourceReferenceKeyNotFoundException
-
-The exception that is thrown when a resource reference key cannot be found during parsing or serialization of markup extension resources.
-
-    throw [System.Windows.ResourceReferenceKeyNotFoundException]::New('a resource reference key cannot be found during parsing or serialization of markup extension resources.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.ResourceReferenceKeyNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.ResourceReferenceKeyNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.ResourceReferenceKeyNotFoundException) |
-
-## System.Xaml
-#### System.Xaml.XamlDuplicateMemberException
-
-The exception that is thrown when a XAML writer attempts to write a value for a duplicate member into the same object node. 
-
-    throw [System.Xaml.XamlDuplicateMemberException]::New('a XAML writer attempts to write a value for a duplicate member into the same object node.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlDuplicateMemberException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlDuplicateMemberException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlDuplicateMemberException) |
-
-#### System.Xaml.XamlException
-
-The exception that is thrown for a general XAML reader or XAML writer exception. See Remarks.
-
-    throw [System.Xaml.XamlException]::New('The exception that is thrown for a general XAML reader or XAML writer exception. See Remarks.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlException) |
-
-#### System.Xaml.XamlInternalException
-
-The exception that is thrown for internal inconsistencies that occur during XAML reading and XAML writing. 
-
-    throw [System.Xaml.XamlInternalException]::New('The exception that is thrown for internal inconsistencies that occur during XAML reading and XAML writing.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlInternalException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlInternalException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlInternalException) |
-
-#### System.Xaml.XamlObjectReaderException
-
-The exception that is thrown by several System.Xaml.XamlObjectReader internal helper APIs. 
-
-    throw [System.Xaml.XamlObjectReaderException]::New('several System.Xaml.XamlObjectReader internal helper APIs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlObjectReaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectReaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectReaderException) |
-
-#### System.Xaml.XamlObjectWriterException
-
-The exception that is thrown when a XAML writer (such as the System.Xaml.XamlObjectWriter class) encounters an error while attempting to produce object graphs from a XAML node stream. 
-
-    throw [System.Xaml.XamlObjectWriterException]::New('a XAML writer (such as the System.Xaml.XamlObjectWriter class) encounters an error while attempting to produce object graphs from a XAML node stream.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlObjectWriterException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectWriterException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectWriterException) |
-
-#### System.Xaml.XamlParseException
-
-The exception that is thrown when a XAML reader cannot process elements of the XAML reader source into a XAML node stream.
-
-    throw [System.Xaml.XamlParseException]::New('a XAML reader cannot process elements of the XAML reader source into a XAML node stream.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlParseException) |
-
-#### System.Xaml.XamlSchemaException
-
-The exception that is thrown when a binding system or another schema representation system for XAML reports an exception to the schema context.
-
-    throw [System.Xaml.XamlSchemaException]::New('a binding system or another schema representation system for XAML reports an exception to the schema context.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlSchemaException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlSchemaException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlSchemaException) |
-
-#### System.Xaml.XamlXmlWriterException
-
-The exception that is thrown by certain System.Xaml.XamlXmlWriter APIs. 
-
-    throw [System.Xaml.XamlXmlWriterException]::New('certain System.Xaml.XamlXmlWriter APIs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlXmlWriterException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlXmlWriterException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlXmlWriterException) |
-
-## System.Xml
-#### System.Xml.XmlException
-
-Returns detailed information about the last exception.
-
-    throw [System.Xml.XmlException]::New('Returns detailed information about the last exception.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.XmlException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.XmlException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.XmlException) |
-
-## System.Activities.DynamicUpdate
-#### System.Activities.DynamicUpdate.InstanceUpdateException
-
-Represents an instance update exception.
-
-    throw [System.Activities.DynamicUpdate.InstanceUpdateException]::New('Represents an instance update exception.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.DynamicUpdate.InstanceUpdateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.DynamicUpdate.InstanceUpdateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.DynamicUpdate.InstanceUpdateException) |
-
-## System.Activities.ExpressionParser
-#### System.Activities.ExpressionParser.SourceExpressionException
-
-Represents the exception that is thrown when a text-based expression cannot be converted into an executable form. 
-
-    throw [System.Activities.ExpressionParser.SourceExpressionException]::New('a text-based expression cannot be converted into an executable form.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.ExpressionParser.SourceExpressionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.ExpressionParser.SourceExpressionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.ExpressionParser.SourceExpressionException) |
-
-## System.Activities.Expressions
-#### System.Activities.Expressions.LambdaSerializationException
-
-The exception that is thrown when a XAML serialization attempt is made on a System.Activities.Expressions.LambdaValue`1 or System.Activities.Expressions.LambdaReference`1.
-
-    throw [System.Activities.Expressions.LambdaSerializationException]::New('a XAML serialization attempt is made on a System.Activities.Expressions.LambdaValue`1 or System.Activities.Expressions.LambdaReference`1.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Expressions.LambdaSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Expressions.LambdaSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Expressions.LambdaSerializationException) |
-
-## System.Activities.Statements
-#### System.Activities.Statements.WorkflowTerminatedException
-
-The exception that is thrown when an operation is invoked on a terminated System.Activities.WorkflowApplication.
-
-    throw [System.Activities.Statements.WorkflowTerminatedException]::New('an operation is invoked on a terminated System.Activities.WorkflowApplication.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Statements.WorkflowTerminatedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Statements.WorkflowTerminatedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Statements.WorkflowTerminatedException) |
-
-## System.AddIn.Hosting
-#### System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException
-
-The exception that is thrown when a segment directory is missing from the pipeline directory structure.
-
-    throw [System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException]::New('a segment directory is missing from the pipeline directory structure.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException) |
-
-#### System.AddIn.Hosting.InvalidPipelineStoreException
-
-The exception that is thrown when a directory is not found and the user does not have permission to access the pipeline root path or an add-in path.
-
-    throw [System.AddIn.Hosting.InvalidPipelineStoreException]::New('a directory is not found and the user does not have permission to access the pipeline root path or an add-in path.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.AddIn.Hosting.InvalidPipelineStoreException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AddIn.Hosting.InvalidPipelineStoreException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.InvalidPipelineStoreException) |
-
-## System.Collections.Generic
-#### System.Collections.Generic.KeyNotFoundException
-
-The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
-
-    throw [System.Collections.Generic.KeyNotFoundException]::New('the key specified for accessing an element in a collection does not match any key in the collection.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.KeyNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Collections.Generic.KeyNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Collections.Generic.KeyNotFoundException) |
-
-## System.ComponentModel.Composition
-#### System.ComponentModel.Composition.ChangeRejectedException
-
-An exception that indicates whether a part has been rejected during composition.
-
-    throw [System.ComponentModel.Composition.ChangeRejectedException]::New('An exception that indicates whether a part has been rejected during composition.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.ChangeRejectedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.ChangeRejectedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ChangeRejectedException) |
-
-#### System.ComponentModel.Composition.CompositionContractMismatchException
-
-The exception that is thrown when the underlying exported value or metadata of a System.Lazy`1 or System.Lazy`2 object cannot be cast to T or TMetadataView, respectively.
-
-    throw [System.ComponentModel.Composition.CompositionContractMismatchException]::New('the underlying exported value or metadata of a System.Lazy`1 or System.Lazy`2 object cannot be cast to T or TMetadataView, respectively.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.CompositionContractMismatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionContractMismatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionContractMismatchException) |
-
-#### System.ComponentModel.Composition.CompositionException
-
-Represents the exception that is thrown when one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.
-
-    throw [System.ComponentModel.Composition.CompositionException]::New('one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.CompositionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionException) |
-
-#### System.ComponentModel.Composition.ImportCardinalityMismatchException
-
-The exception that is thrown when the cardinality of an import is not compatible with the cardinality of the matching exports.
-
-    throw [System.ComponentModel.Composition.ImportCardinalityMismatchException]::New('the cardinality of an import is not compatible with the cardinality of the matching exports.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.ImportCardinalityMismatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.ImportCardinalityMismatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ImportCardinalityMismatchException) |
-
-## System.ComponentModel.DataAnnotations
-#### System.ComponentModel.DataAnnotations.ValidationException
-
-Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. 
-
-    throw [System.ComponentModel.DataAnnotations.ValidationException]::New('Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.DataAnnotations.ValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.ValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.DataAnnotations.ValidationException) |
-
-## System.ComponentModel.Design
-#### System.ComponentModel.Design.CheckoutException
-
-The exception that is thrown when an attempt to check out a file that is checked into a source code management program is canceled or fails.
-
-    throw [System.ComponentModel.Design.CheckoutException]::New('an attempt to check out a file that is checked into a source code management program is canceled or fails.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Design.CheckoutException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Design.CheckoutException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.CheckoutException) |
-
-## System.Configuration.Install
-#### System.Configuration.Install.InstallException
-
-The exception that is thrown when an error occurs during the commit, rollback, or uninstall phase of an installation.
-
-    throw [System.Configuration.Install.InstallException]::New('an error occurs during the commit, rollback, or uninstall phase of an installation.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Configuration.Install.InstallException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.Install.InstallException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Install.InstallException) |
-
-## System.Configuration.Provider
-#### System.Configuration.Provider.ProviderException
-
-The exception that is thrown when a configuration provider error has occurred. This exception class is also used by providers to throw exceptions when internal errors occur within the provider that do not map to other pre-existing exception classes.
-
-    throw [System.Configuration.Provider.ProviderException]::New('a configuration provider error has occurred. This exception class is also used by providers to throw exceptions when internal errors occur within the provider that do not map to other pre-existing exception classes.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Configuration.Provider.ProviderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.Provider.ProviderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Provider.ProviderException) |
-
 ## System.Data.Common
 #### System.Data.Common.DbException
 
@@ -1874,6 +1079,31 @@ Represents an instance of the System.Data.Services.DataServiceException class wi
     throw [System.Data.Services.DataServiceException]::New('Represents an instance of the System.Data.Services.DataServiceException class with a specified message that describes the error.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.DataServiceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.DataServiceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.DataServiceException) |
+
+## System.Data.Services.Client
+#### System.Data.Services.Client.DataServiceClientException
+
+Represents errors that occur during execution of WCF Data Services client applications.
+
+    throw [System.Data.Services.Client.DataServiceClientException]::New('Represents errors that occur during execution of WCF Data Services client applications.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceClientException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceClientException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceClientException) |
+
+#### System.Data.Services.Client.DataServiceQueryException
+
+Exception that indicates an error occurred loading the property value from the data service. 
+
+    throw [System.Data.Services.Client.DataServiceQueryException]::New('Exception that indicates an error occurred loading the property value from the data service.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceQueryException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceQueryException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceQueryException) |
+
+#### System.Data.Services.Client.DataServiceRequestException
+
+Represents the error thrown if the data service returns a response code less than 200 or greater than 299, or the top-level element in the response is <error>. This class cannot be inherited.
+
+    throw [System.Data.Services.Client.DataServiceRequestException]::New('Represents the error thrown if the data service returns a response code less than 200 or greater than 299, or the top-level element in the response is <error>. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceRequestException) |
 
 ## System.Data.SqlClient
 #### System.Data.SqlClient.SqlException
@@ -1982,6 +1212,47 @@ Indicates that the application does not have the appropriate level of trust to r
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Deployment.Application.TrustNotGrantedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.TrustNotGrantedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.TrustNotGrantedException) |
 
+## System.Diagnostics.Eventing.Reader
+#### System.Diagnostics.Eventing.Reader.EventLogException
+
+Represents the base class for all the exceptions that are thrown when an error occurs while reading event log related information. 
+
+    throw [System.Diagnostics.Eventing.Reader.EventLogException]::New('Represents the base class for all the exceptions that are thrown when an error occurs while reading event log related information.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogException) |
+
+#### System.Diagnostics.Eventing.Reader.EventLogInvalidDataException
+
+Represents the exception thrown when an event provider publishes invalid data in an event.
+
+    throw [System.Diagnostics.Eventing.Reader.EventLogInvalidDataException]::New('an event provider publishes invalid data in an event.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogInvalidDataException) |
+
+#### System.Diagnostics.Eventing.Reader.EventLogNotFoundException
+
+Represents the exception that is thrown when a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.
+
+    throw [System.Diagnostics.Eventing.Reader.EventLogNotFoundException]::New('a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogNotFoundException) |
+
+#### System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException
+
+Represents the exception that is thrown when a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.
+
+    throw [System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException]::New('a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException) |
+
+#### System.Diagnostics.Eventing.Reader.EventLogReadingException
+
+Represents an exception that is thrown when an error occurred while reading, querying, or subscribing to the events in an event log. 
+
+    throw [System.Diagnostics.Eventing.Reader.EventLogReadingException]::New('Represents an exception that is thrown when an error occurred while reading, querying, or subscribing to the events in an event log.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogReadingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogReadingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogReadingException) |
+
 ## System.Diagnostics.Tracing
 #### System.Diagnostics.Tracing.EventSourceException
 
@@ -1990,6 +1261,15 @@ The exception that is thrown when an error occurs during event tracing for Windo
     throw [System.Diagnostics.Tracing.EventSourceException]::New('an error occurs during event tracing for Windows (ETW).')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Tracing.EventSourceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Tracing.EventSourceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Tracing.EventSourceException) |
+
+## System.DirectoryServices
+#### System.DirectoryServices.DirectoryServicesCOMException
+
+Contains extended error information about an error that occurred when the System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[]) method is called. 
+
+    throw [System.DirectoryServices.DirectoryServicesCOMException]::New('Contains extended error information about an error that occurred when the System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[]) method is called.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.DirectoryServices.DirectoryServicesCOMException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.DirectoryServicesCOMException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.DirectoryServicesCOMException) |
 
 ## System.DirectoryServices.AccountManagement
 #### System.DirectoryServices.AccountManagement.MultipleMatchesException
@@ -2163,6 +1443,97 @@ Represents the exception that is thrown when you try to access a printer using p
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Drawing.Printing.InvalidPrinterException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Drawing.Printing.InvalidPrinterException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Drawing.Printing.InvalidPrinterException) |
 
+## System.EnterpriseServices
+#### System.EnterpriseServices.RegistrationException
+
+The exception that is thrown when a registration error is detected.
+
+    throw [System.EnterpriseServices.RegistrationException]::New('a registration error is detected.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.EnterpriseServices.RegistrationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EnterpriseServices.RegistrationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.RegistrationException) |
+
+#### System.EnterpriseServices.ServicedComponentException
+
+The exception that is thrown when an error is detected in a serviced component.
+
+    throw [System.EnterpriseServices.ServicedComponentException]::New('an error is detected in a serviced component.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.EnterpriseServices.ServicedComponentException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EnterpriseServices.ServicedComponentException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.ServicedComponentException) |
+
+## System.Globalization
+#### System.Globalization.CultureNotFoundException
+
+The exception that is thrown when a method is invoked which attempts to construct a culture that is not available on the machine.
+
+    throw [System.Globalization.CultureNotFoundException]::New('a method is invoked which attempts to construct a culture that is not available on the machine.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Globalization.CultureNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Globalization.CultureNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Globalization.CultureNotFoundException) |
+
+## System.IdentityModel
+#### System.IdentityModel.AsynchronousOperationException
+
+The exception that is thrown when an error occurs during an asynchronous operation.
+
+    throw [System.IdentityModel.AsynchronousOperationException]::New('an error occurs during an asynchronous operation.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.AsynchronousOperationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.AsynchronousOperationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.AsynchronousOperationException) |
+
+#### System.IdentityModel.BadRequestException
+
+The exception that is thrown when a token request (RST) is not understood by the security token service (STS).
+
+    throw [System.IdentityModel.BadRequestException]::New('a token request (RST) is not understood by the security token service (STS).')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.BadRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.BadRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.BadRequestException) |
+
+#### System.IdentityModel.LimitExceededException
+
+The exception that is thrown when a configured limit or quota is exceeded.
+
+    throw [System.IdentityModel.LimitExceededException]::New('a configured limit or quota is exceeded.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.LimitExceededException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.LimitExceededException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.LimitExceededException) |
+
+#### System.IdentityModel.RequestException
+
+The base class for exceptions thrown on request failures.
+
+    throw [System.IdentityModel.RequestException]::New('The base class for exceptions thrown on request failures.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.RequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestException) |
+
+#### System.IdentityModel.RequestFailedException
+
+The exception that is thrown if the specified request (RST) failed due to an external reason that cannot be specifically determined.
+
+    throw [System.IdentityModel.RequestFailedException]::New('the specified request (RST) failed due to an external reason that cannot be specifically determined.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.RequestFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestFailedException) |
+
+#### System.IdentityModel.SecurityMessageSerializationException
+
+The exception that is thrown when an error occurs while serializing a security message.
+
+    throw [System.IdentityModel.SecurityMessageSerializationException]::New('an error occurs while serializing a security message.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.SecurityMessageSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SecurityMessageSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SecurityMessageSerializationException) |
+
+#### System.IdentityModel.SignatureVerificationFailedException
+
+The exception that is thrown when an error occurs while processing a signature
+
+    throw [System.IdentityModel.SignatureVerificationFailedException]::New('an error occurs while processing a signature')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.SignatureVerificationFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SignatureVerificationFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SignatureVerificationFailedException) |
+
+#### System.IdentityModel.UnsupportedTokenTypeBadRequestException
+
+The exception that is thrown when the specified token request (RST) is not understood because of an unknown token type.
+
+    throw [System.IdentityModel.UnsupportedTokenTypeBadRequestException]::New('the specified token request (RST) is not understood because of an unknown token type.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.UnsupportedTokenTypeBadRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.UnsupportedTokenTypeBadRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.UnsupportedTokenTypeBadRequestException) |
+
 ## System.IdentityModel.Metadata
 #### System.IdentityModel.Metadata.MetadataSerializationException
 
@@ -2171,6 +1542,23 @@ The exception that is thrown when an error occurs while serializing or deseriali
     throw [System.IdentityModel.Metadata.MetadataSerializationException]::New('an error occurs while serializing or deserializing SAML metadata.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Metadata.MetadataSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Metadata.MetadataSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Metadata.MetadataSerializationException) |
+
+## System.IdentityModel.Protocols.WSTrust
+#### System.IdentityModel.Protocols.WSTrust.InvalidRequestException
+
+The exception that is thrown when the request (RST) is invalid or malformed.
+
+    throw [System.IdentityModel.Protocols.WSTrust.InvalidRequestException]::New('the request (RST) is invalid or malformed.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Protocols.WSTrust.InvalidRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Protocols.WSTrust.InvalidRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.InvalidRequestException) |
+
+#### System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException
+
+The exception that is thrown when an error occurs while serializing or deserializing a WS-Trust message.
+
+    throw [System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException]::New('an error occurs while serializing or deserializing a WS-Trust message.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException) |
 
 ## System.IdentityModel.Selectors
 #### System.IdentityModel.Selectors.CardSpaceException
@@ -2343,6 +1731,95 @@ The exception that is thrown when a received security token is invalid.
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Tokens.SecurityTokenValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.SecurityTokenValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenValidationException) |
 
+## System.IO
+#### System.IO.DirectoryNotFoundException
+
+The exception that is thrown when part of a file or directory cannot be found.
+
+    throw [System.IO.DirectoryNotFoundException]::New('part of a file or directory cannot be found.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.DirectoryNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DirectoryNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DirectoryNotFoundException) |
+
+#### System.IO.DriveNotFoundException
+
+The exception that is thrown when trying to access a drive or share that is not available.
+
+    throw [System.IO.DriveNotFoundException]::New('trying to access a drive or share that is not available.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.DriveNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DriveNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DriveNotFoundException) |
+
+#### System.IO.EndOfStreamException
+
+The exception that is thrown when reading is attempted past the end of a stream.
+
+    throw [System.IO.EndOfStreamException]::New('reading is attempted past the end of a stream.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.EndOfStreamException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.EndOfStreamException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.EndOfStreamException) |
+
+#### System.IO.FileFormatException
+
+The exception that is thrown when an input file or a data stream that is supposed to conform to a certain file format specification is malformed.
+
+    throw [System.IO.FileFormatException]::New('an input file or a data stream that is supposed to conform to a certain file format specification is malformed.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileFormatException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileFormatException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileFormatException) |
+
+#### System.IO.FileLoadException
+
+The exception that is thrown when a managed assembly is found but cannot be loaded.
+
+    throw [System.IO.FileLoadException]::New('a managed assembly is found but cannot be loaded.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileLoadException) |
+
+#### System.IO.FileNotFoundException
+
+The exception that is thrown when an attempt to access a file that does not exist on disk fails.
+
+    throw [System.IO.FileNotFoundException]::New('an attempt to access a file that does not exist on disk fails.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileNotFoundException) |
+
+#### System.IO.InternalBufferOverflowException
+
+The exception thrown when the internal buffer overflows.
+
+    throw [System.IO.InternalBufferOverflowException]::New('the internal buffer overflows.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.InternalBufferOverflowException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InternalBufferOverflowException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InternalBufferOverflowException) |
+
+#### System.IO.InvalidDataException
+
+The exception that is thrown when a data stream is in an invalid format.
+
+    throw [System.IO.InvalidDataException]::New('a data stream is in an invalid format.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.InvalidDataException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InvalidDataException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InvalidDataException) |
+
+#### System.IO.IOException
+
+The exception that is thrown when an I/O error occurs.
+
+    throw [System.IO.IOException]::New('an I/O error occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.IOException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.IOException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.IOException) |
+
+#### System.IO.PathTooLongException
+
+The exception that is thrown when a path or file name is longer than the system-defined maximum length.
+
+    throw [System.IO.PathTooLongException]::New('a path or file name is longer than the system-defined maximum length.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.PathTooLongException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.PathTooLongException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PathTooLongException) |
+
+#### System.IO.PipeException
+
+Thrown when an error occurs within a named pipe.
+
+    throw [System.IO.PipeException]::New('Thrown when an error occurs within a named pipe.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.PipeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.PipeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PipeException) |
+
 ## System.IO.IsolatedStorage
 #### System.IO.IsolatedStorage.IsolatedStorageException
 
@@ -2368,6 +1845,15 @@ Represents the exception that is thrown when a sequence of log records is full.
     throw [System.IO.Log.SequenceFullException]::New('a sequence of log records is full.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.Log.SequenceFullException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.Log.SequenceFullException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.Log.SequenceFullException) |
+
+## System.Management
+#### System.Management.ManagementException
+
+Represents management exceptions.          
+
+    throw [System.Management.ManagementException]::New('Represents management exceptions.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.ManagementException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.ManagementException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.ManagementException) |
 
 ## System.Management.Automation
 #### System.Management.Automation.ActionPreferenceStopException
@@ -2834,6 +2320,137 @@ Represents the exception that is thrown when a sequence of log records is full.
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.WildcardPatternException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.WildcardPatternException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.WildcardPatternException) |
 
+## System.Management.Automation.Host
+#### System.Management.Automation.Host.HostException
+
+
+
+    throw [System.Management.Automation.Host.HostException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Host.HostException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Host.HostException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Host.HostException) |
+
+#### System.Management.Automation.Host.PromptingException
+
+
+
+    throw [System.Management.Automation.Host.PromptingException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Host.PromptingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Host.PromptingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Host.PromptingException) |
+
+## System.Management.Automation.Remoting
+#### System.Management.Automation.Remoting.PSDirectException
+
+
+
+    throw [System.Management.Automation.Remoting.PSDirectException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSDirectException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSDirectException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSDirectException) |
+
+#### System.Management.Automation.Remoting.PSRemotingDataStructureException
+
+
+
+    throw [System.Management.Automation.Remoting.PSRemotingDataStructureException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingDataStructureException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingDataStructureException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingDataStructureException) |
+
+#### System.Management.Automation.Remoting.PSRemotingTransportException
+
+
+
+    throw [System.Management.Automation.Remoting.PSRemotingTransportException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingTransportException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingTransportException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingTransportException) |
+
+#### System.Management.Automation.Remoting.PSRemotingTransportRedirectException
+
+
+
+    throw [System.Management.Automation.Remoting.PSRemotingTransportRedirectException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingTransportRedirectException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingTransportRedirectException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingTransportRedirectException) |
+
+## System.Management.Automation.Runspaces
+#### System.Management.Automation.Runspaces.FormatTableLoadException
+
+
+
+    throw [System.Management.Automation.Runspaces.FormatTableLoadException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.FormatTableLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.FormatTableLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.FormatTableLoadException) |
+
+#### System.Management.Automation.Runspaces.InvalidPipelineStateException
+
+
+
+    throw [System.Management.Automation.Runspaces.InvalidPipelineStateException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidPipelineStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidPipelineStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidPipelineStateException) |
+
+#### System.Management.Automation.Runspaces.InvalidRunspacePoolStateException
+
+
+
+    throw [System.Management.Automation.Runspaces.InvalidRunspacePoolStateException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidRunspacePoolStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidRunspacePoolStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidRunspacePoolStateException) |
+
+#### System.Management.Automation.Runspaces.InvalidRunspaceStateException
+
+
+
+    throw [System.Management.Automation.Runspaces.InvalidRunspaceStateException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidRunspaceStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidRunspaceStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidRunspaceStateException) |
+
+#### System.Management.Automation.Runspaces.PSConsoleLoadException
+
+
+
+    throw [System.Management.Automation.Runspaces.PSConsoleLoadException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.PSConsoleLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.PSConsoleLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.PSConsoleLoadException) |
+
+#### System.Management.Automation.Runspaces.PSSnapInException
+
+
+
+    throw [System.Management.Automation.Runspaces.PSSnapInException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.PSSnapInException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.PSSnapInException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.PSSnapInException) |
+
+#### System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException
+
+
+
+    throw [System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException) |
+
+#### System.Management.Automation.Runspaces.RunspaceConfigurationTypeException
+
+
+
+    throw [System.Management.Automation.Runspaces.RunspaceConfigurationTypeException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfigurationTypeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceConfigurationTypeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceConfigurationTypeException) |
+
+#### System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException
+
+
+
+    throw [System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException) |
+
+#### System.Management.Automation.Runspaces.TypeTableLoadException
+
+
+
+    throw [System.Management.Automation.Runspaces.TypeTableLoadException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.TypeTableLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.TypeTableLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.TypeTableLoadException) |
+
 ## System.Management.Instrumentation
 #### System.Management.Instrumentation.InstanceNotFoundException
 
@@ -2866,6 +2483,48 @@ Represents an exception to throw when WMI provider installation fails.
     throw [System.Management.Instrumentation.WmiProviderInstallationException]::New('Represents an exception to throw when WMI provider installation fails.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Instrumentation.WmiProviderInstallationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Instrumentation.WmiProviderInstallationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Instrumentation.WmiProviderInstallationException) |
+
+## System.Messaging
+#### System.Messaging.MessageQueueException
+
+The exception that is thrown if a Microsoft Message Queuing internal error occurs.
+
+    throw [System.Messaging.MessageQueueException]::New('a Microsoft Message Queuing internal error occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Messaging.MessageQueueException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Messaging.MessageQueueException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Messaging.MessageQueueException) |
+
+## System.Net
+#### System.Net.CookieException
+
+The exception that is thrown when an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.
+
+    throw [System.Net.CookieException]::New('an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.CookieException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.CookieException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.CookieException) |
+
+#### System.Net.HttpListenerException
+
+The exception that is thrown when an error occurs processing an HTTP request.
+
+    throw [System.Net.HttpListenerException]::New('an error occurs processing an HTTP request.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.HttpListenerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.HttpListenerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.HttpListenerException) |
+
+#### System.Net.ProtocolViolationException
+
+The exception that is thrown when an error is made while using a network protocol.
+
+    throw [System.Net.ProtocolViolationException]::New('an error is made while using a network protocol.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.ProtocolViolationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.ProtocolViolationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.ProtocolViolationException) |
+
+#### System.Net.WebException
+
+The exception that is thrown when an error occurs while accessing the network through a pluggable protocol.
+
+    throw [System.Net.WebException]::New('an error occurs while accessing the network through a pluggable protocol.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.WebException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.WebException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.WebException) |
 
 ## System.Net.Http
 #### System.Net.Http.HttpRequestException
@@ -2944,6 +2603,137 @@ Represents an exception that occurred when performing an operation on a WebSocke
     throw [System.Net.WebSockets.WebSocketException]::New('Represents an exception that occurred when performing an operation on a WebSocket connection.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.WebSockets.WebSocketException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.WebSockets.WebSocketException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.WebSockets.WebSocketException) |
+
+## System.Printing
+#### System.Printing.PrintCommitAttributesException
+
+The exception that is thrown when an error condition prevents some attributes from being committed by a System.Printing.PrintSystemObject to the actual computer, printer, or device that the object represents.
+
+    throw [System.Printing.PrintCommitAttributesException]::New('an error condition prevents some attributes from being committed by a System.Printing.PrintSystemObject to the actual computer, printer, or device that the object represents.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintCommitAttributesException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintCommitAttributesException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintCommitAttributesException) |
+
+#### System.Printing.PrintingCanceledException
+
+The exception that occurs when code attempts to access a canceled print job.
+
+    throw [System.Printing.PrintingCanceledException]::New('The exception that occurs when code attempts to access a canceled print job.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintingCanceledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingCanceledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingCanceledException) |
+
+#### System.Printing.PrintingNotSupportedException
+
+The exception that is thrown when a printing operation is not supported.
+
+    throw [System.Printing.PrintingNotSupportedException]::New('a printing operation is not supported.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintingNotSupportedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingNotSupportedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingNotSupportedException) |
+
+#### System.Printing.PrintJobException
+
+The exception that occurs when the print job does not run correctly.
+
+    throw [System.Printing.PrintJobException]::New('The exception that occurs when the print job does not run correctly.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintJobException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintJobException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintJobException) |
+
+#### System.Printing.PrintQueueException
+
+The exception that is thrown when an error condition prevents the accessing or creation of a System.Printing.PrintQueue.
+
+    throw [System.Printing.PrintQueueException]::New('an error condition prevents the accessing or creation of a System.Printing.PrintQueue.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintQueueException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintQueueException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintQueueException) |
+
+#### System.Printing.PrintServerException
+
+The exception that occurs when an error condition prevents the accessing or creation of a System.Printing.PrintServer.
+
+    throw [System.Printing.PrintServerException]::New('The exception that occurs when an error condition prevents the accessing or creation of a System.Printing.PrintServer.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintServerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintServerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintServerException) |
+
+#### System.Printing.PrintSystemException
+
+The exception that occurs when an error condition prevents accessing or creating a System.Printing.PrintSystemObject. 
+
+    throw [System.Printing.PrintSystemException]::New('The exception that occurs when an error condition prevents accessing or creating a System.Printing.PrintSystemObject.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Printing.PrintSystemException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintSystemException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintSystemException) |
+
+## System.Reflection
+#### System.Reflection.AmbiguousMatchException
+
+The exception that is thrown when binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.
+
+    throw [System.Reflection.AmbiguousMatchException]::New('binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.AmbiguousMatchException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.AmbiguousMatchException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.AmbiguousMatchException) |
+
+#### System.Reflection.CustomAttributeFormatException
+
+The exception that is thrown when the binary format of a custom attribute is invalid.
+
+    throw [System.Reflection.CustomAttributeFormatException]::New('the binary format of a custom attribute is invalid.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.CustomAttributeFormatException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.CustomAttributeFormatException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.CustomAttributeFormatException) |
+
+#### System.Reflection.InvalidFilterCriteriaException
+
+The exception that is thrown in System.Type.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object) when the filter criteria is not valid for the type of filter you are using.
+
+    throw [System.Reflection.InvalidFilterCriteriaException]::New('The exception that is thrown in System.Type.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object) when the filter criteria is not valid for the type of filter you are using.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.InvalidFilterCriteriaException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.InvalidFilterCriteriaException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.InvalidFilterCriteriaException) |
+
+#### System.Reflection.ReflectionTypeLoadException
+
+The exception that is thrown by the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.
+
+    throw [System.Reflection.ReflectionTypeLoadException]::New('the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ReflectionTypeLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.ReflectionTypeLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.ReflectionTypeLoadException) |
+
+#### System.Reflection.TargetException
+
+Represents the exception that is thrown when an attempt is made to invoke an invalid target.
+
+    throw [System.Reflection.TargetException]::New('an attempt is made to invoke an invalid target.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetException) |
+
+#### System.Reflection.TargetInvocationException
+
+The exception that is thrown by methods invoked through reflection. This class cannot be inherited.
+
+    throw [System.Reflection.TargetInvocationException]::New('methods invoked through reflection. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetInvocationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetInvocationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetInvocationException) |
+
+#### System.Reflection.TargetParameterCountException
+
+The exception that is thrown when the number of parameters for an invocation does not match the number expected. This class cannot be inherited.
+
+    throw [System.Reflection.TargetParameterCountException]::New('the number of parameters for an invocation does not match the number expected. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetParameterCountException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetParameterCountException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetParameterCountException) |
+
+## System.Resources
+#### System.Resources.MissingManifestResourceException
+
+The exception that is thrown if the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.
+
+    throw [System.Resources.MissingManifestResourceException]::New('the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Resources.MissingManifestResourceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Resources.MissingManifestResourceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingManifestResourceException) |
+
+#### System.Resources.MissingSatelliteAssemblyException
+
+The exception that is thrown when the satellite assembly for the resources of the default culture is missing.
+
+    throw [System.Resources.MissingSatelliteAssemblyException]::New('the satellite assembly for the resources of the default culture is missing.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Resources.MissingSatelliteAssemblyException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Resources.MissingSatelliteAssemblyException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingSatelliteAssemblyException) |
 
 ## System.Runtime.CompilerServices
 #### System.Runtime.CompilerServices.RuntimeWrappedException
@@ -3149,6 +2939,23 @@ The exception that is thrown to communicate errors to the client when the client
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Remoting.ServerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.ServerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.ServerException) |
 
+## System.Runtime.Remoting.MetadataServices
+#### System.Runtime.Remoting.MetadataServices.SUDSGeneratorException
+
+The exception that is thrown if an error occurs during the generation of Web Services Description Language (WSDL).
+
+    throw [System.Runtime.Remoting.MetadataServices.SUDSGeneratorException]::New('an error occurs during the generation of Web Services Description Language (WSDL).')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Remoting.MetadataServices.SUDSGeneratorException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.MetadataServices.SUDSGeneratorException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSGeneratorException) |
+
+#### System.Runtime.Remoting.MetadataServices.SUDSParserException
+
+The exception that is thrown if an error occurs during parsing of the Web Services Description Language (WSDL).
+
+    throw [System.Runtime.Remoting.MetadataServices.SUDSParserException]::New('an error occurs during parsing of the Web Services Description Language (WSDL).')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Remoting.MetadataServices.SUDSParserException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.MetadataServices.SUDSParserException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSParserException) |
+
 ## System.Runtime.Serialization
 #### System.Runtime.Serialization.InvalidDataContractException
 
@@ -3165,6 +2972,39 @@ The exception thrown when an error occurs during serialization or deserializatio
     throw [System.Runtime.Serialization.SerializationException]::New('an error occurs during serialization or deserialization.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Serialization.SerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.SerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Serialization.SerializationException) |
+
+## System.Security
+#### System.Security.HostProtectionException
+
+The exception that is thrown when a denied host resource is detected.
+
+    throw [System.Security.HostProtectionException]::New('a denied host resource is detected.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.HostProtectionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.HostProtectionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.HostProtectionException) |
+
+#### System.Security.SecurityException
+
+The exception that is thrown when a security error is detected.
+
+    throw [System.Security.SecurityException]::New('a security error is detected.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.SecurityException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.SecurityException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.SecurityException) |
+
+#### System.Security.VerificationException
+
+The exception that is thrown when the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.
+
+    throw [System.Security.VerificationException]::New('the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.VerificationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.VerificationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.VerificationException) |
+
+#### System.Security.XmlSyntaxException
+
+The exception that is thrown when there is a syntax error in XML parsing. This class cannot be inherited.
+
+    throw [System.Security.XmlSyntaxException]::New('there is a syntax error in XML parsing. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.XmlSyntaxException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.XmlSyntaxException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.XmlSyntaxException) |
 
 ## System.Security.AccessControl
 #### System.Security.AccessControl.PrivilegeNotHeldException
@@ -3235,6 +3075,151 @@ Represents an error condition when a rights management operation cannot complete
     throw [System.Security.RightsManagement.RightsManagementException]::New('Represents an error condition when a rights management operation cannot complete successfully.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Security.RightsManagement.RightsManagementException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.RightsManagement.RightsManagementException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.RightsManagement.RightsManagementException) |
+
+## System.ServiceModel
+#### System.ServiceModel.ActionNotSupportedException
+
+This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.
+
+    throw [System.ServiceModel.ActionNotSupportedException]::New('This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ActionNotSupportedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ActionNotSupportedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ActionNotSupportedException) |
+
+#### System.ServiceModel.AddressAccessDeniedException
+
+The exception that is thrown when access to the address is denied.
+
+    throw [System.ServiceModel.AddressAccessDeniedException]::New('access to the address is denied.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.AddressAccessDeniedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAccessDeniedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAccessDeniedException) |
+
+#### System.ServiceModel.AddressAlreadyInUseException
+
+The exception that is thrown when an address is unavailable because it is already in use.
+
+    throw [System.ServiceModel.AddressAlreadyInUseException]::New('an address is unavailable because it is already in use.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.AddressAlreadyInUseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAlreadyInUseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAlreadyInUseException) |
+
+#### System.ServiceModel.ChannelTerminatedException
+
+This exception is typically thrown on the client when a channel is terminated due to server closing the associated connection.
+
+    throw [System.ServiceModel.ChannelTerminatedException]::New('This exception is typically thrown on the client when a channel is terminated due to server closing the associated connection.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ChannelTerminatedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ChannelTerminatedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ChannelTerminatedException) |
+
+#### System.ServiceModel.CommunicationException
+
+Represents a communication error in either the service or client application.
+
+    throw [System.ServiceModel.CommunicationException]::New('Represents a communication error in either the service or client application.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationException) |
+
+#### System.ServiceModel.CommunicationObjectAbortedException
+
+The exception that is thrown when the call is to an System.ServiceModel.ICommunicationObject object that has aborted.
+
+    throw [System.ServiceModel.CommunicationObjectAbortedException]::New('the call is to an System.ServiceModel.ICommunicationObject object that has aborted.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationObjectAbortedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectAbortedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectAbortedException) |
+
+#### System.ServiceModel.CommunicationObjectFaultedException
+
+The exception that is thrown when a call is made to a communication object that has faulted. 
+
+    throw [System.ServiceModel.CommunicationObjectFaultedException]::New('a call is made to a communication object that has faulted.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.CommunicationObjectFaultedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectFaultedException) |
+
+#### System.ServiceModel.EndpointNotFoundException
+
+The exception that is thrown when a remote endpoint could not be found or reached.
+
+    throw [System.ServiceModel.EndpointNotFoundException]::New('a remote endpoint could not be found or reached.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.EndpointNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.EndpointNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.EndpointNotFoundException) |
+
+#### System.ServiceModel.FaultException
+
+Represents a SOAP fault.
+
+    throw [System.ServiceModel.FaultException]::New('Represents a SOAP fault.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.FaultException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.FaultException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.FaultException) |
+
+#### System.ServiceModel.InvalidMessageContractException
+
+Represents a message contract that is not valid.
+
+    throw [System.ServiceModel.InvalidMessageContractException]::New('Represents a message contract that is not valid.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.InvalidMessageContractException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.InvalidMessageContractException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.InvalidMessageContractException) |
+
+#### System.ServiceModel.MessageHeaderException
+
+The exception that is thrown when the expectations regarding headers of a SOAP message are not satisfied when the message is processed.
+
+    throw [System.ServiceModel.MessageHeaderException]::New('the expectations regarding headers of a SOAP message are not satisfied when the message is processed.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MessageHeaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MessageHeaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MessageHeaderException) |
+
+#### System.ServiceModel.MsmqException
+
+Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown by the Message Queuing transport and the Message Queuing integration channel.
+
+    throw [System.ServiceModel.MsmqException]::New('Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown by the Message Queuing transport and the Message Queuing integration channel.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MsmqException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqException) |
+
+#### System.ServiceModel.MsmqPoisonMessageException
+
+Encapsulates the exception that is thrown when the channel detects that the message is a poison message.
+
+    throw [System.ServiceModel.MsmqPoisonMessageException]::New('Encapsulates the channel detects that the message is a poison message.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.MsmqPoisonMessageException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqPoisonMessageException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqPoisonMessageException) |
+
+#### System.ServiceModel.PoisonMessageException
+
+An exception that is thrown when the message is deemed poison. A message is poisoned if it fails repeated attempts to deliver the message.
+
+    throw [System.ServiceModel.PoisonMessageException]::New('An exception that is thrown when the message is deemed poison. A message is poisoned if it fails repeated attempts to deliver the message.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.PoisonMessageException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.PoisonMessageException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.PoisonMessageException) |
+
+#### System.ServiceModel.ProtocolException
+
+The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.
+
+    throw [System.ServiceModel.ProtocolException]::New('The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ProtocolException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ProtocolException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ProtocolException) |
+
+#### System.ServiceModel.QuotaExceededException
+
+The exception that is thrown when a message quota has been exceeded.
+
+    throw [System.ServiceModel.QuotaExceededException]::New('a message quota has been exceeded.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.QuotaExceededException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.QuotaExceededException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.QuotaExceededException) |
+
+#### System.ServiceModel.ServerTooBusyException
+
+The exception that is thrown when a server is too busy to accept a message.
+
+    throw [System.ServiceModel.ServerTooBusyException]::New('a server is too busy to accept a message.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ServerTooBusyException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServerTooBusyException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServerTooBusyException) |
+
+#### System.ServiceModel.ServiceActivationException
+
+The exception that is thrown when a service fails to activate.
+
+    throw [System.ServiceModel.ServiceActivationException]::New('a service fails to activate.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.ServiceActivationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServiceActivationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServiceActivationException) |
 
 ## System.ServiceModel.Channels
 #### System.ServiceModel.Channels.InvalidChannelBindingException
@@ -3377,6 +3362,32 @@ Represents a fault that can have an associated HTTP status code.
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.Web.WebFaultException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Web.WebFaultException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Web.WebFaultException) |
 
+## System.ServiceProcess
+#### System.ServiceProcess.TimeoutException
+
+The exception that is thrown when a specified timeout has expired.
+
+    throw [System.ServiceProcess.TimeoutException]::New('a specified timeout has expired.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceProcess.TimeoutException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceProcess.TimeoutException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceProcess.TimeoutException) |
+
+## System.Text
+#### System.Text.DecoderFallbackException
+
+The exception that is thrown when a decoder fallback operation fails. This class cannot be inherited.
+
+    throw [System.Text.DecoderFallbackException]::New('a decoder fallback operation fails. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Text.DecoderFallbackException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.DecoderFallbackException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.DecoderFallbackException) |
+
+#### System.Text.EncoderFallbackException
+
+The exception that is thrown when an encoder fallback operation fails. This class cannot be inherited.
+
+    throw [System.Text.EncoderFallbackException]::New('an encoder fallback operation fails. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Text.EncoderFallbackException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.EncoderFallbackException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.EncoderFallbackException) |
+
 ## System.Text.RegularExpressions
 #### System.Text.RegularExpressions.RegexMatchTimeoutException
 
@@ -3385,6 +3396,87 @@ The exception that is thrown when the execution time of a regular expression pat
     throw [System.Text.RegularExpressions.RegexMatchTimeoutException]::New('the execution time of a regular expression pattern-matching method exceeds its time-out interval.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Text.RegularExpressions.RegexMatchTimeoutException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.RegularExpressions.RegexMatchTimeoutException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.RegularExpressions.RegexMatchTimeoutException) |
+
+## System.Threading
+#### System.Threading.AbandonedMutexException
+
+The exception that is thrown when one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.
+
+    throw [System.Threading.AbandonedMutexException]::New('one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.AbandonedMutexException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.AbandonedMutexException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.AbandonedMutexException) |
+
+#### System.Threading.BarrierPostPhaseException
+
+The exception that is thrown when the post-phase action of a System.Threading.Barrier fails
+
+    throw [System.Threading.BarrierPostPhaseException]::New('the post-phase action of a System.Threading.Barrier fails')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.BarrierPostPhaseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.BarrierPostPhaseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.BarrierPostPhaseException) |
+
+#### System.Threading.LockRecursionException
+
+The exception that is thrown when recursive entry into a lock is not compatible with the recursion policy for the lock.
+
+    throw [System.Threading.LockRecursionException]::New('recursive entry into a lock is not compatible with the recursion policy for the lock.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.LockRecursionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.LockRecursionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.LockRecursionException) |
+
+#### System.Threading.SemaphoreFullException
+
+The exception that is thrown when the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. 
+
+    throw [System.Threading.SemaphoreFullException]::New('the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.SemaphoreFullException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SemaphoreFullException) |
+
+#### System.Threading.SynchronizationLockException
+
+The exception that is thrown when a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.
+
+    throw [System.Threading.SynchronizationLockException]::New('a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.SynchronizationLockException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SynchronizationLockException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SynchronizationLockException) |
+
+#### System.Threading.ThreadAbortException
+
+The exception that is thrown when a call is made to the System.Threading.Thread.Abort(System.Object) method. This class cannot be inherited.
+
+    throw [System.Threading.ThreadAbortException]::New('a call is made to the System.Threading.Thread.Abort(System.Object) method. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadAbortException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadAbortException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadAbortException) |
+
+#### System.Threading.ThreadInterruptedException
+
+The exception that is thrown when a System.Threading.Thread is interrupted while it is in a waiting state.
+
+    throw [System.Threading.ThreadInterruptedException]::New('a System.Threading.Thread is interrupted while it is in a waiting state.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadInterruptedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadInterruptedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadInterruptedException) |
+
+#### System.Threading.ThreadStartException
+
+The exception that is thrown when a failure occurs in a managed thread after the underlying operating system thread has been started, but before the thread is ready to execute user code.
+
+    throw [System.Threading.ThreadStartException]::New('a failure occurs in a managed thread after the underlying operating system thread has been started, but before the thread is ready to execute user code.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadStartException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStartException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStartException) |
+
+#### System.Threading.ThreadStateException
+
+The exception that is thrown when a System.Threading.Thread is in an invalid System.Threading.Thread.ThreadState for the method call.
+
+    throw [System.Threading.ThreadStateException]::New('a System.Threading.Thread is in an invalid System.Threading.Thread.ThreadState for the method call.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.ThreadStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStateException) |
+
+#### System.Threading.WaitHandleCannotBeOpenedException
+
+The exception that is thrown when an attempt is made to open a system mutex or semaphore that does not exist.
+
+    throw [System.Threading.WaitHandleCannotBeOpenedException]::New('an attempt is made to open a system mutex or semaphore that does not exist.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.WaitHandleCannotBeOpenedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.WaitHandleCannotBeOpenedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.WaitHandleCannotBeOpenedException) |
 
 ## System.Threading.Tasks
 #### System.Threading.Tasks.TaskCanceledException
@@ -3402,6 +3494,88 @@ Represents an exception used to communicate an invalid operation by a System.Thr
     throw [System.Threading.Tasks.TaskSchedulerException]::New('Represents an exception used to communicate an invalid operation by a System.Threading.Tasks.TaskScheduler.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.TaskSchedulerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskSchedulerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.Tasks.TaskSchedulerException) |
+
+## System.Transactions
+#### System.Transactions.TransactionAbortedException
+
+The exception that is thrown when an operation is attempted on a transaction that has already been rolled back, or an attempt is made to commit the transaction and the transaction aborts. 
+
+    throw [System.Transactions.TransactionAbortedException]::New('an operation is attempted on a transaction that has already been rolled back, or an attempt is made to commit the transaction and the transaction aborts.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionAbortedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionAbortedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionAbortedException) |
+
+#### System.Transactions.TransactionException
+
+The exception that is thrown when you attempt to do work on a transaction that cannot accept new work.  
+
+    throw [System.Transactions.TransactionException]::New('you attempt to do work on a transaction that cannot accept new work.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionException) |
+
+#### System.Transactions.TransactionInDoubtException
+
+The exception that is thrown when an operation is attempted on a transaction that is in doubt, or an attempt is made to commit the transaction and the transaction becomes InDoubt. 
+
+    throw [System.Transactions.TransactionInDoubtException]::New('an operation is attempted on a transaction that is in doubt, or an attempt is made to commit the transaction and the transaction becomes InDoubt.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionInDoubtException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionInDoubtException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionInDoubtException) |
+
+#### System.Transactions.TransactionManagerCommunicationException
+
+The exception that is thrown when a resource manager cannot communicate with the transaction manager.
+
+    throw [System.Transactions.TransactionManagerCommunicationException]::New('a resource manager cannot communicate with the transaction manager.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionManagerCommunicationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionManagerCommunicationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionManagerCommunicationException) |
+
+#### System.Transactions.TransactionPromotionException
+
+The exception that is thrown when a promotion fails.
+
+    throw [System.Transactions.TransactionPromotionException]::New('a promotion fails.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Transactions.TransactionPromotionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionPromotionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionPromotionException) |
+
+## System.Web
+#### System.Web.HttpCompileException
+
+The exception that is thrown when a compiler error occurs.
+
+    throw [System.Web.HttpCompileException]::New('a compiler error occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpCompileException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpCompileException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpCompileException) |
+
+#### System.Web.HttpException
+
+Describes an exception that occurred during the processing of HTTP requests.
+
+    throw [System.Web.HttpException]::New('Describes an exception that occurred during the processing of HTTP requests.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpException) |
+
+#### System.Web.HttpParseException
+
+The exception that is thrown when a parse error occurs.
+
+    throw [System.Web.HttpParseException]::New('a parse error occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpParseException) |
+
+#### System.Web.HttpRequestValidationException
+
+The exception that is thrown when a potentially malicious input string is received from the client as part of the request data. This class cannot be inherited.
+
+    throw [System.Web.HttpRequestValidationException]::New('a potentially malicious input string is received from the client as part of the request data. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpRequestValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpRequestValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpRequestValidationException) |
+
+#### System.Web.HttpUnhandledException
+
+The exception that is thrown when a generic exception occurs.
+
+    throw [System.Web.HttpUnhandledException]::New('a generic exception occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.HttpUnhandledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpUnhandledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpUnhandledException) |
 
 ## System.Web.Caching
 #### System.Web.Caching.DatabaseNotEnabledForNotificationException
@@ -3438,6 +3612,15 @@ Defines a class for SQL execution exceptions in the System.Web.Management namesp
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Management.SqlExecutionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Management.SqlExecutionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Management.SqlExecutionException) |
 
+## System.Web.Query.Dynamic
+#### System.Web.Query.Dynamic.ParseException
+
+Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource control parses values to create a query.
+
+    throw [System.Web.Query.Dynamic.ParseException]::New('Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource control parses values to create a query.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Query.Dynamic.ParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Query.Dynamic.ParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Query.Dynamic.ParseException) |
+
 ## System.Web.Security
 #### System.Web.Security.MembershipCreateUserException
 
@@ -3455,6 +3638,23 @@ The exception that is thrown when a password cannot be retrieved from the passwo
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Security.MembershipPasswordException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Security.MembershipPasswordException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Security.MembershipPasswordException) |
 
+## System.Web.Services.Protocols
+#### System.Web.Services.Protocols.SoapException
+
+Represents the exception that is thrown when an XML Web service method is called over SOAP and an exception occurs.
+
+    throw [System.Web.Services.Protocols.SoapException]::New('an XML Web service method is called over SOAP and an exception occurs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Services.Protocols.SoapException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Services.Protocols.SoapException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapException) |
+
+#### System.Web.Services.Protocols.SoapHeaderException
+
+The SOAP representation of a server error.
+
+    throw [System.Web.Services.Protocols.SoapHeaderException]::New('The SOAP representation of a server error.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Services.Protocols.SoapHeaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Services.Protocols.SoapHeaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapHeaderException) |
+
 ## System.Web.UI
 #### System.Web.UI.ViewStateException
 
@@ -3463,6 +3663,32 @@ Represents the exception that is thrown when the view state cannot be loaded or 
     throw [System.Web.UI.ViewStateException]::New('the view state cannot be loaded or validated. This class cannot be inherited.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.ViewStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.ViewStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.ViewStateException) |
+
+## System.Web.UI.WebControls
+#### System.Web.UI.WebControls.EntityDataSourceValidationException
+
+Represents errors that occur when validating properties of a dynamic data source.
+
+    throw [System.Web.UI.WebControls.EntityDataSourceValidationException]::New('Represents errors that occur when validating properties of a dynamic data source.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.WebControls.EntityDataSourceValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.WebControls.EntityDataSourceValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.EntityDataSourceValidationException) |
+
+#### System.Web.UI.WebControls.LinqDataSourceValidationException
+
+Describes an exception that occurred during validation of new or modified values before values are inserted, updated, or deleted by a System.Web.UI.WebControls.LinqDataSource control.
+
+    throw [System.Web.UI.WebControls.LinqDataSourceValidationException]::New('Describes an exception that occurred during validation of new or modified values before values are inserted, updated, or deleted by a System.Web.UI.WebControls.LinqDataSource control.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.WebControls.LinqDataSourceValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.WebControls.LinqDataSourceValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.LinqDataSourceValidationException) |
+
+## System.Windows
+#### System.Windows.ResourceReferenceKeyNotFoundException
+
+The exception that is thrown when a resource reference key cannot be found during parsing or serialization of markup extension resources.
+
+    throw [System.Windows.ResourceReferenceKeyNotFoundException]::New('a resource reference key cannot be found during parsing or serialization of markup extension resources.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.ResourceReferenceKeyNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.ResourceReferenceKeyNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.ResourceReferenceKeyNotFoundException) |
 
 ## System.Windows.Automation
 #### System.Windows.Automation.ElementNotAvailableException
@@ -3515,6 +3741,15 @@ The exception that is thrown by the System.Windows.Data.BindingGroup.GetValue(Sy
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Data.ValueUnavailableException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Data.ValueUnavailableException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Data.ValueUnavailableException) |
 
+## System.Windows.Forms.AxHost
+#### System.Windows.Forms.AxHost.InvalidActiveXStateException
+
+The exception that is thrown when the ActiveX control is referenced while in an invalid state.
+
+    throw [System.Windows.Forms.AxHost.InvalidActiveXStateException]::New('the ActiveX control is referenced while in an invalid state.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Forms.AxHost.InvalidActiveXStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Forms.AxHost.InvalidActiveXStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Forms.AxHost.InvalidActiveXStateException) |
+
 ## System.Windows.Markup
 #### System.Windows.Markup.XamlParseException
 
@@ -3532,6 +3767,15 @@ The exception that is thrown when the installed Microsoft Windows Media Player v
     throw [System.Windows.Media.InvalidWmpVersionException]::New('the installed Microsoft Windows Media Player version is not supported.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Media.InvalidWmpVersionException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Media.InvalidWmpVersionException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Media.InvalidWmpVersionException) |
+
+## System.Windows.Media.Animation
+#### System.Windows.Media.Animation.AnimationException
+
+The exception that is thrown when an error occurs while animating a property.
+
+    throw [System.Windows.Media.Animation.AnimationException]::New('an error occurs while animating a property.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Media.Animation.AnimationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Media.Animation.AnimationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Media.Animation.AnimationException) |
 
 ## System.Windows.Xps
 #### System.Windows.Xps.XpsException
@@ -3583,6 +3827,39 @@ The exception that is thrown when role validation fails due to a specified ident
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.WorkflowAuthorizationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.WorkflowAuthorizationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.WorkflowAuthorizationException) |
 
+## System.Workflow.Activities.Rules
+#### System.Workflow.Activities.Rules.RuleEvaluationException
+
+Represents the base class for all exceptions caused by rule evaluation issues.
+
+    throw [System.Workflow.Activities.Rules.RuleEvaluationException]::New('Represents the base class for all exceptions caused by rule evaluation issues.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleEvaluationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationException) |
+
+#### System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException
+
+The exception that is thrown when attempting to apply an operator to incompatible operands when you evaluate a rule.
+
+    throw [System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException]::New('attempting to apply an operator to incompatible operands when you evaluate a rule.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException) |
+
+#### System.Workflow.Activities.Rules.RuleException
+
+Represents the base class for all exceptions caused by evaluation or validation of rules.
+
+    throw [System.Workflow.Activities.Rules.RuleException]::New('Represents the base class for all exceptions caused by evaluation or validation of rules.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleException) |
+
+#### System.Workflow.Activities.Rules.RuleSetValidationException
+
+Represents the exception thrown when processing cannot continue because a rule set cannot be validated.
+
+    throw [System.Workflow.Activities.Rules.RuleSetValidationException]::New('processing cannot continue because a rule set cannot be validated.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleSetValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleSetValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleSetValidationException) |
+
 ## System.Workflow.ComponentModel
 #### System.Workflow.ComponentModel.WorkflowTerminatedException
 
@@ -3592,6 +3869,24 @@ Represents the System.Exception that is raised when a workflow is terminated. Th
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.ComponentModel.WorkflowTerminatedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.ComponentModel.WorkflowTerminatedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.WorkflowTerminatedException) |
 
+## System.Workflow.ComponentModel.Compiler
+#### System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException
+
+Represents an System.Exception that occurs when a workflow does not pass validation. This class cannot be inherited.
+
+    throw [System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException]::New('Represents an System.Exception that occurs when a workflow does not pass validation. This class cannot be inherited.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException) |
+
+## System.Workflow.ComponentModel.Serialization
+#### System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException
+
+The exception that is thrown by methods that perform serialization and deserialization. 
+
+    throw [System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException]::New('methods that perform serialization and deserialization.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException) |
+
 ## System.Workflow.Runtime
 #### System.Workflow.Runtime.WorkflowOwnershipException
 
@@ -3600,6 +3895,98 @@ The exception that is thrown when the workflow runtime engine attempts to load a
     throw [System.Workflow.Runtime.WorkflowOwnershipException]::New('the workflow runtime engine attempts to load a workflow instance that is currently loaded by another workflow runtime engine instance. Additionally, this exception is thrown when the workflow runtime engine attempts to save a workflow after the ownership timeout that was specified while loading the workflow has expired.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Runtime.WorkflowOwnershipException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Runtime.WorkflowOwnershipException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.WorkflowOwnershipException) |
+
+## System.Workflow.Runtime.Hosting
+#### System.Workflow.Runtime.Hosting.PersistenceException
+
+The exception that is thrown when the persistence service cannot fulfill a request. 
+
+    throw [System.Workflow.Runtime.Hosting.PersistenceException]::New('the persistence service cannot fulfill a request.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Runtime.Hosting.PersistenceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Runtime.Hosting.PersistenceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Hosting.PersistenceException) |
+
+## System.Workflow.Runtime.Tracking
+#### System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException
+
+The exception that is thrown when an XML document cannot be deserialized into a System.Workflow.Runtime.Tracking.TrackingProfile by a System.Workflow.Runtime.Tracking.TrackingProfileSerializer.
+
+    throw [System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException]::New('an XML document cannot be deserialized into a System.Workflow.Runtime.Tracking.TrackingProfile by a System.Workflow.Runtime.Tracking.TrackingProfileSerializer.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException) |
+
+## System.Xaml
+#### System.Xaml.XamlDuplicateMemberException
+
+The exception that is thrown when a XAML writer attempts to write a value for a duplicate member into the same object node. 
+
+    throw [System.Xaml.XamlDuplicateMemberException]::New('a XAML writer attempts to write a value for a duplicate member into the same object node.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlDuplicateMemberException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlDuplicateMemberException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlDuplicateMemberException) |
+
+#### System.Xaml.XamlException
+
+The exception that is thrown for a general XAML reader or XAML writer exception. See Remarks.
+
+    throw [System.Xaml.XamlException]::New('The exception that is thrown for a general XAML reader or XAML writer exception. See Remarks.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlException) |
+
+#### System.Xaml.XamlInternalException
+
+The exception that is thrown for internal inconsistencies that occur during XAML reading and XAML writing. 
+
+    throw [System.Xaml.XamlInternalException]::New('The exception that is thrown for internal inconsistencies that occur during XAML reading and XAML writing.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlInternalException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlInternalException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlInternalException) |
+
+#### System.Xaml.XamlObjectReaderException
+
+The exception that is thrown by several System.Xaml.XamlObjectReader internal helper APIs. 
+
+    throw [System.Xaml.XamlObjectReaderException]::New('several System.Xaml.XamlObjectReader internal helper APIs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlObjectReaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectReaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectReaderException) |
+
+#### System.Xaml.XamlObjectWriterException
+
+The exception that is thrown when a XAML writer (such as the System.Xaml.XamlObjectWriter class) encounters an error while attempting to produce object graphs from a XAML node stream. 
+
+    throw [System.Xaml.XamlObjectWriterException]::New('a XAML writer (such as the System.Xaml.XamlObjectWriter class) encounters an error while attempting to produce object graphs from a XAML node stream.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlObjectWriterException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectWriterException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectWriterException) |
+
+#### System.Xaml.XamlParseException
+
+The exception that is thrown when a XAML reader cannot process elements of the XAML reader source into a XAML node stream.
+
+    throw [System.Xaml.XamlParseException]::New('a XAML reader cannot process elements of the XAML reader source into a XAML node stream.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlParseException) |
+
+#### System.Xaml.XamlSchemaException
+
+The exception that is thrown when a binding system or another schema representation system for XAML reports an exception to the schema context.
+
+    throw [System.Xaml.XamlSchemaException]::New('a binding system or another schema representation system for XAML reports an exception to the schema context.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlSchemaException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlSchemaException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlSchemaException) |
+
+#### System.Xaml.XamlXmlWriterException
+
+The exception that is thrown by certain System.Xaml.XamlXmlWriter APIs. 
+
+    throw [System.Xaml.XamlXmlWriterException]::New('certain System.Xaml.XamlXmlWriter APIs.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xaml.XamlXmlWriterException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlXmlWriterException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlXmlWriterException) |
+
+## System.Xml
+#### System.Xml.XmlException
+
+Returns detailed information about the last exception.
+
+    throw [System.Xml.XmlException]::New('Returns detailed information about the last exception.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.XmlException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.XmlException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.XmlException) |
 
 ## System.Xml.Schema
 #### System.Xml.Schema.XmlSchemaException
@@ -3651,427 +4038,6 @@ The exception that is thrown when an error occurs while processing an XSLT trans
     throw [System.Xml.Xsl.XsltException]::New('an error occurs while processing an XSLT transformation.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.Xsl.XsltException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.Xsl.XsltException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Xsl.XsltException) |
-
-## System.Activities.Presentation.Metadata
-#### System.Activities.Presentation.Metadata.AttributeTableValidationException
-
-Provides the functionality to throw an exception from the System.Activities.Presentation.Metadata.AttributeTableBuilder.ValidateTable method if the metadata provided in the table does not match properties, methods, and events on real types. 
-
-    throw [System.Activities.Presentation.Metadata.AttributeTableValidationException]::New('Provides the functionality to throw an exception from the System.Activities.Presentation.Metadata.AttributeTableBuilder.ValidateTable method if the metadata provided in the table does not match properties, methods, and events on real types.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.Presentation.Metadata.AttributeTableValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.Presentation.Metadata.AttributeTableValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Presentation.Metadata.AttributeTableValidationException) |
-
-## System.ComponentModel.Composition.Primitives
-#### System.ComponentModel.Composition.Primitives.ComposablePartException
-
-The exception that is thrown when an error occurs when calling methods on a System.ComponentModel.Composition.Primitives.ComposablePart object.
-
-    throw [System.ComponentModel.Composition.Primitives.ComposablePartException]::New('an error occurs when calling methods on a System.ComponentModel.Composition.Primitives.ComposablePart object.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.Primitives.ComposablePartException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.Primitives.ComposablePartException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.Primitives.ComposablePartException) |
-
-## System.ComponentModel.Design.Serialization
-#### System.ComponentModel.Design.Serialization.CodeDomSerializerException
-
-The exception that is thrown when line number information is available for a serialization error.
-
-    throw [System.ComponentModel.Design.Serialization.CodeDomSerializerException]::New('line number information is available for a serialization error.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Design.Serialization.CodeDomSerializerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Design.Serialization.CodeDomSerializerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.Serialization.CodeDomSerializerException) |
-
-## System.Data.Services.Client
-#### System.Data.Services.Client.DataServiceClientException
-
-Represents errors that occur during execution of WCF Data Services client applications.
-
-    throw [System.Data.Services.Client.DataServiceClientException]::New('Represents errors that occur during execution of WCF Data Services client applications.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceClientException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceClientException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceClientException) |
-
-#### System.Data.Services.Client.DataServiceQueryException
-
-Exception that indicates an error occurred loading the property value from the data service. 
-
-    throw [System.Data.Services.Client.DataServiceQueryException]::New('Exception that indicates an error occurred loading the property value from the data service.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceQueryException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceQueryException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceQueryException) |
-
-#### System.Data.Services.Client.DataServiceRequestException
-
-Represents the error thrown if the data service returns a response code less than 200 or greater than 299, or the top-level element in the response is <error>. This class cannot be inherited.
-
-    throw [System.Data.Services.Client.DataServiceRequestException]::New('Represents the error thrown if the data service returns a response code less than 200 or greater than 299, or the top-level element in the response is <error>. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.Services.Client.DataServiceRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceRequestException) |
-
-## System.Diagnostics.Eventing.Reader
-#### System.Diagnostics.Eventing.Reader.EventLogException
-
-Represents the base class for all the exceptions that are thrown when an error occurs while reading event log related information. 
-
-    throw [System.Diagnostics.Eventing.Reader.EventLogException]::New('Represents the base class for all the exceptions that are thrown when an error occurs while reading event log related information.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogException) |
-
-#### System.Diagnostics.Eventing.Reader.EventLogInvalidDataException
-
-Represents the exception thrown when an event provider publishes invalid data in an event.
-
-    throw [System.Diagnostics.Eventing.Reader.EventLogInvalidDataException]::New('an event provider publishes invalid data in an event.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogInvalidDataException) |
-
-#### System.Diagnostics.Eventing.Reader.EventLogNotFoundException
-
-Represents the exception that is thrown when a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.
-
-    throw [System.Diagnostics.Eventing.Reader.EventLogNotFoundException]::New('a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogNotFoundException) |
-
-#### System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException
-
-Represents the exception that is thrown when a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.
-
-    throw [System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException]::New('a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException) |
-
-#### System.Diagnostics.Eventing.Reader.EventLogReadingException
-
-Represents an exception that is thrown when an error occurred while reading, querying, or subscribing to the events in an event log. 
-
-    throw [System.Diagnostics.Eventing.Reader.EventLogReadingException]::New('Represents an exception that is thrown when an error occurred while reading, querying, or subscribing to the events in an event log.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogReadingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogReadingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogReadingException) |
-
-## System.IdentityModel.Protocols.WSTrust
-#### System.IdentityModel.Protocols.WSTrust.InvalidRequestException
-
-The exception that is thrown when the request (RST) is invalid or malformed.
-
-    throw [System.IdentityModel.Protocols.WSTrust.InvalidRequestException]::New('the request (RST) is invalid or malformed.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Protocols.WSTrust.InvalidRequestException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Protocols.WSTrust.InvalidRequestException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.InvalidRequestException) |
-
-#### System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException
-
-The exception that is thrown when an error occurs while serializing or deserializing a WS-Trust message.
-
-    throw [System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException]::New('an error occurs while serializing or deserializing a WS-Trust message.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException) |
-
-## System.Management.Automation.Host
-#### System.Management.Automation.Host.HostException
-
-
-
-    throw [System.Management.Automation.Host.HostException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Host.HostException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Host.HostException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Host.HostException) |
-
-#### System.Management.Automation.Host.PromptingException
-
-
-
-    throw [System.Management.Automation.Host.PromptingException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Host.PromptingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Host.PromptingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Host.PromptingException) |
-
-## System.Management.Automation.Remoting
-#### System.Management.Automation.Remoting.PSDirectException
-
-
-
-    throw [System.Management.Automation.Remoting.PSDirectException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSDirectException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSDirectException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSDirectException) |
-
-#### System.Management.Automation.Remoting.PSRemotingDataStructureException
-
-
-
-    throw [System.Management.Automation.Remoting.PSRemotingDataStructureException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingDataStructureException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingDataStructureException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingDataStructureException) |
-
-#### System.Management.Automation.Remoting.PSRemotingTransportException
-
-
-
-    throw [System.Management.Automation.Remoting.PSRemotingTransportException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingTransportException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingTransportException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingTransportException) |
-
-#### System.Management.Automation.Remoting.PSRemotingTransportRedirectException
-
-
-
-    throw [System.Management.Automation.Remoting.PSRemotingTransportRedirectException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Remoting.PSRemotingTransportRedirectException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Remoting.PSRemotingTransportRedirectException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Remoting.PSRemotingTransportRedirectException) |
-
-## System.Management.Automation.Runspaces
-#### System.Management.Automation.Runspaces.FormatTableLoadException
-
-
-
-    throw [System.Management.Automation.Runspaces.FormatTableLoadException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.FormatTableLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.FormatTableLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.FormatTableLoadException) |
-
-#### System.Management.Automation.Runspaces.InvalidPipelineStateException
-
-
-
-    throw [System.Management.Automation.Runspaces.InvalidPipelineStateException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidPipelineStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidPipelineStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidPipelineStateException) |
-
-#### System.Management.Automation.Runspaces.InvalidRunspacePoolStateException
-
-
-
-    throw [System.Management.Automation.Runspaces.InvalidRunspacePoolStateException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidRunspacePoolStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidRunspacePoolStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidRunspacePoolStateException) |
-
-#### System.Management.Automation.Runspaces.InvalidRunspaceStateException
-
-
-
-    throw [System.Management.Automation.Runspaces.InvalidRunspaceStateException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.InvalidRunspaceStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.InvalidRunspaceStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.InvalidRunspaceStateException) |
-
-#### System.Management.Automation.Runspaces.PSConsoleLoadException
-
-
-
-    throw [System.Management.Automation.Runspaces.PSConsoleLoadException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.PSConsoleLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.PSConsoleLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.PSConsoleLoadException) |
-
-#### System.Management.Automation.Runspaces.PSSnapInException
-
-
-
-    throw [System.Management.Automation.Runspaces.PSSnapInException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.PSSnapInException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.PSSnapInException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.PSSnapInException) |
-
-#### System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException
-
-
-
-    throw [System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceConfigurationAttributeException) |
-
-#### System.Management.Automation.Runspaces.RunspaceConfigurationTypeException
-
-
-
-    throw [System.Management.Automation.Runspaces.RunspaceConfigurationTypeException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfigurationTypeException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceConfigurationTypeException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceConfigurationTypeException) |
-
-#### System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException
-
-
-
-    throw [System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.RunspaceOpenModuleLoadException) |
-
-#### System.Management.Automation.Runspaces.TypeTableLoadException
-
-
-
-    throw [System.Management.Automation.Runspaces.TypeTableLoadException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Management.Automation.Runspaces.TypeTableLoadException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Automation.Runspaces.TypeTableLoadException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Automation.Runspaces.TypeTableLoadException) |
-
-## System.Runtime.Remoting.MetadataServices
-#### System.Runtime.Remoting.MetadataServices.SUDSGeneratorException
-
-The exception that is thrown if an error occurs during the generation of Web Services Description Language (WSDL).
-
-    throw [System.Runtime.Remoting.MetadataServices.SUDSGeneratorException]::New('an error occurs during the generation of Web Services Description Language (WSDL).')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Remoting.MetadataServices.SUDSGeneratorException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.MetadataServices.SUDSGeneratorException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSGeneratorException) |
-
-#### System.Runtime.Remoting.MetadataServices.SUDSParserException
-
-The exception that is thrown if an error occurs during parsing of the Web Services Description Language (WSDL).
-
-    throw [System.Runtime.Remoting.MetadataServices.SUDSParserException]::New('an error occurs during parsing of the Web Services Description Language (WSDL).')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.Remoting.MetadataServices.SUDSParserException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.MetadataServices.SUDSParserException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSParserException) |
-
-## System.Web.Query.Dynamic
-#### System.Web.Query.Dynamic.ParseException
-
-Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource control parses values to create a query.
-
-    throw [System.Web.Query.Dynamic.ParseException]::New('Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource control parses values to create a query.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Query.Dynamic.ParseException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Query.Dynamic.ParseException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Query.Dynamic.ParseException) |
-
-## System.Web.Services.Protocols
-#### System.Web.Services.Protocols.SoapException
-
-Represents the exception that is thrown when an XML Web service method is called over SOAP and an exception occurs.
-
-    throw [System.Web.Services.Protocols.SoapException]::New('an XML Web service method is called over SOAP and an exception occurs.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Services.Protocols.SoapException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Services.Protocols.SoapException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapException) |
-
-#### System.Web.Services.Protocols.SoapHeaderException
-
-The SOAP representation of a server error.
-
-    throw [System.Web.Services.Protocols.SoapHeaderException]::New('The SOAP representation of a server error.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Services.Protocols.SoapHeaderException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Services.Protocols.SoapHeaderException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapHeaderException) |
-
-## System.Web.UI.WebControls
-#### System.Web.UI.WebControls.EntityDataSourceValidationException
-
-Represents errors that occur when validating properties of a dynamic data source.
-
-    throw [System.Web.UI.WebControls.EntityDataSourceValidationException]::New('Represents errors that occur when validating properties of a dynamic data source.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.WebControls.EntityDataSourceValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.WebControls.EntityDataSourceValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.EntityDataSourceValidationException) |
-
-#### System.Web.UI.WebControls.LinqDataSourceValidationException
-
-Describes an exception that occurred during validation of new or modified values before values are inserted, updated, or deleted by a System.Web.UI.WebControls.LinqDataSource control.
-
-    throw [System.Web.UI.WebControls.LinqDataSourceValidationException]::New('Describes an exception that occurred during validation of new or modified values before values are inserted, updated, or deleted by a System.Web.UI.WebControls.LinqDataSource control.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.WebControls.LinqDataSourceValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.WebControls.LinqDataSourceValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.LinqDataSourceValidationException) |
-
-## System.Windows.Forms.AxHost
-#### System.Windows.Forms.AxHost.InvalidActiveXStateException
-
-The exception that is thrown when the ActiveX control is referenced while in an invalid state.
-
-    throw [System.Windows.Forms.AxHost.InvalidActiveXStateException]::New('the ActiveX control is referenced while in an invalid state.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Forms.AxHost.InvalidActiveXStateException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Forms.AxHost.InvalidActiveXStateException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Forms.AxHost.InvalidActiveXStateException) |
-
-## System.Windows.Media.Animation
-#### System.Windows.Media.Animation.AnimationException
-
-The exception that is thrown when an error occurs while animating a property.
-
-    throw [System.Windows.Media.Animation.AnimationException]::New('an error occurs while animating a property.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Windows.Media.Animation.AnimationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Media.Animation.AnimationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Media.Animation.AnimationException) |
-
-## System.Workflow.Activities.Rules
-#### System.Workflow.Activities.Rules.RuleEvaluationException
-
-Represents the base class for all exceptions caused by rule evaluation issues.
-
-    throw [System.Workflow.Activities.Rules.RuleEvaluationException]::New('Represents the base class for all exceptions caused by rule evaluation issues.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleEvaluationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationException) |
-
-#### System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException
-
-The exception that is thrown when attempting to apply an operator to incompatible operands when you evaluate a rule.
-
-    throw [System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException]::New('attempting to apply an operator to incompatible operands when you evaluate a rule.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException) |
-
-#### System.Workflow.Activities.Rules.RuleException
-
-Represents the base class for all exceptions caused by evaluation or validation of rules.
-
-    throw [System.Workflow.Activities.Rules.RuleException]::New('Represents the base class for all exceptions caused by evaluation or validation of rules.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleException) |
-
-#### System.Workflow.Activities.Rules.RuleSetValidationException
-
-Represents the exception thrown when processing cannot continue because a rule set cannot be validated.
-
-    throw [System.Workflow.Activities.Rules.RuleSetValidationException]::New('processing cannot continue because a rule set cannot be validated.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleSetValidationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleSetValidationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleSetValidationException) |
-
-## System.Workflow.ComponentModel.Compiler
-#### System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException
-
-Represents an System.Exception that occurs when a workflow does not pass validation. This class cannot be inherited.
-
-    throw [System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException]::New('Represents an System.Exception that occurs when a workflow does not pass validation. This class cannot be inherited.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException) |
-
-## System.Workflow.ComponentModel.Serialization
-#### System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException
-
-The exception that is thrown by methods that perform serialization and deserialization. 
-
-    throw [System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException]::New('methods that perform serialization and deserialization.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException) |
-
-## System.Workflow.Runtime.Hosting
-#### System.Workflow.Runtime.Hosting.PersistenceException
-
-The exception that is thrown when the persistence service cannot fulfill a request. 
-
-    throw [System.Workflow.Runtime.Hosting.PersistenceException]::New('the persistence service cannot fulfill a request.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Runtime.Hosting.PersistenceException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Runtime.Hosting.PersistenceException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Hosting.PersistenceException) |
-
-## System.Workflow.Runtime.Tracking
-#### System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException
-
-The exception that is thrown when an XML document cannot be deserialized into a System.Workflow.Runtime.Tracking.TrackingProfile by a System.Workflow.Runtime.Tracking.TrackingProfileSerializer.
-
-    throw [System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException]::New('an XML document cannot be deserialized into a System.Workflow.Runtime.Tracking.TrackingProfile by a System.Workflow.Runtime.Tracking.TrackingProfileSerializer.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException) |
-
-## Microsoft.JScript
-#### Microsoft.JScript.CmdLineException
-
-Represents errors that occur when you run the command-line compiler jsc.exe. 
-
-    throw [Microsoft.JScript.CmdLineException]::New('Represents errors that occur when you run the command-line compiler jsc.exe.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.CmdLineException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.CmdLineException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.CmdLineException) |
-
-#### Microsoft.JScript.JScriptException
-
-The exception that is thrown by JScript to notify a common language runtime (CLR) host or program that an error occurred. A Microsoft.JScript.JScriptException usually takes a Microsoft.JScript.JSError enumeration value. 
-
-    throw [Microsoft.JScript.JScriptException]::New('JScript to notify a common language runtime (CLR) host or program that an error occurred. A Microsoft.JScript.JScriptException usually takes a Microsoft.JScript.JSError enumeration value.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.JScriptException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.JScriptException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.JScriptException) |
-
-#### Microsoft.JScript.NoContextException
-
-The exception that is thrown when there is no code Microsoft.JScript.Context associated with a Microsoft.JScript.JScriptException.
-
-    throw [Microsoft.JScript.NoContextException]::New('there is no code Microsoft.JScript.Context associated with a Microsoft.JScript.JScriptException.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.NoContextException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.NoContextException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.NoContextException) |
-
-#### Microsoft.JScript.ParserException
-
-This class is used by the JScript parser to represent parser exceptions.
-
-    throw [Microsoft.JScript.ParserException]::New('This class is used by the JScript parser to represent parser exceptions.')
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.ParserException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.ParserException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.ParserException) |
 
 ## Microsoft.Build.BuildEngine
 #### Microsoft.Build.BuildEngine.InternalLoggerException
@@ -4165,6 +4131,39 @@ Represents an error that occurs when a dynamic bind in the C# runtime binder is 
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException) |
 
+## Microsoft.JScript
+#### Microsoft.JScript.CmdLineException
+
+Represents errors that occur when you run the command-line compiler jsc.exe. 
+
+    throw [Microsoft.JScript.CmdLineException]::New('Represents errors that occur when you run the command-line compiler jsc.exe.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.CmdLineException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.CmdLineException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.CmdLineException) |
+
+#### Microsoft.JScript.JScriptException
+
+The exception that is thrown by JScript to notify a common language runtime (CLR) host or program that an error occurred. A Microsoft.JScript.JScriptException usually takes a Microsoft.JScript.JSError enumeration value. 
+
+    throw [Microsoft.JScript.JScriptException]::New('JScript to notify a common language runtime (CLR) host or program that an error occurred. A Microsoft.JScript.JScriptException usually takes a Microsoft.JScript.JSError enumeration value.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.JScriptException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.JScriptException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.JScriptException) |
+
+#### Microsoft.JScript.NoContextException
+
+The exception that is thrown when there is no code Microsoft.JScript.Context associated with a Microsoft.JScript.JScriptException.
+
+    throw [Microsoft.JScript.NoContextException]::New('there is no code Microsoft.JScript.Context associated with a Microsoft.JScript.JScriptException.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.NoContextException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.NoContextException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.NoContextException) |
+
+#### Microsoft.JScript.ParserException
+
+This class is used by the JScript parser to represent parser exceptions.
+
+    throw [Microsoft.JScript.ParserException]::New('This class is used by the JScript parser to represent parser exceptions.')
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.JScript.ParserException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.ParserException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.ParserException) |
+
 ## Microsoft.JScript.Vsa
 #### Microsoft.JScript.Vsa.JSVsaException
 
@@ -4182,6 +4181,15 @@ This type supports the .NET Framework infrastructure and is not intended to be u
     throw [Microsoft.Management.Infrastructure.CimException]::New()
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.Management.Infrastructure.CimException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Management.Infrastructure.CimException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Management.Infrastructure.CimException) |
+
+## Microsoft.PowerShell.Cmdletization.Cim
+#### Microsoft.PowerShell.Cmdletization.Cim.CimJobException
+
+
+
+    throw [Microsoft.PowerShell.Cmdletization.Cim.CimJobException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Cmdletization.Cim.CimJobException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Cmdletization.Cim.CimJobException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Cmdletization.Cim.CimJobException) |
 
 ## Microsoft.PowerShell.Commands
 #### Microsoft.PowerShell.Commands.CertificateNotFoundException
@@ -4264,6 +4272,32 @@ This type supports the .NET Framework infrastructure and is not intended to be u
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.WriteErrorException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.WriteErrorException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.WriteErrorException) |
 
+## Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract
+#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException
+
+
+
+    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException) |
+
+#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException
+
+
+
+    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException) |
+
+## Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing
+#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException
+
+
+
+    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException]::New()
+
+| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException) |
+
 ## Microsoft.SqlServer.Server
 #### Microsoft.SqlServer.Server.InvalidUdtException
 
@@ -4307,39 +4341,4 @@ The exception that is thrown when the Microsoft.VisualBasic.FileIO.TextFieldPars
     throw [Microsoft.VisualBasic.FileIO.MalformedLineException]::New('the Microsoft.VisualBasic.FileIO.TextFieldParser.ReadFields method cannot parse a row using the specified format.')
 
 | [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.VisualBasic.FileIO.MalformedLineException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.VisualBasic.FileIO.MalformedLineException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.VisualBasic.FileIO.MalformedLineException) |
-
-## Microsoft.PowerShell.Cmdletization.Cim
-#### Microsoft.PowerShell.Cmdletization.Cim.CimJobException
-
-
-
-    throw [Microsoft.PowerShell.Cmdletization.Cim.CimJobException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Cmdletization.Cim.CimJobException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Cmdletization.Cim.CimJobException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Cmdletization.Cim.CimJobException) |
-
-## Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract
-#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException
-
-
-
-    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ProgramNotFoundException) |
-
-#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException
-
-
-
-    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.FlashExtract.ResultNotFoundException) |
-
-## Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing
-#### Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException
-
-
-
-    throw [Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException]::New()
-
-| [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException) | [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException.aspx) | [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.PowerShell.Commands.StringManipulation.FlashExtractWrapper.TemplateParsing.TemplateParsingException) |
 
