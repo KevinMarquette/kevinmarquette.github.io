@@ -10,7 +10,9 @@ When I am creating error messages in PowerShell scripts, I like to use common .N
 I did this by parsing all the .Net 4.6 namespace xml files. All of the content below is auto generated and comes from Microsoft's files that are used for IntelliSense. I hope you find this list of .Net Exceptions as useful as I do.
 
 # .Net Exceptions
-{toc}
+
+* TOC
+{:toc}
 
 ## Microsoft.CSharp.RuntimeBinder
 ### [Microsoft.CSharp.RuntimeBinder.RuntimeBinderException](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
