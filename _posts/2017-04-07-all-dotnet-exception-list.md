@@ -16,7 +16,7 @@ I did this by parsing all the .Net 4.6.1 Namespace xml files on ym system. All o
 
 
 ## System
-### System.AccessViolationException
+#### System.AccessViolationException
 
 The exception that is thrown when there is an attempt to read or write protected memory.
 
@@ -26,7 +26,7 @@ The exception that is thrown when there is an attempt to read or write protected
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AccessViolationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.AccessViolationException)
 
-### System.AggregateException
+#### System.AggregateException
 
 Represents one or more errors that occur during application execution.
 
@@ -36,7 +36,7 @@ Represents one or more errors that occur during application execution.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AggregateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.AggregateException)
 
-### System.AppDomainUnloadedException
+#### System.AppDomainUnloadedException
 
 The exception that is thrown when an attempt is made to access an unloaded application domain. 
 
@@ -46,7 +46,7 @@ The exception that is thrown when an attempt is made to access an unloaded appli
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AppDomainUnloadedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.AppDomainUnloadedException)
 
-### System.ApplicationException
+#### System.ApplicationException
 
 Serves as the base class for application-defined exceptions.
 
@@ -56,7 +56,7 @@ Serves as the base class for application-defined exceptions.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ApplicationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ApplicationException)
 
-### System.ArgumentException
+#### System.ArgumentException
 
 The exception that is thrown when one of the arguments provided to a method is not valid.
 
@@ -66,7 +66,7 @@ The exception that is thrown when one of the arguments provided to a method is n
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ArgumentException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ArgumentException)
 
-### System.ArgumentNullException
+#### System.ArgumentNullException
 
 The exception that is thrown when a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument. 
 
@@ -76,7 +76,7 @@ The exception that is thrown when a null reference (Nothing in Visual Basic) is 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ArgumentNullException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ArgumentNullException)
 
-### System.ArgumentOutOfRangeException
+#### System.ArgumentOutOfRangeException
 
 The exception that is thrown when the value of an argument is outside the allowable range of values as defined by the invoked method.
 
@@ -86,7 +86,7 @@ The exception that is thrown when the value of an argument is outside the allowa
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ArgumentOutOfRangeException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ArgumentOutOfRangeException)
 
-### System.ArithmeticException
+#### System.ArithmeticException
 
 The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
 
@@ -96,7 +96,7 @@ The exception that is thrown for errors in an arithmetic, casting, or conversion
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ArithmeticException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ArithmeticException)
 
-### System.ArrayTypeMismatchException
+#### System.ArrayTypeMismatchException
 
 The exception that is thrown when an attempt is made to store an element of the wrong type within an array. 
 
@@ -106,7 +106,7 @@ The exception that is thrown when an attempt is made to store an element of the 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ArrayTypeMismatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ArrayTypeMismatchException)
 
-### System.BadImageFormatException
+#### System.BadImageFormatException
 
 The exception that is thrown when the file image of a dynamic link library (DLL) or an executable program is invalid. 
 
@@ -116,7 +116,7 @@ The exception that is thrown when the file image of a dynamic link library (DLL)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.BadImageFormatException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.BadImageFormatException)
 
-### System.CannotUnloadAppDomainException
+#### System.CannotUnloadAppDomainException
 
 The exception that is thrown when an attempt to unload an application domain fails.
 
@@ -126,7 +126,7 @@ The exception that is thrown when an attempt to unload an application domain fai
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.CannotUnloadAppDomainException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.CannotUnloadAppDomainException)
 
-### System.ContextMarshalException
+#### System.ContextMarshalException
 
 The exception that is thrown when an attempt to marshal an object across a context boundary fails.
 
@@ -136,7 +136,7 @@ The exception that is thrown when an attempt to marshal an object across a conte
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ContextMarshalException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ContextMarshalException)
 
-### System.DataMisalignedException
+#### System.DataMisalignedException
 
 The exception that is thrown when a unit of data is read from or written to an address that is not a multiple of the data size. This class cannot be inherited.
 
@@ -146,7 +146,7 @@ The exception that is thrown when a unit of data is read from or written to an a
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DataMisalignedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DataMisalignedException)
 
-### System.DivideByZeroException
+#### System.DivideByZeroException
 
 The exception that is thrown when there is an attempt to divide an integral or decimal value by zero.
 
@@ -156,7 +156,7 @@ The exception that is thrown when there is an attempt to divide an integral or d
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DivideByZeroException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DivideByZeroException)
 
-### System.DllNotFoundException
+#### System.DllNotFoundException
 
 The exception that is thrown when a DLL specified in a DLL import cannot be found.
 
@@ -166,7 +166,7 @@ The exception that is thrown when a DLL specified in a DLL import cannot be foun
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DllNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DllNotFoundException)
 
-### System.DuplicateWaitObjectException
+#### System.DuplicateWaitObjectException
 
 The exception that is thrown when an object appears more than once in an array of synchronization objects.
 
@@ -176,7 +176,7 @@ The exception that is thrown when an object appears more than once in an array o
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DuplicateWaitObjectException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DuplicateWaitObjectException)
 
-### System.EntryPointNotFoundException
+#### System.EntryPointNotFoundException
 
 The exception that is thrown when an attempt to load a class fails due to the absence of an entry method.
 
@@ -186,7 +186,7 @@ The exception that is thrown when an attempt to load a class fails due to the ab
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EntryPointNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.EntryPointNotFoundException)
 
-### System.Exception
+#### System.Exception
 
 Represents errors that occur during application execution.To browse the .NET Framework source code for this type, see the Reference Source.
 
@@ -196,7 +196,7 @@ Represents errors that occur during application execution.To browse the .NET Fra
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Exception.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Exception)
 
-### System.ExecutionEngineException
+#### System.ExecutionEngineException
 
 The exception that is thrown when there is an internal error in the execution engine of the common language runtime. This class cannot be inherited.  
 
@@ -206,7 +206,7 @@ The exception that is thrown when there is an internal error in the execution en
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ExecutionEngineException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ExecutionEngineException)
 
-### System.FieldAccessException
+#### System.FieldAccessException
 
 The exception that is thrown when there is an invalid attempt to access a private or protected field inside a class.
 
@@ -216,7 +216,7 @@ The exception that is thrown when there is an invalid attempt to access a privat
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.FieldAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.FieldAccessException)
 
-### System.FormatException
+#### System.FormatException
 
 The exception that is thrown when the format of an argument is invalid, or when a composite format string is not well formed. 
 
@@ -226,7 +226,7 @@ The exception that is thrown when the format of an argument is invalid, or when 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.FormatException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.FormatException)
 
-### System.IndexOutOfRangeException
+#### System.IndexOutOfRangeException
 
 The exception that is thrown when an attempt is made to access an element of an array or collection with an index that is outside its bounds. 
 
@@ -236,7 +236,7 @@ The exception that is thrown when an attempt is made to access an element of an 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IndexOutOfRangeException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IndexOutOfRangeException)
 
-### System.InsufficientExecutionStackException
+#### System.InsufficientExecutionStackException
 
 The exception that is thrown when there is insufficient execution stack available to allow most methods to execute.
 
@@ -246,7 +246,7 @@ The exception that is thrown when there is insufficient execution stack availabl
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InsufficientExecutionStackException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InsufficientExecutionStackException)
 
-### System.InsufficientMemoryException
+#### System.InsufficientMemoryException
 
 The exception that is thrown when a check for sufficient available memory fails. This class cannot be inherited.
 
@@ -256,7 +256,7 @@ The exception that is thrown when a check for sufficient available memory fails.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InsufficientMemoryException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InsufficientMemoryException)
 
-### System.InvalidCastException
+#### System.InvalidCastException
 
 The exception that is thrown for invalid casting or explicit conversion.
 
@@ -266,7 +266,7 @@ The exception that is thrown for invalid casting or explicit conversion.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InvalidCastException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InvalidCastException)
 
-### System.InvalidOperationException
+#### System.InvalidOperationException
 
 The exception that is thrown when a method call is invalid for the object's current state.
 
@@ -276,7 +276,7 @@ The exception that is thrown when a method call is invalid for the object's curr
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InvalidOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InvalidOperationException)
 
-### System.InvalidProgramException
+#### System.InvalidProgramException
 
 The exception that is thrown when a program contains invalid Microsoft intermediate language (MSIL) or metadata. Generally this indicates a bug in the compiler that generated the program.
 
@@ -286,7 +286,7 @@ The exception that is thrown when a program contains invalid Microsoft intermedi
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InvalidProgramException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InvalidProgramException)
 
-### System.InvalidTimeZoneException
+#### System.InvalidTimeZoneException
 
 The exception that is thrown when time zone information is invalid.
 
@@ -296,7 +296,7 @@ The exception that is thrown when time zone information is invalid.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.InvalidTimeZoneException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.InvalidTimeZoneException)
 
-### System.MemberAccessException
+#### System.MemberAccessException
 
 The exception that is thrown when an attempt to access a class member fails.
 
@@ -306,7 +306,7 @@ The exception that is thrown when an attempt to access a class member fails.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MemberAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MemberAccessException)
 
-### System.MethodAccessException
+#### System.MethodAccessException
 
 The exception that is thrown when there is an invalid attempt to access a method, such as accessing a private method from partially trusted code.
 
@@ -316,7 +316,7 @@ The exception that is thrown when there is an invalid attempt to access a method
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MethodAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MethodAccessException)
 
-### System.MissingFieldException
+#### System.MissingFieldException
 
 The exception that is thrown when there is an attempt to dynamically access a field that does not exist.
 
@@ -326,7 +326,7 @@ The exception that is thrown when there is an attempt to dynamically access a fi
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MissingFieldException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MissingFieldException)
 
-### System.MissingMemberException
+#### System.MissingMemberException
 
 The exception that is thrown when there is an attempt to dynamically access a class member that does not exist.
 
@@ -336,7 +336,7 @@ The exception that is thrown when there is an attempt to dynamically access a cl
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MissingMemberException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MissingMemberException)
 
-### System.MissingMethodException
+#### System.MissingMethodException
 
 The exception that is thrown when there is an attempt to dynamically access a method that does not exist.
 
@@ -346,7 +346,7 @@ The exception that is thrown when there is an attempt to dynamically access a me
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MissingMethodException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MissingMethodException)
 
-### System.MulticastNotSupportedException
+#### System.MulticastNotSupportedException
 
 The exception that is thrown when there is an attempt to combine two delegates based on the System.Delegate type instead of the System.MulticastDelegate type. This class cannot be inherited. 
 
@@ -356,7 +356,7 @@ The exception that is thrown when there is an attempt to combine two delegates b
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.MulticastNotSupportedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.MulticastNotSupportedException)
 
-### System.NotFiniteNumberException
+#### System.NotFiniteNumberException
 
 The exception that is thrown when a floating-point value is positive infinity, negative infinity, or Not-a-Number (NaN).
 
@@ -366,7 +366,7 @@ The exception that is thrown when a floating-point value is positive infinity, n
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.NotFiniteNumberException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.NotFiniteNumberException)
 
-### System.NotImplementedException
+#### System.NotImplementedException
 
 The exception that is thrown when a requested method or operation is not implemented.
 
@@ -376,7 +376,7 @@ The exception that is thrown when a requested method or operation is not impleme
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.NotImplementedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.NotImplementedException)
 
-### System.NotSupportedException
+#### System.NotSupportedException
 
 The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
 
@@ -386,7 +386,7 @@ The exception that is thrown when an invoked method is not supported, or when th
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.NotSupportedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.NotSupportedException)
 
-### System.NullReferenceException
+#### System.NullReferenceException
 
 The exception that is thrown when there is an attempt to dereference a null object reference.
 
@@ -396,7 +396,7 @@ The exception that is thrown when there is an attempt to dereference a null obje
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.NullReferenceException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.NullReferenceException)
 
-### System.ObjectDisposedException
+#### System.ObjectDisposedException
 
 The exception that is thrown when an operation is performed on a disposed object.
 
@@ -406,7 +406,7 @@ The exception that is thrown when an operation is performed on a disposed object
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ObjectDisposedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ObjectDisposedException)
 
-### System.OperationCanceledException
+#### System.OperationCanceledException
 
 The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.
 
@@ -416,7 +416,7 @@ The exception that is thrown in a thread upon cancellation of an operation that 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.OperationCanceledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.OperationCanceledException)
 
-### System.OutOfMemoryException
+#### System.OutOfMemoryException
 
 The exception that is thrown when there is not enough memory to continue the execution of a program.
 
@@ -426,7 +426,7 @@ The exception that is thrown when there is not enough memory to continue the exe
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.OutOfMemoryException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.OutOfMemoryException)
 
-### System.OverflowException
+#### System.OverflowException
 
 The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
 
@@ -436,7 +436,7 @@ The exception that is thrown when an arithmetic, casting, or conversion operatio
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.OverflowException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.OverflowException)
 
-### System.PlatformNotSupportedException
+#### System.PlatformNotSupportedException
 
 The exception that is thrown when a feature does not run on a particular platform.
 
@@ -446,7 +446,7 @@ The exception that is thrown when a feature does not run on a particular platfor
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.PlatformNotSupportedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.PlatformNotSupportedException)
 
-### System.RankException
+#### System.RankException
 
 The exception that is thrown when an array with the wrong number of dimensions is passed to a method.
 
@@ -456,7 +456,7 @@ The exception that is thrown when an array with the wrong number of dimensions i
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.RankException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.RankException)
 
-### System.StackOverflowException
+#### System.StackOverflowException
 
 The exception that is thrown when the execution stack overflows because it contains too many nested method calls. This class cannot be inherited.
 
@@ -466,7 +466,7 @@ The exception that is thrown when the execution stack overflows because it conta
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.StackOverflowException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.StackOverflowException)
 
-### System.SystemException
+#### System.SystemException
 
 Serves as the base class for system exceptions namespace.
 
@@ -476,7 +476,7 @@ Serves as the base class for system exceptions namespace.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.SystemException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.SystemException)
 
-### System.TimeoutException
+#### System.TimeoutException
 
 The exception that is thrown when the time allotted for a process or operation has expired.
 
@@ -486,7 +486,7 @@ The exception that is thrown when the time allotted for a process or operation h
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TimeoutException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TimeoutException)
 
-### System.TimeZoneNotFoundException
+#### System.TimeZoneNotFoundException
 
 The exception that is thrown when a time zone cannot be found.
 
@@ -496,7 +496,7 @@ The exception that is thrown when a time zone cannot be found.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TimeZoneNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TimeZoneNotFoundException)
 
-### System.TypeAccessException
+#### System.TypeAccessException
 
 The exception that is thrown when a method attempts to use a type that it does not have access to.
 
@@ -506,7 +506,7 @@ The exception that is thrown when a method attempts to use a type that it does n
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TypeAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TypeAccessException)
 
-### System.TypeInitializationException
+#### System.TypeInitializationException
 
 The exception that is thrown as a wrapper around the exception thrown by the class initializer. This class cannot be inherited.
 
@@ -516,7 +516,7 @@ The exception that is thrown as a wrapper around the exception thrown by the cla
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TypeInitializationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TypeInitializationException)
 
-### System.TypeLoadException
+#### System.TypeLoadException
 
 The exception that is thrown when type-loading failures occur.
 
@@ -526,7 +526,7 @@ The exception that is thrown when type-loading failures occur.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TypeLoadException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TypeLoadException)
 
-### System.TypeUnloadedException
+#### System.TypeUnloadedException
 
 The exception that is thrown when there is an attempt to access an unloaded class.
 
@@ -536,7 +536,7 @@ The exception that is thrown when there is an attempt to access an unloaded clas
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.TypeUnloadedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.TypeUnloadedException)
 
-### System.UnauthorizedAccessException
+#### System.UnauthorizedAccessException
 
 The exception that is thrown when the operating system denies access because of an I/O error or a specific type of security error.
 
@@ -546,7 +546,7 @@ The exception that is thrown when the operating system denies access because of 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.UnauthorizedAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.UnauthorizedAccessException)
 
-### System.UriFormatException
+#### System.UriFormatException
 
 The exception that is thrown when an invalid Uniform Resource Identifier (URI) is detected.
 
@@ -556,7 +556,7 @@ The exception that is thrown when an invalid Uniform Resource Identifier (URI) i
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.UriFormatException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.UriFormatException)
 
-### System.UriTemplateMatchException
+#### System.UriTemplateMatchException
 
 Represents an error when matching a System.Uri to a System.UriTemplateTable.
 
@@ -567,7 +567,7 @@ Represents an error when matching a System.Uri to a System.UriTemplateTable.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.UriTemplateMatchException)
 
 ## System.Activities
-### System.Activities.InvalidWorkflowException
+#### System.Activities.InvalidWorkflowException
 
 Handles exceptions that occur when a workflow is not valid. 
 
@@ -577,7 +577,7 @@ Handles exceptions that occur when a workflow is not valid.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.InvalidWorkflowException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.InvalidWorkflowException)
 
-### System.Activities.ValidationException
+#### System.Activities.ValidationException
 
 The exception that is thrown when a workflow or activity is in an invalid state. 
 
@@ -587,7 +587,7 @@ The exception that is thrown when a workflow or activity is in an invalid state.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.ValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.ValidationException)
 
-### System.Activities.VersionMismatchException
+#### System.Activities.VersionMismatchException
 
 Specifies information about a version mismatch exception.
 
@@ -597,27 +597,27 @@ Specifies information about a version mismatch exception.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.VersionMismatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.VersionMismatchException)
 
-### System.Activities.WorkflowApplicationAbortedException
+#### System.Activities.WorkflowApplicationAbortedException
 
 Represents the exception that is thrown when an operation on a workflow instance is not valid because the instance has been aborted. 
 
-    throw [System.Activities.WorkflowApplicationAbortedException]::New("Represents an operation on a workflow instance is not valid because the instance has been aborted.")
+    throw [System.Activities.WorkflowApplicationAbortedException]::New("an operation on a workflow instance is not valid because the instance has been aborted.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.WorkflowApplicationAbortedException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.WorkflowApplicationAbortedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationAbortedException)
 
-### System.Activities.WorkflowApplicationCompletedException
+#### System.Activities.WorkflowApplicationCompletedException
 
 Represents the exception that is thrown when an operation on a workflow instance is not valid because the instance has completed.
 
-    throw [System.Activities.WorkflowApplicationCompletedException]::New("Represents an operation on a workflow instance is not valid because the instance has completed.")
+    throw [System.Activities.WorkflowApplicationCompletedException]::New("an operation on a workflow instance is not valid because the instance has completed.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.WorkflowApplicationCompletedException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.WorkflowApplicationCompletedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationCompletedException)
 
-### System.Activities.WorkflowApplicationException
+#### System.Activities.WorkflowApplicationException
 
 Provides the base class for handling an error that occurs during the execution of a workflow application.
 
@@ -627,7 +627,7 @@ Provides the base class for handling an error that occurs during the execution o
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.WorkflowApplicationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationException)
 
-### System.Activities.WorkflowApplicationTerminatedException
+#### System.Activities.WorkflowApplicationTerminatedException
 
 An exception that is thrown when an operation on a workflow instance is not valid because the instance has been terminated. 
 
@@ -637,7 +637,7 @@ An exception that is thrown when an operation on a workflow instance is not vali
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.WorkflowApplicationTerminatedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationTerminatedException)
 
-### System.Activities.WorkflowApplicationUnloadedException
+#### System.Activities.WorkflowApplicationUnloadedException
 
 An exception that is thrown when an operation on a workflow instance is invalid because the instance has been unloaded. 
 
@@ -648,7 +648,7 @@ An exception that is thrown when an operation on a workflow instance is invalid 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.WorkflowApplicationUnloadedException)
 
 ## System.ComponentModel
-### System.ComponentModel.InvalidAsynchronousStateException
+#### System.ComponentModel.InvalidAsynchronousStateException
 
 Thrown when a thread on which an operation should execute no longer exists or has no message loop. 
 
@@ -658,7 +658,7 @@ Thrown when a thread on which an operation should execute no longer exists or ha
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.InvalidAsynchronousStateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.InvalidAsynchronousStateException)
 
-### System.ComponentModel.InvalidEnumArgumentException
+#### System.ComponentModel.InvalidEnumArgumentException
 
 The exception thrown when using invalid arguments that are enumerators.
 
@@ -668,17 +668,17 @@ The exception thrown when using invalid arguments that are enumerators.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.InvalidEnumArgumentException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.InvalidEnumArgumentException)
 
-### System.ComponentModel.LicenseException
+#### System.ComponentModel.LicenseException
 
 Represents the exception thrown when a component cannot be granted a license.
 
-    throw [System.ComponentModel.LicenseException]::New("Represents a component cannot be granted a license.")
+    throw [System.ComponentModel.LicenseException]::New("a component cannot be granted a license.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.LicenseException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.LicenseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.LicenseException)
 
-### System.ComponentModel.WarningException
+#### System.ComponentModel.WarningException
 
 Specifies an exception that is handled as a warning instead of an error.
 
@@ -688,7 +688,7 @@ Specifies an exception that is handled as a warning instead of an error.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.WarningException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.WarningException)
 
-### System.ComponentModel.Win32Exception
+#### System.ComponentModel.Win32Exception
 
 Throws an exception for a Win32 error code.
 
@@ -699,7 +699,7 @@ Throws an exception for a Win32 error code.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Win32Exception)
 
 ## System.Configuration
-### System.Configuration.ConfigurationErrorsException
+#### System.Configuration.ConfigurationErrorsException
 
 The current value is not one of the System.Web.Configuration.PagesSection.EnableSessionState values.
 
@@ -709,7 +709,7 @@ The current value is not one of the System.Web.Configuration.PagesSection.Enable
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.ConfigurationErrorsException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.ConfigurationErrorsException)
 
-### System.Configuration.ConfigurationException
+#### System.Configuration.ConfigurationException
 
 The exception that is thrown when a configuration system error has occurred.
 
@@ -719,7 +719,7 @@ The exception that is thrown when a configuration system error has occurred.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.ConfigurationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.ConfigurationException)
 
-### System.Configuration.SettingsPropertyIsReadOnlyException
+#### System.Configuration.SettingsPropertyIsReadOnlyException
 
 Provides an exception for read-only System.Configuration.SettingsProperty objects.
 
@@ -729,7 +729,7 @@ Provides an exception for read-only System.Configuration.SettingsProperty object
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.SettingsPropertyIsReadOnlyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.SettingsPropertyIsReadOnlyException)
 
-### System.Configuration.SettingsPropertyNotFoundException
+#### System.Configuration.SettingsPropertyNotFoundException
 
 Provides an exception for System.Configuration.SettingsProperty objects that are not found.
 
@@ -739,7 +739,7 @@ Provides an exception for System.Configuration.SettingsProperty objects that are
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Configuration.SettingsPropertyNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.SettingsPropertyNotFoundException)
 
-### System.Configuration.SettingsPropertyWrongTypeException
+#### System.Configuration.SettingsPropertyWrongTypeException
 
 Provides an exception that is thrown when an invalid type is used with a System.Configuration.SettingsProperty object.
 
@@ -750,27 +750,27 @@ Provides an exception that is thrown when an invalid type is used with a System.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.SettingsPropertyWrongTypeException)
 
 ## System.Data
-### System.Data.ConstraintException
+#### System.Data.ConstraintException
 
 Represents the exception that is thrown when attempting an action that violates a constraint.
 
-    throw [System.Data.ConstraintException]::New("Represents attempting an action that violates a constraint.")
+    throw [System.Data.ConstraintException]::New("attempting an action that violates a constraint.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.ConstraintException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.ConstraintException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.ConstraintException)
 
-### System.Data.DataException
+#### System.Data.DataException
 
 Represents the exception that is thrown when errors are generated using ADO.NET components.
 
-    throw [System.Data.DataException]::New("Represents errors are generated using ADO.NET components.")
+    throw [System.Data.DataException]::New("errors are generated using ADO.NET components.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.DataException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.DataException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.DataException)
 
-### System.Data.DBConcurrencyException
+#### System.Data.DBConcurrencyException
 
 The exception that is thrown by the System.Data.Common.DataAdapter during an insert, update, or delete operation if the number of rows affected equals zero.
 
@@ -780,27 +780,27 @@ The exception that is thrown by the System.Data.Common.DataAdapter during an ins
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.DBConcurrencyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.DBConcurrencyException)
 
-### System.Data.DeletedRowInaccessibleException
+#### System.Data.DeletedRowInaccessibleException
 
 Represents the exception that is thrown when an action is tried on a System.Data.DataRow that has been deleted.
 
-    throw [System.Data.DeletedRowInaccessibleException]::New("Represents an action is tried on a System.Data.DataRow that has been deleted.")
+    throw [System.Data.DeletedRowInaccessibleException]::New("an action is tried on a System.Data.DataRow that has been deleted.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.DeletedRowInaccessibleException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.DeletedRowInaccessibleException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.DeletedRowInaccessibleException)
 
-### System.Data.DuplicateNameException
+#### System.Data.DuplicateNameException
 
 Represents the exception that is thrown when a duplicate database object name is encountered during an add operation in a System.Data.DataSet -related object.
 
-    throw [System.Data.DuplicateNameException]::New("Represents a duplicate database object name is encountered during an add operation in a System.Data.DataSet -related object.")
+    throw [System.Data.DuplicateNameException]::New("a duplicate database object name is encountered during an add operation in a System.Data.DataSet -related object.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.DuplicateNameException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.DuplicateNameException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.DuplicateNameException)
 
-### System.Data.EntityCommandCompilationException
+#### System.Data.EntityCommandCompilationException
 
 Represents errors that occur during command compilation; when a command tree could not be produced to represent the command text.
 
@@ -810,7 +810,7 @@ Represents errors that occur during command compilation; when a command tree cou
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.EntityCommandCompilationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.EntityCommandCompilationException)
 
-### System.Data.EntityCommandExecutionException
+#### System.Data.EntityCommandExecutionException
 
 Represents errors that occur when the underlying storage provider could not execute the specified command. This exception usually wraps a provider-specific exception.
 
@@ -820,7 +820,7 @@ Represents errors that occur when the underlying storage provider could not exec
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.EntityCommandExecutionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.EntityCommandExecutionException)
 
-### System.Data.EntityException
+#### System.Data.EntityException
 
 Represents Entity Framework-related errors that occur in the EntityClient namespace. The EntityException is the base class for all Entity Framework exceptions thrown by the EntityClient.
 
@@ -830,7 +830,7 @@ Represents Entity Framework-related errors that occur in the EntityClient namesp
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.EntityException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.EntityException)
 
-### System.Data.EntitySqlException
+#### System.Data.EntitySqlException
 
 Represents errors that occur when parsing Entity SQL command text. This exception is thrown when syntactic or semantic rules are violated.
 
@@ -840,27 +840,27 @@ Represents errors that occur when parsing Entity SQL command text. This exceptio
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.EntitySqlException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.EntitySqlException)
 
-### System.Data.EvaluateException
+#### System.Data.EvaluateException
 
 Represents the exception that is thrown when the System.Data.DataColumn.Expression property of a System.Data.DataColumn cannot be evaluated.
 
-    throw [System.Data.EvaluateException]::New("Represents the System.Data.DataColumn.Expression property of a System.Data.DataColumn cannot be evaluated.")
+    throw [System.Data.EvaluateException]::New("the System.Data.DataColumn.Expression property of a System.Data.DataColumn cannot be evaluated.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.EvaluateException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.EvaluateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.EvaluateException)
 
-### System.Data.InRowChangingEventException
+#### System.Data.InRowChangingEventException
 
 Represents the exception that is thrown when you call the System.Data.DataRow.EndEdit method within the System.Data.DataTable.RowChanging event.
 
-    throw [System.Data.InRowChangingEventException]::New("Represents you call the System.Data.DataRow.EndEdit method within the System.Data.DataTable.RowChanging event.")
+    throw [System.Data.InRowChangingEventException]::New("you call the System.Data.DataRow.EndEdit method within the System.Data.DataTable.RowChanging event.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.InRowChangingEventException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.InRowChangingEventException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.InRowChangingEventException)
 
-### System.Data.InvalidCommandTreeException
+#### System.Data.InvalidCommandTreeException
 
 The exception that is thrown to indicate that a command tree is invalid. This exception is currently not thrown anywhere in the Entity Framework.
 
@@ -870,27 +870,27 @@ The exception that is thrown to indicate that a command tree is invalid. This ex
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.InvalidCommandTreeException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.InvalidCommandTreeException)
 
-### System.Data.InvalidConstraintException
+#### System.Data.InvalidConstraintException
 
 Represents the exception that is thrown when incorrectly trying to create or access a relation.
 
-    throw [System.Data.InvalidConstraintException]::New("Represents incorrectly trying to create or access a relation.")
+    throw [System.Data.InvalidConstraintException]::New("incorrectly trying to create or access a relation.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.InvalidConstraintException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.InvalidConstraintException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.InvalidConstraintException)
 
-### System.Data.InvalidExpressionException
+#### System.Data.InvalidExpressionException
 
 Represents the exception that is thrown when you try to add a System.Data.DataColumn that contains an invalid System.Data.DataColumn.Expression to a System.Data.DataColumnCollection.
 
-    throw [System.Data.InvalidExpressionException]::New("Represents you try to add a System.Data.DataColumn that contains an invalid System.Data.DataColumn.Expression to a System.Data.DataColumnCollection.")
+    throw [System.Data.InvalidExpressionException]::New("you try to add a System.Data.DataColumn that contains an invalid System.Data.DataColumn.Expression to a System.Data.DataColumnCollection.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.InvalidExpressionException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.InvalidExpressionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.InvalidExpressionException)
 
-### System.Data.MappingException
+#### System.Data.MappingException
 
 The exception that is thrown when mapping related service requests fail.
 
@@ -900,7 +900,7 @@ The exception that is thrown when mapping related service requests fail.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.MappingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.MappingException)
 
-### System.Data.MetadataException
+#### System.Data.MetadataException
 
 The exception that is thrown when metadata related service requests fails. 
 
@@ -910,27 +910,27 @@ The exception that is thrown when metadata related service requests fails.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.MetadataException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.MetadataException)
 
-### System.Data.MissingPrimaryKeyException
+#### System.Data.MissingPrimaryKeyException
 
 Represents the exception that is thrown when you try to access a row in a table that has no primary key.
 
-    throw [System.Data.MissingPrimaryKeyException]::New("Represents you try to access a row in a table that has no primary key.")
+    throw [System.Data.MissingPrimaryKeyException]::New("you try to access a row in a table that has no primary key.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.MissingPrimaryKeyException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.MissingPrimaryKeyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.MissingPrimaryKeyException)
 
-### System.Data.NoNullAllowedException
+#### System.Data.NoNullAllowedException
 
 Represents the exception that is thrown when you try to insert a null value into a column where System.Data.DataColumn.AllowDBNull is set to false.
 
-    throw [System.Data.NoNullAllowedException]::New("Represents you try to insert a null value into a column where System.Data.DataColumn.AllowDBNull is set to false.")
+    throw [System.Data.NoNullAllowedException]::New("you try to insert a null value into a column where System.Data.DataColumn.AllowDBNull is set to false.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.NoNullAllowedException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.NoNullAllowedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.NoNullAllowedException)
 
-### System.Data.ObjectNotFoundException
+#### System.Data.ObjectNotFoundException
 
 The exception that is thrown when an object is not present.
 
@@ -940,7 +940,7 @@ The exception that is thrown when an object is not present.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.ObjectNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.ObjectNotFoundException)
 
-### System.Data.OperationAbortedException
+#### System.Data.OperationAbortedException
 
 This exception is thrown when an ongoing operation is aborted by the user. 
 
@@ -950,7 +950,7 @@ This exception is thrown when an ongoing operation is aborted by the user.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.OperationAbortedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.OperationAbortedException)
 
-### System.Data.OptimisticConcurrencyException
+#### System.Data.OptimisticConcurrencyException
 
 The exception that is thrown when an optimistic concurrency violation occurs. 
 
@@ -960,7 +960,7 @@ The exception that is thrown when an optimistic concurrency violation occurs.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.OptimisticConcurrencyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.OptimisticConcurrencyException)
 
-### System.Data.PropertyConstraintException
+#### System.Data.PropertyConstraintException
 
 Property constraint exception class. Note that this class has state - so if you change even its internals, it can be a breaking change.
 
@@ -970,7 +970,7 @@ Property constraint exception class. Note that this class has state - so if you 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.PropertyConstraintException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.PropertyConstraintException)
 
-### System.Data.ProviderIncompatibleException
+#### System.Data.ProviderIncompatibleException
 
 The exception that is thrown when the underlying data provider is incompatible with the Entity Framework. 
 
@@ -980,27 +980,27 @@ The exception that is thrown when the underlying data provider is incompatible w
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.ProviderIncompatibleException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.ProviderIncompatibleException)
 
-### System.Data.ReadOnlyException
+#### System.Data.ReadOnlyException
 
 Represents the exception that is thrown when you try to change the value of a read-only column.
 
-    throw [System.Data.ReadOnlyException]::New("Represents you try to change the value of a read-only column.")
+    throw [System.Data.ReadOnlyException]::New("you try to change the value of a read-only column.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.ReadOnlyException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.ReadOnlyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.ReadOnlyException)
 
-### System.Data.RowNotInTableException
+#### System.Data.RowNotInTableException
 
 Represents the exception that is thrown when you try to perform an operation on a System.Data.DataRow that is not in a System.Data.DataTable.
 
-    throw [System.Data.RowNotInTableException]::New("Represents you try to perform an operation on a System.Data.DataRow that is not in a System.Data.DataTable.")
+    throw [System.Data.RowNotInTableException]::New("you try to perform an operation on a System.Data.DataRow that is not in a System.Data.DataTable.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.RowNotInTableException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.RowNotInTableException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.RowNotInTableException)
 
-### System.Data.StrongTypingException
+#### System.Data.StrongTypingException
 
 The exception that is thrown by a strongly typed System.Data.DataSet when the user accesses a DBNull value.
 
@@ -1010,17 +1010,17 @@ The exception that is thrown by a strongly typed System.Data.DataSet when the us
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.StrongTypingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.StrongTypingException)
 
-### System.Data.SyntaxErrorException
+#### System.Data.SyntaxErrorException
 
 Represents the exception that is thrown when the System.Data.DataColumn.Expression property of a System.Data.DataColumn contains a syntax error.
 
-    throw [System.Data.SyntaxErrorException]::New("Represents the System.Data.DataColumn.Expression property of a System.Data.DataColumn contains a syntax error.")
+    throw [System.Data.SyntaxErrorException]::New("the System.Data.DataColumn.Expression property of a System.Data.DataColumn contains a syntax error.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.SyntaxErrorException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.SyntaxErrorException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SyntaxErrorException)
 
-### System.Data.TypedDataSetGeneratorException
+#### System.Data.TypedDataSetGeneratorException
 
 The exception that is thrown when a name conflict occurs while generating a strongly typed System.Data.DataSet. 
 
@@ -1030,7 +1030,7 @@ The exception that is thrown when a name conflict occurs while generating a stro
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.TypedDataSetGeneratorException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.TypedDataSetGeneratorException)
 
-### System.Data.UpdateException
+#### System.Data.UpdateException
 
 The exception that is thrown when modifications to object instances cannot be persisted to the data source.
 
@@ -1040,18 +1040,18 @@ The exception that is thrown when modifications to object instances cannot be pe
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.UpdateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.UpdateException)
 
-### System.Data.VersionNotFoundException
+#### System.Data.VersionNotFoundException
 
 Represents the exception that is thrown when you try to return a version of a System.Data.DataRow that has been deleted.
 
-    throw [System.Data.VersionNotFoundException]::New("Represents you try to return a version of a System.Data.DataRow that has been deleted.")
+    throw [System.Data.VersionNotFoundException]::New("you try to return a version of a System.Data.DataRow that has been deleted.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Data.VersionNotFoundException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.VersionNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.VersionNotFoundException)
 
 ## System.DirectoryServices
-### System.DirectoryServices.DirectoryServicesCOMException
+#### System.DirectoryServices.DirectoryServicesCOMException
 
 Contains extended error information about an error that occurred when the System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[]) method is called. 
 
@@ -1062,7 +1062,7 @@ Contains extended error information about an error that occurred when the System
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.DirectoryServicesCOMException)
 
 ## System.EnterpriseServices
-### System.EnterpriseServices.RegistrationException
+#### System.EnterpriseServices.RegistrationException
 
 The exception that is thrown when a registration error is detected.
 
@@ -1072,7 +1072,7 @@ The exception that is thrown when a registration error is detected.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.EnterpriseServices.RegistrationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.RegistrationException)
 
-### System.EnterpriseServices.ServicedComponentException
+#### System.EnterpriseServices.ServicedComponentException
 
 The exception that is thrown when an error is detected in a serviced component.
 
@@ -1083,7 +1083,7 @@ The exception that is thrown when an error is detected in a serviced component.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.EnterpriseServices.ServicedComponentException)
 
 ## System.Globalization
-### System.Globalization.CultureNotFoundException
+#### System.Globalization.CultureNotFoundException
 
 The exception that is thrown when a method is invoked which attempts to construct a culture that is not available on the machine.
 
@@ -1094,7 +1094,7 @@ The exception that is thrown when a method is invoked which attempts to construc
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Globalization.CultureNotFoundException)
 
 ## System.IdentityModel
-### System.IdentityModel.AsynchronousOperationException
+#### System.IdentityModel.AsynchronousOperationException
 
 The exception that is thrown when an error occurs during an asynchronous operation.
 
@@ -1104,7 +1104,7 @@ The exception that is thrown when an error occurs during an asynchronous operati
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.AsynchronousOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.AsynchronousOperationException)
 
-### System.IdentityModel.BadRequestException
+#### System.IdentityModel.BadRequestException
 
 The exception that is thrown when a token request (RST) is not understood by the security token service (STS).
 
@@ -1114,7 +1114,7 @@ The exception that is thrown when a token request (RST) is not understood by the
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.BadRequestException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.BadRequestException)
 
-### System.IdentityModel.LimitExceededException
+#### System.IdentityModel.LimitExceededException
 
 The exception that is thrown when a configured limit or quota is exceeded.
 
@@ -1124,7 +1124,7 @@ The exception that is thrown when a configured limit or quota is exceeded.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.LimitExceededException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.LimitExceededException)
 
-### System.IdentityModel.RequestException
+#### System.IdentityModel.RequestException
 
 The base class for exceptions thrown on request failures.
 
@@ -1134,7 +1134,7 @@ The base class for exceptions thrown on request failures.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestException)
 
-### System.IdentityModel.RequestFailedException
+#### System.IdentityModel.RequestFailedException
 
 The exception that is thrown if the specified request (RST) failed due to an external reason that cannot be specifically determined.
 
@@ -1144,7 +1144,7 @@ The exception that is thrown if the specified request (RST) failed due to an ext
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.RequestFailedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.RequestFailedException)
 
-### System.IdentityModel.SecurityMessageSerializationException
+#### System.IdentityModel.SecurityMessageSerializationException
 
 The exception that is thrown when an error occurs while serializing a security message.
 
@@ -1154,7 +1154,7 @@ The exception that is thrown when an error occurs while serializing a security m
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SecurityMessageSerializationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SecurityMessageSerializationException)
 
-### System.IdentityModel.SignatureVerificationFailedException
+#### System.IdentityModel.SignatureVerificationFailedException
 
 The exception that is thrown when an error occurs while processing a signature
 
@@ -1164,7 +1164,7 @@ The exception that is thrown when an error occurs while processing a signature
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.SignatureVerificationFailedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.SignatureVerificationFailedException)
 
-### System.IdentityModel.UnsupportedTokenTypeBadRequestException
+#### System.IdentityModel.UnsupportedTokenTypeBadRequestException
 
 The exception that is thrown when the specified token request (RST) is not understood because of an unknown token type.
 
@@ -1175,7 +1175,7 @@ The exception that is thrown when the specified token request (RST) is not under
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.UnsupportedTokenTypeBadRequestException)
 
 ## System.IO
-### System.IO.DirectoryNotFoundException
+#### System.IO.DirectoryNotFoundException
 
 The exception that is thrown when part of a file or directory cannot be found.
 
@@ -1185,7 +1185,7 @@ The exception that is thrown when part of a file or directory cannot be found.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DirectoryNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DirectoryNotFoundException)
 
-### System.IO.DriveNotFoundException
+#### System.IO.DriveNotFoundException
 
 The exception that is thrown when trying to access a drive or share that is not available.
 
@@ -1195,7 +1195,7 @@ The exception that is thrown when trying to access a drive or share that is not 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.DriveNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.DriveNotFoundException)
 
-### System.IO.EndOfStreamException
+#### System.IO.EndOfStreamException
 
 The exception that is thrown when reading is attempted past the end of a stream.
 
@@ -1205,7 +1205,7 @@ The exception that is thrown when reading is attempted past the end of a stream.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.EndOfStreamException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.EndOfStreamException)
 
-### System.IO.FileFormatException
+#### System.IO.FileFormatException
 
 The exception that is thrown when an input file or a data stream that is supposed to conform to a certain file format specification is malformed.
 
@@ -1215,7 +1215,7 @@ The exception that is thrown when an input file or a data stream that is suppose
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileFormatException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileFormatException)
 
-### System.IO.FileLoadException
+#### System.IO.FileLoadException
 
 The exception that is thrown when a managed assembly is found but cannot be loaded.
 
@@ -1225,7 +1225,7 @@ The exception that is thrown when a managed assembly is found but cannot be load
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileLoadException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileLoadException)
 
-### System.IO.FileNotFoundException
+#### System.IO.FileNotFoundException
 
 The exception that is thrown when an attempt to access a file that does not exist on disk fails.
 
@@ -1235,7 +1235,7 @@ The exception that is thrown when an attempt to access a file that does not exis
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.FileNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.FileNotFoundException)
 
-### System.IO.InternalBufferOverflowException
+#### System.IO.InternalBufferOverflowException
 
 The exception thrown when the internal buffer overflows.
 
@@ -1245,7 +1245,7 @@ The exception thrown when the internal buffer overflows.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InternalBufferOverflowException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InternalBufferOverflowException)
 
-### System.IO.InvalidDataException
+#### System.IO.InvalidDataException
 
 The exception that is thrown when a data stream is in an invalid format.
 
@@ -1255,7 +1255,7 @@ The exception that is thrown when a data stream is in an invalid format.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.InvalidDataException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.InvalidDataException)
 
-### System.IO.IOException
+#### System.IO.IOException
 
 The exception that is thrown when an I/O error occurs.
 
@@ -1265,7 +1265,7 @@ The exception that is thrown when an I/O error occurs.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.IOException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.IOException)
 
-### System.IO.PathTooLongException
+#### System.IO.PathTooLongException
 
 The exception that is thrown when a path or file name is longer than the system-defined maximum length.
 
@@ -1275,7 +1275,7 @@ The exception that is thrown when a path or file name is longer than the system-
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.PathTooLongException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PathTooLongException)
 
-### System.IO.PipeException
+#### System.IO.PipeException
 
 Thrown when an error occurs within a named pipe.
 
@@ -1286,7 +1286,7 @@ Thrown when an error occurs within a named pipe.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.PipeException)
 
 ## System.Management
-### System.Management.ManagementException
+#### System.Management.ManagementException
 
 Represents management exceptions.          
 
@@ -1297,7 +1297,7 @@ Represents management exceptions.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.ManagementException)
 
 ## System.Messaging
-### System.Messaging.MessageQueueException
+#### System.Messaging.MessageQueueException
 
 The exception that is thrown if a Microsoft Message Queuing internal error occurs.
 
@@ -1308,7 +1308,7 @@ The exception that is thrown if a Microsoft Message Queuing internal error occur
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Messaging.MessageQueueException)
 
 ## System.Net
-### System.Net.CookieException
+#### System.Net.CookieException
 
 The exception that is thrown when an error is made adding a System.Net.Cookie to a System.Net.CookieContainer.
 
@@ -1318,7 +1318,7 @@ The exception that is thrown when an error is made adding a System.Net.Cookie to
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.CookieException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.CookieException)
 
-### System.Net.HttpListenerException
+#### System.Net.HttpListenerException
 
 The exception that is thrown when an error occurs processing an HTTP request.
 
@@ -1328,7 +1328,7 @@ The exception that is thrown when an error occurs processing an HTTP request.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.HttpListenerException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.HttpListenerException)
 
-### System.Net.ProtocolViolationException
+#### System.Net.ProtocolViolationException
 
 The exception that is thrown when an error is made while using a network protocol.
 
@@ -1338,7 +1338,7 @@ The exception that is thrown when an error is made while using a network protoco
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.ProtocolViolationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.ProtocolViolationException)
 
-### System.Net.WebException
+#### System.Net.WebException
 
 The exception that is thrown when an error occurs while accessing the network through a pluggable protocol.
 
@@ -1349,7 +1349,7 @@ The exception that is thrown when an error occurs while accessing the network th
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.WebException)
 
 ## System.Printing
-### System.Printing.PrintCommitAttributesException
+#### System.Printing.PrintCommitAttributesException
 
 The exception that is thrown when an error condition prevents some attributes from being committed by a System.Printing.PrintSystemObject to the actual computer, printer, or device that the object represents.
 
@@ -1359,7 +1359,7 @@ The exception that is thrown when an error condition prevents some attributes fr
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintCommitAttributesException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintCommitAttributesException)
 
-### System.Printing.PrintingCanceledException
+#### System.Printing.PrintingCanceledException
 
 The exception that occurs when code attempts to access a canceled print job.
 
@@ -1369,7 +1369,7 @@ The exception that occurs when code attempts to access a canceled print job.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingCanceledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingCanceledException)
 
-### System.Printing.PrintingNotSupportedException
+#### System.Printing.PrintingNotSupportedException
 
 The exception that is thrown when a printing operation is not supported.
 
@@ -1379,7 +1379,7 @@ The exception that is thrown when a printing operation is not supported.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintingNotSupportedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintingNotSupportedException)
 
-### System.Printing.PrintJobException
+#### System.Printing.PrintJobException
 
 The exception that occurs when the print job does not run correctly.
 
@@ -1389,7 +1389,7 @@ The exception that occurs when the print job does not run correctly.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintJobException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintJobException)
 
-### System.Printing.PrintQueueException
+#### System.Printing.PrintQueueException
 
 The exception that is thrown when an error condition prevents the accessing or creation of a System.Printing.PrintQueue.
 
@@ -1399,7 +1399,7 @@ The exception that is thrown when an error condition prevents the accessing or c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintQueueException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintQueueException)
 
-### System.Printing.PrintServerException
+#### System.Printing.PrintServerException
 
 The exception that occurs when an error condition prevents the accessing or creation of a System.Printing.PrintServer.
 
@@ -1409,7 +1409,7 @@ The exception that occurs when an error condition prevents the accessing or crea
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Printing.PrintServerException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintServerException)
 
-### System.Printing.PrintSystemException
+#### System.Printing.PrintSystemException
 
 The exception that occurs when an error condition prevents accessing or creating a System.Printing.PrintSystemObject. 
 
@@ -1420,7 +1420,7 @@ The exception that occurs when an error condition prevents accessing or creating
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Printing.PrintSystemException)
 
 ## System.Reflection
-### System.Reflection.AmbiguousMatchException
+#### System.Reflection.AmbiguousMatchException
 
 The exception that is thrown when binding to a member results in more than one member matching the binding criteria. This class cannot be inherited.
 
@@ -1430,7 +1430,7 @@ The exception that is thrown when binding to a member results in more than one m
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.AmbiguousMatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.AmbiguousMatchException)
 
-### System.Reflection.CustomAttributeFormatException
+#### System.Reflection.CustomAttributeFormatException
 
 The exception that is thrown when the binary format of a custom attribute is invalid.
 
@@ -1440,7 +1440,7 @@ The exception that is thrown when the binary format of a custom attribute is inv
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.CustomAttributeFormatException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.CustomAttributeFormatException)
 
-### System.Reflection.InvalidFilterCriteriaException
+#### System.Reflection.InvalidFilterCriteriaException
 
 The exception that is thrown in System.Type.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object) when the filter criteria is not valid for the type of filter you are using.
 
@@ -1450,7 +1450,7 @@ The exception that is thrown in System.Type.FindMembers(System.Reflection.Member
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.InvalidFilterCriteriaException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.InvalidFilterCriteriaException)
 
-### System.Reflection.ReflectionTypeLoadException
+#### System.Reflection.ReflectionTypeLoadException
 
 The exception that is thrown by the System.Reflection.Module.GetTypes method if any of the classes in a module cannot be loaded. This class cannot be inherited.
 
@@ -1460,17 +1460,17 @@ The exception that is thrown by the System.Reflection.Module.GetTypes method if 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.ReflectionTypeLoadException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.ReflectionTypeLoadException)
 
-### System.Reflection.TargetException
+#### System.Reflection.TargetException
 
 Represents the exception that is thrown when an attempt is made to invoke an invalid target.
 
-    throw [System.Reflection.TargetException]::New("Represents an attempt is made to invoke an invalid target.")
+    throw [System.Reflection.TargetException]::New("an attempt is made to invoke an invalid target.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.TargetException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetException)
 
-### System.Reflection.TargetInvocationException
+#### System.Reflection.TargetInvocationException
 
 The exception that is thrown by methods invoked through reflection. This class cannot be inherited.
 
@@ -1480,7 +1480,7 @@ The exception that is thrown by methods invoked through reflection. This class c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Reflection.TargetInvocationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetInvocationException)
 
-### System.Reflection.TargetParameterCountException
+#### System.Reflection.TargetParameterCountException
 
 The exception that is thrown when the number of parameters for an invocation does not match the number expected. This class cannot be inherited.
 
@@ -1491,7 +1491,7 @@ The exception that is thrown when the number of parameters for an invocation doe
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Reflection.TargetParameterCountException)
 
 ## System.Resources
-### System.Resources.MissingManifestResourceException
+#### System.Resources.MissingManifestResourceException
 
 The exception that is thrown if the main assembly does not contain the resources for the neutral culture, and an appropriate satellite assembly is missing.
 
@@ -1501,7 +1501,7 @@ The exception that is thrown if the main assembly does not contain the resources
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Resources.MissingManifestResourceException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingManifestResourceException)
 
-### System.Resources.MissingSatelliteAssemblyException
+#### System.Resources.MissingSatelliteAssemblyException
 
 The exception that is thrown when the satellite assembly for the resources of the default culture is missing.
 
@@ -1512,7 +1512,7 @@ The exception that is thrown when the satellite assembly for the resources of th
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Resources.MissingSatelliteAssemblyException)
 
 ## System.Security
-### System.Security.HostProtectionException
+#### System.Security.HostProtectionException
 
 The exception that is thrown when a denied host resource is detected.
 
@@ -1522,7 +1522,7 @@ The exception that is thrown when a denied host resource is detected.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.HostProtectionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.HostProtectionException)
 
-### System.Security.SecurityException
+#### System.Security.SecurityException
 
 The exception that is thrown when a security error is detected.
 
@@ -1532,7 +1532,7 @@ The exception that is thrown when a security error is detected.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.SecurityException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.SecurityException)
 
-### System.Security.VerificationException
+#### System.Security.VerificationException
 
 The exception that is thrown when the security policy requires code to be type safe and the verification process is unable to verify that the code is type safe.
 
@@ -1542,7 +1542,7 @@ The exception that is thrown when the security policy requires code to be type s
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.VerificationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.VerificationException)
 
-### System.Security.XmlSyntaxException
+#### System.Security.XmlSyntaxException
 
 The exception that is thrown when there is a syntax error in XML parsing. This class cannot be inherited.
 
@@ -1553,7 +1553,7 @@ The exception that is thrown when there is a syntax error in XML parsing. This c
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.XmlSyntaxException)
 
 ## System.ServiceModel
-### System.ServiceModel.ActionNotSupportedException
+#### System.ServiceModel.ActionNotSupportedException
 
 This exception is typically thrown on the client when the action related to the operation invoked does not match any action of operations in the server.
 
@@ -1563,7 +1563,7 @@ This exception is typically thrown on the client when the action related to the 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ActionNotSupportedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ActionNotSupportedException)
 
-### System.ServiceModel.AddressAccessDeniedException
+#### System.ServiceModel.AddressAccessDeniedException
 
 The exception that is thrown when access to the address is denied.
 
@@ -1573,7 +1573,7 @@ The exception that is thrown when access to the address is denied.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAccessDeniedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAccessDeniedException)
 
-### System.ServiceModel.AddressAlreadyInUseException
+#### System.ServiceModel.AddressAlreadyInUseException
 
 The exception that is thrown when an address is unavailable because it is already in use.
 
@@ -1583,7 +1583,7 @@ The exception that is thrown when an address is unavailable because it is alread
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.AddressAlreadyInUseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.AddressAlreadyInUseException)
 
-### System.ServiceModel.ChannelTerminatedException
+#### System.ServiceModel.ChannelTerminatedException
 
 This exception is typically thrown on the client when a channel is terminated due to server closing the associated connection.
 
@@ -1593,7 +1593,7 @@ This exception is typically thrown on the client when a channel is terminated du
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ChannelTerminatedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ChannelTerminatedException)
 
-### System.ServiceModel.CommunicationException
+#### System.ServiceModel.CommunicationException
 
 Represents a communication error in either the service or client application.
 
@@ -1603,7 +1603,7 @@ Represents a communication error in either the service or client application.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationException)
 
-### System.ServiceModel.CommunicationObjectAbortedException
+#### System.ServiceModel.CommunicationObjectAbortedException
 
 The exception that is thrown when the call is to an System.ServiceModel.ICommunicationObject object that has aborted.
 
@@ -1613,7 +1613,7 @@ The exception that is thrown when the call is to an System.ServiceModel.ICommuni
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectAbortedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectAbortedException)
 
-### System.ServiceModel.CommunicationObjectFaultedException
+#### System.ServiceModel.CommunicationObjectFaultedException
 
 The exception that is thrown when a call is made to a communication object that has faulted. 
 
@@ -1623,7 +1623,7 @@ The exception that is thrown when a call is made to a communication object that 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.CommunicationObjectFaultedException)
 
-### System.ServiceModel.EndpointNotFoundException
+#### System.ServiceModel.EndpointNotFoundException
 
 The exception that is thrown when a remote endpoint could not be found or reached.
 
@@ -1633,7 +1633,7 @@ The exception that is thrown when a remote endpoint could not be found or reache
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.EndpointNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.EndpointNotFoundException)
 
-### System.ServiceModel.FaultException
+#### System.ServiceModel.FaultException
 
 Represents a SOAP fault.
 
@@ -1643,7 +1643,7 @@ Represents a SOAP fault.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.FaultException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.FaultException)
 
-### System.ServiceModel.InvalidMessageContractException
+#### System.ServiceModel.InvalidMessageContractException
 
 Represents a message contract that is not valid.
 
@@ -1653,7 +1653,7 @@ Represents a message contract that is not valid.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.InvalidMessageContractException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.InvalidMessageContractException)
 
-### System.ServiceModel.MessageHeaderException
+#### System.ServiceModel.MessageHeaderException
 
 The exception that is thrown when the expectations regarding headers of a SOAP message are not satisfied when the message is processed.
 
@@ -1663,7 +1663,7 @@ The exception that is thrown when the expectations regarding headers of a SOAP m
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MessageHeaderException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MessageHeaderException)
 
-### System.ServiceModel.MsmqException
+#### System.ServiceModel.MsmqException
 
 Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown by the Message Queuing transport and the Message Queuing integration channel.
 
@@ -1673,7 +1673,7 @@ Encapsulates errors returned by Message Queuing (MSMQ). This exception is thrown
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqException)
 
-### System.ServiceModel.MsmqPoisonMessageException
+#### System.ServiceModel.MsmqPoisonMessageException
 
 Encapsulates the exception that is thrown when the channel detects that the message is a poison message.
 
@@ -1683,7 +1683,7 @@ Encapsulates the exception that is thrown when the channel detects that the mess
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.MsmqPoisonMessageException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.MsmqPoisonMessageException)
 
-### System.ServiceModel.PoisonMessageException
+#### System.ServiceModel.PoisonMessageException
 
 An exception that is thrown when the message is deemed poison. A message is poisoned if it fails repeated attempts to deliver the message.
 
@@ -1693,7 +1693,7 @@ An exception that is thrown when the message is deemed poison. A message is pois
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.PoisonMessageException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.PoisonMessageException)
 
-### System.ServiceModel.ProtocolException
+#### System.ServiceModel.ProtocolException
 
 The exception seen on the client that is thrown when communication with the remote party is impossible due to mismatched data transfer protocols.
 
@@ -1703,7 +1703,7 @@ The exception seen on the client that is thrown when communication with the remo
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ProtocolException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ProtocolException)
 
-### System.ServiceModel.QuotaExceededException
+#### System.ServiceModel.QuotaExceededException
 
 The exception that is thrown when a message quota has been exceeded.
 
@@ -1713,7 +1713,7 @@ The exception that is thrown when a message quota has been exceeded.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.QuotaExceededException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.QuotaExceededException)
 
-### System.ServiceModel.ServerTooBusyException
+#### System.ServiceModel.ServerTooBusyException
 
 The exception that is thrown when a server is too busy to accept a message.
 
@@ -1723,7 +1723,7 @@ The exception that is thrown when a server is too busy to accept a message.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.ServerTooBusyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServerTooBusyException)
 
-### System.ServiceModel.ServiceActivationException
+#### System.ServiceModel.ServiceActivationException
 
 The exception that is thrown when a service fails to activate.
 
@@ -1734,7 +1734,7 @@ The exception that is thrown when a service fails to activate.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.ServiceActivationException)
 
 ## System.ServiceProcess
-### System.ServiceProcess.TimeoutException
+#### System.ServiceProcess.TimeoutException
 
 The exception that is thrown when a specified timeout has expired.
 
@@ -1745,7 +1745,7 @@ The exception that is thrown when a specified timeout has expired.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceProcess.TimeoutException)
 
 ## System.Text
-### System.Text.DecoderFallbackException
+#### System.Text.DecoderFallbackException
 
 The exception that is thrown when a decoder fallback operation fails. This class cannot be inherited.
 
@@ -1755,7 +1755,7 @@ The exception that is thrown when a decoder fallback operation fails. This class
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Text.DecoderFallbackException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.DecoderFallbackException)
 
-### System.Text.EncoderFallbackException
+#### System.Text.EncoderFallbackException
 
 The exception that is thrown when an encoder fallback operation fails. This class cannot be inherited.
 
@@ -1766,7 +1766,7 @@ The exception that is thrown when an encoder fallback operation fails. This clas
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.EncoderFallbackException)
 
 ## System.Threading
-### System.Threading.AbandonedMutexException
+#### System.Threading.AbandonedMutexException
 
 The exception that is thrown when one thread acquires a System.Threading.Mutex object that another thread has abandoned by exiting without releasing it.
 
@@ -1776,7 +1776,7 @@ The exception that is thrown when one thread acquires a System.Threading.Mutex o
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.AbandonedMutexException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.AbandonedMutexException)
 
-### System.Threading.BarrierPostPhaseException
+#### System.Threading.BarrierPostPhaseException
 
 The exception that is thrown when the post-phase action of a System.Threading.Barrier fails
 
@@ -1786,7 +1786,7 @@ The exception that is thrown when the post-phase action of a System.Threading.Ba
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.BarrierPostPhaseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.BarrierPostPhaseException)
 
-### System.Threading.LockRecursionException
+#### System.Threading.LockRecursionException
 
 The exception that is thrown when recursive entry into a lock is not compatible with the recursion policy for the lock.
 
@@ -1796,7 +1796,7 @@ The exception that is thrown when recursive entry into a lock is not compatible 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.LockRecursionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.LockRecursionException)
 
-### System.Threading.SemaphoreFullException
+#### System.Threading.SemaphoreFullException
 
 The exception that is thrown when the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. 
 
@@ -1806,7 +1806,7 @@ The exception that is thrown when the System.Threading.Semaphore.Release method 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SemaphoreFullException)
 
-### System.Threading.SynchronizationLockException
+#### System.Threading.SynchronizationLockException
 
 The exception that is thrown when a method requires the caller to own the lock on a given Monitor, and the method is invoked by a caller that does not own that lock.
 
@@ -1816,7 +1816,7 @@ The exception that is thrown when a method requires the caller to own the lock o
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.SynchronizationLockException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.SynchronizationLockException)
 
-### System.Threading.ThreadAbortException
+#### System.Threading.ThreadAbortException
 
 The exception that is thrown when a call is made to the System.Threading.Thread.Abort(System.Object) method. This class cannot be inherited.
 
@@ -1826,7 +1826,7 @@ The exception that is thrown when a call is made to the System.Threading.Thread.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadAbortException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadAbortException)
 
-### System.Threading.ThreadInterruptedException
+#### System.Threading.ThreadInterruptedException
 
 The exception that is thrown when a System.Threading.Thread is interrupted while it is in a waiting state.
 
@@ -1836,7 +1836,7 @@ The exception that is thrown when a System.Threading.Thread is interrupted while
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadInterruptedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadInterruptedException)
 
-### System.Threading.ThreadStartException
+#### System.Threading.ThreadStartException
 
 The exception that is thrown when a failure occurs in a managed thread after the underlying operating system thread has been started, but before the thread is ready to execute user code.
 
@@ -1846,7 +1846,7 @@ The exception that is thrown when a failure occurs in a managed thread after the
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStartException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStartException)
 
-### System.Threading.ThreadStateException
+#### System.Threading.ThreadStateException
 
 The exception that is thrown when a System.Threading.Thread is in an invalid System.Threading.Thread.ThreadState for the method call.
 
@@ -1856,7 +1856,7 @@ The exception that is thrown when a System.Threading.Thread is in an invalid Sys
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.ThreadStateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.ThreadStateException)
 
-### System.Threading.WaitHandleCannotBeOpenedException
+#### System.Threading.WaitHandleCannotBeOpenedException
 
 The exception that is thrown when an attempt is made to open a system mutex or semaphore that does not exist.
 
@@ -1867,7 +1867,7 @@ The exception that is thrown when an attempt is made to open a system mutex or s
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.WaitHandleCannotBeOpenedException)
 
 ## System.Transactions
-### System.Transactions.TransactionAbortedException
+#### System.Transactions.TransactionAbortedException
 
 The exception that is thrown when an operation is attempted on a transaction that has already been rolled back, or an attempt is made to commit the transaction and the transaction aborts. 
 
@@ -1877,7 +1877,7 @@ The exception that is thrown when an operation is attempted on a transaction tha
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionAbortedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionAbortedException)
 
-### System.Transactions.TransactionException
+#### System.Transactions.TransactionException
 
 The exception that is thrown when you attempt to do work on a transaction that cannot accept new work.  
 
@@ -1887,7 +1887,7 @@ The exception that is thrown when you attempt to do work on a transaction that c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionException)
 
-### System.Transactions.TransactionInDoubtException
+#### System.Transactions.TransactionInDoubtException
 
 The exception that is thrown when an operation is attempted on a transaction that is in doubt, or an attempt is made to commit the transaction and the transaction becomes InDoubt. 
 
@@ -1897,7 +1897,7 @@ The exception that is thrown when an operation is attempted on a transaction tha
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionInDoubtException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionInDoubtException)
 
-### System.Transactions.TransactionManagerCommunicationException
+#### System.Transactions.TransactionManagerCommunicationException
 
 The exception that is thrown when a resource manager cannot communicate with the transaction manager.
 
@@ -1907,7 +1907,7 @@ The exception that is thrown when a resource manager cannot communicate with the
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Transactions.TransactionManagerCommunicationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionManagerCommunicationException)
 
-### System.Transactions.TransactionPromotionException
+#### System.Transactions.TransactionPromotionException
 
 The exception that is thrown when a promotion fails.
 
@@ -1918,7 +1918,7 @@ The exception that is thrown when a promotion fails.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Transactions.TransactionPromotionException)
 
 ## System.Web
-### System.Web.HttpCompileException
+#### System.Web.HttpCompileException
 
 The exception that is thrown when a compiler error occurs.
 
@@ -1928,7 +1928,7 @@ The exception that is thrown when a compiler error occurs.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpCompileException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpCompileException)
 
-### System.Web.HttpException
+#### System.Web.HttpException
 
 Describes an exception that occurred during the processing of HTTP requests.
 
@@ -1938,7 +1938,7 @@ Describes an exception that occurred during the processing of HTTP requests.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpException)
 
-### System.Web.HttpParseException
+#### System.Web.HttpParseException
 
 The exception that is thrown when a parse error occurs.
 
@@ -1948,7 +1948,7 @@ The exception that is thrown when a parse error occurs.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpParseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpParseException)
 
-### System.Web.HttpRequestValidationException
+#### System.Web.HttpRequestValidationException
 
 The exception that is thrown when a potentially malicious input string is received from the client as part of the request data. This class cannot be inherited.
 
@@ -1958,7 +1958,7 @@ The exception that is thrown when a potentially malicious input string is receiv
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.HttpRequestValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpRequestValidationException)
 
-### System.Web.HttpUnhandledException
+#### System.Web.HttpUnhandledException
 
 The exception that is thrown when a generic exception occurs.
 
@@ -1969,7 +1969,7 @@ The exception that is thrown when a generic exception occurs.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.HttpUnhandledException)
 
 ## System.Windows
-### System.Windows.ResourceReferenceKeyNotFoundException
+#### System.Windows.ResourceReferenceKeyNotFoundException
 
 The exception that is thrown when a resource reference key cannot be found during parsing or serialization of markup extension resources.
 
@@ -1980,7 +1980,7 @@ The exception that is thrown when a resource reference key cannot be found durin
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.ResourceReferenceKeyNotFoundException)
 
 ## System.Xaml
-### System.Xaml.XamlDuplicateMemberException
+#### System.Xaml.XamlDuplicateMemberException
 
 The exception that is thrown when a XAML writer attempts to write a value for a duplicate member into the same object node. 
 
@@ -1990,7 +1990,7 @@ The exception that is thrown when a XAML writer attempts to write a value for a 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlDuplicateMemberException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlDuplicateMemberException)
 
-### System.Xaml.XamlException
+#### System.Xaml.XamlException
 
 The exception that is thrown for a general XAML reader or XAML writer exception. See Remarks.
 
@@ -2000,7 +2000,7 @@ The exception that is thrown for a general XAML reader or XAML writer exception.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlException)
 
-### System.Xaml.XamlInternalException
+#### System.Xaml.XamlInternalException
 
 The exception that is thrown for internal inconsistencies that occur during XAML reading and XAML writing. 
 
@@ -2010,7 +2010,7 @@ The exception that is thrown for internal inconsistencies that occur during XAML
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlInternalException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlInternalException)
 
-### System.Xaml.XamlObjectReaderException
+#### System.Xaml.XamlObjectReaderException
 
 The exception that is thrown by several System.Xaml.XamlObjectReader internal helper APIs. 
 
@@ -2020,7 +2020,7 @@ The exception that is thrown by several System.Xaml.XamlObjectReader internal he
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectReaderException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectReaderException)
 
-### System.Xaml.XamlObjectWriterException
+#### System.Xaml.XamlObjectWriterException
 
 The exception that is thrown when a XAML writer (such as the System.Xaml.XamlObjectWriter class) encounters an error while attempting to produce object graphs from a XAML node stream. 
 
@@ -2030,7 +2030,7 @@ The exception that is thrown when a XAML writer (such as the System.Xaml.XamlObj
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlObjectWriterException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlObjectWriterException)
 
-### System.Xaml.XamlParseException
+#### System.Xaml.XamlParseException
 
 The exception that is thrown when a XAML reader cannot process elements of the XAML reader source into a XAML node stream.
 
@@ -2040,7 +2040,7 @@ The exception that is thrown when a XAML reader cannot process elements of the X
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlParseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlParseException)
 
-### System.Xaml.XamlSchemaException
+#### System.Xaml.XamlSchemaException
 
 The exception that is thrown when a binding system or another schema representation system for XAML reports an exception to the schema context.
 
@@ -2050,7 +2050,7 @@ The exception that is thrown when a binding system or another schema representat
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xaml.XamlSchemaException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlSchemaException)
 
-### System.Xaml.XamlXmlWriterException
+#### System.Xaml.XamlXmlWriterException
 
 The exception that is thrown by certain System.Xaml.XamlXmlWriter APIs. 
 
@@ -2061,7 +2061,7 @@ The exception that is thrown by certain System.Xaml.XamlXmlWriter APIs.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xaml.XamlXmlWriterException)
 
 ## System.Xml
-### System.Xml.XmlException
+#### System.Xml.XmlException
 
 Returns detailed information about the last exception.
 
@@ -2072,7 +2072,7 @@ Returns detailed information about the last exception.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.XmlException)
 
 ## System.Activities.DynamicUpdate
-### System.Activities.DynamicUpdate.InstanceUpdateException
+#### System.Activities.DynamicUpdate.InstanceUpdateException
 
 Represents an instance update exception.
 
@@ -2083,18 +2083,18 @@ Represents an instance update exception.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.DynamicUpdate.InstanceUpdateException)
 
 ## System.Activities.ExpressionParser
-### System.Activities.ExpressionParser.SourceExpressionException
+#### System.Activities.ExpressionParser.SourceExpressionException
 
 Represents the exception that is thrown when a text-based expression cannot be converted into an executable form. 
 
-    throw [System.Activities.ExpressionParser.SourceExpressionException]::New("Represents a text-based expression cannot be converted into an executable form.")
+    throw [System.Activities.ExpressionParser.SourceExpressionException]::New("a text-based expression cannot be converted into an executable form.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Activities.ExpressionParser.SourceExpressionException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Activities.ExpressionParser.SourceExpressionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.ExpressionParser.SourceExpressionException)
 
 ## System.Activities.Expressions
-### System.Activities.Expressions.LambdaSerializationException
+#### System.Activities.Expressions.LambdaSerializationException
 
 The exception that is thrown when a XAML serialization attempt is made on a System.Activities.Expressions.LambdaValue`1 or System.Activities.Expressions.LambdaReference`1.
 
@@ -2105,7 +2105,7 @@ The exception that is thrown when a XAML serialization attempt is made on a Syst
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Expressions.LambdaSerializationException)
 
 ## System.Activities.Statements
-### System.Activities.Statements.WorkflowTerminatedException
+#### System.Activities.Statements.WorkflowTerminatedException
 
 The exception that is thrown when an operation is invoked on a terminated System.Activities.WorkflowApplication.
 
@@ -2116,7 +2116,7 @@ The exception that is thrown when an operation is invoked on a terminated System
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Statements.WorkflowTerminatedException)
 
 ## System.AddIn.Hosting
-### System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException
+#### System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException
 
 The exception that is thrown when a segment directory is missing from the pipeline directory structure.
 
@@ -2126,7 +2126,7 @@ The exception that is thrown when a segment directory is missing from the pipeli
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException)
 
-### System.AddIn.Hosting.InvalidPipelineStoreException
+#### System.AddIn.Hosting.InvalidPipelineStoreException
 
 The exception that is thrown when a directory is not found and the user does not have permission to access the pipeline root path or an add-in path.
 
@@ -2137,7 +2137,7 @@ The exception that is thrown when a directory is not found and the user does not
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.AddIn.Hosting.InvalidPipelineStoreException)
 
 ## System.Collections.Generic
-### System.Collections.Generic.KeyNotFoundException
+#### System.Collections.Generic.KeyNotFoundException
 
 The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
 
@@ -2148,7 +2148,7 @@ The exception that is thrown when the key specified for accessing an element in 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Collections.Generic.KeyNotFoundException)
 
 ## System.ComponentModel.Composition
-### System.ComponentModel.Composition.ChangeRejectedException
+#### System.ComponentModel.Composition.ChangeRejectedException
 
 An exception that indicates whether a part has been rejected during composition.
 
@@ -2158,7 +2158,7 @@ An exception that indicates whether a part has been rejected during composition.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.ChangeRejectedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ChangeRejectedException)
 
-### System.ComponentModel.Composition.CompositionContractMismatchException
+#### System.ComponentModel.Composition.CompositionContractMismatchException
 
 The exception that is thrown when the underlying exported value or metadata of a System.Lazy`1 or System.Lazy`2 object cannot be cast to T or TMetadataView, respectively.
 
@@ -2168,17 +2168,17 @@ The exception that is thrown when the underlying exported value or metadata of a
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionContractMismatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionContractMismatchException)
 
-### System.ComponentModel.Composition.CompositionException
+#### System.ComponentModel.Composition.CompositionException
 
 Represents the exception that is thrown when one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.
 
-    throw [System.ComponentModel.Composition.CompositionException]::New("Represents one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.")
+    throw [System.ComponentModel.Composition.CompositionException]::New("one or more errors occur during composition in a System.ComponentModel.Composition.Hosting.CompositionContainer object.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.Composition.CompositionException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ComponentModel.Composition.CompositionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.CompositionException)
 
-### System.ComponentModel.Composition.ImportCardinalityMismatchException
+#### System.ComponentModel.Composition.ImportCardinalityMismatchException
 
 The exception that is thrown when the cardinality of an import is not compatible with the cardinality of the matching exports.
 
@@ -2189,7 +2189,7 @@ The exception that is thrown when the cardinality of an import is not compatible
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.ImportCardinalityMismatchException)
 
 ## System.ComponentModel.DataAnnotations
-### System.ComponentModel.DataAnnotations.ValidationException
+#### System.ComponentModel.DataAnnotations.ValidationException
 
 Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. 
 
@@ -2200,7 +2200,7 @@ Represents the exception that occurs during validation of a data field when the 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.DataAnnotations.ValidationException)
 
 ## System.ComponentModel.Design
-### System.ComponentModel.Design.CheckoutException
+#### System.ComponentModel.Design.CheckoutException
 
 The exception that is thrown when an attempt to check out a file that is checked into a source code management program is canceled or fails.
 
@@ -2211,7 +2211,7 @@ The exception that is thrown when an attempt to check out a file that is checked
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.CheckoutException)
 
 ## System.Configuration.Install
-### System.Configuration.Install.InstallException
+#### System.Configuration.Install.InstallException
 
 The exception that is thrown when an error occurs during the commit, rollback, or uninstall phase of an installation.
 
@@ -2222,7 +2222,7 @@ The exception that is thrown when an error occurs during the commit, rollback, o
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Install.InstallException)
 
 ## System.Configuration.Provider
-### System.Configuration.Provider.ProviderException
+#### System.Configuration.Provider.ProviderException
 
 The exception that is thrown when a configuration provider error has occurred. This exception class is also used by providers to throw exceptions when internal errors occur within the provider that do not map to other pre-existing exception classes.
 
@@ -2233,7 +2233,7 @@ The exception that is thrown when a configuration provider error has occurred. T
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Configuration.Provider.ProviderException)
 
 ## System.Data.Common
-### System.Data.Common.DbException
+#### System.Data.Common.DbException
 
 The base class for all exceptions thrown on behalf of the data source.
 
@@ -2244,7 +2244,7 @@ The base class for all exceptions thrown on behalf of the data source.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Common.DbException)
 
 ## System.Data.Design
-### System.Data.Design.TypedDataSetGeneratorException
+#### System.Data.Design.TypedDataSetGeneratorException
 
 The exception that is thrown when a name conflict occurs while a strongly typed System.Data.DataSet is being generated.
 
@@ -2255,7 +2255,7 @@ The exception that is thrown when a name conflict occurs while a strongly typed 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Design.TypedDataSetGeneratorException)
 
 ## System.Data.Linq
-### System.Data.Linq.ChangeConflictException
+#### System.Data.Linq.ChangeConflictException
 
 Thrown when an update fails because database values have been updated since the client last read them.
 
@@ -2265,7 +2265,7 @@ Thrown when an update fails because database values have been updated since the 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Linq.ChangeConflictException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Linq.ChangeConflictException)
 
-### System.Data.Linq.DuplicateKeyException
+#### System.Data.Linq.DuplicateKeyException
 
 Thrown when an attempt is made to add an object to the identity cache by using a key that is already being used.
 
@@ -2275,7 +2275,7 @@ Thrown when an attempt is made to add an object to the identity cache by using a
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Linq.DuplicateKeyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Linq.DuplicateKeyException)
 
-### System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException
+#### System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException
 
 Represents errors that occur when an attempt is made to change a foreign key when the entity is already loaded.
 
@@ -2286,7 +2286,7 @@ Represents errors that occur when an attempt is made to change a foreign key whe
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException)
 
 ## System.Data.Odbc
-### System.Data.Odbc.OdbcException
+#### System.Data.Odbc.OdbcException
 
 The exception that is generated when a warning or error is returned by an ODBC data source. This class cannot be inherited.
 
@@ -2297,7 +2297,7 @@ The exception that is generated when a warning or error is returned by an ODBC d
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Odbc.OdbcException)
 
 ## System.Data.OleDb
-### System.Data.OleDb.OleDbException
+#### System.Data.OleDb.OleDbException
 
 The exception that is thrown when the underlying provider returns a warning or error for an OLE DB data source. This class cannot be inherited.
 
@@ -2308,7 +2308,7 @@ The exception that is thrown when the underlying provider returns a warning or e
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.OleDb.OleDbException)
 
 ## System.Data.OracleClient
-### System.Data.OracleClient.OracleException
+#### System.Data.OracleClient.OracleException
 
 The exception that is generated when a warning or error is returned by an Oracle database or the .NET Framework Data Provider for Oracle. This class cannot be inherited.
 
@@ -2319,7 +2319,7 @@ The exception that is generated when a warning or error is returned by an Oracle
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.OracleClient.OracleException)
 
 ## System.Data.Services
-### System.Data.Services.DataServiceException
+#### System.Data.Services.DataServiceException
 
 Represents an instance of the System.Data.Services.DataServiceException class with a specified message that describes the error. 
 
@@ -2330,7 +2330,7 @@ Represents an instance of the System.Data.Services.DataServiceException class wi
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.DataServiceException)
 
 ## System.Data.SqlClient
-### System.Data.SqlClient.SqlException
+#### System.Data.SqlClient.SqlException
 
 The exception that is thrown when SQL Server returns a warning or error. This class cannot be inherited.
 
@@ -2341,7 +2341,7 @@ The exception that is thrown when SQL Server returns a warning or error. This cl
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlClient.SqlException)
 
 ## System.Data.SqlTypes
-### System.Data.SqlTypes.SqlAlreadyFilledException
+#### System.Data.SqlTypes.SqlAlreadyFilledException
 
 The System.Data.SqlTypes.SqlAlreadyFilledException class is not intended for use as a stand-alone component, but as a class from which other classes derive standard functionality. 
 
@@ -2351,7 +2351,7 @@ The System.Data.SqlTypes.SqlAlreadyFilledException class is not intended for use
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.SqlTypes.SqlAlreadyFilledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlTypes.SqlAlreadyFilledException)
 
-### System.Data.SqlTypes.SqlNotFilledException
+#### System.Data.SqlTypes.SqlNotFilledException
 
 The System.Data.SqlTypes.SqlNotFilledException class is not intended for use as a stand-alone component, but as a class from which other classes derive standard functionality.
 
@@ -2361,7 +2361,7 @@ The System.Data.SqlTypes.SqlNotFilledException class is not intended for use as 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.SqlTypes.SqlNotFilledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlTypes.SqlNotFilledException)
 
-### System.Data.SqlTypes.SqlNullValueException
+#### System.Data.SqlTypes.SqlNullValueException
 
 The exception that is thrown when the Value property of a System.Data.SqlTypes structure is set to null.
 
@@ -2371,7 +2371,7 @@ The exception that is thrown when the Value property of a System.Data.SqlTypes s
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.SqlTypes.SqlNullValueException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlTypes.SqlNullValueException)
 
-### System.Data.SqlTypes.SqlTruncateException
+#### System.Data.SqlTypes.SqlTruncateException
 
 The exception that is thrown when you set a value into a System.Data.SqlTypes structure would truncate that value.
 
@@ -2381,7 +2381,7 @@ The exception that is thrown when you set a value into a System.Data.SqlTypes st
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.SqlTypes.SqlTruncateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlTypes.SqlTruncateException)
 
-### System.Data.SqlTypes.SqlTypeException
+#### System.Data.SqlTypes.SqlTypeException
 
 The base exception class for the System.Data.SqlTypes.
 
@@ -2392,7 +2392,7 @@ The base exception class for the System.Data.SqlTypes.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.SqlTypes.SqlTypeException)
 
 ## System.Deployment.Application
-### System.Deployment.Application.CompatibleFrameworkMissingException
+#### System.Deployment.Application.CompatibleFrameworkMissingException
 
 This exception is thrown when a version of the .NET Framework that is compatible with this application cannot be found.
 
@@ -2402,7 +2402,7 @@ This exception is thrown when a version of the .NET Framework that is compatible
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.CompatibleFrameworkMissingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.CompatibleFrameworkMissingException)
 
-### System.Deployment.Application.DependentPlatformMissingException
+#### System.Deployment.Application.DependentPlatformMissingException
 
 The exception that is thrown when the platform dependency is not found during activation of the ClickOnce deployment and the deployment will not run.
 
@@ -2412,7 +2412,7 @@ The exception that is thrown when the platform dependency is not found during ac
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.DependentPlatformMissingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.DependentPlatformMissingException)
 
-### System.Deployment.Application.DeploymentDownloadException
+#### System.Deployment.Application.DeploymentDownloadException
 
 Indicates that there was an error downloading either the ClickOnce manifests or the deployment's files to the client computer. 
 
@@ -2422,7 +2422,7 @@ Indicates that there was an error downloading either the ClickOnce manifests or 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.DeploymentDownloadException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.DeploymentDownloadException)
 
-### System.Deployment.Application.DeploymentException
+#### System.Deployment.Application.DeploymentException
 
 Defines a base class for all deployment-related exceptions.
 
@@ -2432,7 +2432,7 @@ Defines a base class for all deployment-related exceptions.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.DeploymentException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.DeploymentException)
 
-### System.Deployment.Application.InvalidDeploymentException
+#### System.Deployment.Application.InvalidDeploymentException
 
 Indicates that ClickOnce could not read either the deployment or application manifests.
 
@@ -2442,7 +2442,7 @@ Indicates that ClickOnce could not read either the deployment or application man
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.InvalidDeploymentException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.InvalidDeploymentException)
 
-### System.Deployment.Application.SupportedRuntimeMissingException
+#### System.Deployment.Application.SupportedRuntimeMissingException
 
 This exception is thrown when a runtime version that is compatible with this application cannot be found.
 
@@ -2452,7 +2452,7 @@ This exception is thrown when a runtime version that is compatible with this app
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Deployment.Application.SupportedRuntimeMissingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.SupportedRuntimeMissingException)
 
-### System.Deployment.Application.TrustNotGrantedException
+#### System.Deployment.Application.TrustNotGrantedException
 
 Indicates that the application does not have the appropriate level of trust to run on the local computer.
 
@@ -2463,7 +2463,7 @@ Indicates that the application does not have the appropriate level of trust to r
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Deployment.Application.TrustNotGrantedException)
 
 ## System.Diagnostics.Tracing
-### System.Diagnostics.Tracing.EventSourceException
+#### System.Diagnostics.Tracing.EventSourceException
 
 The exception that is thrown when an error occurs during event tracing for Windows (ETW).
 
@@ -2474,7 +2474,7 @@ The exception that is thrown when an error occurs during event tracing for Windo
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Tracing.EventSourceException)
 
 ## System.DirectoryServices.AccountManagement
-### System.DirectoryServices.AccountManagement.MultipleMatchesException
+#### System.DirectoryServices.AccountManagement.MultipleMatchesException
 
 This exception is thrown by methods that expect to match a single principal object when there are multiple matches to the search query.
 
@@ -2484,7 +2484,7 @@ This exception is thrown by methods that expect to match a single principal obje
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.MultipleMatchesException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.MultipleMatchesException)
 
-### System.DirectoryServices.AccountManagement.NoMatchingPrincipalException
+#### System.DirectoryServices.AccountManagement.NoMatchingPrincipalException
 
 This exception is thrown when no matching principal object could be found with the specified parameters.
 
@@ -2494,7 +2494,7 @@ This exception is thrown when no matching principal object could be found with t
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.NoMatchingPrincipalException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.NoMatchingPrincipalException)
 
-### System.DirectoryServices.AccountManagement.PasswordException
+#### System.DirectoryServices.AccountManagement.PasswordException
 
 This exception is thrown when a password does not meet complexity requirements.
 
@@ -2504,7 +2504,7 @@ This exception is thrown when a password does not meet complexity requirements.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.PasswordException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.PasswordException)
 
-### System.DirectoryServices.AccountManagement.PrincipalException
+#### System.DirectoryServices.AccountManagement.PrincipalException
 
 The base class of exceptions thrown by System.DirectoryServices.AccountManagement objects.
 
@@ -2514,7 +2514,7 @@ The base class of exceptions thrown by System.DirectoryServices.AccountManagemen
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.PrincipalException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.PrincipalException)
 
-### System.DirectoryServices.AccountManagement.PrincipalExistsException
+#### System.DirectoryServices.AccountManagement.PrincipalExistsException
 
 Thrown by System.DirectoryServices.AccountManagement.PrincipalCollection.Add when an attempt is made to insert a principal that already exists in the collection, or by System.DirectoryServices.AccountManagement.Principal.Save when an attempt is made to save a new principal that already exists in the store.
 
@@ -2524,7 +2524,7 @@ Thrown by System.DirectoryServices.AccountManagement.PrincipalCollection.Add whe
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.PrincipalExistsException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.PrincipalExistsException)
 
-### System.DirectoryServices.AccountManagement.PrincipalOperationException
+#### System.DirectoryServices.AccountManagement.PrincipalOperationException
 
 Thrown when ADSI returns an error during an operation to update the store.
 
@@ -2534,7 +2534,7 @@ Thrown when ADSI returns an error during an operation to update the store.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.AccountManagement.PrincipalOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.PrincipalOperationException)
 
-### System.DirectoryServices.AccountManagement.PrincipalServerDownException
+#### System.DirectoryServices.AccountManagement.PrincipalServerDownException
 
 This exception is thrown when the API is unable to connect to the server.
 
@@ -2545,7 +2545,7 @@ This exception is thrown when the API is unable to connect to the server.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.AccountManagement.PrincipalServerDownException)
 
 ## System.DirectoryServices.ActiveDirectory
-### System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException
+#### System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException
 
 The System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException class exception is thrown when an Active Directory Domain Services object is created and that object already exists in the underlying directory store.
 
@@ -2555,7 +2555,7 @@ The System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsExceptio
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException)
 
-### System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException
+#### System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException
 
 The System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException class exception is thrown when a requested object is not found in the underlying directory store.
 
@@ -2565,7 +2565,7 @@ The System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundExcept
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException)
 
-### System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException
+#### System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException
 
 The System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException class exception is thrown when an underlying directory operation fails.
 
@@ -2575,7 +2575,7 @@ The System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException)
 
-### System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException
+#### System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException
 
 The System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException class exception is thrown when a server is unavailable to respond to a service request.
 
@@ -2585,7 +2585,7 @@ The System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException)
 
-### System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException
+#### System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException
 
 The System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException class exception is thrown when a trust collision occurs during a trust relationship management request.
 
@@ -2595,7 +2595,7 @@ The System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException class
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException)
 
-### System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException
+#### System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException
 
 The System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException exception is thrown when the request to synchronize from all servers fails. 
 
@@ -2606,7 +2606,7 @@ The System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationExceptio
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException)
 
 ## System.DirectoryServices.Protocols
-### System.DirectoryServices.Protocols.BerConversionException
+#### System.DirectoryServices.Protocols.BerConversionException
 
 The System.DirectoryServices.Protocols.BerConversionException class is an exception thrown when converting data using a System.DirectoryServices.Protocols.BerConverter object.          
 
@@ -2616,7 +2616,7 @@ The System.DirectoryServices.Protocols.BerConversionException class is an except
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.BerConversionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.BerConversionException)
 
-### System.DirectoryServices.Protocols.DirectoryException
+#### System.DirectoryServices.Protocols.DirectoryException
 
 The System.DirectoryServices.Protocols.DirectoryException class is an abstract class used as the base class for all System.DirectoryServices.Protocols exceptions.
 
@@ -2626,7 +2626,7 @@ The System.DirectoryServices.Protocols.DirectoryException class is an abstract c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.DirectoryException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.DirectoryException)
 
-### System.DirectoryServices.Protocols.DirectoryOperationException
+#### System.DirectoryServices.Protocols.DirectoryOperationException
 
 The System.DirectoryServices.Protocols.DirectoryOperationException class is an exception thrown by the System.DirectoryServices.Protocols.LdapConnection.SendRequest(System.DirectoryServices.Protocols.DirectoryRequest) method to indicate that the server returned a System.DirectoryServices.Protocols.DirectoryResponse object with an error.
 
@@ -2636,7 +2636,7 @@ The System.DirectoryServices.Protocols.DirectoryOperationException class is an e
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.DirectoryOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.DirectoryOperationException)
 
-### System.DirectoryServices.Protocols.DsmlInvalidDocumentException
+#### System.DirectoryServices.Protocols.DsmlInvalidDocumentException
 
 The System.DirectoryServices.Protocols.DsmlInvalidDocumentException class is an exception that occurs when a DSML Request or Response document is not well-formed XML or cannot be validated with DSMLv2 schema.
 
@@ -2646,7 +2646,7 @@ The System.DirectoryServices.Protocols.DsmlInvalidDocumentException class is an 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.DsmlInvalidDocumentException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.DsmlInvalidDocumentException)
 
-### System.DirectoryServices.Protocols.ErrorResponseException
+#### System.DirectoryServices.Protocols.ErrorResponseException
 
 The System.DirectoryServices.Protocols.ErrorResponseException class is an exception that occurs when the server returns an &lt;errorResponse&gt;.
 
@@ -2656,7 +2656,7 @@ The System.DirectoryServices.Protocols.ErrorResponseException class is an except
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.ErrorResponseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.ErrorResponseException)
 
-### System.DirectoryServices.Protocols.LdapException
+#### System.DirectoryServices.Protocols.LdapException
 
 The System.DirectoryServices.Protocols.LdapException class is an exception that occurs when LDAP returns an error code not included in System.DirectoryServices.Protocols.ResultCode.
 
@@ -2666,7 +2666,7 @@ The System.DirectoryServices.Protocols.LdapException class is an exception that 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.DirectoryServices.Protocols.LdapException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.LdapException)
 
-### System.DirectoryServices.Protocols.TlsOperationException
+#### System.DirectoryServices.Protocols.TlsOperationException
 
 The System.DirectoryServices.Protocols.TlsOperationException class is an exception that occurs in the System.DirectoryServices.Protocols.LdapSessionOptions.StartTransportLayerSecurity(System.DirectoryServices.Protocols.DirectoryControlCollection) method if the request fails.
 
@@ -2677,18 +2677,18 @@ The System.DirectoryServices.Protocols.TlsOperationException class is an excepti
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.DirectoryServices.Protocols.TlsOperationException)
 
 ## System.Drawing.Printing
-### System.Drawing.Printing.InvalidPrinterException
+#### System.Drawing.Printing.InvalidPrinterException
 
 Represents the exception that is thrown when you try to access a printer using printer settings that are not valid.
 
-    throw [System.Drawing.Printing.InvalidPrinterException]::New("Represents you try to access a printer using printer settings that are not valid.")
+    throw [System.Drawing.Printing.InvalidPrinterException]::New("you try to access a printer using printer settings that are not valid.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Drawing.Printing.InvalidPrinterException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Drawing.Printing.InvalidPrinterException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Drawing.Printing.InvalidPrinterException)
 
 ## System.IdentityModel.Metadata
-### System.IdentityModel.Metadata.MetadataSerializationException
+#### System.IdentityModel.Metadata.MetadataSerializationException
 
 The exception that is thrown when an error occurs while serializing or deserializing SAML metadata.
 
@@ -2699,7 +2699,7 @@ The exception that is thrown when an error occurs while serializing or deseriali
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Metadata.MetadataSerializationException)
 
 ## System.IdentityModel.Selectors
-### System.IdentityModel.Selectors.CardSpaceException
+#### System.IdentityModel.Selectors.CardSpaceException
 
 The exception that is thrown when one or more exceptions have occurred at the CardSpace service level. The cause of the error will be logged in the event log.
 
@@ -2709,7 +2709,7 @@ The exception that is thrown when one or more exceptions have occurred at the Ca
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.CardSpaceException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.CardSpaceException)
 
-### System.IdentityModel.Selectors.IdentityValidationException
+#### System.IdentityModel.Selectors.IdentityValidationException
 
 Exception class to indicate that the recipient certificate was not valid.
 
@@ -2719,7 +2719,7 @@ Exception class to indicate that the recipient certificate was not valid.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.IdentityValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.IdentityValidationException)
 
-### System.IdentityModel.Selectors.PolicyValidationException
+#### System.IdentityModel.Selectors.PolicyValidationException
 
 Exception class to indicate that the policy supplied by the recipient could not be validated.
 
@@ -2729,7 +2729,7 @@ Exception class to indicate that the policy supplied by the recipient could not 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.PolicyValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.PolicyValidationException)
 
-### System.IdentityModel.Selectors.ServiceBusyException
+#### System.IdentityModel.Selectors.ServiceBusyException
 
 Exception class to indicate that the CardSpace service is busy processing other requests.
 
@@ -2739,7 +2739,7 @@ Exception class to indicate that the CardSpace service is busy processing other 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.ServiceBusyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.ServiceBusyException)
 
-### System.IdentityModel.Selectors.ServiceNotStartedException
+#### System.IdentityModel.Selectors.ServiceNotStartedException
 
 The exception that is thrown when CardSpace has not been started on the user's computer.
 
@@ -2749,7 +2749,7 @@ The exception that is thrown when CardSpace has not been started on the user's c
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.ServiceNotStartedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.ServiceNotStartedException)
 
-### System.IdentityModel.Selectors.StsCommunicationException
+#### System.IdentityModel.Selectors.StsCommunicationException
 
 The exception that is thrown when there is a problem communicating with the security token service.
 
@@ -2759,7 +2759,7 @@ The exception that is thrown when there is a problem communicating with the secu
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.StsCommunicationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.StsCommunicationException)
 
-### System.IdentityModel.Selectors.UnsupportedPolicyOptionsException
+#### System.IdentityModel.Selectors.UnsupportedPolicyOptionsException
 
 Indicates that a policy was provided to the system that included options that were unsupported.
 
@@ -2769,7 +2769,7 @@ Indicates that a policy was provided to the system that included options that we
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.UnsupportedPolicyOptionsException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.UnsupportedPolicyOptionsException)
 
-### System.IdentityModel.Selectors.UntrustedRecipientException
+#### System.IdentityModel.Selectors.UntrustedRecipientException
 
 The exception that is thrown when the user decides not to trust the entity that is requesting a token after reviewing the information from their certificate.
 
@@ -2779,7 +2779,7 @@ The exception that is thrown when the user decides not to trust the entity that 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Selectors.UntrustedRecipientException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.UntrustedRecipientException)
 
-### System.IdentityModel.Selectors.UserCancellationException
+#### System.IdentityModel.Selectors.UserCancellationException
 
 The exception that is thrown when the user cancels an operation during the System.IdentityModel.Selectors.CardSpaceSelector.GetToken(System.IdentityModel.Selectors.CardSpacePolicyElement[],System.IdentityModel.Selectors.SecurityTokenSerializer) call.
 
@@ -2790,7 +2790,7 @@ The exception that is thrown when the user cancels an operation during the Syste
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Selectors.UserCancellationException)
 
 ## System.IdentityModel.Services
-### System.IdentityModel.Services.AsynchronousOperationException
+#### System.IdentityModel.Services.AsynchronousOperationException
 
 The exception that is thrown when an error occurs during an asynchronous operation.
 
@@ -2800,7 +2800,7 @@ The exception that is thrown when an error occurs during an asynchronous operati
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Services.AsynchronousOperationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Services.AsynchronousOperationException)
 
-### System.IdentityModel.Services.FederatedAuthenticationSessionEndingException
+#### System.IdentityModel.Services.FederatedAuthenticationSessionEndingException
 
 Indicates that the sign-in session should being terminated, and the current request is unauthenticated.
 
@@ -2810,7 +2810,7 @@ Indicates that the sign-in session should being terminated, and the current requ
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Services.FederatedAuthenticationSessionEndingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Services.FederatedAuthenticationSessionEndingException)
 
-### System.IdentityModel.Services.FederatedSessionExpiredException
+#### System.IdentityModel.Services.FederatedSessionExpiredException
 
 The exception that is thrown when a session has expired.
 
@@ -2820,7 +2820,7 @@ The exception that is thrown when a session has expired.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Services.FederatedSessionExpiredException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Services.FederatedSessionExpiredException)
 
-### System.IdentityModel.Services.FederationException
+#### System.IdentityModel.Services.FederationException
 
 Base class for exceptions raised in WS-Federation support.
 
@@ -2830,7 +2830,7 @@ Base class for exceptions raised in WS-Federation support.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Services.FederationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Services.FederationException)
 
-### System.IdentityModel.Services.WSFederationMessageException
+#### System.IdentityModel.Services.WSFederationMessageException
 
 The exception that is thrown when an error occurs while serializing or deserializing a WS-Federation message.
 
@@ -2841,7 +2841,7 @@ The exception that is thrown when an error occurs while serializing or deseriali
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Services.WSFederationMessageException)
 
 ## System.IdentityModel.Tokens
-### System.IdentityModel.Tokens.AudienceUriValidationFailedException
+#### System.IdentityModel.Tokens.AudienceUriValidationFailedException
 
 The exception that is thrown when an incoming security token fails Audience URI validation.
 
@@ -2851,7 +2851,7 @@ The exception that is thrown when an incoming security token fails Audience URI 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.AudienceUriValidationFailedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.AudienceUriValidationFailedException)
 
-### System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException
+#### System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException
 
 The exception that is thrown when an error occurs while processing an encrypted security token.
 
@@ -2861,7 +2861,7 @@ The exception that is thrown when an error occurs while processing an encrypted 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException)
 
-### System.IdentityModel.Tokens.SecurityTokenException
+#### System.IdentityModel.Tokens.SecurityTokenException
 
 The exception that is thrown when a problem occurs while processing a security token.
 
@@ -2871,7 +2871,7 @@ The exception that is thrown when a problem occurs while processing a security t
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.SecurityTokenException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenException)
 
-### System.IdentityModel.Tokens.SecurityTokenExpiredException
+#### System.IdentityModel.Tokens.SecurityTokenExpiredException
 
 The exception that is thrown when a security token that has an expiration time in the past is received.
 
@@ -2881,7 +2881,7 @@ The exception that is thrown when a security token that has an expiration time i
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.SecurityTokenExpiredException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenExpiredException)
 
-### System.IdentityModel.Tokens.SecurityTokenNotYetValidException
+#### System.IdentityModel.Tokens.SecurityTokenNotYetValidException
 
 The exception that is thrown when a security token that has an effective time in the future is received.
 
@@ -2891,7 +2891,7 @@ The exception that is thrown when a security token that has an effective time in
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.SecurityTokenNotYetValidException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenNotYetValidException)
 
-### System.IdentityModel.Tokens.SecurityTokenReplayDetectedException
+#### System.IdentityModel.Tokens.SecurityTokenReplayDetectedException
 
 The exception that is thrown when a security token that has been replayed is received.
 
@@ -2901,7 +2901,7 @@ The exception that is thrown when a security token that has been replayed is rec
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Tokens.SecurityTokenReplayDetectedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenReplayDetectedException)
 
-### System.IdentityModel.Tokens.SecurityTokenValidationException
+#### System.IdentityModel.Tokens.SecurityTokenValidationException
 
 The exception that is thrown when a received security token is invalid. 
 
@@ -2912,7 +2912,7 @@ The exception that is thrown when a received security token is invalid.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Tokens.SecurityTokenValidationException)
 
 ## System.IO.IsolatedStorage
-### System.IO.IsolatedStorage.IsolatedStorageException
+#### System.IO.IsolatedStorage.IsolatedStorageException
 
 The exception that is thrown when an operation in isolated storage fails.
 
@@ -2923,28 +2923,28 @@ The exception that is thrown when an operation in isolated storage fails.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.IsolatedStorage.IsolatedStorageException)
 
 ## System.IO.Log
-### System.IO.Log.ReservationNotFoundException
+#### System.IO.Log.ReservationNotFoundException
 
 Represents the exception that is thrown when a specific space reservation in a System.IO.Log.LogRecordSequence is not found.
 
-    throw [System.IO.Log.ReservationNotFoundException]::New("Represents a specific space reservation in a System.IO.Log.LogRecordSequence is not found.")
+    throw [System.IO.Log.ReservationNotFoundException]::New("a specific space reservation in a System.IO.Log.LogRecordSequence is not found.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.Log.ReservationNotFoundException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.Log.ReservationNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.Log.ReservationNotFoundException)
 
-### System.IO.Log.SequenceFullException
+#### System.IO.Log.SequenceFullException
 
 Represents the exception that is thrown when a sequence of log records is full.
 
-    throw [System.IO.Log.SequenceFullException]::New("Represents a sequence of log records is full.")
+    throw [System.IO.Log.SequenceFullException]::New("a sequence of log records is full.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.IO.Log.SequenceFullException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IO.Log.SequenceFullException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IO.Log.SequenceFullException)
 
 ## System.Management.Instrumentation
-### System.Management.Instrumentation.InstanceNotFoundException
+#### System.Management.Instrumentation.InstanceNotFoundException
 
 The exception thrown to indicate that no instances are returned by a provider.
 
@@ -2954,7 +2954,7 @@ The exception thrown to indicate that no instances are returned by a provider.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Instrumentation.InstanceNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Instrumentation.InstanceNotFoundException)
 
-### System.Management.Instrumentation.InstrumentationBaseException
+#### System.Management.Instrumentation.InstrumentationBaseException
 
 Represents the base provider-related exception.
 
@@ -2964,7 +2964,7 @@ Represents the base provider-related exception.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Instrumentation.InstrumentationBaseException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Instrumentation.InstrumentationBaseException)
 
-### System.Management.Instrumentation.InstrumentationException
+#### System.Management.Instrumentation.InstrumentationException
 
 Represents a provider-related exception.
 
@@ -2974,7 +2974,7 @@ Represents a provider-related exception.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Management.Instrumentation.InstrumentationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Instrumentation.InstrumentationException)
 
-### System.Management.Instrumentation.WmiProviderInstallationException
+#### System.Management.Instrumentation.WmiProviderInstallationException
 
 Represents an exception to throw when WMI provider installation fails.
 
@@ -2985,7 +2985,7 @@ Represents an exception to throw when WMI provider installation fails.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Management.Instrumentation.WmiProviderInstallationException)
 
 ## System.Net.Http
-### System.Net.Http.HttpRequestException
+#### System.Net.Http.HttpRequestException
 
 A base class for exceptions thrown by the System.Net.Http.HttpClient and System.Net.Http.HttpMessageHandler classes.
 
@@ -2996,27 +2996,27 @@ A base class for exceptions thrown by the System.Net.Http.HttpClient and System.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.Http.HttpRequestException)
 
 ## System.Net.Mail
-### System.Net.Mail.SmtpException
+#### System.Net.Mail.SmtpException
 
 Represents the exception that is thrown when the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation.
 
-    throw [System.Net.Mail.SmtpException]::New("Represents the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation.")
+    throw [System.Net.Mail.SmtpException]::New("the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.Mail.SmtpException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.Mail.SmtpException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.Mail.SmtpException)
 
-### System.Net.Mail.SmtpFailedRecipientException
+#### System.Net.Mail.SmtpFailedRecipientException
 
 Represents the exception that is thrown when the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation to a particular recipient.
 
-    throw [System.Net.Mail.SmtpFailedRecipientException]::New("Represents the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation to a particular recipient.")
+    throw [System.Net.Mail.SmtpFailedRecipientException]::New("the System.Net.Mail.SmtpClient is not able to complete a System.Net.Mail.SmtpClient.Send or System.Net.Mail.SmtpClient.SendAsync operation to a particular recipient.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Net.Mail.SmtpFailedRecipientException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.Mail.SmtpFailedRecipientException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.Mail.SmtpFailedRecipientException)
 
-### System.Net.Mail.SmtpFailedRecipientsException
+#### System.Net.Mail.SmtpFailedRecipientsException
 
 The exception that is thrown when e-mail is sent using an System.Net.Mail.SmtpClient and cannot be delivered to all recipients.
 
@@ -3027,7 +3027,7 @@ The exception that is thrown when e-mail is sent using an System.Net.Mail.SmtpCl
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.Mail.SmtpFailedRecipientsException)
 
 ## System.Net.NetworkInformation
-### System.Net.NetworkInformation.NetworkInformationException
+#### System.Net.NetworkInformation.NetworkInformationException
 
 The exception that is thrown when an error occurs while retrieving network information.
 
@@ -3037,7 +3037,7 @@ The exception that is thrown when an error occurs while retrieving network infor
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Net.NetworkInformation.NetworkInformationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.NetworkInformation.NetworkInformationException)
 
-### System.Net.NetworkInformation.PingException
+#### System.Net.NetworkInformation.PingException
 
 The exception that is thrown when a System.Net.NetworkInformation.Ping.Send or System.Net.NetworkInformation.Ping.SendAsync method calls a method that throws an exception.
 
@@ -3048,7 +3048,7 @@ The exception that is thrown when a System.Net.NetworkInformation.Ping.Send or S
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.NetworkInformation.PingException)
 
 ## System.Net.PeerToPeer
-### System.Net.PeerToPeer.PeerToPeerException
+#### System.Net.PeerToPeer.PeerToPeerException
 
 Represents the exceptions that are thrown when an error is raised by the Peer-to-Peer Infrastructure.
 
@@ -3059,7 +3059,7 @@ Represents the exceptions that are thrown when an error is raised by the Peer-to
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.PeerToPeer.PeerToPeerException)
 
 ## System.Net.Sockets
-### System.Net.Sockets.SocketException
+#### System.Net.Sockets.SocketException
 
 The exception that is thrown when a socket error occurs.
 
@@ -3070,7 +3070,7 @@ The exception that is thrown when a socket error occurs.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.Sockets.SocketException)
 
 ## System.Net.WebSockets
-### System.Net.WebSockets.WebSocketException
+#### System.Net.WebSockets.WebSocketException
 
 Represents an exception that occurred when performing an operation on a WebSocket connection.
 
@@ -3081,7 +3081,7 @@ Represents an exception that occurred when performing an operation on a WebSocke
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Net.WebSockets.WebSocketException)
 
 ## System.Runtime.CompilerServices
-### System.Runtime.CompilerServices.RuntimeWrappedException
+#### System.Runtime.CompilerServices.RuntimeWrappedException
 
 Wraps an exception that does not derive from the System.Exception class. This class cannot be inherited.
 
@@ -3092,7 +3092,7 @@ Wraps an exception that does not derive from the System.Exception class. This cl
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.CompilerServices.RuntimeWrappedException)
 
 ## System.Runtime.DurableInstancing
-### System.Runtime.DurableInstancing.InstanceCollisionException
+#### System.Runtime.DurableInstancing.InstanceCollisionException
 
 A persistence provider throws this exception when it expects an instance to be in an uninitialized state but the instance is not in that state. 
 
@@ -3102,7 +3102,7 @@ A persistence provider throws this exception when it expects an instance to be i
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceCollisionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceCollisionException)
 
-### System.Runtime.DurableInstancing.InstanceCompleteException
+#### System.Runtime.DurableInstancing.InstanceCompleteException
 
 A persistence provider throws this exception when it expects to find an instance in the initialized state, but finds the instance is in the completed state.
 
@@ -3112,7 +3112,7 @@ A persistence provider throws this exception when it expects to find an instance
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceCompleteException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceCompleteException)
 
-### System.Runtime.DurableInstancing.InstanceHandleConflictException
+#### System.Runtime.DurableInstancing.InstanceHandleConflictException
 
 A persistence provider throws this exception when it tries to acquire write access to an instance by binding an instance handle to an instance lock, when an instance handle with write access to that instance already exists. 
 
@@ -3122,7 +3122,7 @@ A persistence provider throws this exception when it tries to acquire write acce
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceHandleConflictException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceHandleConflictException)
 
-### System.Runtime.DurableInstancing.InstanceKeyCollisionException
+#### System.Runtime.DurableInstancing.InstanceKeyCollisionException
 
 A persistence provider throws this exception when it expects to find an instance key in the unassociated state, but finds the key in a different state.
 
@@ -3132,7 +3132,7 @@ A persistence provider throws this exception when it expects to find an instance
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceKeyCollisionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceKeyCollisionException)
 
-### System.Runtime.DurableInstancing.InstanceKeyCompleteException
+#### System.Runtime.DurableInstancing.InstanceKeyCompleteException
 
 A persistence provider throws this exception when it expects to find an instance key in the associated state but finds the key in the completed state.
 
@@ -3142,7 +3142,7 @@ A persistence provider throws this exception when it expects to find an instance
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceKeyCompleteException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceKeyCompleteException)
 
-### System.Runtime.DurableInstancing.InstanceKeyNotReadyException
+#### System.Runtime.DurableInstancing.InstanceKeyNotReadyException
 
 A persistence provider throws this exception when it expects to find an instance key in the associated state, but finds the key in the unassociated state.
 
@@ -3152,7 +3152,7 @@ A persistence provider throws this exception when it expects to find an instance
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceKeyNotReadyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceKeyNotReadyException)
 
-### System.Runtime.DurableInstancing.InstanceLockedException
+#### System.Runtime.DurableInstancing.InstanceLockedException
 
 A persistence provider throws this exception when it is unable to acquire a lock on an instance because the instance is already locked by another owner. 
 
@@ -3162,7 +3162,7 @@ A persistence provider throws this exception when it is unable to acquire a lock
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceLockedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceLockedException)
 
-### System.Runtime.DurableInstancing.InstanceLockLostException
+#### System.Runtime.DurableInstancing.InstanceLockLostException
 
 A persistence provider throws this exception when it cannot perform the command because the lock on the instance does not match the lock associated with the instance handle against which the command was executed. Either the owner or the version does not match.
 
@@ -3172,7 +3172,7 @@ A persistence provider throws this exception when it cannot perform the command 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceLockLostException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceLockLostException)
 
-### System.Runtime.DurableInstancing.InstanceNotReadyException
+#### System.Runtime.DurableInstancing.InstanceNotReadyException
 
 A persistence provider throws this exception when it expects to find an instance in an initialized state, but finds the instance in an uninitialized state.
 
@@ -3182,7 +3182,7 @@ A persistence provider throws this exception when it expects to find an instance
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceNotReadyException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceNotReadyException)
 
-### System.Runtime.DurableInstancing.InstanceOwnerException
+#### System.Runtime.DurableInstancing.InstanceOwnerException
 
 A persistence provider throws this exception when the instance owner bound to the instance handle has become invalid.
 
@@ -3192,7 +3192,7 @@ A persistence provider throws this exception when the instance owner bound to th
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstanceOwnerException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstanceOwnerException)
 
-### System.Runtime.DurableInstancing.InstancePersistenceCommandException
+#### System.Runtime.DurableInstancing.InstancePersistenceCommandException
 
 A persistence provider throws this exception when an error occurs while processing a persistence command. The persistence provider may also free the instance handle against which the command was executed if the error would extend to future uses of the instance handle.
 
@@ -3202,7 +3202,7 @@ A persistence provider throws this exception when an error occurs while processi
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.DurableInstancing.InstancePersistenceCommandException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstancePersistenceCommandException)
 
-### System.Runtime.DurableInstancing.InstancePersistenceException
+#### System.Runtime.DurableInstancing.InstancePersistenceException
 
 Base class for all the persistence related exception classes. The System.Runtime.DurableInstancing.InstanceOwnerException and the System.Runtime.DurableInstancing.InstancePersistenceCommandException are derived classes of this class. 
 
@@ -3213,7 +3213,7 @@ Base class for all the persistence related exception classes. The System.Runtime
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.DurableInstancing.InstancePersistenceException)
 
 ## System.Runtime.InteropServices
-### System.Runtime.InteropServices._Exception
+#### System.Runtime.InteropServices._Exception
 
 Exposes the public members of the System.Exception class to unmanaged code.
 
@@ -3223,7 +3223,7 @@ Exposes the public members of the System.Exception class to unmanaged code.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices._Exception.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices._Exception)
 
-### System.Runtime.InteropServices.COMException
+#### System.Runtime.InteropServices.COMException
 
 The exception that is thrown when an unrecognized HRESULT is returned from a COM method call.
 
@@ -3233,7 +3233,7 @@ The exception that is thrown when an unrecognized HRESULT is returned from a COM
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.COMException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.COMException)
 
-### System.Runtime.InteropServices.ExternalException
+#### System.Runtime.InteropServices.ExternalException
 
 The base exception type for all COM interop exceptions and structured exception handling (SEH) exceptions.
 
@@ -3243,7 +3243,7 @@ The base exception type for all COM interop exceptions and structured exception 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.ExternalException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.ExternalException)
 
-### System.Runtime.InteropServices.InvalidComObjectException
+#### System.Runtime.InteropServices.InvalidComObjectException
 
 The exception thrown when an invalid COM object is used.
 
@@ -3253,7 +3253,7 @@ The exception thrown when an invalid COM object is used.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidComObjectException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.InvalidComObjectException)
 
-### System.Runtime.InteropServices.InvalidOleVariantTypeException
+#### System.Runtime.InteropServices.InvalidOleVariantTypeException
 
 The exception thrown by the marshaler when it encounters an argument of a variant type that can not be marshaled to managed code.
 
@@ -3263,7 +3263,7 @@ The exception thrown by the marshaler when it encounters an argument of a varian
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.InvalidOleVariantTypeException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.InvalidOleVariantTypeException)
 
-### System.Runtime.InteropServices.MarshalDirectiveException
+#### System.Runtime.InteropServices.MarshalDirectiveException
 
 The exception that is thrown by the marshaler when it encounters a System.Runtime.InteropServices.MarshalAsAttribute it does not support.
 
@@ -3273,7 +3273,7 @@ The exception that is thrown by the marshaler when it encounters a System.Runtim
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.MarshalDirectiveException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.MarshalDirectiveException)
 
-### System.Runtime.InteropServices.SafeArrayRankMismatchException
+#### System.Runtime.InteropServices.SafeArrayRankMismatchException
 
 The exception thrown when the rank of an incoming SAFEARRAY does not match the rank specified in the managed signature.
 
@@ -3283,7 +3283,7 @@ The exception thrown when the rank of an incoming SAFEARRAY does not match the r
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayRankMismatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.SafeArrayRankMismatchException)
 
-### System.Runtime.InteropServices.SafeArrayTypeMismatchException
+#### System.Runtime.InteropServices.SafeArrayTypeMismatchException
 
 The exception thrown when the type of the incoming SAFEARRAY does not match the type specified in the managed signature.
 
@@ -3293,7 +3293,7 @@ The exception thrown when the type of the incoming SAFEARRAY does not match the 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SafeArrayTypeMismatchException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.SafeArrayTypeMismatchException)
 
-### System.Runtime.InteropServices.SEHException
+#### System.Runtime.InteropServices.SEHException
 
 Represents structured exception handling (SEH) errors. 
 
@@ -3304,7 +3304,7 @@ Represents structured exception handling (SEH) errors.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.InteropServices.SEHException)
 
 ## System.Runtime.Remoting
-### System.Runtime.Remoting.RemotingException
+#### System.Runtime.Remoting.RemotingException
 
 The exception that is thrown when something has gone wrong during remoting.
 
@@ -3314,7 +3314,7 @@ The exception that is thrown when something has gone wrong during remoting.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.RemotingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.RemotingException)
 
-### System.Runtime.Remoting.RemotingTimeoutException
+#### System.Runtime.Remoting.RemotingTimeoutException
 
 The exception that is thrown when the server or the client cannot be reached for a previously specified period of time.
 
@@ -3324,7 +3324,7 @@ The exception that is thrown when the server or the client cannot be reached for
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.RemotingTimeoutException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.RemotingTimeoutException)
 
-### System.Runtime.Remoting.ServerException
+#### System.Runtime.Remoting.ServerException
 
 The exception that is thrown to communicate errors to the client when the client connects to non-.NET Framework applications that cannot throw exceptions.
 
@@ -3335,7 +3335,7 @@ The exception that is thrown to communicate errors to the client when the client
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.ServerException)
 
 ## System.Runtime.Serialization
-### System.Runtime.Serialization.InvalidDataContractException
+#### System.Runtime.Serialization.InvalidDataContractException
 
 The exception that is thrown when the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization. 
 
@@ -3345,7 +3345,7 @@ The exception that is thrown when the System.Runtime.Serialization.DataContractS
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.InvalidDataContractException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Serialization.InvalidDataContractException)
 
-### System.Runtime.Serialization.SerializationException
+#### System.Runtime.Serialization.SerializationException
 
 The exception thrown when an error occurs during serialization or deserialization.
 
@@ -3356,7 +3356,7 @@ The exception thrown when an error occurs during serialization or deserializatio
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Serialization.SerializationException)
 
 ## System.Security.AccessControl
-### System.Security.AccessControl.PrivilegeNotHeldException
+#### System.Security.AccessControl.PrivilegeNotHeldException
 
 The exception that is thrown when a method in the System.Security.AccessControl namespace attempts to enable a privilege that it does not have.
 
@@ -3367,7 +3367,7 @@ The exception that is thrown when a method in the System.Security.AccessControl 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.AccessControl.PrivilegeNotHeldException)
 
 ## System.Security.Authentication
-### System.Security.Authentication.AuthenticationException
+#### System.Security.Authentication.AuthenticationException
 
 The exception that is thrown when authentication fails for an authentication stream.
 
@@ -3377,7 +3377,7 @@ The exception that is thrown when authentication fails for an authentication str
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.Authentication.AuthenticationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Authentication.AuthenticationException)
 
-### System.Security.Authentication.InvalidCredentialException
+#### System.Security.Authentication.InvalidCredentialException
 
 The exception that is thrown when authentication fails for an authentication stream and cannot be retried.
 
@@ -3388,7 +3388,7 @@ The exception that is thrown when authentication fails for an authentication str
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Authentication.InvalidCredentialException)
 
 ## System.Security.Cryptography
-### System.Security.Cryptography.CryptographicException
+#### System.Security.Cryptography.CryptographicException
 
 The exception that is thrown when an error occurs during a cryptographic operation.
 
@@ -3398,7 +3398,7 @@ The exception that is thrown when an error occurs during a cryptographic operati
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Security.Cryptography.CryptographicException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Cryptography.CryptographicException)
 
-### System.Security.Cryptography.CryptographicUnexpectedOperationException
+#### System.Security.Cryptography.CryptographicUnexpectedOperationException
 
 The exception that is thrown when an unexpected operation occurs during a cryptographic operation.
 
@@ -3409,7 +3409,7 @@ The exception that is thrown when an unexpected operation occurs during a crypto
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Cryptography.CryptographicUnexpectedOperationException)
 
 ## System.Security.Policy
-### System.Security.Policy.PolicyException
+#### System.Security.Policy.PolicyException
 
 The exception that is thrown when policy forbids code to run.
 
@@ -3420,7 +3420,7 @@ The exception that is thrown when policy forbids code to run.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Policy.PolicyException)
 
 ## System.Security.Principal
-### System.Security.Principal.IdentityNotMappedException
+#### System.Security.Principal.IdentityNotMappedException
 
 Represents an exception for a principal whose identity could not be mapped to a known identity.
 
@@ -3431,7 +3431,7 @@ Represents an exception for a principal whose identity could not be mapped to a 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.Principal.IdentityNotMappedException)
 
 ## System.Security.RightsManagement
-### System.Security.RightsManagement.RightsManagementException
+#### System.Security.RightsManagement.RightsManagementException
 
 Represents an error condition when a rights management operation cannot complete successfully.
 
@@ -3442,7 +3442,7 @@ Represents an error condition when a rights management operation cannot complete
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Security.RightsManagement.RightsManagementException)
 
 ## System.ServiceModel.Channels
-### System.ServiceModel.Channels.InvalidChannelBindingException
+#### System.ServiceModel.Channels.InvalidChannelBindingException
 
 The exception that is thrown when the binding specified is not consistent with the contract requirements for the service.
 
@@ -3452,7 +3452,7 @@ The exception that is thrown when the binding specified is not consistent with t
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Channels.InvalidChannelBindingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Channels.InvalidChannelBindingException)
 
-### System.ServiceModel.Channels.RedirectionException
+#### System.ServiceModel.Channels.RedirectionException
 
 Represents an error that occurs in redirection processing.
 
@@ -3462,7 +3462,7 @@ Represents an error that occurs in redirection processing.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Channels.RedirectionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Channels.RedirectionException)
 
-### System.ServiceModel.Channels.RetryException
+#### System.ServiceModel.Channels.RetryException
 
 Represents a retry exception that can be used by a messaging host such as System.ServiceModel.Activities,WorkflowServiceHost to communicate any cancellation of an attempted operation to the client.
 
@@ -3473,7 +3473,7 @@ Represents a retry exception that can be used by a messaging host such as System
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Channels.RetryException)
 
 ## System.ServiceModel.Dispatcher
-### System.ServiceModel.Dispatcher.FilterInvalidBodyAccessException
+#### System.ServiceModel.Dispatcher.FilterInvalidBodyAccessException
 
 The exception that is thrown when a filter or filter table attempts to access the body of an unbuffered message.
 
@@ -3483,7 +3483,7 @@ The exception that is thrown when a filter or filter table attempts to access th
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Dispatcher.FilterInvalidBodyAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.FilterInvalidBodyAccessException)
 
-### System.ServiceModel.Dispatcher.InvalidBodyAccessException
+#### System.ServiceModel.Dispatcher.InvalidBodyAccessException
 
 An abstract base class for the exceptions that are thrown if an attempt is made to access the body of a message when it is not allowed.
 
@@ -3493,7 +3493,7 @@ An abstract base class for the exceptions that are thrown if an attempt is made 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Dispatcher.InvalidBodyAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.InvalidBodyAccessException)
 
-### System.ServiceModel.Dispatcher.MessageFilterException
+#### System.ServiceModel.Dispatcher.MessageFilterException
 
 The base class for the exceptions that are thrown when the quota of nodes inspected by a filter is exceeded.
 
@@ -3503,7 +3503,7 @@ The base class for the exceptions that are thrown when the quota of nodes inspec
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Dispatcher.MessageFilterException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.MessageFilterException)
 
-### System.ServiceModel.Dispatcher.MultipleFilterMatchesException
+#### System.ServiceModel.Dispatcher.MultipleFilterMatchesException
 
 The exception that is thrown when multiple filters match, but only one was expected.
 
@@ -3513,7 +3513,7 @@ The exception that is thrown when multiple filters match, but only one was expec
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Dispatcher.MultipleFilterMatchesException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.MultipleFilterMatchesException)
 
-### System.ServiceModel.Dispatcher.NavigatorInvalidBodyAccessException
+#### System.ServiceModel.Dispatcher.NavigatorInvalidBodyAccessException
 
 The exception that is thrown when an System.Xml.XPath.XPathNavigator is directed to examine the body of an unbuffered message.
 
@@ -3523,7 +3523,7 @@ The exception that is thrown when an System.Xml.XPath.XPathNavigator is directed
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Dispatcher.NavigatorInvalidBodyAccessException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.NavigatorInvalidBodyAccessException)
 
-### System.ServiceModel.Dispatcher.XPathNavigatorException
+#### System.ServiceModel.Dispatcher.XPathNavigatorException
 
 The exception that is thrown when the quota of nodes allowed to be inspected by an XPathNavigator is exceeded.
 
@@ -3534,7 +3534,7 @@ The exception that is thrown when the quota of nodes allowed to be inspected by 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Dispatcher.XPathNavigatorException)
 
 ## System.ServiceModel.Persistence
-### System.ServiceModel.Persistence.InstanceLockException
+#### System.ServiceModel.Persistence.InstanceLockException
 
 This exception is intended for use by classes that inherit from System.ServiceModel.Persistence.LockingPersistenceProvider when the operation cannot be performed because of the state of the instance lock.
 
@@ -3544,7 +3544,7 @@ This exception is intended for use by classes that inherit from System.ServiceMo
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Persistence.InstanceLockException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Persistence.InstanceLockException)
 
-### System.ServiceModel.Persistence.InstanceNotFoundException
+#### System.ServiceModel.Persistence.InstanceNotFoundException
 
 The exception that is thrown under the following circumstances: an operation is performed on a durable service instance that has been marked for completion, or a persistence provider created by a System.ServiceModel.Persistence.SqlPersistenceProviderFactory attempts to lock, unlock, or otherwise process state data that is not found in the database.
 
@@ -3554,7 +3554,7 @@ The exception that is thrown under the following circumstances: an operation is 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Persistence.InstanceNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Persistence.InstanceNotFoundException)
 
-### System.ServiceModel.Persistence.PersistenceException
+#### System.ServiceModel.Persistence.PersistenceException
 
 This exception is thrown by a System.ServiceModel.Persistence.SqlPersistenceProviderFactory when general connectivity errors are encountered. 
 
@@ -3565,7 +3565,7 @@ This exception is thrown by a System.ServiceModel.Persistence.SqlPersistenceProv
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Persistence.PersistenceException)
 
 ## System.ServiceModel.Security
-### System.ServiceModel.Security.ExpiredSecurityTokenException
+#### System.ServiceModel.Security.ExpiredSecurityTokenException
 
 Exception thrown when a CardSpace security token expires.
 
@@ -3575,7 +3575,7 @@ Exception thrown when a CardSpace security token expires.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.ExpiredSecurityTokenException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Security.ExpiredSecurityTokenException)
 
-### System.ServiceModel.Security.MessageSecurityException
+#### System.ServiceModel.Security.MessageSecurityException
 
 Represents an exception that occurred when there is something wrong with the security applied on a message. 
 
@@ -3585,7 +3585,7 @@ Represents an exception that occurred when there is something wrong with the sec
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.MessageSecurityException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Security.MessageSecurityException)
 
-### System.ServiceModel.Security.SecurityAccessDeniedException
+#### System.ServiceModel.Security.SecurityAccessDeniedException
 
 Represents the security exception that is thrown when a security authorization request fails.
 
@@ -3595,7 +3595,7 @@ Represents the security exception that is thrown when a security authorization r
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.SecurityAccessDeniedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Security.SecurityAccessDeniedException)
 
-### System.ServiceModel.Security.SecurityNegotiationException
+#### System.ServiceModel.Security.SecurityNegotiationException
 
 Indicates that an error occurred while negotiating the security context for a message.
 
@@ -3606,7 +3606,7 @@ Indicates that an error occurred while negotiating the security context for a me
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Security.SecurityNegotiationException)
 
 ## System.ServiceModel.Web
-### System.ServiceModel.Web.WebFaultException
+#### System.ServiceModel.Web.WebFaultException
 
 Represents a fault that can have an associated HTTP status code. 
 
@@ -3617,7 +3617,7 @@ Represents a fault that can have an associated HTTP status code.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ServiceModel.Web.WebFaultException)
 
 ## System.Text.RegularExpressions
-### System.Text.RegularExpressions.RegexMatchTimeoutException
+#### System.Text.RegularExpressions.RegexMatchTimeoutException
 
 The exception that is thrown when the execution time of a regular expression pattern-matching method exceeds its time-out interval.
 
@@ -3628,7 +3628,7 @@ The exception that is thrown when the execution time of a regular expression pat
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Text.RegularExpressions.RegexMatchTimeoutException)
 
 ## System.Threading.Tasks
-### System.Threading.Tasks.TaskCanceledException
+#### System.Threading.Tasks.TaskCanceledException
 
 Represents an exception used to communicate task cancellation.
 
@@ -3638,7 +3638,7 @@ Represents an exception used to communicate task cancellation.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Threading.Tasks.TaskCanceledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.Tasks.TaskCanceledException)
 
-### System.Threading.Tasks.TaskSchedulerException
+#### System.Threading.Tasks.TaskSchedulerException
 
 Represents an exception used to communicate an invalid operation by a System.Threading.Tasks.TaskScheduler.
 
@@ -3649,7 +3649,7 @@ Represents an exception used to communicate an invalid operation by a System.Thr
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Threading.Tasks.TaskSchedulerException)
 
 ## System.Web.Caching
-### System.Web.Caching.DatabaseNotEnabledForNotificationException
+#### System.Web.Caching.DatabaseNotEnabledForNotificationException
 
 The exception that is thrown when a SQL Server database is not enabled to support dependencies associated with the System.Web.Caching.SqlCacheDependency class. This class cannot be inherited. 
 
@@ -3659,7 +3659,7 @@ The exception that is thrown when a SQL Server database is not enabled to suppor
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Caching.DatabaseNotEnabledForNotificationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Caching.DatabaseNotEnabledForNotificationException)
 
-### System.Web.Caching.TableNotEnabledForNotificationException
+#### System.Web.Caching.TableNotEnabledForNotificationException
 
 The exception that is thrown when a System.Web.Caching.SqlCacheDependency class is used against a database table that is not enabled for change notifications.
 
@@ -3670,7 +3670,7 @@ The exception that is thrown when a System.Web.Caching.SqlCacheDependency class 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Caching.TableNotEnabledForNotificationException)
 
 ## System.Web.DynamicData
-### System.Web.DynamicData.IDynamicValidatorException
+#### System.Web.DynamicData.IDynamicValidatorException
 
 Represents an interface implemented by Dynamic Data Exception classes.  
 
@@ -3681,7 +3681,7 @@ Represents an interface implemented by Dynamic Data Exception classes.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.DynamicData.IDynamicValidatorException)
 
 ## System.Web.Management
-### System.Web.Management.SqlExecutionException
+#### System.Web.Management.SqlExecutionException
 
 Defines a class for SQL execution exceptions in the System.Web.Management namespace.
 
@@ -3692,7 +3692,7 @@ Defines a class for SQL execution exceptions in the System.Web.Management namesp
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Management.SqlExecutionException)
 
 ## System.Web.Security
-### System.Web.Security.MembershipCreateUserException
+#### System.Web.Security.MembershipCreateUserException
 
 The exception that is thrown when a user is not successfully created by a membership provider.
 
@@ -3702,7 +3702,7 @@ The exception that is thrown when a user is not successfully created by a member
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Security.MembershipCreateUserException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Security.MembershipCreateUserException)
 
-### System.Web.Security.MembershipPasswordException
+#### System.Web.Security.MembershipPasswordException
 
 The exception that is thrown when a password cannot be retrieved from the password store.
 
@@ -3713,18 +3713,18 @@ The exception that is thrown when a password cannot be retrieved from the passwo
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Security.MembershipPasswordException)
 
 ## System.Web.UI
-### System.Web.UI.ViewStateException
+#### System.Web.UI.ViewStateException
 
 Represents the exception that is thrown when the view state cannot be loaded or validated. This class cannot be inherited.
 
-    throw [System.Web.UI.ViewStateException]::New("Represents the view state cannot be loaded or validated. This class cannot be inherited.")
+    throw [System.Web.UI.ViewStateException]::New("the view state cannot be loaded or validated. This class cannot be inherited.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.UI.ViewStateException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.ViewStateException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.ViewStateException)
 
 ## System.Windows.Automation
-### System.Windows.Automation.ElementNotAvailableException
+#### System.Windows.Automation.ElementNotAvailableException
 
 Contains information about the exception that is raised when an attempt is made to access an UI Automation element corresponding to a part of the user interface that is no longer available.
 
@@ -3734,7 +3734,7 @@ Contains information about the exception that is raised when an attempt is made 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Automation.ElementNotAvailableException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Automation.ElementNotAvailableException)
 
-### System.Windows.Automation.ElementNotEnabledException
+#### System.Windows.Automation.ElementNotEnabledException
 
 Contains information about the exception that is raised when an attempt is made to manipulate a control that is not enabled. 
 
@@ -3744,7 +3744,7 @@ Contains information about the exception that is raised when an attempt is made 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Automation.ElementNotEnabledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Automation.ElementNotEnabledException)
 
-### System.Windows.Automation.NoClickablePointException
+#### System.Windows.Automation.NoClickablePointException
 
 Contains information about the exception that is raised when System.Windows.Automation.AutomationElement.GetClickablePoint is called on a UI Automation element that has no clickable point.
 
@@ -3754,7 +3754,7 @@ Contains information about the exception that is raised when System.Windows.Auto
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Automation.NoClickablePointException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Automation.NoClickablePointException)
 
-### System.Windows.Automation.ProxyAssemblyNotLoadedException
+#### System.Windows.Automation.ProxyAssemblyNotLoadedException
 
 Contains information about an exception that is raised when there is a problem loading an assembly that contains client-side providers
 
@@ -3765,7 +3765,7 @@ Contains information about an exception that is raised when there is a problem l
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Automation.ProxyAssemblyNotLoadedException)
 
 ## System.Windows.Controls
-### System.Windows.Controls.PrintDialogException
+#### System.Windows.Controls.PrintDialogException
 
 The exception that is thrown when an error condition occurs during the opening, accessing, or using of a PrintDialog.
 
@@ -3776,7 +3776,7 @@ The exception that is thrown when an error condition occurs during the opening, 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Controls.PrintDialogException)
 
 ## System.Windows.Data
-### System.Windows.Data.ValueUnavailableException
+#### System.Windows.Data.ValueUnavailableException
 
 The exception that is thrown by the System.Windows.Data.BindingGroup.GetValue(System.Object,System.String) method when the value is not available.
 
@@ -3787,7 +3787,7 @@ The exception that is thrown by the System.Windows.Data.BindingGroup.GetValue(Sy
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Data.ValueUnavailableException)
 
 ## System.Windows.Markup
-### System.Windows.Markup.XamlParseException
+#### System.Windows.Markup.XamlParseException
 
 Represents the exception class for parser-specific exceptions from a WPF XAML parser. This exception is used in XAML API or WPF XAML parser operations from .NET Frameworká3.0 and .NET Frameworká3.5, or for specific use of the WPF XAML parser by calling System.Windows.Markup.XamlReader API. 
 
@@ -3798,7 +3798,7 @@ Represents the exception class for parser-specific exceptions from a WPF XAML pa
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Markup.XamlParseException)
 
 ## System.Windows.Media
-### System.Windows.Media.InvalidWmpVersionException
+#### System.Windows.Media.InvalidWmpVersionException
 
 The exception that is thrown when the installed Microsoft Windows Media Player version is not supported.á
 
@@ -3809,7 +3809,7 @@ The exception that is thrown when the installed Microsoft Windows Media Player v
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Media.InvalidWmpVersionException)
 
 ## System.Windows.Xps
-### System.Windows.Xps.XpsException
+#### System.Windows.Xps.XpsException
 
 Serves as the base class for exceptions that are thrown by the XML Paper Specification (XPS) packaging and serialization APIs.á
 
@@ -3819,7 +3819,7 @@ Serves as the base class for exceptions that are thrown by the XML Paper Specifi
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Xps.XpsException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Xps.XpsException)
 
-### System.Windows.Xps.XpsPackagingException
+#### System.Windows.Xps.XpsPackagingException
 
 The exception that is thrown when reading, writing to, registering, or accessing in some other way an System.Windows.Xps.Packaging.XpsDocument. 
 
@@ -3829,7 +3829,7 @@ The exception that is thrown when reading, writing to, registering, or accessing
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Xps.XpsPackagingException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Xps.XpsPackagingException)
 
-### System.Windows.Xps.XpsSerializationException
+#### System.Windows.Xps.XpsSerializationException
 
 The exception that is thrown for XML Paper Specification (XPS) document serialization errors.á
 
@@ -3839,7 +3839,7 @@ The exception that is thrown for XML Paper Specification (XPS) document serializ
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Windows.Xps.XpsSerializationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Xps.XpsSerializationException)
 
-### System.Windows.Xps.XpsWriterException
+#### System.Windows.Xps.XpsWriterException
 
 The exception that is thrown when a method of either an System.Windows.Xps.XpsDocumentWriter or a System.Windows.Xps.VisualsToXpsDocument object is called that is incompatible with the current state of the object. 
 
@@ -3850,7 +3850,7 @@ The exception that is thrown when a method of either an System.Windows.Xps.XpsDo
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Xps.XpsWriterException)
 
 ## System.Workflow.Activities
-### System.Workflow.Activities.EventDeliveryFailedException
+#### System.Workflow.Activities.EventDeliveryFailedException
 
 The exception that is thrown when an event that is raised from the host cannot be delivered to the workflow instance. Typically the event is raised from an System.Workflow.Activities.ExternalDataExchangeService on a workflow instance. This class cannot be inherited.
 
@@ -3860,7 +3860,7 @@ The exception that is thrown when an event that is raised from the host cannot b
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.EventDeliveryFailedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.EventDeliveryFailedException)
 
-### System.Workflow.Activities.WorkflowAuthorizationException
+#### System.Workflow.Activities.WorkflowAuthorizationException
 
 The exception that is thrown when role validation fails due to a specified identity that is not contained in the System.Workflow.Activities.WorkflowRoleCollection.
 
@@ -3871,7 +3871,7 @@ The exception that is thrown when role validation fails due to a specified ident
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.WorkflowAuthorizationException)
 
 ## System.Workflow.ComponentModel
-### System.Workflow.ComponentModel.WorkflowTerminatedException
+#### System.Workflow.ComponentModel.WorkflowTerminatedException
 
 Represents the System.Exception that is raised when a workflow is terminated. This class cannot be inherited.
 
@@ -3882,7 +3882,7 @@ Represents the System.Exception that is raised when a workflow is terminated. Th
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.WorkflowTerminatedException)
 
 ## System.Workflow.Runtime
-### System.Workflow.Runtime.WorkflowOwnershipException
+#### System.Workflow.Runtime.WorkflowOwnershipException
 
 The exception that is thrown when the workflow runtime engine attempts to load a workflow instance that is currently loaded by another workflow runtime engine instance. Additionally, this exception is thrown when the workflow runtime engine attempts to save a workflow after the ownership timeout that was specified while loading the workflow has expired. 
 
@@ -3893,7 +3893,7 @@ The exception that is thrown when the workflow runtime engine attempts to load a
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.WorkflowOwnershipException)
 
 ## System.Xml.Schema
-### System.Xml.Schema.XmlSchemaException
+#### System.Xml.Schema.XmlSchemaException
 
 Returns detailed information about the schema exception.
 
@@ -3903,7 +3903,7 @@ Returns detailed information about the schema exception.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.Schema.XmlSchemaException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Schema.XmlSchemaException)
 
-### System.Xml.Schema.XmlSchemaInferenceException
+#### System.Xml.Schema.XmlSchemaInferenceException
 
 Returns information about errors encountered by the System.Xml.Schema.XmlSchemaInference class while inferring a schema from an XML document.
 
@@ -3913,18 +3913,18 @@ Returns information about errors encountered by the System.Xml.Schema.XmlSchemaI
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.Schema.XmlSchemaInferenceException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Schema.XmlSchemaInferenceException)
 
-### System.Xml.Schema.XmlSchemaValidationException
+#### System.Xml.Schema.XmlSchemaValidationException
 
 Represents the exception thrown when XML Schema Definition Language (XSD) schema validation errors and warnings are encountered in an XML document being validated. 
 
-    throw [System.Xml.Schema.XmlSchemaValidationException]::New("Represents XML Schema Definition Language (XSD) schema validation errors and warnings are encountered in an XML document being validated.")
+    throw [System.Xml.Schema.XmlSchemaValidationException]::New("XML Schema Definition Language (XSD) schema validation errors and warnings are encountered in an XML document being validated.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.Schema.XmlSchemaValidationException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.Schema.XmlSchemaValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Schema.XmlSchemaValidationException)
 
 ## System.Xml.XPath
-### System.Xml.XPath.XPathException
+#### System.Xml.XPath.XPathException
 
 Provides the exception thrown when an error occurs while processing an XPath expression. 
 
@@ -3935,7 +3935,7 @@ Provides the exception thrown when an error occurs while processing an XPath exp
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.XPath.XPathException)
 
 ## System.Xml.Xsl
-### System.Xml.Xsl.XsltCompileException
+#### System.Xml.Xsl.XsltCompileException
 
 The exception that is thrown by the Load method when an error is found in the XSLT style sheet.
 
@@ -3945,7 +3945,7 @@ The exception that is thrown by the Load method when an error is found in the XS
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Xml.Xsl.XsltCompileException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Xsl.XsltCompileException)
 
-### System.Xml.Xsl.XsltException
+#### System.Xml.Xsl.XsltException
 
 The exception that is thrown when an error occurs while processing an XSLT transformation.
 
@@ -3956,7 +3956,7 @@ The exception that is thrown when an error occurs while processing an XSLT trans
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Xml.Xsl.XsltException)
 
 ## System.Activities.Presentation.Metadata
-### System.Activities.Presentation.Metadata.AttributeTableValidationException
+#### System.Activities.Presentation.Metadata.AttributeTableValidationException
 
 Provides the functionality to throw an exception from the System.Activities.Presentation.Metadata.AttributeTableBuilder.ValidateTable method if the metadata provided in the table does not match properties, methods, and events on real types. 
 
@@ -3967,7 +3967,7 @@ Provides the functionality to throw an exception from the System.Activities.Pres
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Activities.Presentation.Metadata.AttributeTableValidationException)
 
 ## System.ComponentModel.Composition.Primitives
-### System.ComponentModel.Composition.Primitives.ComposablePartException
+#### System.ComponentModel.Composition.Primitives.ComposablePartException
 
 The exception that is thrown when an error occurs when calling methods on a System.ComponentModel.Composition.Primitives.ComposablePart object.
 
@@ -3978,7 +3978,7 @@ The exception that is thrown when an error occurs when calling methods on a Syst
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Composition.Primitives.ComposablePartException)
 
 ## System.ComponentModel.Design.Serialization
-### System.ComponentModel.Design.Serialization.CodeDomSerializerException
+#### System.ComponentModel.Design.Serialization.CodeDomSerializerException
 
 The exception that is thrown when line number information is available for a serialization error.
 
@@ -3989,7 +3989,7 @@ The exception that is thrown when line number information is available for a ser
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.ComponentModel.Design.Serialization.CodeDomSerializerException)
 
 ## System.Data.Services.Client
-### System.Data.Services.Client.DataServiceClientException
+#### System.Data.Services.Client.DataServiceClientException
 
 Represents errors that occur during execution of WCF Data Services client applications.
 
@@ -3999,7 +3999,7 @@ Represents errors that occur during execution of WCF Data Services client applic
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceClientException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceClientException)
 
-### System.Data.Services.Client.DataServiceQueryException
+#### System.Data.Services.Client.DataServiceQueryException
 
 Exception that indicates an error occurred loading the property value from the data service. 
 
@@ -4009,7 +4009,7 @@ Exception that indicates an error occurred loading the property value from the d
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Data.Services.Client.DataServiceQueryException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceQueryException)
 
-### System.Data.Services.Client.DataServiceRequestException
+#### System.Data.Services.Client.DataServiceRequestException
 
 Represents the error thrown if the data service returns a response code less than 200 or greater than 299, or the top-level element in the response is <error>. This class cannot be inherited.
 
@@ -4020,7 +4020,7 @@ Represents the error thrown if the data service returns a response code less tha
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Data.Services.Client.DataServiceRequestException)
 
 ## System.Diagnostics.Eventing.Reader
-### System.Diagnostics.Eventing.Reader.EventLogException
+#### System.Diagnostics.Eventing.Reader.EventLogException
 
 Represents the base class for all the exceptions that are thrown when an error occurs while reading event log related information. 
 
@@ -4030,37 +4030,37 @@ Represents the base class for all the exceptions that are thrown when an error o
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogException)
 
-### System.Diagnostics.Eventing.Reader.EventLogInvalidDataException
+#### System.Diagnostics.Eventing.Reader.EventLogInvalidDataException
 
 Represents the exception thrown when an event provider publishes invalid data in an event.
 
-    throw [System.Diagnostics.Eventing.Reader.EventLogInvalidDataException]::New("Represents an event provider publishes invalid data in an event.")
+    throw [System.Diagnostics.Eventing.Reader.EventLogInvalidDataException]::New("an event provider publishes invalid data in an event.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogInvalidDataException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogInvalidDataException)
 
-### System.Diagnostics.Eventing.Reader.EventLogNotFoundException
+#### System.Diagnostics.Eventing.Reader.EventLogNotFoundException
 
 Represents the exception that is thrown when a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.
 
-    throw [System.Diagnostics.Eventing.Reader.EventLogNotFoundException]::New("Represents a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.")
+    throw [System.Diagnostics.Eventing.Reader.EventLogNotFoundException]::New("a requested event log (usually specified by the name of the event log or the path to the event log file) does not exist.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogNotFoundException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogNotFoundException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogNotFoundException)
 
-### System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException
+#### System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException
 
 Represents the exception that is thrown when a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.
 
-    throw [System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException]::New("Represents a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.")
+    throw [System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException]::New("a specified event provider name references a disabled event provider. A disabled event provider cannot publish events.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogProviderDisabledException)
 
-### System.Diagnostics.Eventing.Reader.EventLogReadingException
+#### System.Diagnostics.Eventing.Reader.EventLogReadingException
 
 Represents an exception that is thrown when an error occurred while reading, querying, or subscribing to the events in an event log. 
 
@@ -4071,7 +4071,7 @@ Represents an exception that is thrown when an error occurred while reading, que
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Diagnostics.Eventing.Reader.EventLogReadingException)
 
 ## System.IdentityModel.Protocols.WSTrust
-### System.IdentityModel.Protocols.WSTrust.InvalidRequestException
+#### System.IdentityModel.Protocols.WSTrust.InvalidRequestException
 
 The exception that is thrown when the request (RST) is invalid or malformed.
 
@@ -4081,7 +4081,7 @@ The exception that is thrown when the request (RST) is invalid or malformed.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.IdentityModel.Protocols.WSTrust.InvalidRequestException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.InvalidRequestException)
 
-### System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException
+#### System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException
 
 The exception that is thrown when an error occurs while serializing or deserializing a WS-Trust message.
 
@@ -4092,7 +4092,7 @@ The exception that is thrown when an error occurs while serializing or deseriali
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.IdentityModel.Protocols.WSTrust.WSTrustSerializationException)
 
 ## System.Runtime.Remoting.MetadataServices
-### System.Runtime.Remoting.MetadataServices.SUDSGeneratorException
+#### System.Runtime.Remoting.MetadataServices.SUDSGeneratorException
 
 The exception that is thrown if an error occurs during the generation of Web Services Description Language (WSDL).
 
@@ -4102,7 +4102,7 @@ The exception that is thrown if an error occurs during the generation of Web Ser
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Runtime.Remoting.MetadataServices.SUDSGeneratorException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSGeneratorException)
 
-### System.Runtime.Remoting.MetadataServices.SUDSParserException
+#### System.Runtime.Remoting.MetadataServices.SUDSParserException
 
 The exception that is thrown if an error occurs during parsing of the Web Services Description Language (WSDL).
 
@@ -4113,7 +4113,7 @@ The exception that is thrown if an error occurs during parsing of the Web Servic
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Runtime.Remoting.MetadataServices.SUDSParserException)
 
 ## System.Web.Query.Dynamic
-### System.Web.Query.Dynamic.ParseException
+#### System.Web.Query.Dynamic.ParseException
 
 Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource control parses values to create a query.
 
@@ -4124,17 +4124,17 @@ Represents errors that occur when a System.Web.UI.WebControls.LinqDataSource con
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Query.Dynamic.ParseException)
 
 ## System.Web.Services.Protocols
-### System.Web.Services.Protocols.SoapException
+#### System.Web.Services.Protocols.SoapException
 
 Represents the exception that is thrown when an XML Web service method is called over SOAP and an exception occurs.
 
-    throw [System.Web.Services.Protocols.SoapException]::New("Represents an XML Web service method is called over SOAP and an exception occurs.")
+    throw [System.Web.Services.Protocols.SoapException]::New("an XML Web service method is called over SOAP and an exception occurs.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Web.Services.Protocols.SoapException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.Services.Protocols.SoapException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapException)
 
-### System.Web.Services.Protocols.SoapHeaderException
+#### System.Web.Services.Protocols.SoapHeaderException
 
 The SOAP representation of a server error.
 
@@ -4145,7 +4145,7 @@ The SOAP representation of a server error.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.Services.Protocols.SoapHeaderException)
 
 ## System.Web.UI.WebControls
-### System.Web.UI.WebControls.EntityDataSourceValidationException
+#### System.Web.UI.WebControls.EntityDataSourceValidationException
 
 Represents errors that occur when validating properties of a dynamic data source.
 
@@ -4155,7 +4155,7 @@ Represents errors that occur when validating properties of a dynamic data source
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Web.UI.WebControls.EntityDataSourceValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.EntityDataSourceValidationException)
 
-### System.Web.UI.WebControls.LinqDataSourceValidationException
+#### System.Web.UI.WebControls.LinqDataSourceValidationException
 
 Describes an exception that occurred during validation of new or modified values before values are inserted, updated, or deleted by a System.Web.UI.WebControls.LinqDataSource control.
 
@@ -4166,7 +4166,7 @@ Describes an exception that occurred during validation of new or modified values
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Web.UI.WebControls.LinqDataSourceValidationException)
 
 ## System.Windows.Forms.AxHost
-### System.Windows.Forms.AxHost.InvalidActiveXStateException
+#### System.Windows.Forms.AxHost.InvalidActiveXStateException
 
 The exception that is thrown when the ActiveX control is referenced while in an invalid state.
 
@@ -4177,7 +4177,7 @@ The exception that is thrown when the ActiveX control is referenced while in an 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Forms.AxHost.InvalidActiveXStateException)
 
 ## System.Windows.Media.Animation
-### System.Windows.Media.Animation.AnimationException
+#### System.Windows.Media.Animation.AnimationException
 
 The exception that is thrown when an error occurs while animating a property.
 
@@ -4188,7 +4188,7 @@ The exception that is thrown when an error occurs while animating a property.
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Windows.Media.Animation.AnimationException)
 
 ## System.Workflow.Activities.Rules
-### System.Workflow.Activities.Rules.RuleEvaluationException
+#### System.Workflow.Activities.Rules.RuleEvaluationException
 
 Represents the base class for all exceptions caused by rule evaluation issues.
 
@@ -4198,7 +4198,7 @@ Represents the base class for all exceptions caused by rule evaluation issues.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationException)
 
-### System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException
+#### System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException
 
 The exception that is thrown when attempting to apply an operator to incompatible operands when you evaluate a rule.
 
@@ -4208,7 +4208,7 @@ The exception that is thrown when attempting to apply an operator to incompatibl
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException)
 
-### System.Workflow.Activities.Rules.RuleException
+#### System.Workflow.Activities.Rules.RuleException
 
 Represents the base class for all exceptions caused by evaluation or validation of rules.
 
@@ -4218,18 +4218,18 @@ Represents the base class for all exceptions caused by evaluation or validation 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleException)
 
-### System.Workflow.Activities.Rules.RuleSetValidationException
+#### System.Workflow.Activities.Rules.RuleSetValidationException
 
 Represents the exception thrown when processing cannot continue because a rule set cannot be validated.
 
-    throw [System.Workflow.Activities.Rules.RuleSetValidationException]::New("Represents processing cannot continue because a rule set cannot be validated.")
+    throw [System.Workflow.Activities.Rules.RuleSetValidationException]::New("processing cannot continue because a rule set cannot be validated.")
 
 * [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/System.Workflow.Activities.Rules.RuleSetValidationException)
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/System.Workflow.Activities.Rules.RuleSetValidationException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Activities.Rules.RuleSetValidationException)
 
 ## System.Workflow.ComponentModel.Compiler
-### System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException
+#### System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException
 
 Represents an System.Exception that occurs when a workflow does not pass validation. This class cannot be inherited.
 
@@ -4240,7 +4240,7 @@ Represents an System.Exception that occurs when a workflow does not pass validat
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException)
 
 ## System.Workflow.ComponentModel.Serialization
-### System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException
+#### System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException
 
 The exception that is thrown by methods that perform serialization and deserialization. 
 
@@ -4251,7 +4251,7 @@ The exception that is thrown by methods that perform serialization and deseriali
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationException)
 
 ## System.Workflow.Runtime.Hosting
-### System.Workflow.Runtime.Hosting.PersistenceException
+#### System.Workflow.Runtime.Hosting.PersistenceException
 
 The exception that is thrown when the persistence service cannot fulfill a request. 
 
@@ -4262,7 +4262,7 @@ The exception that is thrown when the persistence service cannot fulfill a reque
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Hosting.PersistenceException)
 
 ## System.Workflow.Runtime.Tracking
-### System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException
+#### System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException
 
 The exception that is thrown when an XML document cannot be deserialized into a System.Workflow.Runtime.Tracking.TrackingProfile by a System.Workflow.Runtime.Tracking.TrackingProfileSerializer.
 
@@ -4273,7 +4273,7 @@ The exception that is thrown when an XML document cannot be deserialized into a 
 * [stackoverflow.com](http://stackoverflow.com/search?q=System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException)
 
 ## Microsoft.JScript
-### Microsoft.JScript.CmdLineException
+#### Microsoft.JScript.CmdLineException
 
 Represents errors that occur when you run the command-line compiler jsc.exe. 
 
@@ -4283,7 +4283,7 @@ Represents errors that occur when you run the command-line compiler jsc.exe.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.CmdLineException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.CmdLineException)
 
-### Microsoft.JScript.JScriptException
+#### Microsoft.JScript.JScriptException
 
 The exception that is thrown by JScript to notify a common language runtime (CLR) host or program that an error occurred. A Microsoft.JScript.JScriptException usually takes a Microsoft.JScript.JSError enumeration value. 
 
@@ -4293,7 +4293,7 @@ The exception that is thrown by JScript to notify a common language runtime (CLR
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.JScriptException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.JScriptException)
 
-### Microsoft.JScript.NoContextException
+#### Microsoft.JScript.NoContextException
 
 The exception that is thrown when there is no code Microsoft.JScript.Context associated with a Microsoft.JScript.JScriptException.
 
@@ -4303,7 +4303,7 @@ The exception that is thrown when there is no code Microsoft.JScript.Context ass
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.JScript.NoContextException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.NoContextException)
 
-### Microsoft.JScript.ParserException
+#### Microsoft.JScript.ParserException
 
 This class is used by the JScript parser to represent parser exceptions.
 
@@ -4314,7 +4314,7 @@ This class is used by the JScript parser to represent parser exceptions.
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.ParserException)
 
 ## Microsoft.Build.BuildEngine
-### Microsoft.Build.BuildEngine.InternalLoggerException
+#### Microsoft.Build.BuildEngine.InternalLoggerException
 
 This exception is used to wrap an unhandled exception from a logger.  
 
@@ -4324,7 +4324,7 @@ This exception is used to wrap an unhandled exception from a logger.
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.BuildEngine.InternalLoggerException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.BuildEngine.InternalLoggerException)
 
-### Microsoft.Build.BuildEngine.InvalidProjectFileException
+#### Microsoft.Build.BuildEngine.InvalidProjectFileException
 
 This exception is thrown whenever there is a problem with the user's XML project file. The problem might be semantic or syntactical. If the problem is in the syntax, it can typically be caught by XSD validation. 
 
@@ -4334,7 +4334,7 @@ This exception is thrown whenever there is a problem with the user's XML project
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.BuildEngine.InvalidProjectFileException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.BuildEngine.InvalidProjectFileException)
 
-### Microsoft.Build.BuildEngine.InvalidToolsetDefinitionException
+#### Microsoft.Build.BuildEngine.InvalidToolsetDefinitionException
 
 This exception is thrown whenever there is a problem with the user's custom toolset definition file. The problem might be semantic or syntactical. If the problem is in the syntax, it can typically be caught by XSD validation. 
 
@@ -4344,7 +4344,7 @@ This exception is thrown whenever there is a problem with the user's custom tool
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.BuildEngine.InvalidToolsetDefinitionException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.BuildEngine.InvalidToolsetDefinitionException)
 
-### Microsoft.Build.BuildEngine.RemoteErrorException
+#### Microsoft.Build.BuildEngine.RemoteErrorException
 
 Wraps exceptions that occur on a different node. 
 
@@ -4355,7 +4355,7 @@ Wraps exceptions that occur on a different node.
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.BuildEngine.RemoteErrorException)
 
 ## Microsoft.Build.Exceptions
-### Microsoft.Build.Exceptions.BuildAbortedException
+#### Microsoft.Build.Exceptions.BuildAbortedException
 
 An exception representing the case where the build was aborted by request, as opposed to being unceremoniously shut down due to another kind of error exception. 
 
@@ -4365,7 +4365,7 @@ An exception representing the case where the build was aborted by request, as op
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.Exceptions.BuildAbortedException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.Exceptions.BuildAbortedException)
 
-### Microsoft.Build.Exceptions.InternalLoggerException
+#### Microsoft.Build.Exceptions.InternalLoggerException
 
 This exception is used to wrap an unhandled exception from a logger. This exception aborts the build, and it can only be thrown by the MSBuild engine.
 
@@ -4375,7 +4375,7 @@ This exception is used to wrap an unhandled exception from a logger. This except
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.Exceptions.InternalLoggerException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.Exceptions.InternalLoggerException)
 
-### Microsoft.Build.Exceptions.InvalidProjectFileException
+#### Microsoft.Build.Exceptions.InvalidProjectFileException
 
 This exception is thrown whenever there is a problem with the user's XML project file. The problem might be semantic or syntactical. The latter would be of a type typically caught by XSD validation (if it was performed by the project writer). 
 
@@ -4385,7 +4385,7 @@ This exception is thrown whenever there is a problem with the user's XML project
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.Build.Exceptions.InvalidProjectFileException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.Exceptions.InvalidProjectFileException)
 
-### Microsoft.Build.Exceptions.InvalidToolsetDefinitionException
+#### Microsoft.Build.Exceptions.InvalidToolsetDefinitionException
 
 Exception subclass that ToolsetReaders should throw.
 
@@ -4396,7 +4396,7 @@ Exception subclass that ToolsetReaders should throw.
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.Exceptions.InvalidToolsetDefinitionException)
 
 ## Microsoft.Build.Framework
-### Microsoft.Build.Framework.LoggerException
+#### Microsoft.Build.Framework.LoggerException
 
 Allows a logger to force the build to stop in an explicit way. 
 
@@ -4407,7 +4407,7 @@ Allows a logger to force the build to stop in an explicit way.
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.Build.Framework.LoggerException)
 
 ## Microsoft.CSharp.RuntimeBinder
-### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
+#### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
 
 Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
 
@@ -4417,7 +4417,7 @@ Represents an error that occurs when a dynamic bind in the C# runtime binder is 
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.CSharp.RuntimeBinder.RuntimeBinderException)
 
-### Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException
+#### Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException
 
 Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
 
@@ -4428,7 +4428,7 @@ Represents an error that occurs when a dynamic bind in the C# runtime binder is 
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException)
 
 ## Microsoft.JScript.Vsa
-### Microsoft.JScript.Vsa.JSVsaException
+#### Microsoft.JScript.Vsa.JSVsaException
 
 This type supports the .NET Framework infrastructure and is not intended to be used directly from your code.
 
@@ -4439,7 +4439,7 @@ This type supports the .NET Framework infrastructure and is not intended to be u
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.JScript.Vsa.JSVsaException)
 
 ## Microsoft.SqlServer.Server
-### Microsoft.SqlServer.Server.InvalidUdtException
+#### Microsoft.SqlServer.Server.InvalidUdtException
 
 Thrown when SQL Server or the ADO.NET System.Data.SqlClient provider detects an invalid user-defined type (UDT). 
 
@@ -4450,7 +4450,7 @@ Thrown when SQL Server or the ADO.NET System.Data.SqlClient provider detects an 
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.SqlServer.Server.InvalidUdtException)
 
 ## Microsoft.VisualBasic.ApplicationServices
-### Microsoft.VisualBasic.ApplicationServices.CantStartSingleInstanceException
+#### Microsoft.VisualBasic.ApplicationServices.CantStartSingleInstanceException
 
 This exception is thrown when a subsequent instance of a single-instance application is unable to connect to the first application instance.
 
@@ -4460,7 +4460,7 @@ This exception is thrown when a subsequent instance of a single-instance applica
 * [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/Microsoft.VisualBasic.ApplicationServices.CantStartSingleInstanceException.aspx)
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.VisualBasic.ApplicationServices.CantStartSingleInstanceException)
 
-### Microsoft.VisualBasic.ApplicationServices.NoStartupFormException
+#### Microsoft.VisualBasic.ApplicationServices.NoStartupFormException
 
 This exception is thrown by the Visual Basic Application Model when the Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm property has not been set.
 
@@ -4471,7 +4471,7 @@ This exception is thrown by the Visual Basic Application Model when the Microsof
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.VisualBasic.ApplicationServices.NoStartupFormException)
 
 ## Microsoft.VisualBasic.CompilerServices
-### Microsoft.VisualBasic.CompilerServices.InternalErrorException
+#### Microsoft.VisualBasic.CompilerServices.InternalErrorException
 
 The exception thrown for internal Visual Basic compiler errors. 
 
@@ -4482,7 +4482,7 @@ The exception thrown for internal Visual Basic compiler errors.
 * [stackoverflow.com](http://stackoverflow.com/search?q=Microsoft.VisualBasic.CompilerServices.InternalErrorException)
 
 ## Microsoft.VisualBasic.FileIO
-### Microsoft.VisualBasic.FileIO.MalformedLineException
+#### Microsoft.VisualBasic.FileIO.MalformedLineException
 
 The exception that is thrown when the Microsoft.VisualBasic.FileIO.TextFieldParser.ReadFields method cannot parse a row using the specified format.
 
