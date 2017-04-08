@@ -13,6 +13,7 @@ I did this by parsing all the .Net 4.6 namespace xml files. All of the content b
 
 * TOC
 {:toc}
+
 ## Microsoft.CSharp.RuntimeBinder
 ### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
 
@@ -51,7 +52,7 @@ The exception that is thrown when one of the arguments provided to a method is n
 
 The exception that is thrown when a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument. 
 
-    throw [System.ArgumentNullException]::New("a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument. ")
+    throw [System.ArgumentNullException]::New("a null reference (Nothing in Visual Basic) is passed to a method that does not accept it as a valid argument.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.ArgumentNullException.aspx)
 
@@ -75,7 +76,7 @@ The exception that is thrown for errors in an arithmetic, casting, or conversion
 
 The exception that is thrown when an attempt is made to store an element of the wrong type within an array. 
 
-    throw [System.ArrayTypeMismatchException]::New("an attempt is made to store an element of the wrong type within an array. ")
+    throw [System.ArrayTypeMismatchException]::New("an attempt is made to store an element of the wrong type within an array.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.ArrayTypeMismatchException.aspx)
 
@@ -83,7 +84,7 @@ The exception that is thrown when an attempt is made to store an element of the 
 
 The exception that is thrown when the file image of a dynamic link library (DLL) or an executable program is invalid. 
 
-    throw [System.BadImageFormatException]::New("the file image of a dynamic link library (DLL) or an executable program is invalid. ")
+    throw [System.BadImageFormatException]::New("the file image of a dynamic link library (DLL) or an executable program is invalid.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.BadImageFormatException.aspx)
 
@@ -442,7 +443,7 @@ The exception that is thrown when the call is to an System.ServiceModel.ICommuni
 
 The exception that is thrown when a call is made to a communication object that has faulted. 
 
-    throw [System.ServiceModel.CommunicationObjectFaultedException]::New("a call is made to a communication object that has faulted. ")
+    throw [System.ServiceModel.CommunicationObjectFaultedException]::New("a call is made to a communication object that has faulted.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.CommunicationObjectFaultedException.aspx)
 
@@ -556,7 +557,7 @@ The exception that is thrown when recursive entry into a lock is not compatible 
 
 The exception that is thrown when the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. 
 
-    throw [System.Threading.SemaphoreFullException]::New("the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum. ")
+    throw [System.Threading.SemaphoreFullException]::New("the System.Threading.Semaphore.Release method is called on a semaphore whose count is already at the maximum.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.Threading.SemaphoreFullException.aspx)
 
@@ -599,7 +600,7 @@ The exception that is thrown when the key specified for accessing an element in 
 
 Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. 
 
-    throw [System.ComponentModel.DataAnnotations.ValidationException]::New("Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used. ")
+    throw [System.ComponentModel.DataAnnotations.ValidationException]::New("Represents the exception that occurs during validation of a data field when the System.ComponentModel.DataAnnotations.ValidationAttribute class is used.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.ValidationException.aspx)
 
@@ -674,7 +675,7 @@ The exception thrown when the type of the incoming SAFEARRAY does not match the 
 
 Represents structured exception handling (SEH) errors. 
 
-    throw [System.Runtime.InteropServices.SEHException]::New("Represents structured exception handling (SEH) errors. ")
+    throw [System.Runtime.InteropServices.SEHException]::New("Represents structured exception handling (SEH) errors.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.InteropServices.SEHException.aspx)
 
@@ -683,7 +684,7 @@ Represents structured exception handling (SEH) errors.
 
 The exception that is thrown when the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization. 
 
-    throw [System.Runtime.Serialization.InvalidDataContractException]::New("the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization. ")
+    throw [System.Runtime.Serialization.InvalidDataContractException]::New("the System.Runtime.Serialization.DataContractSerializer or System.Runtime.Serialization.NetDataContractSerializer encounters an invalid data contract during serialization and deserialization.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.Runtime.Serialization.InvalidDataContractException.aspx)
 
@@ -700,7 +701,7 @@ The exception thrown when an error occurs during serialization or deserializatio
 
 Represents an exception that occurred when there is something wrong with the security applied on a message. 
 
-    throw [System.ServiceModel.Security.MessageSecurityException]::New("Represents an exception that occurred when there is something wrong with the security applied on a message. ")
+    throw [System.ServiceModel.Security.MessageSecurityException]::New("Represents an exception that occurred when there is something wrong with the security applied on a message.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/System.ServiceModel.Security.MessageSecurityException.aspx)
 
@@ -760,7 +761,7 @@ The exception that is thrown when an attempt is made to access a UI automation e
 
 The exception that is thrown when an attempt is made through UI automation to manipulate a control that is not enabled. 
 
-    throw [Windows.UI.Xaml.Automation.ElementNotEnabledException]::New("an attempt is made through UI automation to manipulate a control that is not enabled. ")
+    throw [Windows.UI.Xaml.Automation.ElementNotEnabledException]::New("an attempt is made through UI automation to manipulate a control that is not enabled.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Automation.ElementNotEnabledException.aspx)
 
@@ -769,7 +770,7 @@ The exception that is thrown when an attempt is made through UI automation to ma
 
 The exception that is thrown when an error occurs while parsing Xaml. 
 
-    throw [Windows.UI.Xaml.Markup.XamlParseException]::New("an error occurs while parsing Xaml. ")
+    throw [Windows.UI.Xaml.Markup.XamlParseException]::New("an error occurs while parsing Xaml.")
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Markup.XamlParseException.aspx)
 
