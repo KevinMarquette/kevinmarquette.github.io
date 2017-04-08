@@ -14,23 +14,6 @@ I did this by parsing all the .Net 4.6 namespace xml files. All of the content b
 * TOC
 {:toc}
 
-## Microsoft.CSharp.RuntimeBinder
-### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
-
-Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
-
-    throw [Microsoft.CSharp.RuntimeBinder.RuntimeBinderException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
-
-* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
-
-### Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException
-
-Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
-
-    throw [Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
-
-* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException.aspx)
-
 ## System
 ### System.AggregateException
 
@@ -774,3 +757,21 @@ The exception that is thrown when an error occurs while parsing Xaml.
 
 * [MSDN](http://msdn.microsoft.com/en-us/library/Windows.UI.Xaml.Markup.XamlParseException.aspx)
 
+
+## Microsoft.CSharp.RuntimeBinder
+### Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
+
+Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
+
+    throw [Microsoft.CSharp.RuntimeBinder.RuntimeBinderException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.aspx)
+
+### Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException
+
+Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.
+
+    throw [Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException]::New("Represents an error that occurs when a dynamic bind in the C# runtime binder is processed.")
+
+* [MSDN](http://msdn.microsoft.com/en-us/library/Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException.aspx)
+    
