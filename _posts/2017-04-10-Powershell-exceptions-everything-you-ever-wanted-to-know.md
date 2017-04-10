@@ -36,7 +36,7 @@ An exception is a terminating error. A thrown error will either be caught or it 
 
 I point this out because `Write-Error` and other non-terminating errors will not trigger the catch script to execute.
 
-## Eatting an exception
+## Swallowing an exception
 
 This is when you catch an error just to suppress it. Do this with caution because it can make troubleshooting issues very difficult. 
 
@@ -96,7 +96,7 @@ Any time you open or connect to a resource, you should close it. If the `Execute
 
 In this example, the connection will get closed if there is an error. It will also get closed if there is no error. The `finally` script will run every time.
 
-Because you are not catching the exception, it will still get thrown up the call stack.
+Because you are not catching the exception, it will still get propagated up the call stack.
 
 ## Try/Catch/Finally
 
@@ -237,16 +237,10 @@ You can be selective of the exceptions that you catch. Exception have a type and
     {
          Write-Output "IO error with the file: $path"
     }
-    catch
-    {
-        Write-Output "Something else happened when processing: $path"
-    }
 
 The exception type is checked for each `catch` block until one is found that matches your exception. It is important to realize that exceptions can inherit from other exceptions. In the example above, `FileNotFoundException` inherits from `IOException`. So if the `IOException` was first, then it would get called instead. Only one catch block will be invoked even if there are multiple matches.
 
-If we had a `System.IO.PathTooLongException` then the `IOException` would match but if we had a `InsufficientMemoryException` then the final default `catch` would be executed.
-
-You also don't need to add that last default catch statement. You don't need to use it if all you are going to do is re-throw the exception.
+If we had a `System.IO.PathTooLongException` then the `IOException` would match but if we had a `InsufficientMemoryException` then nothing would catch it and it would propagate up the stack.
 
 ## Throwing typed exceptions
 
