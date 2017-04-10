@@ -9,6 +9,9 @@ Error handling is just part of life when it comes to writing code. We can often 
 
 # Index
 
+* TOC
+{:toc}
+
 # Basic terminology
 
 We need to cover some basic terms before we jump into this one.
