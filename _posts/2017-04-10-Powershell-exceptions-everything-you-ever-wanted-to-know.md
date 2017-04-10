@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Everything you wanted to know about exceptions"
+title: "PowerShell: Everything you wanted to know about exceptions"
 date: 2017-04-10
 tags: [PowerShell,Exceptions,Basic]
 ---
@@ -186,7 +186,7 @@ You will only get this stack trace when the event is thrown from managed code. I
 
 ## $PSItem.InvocationInfo
 
-This property contains additional information collected by Powershell.exe about the function or script where the exception was thrown. Here is the `InvocationInfo` from the sample exception that I created.
+This property contains additional information collected by PowerShell.exe about the function or script where the exception was thrown. Here is the `InvocationInfo` from the sample exception that I created.
 
     PS:> $PSItem.InvocationInfo | Format-List *
 
