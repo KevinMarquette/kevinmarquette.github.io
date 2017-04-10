@@ -280,7 +280,7 @@ I compiled a master list that contains hundreds of .Net exceptions to complement
 
 I start by searching that list for exceptions that feel like they would be a good fit for my situation. You should try to use exceptions in the base `System` namespace.
 
-## Exceptions are object
+## Exceptions are objects
 
 If you start using a lot of typed exceptions, remember that they are objects. Different exceptions have different constructors and properties. If we look at the [documentation](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileNotFoundException?view=netframework-4.7) for `System.IO.FileNotFoundException`, we will see that we can pass in a message and a file path.
 
