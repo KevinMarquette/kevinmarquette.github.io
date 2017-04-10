@@ -20,11 +20,11 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### Recent posts
 
+* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](https://kevinmarquette.github.io/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-07 [All .Net 4.6 Exceptions List](https://kevinmarquette.github.io/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-01 [What have you done with PowerShell this month](https://kevinmarquette.github.io/2017-04-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-03-25 [Mnemonic wordlist](/2017-03-25-mnemonic-wordlist/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-03-18 [PowerShell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
 ## PSGraph
 
