@@ -358,7 +358,7 @@ A `trap` is placed in a script or function to catch all exceptions that happen i
 
     trap
     {
-        Write-Output $PSItem.ToString()
+        Write-Log $PSItem.ToString()
     }
 
     throw [System.Exception]::new('first')
