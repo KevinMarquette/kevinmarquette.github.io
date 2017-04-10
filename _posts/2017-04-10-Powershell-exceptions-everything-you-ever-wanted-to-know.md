@@ -334,6 +334,45 @@ I mentioned that Write-Error does not throw a terminating error by default. If y
 
 It is important to note that Write-Error does not store the message in `$PSItem.Exception.Message` but instead places it in `$PSItem.ErrorDetails.Message`. The good news is that `$PSItem.ToString()` will correctly give you the right message either way.
 
+# $PSCmdlet.ThrowTerminatingError()
+
+The one thing that I don't like about throwing exceptions is that error message points at the throw statement and indicates that is where the problem is. We can use `ThrowTerminatingError()` to correct that.
+
+    $PSCmdlet.ThrowTerminatingError(
+        [System.Management.Automation.ErrorRecord]::new(
+            ([System.IO.FileNotFoundException]"Could not find $Path"),
+            'My.ID',
+            [System.Management.Automation.ErrorCategory]::OpenError,
+            $MyObject
+        )
+    )
+
+That is a bit much to remember but you can use try/catch to re-throw your error with `ThrowTerminatingError`.
+
+    catch
+    {
+        $PSCmdlet.ThrowTerminatingError($psitem)
+    }
+
+This changes the source of the error to the cmdlet. See this github issue [Is there actually a best way to handle errors?](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/37) for more details.
+
+# Trap
+
+I focused on the try/catch aspect of exceptions. But there is one more thing we need to mention before we wrap this up.
+
+A `trap` is placed in a script or function to catch all exceptions that happen in that scope. When an exception happens, the code in the `trap` will get executed and then the normal code will continue. If multiple exceptions happen, then the trap will get called over and over.
+
+    trap
+    {
+        Write-Output $PSItem.ToString()
+    }
+
+    throw [System.Exception]::new('first')
+    throw [System.Exception]::new('second')
+    throw [System.Exception]::new('third')
+
+I personally never adopted this approach but I can see the value in admin or controller scripts that will log any and all exceptions, then still continues to execute.
+
 # Closing remarks
 
 Adding proper exception handling to your scripts will not only make them more stable but it will also make it easier for you to troubleshoot those exceptions.
