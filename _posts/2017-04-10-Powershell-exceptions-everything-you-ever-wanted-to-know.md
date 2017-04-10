@@ -317,7 +317,7 @@ Interestingly enough, we can call `throw` from within the `catch` and it will re
 
 We want to re-throw the exception to preserve the original execution information like source script and line number. If we throw a new exception at this point it hide where the exception started.
 
-### Re-throwing with new exceptions
+### Re-throwing a new exception
 
 If you catch an exception but you want to throw a different one, then you should nest the original exception inside the new one. This allows someone down the stack to access it as the `$PSItem.Exception.InnerException`.
 
