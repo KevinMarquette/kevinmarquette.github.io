@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Everything you wanted to know about exception handling"
+title: "Powershell: Everything you wanted to know about exceptions"
 date: 2017-04-10
 tags: [PowerShell,Exceptions,Basic]
 ---
