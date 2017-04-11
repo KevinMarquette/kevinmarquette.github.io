@@ -313,7 +313,7 @@ It is important to note that Write-Error does not store the message in `$PSItem.
 
 # $PSCmdlet.ThrowTerminatingError()
 
-The one thing that I don't like about throwing exceptions is that error message points at the throw statement and indicates that is where the problem is. Dexter Dhami pointed out that we can use `ThrowTerminatingError()` to correct that.
+The one thing that I don't like about throwing exceptions is that the error message points at the throw statement and indicates that line is where the problem is. Dexter Dhami pointed out that we can use `ThrowTerminatingError()` to correct that.
 
     $PSCmdlet.ThrowTerminatingError(
         [System.Management.Automation.ErrorRecord]::new(
