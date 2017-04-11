@@ -219,9 +219,28 @@ The exception type is checked for each `catch` block until one is found that mat
 
 If we had a `System.IO.PathTooLongException` then the `IOException` would match but if we had a `InsufficientMemoryException` then nothing would catch it and it would propagate up the stack.
 
+## Catch multiple types at once
+
+It is possible to catch multiple exception types with the same `catch` statement.
+
+    try
+    {
+        Do-Something -Path $path -ErrorAction Stop
+    }
+    catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
+    {
+        Write-Output "The path or file was not found: [$path]"
+    }
+    catch [System.IO.IOException]
+    {
+        Write-Output "IO error with the file: [$path]"
+    }
+
+Thank you /u/Sheppard_Ra for suggesting this addition.
+
 ## Throwing typed exceptions
 
-You can also throw typed exceptions in PowerShell. Instead of calling `throw` with a string:
+You can throw typed exceptions in PowerShell. Instead of calling `throw` with a string:
 
     throw "Could not find: $path"
 
