@@ -297,9 +297,17 @@ By using a typed exception, you (or others) can catch the exception by the type 
 
 ### Write-Error -Exception
 
-We can add these typed exceptions to `Write-Error` and we can still `catch` the errors by exception type. Use `Write-Error` like this:
+We can add these typed exceptions to `Write-Error` and we can still `catch` the errors by exception type. Use `Write-Error` like in these examples:
 
+    # with normal message
     Write-Error -Message "Could not find path: $path" -Exception ([System.IO.FileNotFoundException]::new()) -ErrorAction Stop
+    
+    # With message inside new exception
+    Write-Error -Exception ([System.IO.FileNotFoundException]::new("Could not find path: $path")) -ErrorAction Stop
+
+    # Pre PS 5.0
+    Write-Error -Exception ([System.IO.FileNotFoundException]"Could not find path: $path") -ErrorAction Stop
+    
     Write-Error -Message "Could not find path: $path" -Exception ( New-Object -TypeName System.IO.FileNotFoundException ) -ErrorAction Stop
 
 Then we can catch it like this:
