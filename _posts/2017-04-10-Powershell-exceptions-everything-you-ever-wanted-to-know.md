@@ -414,10 +414,10 @@ We can also use `Write-Error` to re-throw our exception.
 
     catch
     {
-        Write-Error -Message 'Could not access field' -Exception $PSItem.Exception -ErrorAction Stop
+        Write-Error -Exception $PSItem -ErrorAction Stop
     }
 
-This also gives all the benefits of using `$PSCmdlet.ThrowTerminatingError()` without using `$PSCmdlet.ThrowTerminatingError()`. Using `Write-Error` to re-throw will give you the option to turn the exception into a non-terminating error by not including the `-ErrorAction Stop`.
+This also gives all the benefits of using `$PSCmdlet.ThrowTerminatingError()` without using `$PSCmdlet.ThrowTerminatingError()`. Using `Write-Error` to re-throw will give you the option to turn the exception into a non-terminating error by not including the `-ErrorAction Stop`. Also note that
 
 # Trap
 
