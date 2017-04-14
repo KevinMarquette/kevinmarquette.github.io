@@ -21,7 +21,7 @@ This works well for me because I use hashtables for just about everything. But t
 
 You can then access and use the values like you would a normal object.
 
-    $myObject.Name 
+    $myObject.Name
 
 ## Converting a hashtable
 
@@ -42,6 +42,83 @@ I find the best way to save a hashtable to a file is to save it as JSON. You can
 
     $myObject | ConvertTo-Json | Set-Content -Path $Path
     $myObject = Get-Content -Path $Path | ConvertFrom-Json
+
+
+## Adding properties
+
+You can still add new properties to your `PSCustomObject` with `Add-Member`.
+
+    $myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
+
+    $myObject.ID
+
+## Enumerating property names
+
+Sometimes you need a list of all the property names on an object.
+
+    $myObject | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name
+
+There are also some hidden properties that can be accessed to get this same list.
+
+    $myobject.psobject.properties.name
+
+## Dynamically accessing properties
+
+I already mentioned that you an access property values directly.
+
+    $myObject.Name
+
+You can use a string for the property name and it will still work.
+
+    $myObject.'Name'
+
+We can take this one more step and use a variable for the property name.
+
+    $property = 'Name'
+    $myObject.$property
+
+I know that looks strange, but it works. 
+
+### Convert pscustomboject into a hashtable
+
+TTo continue on from the last seciton, you can dynamically walk the properties and create a hashtable from them.
+
+    $hashtable = @{}
+    foreach( $property in $myobject.psobject.properties.name )
+    {
+        $hashtable[$property] = $myObject.$property
+    }
+
+
+## Objects vs Value types
+
+Objects and value types don't handle variable assignments the same way. If you assign value types to each other, only the value get copied to the new variable.
+
+    $first = 1
+    $second = $first
+    $second = 2
+
+In this case, `$first` is 1 and `$second` is 2.
+
+Object variables hold a reference to the actual object. When you assign one object to a new variable, they still reference the same object.
+
+    $third = [PSCustomObject]@{Key=3}
+    $fourth = $third
+    $fourth.Key = 4
+
+Because `$third` and `$fourth` reference the same instance of an object, both `$third.key` and `$fourth.Key` are 4.
+
+### psobject.copy()
+
+If you need a true copy of an object, you can clone it.
+
+    $third = [PSCustomObject]@{Key=3}
+    $fourth = $third.psobject.copy()
+    $fourth.Key = 4
+
+Clone creates a shallow copy of the object. They have different instances now and `$third.key` is 3 and `$fourth.Key` is 4 in this example.
+
+I call this a shallow copy because if you have nested objects. (where the properties contain other objects). Only the top level values are copied. The child objects will reference each other.
 
 ## PSTypeName for custom object types
 
