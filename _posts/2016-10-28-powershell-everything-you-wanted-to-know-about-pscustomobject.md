@@ -81,7 +81,7 @@ I know that looks strange, but it works.
 
 ### Convert pscustomboject into a hashtable
 
-TTo continue on from the last seciton, you can dynamically walk the properties and create a hashtable from them.
+To continue on from the last seciton, you can dynamically walk the properties and create a hashtable from them.
 
     $hashtable = @{}
     foreach( $property in $myobject.psobject.properties.name )
@@ -89,6 +89,32 @@ TTo continue on from the last seciton, you can dynamically walk the properties a
         $hashtable[$property] = $myObject.$property
     }
 
+## Adding object methods
+
+If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`. You have to use the `this` automatic varialbe reference the current object. Here is a scriptblock to turn a object into a hashtable. (same code form the last example)
+
+    $ScriptBlock = {
+        $hashtable = @{}
+        foreach( $property in $this.psobject.properties.name )
+        {
+            $hashtable[$property] = $this.$property
+        }
+        return $hashtable
+    }
+
+Then we add it to our object as a script property.
+
+    $memberParam = @{
+        MemberType ScriptMethod
+        InputObject $myobject
+        Name "ToHashtable"
+        Value $scriptBlock
+    }
+    Add-Member @memberParam
+
+Then we can call our function like this:
+
+    $myObject.ToHashtable()
 
 ## Objects vs Value types
 
