@@ -7,7 +7,13 @@ tags: [PowerShell,PSCustomObject,Hashtables,Basics]
 
 `PSCustomObject`s are a great tool to add into your Powershell toolbelt. Let's start with the basics and work our way into the more advanced features. The idea behind using a `PSCustomObject` is to have a very simple way to create structured data. Take a look at the first example and you will have a better idea of what that means.
 
-## Creating objects
+## Index
+
+* TOC
+{:toc}
+
+
+## Creating a PSCustomObject
 
 I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier. Because of that, I am going to skip over all the other ways you can create an object but I do need to mention that most of this is Powershell v3.0 and newer.
 
@@ -229,6 +235,8 @@ The main reason you would use an output type is so that meta information about y
 With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your `OutputType`. This could catch variables that just fall to the pipe when they shouldn't.
 
 ## Closing thoughts
+
+The context of this was all about `[PSCustomObject]`, but a lot of this information applies to objects in general.
 
 I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`. Just this last week I stumbled upon another one and was surprised that I had not seen it before. I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opportunity to use them. I hope you learned something and can find a way to work this into your scripts. 
  
