@@ -91,6 +91,13 @@ There is a new feature added in Powershell 5.0 that allows you to copy files usi
     }
     Remove-PSSession $session
 
+### PowerCLI Copy-VMGuest
+
+You can't use the PSSession to copy files to a vSphere guest but you can use the PowerCLI command [Copy-VMGuest](https://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Copy-VMGuestFile.html) to do it.
+
+    $VM = Get-VM $computername
+    Copy-VMGuest -Source $file -Destination 'c:\windows\temp\installer.exe' -VM $VM
+
 ## Re-authenticate from the session
 
 It actually is easy to re-authenticate. Create a credential object and pass it into your `Invoke-Command`. Then use that credential to create a `New-PSDrive`. Even if you don't use that new drive mapping, it will establish authentication.
