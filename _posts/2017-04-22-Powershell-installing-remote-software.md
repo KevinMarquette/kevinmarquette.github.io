@@ -15,7 +15,7 @@ I previously covered how to [silently installing a MSI](/2016-10-21-powershell-i
 
 # Introduction
 
- To keep these samples cleaner, I am going to use an imaginary installer that is not an MSI. The main way to execute remote commands is with PowerShell remoting using the `Enter-PSSession` or `Invoke-Command` cmdlets. I am assuming that you already have Remoting working in your environment. If you need help with that, consult the [Secrets of PowerShell Remoting](https://www.gitbook.com/book/devopscollective/secrets-of-powershell-remoting/details) ebook.
+ To keep these samples cleaner, I am going to use an imaginary installer that is not an MSI but the approach is the same. The main way to execute remote commands is with PowerShell remoting using the `Enter-PSSession` or `Invoke-Command` cmdlets. I am assuming that you already have Remoting working in your environment. If you need help with that, consult the [Secrets of PowerShell Remoting](https://www.gitbook.com/book/devopscollective/secrets-of-powershell-remoting/details) ebook.
  
  I am also using `Invoke-Command` in all my examples because that is what you would use in your scripts.
 
