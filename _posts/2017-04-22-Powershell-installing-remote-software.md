@@ -93,7 +93,7 @@ There is a new feature added in Powershell 5.0 that allows you to copy files usi
 
 ### PowerCLI Copy-VMGuest
 
-You can't use the PSSession to copy files to a vSphere guest but you can use the PowerCLI command [Copy-VMGuest](https://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Copy-VMGuestFile.html) to do it.
+You can't use the PSSession to copy files to a vSphere guest, but you can use the PowerCLI command [Copy-VMGuest](https://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Copy-VMGuestFile.html) to do it.
 
     $VM = Get-VM $computername
     Copy-VMGuest -Source $file -Destination 'c:\windows\temp\installer.exe' -VM $VM
