@@ -137,7 +137,7 @@ That covers the most common approaches that administrators take to solving this 
 
 You can use DSC to deploy and install your software. The easy stuff in DSC is very easy and you would learn a lot going down this path. You will need a pull server (that is easy to set up) for this one.
 
-Deciding how to get the installer to the target system is the hard part with DSC. If you set up certificates, then you can provide credentials to a file share for straight file copy. Or you can create a custom DSC Resource and place the files in it. The target system would download it from the pull server like it would other resources. 
+Deciding how to get the installer to the target system is the hard part with DSC. If you set up certificates, then you can provide credentials to a file share for straight file copy. Or you can create a custom DSC Resource and place the files in it. The target system would download it from the pull server like it would other resources.
 
 You can combine it with one of these next ideas.
 
