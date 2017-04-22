@@ -164,7 +164,7 @@ Windows has introduced [pakage management](ttps://blogs.technet.microsoft.com/pa
 
 ### Install with Chocholatey
 
-Or you could use [Chocholatey.org](https://chocolatey.org/) directly and use there package manager. The Microsoft package manager supports Chocholatey as a source but I have found the occasional installer that needs to be ran with `choco`.
+Or you could use the [Chocholatey.org](https://chocolatey.org/) package manager. The Microsoft package manager supports Chocholatey as a source but I have found the occasional installer that needs to be ran with `choco install` instead.
 
     choco install $PackageName
 
