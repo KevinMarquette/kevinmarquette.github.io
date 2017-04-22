@@ -63,7 +63,9 @@ Trying to copy the file inside the remote command give you the same problem.
 
 This is the double hop problem. The credential used to authenticate with `server01` cannot be used by `server01` to authenticate to `fileserver`. Or any other network resources for that matter. That second hop is anything that requires authentication that is not on the first remote system.
 
-We can either pre-copy the file or re-authenticate on the remote end. First we create common variables to reuse in the rest of the examples.
+We can either pre-copy the file or re-authenticate on the remote end.
+
+I will use these place holder variables in the rest of the examples.
 
     $file = '\\fileserver\share\installer.exe'
     $computerName = 'server01'
