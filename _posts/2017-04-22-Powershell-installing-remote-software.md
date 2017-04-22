@@ -178,6 +178,6 @@ You can set up a nuget repository and use the new package management commands to
 
 The first half of this post answers the immediate question as to why you may be struggling to get software to install remotely.
 
-If your question was how "should I be installing software" then your focus should shift to package management. It is still new to the Windows ecosystem, but this is the direction that Windows is headed.
+If your question was "how should I be installing software?" then your focus should shift to package management. It is still new to the Windows ecosystem, but this is the direction that Windows is headed.
 
 You have plenty of options to choose from. Pick what works best for your current situation.
