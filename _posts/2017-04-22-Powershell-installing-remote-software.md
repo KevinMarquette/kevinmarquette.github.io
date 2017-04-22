@@ -100,7 +100,7 @@ You can't use the PSSession to copy files to a vSphere guest, but you can use th
 
 ## Re-authenticate from the session
 
-It actually is easy to re-authenticate. Create a credential object and pass it into your `Invoke-Command`. Then use that credential to create a `New-PSDrive`. Even if you don't use that new drive mapping, it will establish authentication.
+It actually is easy to re-authenticate. Create a credential object and pass it into your `Invoke-Command`. Then use that credential to create a `New-PSDrive`. Even if you don't use that new drive mapping, it will establish authentication for your UNC path to work.
 
     $credential = Get-Credential
     $psdrive = @{
