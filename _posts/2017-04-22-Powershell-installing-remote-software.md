@@ -158,20 +158,26 @@ You can pull the file off of an external or internal webserver before you instal
 
 ## Install with Package Management
 
-Windows has introduced pakage management into Windows  https://blogs.technet.microsoft.com/packagemanagement/2015/04/28/introducing-packagemanagement-in-windows-10/ that can be used to install packages from online repositories.
+Windows has introduced [pakage management](ttps://blogs.technet.microsoft.com/packagemanagement/2015/04/28/introducing-packagemanagement-in-windows-10/) into Windows that can be used to install packages from online repositories.
+
+    Install-Package $PackageName
 
 ### Install with Chocholatey
 
 Or you could use [Chocholatey.org](https://chocolatey.org/) directly and use there package manager. The Microsoft package manager supports Chocholatey as a source but I have found the occasional installer that needs to be ran with `choco`.
 
+    choco install $PackageName
+
 ### Internal repository
 
 You can set up a nuget repository and use the new package management commands to deploy applications. If you have an internal dev team, this is something they may have already set up.
+
+    Install-Package $PackageName -Source MyRepoName
 
 # In closing
 
 The first half of this post answers the immediate question as to why you may be struggling to get software to install remotely.
 
-If your question was how "should I be installing software" then your focus should shift to package management. Still new to the Windows ecosystem, but this is the direction that Windows is headed.
+If your question was how "should I be installing software" then your focus should shift to package management. It is still new to the Windows ecosystem, but this is the direction that Windows is headed.
 
 You have plenty of options to choose from. Pick what works best for your current situation.
