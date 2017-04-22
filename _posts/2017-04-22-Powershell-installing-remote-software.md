@@ -34,14 +34,14 @@ The first detail is that you need to maintain a remote session while the install
 You will need to call `Start-Process -Wait` if you are having that issue.
 
     Invoke-Command -ComputerName server01 -ScriptBlock { 
-        Start-Process c:\windows\temp\installer.exe -ArgumentList `/silent` -Wait
+        Start-Process c:\windows\temp\installer.exe -ArgumentList '/silent' -Wait
     }
 
 This brings us to our second important detail. The install needs to be truly silent. Remote sessions are non-interactive. That means that they cannot popup or show windows. This will either cause the program to fail because it cannot show the window or it will cause the installer to hang because it expects someone to click a button that you have no way to click.
 
-# Installing from remote location
+# Installing from a remote location
 
-Most of the time if you are running installers  on a remote system, you have the installer on your local machine or on a network share or or UNC path. At first glance, this looks like it should work:
+Most of the time if you are running installers  on a remote system, you have the installer on your local machine or on a network share (UNC path). At first glance, this looks like it should work:
 
     Invoke-Command -ComputerName server01 -ScriptBlock {
         \\fileserver\share\installer.exe /silent
@@ -53,7 +53,7 @@ It can be the source of a lot of headaches. Ideally you want to run the installe
 
 Trying to copy the file inside the remote command give you the same problem.
 
-   Invoke-Command -ComputerName server01 -ScriptBlock {
+    Invoke-Command -ComputerName server01 -ScriptBlock {
         Copy-Item \\fileserver\share\installer.exe c:\windows\temp\
     }
 
