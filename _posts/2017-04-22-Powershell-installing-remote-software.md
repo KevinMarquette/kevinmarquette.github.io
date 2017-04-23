@@ -99,20 +99,20 @@ While you can run `Invoke-Command` on multiple computers at once, be aware that 
 
 ### PowerCLI Copy-VMGuest
 
-You can't use the PSSession to copy files to a vSphere guest, but you can use the PowerCLI command [Copy-VMGuest](https://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Copy-VMGuestFile.html) to do it.
+You can use PowerCli to copy files to a vSphere guest with the [Copy-VMGuest](https://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Copy-VMGuestFile.html) CmdLet.
 
     $VM = Get-VM $computername
     Copy-VMGuest -Source $file -Destination 'c:\windows\temp\installer.exe' -VM $VM
 
 ## Re-authenticate from the session
 
-It actually is easy to re-authenticate. Create a credential object and pass it into your `Invoke-Command`. Then use that credential to create a `New-PSDrive`. Even if you don't use that new drive mapping, it will establish authentication for your UNC path to work.
+It actually is easy to re-authenticate in the remote session. Create a credential object and pass it into your `Invoke-Command`. Then use that credential to create a `New-PSDrive`. Even if you don't use that new drive mapping, it will establish authentication for your UNC path to work.
 
     $credential = Get-Credential
     $psdrive = @{
-        Name = "PSDrive" 
-        PSProvider = "FileSystem" 
-        Root = "\\fileserver\share" 
+        Name = "PSDrive"
+        PSProvider = "FileSystem"
+        Root = "\\fileserver\share"
         Credential = $credential
     }
 
@@ -121,11 +121,11 @@ It actually is easy to re-authenticate. Create a credential object and pass it i
         \\fileserver\share\installer.exe /silent 
     } 
 
-I used two tricks in that example that I need to point out if you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) and the second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands). I combine both of them when I execute this command `New-PSDrive @using:psdrive`. Those tricks took the hashtable from my local session and splatted to the command in the remote session.
+I used two tricks in that example that I need to point out if you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) where I place arguments into a hashtable and use the `@` operator to pass them to the function. The second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands) to get a variable from my local session into that remote scriptblock. I combine both of them when I execute this command `New-PSDrive @using:psdrive`.
 
 # Don’t use CredSSP
 
-I can't talk about the double hop problem without mentioning CredSSP. The most common solution you will find online if you Google the double hop problem is to enable CredSSP. The general community has moved away from that as a solution because it puts your environment at risk. The issue with CredSSP is that your administrator credential gets cached on the remote system in a way that gives attackers easy access to it. 
+I can't talk about the double hop problem without mentioning CredSSP. The most common solution you will find on-line if you Google the double hop problem is to enable CredSSP. The general community has moved away from that as a solution because it puts your environment at risk. The issue with CredSSP is that your administrator credential gets cached on the remote system in a way that gives attackers easy access to it. 
 
 For more details see this great write up: [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/)
 
