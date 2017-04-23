@@ -5,7 +5,7 @@ date: 2017-04-22
 tags: [PowerShell,Remoting,Basics]
 ---
 
-I previously covered how to [silently install a MSI](/2016-10-21-powershell-installing-msi-files/). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to Powershell.
+I previously covered how to [silently install a MSI](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=installingremotesoftware). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to PowerShell.
 
 # Index
 
@@ -121,7 +121,7 @@ It actually is easy to re-authenticate in the remote session. Create a credentia
         \\fileserver\share\installer.exe /silent 
     } 
 
-I used two tricks in that example that I need to point out if you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) where I place arguments into a hashtable and use the `@` operator to pass them to the function. The second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands) to get a variable from my local session into that remote scriptblock. I combine both of them when I execute this command `New-PSDrive @using:psdrive`.
+I used two tricks in that example that I need to point out if you have not seen them before. The first is [splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx) where I place arguments into a hashtable and use the `@` operator to pass them to the CmdLet. The second is the `$using:` [scope](/2016-08-28-PowerShell-variables-to-remote-commands) to get a variable from my local session into that remote scriptblock. I combine both of them when I execute this command `New-PSDrive @using:psdrive`.
 
 # Don’t use CredSSP
 
@@ -130,9 +130,9 @@ I can't talk about the double hop problem without mentioning CredSSP. The most c
 For more details see this great write up: [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/)
 
 
-## Resource-Based Kerberos Constrained Delegation.
+## Resource-based Kerberos constrained delegation
 
-But there is a better solution called Resource-Based Kerberos Constrained Delegation. Constrained delegation in Server 2012 introduces the concept of controlling delegation of service tickets using a security descriptor rather than an allow list of SPNs. This change simplifies delegation by enabling the resource to determine which security principals are allowed to request tickets on behalf of another user. [PowerShell Remoting Kerberos Double Hop Solved Securely](https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/)
+But there is a better solution called Resource-based Kerberos constrained delegation. constrained delegation in Server 2012 introduces the concept of controlling delegation of service tickets using a security descriptor rather than an allow list of SPNs. This change simplifies delegation by enabling the resource to determine which security principals are allowed to request tickets on behalf of another user. See [PowerShell Remoting Kerberos Double Hop Solved Securely](https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/) for the details.
 
 Here is a quick snip of code showing how it works.
 
