@@ -5,7 +5,7 @@ date: 2017-04-22
 tags: [PowerShell,Remoting,Basics]
 ---
 
-I previously covered how to [silently installing a MSI](/2016-10-21-powershell-installing-msi-files/). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to Powershell.
+I previously covered how to [silently install a MSI](/2016-10-21-powershell-installing-msi-files/). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to Powershell.
 
 # Index
 
@@ -15,13 +15,13 @@ I previously covered how to [silently installing a MSI](/2016-10-21-powershell-i
 
 # Introduction
 
- To keep these samples cleaner, I am going to use an imaginary installer that is not an MSI but the approach is the same. The main way to execute remote commands is with PowerShell remoting using the `Enter-PSSession` or `Invoke-Command` cmdlets. I am assuming that you already have Remoting working in your environment. If you need help with that, consult the [Secrets of PowerShell Remoting](https://www.gitbook.com/book/devopscollective/secrets-of-powershell-remoting/details) ebook.
+ To keep these samples cleaner, I am going to use an imaginary installer that is not an MSI but the approach is the same. The main way to execute remote commands is with PowerShell remoting using the `Enter-PSSession` or `Invoke-Command` cmdlets. I am assuming that you already have PSRemoting working in your environment. If you need help with that, consult the [Secrets of PowerShell Remoting](https://www.gitbook.com/book/devopscollective/secrets-of-powershell-remoting/details) ebook.
  
  I am also using `Invoke-Command` in all my examples because that is what you would use in your scripts.
 
 # Running installers remotely
 
-If you already have the file on the remote system, we can just run it.
+If you already have the file on the remote system, we can run it with `Invoke-Command`.
 
     Invoke-Command -ComputerName server01 -ScriptBlock {
         c:\software\installer.exe /silent
@@ -29,7 +29,7 @@ If you already have the file on the remote system, we can just run it.
 
 There are two important details to be aware of right away.
 
-The first detail is that you need to maintain a remote session while the installer is running. If the installer does not block execution (it returns control back to the shell while it executes), your script may finish before the installer finishes and this will cancel the install as it closes the remote session.
+The first detail is that you need to maintain a remote session while the installer is running. If the installer does not block execution (it returns control back to the shell while it executes), your script may finish before the installer finishes. This will cancel the install as it closes the remote session.
 
 You will need to call `Start-Process -Wait` if you are having that issue.
 
@@ -41,21 +41,24 @@ This brings us to our second important detail. The install needs to be truly sil
 
 # Installing from a remote location
 
-Most of the time if you are running installers  on a remote system, you have the installer on your local machine or on a network share (UNC path). At first glance, this looks like it should work:
+Most of the time if you are running installers  on a remote system, you have the installer on a network share (UNC path). At first glance, this looks like it should work:
 
+    # Incorrect approach
     Invoke-Command -ComputerName server01 -ScriptBlock {
         \\fileserver\share\installer.exe /silent
     }
 
-    # Access denied or file does not exist
-
-It can be the source of a lot of headaches. Ideally you want to run the installer from a UNC path, but you find that does not work.
+This can be the source of a lot of headaches. Ideally you want to run the installer from a UNC path, but you discover that it does not work.
 
 Trying to copy the file inside the remote command give you the same problem.
 
+    
+    # Incorrect approach
     Invoke-Command -ComputerName server01 -ScriptBlock {
         Copy-Item \\fileserver\share\installer.exe c:\windows\temp\
     }
+
+    # Access denied or file does not exist
 
  Everything tells you that the file either does not exist or you have no permissions to the file. This is kind of a false message because it does exist and you have file access rights. The issue is that your remote session does not have those same rights.
 
@@ -90,6 +93,9 @@ There is a new feature added in Powershell 5.0 that allows you to copy files usi
         c:\windows\temp\installer.exe /silent
     }
     Remove-PSSession $session
+
+
+While you can run `Invoke-Command` on multiple computers at once, be aware that `Copy-Item -ToSession` only works on a single session.
 
 ### PowerCLI Copy-VMGuest
 
