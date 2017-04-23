@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL: Running SQL 2017 CTP 2.0 in #Docker"
+title: "SQL: Running SQL 2017 CTP 2.0 in Docker"
 date: 2017-04-23
 tags: [SQL,Docker]
 ---
@@ -36,7 +36,7 @@ Now that I have it downloaded, let's fire it up.
 
     docker run -d -p 1433:1433 -e sa_password=<SA_PASSWORD> -e ACCEPT_EULA=Y microsoft/mssql-server-windows
 
-Make sure you specify a SA password. This should start it up on the default local port of 1433 and accept the EULA for you.
+Make sure you specify a SA password. This should start it up on the default local port of `1433` and accept the EULA for you.
 
 At the time of this posting, I installed the [SQL Server Management Studio 17.0 RC3](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) to get the most current feature support. I could then connect to the instance on `localhost` using SA and the password specified above.
 
