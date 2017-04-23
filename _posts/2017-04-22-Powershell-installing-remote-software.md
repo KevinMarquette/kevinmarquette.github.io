@@ -125,7 +125,7 @@ I used two tricks in that example that I need to point out if you have not seen 
 
 # Don’t use CredSSP
 
-I can't talk about the double hop problem without mentioning CredSSP. The most common solution you will find on-line if you Google the double hop problem is to enable CredSSP. The general community has moved away from that as a solution because it puts your environment at risk. The issue with CredSSP is that your administrator credential gets cached on the remote system in a way that gives attackers easy access to it. 
+I can't talk about the double hop problem without mentioning CredSSP. The most common solution you will find on-line if you Google the double hop problem is to enable CredSSP. Even Jeffery Snover has an old article recommending it. The general community has moved away from that as a solution because it puts your environment at risk. The issue with CredSSP is that your administrator credential gets cached on the remote system in a way that gives attackers easy access to it.
 
 For more details see this great write up: [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/)
 
