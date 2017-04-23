@@ -7,6 +7,8 @@ tags: [MSSQL, SQL Server]
 
 As a system admin, I often find myself working very closely with SQL server. Here is a collection of resources that I find myself turning to over and over.
 
+* TOC
+{:toc}
 
 ## MSSQL Server Version list 
 This unofficial build chart lists all of the known Service Packs (SP), Cumulative Updates (CU), patches, hotfixes and other builds of MS SQL Server 2014, 2012, 2008 R2, 2008, 2005, 2000, 7.0, 6.5 and 6.0 that have been released. 
@@ -50,3 +52,15 @@ General conversations about SQL Server
 
 [Slack #dbatools](https://sqlcommunity.slack.com/messages/dbatools/)
 
+## Running SQL Server in Docker
+
+Here are the commands to download the image, start a container, invoke a query and then stop the container.
+
+    docker pull microsoft/mssql-server-windows
+    docker run -d -p 1433:1433 -e sa_password=<SA_PASSWORD> -e ACCEPT_EULA=Y microsoft/mssql-server-windows
+
+    Invoke-Sqlcmd -ServerInstance localhost -Database tempdb -Username sa -Password <SA_PASSWORD> -Query 'select @@version' | 
+        Select -ExpandProperty Column1
+
+    docker ps
+    docker stop --time=30 <CONTAINER_NAME>
