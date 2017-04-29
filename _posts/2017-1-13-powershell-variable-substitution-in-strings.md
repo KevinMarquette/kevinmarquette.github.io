@@ -107,7 +107,9 @@ Sometimes you actually do want to concatenate a list of values together. There i
 
 If you want to `-Join` some strings without a separator, you need to specify an empty string `''`. But if that is all you need, there is a faster option.
 
+    [string]::Concat('server1','server2','server3')
     [string]::Concat($servers)
+
 
 It is also worth pointing out that you can also `-Split` strings too.
 
@@ -180,6 +182,25 @@ Let us assume you pulled in a template from a file that has a lot of text.
 You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it. 
 
 I recently found a new way to approach this. I decided to leave this section in here because this is a pattern that is commonly used. 
+
+## Replace multiple tokens
+
+When I have a list of tokens that I need to replace, I take a more generic approach. I would place them in a hashtable and iterate over them to do the replace.
+
+    $tokenList = @{
+        Full_Name = 'Kevin Marquette'
+        Location = 'Orange County'
+        State = 'CA'
+    }
+
+    $letter = Get-Content -Path TemplateLetter.txt -RAW
+    foreach( $token in $tokenList.GetEnumerator() )
+    {
+        $pattern = '#{0}#' -f $token.key
+        $letter = $letter -replace $pattern, $token.Value
+    }
+
+Those tokens could be loaded from JSON or CSV if needed.
 
 ## ExecutionContext ExpandString
 
