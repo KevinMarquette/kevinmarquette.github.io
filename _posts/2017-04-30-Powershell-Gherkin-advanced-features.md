@@ -98,7 +98,7 @@ You can add a `Background` scenario to a `Feature` and it will get executed once
         Then we have a new file in the destination
         And the new file is the same as the original file
 
-It is just like any of the other scenarios but the intent is to identify pre-requirements or do some common pre-pwork for the rest of the scenarios in that feature.
+It is just like any of the other scenarios but the intent is to identify pre-requirements or do some common pre-work for the rest of the scenarios in that feature.
 
 ## BeforeEachScenario
 
