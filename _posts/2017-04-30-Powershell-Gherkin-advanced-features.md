@@ -83,9 +83,9 @@ And we can exclude by tags.
 
 This is like the tag support that Peter uses.
 
-## Background
+# Background scenario
 
-You can add a `Background` scenario to a `feature` and it will get executed before all the other scenarios in that feature.
+You can add a `Background` scenario to a `Feature` and it will get executed once before all the other scenarios in that `Feature`.
 
     Feature: You can copy one file
 
