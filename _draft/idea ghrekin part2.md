@@ -349,13 +349,13 @@ I do have to warn you that by using `Invoke-Expression` or even creating a `Scri
  
 # Running scenarios multiple times
 
-I want to revisit a scenario we used in the table example. One problem with that specific example is that the test fails as a whole. We don't know what row caused the issue. It would be nice if we could run a single test for each one. 
+I want to revisit a scenario we used in the table example. One problem with that specific example is that the test fails as a whole. We don't know what row caused the issue. It would be nice if we could run a single test for each one.
 
-We can do that by adding an example table to the scenario. This will make the the whole scenario run once for each example.
+We can do that by using a `Scenario Outline` and adding an example table. This will make the the whole scenario run once for each example.
 
-    Scenario: functions are well made
+    Scenario Outline: functions are well made
         Given we have a <Function> function
-        Then the <Function> should have comment bassed help
+        Then the <Function> should have comment based help
 
         Examples:
             | Function |
