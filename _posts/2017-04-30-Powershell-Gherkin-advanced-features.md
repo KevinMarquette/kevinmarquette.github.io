@@ -15,7 +15,7 @@ This is the 2nd post in a 3 part series on Gherkin where I cover the advanced fe
 
 # Quick review
 
-Take a moment to read the previous post. The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`.
+Take a moment to read the previous post. The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file
 
     Feature: You can copy one file
 
@@ -26,7 +26,7 @@ Take a moment to read the previous post. The idea is that you write a specificat
         Then we have a new file in the destination
         And the new file is the same as the original file
 
-Then those are matched to the steps that validate the specification. The sentences are parried with a matching test.
+Then those are matched to the steps that validate the specification. The sentences are parried with a matching test. This would be the `copyitem.Steps.ps1` file.
 
     Given 'we have a source file' {
         mkdir source -ErrorAction SilentlyContinue
@@ -52,6 +52,10 @@ Then those are matched to the steps that validate the specification. The sentenc
         $secondary = Get-FileHash .\source\something.txt
         $secondary.Hash | Should Be $primary.Hash
     }
+
+Then we run Invoke-Gherkin to execute the specification.
+
+    Invoke-Gherkin
 
 The idea is simple but there is much more to it.
 
