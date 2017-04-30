@@ -17,7 +17,7 @@ Gherkin has Before/After each Feature/Scenario in steps
 They apply across a whole test run
 Pester Before/After apply to "IT" within context
 
-# start of post
+# Start of post
 
 
 In the last post, I covered the bare basics of how to use Gherkin. I had a conversation with Joel Bennett on twitter about Gherkin and he pointed out some more examples from his Configuration module. Now that I have been playing with them for a few days, I decided it was time to share my findings.
@@ -190,7 +190,7 @@ Instead of writing two tests, we can write one with a regex to match both.
 
 This is a really handy way to get one test to match up to multiple features where you are talking about the same thing but are saying it differently.
 
-## Regex Parameters
+## Regex parameters
 
 One powerful feature of Gherkin is that we can use named matches in our strings and automatically pass them in as parameters. A named match is part of the regex specification. It allows you to have sub matches with an identifying name. Here is a quick example of using a named regex pattern.
 
@@ -370,8 +370,8 @@ We can do that by using a `Scenario Outline` and adding an example table. This w
             | Node     |
             | Edge     |
 
-The `<Function>` gets repalced by the current value in the examples table. We would then match that with a regex in the test.
+The `<Function>` gets replaced by the current value in the examples table. We would then match that with a regex in the test.
 
-# What is comming in part 3?
+# What is coming in part 3?
 
-I covered a lot of advanced feautres that gives Gherkin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work togehter. So far we have only seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come togheter. 
+I covered a lot of advanced features that gives Gherkin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work together. So far we have seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come together. 
