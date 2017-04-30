@@ -20,13 +20,13 @@ Pester Before/After apply to "IT" within context
 # start of post
 
 
-In the last post, I covered the bare basics of how to use Ghrekin. I had a conversation with Joel Bennett on twitter about Ghrekin and he pointed out some more examples from his Configuration module. Now that I have been playing with them for a few days, I decided it was time to share my findings.
+In the last post, I covered the bare basics of how to use Gherkin. I had a conversation with Joel Bennett on twitter about Gherkin and he pointed out some more examples from his Configuration module. Now that I have been playing with them for a few days, I decided it was time to share my findings.
 
-This is the 2nd post in a 3 part series on Ghrekin where I cover the advanced features. These features are the building blocks that give Ghrekin a lot of power.
+This is the 2nd post in a 3 part series on Gherkin where I cover the advanced features. These features are the building blocks that give Gherkin a lot of power.
 
 * Part 1: Basic introduction
 * Part 2: Advanced Features (This post)
-* Part 3: Working with Ghrekin (Planned but not posted)
+* Part 3: Working with Gherkin (Planned but not posted)
 
 
 # Quick review
@@ -62,7 +62,7 @@ The idea is simple but there is much more to it.
 
 # Tags
 
-Ghrekin has tag support at the feature and scenario level. You place them at the line above the scenario or feature on one line and prefix them with the `@` sign.
+Gherkin has tag support at the feature and scenario level. You place them at the line above the scenario or feature on one line and prefix them with the `@` sign.
 
     @Functions @Milestone
     Scenario: basic feature support
@@ -184,7 +184,7 @@ This is a really handy way to get one test to match up to multiple features wher
 
 ## Regex Parameters
 
-One powerful feature of Ghrekin is that we can use named matches in our strings and automatically pass them in as parameters. A named match is part of the regex specification. It allows you to have sub matches with an identifying name. Here is a quick example of using a named regex pattern.
+One powerful feature of Gherkin is that we can use named matches in our strings and automatically pass them in as parameters. A named match is part of the regex specification. It allows you to have sub matches with an identifying name. Here is a quick example of using a named regex pattern.
 
     If("My Name is Kevin." -match 'My Name is (?<name>.*).' )
     {
@@ -345,7 +345,7 @@ Then use it in the test like this:
 
 You can place any PowerShell into a text parameter. Should you do that? Prabbably not. Your code really should be in the tests and not in the specifications.
 
-I do have to warn you that by using `Invoke-Expression` or even creating a `ScriptBlock` that you are turning a specification file into an executable file. You could consider limiting the commands that could be used in your specification. If you are interested in that, I have a better write up about [Domain Specific Languages](https://kevinmarquette.github.io/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1/?utm_source=blog&utm_medium=blog&utm_content=ghrekin2#data-sections) that coveres that in more detail. 
+I do have to warn you that by using `Invoke-Expression` or even creating a `ScriptBlock` that you are turning a specification file into an executable file. You could consider limiting the commands that could be used in your specification. If you are interested in that, I have a better write up about [Domain Specific Languages](https://kevinmarquette.github.io/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1/?utm_source=blog&utm_medium=blog&utm_content=Gherkin2#data-sections) that coveres that in more detail. 
  
 # Running scenarios multiple times
 
@@ -366,4 +366,4 @@ The `<Function>` gets repalced by the current value in the examples table. We wo
 
 # What is comming in part 3?
 
-I covered a lot of advanced feautres that gives Ghrekin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work togehter. So far we have only seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come togheter. 
+I covered a lot of advanced feautres that gives Gherkin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work togehter. So far we have only seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come togheter. 
