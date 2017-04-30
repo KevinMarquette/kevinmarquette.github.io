@@ -107,7 +107,7 @@ We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` com
 
 # Manny to one
 
-Each specification is matched a test and you can have the same specification in multiple scenarios.
+Each specification is matched to a test and you can have the same specification in multiple scenarios.
 
     Scenario: basic node support
         Given we have public functions
@@ -120,7 +120,7 @@ Each specification is matched a test and you can have the same specification in 
 In this example, the `Given we have public functions` in both scenarios would match the following test.
 
     Given 'we have public functions' {
-        "$psscriptroot\..\psgraph\public\*.ps1" | Should Exist
+        "$psscriptroot\..\myModule\public\*.ps1" | Should Exist
     }
 
 This allows you have common requirements or statements for multiple scenarios without having to create more tests.
@@ -142,9 +142,10 @@ Then create a corresponding test to use that table.
         param($table)
         foreach($row in $table)
         {
-            "$psscriptroot\..\psgraph\$($row.type)\$($row.name).ps1" | Should Exist
+            "$psscriptroot\..\myModule\$($row.type)\$($row.name).ps1" | Should Exist
         }
     }
+
 
 Using a table also allows you to reuse that test in other specifications but with different datasets.
 
@@ -175,17 +176,17 @@ Lets say we use this specification in a few different locations.
 Then we would need a test for each one.
 
     Given 'we have public functions' {
-        "$psscriptroot\..\psgraph\public\*.ps1" | Should Exist
+        "$psscriptroot\..\MyModule\public\*.ps1" | Should Exist
     }
 
     Given 'there are public function' {
-        "$psscriptroot\..\psgraph\public\*.ps1" | Should Exist
+        "$psscriptroot\..\MyModule\public\*.ps1" | Should Exist
     }
 
 Instead of writing two tests, we can write one with a regex to match both.
 
     Given '(we have|there are) public functions' {
-        "$psscriptroot\..\psgraph\public\*.ps1" | Should Exist
+        "$psscriptroot\..\MyModule\public\*.ps1" | Should Exist
     }
 
 This is a really handy way to get one test to match up to multiple features where you are talking about the same thing but are saying it differently.
@@ -213,7 +214,6 @@ We want to parameterize those file paths.
         $secondary.Hash | Should Be $primary.Hash
     }
 
-
 If we take a close look at that example; the named match `(?<target>\S*)` is passed in as `$Target`. My pattern of `\S*` is for consecutive characters that are not whitespace. We did the same thing for the second value. This would let us reuse that test for different files or in different specifications.
 
 Here is a second example.
@@ -229,7 +229,7 @@ We already have a test for public functions in general. But now we need a test t
 
     Then 'we have a (?<name>\S*) function' {
         param($name)
-        "$psscriptroot\..\psgraph\*\$name.ps1" | Should Exist
+        "$psscriptroot\..\MyModule\*\$name.ps1" | Should Exist
     }
 
 This is dynamically pulling the value from the specification text. This gives us a lot of flexibility.
@@ -240,7 +240,7 @@ I really stressed the named parameters in the last section, but this also works 
 
     Then 'we have a (\S*) function' {
         param($functionName)
-        "$psscriptroot\..\psgraph\*\$functionName.ps1" | Should Exist
+        "$psscriptroot\..\MyModule\*\$functionName.ps1" | Should Exist
     }
 
 I would still recommend the named parameters. 
@@ -333,9 +333,9 @@ The catch all scenario is that we convert that text parameter to a `ScriptBlock`
         Given we have these values for New-Person
             """
             @{
-                Name  = "Kevin Marquette" 
-                UserName = $env:UserName   
-            }      
+                Name  = "Kevin Marquette"
+                UserName = $env:UserName
+            }
             """
 
 Then use it in the test like this:
