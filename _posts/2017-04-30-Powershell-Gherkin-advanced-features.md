@@ -83,7 +83,24 @@ And we can exclude by tags.
 
 This is like the tag support that Peter uses.
 
-# BeforeEachScenario
+## Background
+
+You can add a `Background` scenario to a `feature` and it will get executed before all the other scenarios in that feature.
+
+    Feature: You can copy one file
+
+    Background: The file exists, and the target folder exists
+        Given we have a source file
+        And we have a destination folder
+
+    Scenario: Copy a single file
+        When we call Copy-Item
+        Then we have a new file in the destination
+        And the new file is the same as the original file
+
+It is just like any of the other scenarios but the intent is to identify pre-requirements or do some common pre-pwork for the rest of the scenarios in that feature.
+
+## BeforeEachScenario
 
 In your script containing all your tests, you can specify a `BeforeEachScenario` script to run before each scenario.
 
@@ -99,7 +116,8 @@ This will change the working directory to the test drive before each scenario in
 
 By specifying a tag, this `BeforeEachScenario` script will only run for each scenario that has this same tag.
 
-We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down where you need to.
+We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down where you need to if the `Background` scenario just isn't appropriate.
+
 
 # Manny to one
 
@@ -121,7 +139,7 @@ In this example, the `Given we have public functions` in both scenarios would ma
 
 This allows you have common requirements or statements for multiple scenarios without having to create more tests.
 
-# Regular Expressions
+# Regular expressions
 
 I didn't point this out before but the test descriptions are regular expressions (regex). This makes it much easier to reuse a test for different specification descriptions.
 
@@ -195,7 +213,7 @@ We already have a test for public functions in general. But now we need a test t
 
 This is dynamically pulling the value from the specification text. This gives us a lot of flexibility.
 
-### Regex positional parameters
+## Regex positional parameters
 
 I really stressed the named parameters in the last section, but this also works with positional parameters. The order of the expression matches up with the order of the parameter. So this would have worked just as well for that last example
 
@@ -204,11 +222,11 @@ I really stressed the named parameters in the last section, but this also works 
         "$psscriptroot\..\MyModule\*\$functionName.ps1" | Should Exist
     }
 
-I would still recommend the named parameters. 
+I would still recommend the named matches.
 
 # Table support
 
-We can define a table inside the specification and that will get passed into our tests.
+We can define a table inside the specification and that will get passed to our tests.
 
     Scenario: basic feature support
         Given we have these functions
@@ -286,7 +304,7 @@ We then have to convert the text to a hashtable in our test.
 
 I want to point out that we can take these hashtables and splat them to our functions.
 
-   Scenario: Splat function
+    Scenario: Splat function
         Given we have these values for New-Person
             """
             Name  = "Kevin Marquette"

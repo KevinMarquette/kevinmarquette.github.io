@@ -44,7 +44,7 @@ We need to start by creating a specification. These plain text files need to be 
         Then we have a new file in the destination
         And the new file is the same as the original file
 
-Save this as `.\copyfile.feature` and now we have a Gherkin-style specification. If this was part of a module, I would save it into a spec folder.
+Save this as `.\copyfile.feature` and now we have a Gherkin-style specification. If this was part of a module, I would save it into a `spec` folder.
 
 ## Invoke-Gherkin
 
