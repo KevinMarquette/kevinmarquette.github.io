@@ -75,7 +75,7 @@ Gherkin has tag support at the feature and scenario level. You place them at the
     @Functions @Milestone
     Scenario: basic feature support
         Given we have public functions
-        Then we have a New-Node function
+        And we have a New-Node function
 
 Then we can run those the scenarios that have the tag `@Functions` like this.
 
@@ -103,7 +103,7 @@ This will stage the sample file with sample data between each scenario. We can a
 
 By specifying a tag, this script will only run for each scenario that has this same tag.
 
-We have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way.
+We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way.
 
 # Manny to one
 
@@ -111,11 +111,11 @@ Each specification is matched a test and you can have the same specification in 
 
     Scenario: basic node support
         Given we have public functions
-        Then we have a New-Node function
+        And we have a New-Node function
 
     Scenario: basic edge support
         Given we have public functions
-        Then we have a New-Edge function
+        And we have a New-Edge function
 
 In this example, the `Given we have public functions` in both scenarios would match the following test.
 
@@ -227,22 +227,18 @@ Here is a second example.
 
 We already have a test for public functions in general. But now we need a test to cover each individual function.
 
-    Given 'we have a (?<name>\S*) function' {
+    Then 'we have a (?<name>\S*) function' {
         param($name)
         "$psscriptroot\..\psgraph\*\$name.ps1" | Should Exist
     }
 
-This is dynamically pulling the value from the specification text.
-
-One last example
-
-This gives us a lot of flexibility.
+This is dynamically pulling the value from the specification text. This gives us a lot of flexibility.
 
 ### Regex positional parameters
 
 I really stressed the named parameters in the last section, but this also works with positional parameters. The order of the expression matches up with the order of the parameter. So this would have worked just as well for that last example
 
-    Given 'we have a (\S*) function' {
+    Then 'we have a (\S*) function' {
         param($functionName)
         "$psscriptroot\..\psgraph\*\$functionName.ps1" | Should Exist
     }
