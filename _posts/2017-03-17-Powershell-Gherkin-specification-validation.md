@@ -12,7 +12,7 @@ This feature allows you to define your features and specifications in a simple b
 This is the first post in a 3 part series on Gherkin.
 
 * Part 1: Basic Gherkin introduction (This post)
-* Part 2: [Advanced Gherkin Features](2017-04-30-Powershell-Gherkin-advanced-features)
+* Part 2: [Advanced Gherkin Features](../2017-04-30-Powershell-Gherkin-advanced-features)
 * Part 3: Working with Gherkin (Planned but not posted)
 
 # Index
@@ -144,4 +144,4 @@ Pester is good at a lot of things but it is built around one school of thought. 
 
 We just looked at the most basic of examples. We have only scratched the surface. In the next post on Gherkin, I am going to cover the rest of the features.
 
-* Part 2: [Advanced Gherkin Features](2017-04-30-Powershell-Gherkin-advanced-features)
+* Part 2: [Advanced Gherkin Features](../2017-04-30-Powershell-Gherkin-advanced-features)

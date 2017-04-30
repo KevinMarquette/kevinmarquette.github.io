@@ -9,7 +9,7 @@ In the last post, I covered the bare basics of how to use Gherkin. I had a conve
 
 This is the 2nd post in a 3 part series on Gherkin where I cover the advanced features. These features are the building blocks that give Gherkin a lot of power.
 
-* Part 1: [Basic Gherkin introduction](2017-03-17-Powershell-Gherkin-specification-validation)
+* Part 1: [Basic Gherkin introduction](../2017-03-17-Powershell-Gherkin-specification-validation)
 * Part 2: Advanced Gherkin Features (This post)
 * Part 3: Working with Gherkin (Planned but not posted)
 
