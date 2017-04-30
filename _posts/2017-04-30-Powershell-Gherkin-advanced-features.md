@@ -119,7 +119,7 @@ By specifying a tag, this `BeforeEachScenario` script will only run for each sce
 We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down if the `Background` scenario just isn't appropriate.
 
 
-# Manny to one
+# Many to one
 
 Each specification is matched to a test and you can have the same specification in multiple scenarios.
 
