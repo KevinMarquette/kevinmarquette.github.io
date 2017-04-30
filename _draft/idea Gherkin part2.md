@@ -355,18 +355,33 @@ I do have to warn you that by using `Invoke-Expression` or even creating a `Scri
 
 I want to revisit a scenario we used in the table example. One problem with that specific example is that the test fails as a whole. We don't know what row caused the issue. It would be nice if we could run a single test for each one.
 
-We can do that by using a `Scenario Outline` and adding an example table. This will make the the whole scenario run once for each example.
+We can do that by using a `Scenario Outline` and adding an `Examples` table. This will make the the whole scenario run once for each example.
 
     Scenario Outline: functions are well made
         Given we have a <Function> function
         Then the <Function> should have comment based help
 
-        Examples:
-            | Function |
-            | Node     |
-            | Edge     |
+        Examples: public functions
+        | Function |
+        | New-Node |
+        | New-Edge |
 
 The `<Function>` gets replaced by the current value in the examples table. We would then match that with a regex in the test.
+
+We can call that table `Scenarios` and it will work the same way as the `Examples` table. We can also specify more than one table for a given `Scenario Outline`.
+
+    Scenario Outline: functions are well made
+        Given we have a <Function> function
+        Then the <Function> should have comment based help
+
+        Scenarios: public functions
+        | Function |
+        | New-Node |
+        | New-Edge |
+
+        Scenarios: private functions
+        | Function   |
+        | Get-Indent |
 
 # What is coming in part 3?
 
