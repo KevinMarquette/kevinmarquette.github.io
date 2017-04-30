@@ -1,3 +1,5 @@
+# notes
+
 examples
 
 https://github.com/PoshCode/Configuration/tree/master/Specs 
@@ -15,7 +17,7 @@ Gherkin has Before/After each Feature/Scenario in steps
 They apply across a whole test run
 Pester Before/After apply to "IT" within context
 
-
+# start of post
 
 
 In the last post, I covered the bare basics of how to use Ghrekin. I had a conversation with Joel Bennett on twitter about Ghrekin and he pointed out some more examples from his Configuration module. Now that I have been playing with them for a few days, I decided it was time to share my findings.
