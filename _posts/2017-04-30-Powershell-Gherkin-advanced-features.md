@@ -116,7 +116,7 @@ This will change the working directory to the test drive before each scenario in
 
 By specifying a tag, this `BeforeEachScenario` script will only run for each scenario that has this same tag.
 
-We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down where you need to if the `Background` scenario just isn't appropriate.
+We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down if the `Background` scenario just isn't appropriate.
 
 
 # Manny to one
