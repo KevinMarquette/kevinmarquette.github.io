@@ -15,7 +15,7 @@ This is the 2nd post in a 3 part series on Gherkin where I cover the advanced fe
 
 # Quick review
 
-Take a moment to read the previous post. The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file
+Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-specification-validation). The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file
 
     Feature: You can copy one file
 
