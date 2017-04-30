@@ -20,7 +20,7 @@ This is the 2nd post in a 3 part series on Gherkin where I cover the advanced fe
 
 # Quick review
 
-Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-specification-validation). The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file
+Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-specification-validation). The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file.
 
     Feature: You can copy one file
 
@@ -91,15 +91,15 @@ In your script containing all your tests, you can specify a `BeforeEachScenario`
         Set-Location TestDrive: 
     }
 
-This will stage the sample file with sample data between each scenario. We can also use tags to limit what scenario the `BeforeEachScenario` runs before.
+This will change the working directory to the test drive before each scenario in case something changes it. We can also use tags to limit what scenario the `BeforeEachScenario` runs before.
 
     BeforeEachScenario -Tags DataProcessing  {
         Set-Location TestDrive: 
     }
 
-By specifying a tag, this script will only run for each scenario that has this same tag.
+By specifying a tag, this `BeforeEachScenario` script will only run for each scenario that has this same tag.
 
-We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way.
+We also have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands that work the same way. This lets you set up and tear down where you need to.
 
 # Manny to one
 
@@ -120,45 +120,6 @@ In this example, the `Given we have public functions` in both scenarios would ma
     }
 
 This allows you have common requirements or statements for multiple scenarios without having to create more tests.
-
-# Table support
-
-We can define a table inside the specification and that will get passed into our tests.
-
-    Scenario: basic feature support
-        Given we have these functions
-        | Name       | Type    |
-        | New-Node   | Public  |
-        | New-Edge   | Public  |
-        | Get-Indent | Private |
-
-Then create a corresponding test to use that table.
-
-    Given 'We have these functions' {
-        param($table)
-        foreach($row in $table)
-        {
-            "$psscriptroot\..\myModule\$($row.type)\$($row.name).ps1" | Should Exist
-        }
-    }
-
-
-Using a table also allows you to reuse that test in other specifications but with different datasets.
-
-    Scenario: basic public functions
-        Given we have these functions
-        | Name       | Type    |
-        | New-Node   | Public  |
-        | New-Edge   | Public  |
-
-    Scenario: basic private functions
-        Given we have these functions
-        | Name       | Type    |
-        | Get-Indent | Private |
-
-In that example, the `We have these functions` would be ran twice. Once with each table.
-
-I called my parameter `$table` in that example, but I could have called it anything.
 
 # Regex matches
 
@@ -244,6 +205,46 @@ I really stressed the named parameters in the last section, but this also works 
     }
 
 I would still recommend the named parameters. 
+
+# Table support
+
+We can define a table inside the specification and that will get passed into our tests.
+
+    Scenario: basic feature support
+        Given we have these functions
+        | Name       | Type    |
+        | New-Node   | Public  |
+        | New-Edge   | Public  |
+        | Get-Indent | Private |
+
+Then create a corresponding test to use that table.
+
+    Given 'We have these functions' {
+        param($table)
+        foreach($row in $table)
+        {
+            "$psscriptroot\..\MyModule\$($row.type)\$($row.name).ps1" | Should Exist
+        }
+    }
+
+
+Using a table also allows you to reuse that test in other specifications but with different datasets.
+
+    Scenario: basic public functions
+        Given we have these functions
+        | Name       | Type    |
+        | New-Node   | Public  |
+        | New-Edge   | Public  |
+
+    Scenario: basic private functions
+        Given we have these functions
+        | Name       | Type    |
+        | Get-Indent | Private |
+
+In that example, the `We have these functions` would be ran twice. Once with each table.
+
+I called my parameter `$table` in that example, but I could have called it anything.
+
 
 # Multi-line text parameter
 
