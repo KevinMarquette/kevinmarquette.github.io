@@ -1,33 +1,17 @@
-# notes
+---
+layout: post
+title: "Powershell: Advanced Gherkin Features"
+date: 2017-04-30
+tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
+---
 
-examples
-
-https://github.com/PoshCode/Configuration/tree/master/Specs 
-
-
-I need to explain wildcards in steps, parameterized examples, the way before/after works better, and why g-w-t makes you write better tests
-
-It's worth pointing out there's a Find-GherkinStep you can use to figure out which step definition will match step text ;-)
-
-Some <examples> in my Configuration module.
-https://github.com/PoshCode/Configuration/blob/master/Specs/LocalStoragePath.feature#L40-L49 … 
-It's also regex! E.g. line 43 matches here:
-
-Gherkin has Before/After each Feature/Scenario in steps
-They apply across a whole test run
-Pester Before/After apply to "IT" within context
-
-# Start of post
-
-
-In the last post, I covered the bare basics of how to use Gherkin. I had a conversation with Joel Bennett on twitter about Gherkin and he pointed out some more examples from his Configuration module. Now that I have been playing with them for a few days, I decided it was time to share my findings.
+In the last post, I covered the bare basics of how to use Gherkin. I had a conversation with [Joel Bennett](https://twitter.com/Jaykul) on twitter about Gherkin and he pointed out some more examples from his [Configuration module](https://github.com/PoshCode/Configuration/tree/master/Specs). Now that I have been playing with them for a few days, I decided it was time to share my findings.
 
 This is the 2nd post in a 3 part series on Gherkin where I cover the advanced features. These features are the building blocks that give Gherkin a lot of power.
 
-* Part 1: Basic introduction
-* Part 2: Advanced Features (This post)
+* Part 1: [Basic Gherkin introduction](2017-03-17-Powershell-Gherkin-specification-validation)
+* Part 2: Advanced Gherkin Features (This post)
 * Part 3: Working with Gherkin (Planned but not posted)
-
 
 # Quick review
 
