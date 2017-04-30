@@ -62,14 +62,14 @@ The idea is simple but there is much more to it.
 
 # Tags
 
-Ghrekin also has tag support at the feature and scenario level. You place them at the line above the scenario on one line and prefix them with the `@` sign.
+Ghrekin has tag support at the feature and scenario level. You place them at the line above the scenario or feature on one line and prefix them with the `@` sign.
 
     @Functions @Milestone
     Scenario: basic feature support
         Given we have public functions
         Then we have a node function
 
-Then we can run those the scenarios that have the tag '@Functions' like this.
+Then we can run those the scenarios that have the tag `@Functions` like this.
 
     Invoke-Gherkin -Tag Functions
 
@@ -89,7 +89,7 @@ In your script containing all your tests, you can specify a `BeforeEachScenario`
 
 This will stage the sample file with sample data between each scenario. We can also use tags to limit what scenario the `BeforeEachScenario` runs before.
 
-   BeforeEachScenario -Tags DataProcessing  {
+        BeforeEachScenario -Tags DataProcessing  {
         "Sample data" | Set-Content -path TestDrive:\sample.txt
     }
 
@@ -101,17 +101,17 @@ We have `AfterEachScenario`, `BeforeEachFeature` and `AfterEachFeature` commands
 
 Each specification is matched a test and you can have the same specification in multiple scenarios.
 
-    Scenario: basic feature support
+    Scenario: basic node support
         Given we have public functions
         Then we have a node function
 
-    Scenario: basic feature support
+    Scenario: basic edge support
         Given we have public functions
         Then we have a edge function
 
 In this example, the `Given we have public functions` in both scenarios would match the following test.
 
-   Given 'we have public functions' {
+    Given 'we have public functions' {
         "$psscriptroot\..\psgraph\public\*.ps1" | Should Exist
     }
 
@@ -206,14 +206,16 @@ And in our project, we have a `public` folder and a `private` folder for our fun
         "$psscriptroot\..\psgraph\private\*.ps1" | Should Exist
     }
 
-Or we could use a named regex to create a parameterized test.
+Or we could use a named regex to create a parameterized test to match both specifications.
 
     Given 'we have (?<folder>(public|private)) functions' {
         param($folder)
         "$psscriptroot\..\psgraph\$folder\*.ps1" | Should Exist
     }
 
-If we take a close look at that example; the named match `(?<folder>(public|private))` is passed in as `$folder`. My pattern matches on either `private` or `public`.  Here is a second example.
+If we take a close look at that example; the named match `(?<folder>(public|private))` is passed in as `$folder`. My pattern matches on either `private` or `public`. 
+
+ Here is a second example.
 
     Scenario: basic feature support
         Given we have public functions
