@@ -20,31 +20,34 @@ Take a moment to read the previous post. The idea is that you write a specificat
     Feature: You can copy one file
 
     Scenario: The file exists, and the target folder exists
-        Given we have a file: .\source\something.txt
-        And we have a folder: .\target
-        When we call Copy-Item .\source\something.txt .\target
-        Then we have a file .\target\something.txt
-        And the file .\target\something.txt is the same as .\source\something.txt
+        Given we have a source file
+        And we have a destination folder
+        When we call Copy-Item
+        Then we have a new file in the destination
+        And the new file is the same as the original file
 
 Then those are matched to the steps that validate the specification. The sentences are parried with a matching test.
 
-    Given 'we have a file: .\source\something.txt' {
-        .\source\something.txt | Should Exist
+    Given 'we have a source file' {
+        mkdir source -ErrorAction SilentlyContinue
+        Set-Content '.\source\something.txt' -Value 'Data'
+        '.\source\something.txt' | Should Exist
     }
 
-    And 'we have a folder: .\target' {
-        .\target | Should Exist
+    Given 'we have a destination folder' {
+        mkdir target -ErrorAction SilentlyContinue
+        '.\target' | Should Exist
     }
 
-    When 'we call Copy-Item .\source\something.txt .\target' {
+    When 'we call Copy-Item' {
         { Copy-Item .\source\something.txt .\target } | Should Not Throw
     }
 
-    Then 'we have a file .\target\something.txt' {
-        .\target\something.txt | Should Exist
+    Then 'we have a new file in the destination' {
+        '.\target\something.txt' | Should Exist
     }
 
-    And 'the file .\target\something.txt is the same as .\source\something.txt' {
+    Then 'the new file is the same as the original file' {
         $primary = Get-FileHash .\target\something.txt
         $secondary = Get-FileHash .\source\something.txt
         $secondary.Hash | Should Be $primary.Hash
@@ -150,7 +153,7 @@ I called my parameter `$table` in that example, but I could have called it anyth
 
 # Regex matches
 
-You can use regex expressions in your tests to match up with specifications.
+I didn't point this out before but the test descriptions are regex expressions. This makes it much easier to reuse a test for different specification descritpions.
 
 Lets say we use this specification in a few different locations.
 
@@ -186,9 +189,13 @@ One powerful feature of Gherkin is that we can use named matches in our strings 
 
 Let's revisit a specification from the first example for this one.
 
+    And the new file is the same as the original file
+
+And rewrite it like this to get the files listed in the specification.
+
     And the file .\target\something.txt is the same as .\source\something.txt
 
-We want to parameterize those file paths.
+We also want to parameterize those file paths.
 
     And 'the file (?<target>\S*) is the same as (?<source>\S*)' {
         param($Target,$Source)
@@ -204,14 +211,14 @@ Here is a second example.
 
     Scenario: basic feature support
         Given we have public functions
-        Then we have a New-Node function
+        And we have a New-Node function
         And we have a New-Edge function
         And we have a New-Graph function
         And we have a New-Subgraph function
 
 We already have a test for public functions in general. But now we need a test to cover each individual function.
 
-    Then 'we have a (?<name>\S*) function' {
+    Given 'we have a (?<name>\S*) function' {
         param($name)
         "$psscriptroot\..\MyModule\*\$name.ps1" | Should Exist
     }
@@ -369,4 +376,7 @@ We can call that table `Scenarios` and it will work the same way as the `Example
 
 # What is coming in part 3?
 
-I covered a lot of advanced features that gives Gherkin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work together. So far we have seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come together. 
+I covered a lot of advanced features that gives Gherkin an amazing amount of flexibility. In my next post on the topic, I plan on showing you how to make all of this work together. So far we have seen each test work in isolation but we can string these tests together. We can use values collected in one test to be used in later tests. This is where we will see everything come together.
+
+* Part 3: Working with Gherkin (Planned but not posted)
+
