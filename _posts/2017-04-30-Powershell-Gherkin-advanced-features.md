@@ -13,6 +13,11 @@ This is the 2nd post in a 3 part series on Gherkin where I cover the advanced fe
 * Part 2: Advanced Gherkin Features (This post)
 * Part 3: Working with Gherkin (Planned but not posted)
 
+# Index
+
+* TOC
+{:toc}
+
 # Quick review
 
 Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-specification-validation). The idea is that you write a specification in common business speak consisting of several sentences. Each sentence is on its own line and starts with a key works like `Given`,`When`,`Then`,`But` or`And`. This would be the `.\copyitem.feature` file
