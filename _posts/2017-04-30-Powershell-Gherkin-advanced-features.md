@@ -121,9 +121,9 @@ In this example, the `Given we have public functions` in both scenarios would ma
 
 This allows you have common requirements or statements for multiple scenarios without having to create more tests.
 
-# Regex matches
+# Regular Expressions
 
-I didn't point this out before but the test descriptions are regex expressions. This makes it much easier to reuse a test for different specification descritpions.
+I didn't point this out before but the test descriptions are regular expressions (regex). This makes it much easier to reuse a test for different specification descriptions.
 
 Lets say we use this specification in a few different locations.
 
@@ -148,7 +148,7 @@ Instead of writing two tests, we can write one with a regex to match both.
 
 This is a really handy way to get one test to match up to multiple features where you are talking about the same thing but are saying it differently.
 
-## Regex parameters
+## Regex match parameters
 
 One powerful feature of Gherkin is that we can use named matches in our strings and automatically pass them in as parameters. A named match is part of the regex specification. It allows you to have sub matches with an identifying name. Here is a quick example of using a named regex pattern.
 
