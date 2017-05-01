@@ -34,13 +34,13 @@ Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-speci
 Then those are matched to the steps that validate the specification. The sentences are paired with a matching test. This would be the `copyitem.Steps.ps1` file.
 
     Given 'we have a source file' {
-        mkdir source -ErrorAction SilentlyContinue
+        mkdir testdrive:\source -ErrorAction SilentlyContinue
         Set-Content 'testdrive:\source\something.txt' -Value 'Data'
         'testdrive:\source\something.txt' | Should Exist
     }
 
     Given 'we have a destination folder' {
-        mkdir target -ErrorAction SilentlyContinue
+        mkdir testdrive:\target -ErrorAction SilentlyContinue
         'testdrive:\target' | Should Exist
     }
 

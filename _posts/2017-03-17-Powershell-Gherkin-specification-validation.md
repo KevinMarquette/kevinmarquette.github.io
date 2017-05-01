@@ -77,13 +77,13 @@ That will enumerate all the feature specifications we have. And run any correspo
 The set of tests for a Gherkin feature are called steps. Because of that they need saved in a file with a name ending in `.Steps.ps1`. Add these steps to a new file and save it as `CopyItem.Steps.ps1`.
 
     Given 'we have a source file' {
-        mkdir source -ErrorAction SilentlyContinue
+        mkdir testdrive:\source -ErrorAction SilentlyContinue
         Set-Content 'testdrive:\source\something.txt' -Value 'Data'
         'testdrive:\source\something.txt' | Should Exist
     }
 
     Given 'we have a destination folder' {
-        mkdir target -ErrorAction SilentlyContinue
+        mkdir testdrive:\target -ErrorAction SilentlyContinue
         'testdrive:\target' | Should Exist
     }
 
