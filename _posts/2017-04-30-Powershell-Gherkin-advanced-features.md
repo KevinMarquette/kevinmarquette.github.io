@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Advanced Gherkin Features"
+title: "Powershell: Advanced Gherkin features in Pester 4.0"
 date: 2017-04-30
 tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 ---
