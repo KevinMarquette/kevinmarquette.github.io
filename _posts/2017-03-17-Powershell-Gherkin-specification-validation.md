@@ -78,26 +78,26 @@ The set of tests for a Gherkin feature are called steps. Because of that they ne
 
     Given 'we have a source file' {
         mkdir source -ErrorAction SilentlyContinue
-        Set-Content '.\source\something.txt' -Value 'Data'
-        '.\source\something.txt' | Should Exist
+        Set-Content 'testdrive:\source\something.txt' -Value 'Data'
+        'testdrive:\source\something.txt' | Should Exist
     }
 
     Given 'we have a destination folder' {
         mkdir target -ErrorAction SilentlyContinue
-        '.\target' | Should Exist
+        'testdrive:\target' | Should Exist
     }
 
     When 'we call Copy-Item' {
-        { Copy-Item .\source\something.txt .\target } | Should Not Throw
+        { Copy-Item testdrive:\source\something.txt testdrive:\target } | Should Not Throw
     }
 
     Then 'we have a new file in the destination' {
-        '.\target\something.txt' | Should Exist
+        'testdrive:\target\something.txt' | Should Exist
     }
 
     Then 'the new file is the same as the original file' {
-        $primary = Get-FileHash .\target\something.txt
-        $secondary = Get-FileHash .\source\something.txt
+        $primary = Get-FileHash testdrive:\target\something.txt
+        $secondary = Get-FileHash testdrive:\source\something.txt
         $secondary.Hash | Should Be $primary.Hash
     }
  
