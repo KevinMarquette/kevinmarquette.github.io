@@ -31,30 +31,30 @@ Take a moment to read the [previous post](../2017-03-17-Powershell-Gherkin-speci
         Then we have a new file in the destination
         And the new file is the same as the original file
 
-Then those are matched to the steps that validate the specification. The sentences are parried with a matching test. This would be the `copyitem.Steps.ps1` file.
+Then those are matched to the steps that validate the specification. The sentences are paired with a matching test. This would be the `copyitem.Steps.ps1` file.
 
     Given 'we have a source file' {
         mkdir source -ErrorAction SilentlyContinue
-        Set-Content '.\source\something.txt' -Value 'Data'
-        '.\source\something.txt' | Should Exist
+        Set-Content 'testdrive:\source\something.txt' -Value 'Data'
+        'testdrive:\source\something.txt' | Should Exist
     }
 
     Given 'we have a destination folder' {
         mkdir target -ErrorAction SilentlyContinue
-        '.\target' | Should Exist
+        'testdrive:\target' | Should Exist
     }
 
     When 'we call Copy-Item' {
-        { Copy-Item .\source\something.txt .\target } | Should Not Throw
+        { Copy-Item testdrive:\source\something.txt testdrive:\target } | Should Not Throw
     }
 
     Then 'we have a new file in the destination' {
-        '.\target\something.txt' | Should Exist
+        'testdrive:\target\something.txt' | Should Exist
     }
 
     Then 'the new file is the same as the original file' {
-        $primary = Get-FileHash .\target\something.txt
-        $secondary = Get-FileHash .\source\something.txt
+        $primary = Get-FileHash testdrive:\target\something.txt
+        $secondary = Get-FileHash testdrive:\source\something.txt
         $secondary.Hash | Should Be $primary.Hash
     }
 
@@ -259,7 +259,7 @@ Using a table also allows you to reuse that test in other specifications but wit
         | Name       | Type    |
         | Get-Indent | Private |
 
-In that example, the `We have these functions` would be ran twice. Once with each table.
+In that example, the `We have these functions` would be run twice. Once with each table.
 
 I called my parameter `$table` in that example, but I could have called it anything.
 
@@ -346,7 +346,7 @@ This will allow us to get structured data into our tests from the specification.
 
 ## Scriptblocks
 
-The catch all scenario is that we convert that text parameter to a `ScriptBlock`. If you would much rather put in PowerShell hashtable then we can do that.
+The catch-all scenario is that we convert that text parameter to a `ScriptBlock`. If you would much rather put in PowerShell hashtable then we can do that.
 
     Scenario: Splat function with script block
         Given we have these values for New-Person
@@ -366,13 +366,13 @@ Then use it in the test like this:
         New-Person @hashtable
     }
 
-You can place any PowerShell into a text parameter. Should you do that? Prabably not. Your code really should be in the tests and not in the specifications.
+You can place any PowerShell ScriptBlock into a text parameter. Should you do that? Prabably not. Your code really should be in the tests and not in the specifications.
 
 I do have to warn you that by using `Invoke-Expression` or even creating a `ScriptBlock` that you are turning a specification file into an executable file. You could consider limiting the commands that could be used in your specification. If you are interested in that, I have a better write up about [Domain Specific Languages](https://kevinmarquette.github.io/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1/?utm_source=blog&utm_medium=blog&utm_content=Gherkin2#data-sections) that covers that in more detail. 
  
 # Running scenarios multiple times
 
-I want to revisit a scenario we used in the table example. One problem with that specific example is that the test fails as a whole. We don't know what row caused the issue. It would be nice if we could run a single test for each one.
+I want to revisit a scenario we used in the table example. One problem with that specific example is if the test fails, it fails as a whole. We don't know what row caused the issue. It would be nice if we could run a single test for each one.
 
 We can do that by using a `Scenario Outline` and adding an `Examples` table. This will make the the whole scenario run once for each example.
 
