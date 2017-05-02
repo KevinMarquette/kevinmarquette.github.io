@@ -18,6 +18,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-04 [Powershell: Writing a DSL for RDC Manager, DSLs part 2](/2017-03-04-Powershell-DSL-example-RDCMan/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-13 [Powershell: DSL design patterns, DSLs part 3](/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Attribute'></a>
 # Attribute
@@ -33,6 +35,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-1-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Chronometer'></a>
 # Chronometer
@@ -44,6 +48,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2017-02-19 [Powershell: Creating and using custom attributes](/2017-02-19-Powershell-custom-attribute-validator-transform/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-20 [Powershell: Creating parameter validators and transforms](/2017-02-20-Powershell-creating-parameter-validators-and-transforms/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Docker'></a>
+# Docker
+
+* 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='DSC'></a>
 # DSC
@@ -57,11 +66,19 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-04 [Powershell: Writing a DSL for RDC Manager, DSLs part 2](/2017-03-04-Powershell-DSL-example-RDCMan/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-13 [Powershell: DSL design patterns, DSLs part 3](/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Exceptions'></a>
+# Exceptions
+
+* 2017-04-07 [All .Net Exceptions List](/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Gherkin'></a>
 # Gherkin
 
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Hashtables'></a>
 # Hashtables
@@ -86,6 +103,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Monthly
 
 * 2017-04-01 [Powershell: What have you done this month? March 2017](/2017-04-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-01 [Powershell: What have you done this month? April 2017](/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Operational Validation'></a>
 # Operational Validation
@@ -99,6 +117,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-08-27 [Kevin Marquette, Launches Site (test post)](/2016-08-27-kevin-marquette-site-launched/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-09-11 [How I understand WOL (Wake on Lan)](/2016-09-11-How-I-understand-WOL-Wake-on-Lan/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-25 [Mnemonic wordlist](/2017-03-25-mnemonic-wordlist/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-07 [All .Net Exceptions List](/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Pester'></a>
 # Pester
@@ -106,6 +125,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-10-14 [ATXPowershell November 2016 Meeting: Operational Validation with Kevin Marquette](/2016-10-14-ATXPowershell-November-2016-Meeting-Operational-Validation-with-Kevin-Marquette/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-10-25 [Powershell: Operational Validation Framework](/2016-10-25-Powershell-Operational-Validation-Framework/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShell'></a>
 # PowerShell
@@ -128,6 +148,9 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-13 [Powershell: DSL design patterns, DSLs part 3](/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Presentation'></a>
 # Presentation
@@ -155,6 +178,12 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Remoting
 
 * 2016-08-28 [PowerShell: Passing variables to remote commands](/2016-08-28-PowerShell-variables-to-remote-commands/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='SQL'></a>
+# SQL
+
+* 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Strings'></a>
 # Strings
