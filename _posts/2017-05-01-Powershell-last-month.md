@@ -23,6 +23,7 @@ These are the projects and idea that I do on my own time for the community. Most
 * Wrote blog post on [Everything you wanted to know about exceptions](https://kevinmarquette.github.io/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=monthly)
 * Wrote blog post on [All .Net 4.6 Exceptions List](https://kevinmarquette.github.io/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=monthly)
 * I wrote a templating process that mimics the way Plater processes template files because it reminded me of ASP classic and felt like an interesting challenge
+* Tracked down an interesting bug in xRemoteFile
 
 # Work\Consulting efforts
 

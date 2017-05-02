@@ -22,7 +22,7 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 ### Recent posts
 
 * 2017-05-01 [What have you done with PowerShell this month](https://kevinmarquette.github.io/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-04-30  [Powershell: Advanced Gherkin Features](2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-04-30  [Powershell: Advanced Gherkin features in Pester 4.0](2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](https://kevinmarquette.github.io/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-22 [PowerShell: Installing remote software](https://kevinmarquette.github.io/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](https://kevinmarquette.github.io/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
