@@ -42,6 +42,34 @@ Use BeforeEachScenario to clear any variables that you plan on using so they don
         }    
     }
 
+### one step deeper
+
+I think we could make a gernic step test that takes a text block. That text block is executed and foreach to a invoke-GherkinStep that is built off of the current step text.
+
+Would have to have a keyword or some way to inject the result back into the text.
+
+Here is a clever example
+
+    Then 'all public functions (?<Action>.*)' {
+        Param($Action)
+        $step = @{keyword = 'Then'}
+        $AllPassed = $true
+        foreach($command in (Get-Command -Module $ModuleName  ))
+        {
+            $step.text = ('function {0} {1}' -f $command.Name, $Action )
+
+            Invoke-GherkinStep $step -Pester $Pester
+            If( -Not $Pester.TestResult[-1].Passed )
+            {
+                $AllPassed = $false
+            } 
+
+            $step.keyword = 'And'
+        }
+        $AllPassed | Should be $true
+    }
+
+
 ## Guidance
 
 Feature: Returns go to stock

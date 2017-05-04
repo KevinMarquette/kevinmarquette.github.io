@@ -416,33 +416,6 @@ Because `$PSItem` is an `ErrorRecord`, we can also use `ThrowTerminatingError` t
 
 This will change the source of the error to the Cmdlet and hide the internals of your function from the users of your Cmdlet.
 
-### Re-throwing with Write-Error
-
-We can also use `Write-Error` to re-throw our exception.
-
-    catch
-    {
-        Write-Error -Exception $PSItem -ErrorAction Stop
-    }
-
-This also gives most of the benefits of using `$PSCmdlet.ThrowTerminatingError()` without using `$PSCmdlet.ThrowTerminatingError()`. Using `Write-Error` to re-throw will give you the option to turn the exception into a non-terminating error by not including the `-ErrorAction Stop`.
-
-# Trap
-
-I focused on the try/catch aspect of exceptions. But there is one legacy feature I need to mention before we wrap this up.
-
-A `trap` is placed in a script or function to catch all exceptions that happen in that scope. When an exception happens, the code in the `trap` will get executed and then the normal code will continue. If multiple exceptions happen, then the trap will get called over and over.
-
-    trap
-    {
-        Write-Log $PSItem.ToString()
-    }
-
-    throw [System.Exception]::new('first')
-    throw [System.Exception]::new('second')
-    throw [System.Exception]::new('third')
-
-I personally never adopted this approach but I can see the value in admin or controller scripts that will log any and all exceptions, then still continues to execute.
 
 # Try can create terminating errors
 
@@ -473,8 +446,51 @@ I have not ran into issues with this myself but it is corner case to be aware of
 
 One nuance of `$PSCmdlet.ThrowTerminatingError()` is that it creates a terminating error within your Cmdlet but it turns into a non-terminating error after it leaves your Cmdlet. This leaves the burden on the caller of your function to decide how to handle the error. They can turn it back into a terminating error by using `-ErrorAction Stop` or calling it from within a `try{...}catch{...}`.
 
+## Public function templates
+
+One last take a way I had with my conversation with Kirk Munro was that he places a `try{...}catch{...}` around every `begin`, `process` and `end` block in all of his advanced functions. In those generic catch blocks, he as a single line using `$PSCmdlet.ThrowTerminatingError($PSitem)` to deal with all exceptions leaving his functions.
+
+    function Do-Something
+    {
+        [cmdletbinding()]
+        param()
+
+        process
+        {
+            try
+            {
+                ...
+            }
+            catch
+            {
+                $PSCmdlet.ThrowTerminatingError($PSitem)
+            }
+        }
+    }
+
+Because everything is in a `try` statement within his functions, everything acts consistently. This also gives clean errors to the end user that hides the internal code from the generated error.
+
+# Trap
+
+I focused on the try/catch aspect of exceptions. But there is one legacy feature I need to mention before we wrap this up.
+
+A `trap` is placed in a script or function to catch all exceptions that happen in that scope. When an exception happens, the code in the `trap` will get executed and then the normal code will continue. If multiple exceptions happen, then the trap will get called over and over.
+
+    trap
+    {
+        Write-Log $PSItem.ToString()
+    }
+
+    throw [System.Exception]::new('first')
+    throw [System.Exception]::new('second')
+    throw [System.Exception]::new('third')
+
+I personally never adopted this approach but I can see the value in admin or controller scripts that will log any and all exceptions, then still continues to execute.
+
 # Closing remarks
 
 Adding proper exception handling to your scripts will not only make them more stable, but it will also make it easier for you to troubleshoot those exceptions.
 
-I spent a lot of time talking `throw` because it is a core concept when talking about exception handling. PowerShell also gave us `Write-Error` that handles all the situations where you would use `throw`. So don't think that you need to be using `throw` after reading this. Now that I have taken the time to write about exception handling in this detail, I am going to switch over to using `Write-Error` instead.
+I spent a lot of time talking `throw` because it is a core concept when talking about exception handling. PowerShell also gave us `Write-Error` that handles all the situations where you would use `throw`. So don't think that you need to be using `throw` after reading this.
+
+Now that I have taken the time to write about exception handling in this detail, I am going to switch over to using `Write-Error -Stop` to generate errors in my code. I am also going to take Kirk's advice and make `ThrowTerminatingError` my goto exception handler for every funciton.
