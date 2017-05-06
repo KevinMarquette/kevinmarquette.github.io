@@ -11,10 +11,9 @@ Steffen Stranger pointed this [RFC](https://github.com/PowerShell/PowerShell-RFC
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-The [RFC](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) is about making it easier to implement a DSL in Powershell. They had an example of a DSL to replace `types.ps1xml`. It is a nice clear example of a DSL that addresses a problem.
+The [RFC](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) is about making it easier to implement a DSL in Powershell with C#. They have an example of a DSL to replace `types.ps1xml`. It is a nice clear example of a DSL.
 
-I previously wrote a 4 part serise on DSLs.
-
+This is my fourth post in this series covering DSLs.
 
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
