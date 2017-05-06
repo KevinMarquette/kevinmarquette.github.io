@@ -58,7 +58,7 @@ Here is a clever example
         {
             $step.text = ('function {0} {1}' -f $command.Name, $Action )
 
-            Invoke-GherkinStep $step -Pester $Pester
+            Invoke-GherkinStep $step -Pester $Pester -Visible
             If( -Not $Pester.TestResult[-1].Passed )
             {
                 $AllPassed = $false
@@ -69,6 +69,9 @@ Here is a clever example
         $AllPassed | Should be $true
     }
 
+## pester version
+
+Was added in 4.0 but refactored in 4.0.3. Pay attention to versions.
 
 ## Guidance
 
@@ -80,3 +83,41 @@ I want to   add items back to stock when they're returned.
 Use one Given, should be past tense
 When in present tense
 Then in future tense
+
+## it commands in given steps
+
+Can call IT inside a given script to add lines to the output
+
+
+    Then 'all script files pass PSScriptAnalyzer rules' {
+    
+    $Rules = Get-ScriptAnalyzerRule
+    $scripts = Get-ChildItem $BaseFolder -Include *.ps1, *.psm1, *.psd1 -Recurse | where fullname -notmatch 'classes'
+    
+   
+    $AllPassed = $true
+
+    foreach ($Script in $scripts )
+    {      
+        $file = $script.fullname.replace($BaseFolder, '$')
+        foreach ( $rule in $rules )
+        {
+            It " [$file] Rule [$rule]" {
+
+                (Invoke-ScriptAnalyzer -Path $script.FullName -IncludeRule $rule.RuleName ).Count | Should Be 0
+            }
+        }
+
+        If ( -Not $Pester.TestResult[-1].Passed )
+        {
+            $AllPassed = $false
+        } 
+    }
+    $AllPassed | Should be $true
+}
+
+
+## also supports context and describe
+
+* should create an alias for context to scenario
+* should create an alias for describe to feature

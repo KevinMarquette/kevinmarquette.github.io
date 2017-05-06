@@ -7,13 +7,13 @@ tags: [PowerShell,PSCustomObject,Hashtables,Basics]
 
 `PSCustomObject`s are a great tool to add into your Powershell toolbelt. Let's start with the basics and work our way into the more advanced features. The idea behind using a `PSCustomObject` is to have a very simple way to create structured data. Take a look at the first example and you will have a better idea of what that means.
 
-## Index
+# Index
 
 * TOC
 {:toc}
 
 
-## Creating a PSCustomObject
+# Creating a PSCustomObject
 
 I love using `[PSCustomObject]` in Powershell. Creating a usable object has never been easier. Because of that, I am going to skip over all the other ways you can create an object but I do need to mention that most of this is Powershell v3.0 and newer.
 
@@ -29,6 +29,8 @@ You can then access and use the values like you would a normal object.
 
     $myObject.Name
 
+
+
 ## Converting a hashtable
 
 While I am on the topic, did you know you could do this:
@@ -42,7 +44,22 @@ While I am on the topic, did you know you could do this:
 
 I do prefer to create the object from the start but there are times you have to work with a hashtable first. This works because the constructor takes a hastable for the object properties. One important note is that while this works, it is not an exact equivelent. The bigest difference is that the order of the properties is not preserved.
 
-## Saving to a file
+## Legacy approach
+
+You may have seen people use `New-Object` to create custom objects.
+
+    $myHashtable = @{
+        Name     = 'Kevin'
+        Language = 'Powershell'
+        State    = 'Texas'
+    }
+
+    $myObject = New-Object -TypeName PSObject -Property $myHashtable
+
+This way is quite a bit slower but it may be your best option on eary versions of PowerShell.
+
+
+# Saving to a file
 
 I find the best way to save a hashtable to a file is to save it as JSON. You can import it back into a `[PSCusomObject]`
 
@@ -50,7 +67,7 @@ I find the best way to save a hashtable to a file is to save it as JSON. You can
     $myObject = Get-Content -Path $Path | ConvertFrom-Json
 
 
-## Adding properties
+# Adding properties
 
 You can still add new properties to your `PSCustomObject` with `Add-Member`.
 
@@ -58,7 +75,7 @@ You can still add new properties to your `PSCustomObject` with `Add-Member`.
 
     $myObject.ID
 
-## Enumerating property names
+# Enumerating property names
 
 Sometimes you need a list of all the property names on an object.
 
@@ -95,7 +112,7 @@ To continue on from the last seciton, you can dynamically walk the properties an
         $hashtable[$property] = $myObject.$property
     }
 
-## Adding object methods
+# Adding object methods
 
 If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`. You have to use the `this` automatic varialbe reference the current object. Here is a scriptblock to turn a object into a hashtable. (same code form the last example)
 
@@ -122,7 +139,7 @@ Then we can call our function like this:
 
     $myObject.ToHashtable()
 
-## Objects vs Value types
+# Objects vs Value types
 
 Objects and value types don't handle variable assignments the same way. If you assign value types to each other, only the value get copied to the new variable.
 
@@ -140,7 +157,7 @@ Object variables hold a reference to the actual object. When you assign one obje
 
 Because `$third` and `$fourth` reference the same instance of an object, both `$third.key` and `$fourth.Key` are 4.
 
-### psobject.copy()
+## psobject.copy()
 
 If you need a true copy of an object, you can clone it.
 
@@ -152,7 +169,7 @@ Clone creates a shallow copy of the object. They have different instances now an
 
 I call this a shallow copy because if you have nested objects. (where the properties contain other objects). Only the top level values are copied. The child objects will reference each other.
 
-## PSTypeName for custom object types
+# PSTypeName for custom object types
 
 Now that we have an object, there are a few more things we can do with it that may not be nearly as obvious. First thing we need to do is give it a `PSTypeName`. This is the most common way I see people do it:
 
@@ -169,7 +186,7 @@ I recently discovered another way to do this from this [post by /u/markekraus](h
 
 I love how nicely this just fits into the language. Now that we have an object with a proper type name, we can do some more things.
 
-## Using DefaultPropertySet (the long way)
+# Using DefaultPropertySet (the long way)
 
 Powershell decides for us what properties to display by default. A lot of the native commands have a `.ps1xml` [formating file](https://mcpmag.com/articles/2014/05/13/powershell-properties-part-3.aspx) that does all the heavy lifting. From this [post by Boe Prox](https://learn-powershell.net/2013/08/03/quick-hits-set-the-default-property-display-in-powershell-on-custom-objects/), there is another way for us to do this on our custom object using just Powershell. We can give it a `MemberSet` for it to use.
 
@@ -194,7 +211,7 @@ That is simple enough that I could almost remember it if I didn't have this post
 
     $myObject | Format-List *
 
-## Update-TypeData with ScriptProperty
+# Update-TypeData with ScriptProperty
 
 Something else that I got out of that video was creating script properties for your objects. This would be a good time to point out that this works for existing objects too.
 
@@ -208,7 +225,7 @@ Something else that I got out of that video was creating script properties for y
 
 You can do this before your object is created or after and it will still work. This is what makes this different then using `Add-Member` with a script property. When you use `Add-Member` the way I refferenced earlier, it only exists on that specific instance of the object. This one applies to all objects with this `TypeName`.
 
-## Function parameters
+# Function parameters
 
 You can now use these custom types for parameters in your functions and scripts. You can  have one function create these custom objects and then pass them into other functions.
 
@@ -216,7 +233,7 @@ You can now use these custom types for parameters in your functions and scripts.
 
 Powershell will then require that the object be of the type you specified. It will throw a validation error if the type does not match automatically to save you the step of testing for it in your code. A great example of letting Powershell do what it does best.
 
-## Function OutputType
+# Function OutputType
 
 You can also define an `OutputType` for your advanced functions.
 
@@ -234,7 +251,7 @@ The main reason you would use an output type is so that meta information about y
 
 With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your `OutputType`. This could catch variables that just fall to the pipe when they shouldn't.
 
-## Closing thoughts
+# Closing thoughts
 
 The context of this was all about `[PSCustomObject]`, but a lot of this information applies to objects in general.
 

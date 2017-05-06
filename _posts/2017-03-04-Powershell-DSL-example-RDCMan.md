@@ -12,6 +12,7 @@ This is the second post in a series covering what a DSL is and how to write one.
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
 * Part 2: Writing a DSL for RDC Manager (This post)
 * Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
+* Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
 
 # Index
 

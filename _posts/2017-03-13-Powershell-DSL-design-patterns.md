@@ -16,7 +16,7 @@ This is the third post in a series on writing DSLs in PowerShell.
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: CmdLet based DSL design patterns (This post)
-
+* Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
 
 # Index
 
@@ -234,4 +234,4 @@ No matter what pattern you use, make sure you focus on how the user will interac
 
 Then I go seek out a design pattern that allows me to create the commands that will match the best example. Sometimes you execute everything in place and other times you collect everything at the parent function for processing.
 
-
+* Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
