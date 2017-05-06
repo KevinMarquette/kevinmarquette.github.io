@@ -63,9 +63,9 @@ Here is a partial example from the RFC:
         }
     }
 
-The RFC is about more than just allowing us to create that DSL. But to also add better support into the AST and open up access to other features that DSC has access to that are internal to PowerShell.
+The RFC is about more than just allowing us to create that DSL. The main goal was to add better support into the AST and open up access to other features. Features that DSC has access to that are internal to PowerShell.
 
-I say that because as I was looking at the example, I felt like it would be a good example to work through.
+I say that because as I was looking at the example, I felt like it would be a good example for us to work through.
 
 # What I need to figure out
 
@@ -73,7 +73,7 @@ I see three thing that I need to figure out how to do. How to add a method, an a
 
 In my post about [PSCustomObjects](https://kevinmarquette.github.io/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension), I quickly mention the use of [Update-TypeData](https://kevinmarquette.github.io/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension#update-typedata-with-defaultpropertyset). I think I can use that as a starting point.
 
-The first thing I am going to do is walk that example and do each of those by hand.
+The first thing I am going to do is walk that example DSL and do each of those by hand. I need to know how to do it in PowerShell before I get clever with it.
 
 ## Add script method
 
@@ -179,7 +179,7 @@ A quick check of the results:
     $date = get-date
     $date.DateTime
 
-# DSL game-plan
+# DSL game plan
 
 So after reviewing those examples, this looks like the base syntax that I am looking to implement.
 
@@ -207,7 +207,7 @@ I decided to use option 2 for this implementation. It just felt very clean and e
 
 ## TypeExtension function
 
-For the `TypeExtension`, I want the user to be able to provide a type for the first parameter. The second positional parameter will be a `ScriptBlock` that gets executed. We expect the results from the `ScriptBlock` to be one or more `Hashtables`.
+For the `TypeExtension`, I want the user to be able to provide a type for the first parameter. I would be fine if it is just a `string`. The second positional parameter will be a `ScriptBlock` that gets executed. We expect the results from the `ScriptBlock` to be one or more `Hashtables`.
 
 We will walk each `Hashtable`, add the `TypeName` key and then spat it to `Update-TypeData`. Now that we defined it so simply, it will be a very easy function to write.
 
@@ -264,7 +264,7 @@ I added basic error and exception handling here because this will be the the pub
 
 ## Method function
 
-This function will allow us to create script methods for a given type. The first parameter will be the name and the second will be the script that will run when it is called. Instead of executing the `ScriptBblock`, we will use the parameters to create a `Hashtable`.
+This function will allow us to create script methods for a given type. The first parameter will be the name and the second will be the method script. We will use those parameters to create a `Hashtable`.
 
 
     function Method
@@ -295,7 +295,7 @@ This function will allow us to create script methods for a given type. The first
         }
     }
 
-That is about as simple as it gets. 
+We return the `Hashtable` to `TypeExtension` for processing.
 
 ## Property function
 
