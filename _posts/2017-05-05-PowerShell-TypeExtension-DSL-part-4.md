@@ -5,7 +5,7 @@ date: 2017-05-05
 tags: [PowerShell, DSL, Advanced]
 ---
 
-Steffen Stranger pointed this [RFC](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) out to me recently.
+Steffen Stranger pointed the [PowerShell-RFC RFC0017-Domain-Specific-Language-Specifications](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) out to me recently.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/psconfeu?src=hash">#psconfeu</a> RFC proposes a C#-based mechanism for defining DSLs in <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a>. <a href="https://t.co/YF850s8Q01">https://t.co/YF850s8Q01</a> cc <a href="https://twitter.com/KevinMarquette">@KevinMarquette</a> <a href="https://twitter.com/mcnabbmh">@mcnabbmh</a></p>&mdash; Stefan Stranger (@sstranger) <a href="https://twitter.com/sstranger/status/860154016604594179">May 4, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -260,7 +260,7 @@ We will walk each `Hashtable`, add the `TypeName` key and then spat it to `Updat
         }
     }
 
-I added basic error and exception handling here because this will be the the public function that is called by the end-user.
+I added basic error and exception handling here because this will be the the public function that is called by the end user.
 
 ## Method function
 
