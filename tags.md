@@ -20,6 +20,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Attribute'></a>
 # Attribute
@@ -33,7 +34,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-10-21 [Powershell: Installing MSI files](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-10-28 [Powershell: Everything you wanted to know about PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-1-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -67,6 +68,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-13 [Powershell: DSL design patterns, DSLs part 3](/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Exceptions'></a>
 # Exceptions
@@ -95,7 +97,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Modules
 
 * 2016-10-25 [Powershell: Operational Validation Framework](/2016-10-25-Powershell-Operational-Validation-Framework/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](/2017-1-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
@@ -137,8 +139,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2016-10-25 [Powershell: Operational Validation Framework](/2016-10-25-Powershell-Operational-Validation-Framework/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-10-28 [Powershell: Everything you wanted to know about PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-1-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](/2017-1-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-19 [Powershell: Creating and using custom attributes](/2017-02-19-Powershell-custom-attribute-validator-transform/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -151,6 +153,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Presentation'></a>
 # Presentation
@@ -188,7 +191,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 <a name='Strings'></a>
 # Strings
 
-* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-1-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Validator'></a>
 # Validator
