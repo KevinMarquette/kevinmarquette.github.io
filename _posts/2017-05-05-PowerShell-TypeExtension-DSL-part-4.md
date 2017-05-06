@@ -19,6 +19,7 @@ This is my fourth post in this series covering DSLs.
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
 * Part 4: Writing a TypeExtension DSL (This post)
+* Part 5: Writing an alternate TypeExtension DSL (future post)
 
 # Index
 

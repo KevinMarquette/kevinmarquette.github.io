@@ -17,6 +17,7 @@ This is the third post in a series on writing DSLs in PowerShell.
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: CmdLet based DSL design patterns (This post)
 * Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
+* Part 5: Writing an alternate TypeExtension DSL (future post)
 
 # Index
 
@@ -141,7 +142,7 @@ A true `[hashtable]` builder will allow the user to specify key value pairs and 
 
         $newScript = "[ordered]@{$($ScriptBlock.ToString())}"
         $newScriptBlock = [scriptblock]::Create($newScript)
-        $newScriptBlock.invoke()
+        & $newScriptBlock
     }
 
 Then you could have a DSL command in place that looks like this:
@@ -167,7 +168,7 @@ If you have a hashtable passthru or hashtable builder, then you may need to have
             $StateScript
         )
     
-        $userScripts = $StateScript.Invoke()    
+        $userScripts = & $StateScript   
         [hashtable]$stateEngine = @{}
         $userScripts | ForEach-Object {$stateEngine[$_.State] = $_}
 
@@ -196,7 +197,7 @@ When using a `[scriptblock]`, you leave your DSL open to allow any PowerShell co
     
     $newScript = "DATA -SupportedCommand Get-State,Set-State {{{0}}}" -f $ScriptBlock.ToString()
     $newScriptBlock = [scriptblock]::Create($newScript)
-    $newScriptBlock.invoke()
+    & $newScriptBlock
 
 This is most valuable when you are defining your DSL to be used in files that are to be executed by PowerShell. This allows you to treat your DSL based files more like plain text configs and less like scripts that execute code.
 
@@ -219,7 +220,7 @@ You may have a command that you don't want to export or to be usable outside you
             return $State
         }
         
-        $userScripts = $StateScript.Invoke()    
+        $userScripts = & $StateScript 
         [hashtable]$stateEngine = @{}
         $userScripts | ForEach-Object {$stateEngine[$_.State] = $_}
 
