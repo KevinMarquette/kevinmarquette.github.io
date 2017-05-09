@@ -5,7 +5,7 @@ date: 2017-05-08
 tags: [PowerShell,PSGraph]
 ---
 
-I saw this tweet by Glann Sarti where he was building a graph database of the PowerShell help system as a way to demonstrate Neo4j.
+I saw this tweet by Glenn Sarti where he was building a graph database of the PowerShell help system as a way to demonstrate Neo4j.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/MSFTzachal">@MSFTzachal</a> As promised I wrote my PowerShell Help graph presentation (PS Summit) as a blog post instead <a href="https://t.co/zuQzXf7ysy">https://t.co/zuQzXf7ysy</a></p>&mdash; Glenn Sarti (@GlennSarti) <a href="https://twitter.com/GlennSarti/status/861081215633412096">May 7, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
