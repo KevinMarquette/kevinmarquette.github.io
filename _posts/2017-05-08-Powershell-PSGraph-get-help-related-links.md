@@ -32,7 +32,7 @@ Most help items have these related links. This will let us map the relationship 
 
 # Parsing the help
 
-Glen has a script on his post that walks the help for every module and cmdlet. He then imports it into a graph database. This is where I am going to take it a different direction. I have a simplified version of his script here that uses PSGraph instead.
+Glenn has a script on his post that walks the help for every module and cmdlet. He then imports it into a graph database. This is where I am going to take it a different direction. I have a simplified version of his script here that uses PSGraph instead.
 
     $ModuleName = 'Microsoft.PowerShell.Utility'
 
@@ -58,8 +58,8 @@ The resulting graphs can get rather large but here is a cropped sample from the 
 
 ![Basic Graph](/img/helpGraphSample.png)
 
-The whole reason I wrote PSGraph was to be able to visualize data like this very easily. 
+The whole reason I wrote PSGraph was to be able to visualize data like this very easily.
 
 # Closing remarks
 
-I want to say thank you to Glen for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph), please check [this post](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) where I cover it in more detail.
+I want to say thank you to Glenn for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph), please check [this post](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) where I cover it in more detail.
