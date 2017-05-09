@@ -21,6 +21,8 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### Recent posts
 
+* 2017-05-08 [Powershell: PSGraph the Get-Help related links](https://kevinmarquette.github.io/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-05 [PowerShell: Writing a TypeExtension DSL, DSLs part 4](https://kevinmarquette.github.io/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-01 [What have you done with PowerShell this month](https://kevinmarquette.github.io/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-30  [Powershell: Advanced Gherkin features in Pester 4.0](2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](https://kevinmarquette.github.io/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=recent)
