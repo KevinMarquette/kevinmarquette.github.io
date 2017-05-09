@@ -62,4 +62,4 @@ The whole reason I wrote PSGraph was to be able to visualize data like this very
 
 # Closing remarks
 
-I want to say thank you to Glen for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph), please check [this post](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) where I cover more of the features.
+I want to say thank you to Glen for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph), please check [this post](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) where I cover it in more detail.
