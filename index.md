@@ -28,8 +28,6 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 * 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](https://kevinmarquette.github.io/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-22 [PowerShell: Installing remote software](https://kevinmarquette.github.io/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](https://kevinmarquette.github.io/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-04-07 [All .Net 4.6 Exceptions List](https://kevinmarquette.github.io/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=recent)
-
 
 ## PSGraph
 
