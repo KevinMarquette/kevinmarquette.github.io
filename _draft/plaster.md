@@ -5,11 +5,9 @@ date: 2017-05-08
 tags: [PowerShell,Plaster,Modules]
 ---
 
-I was about to create a new module and decided that I was going to script out the process this time. Most of my stuff is very cookie cutter between modules. A lot of my standard stuff is duplicated across my modules.
+David Christian recently did a nice writeup about how to use Plaster on his OverPoweredShell.com site. The last time I wrote a module, I broke down all the pieces and wrote about it in my CI/CD Pipeline article. Well, I am starting a new module and I am going to convert it over to Plaster.
 
-David just covered the use of Plaster and it is exactly what I need for this. I am going to build on his post so you really should go read it first.
-
-This also builds on my previous post about building a CI/CD pipeline. I am mostly automating the work done in that post.
+So before we begin, know that I am building on those two articles and they would be good to read first. David's article on Plaster is a good introduction and my CI/CD Pipeline is a good overview on all the pieces I put togehter in my modules.
 
 # Index
 
@@ -22,7 +20,7 @@ This was my first attempt and building a Plaster template so I am walking the pr
 
 # My Common module structure
 
-First we need to know what we are building. Here is a structure that I modeled after my PSGraph module.
+First we need to know what we are building. A lot of the files in my modules are generic and can easily be reused in other modules. Here is a module structure that resembles my modules.
 
     MyModule
     │   appveyor.yml
@@ -66,14 +64,15 @@ First we need to know what we are building. Here is a structure that I modeled a
 
 I don't know that we will capture all of that into a Plaster template. But you can see what we are trying to create.
 
+One thing that I have added is the use of ReadTheDocs that is not in my CI/CD article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below.
+
 # Getting started
 
-The first thing I did was create a new repository for my Plaster templates. I plan on this being the first of many Plater templates that I create.
+The first thing I did was create a new repository for my Plaster templates. I plan on this being the first of many Plater templates that I create. So this will be the new home for those templates.
 
 ## My first Plaster manifest
 
 This first one is going to be called `FullModuleTemplate`.
-
 
     $manifestProperties = @{
         Path = ".\FullModuleTemplate\PlasterManifest.xml"
@@ -86,13 +85,15 @@ This first one is going to be called `FullModuleTemplate`.
     New-Item -Path FullModuleTemplate -ItemType Directory
     New-PlasterManifest @manifestProperties
 
+This will create the initial `PlasterManifest.xml` manifest file for me.
+
 ## Template folder and file structure
 
-I am making a design decision to create a root folder inside this template that will mirror the structure of my desired module. I will place all the folders and files inside there and work back from there.
+I made a design decision to create a root folder inside this template that will mirror the structure of my desired module. I will place all the folders and files inside there and work back from there.
 
     New-Item -Path FullModuleTemplate\root -ItemType Directory
 
- Most of the files in my module are very generic. My tests, build scripts and I can often copy them from one module to another. I will work these into the manifest first because they will be the easiest. I am also going to build my template with the idea that everything will be used. I can work in optional components later.
+ Most of the files in my module are very generic. My tests, build scripts and I can often copy them from one module to another. I will work these into the manifest first because they will be the easiest. I am going to build my template with the idea that everything will deployed with the template with no optional features. 
 
  I did a quick pass at copying files and then updated the `PlasterManifest.xml` with those entries. This is what my content section looks like after the first pass.
 
@@ -146,11 +147,11 @@ I am making a design decision to create a root folder inside this template that 
 
     </content>
 
-This should cover everything I specified above. I added variables where I felt like I needed them as I went. I will go back and define them here in a moment. I also made note of some files that may need to be modified or converted to a template.
+This should cover everything I specified above. I added variables where I felt like I needed them as I went. I will go back and define the variables here in a moment. I also made a mental note of some files that may need to be modified or generated form a template at deploy time.
 
 ## Adding parameters
 
-At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. Once I add them in, I can start testing my template. Here is my first pass at the parameters section.
+At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. This is the last thing I need to do before I can start testing this template. Here is my first pass at the parameters section.
 
     <parameters>
         <parameter name="FullName" type="text" prompt="Module author's' name" />
@@ -178,7 +179,7 @@ And I have an error right out of the gate.
 
     WARNING: Failed to create dynamic parameters from the template's manifest file.  Template-based dynamic parameters will not be available until the error is corrected.  The error was: The TemplatePath parameter value must refer to an existing directory. The specified path 'C:\workspace\PlasterTemplates\FullModuleTemplate\PlasterManifest.xml' does not.
 
-It looks like it wants a directory instead of a full path to the xml file. That is easy enough to correct.
+It looks like it wants a directory instead of a full path to the `PlasterManifest.xml` file. That is easy enough to correct. I am glad the error messages says that it is looking for a directory.
 
 ## Second deploy
 
@@ -206,7 +207,7 @@ We were prompted for our parameters this time:
     Destination path: C:\temp\module
         Creating folder structure
 
-But I got a new error.
+I made more progress this time but I got a new error.
 
     The path '\docs\images' specified in the file directive in the template manifest cannot be an absolute path.
     Change the path to a relative path.
