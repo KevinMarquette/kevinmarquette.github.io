@@ -64,7 +64,7 @@ First we need to know what we are building. A lot of the files in my modules are
 
 I don't know that we will capture all of that into a Plaster template. But you can see what our end goal is.
 
-One thing that I have added is the use of ReadTheDocs that is not in my CI/CD article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. Mark Kraus covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
+One thing that I have added is the use of ReadTheDocs that is not in my CI/CD article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
 
 # Getting started
 
@@ -75,7 +75,7 @@ The first thing I did was create a new repository for my [Plaster templates](htt
 This first one is going to be called `FullModuleTemplate`.
 
     Install-Module Plaster
-    
+
     $manifestProperties = @{
         Path = ".\FullModuleTemplate\PlasterManifest.xml"
         Title = "Full Module Template"
