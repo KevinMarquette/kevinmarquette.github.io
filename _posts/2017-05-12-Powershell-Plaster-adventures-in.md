@@ -5,7 +5,7 @@ date: 2017-05-12
 tags: [PowerShell,Plaster,Modules]
 ---
 
-[David Christian](http://overpoweredshell.com/about/) recently wrote an article about [how to use Plaster](http://overpoweredshell.com/Working-with-Plaster/) on [OverPoweredShell.com](http://overpoweredshell.com). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to a Plaster template.
+[David Christian](http://overpoweredshell.com/about/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) recently wrote an article about [how to use Plaster](http://overpoweredshell.com/Working-with-Plaster/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) on [OverPoweredShell.com](http://overpoweredshell.com/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to a Plaster template.
 
 So before we begin, know that I am building on those two articles and they would be good to read first. David's [article on Plaster](http://overpoweredshell.com/Working-with-Plaster/) is a good introduction and my [CI/CD Pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures) is a good overview on all the pieces I put togehter in my modules.
 
@@ -64,7 +64,7 @@ First we need to know what we are building. A lot of the files in my modules are
 
 I don't know that we will capture all of that into a Plaster template. But you can see what our end goal is.
 
-One thing that I have added is the use of ReadTheDocs that is not in my CI/CD Pipeline article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
+One thing that I have added is the use of ReadTheDocs that is not in my CI/CD Pipeline article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) 
 
 # Getting started
 
