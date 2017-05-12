@@ -434,14 +434,14 @@ Having the base set of ReadTheDocs files in place with minimal content makes it 
 
 And now I am going to create those parameters in my `PlasterManifest.xml`.
 
-    <parameter name="GitHubUserName" 
-      type="text" 
-      prompt="GitHub username" 
+    <parameter name="GitHubUserName"
+      type="text"
+      prompt="GitHub username"
       default="${PLASTER_PARAM_FullName}"
     />
-    <parameter name="GitHubRepo" 
-      type="text" 
-      prompt="Github repo name for this module" 
+    <parameter name="GitHubRepo"
+      type="text"
+      prompt="Github repo name for this module"
       default="${PLASTER_PARAM_ModuleName}"
     />
 
