@@ -64,7 +64,7 @@ First we need to know what we are building. A lot of the files in my modules are
 
 I don't know that we will capture all of that into a Plaster template. But you can see what our end goal is.
 
-One thing that I have added is the use of ReadTheDocs that is not in my CI/CD article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
+One thing that I have added is the use of ReadTheDocs that is not in my CI/CD Pipeline article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
 
 # Getting started
 
@@ -149,14 +149,14 @@ I made a design decision to create a root folder inside this template that will 
 
     </content>
 
-This should cover everything I specified above. I added variables where I felt like they were needed them as I went. I will go back and define the variables here in a moment. I also made a mental note of some files that may need to be modified or generated form a template at deploy time.
+This should cover everything I specified above. I added variables where I felt like they were needed as I went. I will go back and define the variables here in a moment. I also made a mental note of some files that may need to be modified or generated from a template at deploy time.
 
 ## Adding parameters
 
-At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. This is the last thing that needs to do before I can start testing this template. Here is the first pass at the parameters section.
+At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. This is the last thing that needs to be done before I can start testing this template. Here is the first pass at the parameters section.
 
     <parameters>
-        <parameter name="FullName" type="text" prompt="Module author's' name" />
+        <parameter name="FullName" type="text" prompt="Module author's name" />
         <parameter name="ModuleName" type="text" prompt="Name of your module" />
         <parameter name="ModuleDesc" type="text" prompt="Brief description on this module" />
         <parameter name="Version" type="text" prompt="Initial module version"  default="0.0.1"/>
@@ -166,7 +166,7 @@ I tried to keep it simple.
 
 # First deploy
 
-I have all my base files copied, parameter questions defined and the content section defined. I know I will need to turn some of those files into a Plaster `TemplateFile` but I want to see this basic template work first.
+I have all my base files copied, parameter questions defined and the content section created. I know I will need to turn some of those files into their own scripted Plaster `TemplateFile`, but I want to see this basic template work first.
 
 We are ready to run our template at this point.
 
@@ -181,7 +181,7 @@ We are ready to run our template at this point.
 
 And I have an error right out of the gate.
 
-    WARNING: Failed to create dynamic parameters from the template's manifest file.  Template-based dynamic parameters will not be available until the error is corrected.  The error was: The TemplatePath parameter value must refer to an existing directory. The specified path 'C:\workspace\PlasterTemplates\FullModuleTemplate\PlasterManifest.xml' does not.
+    WARNING: Failed to create dynamic parameters from the template's manifest file. The TemplatePath parameter value must refer to an existing directory.
 
 It looks like it wants a directory instead of a full path to the `PlasterManifest.xml` file. That is easy enough to correct. I am glad the error messages said that it is looking for a directory.
 
@@ -204,10 +204,10 @@ We were prompted for our parameters this time.
     |_|   |_|\__,_|___/\__\___|_|
                                                 v1.0.1
     ==================================================
-    Module author's' name: Kevin Marquette
+    Module author's name: Kevin Marquette
     Name of your module: MyModule
     Brief description on this module: Test module for validating my template
-    Initial module version (0.0.1):
+    Initial module version (0.0.1): 0.0.1
     Destination path: C:\temp\module
         Creating folder structure
 
@@ -238,19 +238,19 @@ And I ran it again.
     |_|   |_|\__,_|___/\__\___|_|
                                                 v1.0.1
     ==================================================
-    Module author's' name: Kevin Marquette
+    Module author's name: Kevin Marquette
     Name of your module: MyModule
     Brief description on this module: template test
-    Initial module version (0.0.1): 
+    Initial module version (0.0.1): 0.0.1
     Destination path: C:\temp\module
-        Creating folder structure    
+        Creating folder structure
     VERBOSE: Performing the operation "Create directory" on target "".
     Create docs\images\
     VERBOSE: Performing the operation "Create directory" on target "".
     Create tests\
     VERBOSE: Performing the operation "Create directory" on target "".
     Create spec\
-    ...  
+    ...
 
 But we failed with another error:
 
@@ -281,10 +281,10 @@ We now have a clean Plaster run with this template.
     |_|   |_|\__,_|___/\__\___|_|
                                                 v1.0.1
     ==================================================
-    Module author's' name: Kevin Marquette
+    Module author's name: Kevin Marquette
     Name of your module: MyModule
     Brief description on this module: Testing Plaster Tempalte
-    Initial module version (0.0.1): 
+    Initial module version (0.0.1): 0.0.1
     Destination path: C:\temp\module
         Creating folder structure    
     VERBOSE: Performing the operation "Create directory" on target "".
@@ -447,10 +447,10 @@ And now I am going to create those parameters in my `PlasterManifest.xml`.
 
 I added these to the end of the parameters list and used defaults from earlier parameters. So if the module name and the GitHub repo name are the same, then the user can press enter to accept it.
 
-    Module author's' name: Kevin Marquette
+    Module author's name: Kevin Marquette
     Name of your module: MyModule
     Brief description on this module: Testing Plaster templates
-    Initial module version (0.0.1): 
+    Initial module version (0.0.1): 0.0.1
     GitHub username (Kevin Marquette): kevinmarquette
     Github repo name for this module (MyModule): 
 
@@ -487,7 +487,7 @@ Here is the final PlasterManifest.xml with all of our changes up to this point.
         <tags></tags>
     </metadata>
     <parameters>
-        <parameter name="FullName" type="text" prompt="Module author's' name" />
+        <parameter name="FullName" type="text" prompt="Module author's name" />
         <parameter name="ModuleName" type="text" prompt="Name of your module" />
         <parameter name="ModuleDesc" type="text" prompt="Brief description on this module" />
         <parameter name="Version" type="text" prompt="Initial module version" default="0.0.1" />
