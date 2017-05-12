@@ -452,7 +452,7 @@ I added these to the end of the parameters list and used defaults from earlier p
     Brief description on this module: Testing Plaster templates
     Initial module version (0.0.1): 0.0.1
     GitHub username (Kevin Marquette): kevinmarquette
-    Github repo name for this module (MyModule): 
+    Github repo name for this module (MyModule): MyModule
 
 And here is my end result.
 
