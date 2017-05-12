@@ -5,7 +5,7 @@ date: 2017-05-12
 tags: [PowerShell,Plaster,Modules]
 ---
 
-[David Christian](http://overpoweredshell.com/about/) recently did an article about how to use [Plaster](http://overpoweredshell.com/Working-with-Plaster/) on [OverPoweredShell.com](http://overpoweredshell.com). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to Plaster.
+[David Christian](http://overpoweredshell.com/about/) recently wrote an article about how to use [Plaster](http://overpoweredshell.com/Working-with-Plaster/) on [OverPoweredShell.com](http://overpoweredshell.com). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to Plaster.
 
 So before we begin, know that I am building on those two articles and they would be good to read first. David's [article on Plaster](http://overpoweredshell.com/Working-with-Plaster/) is a good introduction and my [CI/CD Pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures) is a good overview on all the pieces I put togehter in my modules.
 
@@ -62,7 +62,7 @@ First we need to know what we are building. A lot of the files in my modules are
             Regression.Tests.ps1
             Unit.Tests.ps1
 
-I don't know that we will capture all of that into a Plaster template. But you can see what we are trying to create.
+I don't know that we will capture all of that into a Plaster template. But you can see what our end goal is.
 
 One thing that I have added is the use of ReadTheDocs that is not in my CI/CD article. The mkdocs.yml is the configuraiton file for that and the content is in the docs folder. I will use those files in my examples below. Mark Kraus covers ReadTheDocs in his post on [Automating Documentation in the CI/CD Pipeline](https://get-powershellblog.blogspot.com/2017/03/write-faq-n-manual-part1.html) 
 
@@ -74,6 +74,8 @@ The first thing I did was create a new repository for my [Plaster templates](htt
 
 This first one is going to be called `FullModuleTemplate`.
 
+    Install-Module Plaster
+    
     $manifestProperties = @{
         Path = ".\FullModuleTemplate\PlasterManifest.xml"
         Title = "Full Module Template"
@@ -89,7 +91,7 @@ This will create the initial `PlasterManifest.xml` manifest file for me.
 
 ## Template folder and file structure
 
-I made a design decision to create a root folder inside this template that will mirror the structure of my desired module. I will place all the folders and files inside there and work back from there.
+I made a design decision to create a root folder inside this template that will mirror the structure of my desired module. I will place all the folders and files inside that folder and work back from there.
 
     New-Item -Path FullModuleTemplate\root -ItemType Directory
 
@@ -147,11 +149,11 @@ I made a design decision to create a root folder inside this template that will 
 
     </content>
 
-This should cover everything I specified above. I added variables where I felt like I needed them as I went. I will go back and define the variables here in a moment. I also made a mental note of some files that may need to be modified or generated form a template at deploy time.
+This should cover everything I specified above. I added variables where I felt like they were needed them as I went. I will go back and define the variables here in a moment. I also made a mental note of some files that may need to be modified or generated form a template at deploy time.
 
 ## Adding parameters
 
-At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. This is the last thing I need to do before I can start testing this template. Here is my first pass at the parameters section.
+At this stage, it is obvious that I am going to need to add some parameters so I can populate all the variables that I was using above. This is the last thing that needs to do before I can start testing this template. Here is the first pass at the parameters section.
 
     <parameters>
         <parameter name="FullName" type="text" prompt="Module author's' name" />
@@ -164,7 +166,7 @@ I tried to keep it simple.
 
 # First deploy
 
-I have all my base files copied over, parameter questions and the content section defined. I know I will need to turn some of those files into a Plaster `TemplateFile` but I want to see this basic template work first.
+I have all my base files copied, parameter questions defined and the content section defined. I know I will need to turn some of those files into a Plaster `TemplateFile` but I want to see this basic template work first.
 
 We are ready to run our template at this point.
 
@@ -181,7 +183,7 @@ And I have an error right out of the gate.
 
     WARNING: Failed to create dynamic parameters from the template's manifest file.  Template-based dynamic parameters will not be available until the error is corrected.  The error was: The TemplatePath parameter value must refer to an existing directory. The specified path 'C:\workspace\PlasterTemplates\FullModuleTemplate\PlasterManifest.xml' does not.
 
-It looks like it wants a directory instead of a full path to the `PlasterManifest.xml` file. That is easy enough to correct. I am glad the error messages says that it is looking for a directory.
+It looks like it wants a directory instead of a full path to the `PlasterManifest.xml` file. That is easy enough to correct. I am glad the error messages said that it is looking for a directory.
 
 ## Second deploy
 
@@ -203,7 +205,7 @@ We were prompted for our parameters this time.
                                                 v1.0.1
     ==================================================
     Module author's' name: Kevin Marquette
-    Name of your module: PSTest
+    Name of your module: MyModule
     Brief description on this module: Test module for validating my template
     Initial module version (0.0.1):
     Destination path: C:\temp\module
@@ -214,7 +216,7 @@ I made more progress but I got a new error.
     The path '\docs\images' specified in the file directive in the template manifest cannot be an absolute path.
     Change the path to a relative path.
 
-That looks like another easy one to correct. I am going to change all the locations to not have the leading backslash. 
+This is another easy one to correct. I am going to change all the locations to not have the leading backslash.
 
 ## Third deploy
 
@@ -237,7 +239,7 @@ And I ran it again.
                                                 v1.0.1
     ==================================================
     Module author's' name: Kevin Marquette
-    Name of your module: PSTest
+    Name of your module: MyModule
     Brief description on this module: template test
     Initial module version (0.0.1): 
     Destination path: C:\temp\module
@@ -252,7 +254,7 @@ And I ran it again.
 
 But we failed with another error:
 
-    The path '\root\appveyor.yml' specified in the file directive in the template manifest cannot be an absolute path.  Change the path to a relative path.
+    The path '\root\appveyor.yml' specified in the file directive in the template manifest cannot be an absolute path. Change the path to a relative path.
 
 ## Next several deploys
 
@@ -268,7 +270,7 @@ Now that my files entries look like this:
 
     <file source='appveyor.yml' destination=''/>
 
-I now get a clean Plaster run with this template.
+We now have a clean Plaster run with this template.
 
     PS:> Invoke-Plaster @plaster -Verbose
 
@@ -331,7 +333,7 @@ I trimmed the output above but this is what we just created.
 
 # Checkpoint recap
 
-Right now all we really have is a fancy `Copy-Item` script. But some of those files need to be customized and seeded with data. That is where Plater comes into play.
+Right now all we really have is a fancy `Copy-Item` script. But some of those files need to be customized and seeded with data. That is where Plater starts to shine and show its value.
 
 # First TemplateFile
 
@@ -464,7 +466,7 @@ Now that I have information on the GitHub repo, I could add refferences to that 
 
 # Wrapping it all up
 
-I do have more work to do but I think you have the general idea now. This was very easy for me because many of my files are very generic already. My `module.psd1`, `psake.ps1`, `build.ps1` and most of those tests are the same for all of my modules (most of the time). I didn't have to add much logic to my template files because they are simple and I am including every file. 
+I do have more work to do, but I think you have the general idea now. This was very easy for me because many of my files are very generic already. My `module.psd1`, `psake.ps1`, `build.ps1` and most of those tests are the same for all of my modules (most of the time). I didn't have to add much logic to my template files because they are simple and I am including every file.
 
 I could have made several things optional and prompted for them. In my case, I want to do all these things all the time. I can always delete something if it is not fitting my needs for that module.
 
