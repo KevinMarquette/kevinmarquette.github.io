@@ -5,7 +5,7 @@ date: 2017-05-12
 tags: [PowerShell,Plaster,Modules]
 ---
 
-[David Christian](http://overpoweredshell.com/about/) recently wrote an article about how to use [Plaster](http://overpoweredshell.com/Working-with-Plaster/) on [OverPoweredShell.com](http://overpoweredshell.com). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to Plaster.
+[David Christian](http://overpoweredshell.com/about/) recently wrote an article about [how to use Plaster](http://overpoweredshell.com/Working-with-Plaster/) on [OverPoweredShell.com](http://overpoweredshell.com). The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to a Plaster template.
 
 So before we begin, know that I am building on those two articles and they would be good to read first. David's [article on Plaster](http://overpoweredshell.com/Working-with-Plaster/) is a good introduction and my [CI/CD Pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures) is a good overview on all the pieces I put togehter in my modules.
 
@@ -296,7 +296,7 @@ We now have a clean Plaster run with this template.
     VERBOSE: Performing the operation "Create" on target "C:\temp\module\MyModule\MyModule.psd1".
     Create MyModule\MyModule.psd1
 
-I trimmed the output above but this is what we just created.
+I trimmed the script output above but this is what we just created.
 
     Module
     │   appveyor.yml
@@ -372,7 +372,7 @@ And that worked amazingly well the first time.
 
 # More TemplateFiles
 
-I have several other files to update like this.
+I have several other files that could use similar updates.
 
 ## docs\about.md
 
@@ -400,7 +400,7 @@ General index for the ReadTheDocs index should include the module name.
 
     <%= $PLASTER_PARAM_ModuleName %> uses ReadTheDocs to host our documentation.  This allows us to keep our docs in the repository, without the various limitations that come with the built in GitHub repo wiki.
 
-Generated this index page:
+That template file generated this index page.
 
     # MyModule Docs
 
@@ -415,7 +415,7 @@ The basic getting started guide for ReadTheDocs should show you how to install t
         # Install <%= PLASTER_PARAM_ModuleName %> from the Powershell Gallery
         Find-Module <%= PLASTER_PARAM_ModuleName %> | Install-Module
 
-Generated this page:
+Generated this page.
 
     # Installing MyModule
 
@@ -454,7 +454,7 @@ I added these to the end of the parameters list and used defaults from earlier p
     GitHub username (Kevin Marquette): kevinmarquette
     Github repo name for this module (MyModule): 
 
-And this is my end result:
+And here is my end result.
 
     site_name: MyModule
     repo_url: https://github.com/kevinmarquette/MyModule
@@ -462,7 +462,7 @@ And this is my end result:
     pages:
     ...
 
-Now that I have information on the GitHub repo, I could add refferences to that in other documents.
+Now that I have information on the GitHub repo, I could add references to that in other documents.
 
 # Wrapping it all up
 
