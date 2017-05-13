@@ -29,8 +29,6 @@ You can then access and use the values like you would a normal object.
 
     $myObject.Name
 
-
-
 ## Converting a hashtable
 
 While I am on the topic, did you know you could do this:
@@ -63,9 +61,10 @@ This way is quite a bit slower but it may be your best option on eary versions o
 
 I find the best way to save a hashtable to a file is to save it as JSON. You can import it back into a `[PSCusomObject]`
 
-    $myObject | ConvertTo-Json | Set-Content -Path $Path
+    $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
     $myObject = Get-Content -Path $Path | ConvertFrom-Json
 
+I cover more ways to save objects to a file in my article on [The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=pscustomobject).
 
 # Adding properties
 
@@ -74,6 +73,7 @@ You can still add new properties to your `PSCustomObject` with `Add-Member`.
     $myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
 
     $myObject.ID
+
 
 # Enumerating property names
 
@@ -111,6 +111,17 @@ To continue on from the last seciton, you can dynamically walk the properties an
     {
         $hashtable[$property] = $myObject.$property
     }
+
+# Testing for properties
+
+If you need to know if a property exists, you could just check for that property to have a value.
+
+    if( $null -ne $myObject.ID )
+
+But if the value could be `$null` and you still need to check for it, you can check the `psobject.properties` for it.
+
+    if( $myobject.psobject.properties.match('ID') )
+
 
 # Adding object methods
 
