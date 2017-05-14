@@ -56,7 +56,6 @@ You may have seen people use `New-Object` to create custom objects.
 
 This way is quite a bit slower but it may be your best option on eary versions of PowerShell.
 
-
 # Saving to a file
 
 I find the best way to save a hashtable to a file is to save it as JSON. You can import it back into a `[PSCusomObject]`
