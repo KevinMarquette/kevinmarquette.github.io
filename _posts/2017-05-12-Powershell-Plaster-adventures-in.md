@@ -340,7 +340,7 @@ I trimmed the script output above but this is what we just created.
 
 Right now all we really have is a fancy `Copy-Item` script. But some of those files need to be customized and seeded with data. That is where Plater starts to shine and show its value.
 
-# First templateFile
+# First TemplateFile
 
 I know my generic `module.feature` file requires one line to be updated with the module name. This would be a good one to start with.
 
@@ -375,7 +375,7 @@ And that worked amazingly well the first time.
     Background: we have a module
         Given the module was named MyModule
 
-# More templateFiles
+# More TemplateFiles
 
 I have several other files that could use similar updates.
 

@@ -9,7 +9,7 @@ I recently started working with [Plaster](https://github.com/PowerShell/Plaster)
 
 I am going to build a Plaster template that builds a Plaster template. I am calling this new template `GetPlastered`.
 
-This will be a good example demonstrating the `templateFile` features of Plaster.
+This will be a good example demonstrating the TemplateFile features of Plaster.
 
 # Index
 
@@ -72,9 +72,9 @@ For the `TemplateName` default value, I use the name of the destination folder t
 
 For the `TemplateAuthor`, I used `user-fullname` for the `type`. That is a special type that pulls the value from the user's `.gitconfig` as a default.
 
-# templateFile
+# TemplateFile
 
-Now we need to create a `templateFile` to generate the `PlasterTemplate.xml` file. The first half of the template will be basic value substitution.
+Now we need to create a TemplateFile to generate the `PlasterTemplate.xml` file. The first half of the TemplateFile will be basic value substitution.
 
     <?xml version="1.0" encoding="utf-8"?>
     <plasterManifest schemaVersion="1.0" 
@@ -93,7 +93,7 @@ Now we need to create a `templateFile` to generate the `PlasterTemplate.xml` fil
     <content>
     ...
 
-All the magic happens in the second half of this `templateFile`. We walk the destination folder for both folders and files to create the content section.
+All the magic happens in the second half of this TemplateFile. We walk the destination folder for both folders and files to create the content section.
 
     ...
       <content>
