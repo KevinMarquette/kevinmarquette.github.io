@@ -40,11 +40,13 @@ I already have a repository for my [Plaster templates](https://github.com/KevinM
 
 # Planning the questions
 
-Because my intent is that this template will be used instead of the `New-PlasterManifest` Cmdlet, we need to capture that functionality. We will need to collect this information.
+Because my intent is that this template will be used instead of the `New-PlasterManifest` Cmdlet, we need to capture that functionality. 
 
 * Template Name
 * Template Title
 * Template Author
+
+That should sum up the information we need to collect.
 
 ## Creating parameters
 
