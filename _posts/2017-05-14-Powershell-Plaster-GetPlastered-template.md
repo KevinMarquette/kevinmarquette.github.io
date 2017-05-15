@@ -5,7 +5,7 @@ date: 2017-05-14
 tags: [PowerShell,Plaster]
 ---
 
-I recently started working with [Plaster](https://github.com/PowerShell/Plaster/blob/master/docs/en-US/about_Plaster_CreatingAManifest.help.md) and I really like this module. I covered my first template in my [Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered) blog post last week. I have been pulling together ideas for more Plaster templates and I thought up a fun one to work on.
+I recently started working with [Plaster](https://github.com/PowerShell/Plaster) and I really like this module. I covered my first template in my [Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered) blog post last week. I have been pulling together ideas for more Plaster templates and I thought up a fun one to work on.
 
 I am going to build a Plaster template that builds a Plaster template. I am calling this new template `GetPlastered`.
 
