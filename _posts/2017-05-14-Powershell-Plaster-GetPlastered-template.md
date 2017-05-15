@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Powershell: Plaster template, GetPlastered"
+title: "Powershell: GetPlastered, a Plaster template to create a Plaster template "
 date: 2016-10-28
 tags: [PowerShell,Plaster]
 ---
 
-I recently started working with [Plaster](https://github.com/PowerShell/Plaster/blob/master/docs/en-US/about_Plaster_CreatingAManifest.help.md) and I really like this Module. I covered my first template in my [Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered) blog post. I have been pulling together ideas for more Plaster templates and I thought up a fun one to work on.
+I recently started working with [Plaster](https://github.com/PowerShell/Plaster/blob/master/docs/en-US/about_Plaster_CreatingAManifest.help.md) and I really like this module. I covered my first template in my [Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered) blog post last week. I have been pulling together ideas for more Plaster templates and I thought up a fun one to work on.
 
-I am going to build a Plaster template that builds a Plaster template. I am calling this template `GetPlastered`.
+I am going to build a Plaster template that builds a Plaster template. I am calling my new template `GetPlastered`.
 
-This will also be a good example demonstrating the `templateFile` features of Plaster.
+This will be a good example demonstrating the `templateFile` features of Plaster.
 
 # Index
 
@@ -24,7 +24,7 @@ This can be confusing because we are also creating a `PlasterTemplate.xml` to ma
 
 # Starting a new template
 
-I already have a repository for my [Plaster templates](https://github.com/KevinMarquette/PlasterTemplates). I need to create the initial template manifest.
+I already have a repository for my [Plaster templates](https://github.com/KevinMarquette/PlasterTemplates), so all I need to do is create the initial template manifest.
 
     $templateName = 'GetPlastered'
     $manifestProperties = @{
@@ -48,7 +48,7 @@ Because my intent is that this template will be used instead of the `New-Plaster
 
 ## Creating parameters
 
-Now to turn those planned questions into parameters. The first few are very straight forward parameters to create. I added these to the parameters section of the `PlasterManifest.xml` file.
+Now we can turn those planned questions into parameters. These questions are straight forward parameters to create. I added these parameters to the parameters section of the `PlasterManifest.xml` file.
 
     <parameter name="TemplateName" 
                type="text" 
@@ -64,7 +64,7 @@ Now to turn those planned questions into parameters. The first few are very stra
                type="user-fullname" 
                prompt="Author" />
 
-For the `TemplateName` default value, I use the name of the destination folder that you need to specify when you run `Invoke-Plaster`.
+For the `TemplateName` default value, I use the name of the destination folder that is specified when `Invoke-Plaster` is invoked.
 
 For the `TemplateAuthor`, I used `user-fullname` for the `type`. That is a special type that pulls the value from the user's `.gitconfig` as a default.
 
@@ -89,7 +89,7 @@ Now we need to create a `TemplateFile` to generate the `PlasterTemplate.xml` fil
     <content>
     ...
 
-All the magic happens in the second half of the `TemplateFile`. We walk the destination folder for both folders and files to create this section.
+All the magic happens in the second half of the `TemplateFile`. We walk the destination folder for both folders and files to create this content.
 
     ...
       <content>
@@ -133,5 +133,7 @@ In on of my recent posts, I walked through the process of converting a module in
 
 # Wrapping it up
 
-Other than the layers of inception going on, this really was an easy template to create. This was a fun project and I have it published with my other [Plaster templates](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered). I hope you enjoy it.
+Other than the layers of inception going on, this really was an easy template to create. This was a fun project and I have it published with my other [Plaster templates](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered). 
+
+I am working on setting this up to be published to the PSGallery. I'll update this post when that happens. I hope you enjoy it.
 
