@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell: GetPlastered, a Plaster template to create a Plaster template "
-date: 2016-10-28
+date: 2017-05-14
 tags: [PowerShell,Plaster]
 ---
 
