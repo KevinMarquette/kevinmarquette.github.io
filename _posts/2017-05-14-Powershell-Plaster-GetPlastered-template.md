@@ -91,7 +91,7 @@ Now we need to create a `TemplateFile` to generate the `PlasterTemplate.xml` fil
     <content>
     ...
 
-All the magic happens in the second half of the `TemplateFile`. We walk the destination folder for both folders and files to create this content.
+All the magic happens in the second half of this `TemplateFile`. We walk the destination folder for both folders and files to create the content section.
 
     ...
       <content>
@@ -149,7 +149,7 @@ Here is a quick example to see this working. Lets say I have two folders of comm
             Regression.Tests.ps1
             Unit.Tests.ps1
 
-Now we run the GetPlastered template.
+Now we run the `GetPlastered` template.
 
     PS:> Invoke-Plaster -DestinationPath .\MyTests -TemplatePath .\GetPlastered
     ____  _           _
@@ -196,7 +196,7 @@ I just accepted all the defaults and my `.\MyTests\PlasterManifest.xml` was crea
 
 We can now use this new template to deploy our tests.
 
-    PS:> Invoke-Plaster -DestinationPath .\TestFolder -TemplatePath .\MyTests\
+    PS:> Invoke-Plaster -DestinationPath .\TestFolder -TemplatePath .\MyTests
     ____  _           _
     |  _ \| | __ _ ___| |_ ___ _ __
     | |_) | |/ _` / __| __/ _ \ '__|
