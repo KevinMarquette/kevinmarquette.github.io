@@ -100,6 +100,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-01-21 [Powershell: Let's build the CI/CD pipeline for a new module](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Monthly'></a>
 # Monthly
@@ -129,6 +130,12 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='Plaster'></a>
+# Plaster
+
+* 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template ](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='PowerShell'></a>
 # PowerShell
 
@@ -155,6 +162,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template ](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Presentation'></a>
 # Presentation

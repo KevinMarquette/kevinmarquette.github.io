@@ -7,7 +7,7 @@ tags: [PowerShell,Plaster]
 
 I recently started working with [Plaster](https://github.com/PowerShell/Plaster/blob/master/docs/en-US/about_Plaster_CreatingAManifest.help.md) and I really like this module. I covered my first template in my [Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=getplastered) blog post last week. I have been pulling together ideas for more Plaster templates and I thought up a fun one to work on.
 
-I am going to build a Plaster template that builds a Plaster template. I am calling my new template `GetPlastered`.
+I am going to build a Plaster template that builds a Plaster template. I am calling this new template `GetPlastered`.
 
 This will be a good example demonstrating the `templateFile` features of Plaster.
 
@@ -18,7 +18,7 @@ This will be a good example demonstrating the `templateFile` features of Plaster
 
 # Project plan
 
-My primary goal is to have a `Plaster` template that will turn an existing folder/project into a Plaster template. Our Plaster template will generate a `PlasterTemplate.xml` for that folder.
+My primary goal is to have a Plaster template that will turn an existing folder/project into a Plaster template. Our Plaster template will generate a `PlasterTemplate.xml` for that folder.
 
 This can be confusing because we are also creating a `PlasterTemplate.xml` to make this template that generates a `PlasterTemplate.xml` for a new template. It is like we are writing code that writes the same code that we are writing.
 
@@ -48,7 +48,7 @@ Because my intent is that this template will be used instead of the `New-Plaster
 
 ## Creating parameters
 
-Now we can turn those planned questions into parameters. These questions are straight forward parameters to create. I added these parameters to the parameters section of the `PlasterManifest.xml` file.
+Now we can turn those planned questions into parameters. These questions are straight forward parameters to create.
 
     <parameter name="TemplateName" 
                type="text" 
@@ -63,6 +63,8 @@ Now we can turn those planned questions into parameters. These questions are str
     <parameter name="TemplateAuthor" 
                type="user-fullname" 
                prompt="Author" />
+
+I added these parameters to the parameters section of the `PlasterManifest.xml` file.
 
 For the `TemplateName` default value, I use the name of the destination folder that is specified when `Invoke-Plaster` is invoked.
 
@@ -117,19 +119,118 @@ All the magic happens in the second half of the `TemplateFile`. We walk the dest
       </content>
     </plasterManifest>
 
-Then we save this into a template file and add a `templateFile` entry to our original `PlasterTemplate.xml` content section.
+Then we save this into a template file called `PlasterTemplate.aps1` and add a `templateFile` entry to our original `PlasterTemplate.xml` content section.
 
     <content>
         <templateFile source="PlasterTemplate.aps1" 
                       destination="PlasterManifest.xml" />
     </content>
 
+I can call that template file anything I want and could easily have left the file extension as xml. I am currently using `.aps1` as that designation.
+
 # GetPlastered in action
 
 Now we can take any folder and turn that into a Plaster template. The idea is that I would build out the folder first with all the files that should be included. Then instead of running `New-PlasterManifest`, I would use `Invoke-Plaster` with this template.
 
-In on of my recent posts, I walked through the process of converting a module into a `Plaster` template. I added every file into my `PlasterManifest.xml` by hand. If I could have used this Template for that project, it would have been even simpler.
+## Quick example
 
+Here is a quick example to see this working. Lets say I have two folder of common tests that I drop into modules. I first move all of these to a new folder called MyTests.
+
+    MyTests
+    ├───spec
+    │       module.feature
+    │       module.Steps.ps1
+    │
+    └───tests
+            Export-PSGraph.Tests.ps1
+            Feature.Tests.ps1
+            Help.Tests.ps1
+            Project.Tests.ps1
+            Regression.Tests.ps1
+            Unit.Tests.ps1
+
+Now we run the GetPlastered template.
+
+    PS:> Invoke-Plaster -DestinationPath .\MyTests -TemplatePath .\GetPlastered
+    ____  _           _
+    |  _ \| | __ _ ___| |_ ___ _ __
+    | |_) | |/ _` / __| __/ _ \ '__|
+    |  __/| | (_| \__ \ ||  __/ |
+    |_|   |_|\__,_|___/\__\___|_|
+                                                v1.0.1
+    ==================================================
+    Template  Name (MyTests):
+    Template Title (MyTests):
+    Author (KevinMarquette):
+    Destination path: .\MyTests
+    Create PlasterManifest.xml
+
+I just accepted all the defaults on that one and my `.\MyTests\PlasterManifest` was created. Here is the contents of that file.
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <plasterManifest schemaVersion="1.0" 
+    xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+    <metadata>
+        <name>MyTests</name>
+        <id>3c3480d8-c2fa-4777-bb0c-a2453c8147c3</id>
+        <version>0.0.1</version>
+        <title></title>
+        <description></description>
+        <author>KevinMarquette</author>
+        <tags>GetPlastered</tags>
+    </metadata>
+    <parameters>
+    </parameters>
+    <content>
+        <file source='' destination='spec'/>
+        <file source='' destination='tests'/>
+        <file source='spec\module.feature' destination=''/>
+        <file source='spec\module.Steps.ps1' destination=''/>
+        <file source='tests\Feature.Tests.ps1' destination=''/>
+        <file source='tests\Help.Tests.ps1' destination=''/>
+        <file source='tests\Project.Tests.ps1' destination=''/>
+        <file source='tests\Regression.Tests.ps1' destination=''/>
+        <file source='tests\Unit.Tests.ps1' destination=''/>
+    </content>
+    </plasterManifest>
+
+Every folder and file is listed in the content section and will get deployed when this new template is used. 
+
+We can now use this new template to deploy our tests.
+
+    PS:> Invoke-Plaster -DestinationPath .\TestFolder -TemplatePath .\MyTests\
+    ____  _           _
+    |  _ \| | __ _ ___| |_ ___ _ __
+    | |_) | |/ _` / __| __/ _ \ '__|
+    |  __/| | (_| \__ \ ||  __/ |
+    |_|   |_|\__,_|___/\__\___|_|
+                                                v1.0.1
+    ==================================================
+    Destination path: .\TestFolder
+    Create spec\
+    Create tests\
+    Create spec\module.feature
+    Create spec\module.Steps.ps1
+    Create tests\Feature.Tests.ps1
+    Create tests\Help.Tests.ps1
+    Create tests\Project.Tests.ps1
+    Create tests\Regression.Tests.ps1
+    Create tests\Unit.Tests.ps1
+
+    PS:> cd .\TestFolder
+    PS:> tree /f
+
+    TestFolder
+    ├───spec
+    │       module.feature
+    │       module.Steps.ps1
+    │
+    └───tests
+            Feature.Tests.ps1
+            Help.Tests.ps1
+            Project.Tests.ps1
+            Regression.Tests.ps1
+            Unit.Tests.ps1
 
 # Wrapping it up
 
