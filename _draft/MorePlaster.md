@@ -7,8 +7,8 @@ Creating a multiple choice option for the template type is a bit more involved. 
                default='3' 
                store='text' 
                prompt='Select the template type'>
-      <choice label='&amp;Single TemplateFile'
-              help="Creates a template that ocntains a single TemplateFile"
+      <choice label='&amp;Single templateFile'
+              help="Creates a template that ocntains a single templateFile"
               value="Single"/>
       <choice label='Import from &amp;Directory'
               help="Creates a template that will deploy a directory full of files"
@@ -21,7 +21,7 @@ Creating a multiple choice option for the template type is a bit more involved. 
 This gives our user the option to select any of those choices.
 
     Select the template type
-    [S] Single TemplateFile  
+    [S] Single templateFile  
     [D] Import from Directory  
     [E] Empty  
     [?] Help (default is "E"):

@@ -50,14 +50,14 @@ That should sum up the information we need to collect.
 
 ## Creating parameters
 
-Now we can turn those planned questions into parameters. These questions are straight forward parameters to create.
+Now we can turn those planned questions into parameters. These questions are straightforward parameters to create.
 
     <parameter name="TemplateName" 
                type="text" 
                prompt="Template Name" 
                default="${PLASTER_DestinationName}" />
 
-    <parameter name="TemplateTitlee" 
+    <parameter name="TemplateTitle" 
                type="text" 
                prompt="Template Title" 
                default="${PLASTER_PARAM_TemplateName" />
@@ -72,9 +72,9 @@ For the `TemplateName` default value, I use the name of the destination folder t
 
 For the `TemplateAuthor`, I used `user-fullname` for the `type`. That is a special type that pulls the value from the user's `.gitconfig` as a default.
 
-# TemplateFile
+# templateFile
 
-Now we need to create a `TemplateFile` to generate the `PlasterTemplate.xml` file. The first half of the template will be basic value substitution.
+Now we need to create a `templateFile` to generate the `PlasterTemplate.xml` file. The first half of the template will be basic value substitution.
 
     <?xml version="1.0" encoding="utf-8"?>
     <plasterManifest schemaVersion="1.0" 
@@ -93,7 +93,7 @@ Now we need to create a `TemplateFile` to generate the `PlasterTemplate.xml` fil
     <content>
     ...
 
-All the magic happens in the second half of this `TemplateFile`. We walk the destination folder for both folders and files to create the content section.
+All the magic happens in the second half of this `templateFile`. We walk the destination folder for both folders and files to create the content section.
 
     ...
       <content>

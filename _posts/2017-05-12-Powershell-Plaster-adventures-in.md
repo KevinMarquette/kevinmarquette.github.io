@@ -171,7 +171,7 @@ I tried to keep it simple.
 
 # First deploy
 
-I have all my base files copied, parameter questions defined and the content section created. I know I will need to turn some of those files into their own scripted Plaster `TemplateFile`, but I want to see this basic template work first.
+I have all my base files copied, parameter questions defined and the content section created. I know I will need to turn some of those files into their own scripted Plaster `templateFile`, but I want to see this basic template work first.
 
 We are ready to run our template at this point.
 
@@ -340,7 +340,7 @@ I trimmed the script output above but this is what we just created.
 
 Right now all we really have is a fancy `Copy-Item` script. But some of those files need to be customized and seeded with data. That is where Plater starts to shine and show its value.
 
-# First TemplateFile
+# First templateFile
 
 I know my generic `module.feature` file requires one line to be updated with the module name. This would be a good one to start with.
 
@@ -375,7 +375,7 @@ And that worked amazingly well the first time.
     Background: we have a module
         Given the module was named MyModule
 
-# More TemplateFiles
+# More templateFiles
 
 I have several other files that could use similar updates.
 
