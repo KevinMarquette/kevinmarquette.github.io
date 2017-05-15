@@ -134,7 +134,7 @@ I can call that template file anything I want and could easily have left the fil
 
 Now we can take any folder and turn that into a Plaster template. The idea is that I would build out the folder first with all the files that should be included. Then instead of running `New-PlasterManifest`, I would use `Invoke-Plaster` with this template.
 
-## Quick example
+## Example
 
 Here is a quick example to see this working. Lets say I have two folders of common tests that I drop into modules. I first move all of these to a new folder called MyTests.
 
