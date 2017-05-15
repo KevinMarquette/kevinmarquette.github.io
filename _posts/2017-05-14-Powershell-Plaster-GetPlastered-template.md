@@ -134,7 +134,7 @@ Now we can take any folder and turn that into a Plaster template. The idea is th
 
 ## Quick example
 
-Here is a quick example to see this working. Lets say I have two folder of common tests that I drop into modules. I first move all of these to a new folder called MyTests.
+Here is a quick example to see this working. Lets say I have two folders of common tests that I drop into modules. I first move all of these to a new folder called MyTests.
 
     MyTests
     ├───spec
@@ -165,7 +165,7 @@ Now we run the GetPlastered template.
     Destination path: .\MyTests
     Create PlasterManifest.xml
 
-I just accepted all the defaults on that one and my `.\MyTests\PlasterManifest` was created. Here is the contents of that file.
+I just accepted all the defaults and my `.\MyTests\PlasterManifest.xml` was created. Here is the contents of that file showing every file in the `content` section.
 
     <?xml version="1.0" encoding="utf-8"?>
     <plasterManifest schemaVersion="1.0" 
@@ -193,8 +193,6 @@ I just accepted all the defaults on that one and my `.\MyTests\PlasterManifest` 
         <file source='tests\Unit.Tests.ps1' destination=''/>
     </content>
     </plasterManifest>
-
-Every folder and file is listed in the content section and will get deployed when this new template is used. 
 
 We can now use this new template to deploy our tests.
 
