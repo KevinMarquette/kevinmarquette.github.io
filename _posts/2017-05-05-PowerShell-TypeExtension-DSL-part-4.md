@@ -19,7 +19,7 @@ This is my fourth post in this series covering DSLs.
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
 * Part 4: Writing a TypeExtension DSL (This post)
-* Part 5: Writing an alternate TypeExtension DSL (future post)
+* Part 5: [Writing an alternate TypeExtension DSL](/2017-05-18-PowerShell-TypeExtension-DSL-part-5)
 
 # Index
 
@@ -359,6 +359,10 @@ Now if we run the original DSL example, then our implementation will just work.
 
 # Wrapping it all together
 
-I saw this as a good follow up example to my previous coverage of DSLs. I hope that by writing this so quickly that I don't take anything away from that original RFC. It addressed more than just creating DSLs and this was only an example of how it could be implemented. 
+I saw this as a good follow up example to my previous coverage of DSLs. I hope that by writing this so quickly that I don't take anything away from that original RFC. It addressed more than just creating DSLs and this was only an example of how it could be implemented.
 
 I can't wait to see some of the work that comes out of that RFC. But until then, we have our own DSL implementations to play with. It should be very easy to extend this approach to support the other `Update-TypeData` options.
+
+On my next post, I will take a different approach to this same scenario.
+
+* Part 5: [Writing an alternate TypeExtension DSL](/2017-05-18-PowerShell-TypeExtension-DSL-part-5)

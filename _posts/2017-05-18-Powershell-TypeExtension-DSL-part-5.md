@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell: Writing an alternate TypeExtension DSL, DSLs part 5"
-date: 2017-05-10
+date: 2017-05-18
 tags: [PowerShell, DSL, Advanced]
 ---
 
@@ -14,7 +14,7 @@ This is the fifth post in my series on DSLs.
 * Part 1: [Intro to Domain-Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1)
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: [DSL design patterns](/2017-03-13-Powershell-DSL-design-patterns/)
-* Part 4: Writing a TypeExtension DSL
+* Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
 * Part 5: Writing an alternate TypeExtension DSL (This post)
 
 # Index
@@ -24,10 +24,14 @@ This is the fifth post in my series on DSLs.
 
 # The example DSL
 
-Here is my draft proposal of how the DSL should look.
+Here is my draft example of how that DSL should look for creating `TypeExtension` properties for a class.
 
     # Extend the System.Array type
     TypeExtension [System.Array] {
+
+        # Add an alias property
+        Count = Property Length
+
         # Add a new Sum method (from Bruce Payette's "Windows PowerShell in Action", p. 435)
         Sum = Method {
             $acc = $null
@@ -37,9 +41,6 @@ Here is my draft proposal of how the DSL should look.
             }
             $acc
         }
-
-        # Add an alias property
-        Count = Property Length
     }
 
     # Add a DateTime property to the System.DateTime class
@@ -72,7 +73,7 @@ I think this would feel natural to work with even if the implementation makes yo
 
 # Implementation
 
-I am going to start with the `Method` and `Property` keywords. They will be the easiest to implement and look the most like our implementations from the last post.
+we will start with the `Method` and `Property` keywords. They will be the easiest to implement and look the most like our implementations from the last post.
 
 ## Method keyword
 
@@ -100,7 +101,7 @@ This will be an advanced function that takes a single parameter. I will place th
         }
     }
 
-I am also adding the `MemberType` as part of the return value.
+I am also adding the `MemberType` as part of the return value. This will be very important later.
 
 ## Property keyword
 
@@ -148,7 +149,11 @@ The `TypeExtension` function will be the most complicated part of this. I have t
 
 Our keywords are returning hashtables with two properties. The `MemberType` and the `Value`. Those are both parameters for `Update-TypeData`. If you want to see the examples for how to use `Update-TypeData`, please see my previous post where I showed how to do these things by hand.
 
-If I looked at that `ScriptBlock` as if it was a `Hashtable`, then the keys would be the `MemberName`. So I am going to turn that `ScriptBlock` into a `Hashtable` using the method described in my [DSL Design Patterns](/2017-03-13-Powershell-DSL-design-patterns/#hashtable-builder) post. Then we walk the keys for the values that I need.
+If I looked at that `ScriptBlock` as if it was a `Hashtable`, then the keys would be the `MemberName`. So I am going to turn that `ScriptBlock` into a `Hashtable` using the method described in my [DSL Design Patterns](/2017-03-13-Powershell-DSL-design-patterns/#hashtable-builder) post. 
+
+In that post, I convert the script block to a string. Then I add the syntax needed to transform it into a valid looking hashtable. Then I execute it to get an actual hashtable.
+
+Then we walk the keys for the values that I need. Each key is the name of a property and the value has the `TypeExtension` data for that property.
 
 
     function TypeExtension 
@@ -226,6 +231,10 @@ I ended up adding a little more validation that allows for more flexibility for 
         <name> = [Property] <ScriptBlock>
     }
 
-This approach has a nice feel for the end user for these specific options. The down side of this implementation is that it has a single focus on properties. If that is all we wanted to support, then this would be perfect. 
+This approach has a nice feel for the end user for these specific options. The down side of this implementation is that it has a single focus on properties. If that is all we wanted to support, then this would be perfect.
 
-If you have worked with `Update-TypeData` before then you know that is modifies a lot more than that. You can modify what shows in `format-list` or how what `group-object` uses by default. The approach we used in the last post would be much easier to extend to support these other options.
+# Just an example
+
+Remember that this is an alternate example. For this specific example, I like previous approach better.
+
+If you have worked with `Update-TypeData` before then you know that is modifies a lot more than properties. You can modify what shows when `format-list` is executed or how  `group-object` uses for grouping. The approach we used in the previous post would be much easier to extend to support these other options.

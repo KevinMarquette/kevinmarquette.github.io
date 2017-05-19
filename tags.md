@@ -21,6 +21,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Attribute'></a>
 # Attribute
@@ -69,6 +70,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-17 [Powershell: Gherkin specification validation introduction](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Exceptions'></a>
 # Exceptions
@@ -164,6 +166,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template ](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Presentation'></a>
 # Presentation

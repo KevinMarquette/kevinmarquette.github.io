@@ -17,7 +17,7 @@ This is the third post in a series on writing DSLs in PowerShell.
 * Part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
 * Part 3: CmdLet based DSL design patterns (This post)
 * Part 4: [Writing a TypeExtension DSL](/2017-05-05-PowerShell-TypeExtension-DSL-part-4)
-* Part 5: Writing an alternate TypeExtension DSL (future post)
+* Part 5: [Writing an alternate TypeExtension DSL](/2017-05-18-PowerShell-TypeExtension-DSL-part-5)
 
 # Index
 
