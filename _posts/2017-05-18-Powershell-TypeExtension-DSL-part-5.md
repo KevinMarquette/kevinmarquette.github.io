@@ -152,9 +152,9 @@ Our keywords are returning hashtables with two properties. The `MemberType` and 
 If I looked at the `ScriptBlock` as if it was a `Hashtable`, then the keys would be the `MemberName`.
 
     TypeExtension <Type> {
-        <name> = Method <ScriptBlock>
-        <name> = Property <PropertName>
-        <name> = Property <ScriptBlock>
+        <MemberName> = Method <ScriptBlock>
+        <MemberName> = Property <PropertName>
+        <MemberName> = Property <ScriptBlock>
     }
 
 So I am going to turn that `ScriptBlock` into a `Hashtable` using the method described in my [DSL Design Patterns](/2017-03-13-Powershell-DSL-design-patterns/#hashtable-builder) post.
@@ -234,9 +234,9 @@ Then we walk the keys for the values that I need. Each key is the name of a prop
 I ended up adding a little more validation that allows for more flexibility for the user. That validation makes the `Property` keyword optional. So my new DSL syntax tree looks like this:
 
     TypeExtension <Type> {
-        <name> = Method <ScriptBlock>
-        <name> = [Property] <PropertName>
-        <name> = [Property] <ScriptBlock>
+        <MemberName> = Method <ScriptBlock>
+        <MemberName> = [Property] <PropertName>
+        <MemberName> = [Property] <ScriptBlock>
     }
 
 This approach has a nice feel for the end user for these specific options. The down side of this implementation is that it has a single focus on properties. If that is all we wanted to support, then this would be perfect.
