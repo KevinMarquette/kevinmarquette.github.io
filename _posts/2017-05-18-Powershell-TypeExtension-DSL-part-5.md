@@ -5,9 +5,9 @@ date: 2017-05-18
 tags: [PowerShell, DSL, Advanced]
 ---
 
-In my last post on DSLs, I broke down a proposed DSL that someone else had described. It was drafted specifically for that RFC. Today, I am going to propose an alternate DSL syntax and I am going to break down the implementation just like I did last time.
+In my last post on DSLs, I broke down a proposed DSL that someone else had described. It was drafted specifically as an example DSL for a RFC. Today, I am going to propose an alternate DSL syntax and I am going to break down the implementation just like I did last time.
 
-My real motivation for this is to break away from the way most DSLs are implemented. There is a strong tenancy to see every keyword as an advanced function that takes a string and a script block.
+My real motivation for this is to break away from the way most DSLs are implemented. There is a strong tenancy to see every keyword as an advanced function that takes a string and a script block. I want to show that we have other options.
 
 This is the fifth post in my series on DSLs.
 
@@ -61,7 +61,7 @@ Here is my draft example of how that DSL should look for creating `TypeExtension
         }
     }
 
-This is the same example from the last post. I made a small adjustment so it looks like you are creating properties. Here is a simpler view of the syntax.
+This is almost the same example from the last post. I made a small adjustment so it looks like you are creating properties. Here is a simpler view of the syntax.
 
     TypeExtension <Type> {
         <name> = Method <ScriptBlock>
@@ -69,11 +69,11 @@ This is the same example from the last post. I made a small adjustment so it loo
         <name> = Property <ScriptBlock>
     }
 
-I think this would feel natural to work with even if the implementation makes your head hurt. The most obvious issue is that the `TypeExtension` `ScriptBlock` is not valid PowerShell.
+I think this would feel natural to work with even if the implementation is not obvious.
 
 # Implementation
 
-we will start with the `Method` and `Property` keywords. They will be the easiest to implement and look the most like our implementations from the last post.
+We will start with the `Method` and `Property` keywords. They will be the easiest to implement and look the most like our implementations from the last post.
 
 ## Method keyword
 
@@ -149,9 +149,17 @@ The `TypeExtension` function will be the most complicated part of this. I have t
 
 Our keywords are returning hashtables with two properties. The `MemberType` and the `Value`. Those are both parameters for `Update-TypeData`. If you want to see the examples for how to use `Update-TypeData`, please see my previous post where I showed how to do these things by hand.
 
-If I looked at that `ScriptBlock` as if it was a `Hashtable`, then the keys would be the `MemberName`. So I am going to turn that `ScriptBlock` into a `Hashtable` using the method described in my [DSL Design Patterns](/2017-03-13-Powershell-DSL-design-patterns/#hashtable-builder) post. 
+If I looked at the `ScriptBlock` as if it was a `Hashtable`, then the keys would be the `MemberName`.
 
-In that post, I convert the script block to a string. Then I add the syntax needed to transform it into a valid looking hashtable. Then I execute it to get an actual hashtable.
+    TypeExtension <Type> {
+        <name> = Method <ScriptBlock>
+        <name> = Property <PropertName>
+        <name> = Property <ScriptBlock>
+    }
+
+So I am going to turn that `ScriptBlock` into a `Hashtable` using the method described in my [DSL Design Patterns](/2017-03-13-Powershell-DSL-design-patterns/#hashtable-builder) post.
+
+In that post, I convert the `ScriptBlock` to a string, add the syntax needed to transform it into a valid looking hashtable, and I execute it to get an actual `Hashtable`.
 
 Then we walk the keys for the values that I need. Each key is the name of a property and the value has the `TypeExtension` data for that property.
 
