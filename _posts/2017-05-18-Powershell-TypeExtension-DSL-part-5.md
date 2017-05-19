@@ -24,7 +24,7 @@ This is the fifth post in my series on DSLs.
 
 # The example DSL
 
-Here is my draft example of how that DSL should look for creating `TypeExtension` properties for a class.
+Here is my draft example of how that DSL could look for creating `TypeExtension` properties for a class.
 
     # Extend the System.Array type
     TypeExtension [System.Array] {
