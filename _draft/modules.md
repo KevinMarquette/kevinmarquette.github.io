@@ -1,7 +1,7 @@
 
-I am really quick to build a module out of my scripts. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. I want to take the mystery out of it and show you how simple modules really are. 
+I am really quick to build a module out of my scripts. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. Lets take the mystery out of building a module and show you how simple they really are. 
 
-We often learn how to build a module without really understanding why they are built that way. In this post, we will turn a common script scenario into a full module one step at a time. I am taking several microsteps to show all the subtle details of why common modules are built the way they are.
+We often learn how to build a module without really understanding why they are built that way. In this post, we will turn a common script scenario into a full module one step at a time. We will take several microsteps to show all the subtle details of why common modules are built the way they are.
 
 # Index
 
@@ -19,16 +19,16 @@ There is a natrual progression when working with PowerShell. You start with smal
 
     GetInfo -ComputerName localhost
 
-You scripts are still really long becuse all these functions are still in your script. This is the common scenario that we are going to build on. I only have one function here but you may have several of them.
+You scripts are still long because all these functions are still in your script. This is the common scenario that we are going to build on. I have one function here but having several of them is common.
 
 ## Dot sourcing
 
-From here, you would move the functions out into their own `.ps1` file. So if you saved that function into a file called `GetInfo.ps1`, then you could dot source it and call it like this.
+From here, we would move the functions out into their own `.ps1` file. So if you saved that function into a file called `GetInfo.ps1`, then you could dot source it and call it like this.
 
     . .\GetInfo.ps1
     GetInfo -ComputerName localhost
 
-Dot sourcing is a way to load a script into your current runspace. This function now becomes available to you or the calling script. Leaving out that period would run the scrpt without leaving that defined function available in your script.
+Dot sourcing is a way to load a script into your current runspace. This function now becomes available to you or the calling script. Leaving out that period would run the script without leaving that defined function available in your script.
 
 You can place multiple functions in that file and treat it like a library of functions.
 
