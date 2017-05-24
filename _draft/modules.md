@@ -1,7 +1,7 @@
 
-I am really quick to build a module out of my scripts. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. Lets take the mystery out of building a module and show you how simple they really are. 
+I am really quick to build a module out of my scripts. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. We often learn how to build a module without really understanding why they are built that way.  
 
-We often learn how to build a module without really understanding why they are built that way. In this post, we will turn a common script scenario into a full module one step at a time. We will take several microsteps to show all the subtle details of why common modules are built the way they are.
+ In this post, we will turn a common script scenario into a full module one step at a time. We will take several microsteps to show all the subtle details of why common modules are built the way they are. Lets take the mystery out of building a module to see how simple they can be.
 
 # Index
 
@@ -10,7 +10,7 @@ We often learn how to build a module without really understanding why they are b
 
 # Starting with functions
 
-There is a natrual progression when working with PowerShell. You start with small script and work into making much larger ones. When your scripts get large, you start using more functions. Either functions you got from someplace else or functions that you write yourself. These functions start collecting at the top of your scripts.
+There is a natrual progression when working with PowerShell. You start with small script and work into making much larger ones. When your scripts get large, you start using more functions. These functions could be from someplace else or functions that you write yourself. These functions start collecting at the top of your script.
 
     function GetInfo{
         param($ComputerName)
@@ -19,7 +19,7 @@ There is a natrual progression when working with PowerShell. You start with smal
 
     GetInfo -ComputerName localhost
 
-You scripts are still long because all these functions are still in your script. This is the common scenario that we are going to build on. I have one function here but having several of them is common.
+You scripts are still long because all these functions are still taking up space in your script. This is the common scenario that we are going to build on. I have one function here but having several of them is common.
 
 ## Dot sourcing
 
