@@ -39,7 +39,7 @@ All it takes to turn your function script into a module is the use of `Import-Mo
     Import-Module .\GetInfo.ps1
     GetInfo -ComputerName localhost
 
-I like this so much more than dot sourcing. I really wish that this was the standard appraoch over dot sourcing for a two reasons. First is that it would be easier to understand and explain to people new to Powershell. And it moves the scripter down the path of making modules much sooner.
+I like this so much more than dot sourcing. I really wish that this was the standard appraoch over dot sourcing for a two reasons. First is that it would be easier to understand and explain to people new to Powershell. Second, it moves the scripter down the path of making modules much sooner.
 
 ## .psm1
 
@@ -49,6 +49,18 @@ We can call `Import-Module` on a `.ps1`, but the convention is to use `.psm1` as
     GetInfo -ComputerName localhost
 
 Now we can say we have a module.
+
+### Export-ModuleMember
+
+Sometimes you may have utility functions in your module that should stay internal to the module and not be made available to other scripts. If you want to have public and private functions, you will need to use `Export-ModuleMember` in the `*.psm1` file to define the exported functions.
+
+    function GetInfo{
+        param($ComputerName)
+        Get-WmiObject -ComputerName $ComputerName -Class Win32_BIOS
+    }
+    Export-ModuleMember -Functions 'GetInfo'
+
+If you don't specify the exported functions, then `*` is used to export everything.
 
 ## Folder names
 
@@ -93,7 +105,7 @@ And we can import it by name in our script.
 
 # Module manifest
 
-We really should't call our module done until we add a module manifest. This adds metadata about your module. It includes author information and versioning. It also will enable PowerShell to autoload our module if we create it correctly.
+We really shouldn't call our module done until we add a module manifest. This adds metadata about your module. It includes author information and versioning. It also will enable PowerShell to autoload our module if we create it correctly.
 
 The module manifest is just a hashtable saved as a `*.psd1` file. The name of the file should match the same of the folder. By creating this file, it will get loaded when you call `Import-Module`.
 
@@ -104,12 +116,17 @@ The good news is that we have a `New-ModuleManifest` cmdlet that will create the
     $manifest = @{
         Path              = '.\GetInfo\GetInfo.psd1'
         RootModule        = 'GetInfo.psd1' 
-        Author            = 'Kevin Marquette' 
-        FunctionsToExport = 'GetInfo'
+        Author            = 'Kevin Marquette'
     }
     New-ModuleManifest @manifest
 
-Because our manifest is loaded instead of the `*.psm1`, we need to use the `RootModule` parameter to indicate what Powershell module file should be ran. The functions to export indicates the functions in your module that should be available to anyone that imports the module. I'll talk about why this is important later.
+Because our manifest is loaded instead of the `*.psm1`, we need to use the `RootModule` parameter to indicate what Powershell module file should be ran. This is the structure that we have now.
+
+    Modules
+    │
+    └───GetInfo
+            GetInfo.psd1
+            GetInfo.psm1
 
 Here is a clip of the manifest that we just generated.
 
@@ -141,13 +158,17 @@ Here is a clip of the manifest that we just generated.
     # Description = ''
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = 'GetInfo'
+    FunctionsToExport = '*'
 
     ...
 
     }
 
 The `New-ModuleManifest` created all those keys and comments for us.
+
+## FunctionsToExport
+
+
 
 ## Module autoloading
 
@@ -163,11 +184,18 @@ Module autoloading was introduced in PowerShell 3.0. We were also given `$PSModu
 
 Unless your doing module development, you would generally leave this variable alone.
 
-# #Reqires -Modules 
+# #Reqires -Modules
 
-When you have a script that requires a module, you can add a requires statement to the top of your script. This will require that the specified module is loaded before your script runs. If the module is installe
+When you have a script that requires a module, you can add a requires statement to the top of your script. This will require that the specified module is loaded before your script runs. If the module is installed and if auto loading is allowed, the requires statement will go ahead and import the module.
 
-Just because you can auto import a properly creafted module in your script just by calling functions from it, you really should import the module first. 
+    #Requires -Modules GetInfo
+    GetInfo -ComputerName localhost
+
+This is what our script should end up like if we have a properly crafted module in the correct location.
+
+# What's next
+
+
 
 
 
