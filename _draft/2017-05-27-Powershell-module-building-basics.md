@@ -1,5 +1,11 @@
+---
+layout: post
+title: "Powershell: Building a Module, one microstep at a time"
+date: 2017-05-27
+tags: [PowerShell, Basics, Modules]
+---
 
-I am really quick to build a module out of my scripts. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. We often learn how to build a module without really understanding why they are built that way.  
+I am really quick to build a module out of my scripts and functions. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. We often learn how to build a module without really understanding why they are built that way.
 
 In this post, we will turn a common script scenario into a full module one step at a time. We will take several microsteps to show all the subtle details of why common modules are built the way they are. Lets take the mystery out of building a module to see how simple they can be.
 
@@ -170,7 +176,7 @@ The `New-ModuleManifest` created all those keys and comments for us.
 
 ## FunctionsToExport
 
-One of the values in the module manifest is the `FunctionsToExport` property with a default value of `*`. By default, it will export all functions. We want to update that value to have all our public functions in it.
+One of the properties in the module manifest is the `FunctionsToExport` property with a default value of `*`. By default, it will export all functions. We want to update that value to have all our public functions in it.
 
     FunctionsToExport = "GetInfo"
 
@@ -178,15 +184,13 @@ Use an array if you need to list multiple functions.
 
 Using this property in the manifest is just like using `Export-ModuleMember`. I do need to mention that you don't need to use both `Export-ModuleMember` and `FunctionsToExport`. You only need to use one of those to export your functions. If you have a manifest, then you should be using `FunctionsToExport`.
 
-In a future
-
 ## Module autoloading
 
 One nice feature of having a module manifest with `FunctionsToExport` defined, is that Powershell can auto import your module if you call one of the exported functions. Your module still has to be in the `$ENV:PSModulePath` variable for this to work.
 
 This is why it is important to populate the `FunctionsToExport`. The default value for this is `*` to designate that it is exporting all functions defined in the module. This does work, but the auto import functionality depends on this value. This is often overlooked by a lot of module builders.
 
-# $PSModuleAutoloadingPreference 
+### $PSModuleAutoloadingPreference
 
 Module auto-loading was introduced in PowerShell 3.0. We were also given `$PSModuleAutoloadingPreference` to control that behavior. If you want to disable module auto-loading for all modules, then set this value to `none`.
 
@@ -203,7 +207,7 @@ When you have a script that requires a module, you can add a requires statement 
 
 This is what our script should end up like if we have a properly crafted module in the correct location.
 
-# Doing it all at once
+# Putting it all together
 
 Now we know how to build a module layer by layer, I would generally build a module this way.
 
@@ -212,14 +216,8 @@ Now we know how to build a module layer by layer, I would generally build a modu
 * Use `New-ModuleManifest` to create a `MyModule.psd1` in that folder for the metadata
 * Update the `ModuleRoot` and `FunctionsToExport` properties in the `MyModule.psd1`
 
-Start with a library or utility module for your common functions. As your collection of functions grows, then you can break them out into their own folders.
+Start with a library or utility module for your common functions. As your collection of functions grows, then you can break them out into their own modules later.
 
 # What's next?
 
-We all start with simple modules like this and I wanted to lay the groundwork for my next post. In that post I will cover a specific design pattern for modules that you see in a lot of community projects. 
-
-
-
-
-
-
+We all start with simple modules like this and I wanted to lay the groundwork for my next post. In that post I will cover a specific design pattern for modules that you see in a lot of community projects. I quickly cover this in my post on [building a CI/CD pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=body).
