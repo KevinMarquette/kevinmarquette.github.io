@@ -198,9 +198,9 @@ Module auto-loading was introduced in PowerShell 3.0. We were also given `$PSMod
 
 Unless your doing module development, you would generally leave this variable alone.
 
-# #Reqires -Modules
+# #Requires -Modules
 
-When you have a script that requires a module, you can add a requires statement to the top of your script. This will require that the specified module is loaded before your script runs. If the module is installed and if auto-loading is allowed, the requires statement will go ahead and import the module.
+When you have a script that requires a module, you can add a [requires statement](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_requires) to the top of your script. This will require that the specified module is loaded before your script runs. If the module is installed and if auto-loading is allowed, the requires statement will go ahead and import the module.
 
     #Requires -Modules GetInfo
     GetInfo -ComputerName localhost
