@@ -11,8 +11,8 @@ In this post, we will turn a common script scenario into a full module one step 
 
 # Index
 
-* Toc
-{toc}
+* TOC
+{:toc}
 
 # Starting with functions
 
