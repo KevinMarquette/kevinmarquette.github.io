@@ -21,7 +21,7 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### Recent posts
 
-* 201-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=recent)
