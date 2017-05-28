@@ -45,7 +45,7 @@ All it takes to turn your function script into a module is the use of `Import-Mo
     Import-Module .\GetInfo.ps1
     GetInfo -ComputerName localhost
 
-I like this so much more than dot sourcing. I really wish that this was the standard approach over dot sourcing for a two reasons. First is that it would be easier to understand and explain to people new to PowerShell. Second, it moves the scripter down the path of making modules much sooner.
+I like this so much more than dot sourcing. I really wish that this was the standard approach over dot sourcing for two reasons. First is that it would be easier to understand and explain to people new to PowerShell. Second, it moves the scripter down the path of making modules much sooner.
 
 ## .psm1
 
@@ -58,7 +58,7 @@ Now we can say we have a module.
 
 ### Export-ModuleMember
 
-Sometimes you may have utility functions in your module that should stay internal to the module and not be made available to other scripts. If you want to have public and private functions, you will need to use `Export-ModuleMember` in the `*.psm1` file to define the exported public functions.
+Sometimes you may have utility functions in your module that should stay internal to the module and not be made available to other scripts. If you want to have public and internal functions, you will need to use `Export-ModuleMember` in the `*.psm1` file to define the exported public functions.
 
     function GetInfo{
         param($ComputerName)
@@ -123,7 +123,7 @@ The good news is that we have a `New-ModuleManifest` cmdlet that will create the
 
     $manifest = @{
         Path              = '.\GetInfo\GetInfo.psd1'
-        RootModule        = 'GetInfo.psd1' 
+        RootModule        = 'GetInfo.psm1' 
         Author            = 'Kevin Marquette'
     }
     New-ModuleManifest @manifest
@@ -145,7 +145,7 @@ Here is a clip of the manifest that we just generated.
     @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule = 'GetInfo.psd1'
+    RootModule = 'GetInfo.psm1'
 
     # Version number of this module.
     ModuleVersion = '1.0'
