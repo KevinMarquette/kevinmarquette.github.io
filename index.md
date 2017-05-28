@@ -21,13 +21,15 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### Recent posts
 
-* 2017-05-08 [Powershell: PSGraph the Get-Help related links](https://kevinmarquette.github.io/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-05-05 [PowerShell: Writing a TypeExtension DSL, DSLs part 4](https://kevinmarquette.github.io/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-05-01 [What have you done with PowerShell this month](https://kevinmarquette.github.io/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 201-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-05 [PowerShell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-05-01 [What have you done with PowerShell this month](/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-30  [Powershell: Advanced Gherkin features in Pester 4.0](2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](https://kevinmarquette.github.io/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-04-22 [PowerShell: Installing remote software](https://kevinmarquette.github.io/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](https://kevinmarquette.github.io/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
+
 
 ## PSGraph
 
@@ -36,3 +38,6 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 ## Chronometer
 
 [Chronometer](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=projects) analyzes a script or module during execution and reports line by line execution times. It allows you to see your code coverage and where most of your execution time is spent.
+
+## GetPlastered
+[GetPlastered](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent) is a Plaster template that will turn a folder into a Plaster template that can deploy that folder. The idea is to use this as a starting point to create the Plaster manifest when you know it will contain a lot of files.

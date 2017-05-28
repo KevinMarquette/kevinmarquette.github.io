@@ -39,6 +39,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Chronometer'></a>
 # Chronometer
@@ -103,6 +104,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-05 [Powershell: Chronometer, line by line script execution times](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Monthly'></a>
 # Monthly
@@ -167,6 +169,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template ](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Presentation'></a>
 # Presentation
