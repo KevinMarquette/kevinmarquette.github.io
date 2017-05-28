@@ -221,3 +221,5 @@ Start with a library or utility module for your common functions. As your collec
 # What's next?
 
 We all start with simple modules like this and I wanted to lay the groundwork for my next post. I will cover a specific design pattern for modules that you see in a lot of community projects in that post. I quickly cover this in my post on [building a CI/CD pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=body).
+
+
