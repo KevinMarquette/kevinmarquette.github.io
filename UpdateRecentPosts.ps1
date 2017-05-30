@@ -2,7 +2,7 @@
 param(
     $path = 'C:\workspace\kevinmarquette.github.io\_posts\*.md' 
 )
-$path = (LS $path | sort name | select -last 8).fullname
+$path = (LS $path | sort name -Descending | select -First 8).fullname
 $lineTemplate = '* {0} [{1}](http://kevinmarquette.github.io/{2}/?utm_source=blog&utm_medium=blog&utm_content=recent)'
 $template = @'
 ---
