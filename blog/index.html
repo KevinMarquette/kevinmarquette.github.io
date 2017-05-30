@@ -22,7 +22,7 @@ subtitle: Everything you ever wanted to know
     </p>
 
     <div class="post-entry">
-      {{ post.content | strip_html | xml_escape | truncatewords: 50 }}
+      {{ post.excerpt | strip_html | xml_escape  }}
 	  <a href="{{ post.url | prepend: site.baseurl }}?utm_source=blog&utm_medium=blog&utm_content=morelink" class="post-read-more">[Read&nbsp;More]</a>
     </div>
 
