@@ -10,7 +10,7 @@ Every once and a while I stumble onto something in Powershell that I find intere
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Custom attributes work on <a href="https://twitter.com/hashtag/PowerShell?src=hash">#PowerShell</a> class methods. This will be useful. <a href="https://t.co/8AeopiWH8T">pic.twitter.com/8AeopiWH8T</a></p>&mdash; Brandon Olin (@devblackops) <a href="https://twitter.com/devblackops/status/815747777221099520">January 2, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-We can have a lot of fun with that.
+We can have a lot of fun with that.<!--more-->
 
 This was originaly one post but I broke it into two sections because of the length.
 

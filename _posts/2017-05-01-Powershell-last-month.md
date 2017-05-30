@@ -9,7 +9,7 @@ Here is a breakdown of all the posts and other Powershell projects that I worked
 
 # Personal/Community efforts
 
-These are the projects and idea that I do on my own time for the community. Most of my personal projects are published on this blog or as a contribution on GitHub.
+These are the projects and idea that I do on my own time for the community. Most of my personal projects are published on this blog or as a contribution on GitHub.<!--more-->
 
 * Answered a [call for speakers request](http://mspsug.com/2017/04/26/call-for-mississippi-virtual-powershell-user-group-speakers-2017/) and got myself on the list for presenting in September on my PSGraph module
 * Reached out to the ATX PowerShell group to possibly give them the same presentation

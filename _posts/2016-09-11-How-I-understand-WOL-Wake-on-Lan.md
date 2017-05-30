@@ -4,7 +4,7 @@ title: "How I understand WOL (Wake on Lan)"
 date: 2016-09-11
 tags: [WOL,Other]
 ---
-The way WOL works is that the NIC has to receive the magic packet. This packet has a special bit pattern and the MAC address of the NIC. If you want to wake up 5 machines, that is 5 different magic packets. All you have to do is get this packet to the machine.
+The way WOL works is that the NIC has to receive the magic packet. This packet has a special bit pattern and the MAC address of the NIC. If you want to wake up 5 machines, that is 5 different magic packets. All you have to do is get this packet to the machine.<!--more-->
 
 The two ways are unicast and broadcast. If you broadcast the packet to the broadcast address for the given subnet, then every machine on that subnet will receive the packet. Generally, you have to be on the same subnet that you are targeting for this to work. So if you are in subnet A, you cannot sent it to the broadcast address of subnet B. It is possible to change a switch configuration to allow this but it is disabled by default for security/stability of the network.
 

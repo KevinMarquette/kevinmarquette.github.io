@@ -5,7 +5,7 @@ date: 2017-02-26
 tags: [PowerShell,DSL,Advanced]
 ---
 
-I always considered myself a Powershell purist. A DSL (Domain-Specific Language) written in Powershell abuses all the rules that I have grown to embrace. I recently found myself building a module that was implemented as a DSL and I really like how it turned out. Not only that, but I also had fun writing it.
+I always considered myself a Powershell purist. A DSL (Domain-Specific Language) written in Powershell abuses all the rules that I have grown to embrace. I recently found myself building a module that was implemented as a DSL and I really like how it turned out. Not only that, but I also had fun writing it.<!--more-->
 
 This is the first post in a series covering what a DSL is and how to write one.
 * Part 1: Intro to Domain-Specific Languages (This post)

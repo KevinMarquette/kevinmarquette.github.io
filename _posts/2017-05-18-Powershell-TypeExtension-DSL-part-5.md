@@ -7,7 +7,7 @@ tags: [PowerShell, DSL, Advanced]
 
 In my last post on DSLs, I broke down a proposed DSL that someone else had described. It was drafted specifically as an example DSL for a RFC. Today, I am going to propose an alternate DSL syntax and I am going to break down the implementation just like I did last time.
 
-My real motivation for this is to break away from the way most DSLs are implemented. There is a strong tenancy to see every keyword as an advanced function that takes a string and a script block. I want to show that we have other options.
+My real motivation for this is to break away from the way most DSLs are implemented. There is a strong tenancy to see every keyword as an advanced function that takes a string and a script block. I want to show that we have other options.<!--more-->
 
 This is the fifth post in my series on DSLs.
 

@@ -7,7 +7,7 @@ tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 
 Pester has a interesting secret feature that we need to talk about. It supports Gherkin-style feature specifications. I had no idea this was even a thing until I was looking at one of Joel Bennett's modules and saw something I had not seen before.
 
-This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you pass/fail results on each item like Pester. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was introduced, so you may need to update Pester to get it.
+This feature allows you to define your features and specifications in a simple business readable syntax. Then you crate a validation script that gets executed with that specification. It will give you pass/fail results on each item like Pester. I think this is awesome and more people need to know about it. I am not exactly sure when this feature was introduced, so you may need to update Pester to get it.<!--more-->
 
 This is the first post in a 3 part series on Gherkin.
 

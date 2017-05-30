@@ -7,7 +7,7 @@ tags: [PowerShell,Chronometer,Modules,Projects]
 I just published a new module to the [Powershell Gallery](https://www.powershellgallery.com/packages/chronometer). Calling this one [Chronometer](https://github.com/KevinMarquette/Chronometer) because it has the ability to track line by line script execution times. It also has the fun side effect of showing your code coverage visually if you run it with pester. 
 
 ![Chronometer Sample](/img/chronometerSample.png)
-
+<!--more-->
 * TOC
 {:toc}
 

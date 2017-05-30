@@ -3,6 +3,7 @@ layout: post
 title: "Powershell: Writing a TypeExtension DSL, DSLs part 4"
 date: 2017-05-05
 tags: [PowerShell, DSL, Advanced]
+excerpt_separator: <!--more-->
 ---
 
 Steffen Stranger pointed the [PowerShell-RFC RFC0017-Domain-Specific-Language-Specifications](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) out to me recently.
@@ -11,7 +12,7 @@ Steffen Stranger pointed the [PowerShell-RFC RFC0017-Domain-Specific-Language-Sp
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-The [RFC](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) is about making it easier to implement a DSL in Powershell with C#. They have an example of a DSL to replace `types.ps1xml`. It is a nice clear example of a DSL.
+The [RFC](https://github.com/PowerShell/PowerShell-RFC/blob/48f23e86b836dfe25ff3dd76733fc1dfb32e0e1f/3-Experimental/RFC0017-Domain-Specific-Language-Specifications.md) is about making it easier to implement a DSL in Powershell with C#. They have an example of a DSL to replace `types.ps1xml`. It is a nice clear example of a DSL.<!--more-->
 
 This is my fourth post in this series covering DSLs.
 

@@ -7,7 +7,7 @@ tags: [PowerShell,PSGraph,Modules,Projects]
 
 # Let's build some graphs with Powershell and PSGraph
 
-I love to visualize things. There are just some patterns that are hard to see in tables of data that can jump out to you when it is visualized. Today, I am going to be working with my new module PSGraph.
+I love to visualize things. There are just some patterns that are hard to see in tables of data that can jump out to you when it is visualized. Today, I am going to be working with my new module PSGraph.<!--more-->
 
 * TOC
 {:toc}

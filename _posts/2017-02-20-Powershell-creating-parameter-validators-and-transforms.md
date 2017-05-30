@@ -4,7 +4,7 @@ title: "Powershell: Creating parameter validators and transforms"
 date: 2017-02-20
 tags: [PowerShell,Classes,Attribute,Validator,Advanced]
 ---
-I was in the [Powershell Slack](https://powershell.slack.com/messages/irc-bridge/) channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. This builds directly on my last post because you are creating a custom attribute to do this.
+I was in the [Powershell Slack](https://powershell.slack.com/messages/irc-bridge/) channel and [Joel Bennett](https://twitter.com/Jaykul) mentioned inheriting from `System.Management.Automation.ValidateArgumentsAttribute` to create a custom validator. This builds directly on my last post because you are creating a custom attribute to do this.<!--more-->
 
 This is the second part in a two part post about attributes. 
 

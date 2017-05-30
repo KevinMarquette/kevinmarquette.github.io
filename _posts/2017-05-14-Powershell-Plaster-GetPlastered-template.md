@@ -9,7 +9,7 @@ I recently started working with [Plaster](https://github.com/PowerShell/Plaster)
 
 I am going to build a Plaster template that builds a Plaster template. I am calling this new template `GetPlastered`.
 
-This will be a good example demonstrating the TemplateFile features of Plaster.
+This will be a good example demonstrating the TemplateFile features of Plaster.<!--more-->
 
 # Index
 

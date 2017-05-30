@@ -5,7 +5,7 @@ date: 2016-08-28
 tags: [PowerShell, Invoke-Command, Remoting]
 ---
 
-If you have started using `Invoke-Command`, then you have ran into the issue of getting local variables into your remote commands. There is a lot of advice out there on how to do this and some approaches are more clunky than others. First let me show you the problem of scope.
+If you have started using `Invoke-Command`, then you have ran into the issue of getting local variables into your remote commands. There is a lot of advice out there on how to do this and some approaches are more clunky than others. <!--more-->First let me show you the problem of scope.
 
     $local = Get-Date
     Invoke-Command -ComputerName server01 -ScriptBlock { 
