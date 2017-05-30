@@ -89,7 +89,8 @@ timezone: "America/Chicago"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 30
+paginate: 15
+paginate_path: /blog/page:num/
 
 kramdown:
   input: GFM
