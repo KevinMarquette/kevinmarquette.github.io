@@ -5,7 +5,7 @@ date: 2016-10-21
 tags: [PowerShell,Basics]
 ---
 
-The nice thing about Powershell is that you can run any command line application from the shell. That is a common way to install things. Calling the installer is often the same as double clicking on it. If you call an MSI, it will pop up and start the install.
+The nice thing about Powershell is that you can run any command line application from the shell. That is a common way to install things. Calling the installer is often the same as double clicking on it. If you call an MSI, it will pop up and start the install.<!--more-->
 
     .\SQLIO.msi
 

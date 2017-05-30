@@ -5,7 +5,7 @@ date: 2017-03-25
 tags: [Other]
 ---
 
-We were having a conversation recently at work about server naming conventions and it reminded of an article where the author was using a mnemonic word list to name servers. After a little digging, I was able to track it down.
+We were having a conversation recently at work about server naming conventions and it reminded of an article where the author was using a mnemonic word list to name servers. After a little digging, I was able to track it down.<!--more-->
 
 # Index
 

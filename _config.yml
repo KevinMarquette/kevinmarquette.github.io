@@ -6,6 +6,7 @@
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "https://kevinmarquette.github.io"
 baseurl: ""
+excerpt_separator: <!--more-->
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://kevinmarquette.github.io/projectname"

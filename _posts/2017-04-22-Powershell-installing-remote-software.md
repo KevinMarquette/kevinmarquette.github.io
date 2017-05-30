@@ -5,7 +5,7 @@ date: 2017-04-22
 tags: [PowerShell,Remoting,Basics]
 ---
 
-I previously covered how to [silently install a MSI](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=installingremotesoftware). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to PowerShell.
+I previously covered how to [silently install a MSI](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=installingremotesoftware). The next thing an administrator wants to do is install it on a remote system. That is the logical next step. This isn't always the easiest task for someone new to PowerShell.<!--more-->
 
 # Index
 

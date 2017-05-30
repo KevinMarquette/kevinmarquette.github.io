@@ -7,17 +7,19 @@ tags: [PowerShell,Plaster,Modules]
 
 [David Christian](http://overpoweredshell.com/about/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) recently wrote an article about [how to use Plaster](http://overpoweredshell.com/Working-with-Plaster/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures) on [OverPoweredShell.com](http://overpoweredshell.com/?utm_source=kevinmarquette&utm_medium=blog&utm_content=plasteradventures). If you are new to Plaster, I pulled this from the Plaster readme.
 
-> "[Plaster](https://github.com/PowerShell/Plaster) is a template-based file and project generator written in PowerShell. Its purpose is to streamline the creation of PowerShell module projects, Pester tests, DSC configurations, and more. File generation is performed using crafted templates which allow the user to fill in details and choose from options to get their desired output." -[The Plaster readme.md](https://github.com/PowerShell/Plaster)
-
-The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to a Plaster template.
-
-So before we begin, know that I am building on those two articles and they would be good to read first. David's [article on Plaster](http://overpoweredshell.com/Working-with-Plaster/) is a good introduction and my [CI/CD Pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures) is a good overview on all the pieces I put togehter in my modules.
-
+> "[Plaster](https://github.com/PowerShell/Plaster) is a template-based file and project generator written in PowerShell. Its purpose is to streamline the creation of PowerShell module projects, Pester tests, DSC configurations, and more. File generation is performed using crafted templates which allow the user to fill in details and choose from options to get their desired output." -[The Plaster readme.md](https://github.com/PowerShell/Plaster)<!--more-->
 
 # Index
 
 * TOC
 {:toc}
+
+# Intro
+
+The last time I wrote a module, I broke down all the pieces and wrote about it in my [CI/CD Pipeline article](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures). Well, I am starting a new module and I am going to convert it over to a Plaster template.
+
+So before we begin, know that I am building on those two articles and they would be good to read first. David's [article on Plaster](http://overpoweredshell.com/Working-with-Plaster/) is a good introduction and my [CI/CD Pipeline](/2017-01-21-powershell-module-continious-delivery-pipeline/?utm_source=blog&utm_medium=blog&utm_content=plasteradventures) is a good overview on all the pieces I put togehter in my modules.
+
 
 # Copy/paste warning
 

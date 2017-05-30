@@ -7,7 +7,7 @@ tags: [Powershell,Presentation,Pester,Operational Validation]
 
 My first presentation to the ATXPowershell User Group was a year ago on using Pester to validate your scripts and modules as you make them. I ended the talk with a quick view of how I use Pester to validate my system deployment configurations. I shared my presentation online and that section of my scripts got a lot of attention. 
 
-For our ATXPowershell November meeting, I am taking that topic and expanding on it. I have seen the topic of using Pester for Operational Validation show up in more and more places over the last year. What I like most about it is that this is an easy skill or concept that even people fairly new to Powershell can adopt in their existing environments. This can not only add value right away but also be a great build as you go project that does not require a large investment of time.
+For our ATXPowershell November meeting, I am taking that topic and expanding on it. I have seen the topic of using Pester for Operational Validation show up in more and more places over the last year. What I like most about it is that this is an easy skill or concept that even people fairly new to Powershell can adopt in their existing environments. This can not only add value right away but also be a great build as you go project that does not require a large investment of time.<!--more-->
 
 You are welcome to join us for this meeting. Please [RSVP on MeetUp](http://www.meetup.com/Austin-PowerShell/events/234995887/) so we know how many are comming and to get notified when future meetings are posted.
 

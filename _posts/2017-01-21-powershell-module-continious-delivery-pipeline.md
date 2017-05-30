@@ -10,7 +10,7 @@ I have not built a module from scratch in a long time. My process has evolved an
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
 
-I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. I especially want to incorporate CI/CD (Continious Integration and Continious Delivery) ideas into my pipeline. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.
+I am working on a new module and I want to rethink a lot of the things I have done when setting up a new module. I especially want to incorporate CI/CD (Continious Integration and Continious Delivery) ideas into my pipeline. To help get a fresh perspective on this, I am going to build it based on the work done by Warren Frame ([RamblingCookieMonster](http://ramblingcookiemonster.github.io/)) and I am going to use his [PSDepend](https://github.com/RamblingCookieMonster/PSDepend) project as my reference. He has built quite a few modules for the community. It also helps that he has written many of the modules that I am planning on using and has several great blog posts covering those modules.<!--more-->
 
 [Index](#index)
 

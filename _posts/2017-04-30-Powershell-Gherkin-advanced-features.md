@@ -7,7 +7,7 @@ tags: [PowerShell, DSL, Gherkin, Pester, Advanced]
 
 In the last post, I covered the bare basics of how to use Gherkin. I had a conversation with [Joel Bennett](https://twitter.com/Jaykul) on twitter about Gherkin and he pointed out some more examples from his [Configuration module](https://github.com/PoshCode/Configuration/tree/master/Specs). Now that I have been playing with them for a few days, I decided it was time to share my findings.
 
-This is the 2nd post in a 3 part series on Gherkin where I cover the advanced features. These features are the building blocks that give Gherkin a lot of power.
+This is the 2nd post in a 3 part series on Gherkin where I cover the advanced features. These features are the building blocks that give Gherkin a lot of power.<!--more-->
 
 * Part 1: [Basic Gherkin introduction](../2017-03-17-Powershell-Gherkin-specification-validation)
 * Part 2: Advanced Gherkin Features (This post)

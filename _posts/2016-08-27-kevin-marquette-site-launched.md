@@ -6,7 +6,7 @@ tags: [Other]
 ---
 
 This is just a test post.
-
+<!--more-->
 This will be just a quick first test post. I am using github pages for this and using [Jekyll](http://jekyllrb.com) so I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.
 
 This is a test of the markdown system

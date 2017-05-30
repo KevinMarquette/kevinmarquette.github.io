@@ -5,7 +5,7 @@ date: 2016-10-25
 tags: [PowerShell,Pester,DSC,Modules,Operational Validation]
 ---
 
-If you know me, then you know I have been a fan of [Pester](https://github.com/pester/Pester/wiki) for a long time. I found it to be a great tool and found novel uses for it. I put together a talk on [Pester in Action](https://github.com/KevinMarquette/PesterInAction) a year ago to show how I used it in my environment. The big thing I wanted to get across to people was that it was amazing at verifying system configuration and validating a system before you release it. I have seen a lot of community efforts along these same lines in the last year. One of these tools deserves a closer look.
+If you know me, then you know I have been a fan of [Pester](https://github.com/pester/Pester/wiki) for a long time. I found it to be a great tool and found novel uses for it. I put together a talk on [Pester in Action](https://github.com/KevinMarquette/PesterInAction) a year ago to show how I used it in my environment. The big thing I wanted to get across to people was that it was amazing at verifying system configuration and validating a system before you release it. I have seen a lot of community efforts along these same lines in the last year. One of these tools deserves a closer look.<!--more-->
 
 ## The [Operational Validation Framework](https://github.com/PowerShell/Operation-Validation-Framework)
 

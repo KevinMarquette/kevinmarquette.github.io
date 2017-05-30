@@ -7,7 +7,7 @@ tags: [PowerShell, DSL, Advanced]
 
 When I was working on my DSL, I found that I had to be more creative with my advanced function implementations than I do with normal advanced functions. When it comes to writing a script CmdLet, there are lots of community standards and expected behaviors already defined.
 
-When creating a DSL, you may be bending a lot of those best practices to create the best user experience. When optimizing for the user, you may find yourself collecting and processing data using different technique.
+When creating a DSL, you may be bending a lot of those best practices to create the best user experience. When optimizing for the user, you may find yourself collecting and processing data using different technique.<!--more-->
 
 The goal of this post is to show you different approaches you can take in crafting a DSL.
 

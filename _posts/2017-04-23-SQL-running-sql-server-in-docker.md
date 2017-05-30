@@ -7,7 +7,7 @@ tags: [SQL,Docker]
 
 I saw an announcement for [SQL Server CTP 2017 CTP 2.0](https://redmondmag.com/articles/2017/04/19/sql-server-2017-preview.aspx) recently and I wanted to try it out. I went to the [eval page](https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-ctp/) and I saw they have a [Docker image](https://hub.docker.com/r/microsoft/mssql-server-windows/) for Windows listed for this release.
 
-It had a fresh update on the Docker site but did not reference SQL 2017 at the time of writing this. I figured it was worth a try to save having to install the full engine on my surface.
+It had a fresh update on the Docker site but did not reference SQL 2017 at the time of writing this. I figured it was worth a try to save having to install the full engine on my surface.<!--more-->
 
 I fired up Docker and pulled the image.
 

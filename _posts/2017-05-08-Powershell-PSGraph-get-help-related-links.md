@@ -11,6 +11,7 @@ I saw this tweet by Glenn Sarti where he was building a graph database of the Po
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 I thought it was a cool idea and I was curious what I could do with my [PSGraph module](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) on that same dataset. I am pulling examples right from [Glenn Sarti's article](http://glennsarti.github.io/blog/graph-all-the-powershell-things) because he did a great job explaining it.
+<!--more-->
 
 # PowerShell help example
 His first example shows the data we are working with.
