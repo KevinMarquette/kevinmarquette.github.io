@@ -30,6 +30,9 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 * 2017-05-01 [What have you done with PowerShell this month](/2017-05-01-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-04-30  [Powershell: Advanced Gherkin features in Pester 4.0](2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
+Test import:
+
+{% include recent-posts.md %}
 
 ## PSGraph
 
