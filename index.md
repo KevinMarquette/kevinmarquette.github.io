@@ -22,6 +22,7 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 ### Recent posts
 
 {% include recent-posts.md %}
+
 * [More](/blog/?utm_source=blog&utm_medium=blog&utm_content=index)
 
 ## PSGraph
