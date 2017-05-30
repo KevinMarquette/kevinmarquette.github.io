@@ -5,7 +5,8 @@ date: 2017-01-21
 tags: [PowerShell,Modules]
 ---
 
-# A fresh start to building a module.
+A fresh start to building a module.
+
 I have not built a module from scratch in a long time. My process has evolved and I have incorporated a lot of ideas into my process. Most of the time, I copy an existing module and just gut out all the functions. This has worked because each module grows a little more from the last time I built one. 
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
