@@ -24,7 +24,7 @@ These are the projects and idea that I do on my own time for the community. Most
 * Wrote blog post on [Building a Module, one microstep at a time](http://kevinmarquette.github.io/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
 
-# Work\Consulting efforts
+# Work/Consulting efforts
 
 I also put a lot of time into Powershell projects outside of my published community efforts. Some of these are hard to explain out of context.
 

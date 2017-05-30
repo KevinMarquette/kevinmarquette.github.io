@@ -21,7 +21,7 @@ These are the projects and idea that I do on my own time for the community. Most
 * I reworked the landing page and reorganized my blog with [tag support](https://kevinmarquette.github.io/tags/#DSL).
 * I wrote a script to parse all my posts and re-generate my tags page. [UpdateTags.ps1](https://github.com/KevinMarquette/kevinmarquette.github.io/blob/master/UpdateTags.ps1)
 
-# Work\Consulting efforts
+# Work/Consulting efforts
 
 I also put a lot of time into Powershell projects outside of my published community efforts.
 

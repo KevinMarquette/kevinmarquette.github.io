@@ -25,7 +25,7 @@ These are the projects and idea that I do on my own time for the community. Most
 * I wrote a templating process that mimics the way Plater processes template files because it reminded me of ASP classic and felt like an interesting challenge
 * Tracked down an interesting bug in xRemoteFile
 
-# Work\Consulting efforts
+# Work/Consulting efforts
 
 I also put a lot of time into Powershell projects outside of my published community efforts. Some of these are hard to explain out of context.
 
