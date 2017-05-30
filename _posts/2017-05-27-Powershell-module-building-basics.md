@@ -4,7 +4,6 @@ title: "Powershell: Building a Module, one microstep at a time"
 date: 2017-05-27
 tags: [PowerShell, Basics, Modules]
 share-img: http://kevinmarquette.github.io/img/share-img/2017-05-27-Powershell-module-building-basics.png
-image: /img/share-img/2017-05-27-Powershell-module-building-basics.png
 ---
 
 I am really quick to build a module out of my scripts and functions. I like how it allows me to organize my functions and use them in other scripts. I also see that many PowerShell scripters are slow to take that step of building a module. We often learn how to build a module without really understanding why they are built that way.
