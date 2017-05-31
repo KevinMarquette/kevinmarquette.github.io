@@ -80,6 +80,6 @@ The last thing we need to know is how to install a module from our repository.
 
     Install-Module -Name MyModule -Repository MyRepository
 
-# In Closing
+# In closing
 
 I mostly wanted to bring more visibility to using `Register-PSRepository` to create this basic repository. This could be a good stepping stone on your way to setting up a proper [NuGet server](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
