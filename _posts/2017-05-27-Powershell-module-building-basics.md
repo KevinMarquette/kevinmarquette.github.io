@@ -191,6 +191,8 @@ One nice feature of having a module manifest with `FunctionsToExport` defined, i
 
 This is why it is important to populate the `FunctionsToExport`. The default value for this is `*` to designate that it is exporting all functions defined in the module. This does work, but the auto import functionality depends on this value. This is often overlooked by a lot of module builders.
 
+> In Powershell 6.0, the `FunctionsToExport` default is changing to an empty array @(). This is more in-line with best practices. You should either specify the functions to export or set the value to an empty array.
+
 ### $PSModuleAutoloadingPreference
 
 Module auto-loading was introduced in PowerShell 3.0. We were also given `$PSModuleAutoloadingPreference` to control that behavior. If you want to disable module auto-loading for all modules, then set this value to `none`.

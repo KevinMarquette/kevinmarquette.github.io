@@ -22,7 +22,7 @@ These are the projects and idea that I do on my own time for the community. Most
 * I started working with Invoke-Build and I am converting my PSGraph module to use that instead
 * I am also reworking my modules to produce a combined psm1 file at build time.
 * Wrote blog post on [Building a Module, one microstep at a time](http://kevinmarquette.github.io/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
-
+* Wrote blog post on [Creating a internal PSScript repository](http://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
 # Work/Consulting efforts
 
