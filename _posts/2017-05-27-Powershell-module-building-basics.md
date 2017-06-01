@@ -185,13 +185,13 @@ Use an array if you need to list multiple functions.
 
 Using this property in the manifest is just like using `Export-ModuleMember`. I do need to mention that you don't need to use both `Export-ModuleMember` and `FunctionsToExport`. You only need to use one of those to export your functions. If you have a manifest, then you should be using `FunctionsToExport`.
 
+> In Powershell 6.0, the `FunctionsToExport` default is changing to an empty array `@()`. This is more in-line with best practices. You should either specify the functions to export or set the value to an empty array.
+
 ## Module autoloading
 
 One nice feature of having a module manifest with `FunctionsToExport` defined, is that Powershell can auto import your module if you call one of the exported functions. Your module still has to be in the `$ENV:PSModulePath` variable for this to work.
 
 This is why it is important to populate the `FunctionsToExport`. The default value for this is `*` to designate that it is exporting all functions defined in the module. This does work, but the auto import functionality depends on this value. This is often overlooked by a lot of module builders.
-
-> In Powershell 6.0, the `FunctionsToExport` default is changing to an empty array @(). This is more in-line with best practices. You should either specify the functions to export or set the value to an empty array.
 
 ### $PSModuleAutoloadingPreference
 
