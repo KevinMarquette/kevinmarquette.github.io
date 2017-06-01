@@ -93,7 +93,7 @@ You also need to make sure you place this in the `$env:PSModulePath` and don't h
 
 ## Installing updated modules
 
-You can run Update-Module to update your module. But I find that it leaves the old version on the system. I tend to remove and then install fresh when I need to update.
+You can run `Update-Module` to update your module. But I find that it leaves the old version on the system. I tend to remove and then install fresh when I need to update.
 
     Uninstall-Module -Name MyModule
     Install-Module -Name MyModule -Repository MyRepository -Scope CurrentUser
