@@ -125,7 +125,6 @@ exclude:
   - README.md
   - CNAME
   - Vagrantfile
-  - *.ps1
 
 # prose.io config
 prose:
