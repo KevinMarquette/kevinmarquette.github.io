@@ -32,11 +32,7 @@ These are the projects and idea that I do on my own time for the community. Most
 I also put a lot of time into Powershell projects outside of my published community efforts. Some of these are hard to explain out of context.
 
 * More work on my universal JSON coalescing and templating engine
-<!--
-# What have you done?
 
-I was inspired to write this post because every month the [/r/Powershell](https://www.reddit.com/r/PowerShell) community has this discussion. Please stop by and join us to share your projects. [What have you done with PowerShell this month? May 2017](https://www.reddit.com/r/PowerShell/comments/68m02p/what_have_you_done_with_powershell_this_month/)
--->
 # Previous months
 
 I did this same recap last month.

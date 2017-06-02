@@ -64,4 +64,5 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
 
     $bmp.Save($filename) 
     $filename 
+    #https://cards-dev.twitter.com/validator
 }
