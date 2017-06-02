@@ -39,14 +39,14 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
     Add-Type -AssemblyName System.Drawing
  
 
-    $bmp = new-object System.Drawing.Bitmap 900, (50 + 31 * $lines.count)
+    $bmp = new-object System.Drawing.Bitmap ((50 + 31 * $lines.count)*2), (50 + 31 * $lines.count)
     $font = new-object System.Drawing.Font 'Lucida Console ', 12 
     $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
     $brushFg = [System.Drawing.Brushes]::White 
     $graphics = [System.Drawing.Graphics]::FromImage($bmp) 
     $graphics.FillRectangle($brushBg, 0, 0, $bmp.Width, $bmp.Height) 
 
-    $graphics.DrawString($postInfo.Title, $font, $brushFg, 10, 10) 
+    $graphics.DrawString($postInfo.Title.Replace('Powershell: ',''), $font, $brushFg, 10, 10) 
 
     $font = new-object System.Drawing.Font 'Lucida Console ', 10 
 
