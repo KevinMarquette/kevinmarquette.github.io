@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Powershell: What have you done this month? May 2017"
-date: 2017-06-01
+date: 2017-06-02
 tags: [Monthly]
+share-img: "http://kevinmarquette.github.io\img\share-img\2017-06-02-Powershell-last-month.png"
 ---
 
 Here is a breakdown of all the posts and other PowerShell projects that I worked on this month.
@@ -23,17 +24,18 @@ These are the projects and idea that I do on my own time for the community. Most
 * I am also reworking my modules to produce a combined psm1 file at build time.
 * Wrote blog post on [Building a Module, one microstep at a time](http://kevinmarquette.github.io/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * Wrote blog post on [Creating a internal PSScript repository](http://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* Started working on something big that I hope to announce soon.
 
 # Work/Consulting efforts
 
 I also put a lot of time into Powershell projects outside of my published community efforts. Some of these are hard to explain out of context.
 
 * More work on my universal JSON coalescing and templating engine
-
+<!--
 # What have you done?
 
 I was inspired to write this post because every month the [/r/Powershell](https://www.reddit.com/r/PowerShell) community has this discussion. Please stop by and join us to share your projects. [What have you done with PowerShell this month? May 2017](https://www.reddit.com/r/PowerShell/comments/68m02p/what_have_you_done_with_powershell_this_month/)
-
+-->
 # Previous months
 
 I did this same recap last month.

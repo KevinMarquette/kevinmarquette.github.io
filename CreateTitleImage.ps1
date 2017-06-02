@@ -39,7 +39,7 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
     Add-Type -AssemblyName System.Drawing
  
 
-    $bmp = new-object System.Drawing.Bitmap 1200, (50 + 31 * $lines.count)
+    $bmp = new-object System.Drawing.Bitmap 900, (50 + 31 * $lines.count)
     $font = new-object System.Drawing.Font 'Lucida Console ', 12 
     $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
     $brushFg = [System.Drawing.Brushes]::White 
