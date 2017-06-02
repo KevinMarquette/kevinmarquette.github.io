@@ -31,7 +31,7 @@ These are the projects and idea that I do on my own time for the community. Most
 
 I also put a lot of time into Powershell projects outside of my published community efforts. Some of these are hard to explain out of context.
 
-* More work on my universal JSON coalescing and templating engine
+* More work on our universal JSON coalescing and templating engine
 
 # Previous months
 
