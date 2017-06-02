@@ -7,6 +7,7 @@ tags: [Monthly]
 
 Here is a breakdown of all the posts and other PowerShell projects that I worked on this month.
 <!--more-->
+
 # Personal/Community efforts
 
 These are the projects and idea that I do on my own time for the community. Most of my personal projects are published on this [blog](http://kevinmarquette.github.io/blog) or as a contribution on [GitHub](https://github.com/KevinMarquette).
