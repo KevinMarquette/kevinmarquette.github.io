@@ -3,9 +3,10 @@ layout: post
 title: "Powershell: What have you done this month? May 2017"
 date: 2017-06-02
 tags: [Monthly]
+share-img: "http://kevinmarquette.github.io/img/share-img/2017-06-02-Powershell-last-month.png"
 ---
 
-Here is a breakdown of all the posts and other PowerShell projects that I worked on this month.
+This is a breakdown of all the posts and other PowerShell projects that I worked on this month.
 <!--more-->
 
 # Personal/Community efforts
