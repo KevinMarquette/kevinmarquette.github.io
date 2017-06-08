@@ -73,6 +73,13 @@ You can still add new properties to your `PSCustomObject` with `Add-Member`.
 
     $myObject.ID
 
+# Remove properties
+
+You can also remove properties off of an object.
+
+    $myObject.psobject.properties.remove('ID')
+
+The `psobject` is a hidden property that gives you access to base object metadata.
 
 # Enumerating property names
 
@@ -80,9 +87,10 @@ Sometimes you need a list of all the property names on an object.
 
     $myObject | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name
 
-There are also some hidden properties that can be accessed to get this same list.
+We can get this same list off of the `psobject` property too.
 
     $myobject.psobject.properties.name
+
 
 ## Dynamically accessing properties
 

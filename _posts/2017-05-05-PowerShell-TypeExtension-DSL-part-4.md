@@ -366,4 +366,4 @@ I can't wait to see some of the work that comes out of that RFC. But until then,
 
 On my next post, I will take a different approach to this same scenario.
 
-* Part 5: [Writing an alternate TypeExtension DSL](/2017-05-18-PowerShell-TypeExtension-DSL-part-5)
+* Part 5: [Writing an alternate TypeExtension DSL](/2017-05-18-Powershell-TypeExtension-DSL-part-5)
