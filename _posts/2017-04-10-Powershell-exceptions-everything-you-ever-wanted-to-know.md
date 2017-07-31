@@ -68,7 +68,7 @@ This creates a runtime exception that is a terminating error. It will be handled
 
 I mentioned that `Write-Error` does not throw a terminating error by default. If you specify `-ErrorAction Stop` then `Write-Error`generates a terminating error that can be handled with a `catch`.
 
-    Write-Error -Message "Huston, we have a problem." -ErrorAction Stop
+    Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 
 Thank you to Lee Daily for reminding about using `-ErrorAction Stop` this way.
 
