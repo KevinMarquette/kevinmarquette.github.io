@@ -50,7 +50,7 @@ Here are some regular expression resources to help you find the right patterns f
 
 This cmdlet is great for searching files or strings for a text pattern. 
 
-   Get-ChildItem -Path $logFolder | Select-String -Pattern 'Error'
+    Get-ChildItem -Path $logFolder | Select-String -Pattern 'Error'
 
 This example searches all the files in the `$logFolder` for lines that have the word `Error`. The pattern parameter is a regular expression and in this case, the word `Error` is valid regex. It will find any line that has the word error in it. 
 
@@ -61,14 +61,25 @@ This one would search text documents for numbers that look like a social securit
 
 # -match
 
-The `-match` opperator takes a regular expression. 
+The `-match` opperator takes a regular expression and returns `$true` if the pattern matches.
 
     $message = 'there is an error with your file'
     $message -match 'error'
 
     '123-45-6789' -match '\d\d\d-\d\d-\d\d\d\d'
 
-When the pattern matches, then `-match` will evaulate to true.
+If you apply a match to an array, you will get a list of all the items that match the pattern.
+
+    PS> $data = @(
+           "General text without meaning"
+           "my ssn is 123-45-6789"
+           "some other string"
+           "another SSN 123-12-1234"
+       )
+    PS> $data -match '\d\d\d-\d\d-\d\d\d\d'
+
+    my ssn is 123-45-6789
+    another SSN 123-12-1234
 
 
 ## -like
