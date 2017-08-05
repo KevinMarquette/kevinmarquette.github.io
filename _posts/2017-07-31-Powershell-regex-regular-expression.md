@@ -283,7 +283,7 @@ Take this string for example `(123)456-7890`. It contains regex syntax that may 
 
     $message -match '(123)456-7890'
 
-You may think this is matching a specific phone number but the thing it would match is '123456-7890'. My point is that when you use a literal string where a regex is expected, that you will get unexpected results. This is where the `[regex]::Escape()` solves that issue.
+You may think this is matching a specific phone number but the thing it would match is `123456-7890`. My point is that when you use a literal string where a regex is expected, that you will get unexpected results. This is where the `[regex]::Escape()` solves that issue.
 
     $message -match [regex]::Escape('(123)456-7890')
 
@@ -302,7 +302,7 @@ When using Pester tests, the `Should Match` uses a regular expression.
         $message | Should Match '\d\d\d-\d\d-\d\d\d\d'
     }
 
-When working with Pester is the exception to the rule of not using `[regex]::Escape()`. Pester does not have a substring match alternative.
+When with Pester is the exception to the rule of not using `[regex]::Escape()`. Pester does not have a substring match alternative.
 
     It "contains $subString"{
         $message = Get-Data
