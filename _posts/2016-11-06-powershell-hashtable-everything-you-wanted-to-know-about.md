@@ -286,6 +286,14 @@ I placed that in a variable but it could just as easily be defined inline and yo
 
 I personally don't like how long that makes commands and it often promotes some bad behaviors that I won't get into. I am more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts. But there is a lot of code out there that does this so I wanted you to be aware of it. I talk about creating a `pscustomobject` later on.
 
+## Custom sort expression
+
+It is easy to sort a collection if the objects have the data that you want to sort on. You can either add the data to the object before you sort it or create a custom expression for `Sort-Object`.
+
+    Get-ADUser | Sort-Object -Parameter @{ e={ Get-TotalSales $_.Name } }
+
+In this example I am taking a list of users and using some custom cmdlet to get additional information just for the sort.
+
 ## Splatting hashtables at cmdlets
 This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope the normal way. 
 
@@ -310,7 +318,7 @@ Just take a moment to appreciate how easy that example is to read. They are the 
 
 I use splatting any time the command gets too long. I define too long as causing my window to scroll right. If I hit 3 properties for a function, odds are that I will rewrite it using a splatted hashtable.
 
-## Splatting for optional parameters
+### Splatting for optional parameters
 One of the most common ways I use spatting is to deal with optional parameters that come from someplace else in my script. Let's say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.
 
     $CIMParams = @{
@@ -328,6 +336,43 @@ One of the most common ways I use spatting is to deal with optional parameters t
 I start by creating my hashtable with common parameters. Then I add the `$Credential` if it exists. Because I am using splatting here, I only need to have the call to `Get-CIMInstance` in my code once. This design pattern is very clean and can handle lots of optional parameters very easily. 
 
 To be fair, you could write your commands to allow `$null` values for parameters. You just don't always have control over the other commands you are calling. 
+
+### Multiple splats
+You can splat multiple hashtables to the same cmdlet. If we revisit our original splatting example:
+
+    $Common = @{        
+        SubnetMask  = '255.255.255.0'
+        LeaseDuration = (New-TimeSpan -Days 8)
+        Type = "Both"
+    }
+
+    $DHCPScope = @{
+        Name        = 'TestNetwork'
+        StartRange  = '10.0.0.2'
+        EndRange    = '10.0.0.254'
+        Description = 'Network for testlab A'        
+    }
+
+    Add-DhcpServerv4Scope @DHCPScope @Common
+
+I'll use this when I have a common set of parameters that I am passing to lots of commands.
+
+
+### Splatting for clean code
+There is nothing wrong with splatting a single parameter if makes you code cleaner.
+
+    $log = @{Path = '.\logfile.log'}
+
+    Add-Content "logging this command" @log
+
+
+### Splatting executables
+Splatting also works on some executables that use a `/param:value` syntax. Robocopy for example has some parameters like this.
+
+    $robo = @{R=1;W=1;MT=8}
+    robocopy source destination @robo 
+
+I don't know that this is all that usefull, but I found it interesting.
 
 ## Adding hashtables
 Hashtables support the addition opperator to combine two hashtables.
@@ -517,14 +562,20 @@ That includes removing keys and splatting it to other functions. If you find you
 
 See [about_Automatic_Variables](https://technet.microsoft.com/en-us/library/hh847768.aspx) for more details.
 
+### PSBoundParameters gotcha
+
+One important thing to remember is that this only includes the values that are passed in as parameters. If you also have parameters with default values but are not passed in by the caller, PSBoundParameters will not contain those values. This is commonly overlooked.
+
 ## PSDefaultParameterValues
-This is another automatic variable that lets you assign default values to any cmdlet without changing the cmdlet. Take a look at this example.
+This automatic variable lets you assign default values to any cmdlet without changing the cmdlet. Take a look at this example.
 
     $PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
 
 This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default value for the `Out-File -Encoding` parameter. This is session specific so you should place it in your `$profile`. 
 
 I use this often to pre-assign values that I type quite often. 
+
+    $PSDefaultParameterValues[ "Connect-VIServer:Server" ] = 'VCENTER01.contoso.local'
 
 This also accepts wildcards so you can set values in bulk. Here are some ways you can use that:
 
@@ -533,8 +584,120 @@ This also accepts wildcards so you can set values in bulk. Here are some ways yo
 
 For a more in depth breakdown, see this great article on [Automatic Defaults](https://www.simple-talk.com/sysadmin/powershell/powershell-time-saver-automatic-defaults/) by [Michael Sorens](http://cleancode.sourceforge.net/wwwdoc/about.html).
 
+## Regex $Matches
 
-## Anything else?
+When you use the `-match` operator, an automatic variable called `$matches` is created with the results of the match. If you have any sub expressions in your regex, those sub matches are also listed.
+
+    $message = 'My SSN is 123-45-6789.'
+
+    $message -match 'My SSN is (.+)\.'
+    $Matches[0]
+    $Matches[1]
+
+### Named matches
+
+This is one of my favorite features that most people don't know about.If you use a named regex match, then you can access that match by name on the matches.
+
+    $message = 'My Name is Kevin and my SSN is 123-45-6789.'
+
+    if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>.+)\.')
+    {
+        $Matches.Name
+    $Matches.SSN
+    }
+
+In the example above, the `(?<Name>.*)` is a named sub expression. This value is then placed in the `$Matches.Name` property.
+
+## Group-Object -AsHashtable
+
+One little known feature of `Group-Object` is that it can turn some datasets into a hashtable for you. 
+
+    Import-CSV $Path | Group-Object -AsHashtable -Property email
+
+This will add each row into a hashtable and use the specified property as the key to access it.
+
+# Copying Hashtables
+
+One thing that is important to know is that hashtables are objecs and each variable is just a refference to an object. This just means that it takes a little more work work to make a valid copy of a hashtable.
+
+## Assigning reference types
+
+When you have one hashtable and assign it to a second variable, both variables point to the same hashtable.
+
+    PS> $orig = @{name='orig'}
+    PS> $copy = $orig
+    PS> $copy.name = 'copy'
+    PS> 'Copy: [{0}]' -f $copy.name
+    PS> 'Orig: [{0}]' -f $orig.name
+
+    Copy: [copy]
+    Orig: [copy]
+
+This hilights that they are the same because altering the values in one will also alter the values in the other. This also applies when passing hashtables into other fucntions. If those functions make changes to that hashtable, your original is also altered.
+
+## Shallow copies, single level
+
+If we have a simple hashtable like our example above, we can use `.Clone()` to make a shallow copy.
+
+    PS> $orig = @{name='orig'}
+    PS> $copy = $orig.Clone()
+    PS> $copy.name = 'copy'
+    PS> 'Copy: [{0}]' -f $copy.name
+    PS> 'Orig: [{0}]' -f $orig.name
+
+    Copy: [copy]
+    Orig: [orig]
+
+This will allow us to make some basic changes to one that don't impact the other.
+
+
+## Shallow copies, nested
+
+The reason why it is called a shallow copy is becuase it only copies the base level properties. If one of those properties is a refference type (like another hashtable), then those nested objects will still point to eachother.
+
+    PS> $orig = @{
+            person=@{
+                name='orig'
+            }
+        }
+    PS> $copy = $orig.Clone()
+    PS> $copy.person.name = 'copy'
+    PS> 'Copy: [{0}]' -f $copy.person.name
+    PS> 'Orig: [{0}]' -f $orig.person.name
+
+    Copy: [copy]
+    Orig: [copy]
+
+So you can see that even though I cloned the hashtable, the reference to `person` was not cloned. We need to make a deep copy to truly have a second hashtable that is not linked to the first.
+
+## Deep copies
+
+At the time of writing this, I am not aware of any clever ways to just make a deep copy of a hashtable (and keep it as a hashtable). That's just one of those things that some needs to write. Here is a quick method to do that.
+
+    function Get-DeepClone
+    {
+        [cmdletbinding()]
+        param(
+            $InputObject
+        )
+        process
+        {    
+            if($InputObject -is [hashtable]) {
+                $clone = @{}
+                foreach($key in $InputObject.keys)
+                {
+                    $clone[$key] = Get-DeepClone $InputObject[$key]
+                }
+                return $clone
+            } else {
+                return $InputObject
+            }        
+        }
+    }
+
+It doeesn't handle any other reffernece types or arrays, but it is a good starting point.
+
+# Anything else?
 I covered a lot of ground very quickly. My hope is that you walk away leaning something new or understanding it better every time you read this. Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now. That is perfectly OK and is kind of expected depending on how much you work with PowerShell.
 
 Here is a list of everything we covered in case you want to jump back up to something. Normally, this would go at the beginning but this was written from top to bottom with examples that build on everything that came before it.
