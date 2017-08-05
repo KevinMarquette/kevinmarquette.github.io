@@ -157,7 +157,7 @@ This is why it is important to remember what commands use regex.
 
 ## String.Split()
 
-Like with the replace command, there is a `String.Split()` function that does not use regex. It will be faster and give you the same results.
+Like with the replace command, there is a `String.Split()` function that does not use regex. It will be faster when splitting on a character (or substring) and give you the same results.
 
 
 # Switch
@@ -177,6 +177,7 @@ By default, the `switch` statement does exact matches. But it does have an `-reg
         }
     }
 
+This feature of `switch` is often overlooked.
 
 ## Multiple switch matches
 
@@ -189,10 +190,11 @@ Run this example with the above switch statement:
     WARNING: message may contain a credit card number
     WARNING: message may contain a phone number
 
+Even though we had one string in the `$message`, 2 of the switch statements executed.
 
 # ValidatePattern
 
-When creating an advanced function, you can add a ValidatePattern to your parameter. This will validate the incomming value has the pattern that you expect. 
+When creating an advanced function, you can add a `[ValidatePattern()]` to your parameter. This will validate the incomming value has the pattern that you expect. 
 
     function Get-Data
     {
@@ -217,7 +219,7 @@ This example requests a SSN from the user and it does the validation on the inpu
 
 ## ValidateScript
 
-One way around that is to use a `ValidateScript` instead that throws a custom error message.
+One way around that is to use a `[ValidateScript({...})]` instead that throws a custom error message.
 
     [ValidateScript({
         if( $_ -match '\d\d\d-\d\d-\d\d\d\d')
@@ -237,6 +239,7 @@ Now we get this error message
     get-data : Cannot validate argument on parameter 'SSN'.
     Please provide a valid SSN (ex 123-45-5678)
 
+It may complicate our parameter, but it is much easier for out users to understand.
 
 # $Matches
 
