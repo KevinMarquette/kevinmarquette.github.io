@@ -173,6 +173,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-30 [Powershell: Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
@@ -201,6 +202,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Regex'></a>
+# Regex
+
+* 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Remoting'></a>
 # Remoting
