@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: the many ways to use regex"
+title: "Powershell: The many ways to use regex"
 date: 2017-07-31
 tags: [PowerShell,Regex]
 ---
