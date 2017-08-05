@@ -21,7 +21,7 @@ Regular expressions (regex) are used to match and parse text. The regex language
 Teaching the regex syntax and language is beyond the scope of this article. I will just cover what I need in order to focus on the PowerShell. My regex examples will intentionally be very basic.
 
 
-## regex quick start
+## Regex quick start
 
 You can use normal numbers and characters in your patterns for exact matches. This works when you know exactly what needs to match. Sometimes you need a pattern where any digit or letter should make the match valid. Here are some basic patterns that I may use in these examples.
 
@@ -149,7 +149,7 @@ This is why it is important to remember what commands use regex.
 Like with the replace command, there is a `String.Split()` function that does not use regex. It will be faster and give you the same results.
 
 
-# switch
+# Switch
 
 By default, the `switch` statement does exact matches. But it does have an `-regex` option to use regex matches instead.
 
@@ -167,7 +167,7 @@ By default, the `switch` statement does exact matches. But it does have an `-reg
     }
 
 
-## multiple switch matches
+## Multiple switch matches
 
 The interesting thing about using regex in a switch is that it will test each pattern so you can have several matches to one switch.
 
@@ -253,7 +253,7 @@ This is one of my favorite features that most people don't know about.If you use
 In the example above, the `(?<Name>.+)` is a named sub expression. This value is then placed in the `$Matches.Name` property. Same goes for SSN.
 
 
-# [regex]
+# .Net Regex
 
 Because this is PowerShell, we have full access to the .net regex object. Most of them are covered by the functionality above. If you are getting into more advanced regex where you need custom options, then take a second look at this object.
 
@@ -262,7 +262,7 @@ Because this is PowerShell, we have full access to the .net regex object. Most o
 I'm going to touch on `[regex]::Escape()`.
 
 
-## [regex]::Escape()
+## Escape regex
 regex is a complex language with common symbols and a shorthand syntax. There are times where you may want to match a literal value instead of a pattern. The `[regex]::Escape()` will escape out all the regex syntax for you.
 
 Take this string for example `(123)456-7890`. It contains regex syntax that may not be obvious to you. 
