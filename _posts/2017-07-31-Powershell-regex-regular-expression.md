@@ -22,7 +22,7 @@ Teaching the regex syntax and language is beyond the scope of this article. I wi
 
 ## regex quick start
 
-You can use normal numbers and characters in your patterns for exact matches. This works when you know exactly what needs to be matched. Sometimes you need a pattern where any digit or letter should make the match valid. Here are some basic patterns that I may use in these examples.
+You can use normal numbers and characters in your patterns for exact matches. This works when you know exactly what needs to match. Sometimes you need a pattern where any digit or letter should make the match valid. Here are some basic patterns that I may use in these examples.
 
     \d digit [0-9]
     \w alpha numeric [a-zA-Z0-9_]
@@ -72,12 +72,13 @@ When the pattern matches, then `-match` will evaulate to true.
 
 ## -like
 
-The `-like` command is very much like -`match` except it does not use regex. It uses a simpler wildcard pattern where `?` is any character and `*` is multiple unknown characters.
+The `-like` command is like `-match` except it does not use regex. It uses a simpler wildcard pattern where `?` is any character and `*` is multiple unknown characters.
 
     $message -like '*error*'
 
-Sometimes all you need is a basic wildcard and that is where `-like` comes in.
+ One important difference is that the `-like` command expects an exact match unless you include the wildcards. So if you are looking for a pattern within a larger string, you will need to add the wildcards on both ends. `'*error*'`
 
+Sometimes all you need is a basic wildcard and that is where `-like` comes in.
 
 ## String.Contains()
 
@@ -221,7 +222,7 @@ Now we get this error message
 
     PS> get-data 'Kevin'
 
-    get-data : Cannot validate argument on parameter 'SSN'. 
+    get-data : Cannot validate argument on parameter 'SSN'.
     Please provide a valid SSN (ex 123-45-5678)
 
 
