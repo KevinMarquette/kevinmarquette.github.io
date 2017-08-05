@@ -6,7 +6,7 @@ tags: [PowerShell,Regex]
 share-img: http://kevinmarquette.github.io/img/share-img/2017-07-31-Powershell-regex-regular-expression.png
 ---
 
-Regular expressions (regex) are used to match and parse text. The regex language is a very powerfull shorthand for describing patterns. Powershell makes use of regular expressions in several ways. Sometimes it is easy to forget that these commands are using regex becuase it is so tightly integrated. You may already be using some of these and not even realize that they are using regex patterns.
+Regular expressions (regex) match and parse text. The regex language is a powerfull shorthand for describing patterns. Powershell makes use of regular expressions in several ways. Sometimes it is easy to forget that these commands are using regex becuase it is so tightly integrated. You may already be using some of these commands and not even realize it.
 
 <!--more-->
 
@@ -297,6 +297,6 @@ When working with Pester is the exception to the rule of not using `[regex]::Esc
 
 # Putting it all together
 
-As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. Powershell did a good job of integrating these into the language. But be warry of using them if performance is a consern and you are not actually using regex pattern.
+As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. PowerShell did a good job of integrating these into the language. But be warry of using them if performance is a consern and you are not actually using regex pattern.
 
 Let me know if you discover any other common ways to use regex in PowerShell. I would love to hear about them and add them to my list.
