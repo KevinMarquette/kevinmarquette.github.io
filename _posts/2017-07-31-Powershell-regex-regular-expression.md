@@ -90,6 +90,15 @@ If you apply a match to an array, you will get a list of all the items that matc
     my ssn is 123-45-6789
     another SSN 123-12-1234
 
+## Variations
+
+`-imatch` makes it explicit that you are doing a case insensitive operation (the default)
+
+`-cmatch` makes the operation case sensitive.
+
+`-notmatch` returns true when there is no match.
+
+The `i` and `c` variants of an operator is available for all comparison operators.
 
 ## -like
 
@@ -99,7 +108,9 @@ The `-like` command is like `-match` except it does not use regex. It uses a sim
 
  One important difference is that the `-like` command expects an exact match unless you include the wildcards. So if you are looking for a pattern within a larger string, you will need to add the wildcards on both ends. `'*error*'`
 
-Sometimes all you need is a basic wildcard and that is where `-like` comes in.
+Sometimes all you need is a basic wildcard and that is where `-like` comes in. 
+
+This operator has `-ilike`, `-clike`, `-notlike` variants.
 
 ## String.Contains()
 
@@ -122,6 +133,7 @@ The replace command uses regex for it's pattern matching.
     PS> $message -replace '\d\d\d-\d\d-\d\d\d\d', '###-##-####'
     My SSN is ###-##-####.
 
+The other variants of this command are `-creplace` and `-ireplace`.
 
 ## String.Replace()
 
@@ -162,6 +174,8 @@ The reason is that `.` will match any character, so in this case it matches ever
     9
 
 This is why it is important to remember what commands use regex.
+
+`-isplit` and `-csplit` are the variants on this command.
 
 
 ## String.Split()
@@ -225,7 +239,6 @@ This example requests a SSN from the user and it does the validation on the inpu
     the "\d\d\d-\d\d-\d\d\d\d" pattern. Supply an argument that matches "\d\d\d-\d\d-\d\d\d\d" 
     and try the command again.
 
-
 ## ValidateScript
 
 One way around that is to use a `[ValidateScript({...})]` instead that throws a custom error message.
@@ -249,6 +262,20 @@ Now we get this error message
     Please provide a valid SSN (ex 123-45-5678)
 
 It may complicate our parameter, but it is much easier for our users to understand.
+
+## Validators on variables
+
+We mostly think of validators as part of an advanced function but the reality is that they apply to the variable and can be used outside of an advanced function.
+
+    PS> [ValidatePattern('\d\d\d-\d\d-\d\d\d\d')]
+    PS> [string]$SSN = '123-45-6789'
+
+    PS> $SSN = "I don't know"
+
+    The variable cannot be validated because the value `I don't know`
+    is not a valid value for the SSN variable.
+
+I can't say that I realy ever do this, but this would be a good trick to know. 
 
 # $Matches
 
@@ -321,8 +348,13 @@ When with Pester is the exception to the rule of not using `[regex]::Escape()`. 
         $message | Should Match ([regex]::Escape($subString))
     }
 
+
 # Putting it all together
 
 As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. PowerShell did a good job of integrating these into the language. But be wary of using them if performance is a concern and you are not actually using regex pattern.
 
 Let me know if you discover any other common ways to use regex in PowerShell. I would love to hear about them and add them to my list.
+
+
+![Chronometer Sample](/img/xkcd-regex.jpg)
+> Image from [xkcd.com](http://www.xkcd.com), slightly altered
