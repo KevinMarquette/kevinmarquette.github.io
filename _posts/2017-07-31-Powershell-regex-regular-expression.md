@@ -54,7 +54,8 @@ This cmdlet is great for searching files or strings for a text pattern.
 
 This example searches all the files in the `$logFolder` for lines that have the word `Error`. The pattern parameter is a regular expression and in this case, the word `Error` is valid regex. It will find any line that has the word error in it. 
 
-    Get-ChildItem -Path $logFolder | Select-String -Pattern '\d\d\d-\d\d-\d\d\d\d'
+    Get-ChildItem -Path $logFolder |
+        Select-String -Pattern '\d\d\d-\d\d-\d\d\d\d'
 
 This one would search text documents for numbers that look like a social security number.
 
@@ -306,7 +307,7 @@ When with Pester is the exception to the rule of not using `[regex]::Escape()`. 
 
     It "contains $subString"{
         $message = Get-Data
-        $message | Should Match [regex]::Escape($subString)
+        $message | Should Match ([regex]::Escape($subString))
     }
 
 # Putting it all together
