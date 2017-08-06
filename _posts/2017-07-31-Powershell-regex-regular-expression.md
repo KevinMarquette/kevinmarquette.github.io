@@ -6,7 +6,7 @@ tags: [PowerShell,Regex]
 share-img: http://kevinmarquette.github.io/img/share-img/2017-07-31-Powershell-regex-regular-expression.png
 ---
 
-Regular expressions (regex) match and parse text. The regex language is a powerfull shorthand for describing patterns. Powershell makes use of regular expressions in several ways. Sometimes it is easy to forget that these commands are using regex becuase it is so tightly integrated. You may already be using some of these commands and not even realize it.
+Regular expressions (regex) match and parse text. The regex language is a powerful shorthand for describing patterns. Powershell makes use of regular expressions in several ways. Sometimes it is easy to forget that these commands are using regex becuase it is so tightly integrated. You may already be using some of these commands and not even realize it.
 
 <!--more-->
 
@@ -39,7 +39,15 @@ So a pattern of `\d\d\d-\d\d-\d\d\d\d` will match a social security number. Thre
 
 Here are some regular expression resources to help you find the right patterns for your task.
 
+Interactive regex calculators:
+
 * [regexr.com](http://regexr.com/)
+* [regex101.com](http://regex101.com/)
+* [www.debuggex.com](https://www.debuggex.com)
+* [regexhero.net](http://regexhero.net/tester/)
+
+Documentation and training:
+
 * [learn regex the easy way](https://github.com/zeeshanu/learn-regex)
 * [www.reddit.com/r/regex](https://www.reddit.com/r/regex/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)
@@ -95,13 +103,12 @@ Sometimes all you need is a basic wildcard and that is where `-like` comes in.
 
 ## String.Contains()
 
-If all you want to do is test to see if your string has a substring, you can use the `string.contains($substring)` appraoch.
+If all you want to do is test to see if your string has a substring, you can use the `string.contains($substring)` appraoch. 
 
     $message = 'there is an error with your file'
     $message.contains('error')
 
-This will perform faster then using the other opperators for this substring scenario.
-
+`string.contains()` is case sensitive. This will perform faster then using the other opperators for this substring scenario.
 
 # -replace
 
@@ -124,6 +131,7 @@ The .Net `String.Replace($pattern,$replacement)` funciton does not use regex. I 
     PS> $message.replace('Dave','Kevin')
     Hi, my name is Kevin.
 
+This one is also case sensitive. Infact, all the string funtions are case sensitive.
 
 # -split
 
@@ -134,7 +142,7 @@ This command is very often overlooked as one that uses a regex. We are often spl
     TX
     NE
 
-Every once and a while, we will try to use some other character that means something else in regex. This will lead to very unexpected results. If we chance our coma to a period, we get a bunch of blank lines.
+Every once and a while, we will try to use some other character that means something else in regex. This will lead to very unexpected results. If we change our comma to a period, we get a bunch of blank lines.
 
 
     PS> 'CA.TX.NE' -split '.'
@@ -240,7 +248,7 @@ Now we get this error message
     get-data : Cannot validate argument on parameter 'SSN'.
     Please provide a valid SSN (ex 123-45-5678)
 
-It may complicate our parameter, but it is much easier for out users to understand.
+It may complicate our parameter, but it is much easier for our users to understand.
 
 # $Matches
 
@@ -274,10 +282,13 @@ Because this is PowerShell, we have full access to the .net regex object. Most o
 
     [regex]::new($pattern) | Get-Member
 
-I'm going to touch on `[regex]::Escape()`.
+All the .Net regex methods are case sensitive.
+
+I'm going to touch on `[regex]::Escape()` because there is not a PowerShell equivalent.
 
 
 ## Escape regex
+
 regex is a complex language with common symbols and a shorthand syntax. There are times where you may want to match a literal value instead of a pattern. The `[regex]::Escape()` will escape out all the regex syntax for you.
 
 Take this string for example `(123)456-7890`. It contains regex syntax that may not be obvious to you. 
@@ -312,6 +323,6 @@ When with Pester is the exception to the rule of not using `[regex]::Escape()`. 
 
 # Putting it all together
 
-As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. PowerShell did a good job of integrating these into the language. But be warry of using them if performance is a consern and you are not actually using regex pattern.
+As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. PowerShell did a good job of integrating these into the language. But be wary of using them if performance is a concern and you are not actually using regex pattern.
 
 Let me know if you discover any other common ways to use regex in PowerShell. I would love to hear about them and add them to my list.
