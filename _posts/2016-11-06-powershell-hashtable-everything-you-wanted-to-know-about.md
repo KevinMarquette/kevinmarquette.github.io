@@ -68,9 +68,9 @@ We can use this approach to add or update values into the hashtable too. This is
     $ageList[$key] = $value
 
     $ageList['Alex'] = 9
-  
 
-There is another syntax you can use for accessing and updating values that I will cover in a later section. If you are coming to Powershell from another language, these existing examples should fit in with how you may have used hashtables before.  
+
+There is another syntax you can use for accessing and updating values that I will cover in a later section. If you are coming to Powershell from another language, these existing examples should fit in with how you may have used hashtables before.
 
 
 ## Creating hashtables with values
@@ -99,6 +99,15 @@ This gets even better when you dynamically build the lookup table to use it late
 
 I won't say that it is faster, but it does fit into the rule of [If performance matters, test it](https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md).
 
+### Multiselection
+
+Generally, you think of a hashtable as a key/value pair where you provide one key and get one value. PowerShell allows you to provide an array of keys to get multiple values.
+
+    $environments[@('QA','DEV')]
+    $environments[('QA','DEV')]
+    $environments['QA','DEV']
+
+In this example I use the same lookup hashtable from above and provide 3 different array styles to get the matches. This is a hidden gem in PowerShell that most people are not aware of.
 
 ## Iterating hashtables
 Because a hashtable is a collection of key/value pairs, you have to iterate over it differently than you would an array or a normal list of items.
@@ -603,7 +612,7 @@ This is one of my favorite features that most people don't know about.If you use
     if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>.+)\.')
     {
         $Matches.Name
-    $Matches.SSN
+        $Matches.SSN
     }
 
 In the example above, the `(?<Name>.*)` is a named sub expression. This value is then placed in the `$Matches.Name` property.
@@ -615,6 +624,10 @@ One little known feature of `Group-Object` is that it can turn some datasets int
     Import-CSV $Path | Group-Object -AsHashtable -Property email
 
 This will add each row into a hashtable and use the specified property as the key to access it.
+
+## Array as indexer
+
+
 
 # Copying Hashtables
 
