@@ -303,6 +303,21 @@ It is easy to sort a collection if the objects have the data that you want to so
 
 In this example I am taking a list of users and using some custom cmdlet to get additional information just for the sort.
 
+### Sort a list of Hashtables
+
+If you have a list of hashtables that you want to sort, you will find that the `Sort-Object` does not treat your keys as properties. We can get a round that by using a custom sort expressions.
+
+    $data = @(
+        @{name='a'}
+        @{name='c'}
+        @{name='e'}
+        @{name='f'}
+        @{name='d'}
+        @{name='b'}
+    )
+
+    $data | Sort-Object -Property @{e={$_.name}}
+
 ## Splatting hashtables at cmdlets
 This is one of my favorite things about hashtables that many people don't discover very early on. The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first. Then you can give the hashtable to the function in a special way. Here is an example of creating a DHCP scope the normal way. 
 
