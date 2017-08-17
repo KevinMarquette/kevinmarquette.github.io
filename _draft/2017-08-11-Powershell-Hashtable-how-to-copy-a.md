@@ -72,7 +72,7 @@ Instead of having a copy of the Hashtable, we have 2 variables that reference th
 
 # Shallow clones
 
-Our hashtable has a `clone()`
+Our hashtable has a `clone()` method that looks promising. 
 
 # Putting it all together
 
