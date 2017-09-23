@@ -5,7 +5,7 @@ date: 2016-11-04
 tags: [PowerShell, Remoting]
 ---
 
-Knowing how to setup and work with PSRemoting is an important skill for every Powershell admin. It is realy easy to get started with but there are some things to watch out for along the way. I am going to give a rundown on how to work with it and then dive into all the quirks that I am aware of. 
+Knowing how to setup and work with PSRemoting is an important skill for every Powershell admin. It is realy easy to get started with but there are some things to watch out for along the way. I am going to give a rundown on how to work with it and then dive into manu of the quirks that I am aware of. 
 
 # The basiscs of remoting
 
@@ -47,7 +47,6 @@ The important thing to realize is that `Invoke-Command` is what you should be us
 
 If your `Invoke-Command` scripts are not working, use `Enter-PSSession` to troubleshoot your code. This is important to remember because remote sessions do not act 100% the same as your local shell. Sometimes you need to interact with things a bit to get a feel for where the prolem is.
 
-## 
 
 # Variables in remote sessions
 Working with variables in remote sessions are a little different that you would expect when you first start woking with remote sessions. variables
