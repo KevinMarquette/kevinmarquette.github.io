@@ -9,7 +9,7 @@ Task RecentPosts {
 }
 
 Task Build {
-    docker run --rm -it --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder blog:build /bin/sh -c 'cd /srv/jekyll; bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
+    docker run --rm -it --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder jekyll/jekyll /bin/sh -c 'cd /srv/jekyll; bundle install; bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
 }
 
 Task Run Stop, Build, {
