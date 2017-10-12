@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "Powershell: Starting the SoCal Powershell User Group"
+title: "Powershell: SoCal Powershell User Group"
 date: 2017-08-13
 tags: [PowerShell]
 ---
+
+When I moved to Orange County for a new job, I was a bit surprised that Sourthern California
 
 <!--more-->
 

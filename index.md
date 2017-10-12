@@ -23,6 +23,10 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 {% include recent-posts.md %}
 
+## PSHonolulu
+
+[PSHonolulu](https://github.com/KevinMarquette/PSHonolulu) is a PowerShell Module that allows you to launch Honolulu to a specified server with a `Show-Computer $ComputerName` command.
+
 ## PSGraph
 
 [PSGraph](/2017-01-30-Powershell-PSGraph//?utm_source=blog&utm_medium=blog&utm_content=projects) is a Powershell Module that allows you to script the generation of graphs using the GraphViz engine. It makes it easy to produce data driven visualizations.

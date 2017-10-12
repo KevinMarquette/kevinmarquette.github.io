@@ -33,6 +33,7 @@ The Ola Hallengren SQL Server Maintenance Solution comprises scripts for running
 ## How to license SQL Server
 Make sure you read up on your licensing options for SQL server. Here are some good articles to help understand what you are looking at.
 
+* [SQL Server 2017 Licensing Datasheet](http://download.microsoft.com/download/B/C/0/BC0B2EA7-D99D-42FB-9439-2C56880CAFF4/SQL_Server_2017_Licensing_Datasheet.pdf)
 * [SQL Server 2014 Licensing Changes](https://www.brentozar.com/archive/2014/04/sql-server-2014-licensing-changes/) 
 * [Microsoft SQL 2014 Licensing in a VMware environment](https://www.vmguru.com/2015/03/microsoft-sql-2014-licensing-in-a-vmware-environment/)
 * [Recommended Intel Xeon E5-2600 v4 Processors for SQL Server](http://www.sqlskills.com/blogs/glenn/recommended-intel-xeon-e5-2600-v4-processors-for-sql-server/)
