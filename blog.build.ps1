@@ -22,3 +22,7 @@ Task Stop {
     'Stopping container hosting blog on port 8080'
     docker rm bloghost -f
 }
+
+Task NewPost {
+    Invoke-Plaster -TemplatePath $psscriptroot\..\PlasterTemplates\BlogPost -DestinationPath .
+}
