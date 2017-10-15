@@ -2,7 +2,7 @@
 layout: post
 title: "PowerShell: Automatic Module Semantic Versioning"
 date: 2017-10-14
-tags: [PowerShell,Build,Module]
+tags: [PowerShell,Build,Modules]
 ---
 
 I am just getting started on a new module [PSGraphPlus](https://github.com/KevinMarquette/PSGraphPlus) and if you know me, this is when I take a look at how I build modules. I fleshed out a lot of little bugs with my [Full Module Plaster Template](https://github.com/KevinMarquette/PlasterTemplates) and I spent a little time working on my [module build script](https://github.com/KevinMarquette/PSGraphPlus/blob/master/module.build.ps1). I may talk about that build process in another post but for the sake of this conversation, it is just a script that I run that performs several actions on my module. It runs tests, bumps the version and publishes to the [PSGallery](https://www.powershellgallery.com/).
