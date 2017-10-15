@@ -41,6 +41,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='Build'></a>
+# Build
+
+* 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantec-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='Chronometer'></a>
 # Chronometer
 
@@ -95,6 +100,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Invoke-Command
 
 * 2016-08-28 [PowerShell: Passing variables to remote commands](/2016-08-28-PowerShell-variables-to-remote-commands/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Module'></a>
+# Module
+
+* 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantec-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Modules'></a>
 # Modules
@@ -174,6 +184,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-30 [Powershell: Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantec-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
