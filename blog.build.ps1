@@ -1,10 +1,10 @@
 Task Default UpdateTags, RecentPosts, Build
 
-Task UpdateTags {
+Task UpdateTags -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\tags.md" {
     .\UpdateTags.ps1
 }
 
-Task RecentPosts {
+Task RecentPosts -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\_includes\recent-posts.md" {
     .\UpdateRecentPosts.ps1
 }
 

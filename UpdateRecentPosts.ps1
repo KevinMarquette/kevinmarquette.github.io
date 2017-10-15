@@ -3,7 +3,7 @@ param(
     $path = 'C:\workspace\kevinmarquette.github.io\_posts\*.md' 
 )
 $path = (LS $path | sort name -Descending | select -First 8).fullname
-$lineTemplate = '* {0} [{1}](http://kevinmarquette.github.io/{2}/?utm_source=blog&utm_medium=blog&utm_content=recent)'
+$lineTemplate = '* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=recent)'
 $template = @'
 ---
 layout: post
@@ -22,12 +22,12 @@ $output = foreach ($node in $path)
     $tags = $parsedValues | where Tags | % {$_.Tags -split ','} | % {$_.trim()}
 
     $postInfo = [pscustomobject]@{
-        Post  = (Split-Path $node -Leaf).Replace('.md','')
+        Post  = (Split-Path $node -Leaf).Replace('.md', '')
         Title = $parsedValues | where Title | % Title 
         Tags  = $tags
         Date  = $parsedValues | where Date | % Date
     }
-    $lineTemplate -f $postInfo.Date,$postInfo.Title,$postInfo.Post
+    $lineTemplate -f $postInfo.Date, $postInfo.Title, $postInfo.Post
 }
 
 $output | Set-Content -Path 'C:\workspace\kevinmarquette.github.io\_includes\recent-posts.md'
