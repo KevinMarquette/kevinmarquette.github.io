@@ -18,12 +18,11 @@ Today, I am going to walk you through how I bump that version based on changes i
 
 # What is a Semantic version number?
 
-When it comes down to it, a version number is just a few numbers separated by periods (ex `2.13.87.2342`). Semantic versioning is one popular way to manage the version number. If we call the parts of the version `Major`, `Minor`, `Patch`, `Build` in that order;
+When it comes down to it, a version number is just a few numbers separated by periods (ex `2.13.87`). Semantic versioning is one popular way to manage the version number. If we call the parts of the version `Major`, `Minor`, `Patch` in that order;
 
 * `Major` is updated when there are breaking changes
 * `Minor` is updated when there are feature additions (that don't have breaking changes)
 * `Path` is updated when you fix or change something
-* `Build` is optional and changes every build if you include it
 
 This is greatly simplified but will cover what we need for today. Check out [semver.org](http://semver.org/) if you would like more information.
 
