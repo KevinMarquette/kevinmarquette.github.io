@@ -1,4 +1,4 @@
-* 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantec-version/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-09-14 [Powershell: Top 50 PowerShell Blogs](/2017-09-14-Powershell-top50/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-06-02 [Powershell: What have you done this month? May 2017](/2017-06-02-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
