@@ -1,3 +1,4 @@
+* 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-09-14 [Powershell: Top 50 PowerShell Blogs](/2017-09-14-Powershell-top50/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2017-05-30 [Powershell: Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent)
