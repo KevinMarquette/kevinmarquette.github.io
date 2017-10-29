@@ -164,7 +164,7 @@ You can pull the file off of an external or internal webserver before you instal
 
 ## Install with Package Management
 
-Windows has introduced [pakage management](ttps://blogs.technet.microsoft.com/packagemanagement/2015/04/28/introducing-packagemanagement-in-windows-10/) into Windows that can be used to install packages from online repositories.
+Windows has introduced [pakage management](https://blogs.technet.microsoft.com/packagemanagement/2015/04/28/introducing-packagemanagement-in-windows-10/) into Windows that can be used to install packages from online repositories.
 
     Install-Package $PackageName
 
