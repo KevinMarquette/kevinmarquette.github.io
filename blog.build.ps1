@@ -24,5 +24,5 @@ Task Stop {
 }
 
 Task NewPost {
-    Invoke-Plaster -TemplatePath $psscriptroot\..\PlasterTemplates\BlogPost -DestinationPath .
+    & {Invoke-Plaster -DestinationPath $psscriptroot -TemplatePath $psscriptroot\..\PlasterTemplates\BlogPost }
 }
