@@ -44,12 +44,14 @@ There is a chicken and egg situation to deal with. The first time we run this, w
     if( Test-Path $path )
     {
         $previousState = Import-CliXml $path
+        # ...
+    }
 
-If we have a previous state, we need to compare the two states. We could do a full object compare, but we usually only care about specific values. I have found it best to keep the number of properties tracked to a minimum. Be sure to exclude noisy properties that may flag changes that we don't to see.
+If we have a previous state, we need to compare the two states. We could do a full object compare, but we usually only care about specific values. I have found it best to keep the number of properties tracked to a minimum. Be sure to exclude noisy properties that may flag changes that we don't want to see.
 
 For our services, we will use these properties.
 
-    $properties = 'DisplayName','Status','StartType'
+    $properties = @( 'DisplayName','Status','StartType' )
 
 Compare the previous and current state using `Compare-Object`.
 
