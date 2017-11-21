@@ -1,3 +1,4 @@
+* 2017-11-20 [Powershell: Concatenate using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-06-02 [Powershell: What have you done this month? May 2017](/2017-06-02-Powershell-last-month/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-05-30 [Powershell: Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=recent)

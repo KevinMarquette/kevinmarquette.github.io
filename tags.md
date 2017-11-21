@@ -62,6 +62,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2017-04-23 [SQL: Running SQL 2017 CTP 2.0 in Docker](/2017-04-23-SQL-running-sql-server-in-docker/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='DotNet'></a>
+# DotNet
+
+* 2017-11-20 [Powershell: Concatenate using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='DSC'></a>
 # DSC
 
@@ -182,7 +187,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-30 [Powershell: Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2017-11-14 [Powershell: tracking changes for anything](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-11-20 [Powershell: Concatenate using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
