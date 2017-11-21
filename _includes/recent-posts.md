@@ -1,4 +1,4 @@
-* 2017-11-20 [Powershell: Concatenate using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2017-11-20 [Powershell: Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=recent)
