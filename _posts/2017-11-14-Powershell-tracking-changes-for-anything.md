@@ -11,7 +11,7 @@ I'm reminded of that script because I handled that scenario in a very generic wa
 
 <!--more-->
 
-# High level plan
+# High-level plan
 
 This is a great project for all skill levels because the core idea is simple to build on.
 

@@ -37,7 +37,7 @@ In this next example, at least 5 strings are created in memory.
 
 We have the obvious literals `First`,`Second`,`Third`. `$example` starts with a value of `First`. Then a new string is created with the value `FirstSecond` and assigned to `$example`. Then a new string is created with the value `FirstSecondThird` and assigned to `$example`. All of that sits in ram until garbage collection.
 
-Not only are we using a lot of ram that is not needed, we creating a lot of data copy operations. To create the string of `FirstSecond`, we have to allocate room for each character. We copy in the 5 characters `First` one at a time and then we repeat the process with the `Second` string. When we get to `FirstSecondThird`, the process starts over copying all the characters again. It looks like a simple operation to us, but PowerShell is doing a lot of work that we don't see.
+Not only are we using a lot of RAM that is not needed, we create a lot of data copy operations. To create the string of `FirstSecond`, we have to allocate room for each character. We copy in the 5 characters `First` one at a time and then we repeat the process with the `Second` string. When we get to `FirstSecondThird`, the process starts over copying all the characters again. It looks like a simple operation to us, but PowerShell is doing a lot of work that we don't see.
 
 # Using StringBuilder
 
@@ -50,7 +50,7 @@ Not only are we using a lot of ram that is not needed, we creating a lot of data
 
 I start by creating a `StringBuilder` and then appending a few strings to it. I am using the `[void]` to suppress the output from the append functions. To get the string from the `StringBuilder`, we need to call `ToString()`.
 
-`StringBuilder` uses an internal data structure that is built for quickly adding data to it. The whole purpose of this object is address the performance issue that I outlined previously.
+`StringBuilder` uses an internal data structure that is built for quickly adding data to it. The whole purpose of this object is to address the performance issue that I outlined previously.
 
 ## StringBuilder by the numbers
 
