@@ -64,7 +64,7 @@ Here is one last piece of eye candy to leave you with.
 
 # Installing PSGraphPlus
 
-This module build on my PSGraph module. So you will need both PSGraph and GraphViz installed first. Run these next commands from a PowerShell 5.0 admin prompt to install everything you need.
+This module builds on my PSGraph module. So you will need both PSGraph and GraphViz installed first. Run these next commands from a PowerShell 5.0 admin prompt to install everything you need.
 
     # Install GraphViz from the Chocolatey repo
     Register-PackageSource -Name Chocolatey -ProviderName Chocolatey -Location http://chocolatey.org/api/v2/
@@ -75,4 +75,4 @@ This module build on my PSGraph module. So you will need both PSGraph and GraphV
     Find-Module PSGraphPlus -Repository PSGallery | Install-Module
 
 
-I'll be continuing to add more commands to this module as I discover good things to graph. If you come up with a good idea that you feel should be include, let me know. I would love to hear it.
+I'll be continuing to add more commands to this module as I discover good things to graph. If you come up with a good idea that you feel should be included, let me know. I would love to hear it.
