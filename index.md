@@ -31,6 +31,10 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 [PSGraph](/2017-01-30-Powershell-PSGraph//?utm_source=blog&utm_medium=blog&utm_content=projects) is a Powershell Module that allows you to script the generation of graphs using the GraphViz engine. It makes it easy to produce data driven visualizations.
 
+## PSGraphPlus
+
+[PSGraphPlus](https://github.com/KevinMarquette/PSGraphPlus) is a Powershell Module generates graphs using PSGraph. It has commands that will generate graphs of git repos and local network connections. Most of my best demos are captured as functions in this module. It saves you the work of crafting those graphs yourself.
+
 ## Chronometer
 
 [Chronometer](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=projects) analyzes a script or module during execution and reports line by line execution times. It allows you to see your code coverage and where most of your execution time is spent.

@@ -189,6 +189,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-11-20 [Powershell: Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-12-17 [Powershell: Introducing PSGraphPlus with Show-GitGraph](/2017-12-17-Powershell-Introducing-PSGraphPlus/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
