@@ -39,7 +39,7 @@ PowerShell 6.0 does not replace PowerShell 5.1 on your system. Instead, they ins
 
 It is worth pointing out that not only did the name of the executable change, but several of the folder locations also changed. Let's take a look at some of those changes.
 
-## Exe location
+## exe location
 
 First is the install location for the executable.
 
