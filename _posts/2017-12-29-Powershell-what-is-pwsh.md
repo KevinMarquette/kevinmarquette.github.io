@@ -46,11 +46,11 @@ First is the install location for the executable.
 * PS 5.1: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
 * PS 6.0: `C:\Program Files\PowerShell\6.0.0-rc.2\pwsh.exe`
 
-The original PowerShell used a v1.0 folder but never changed it for future version. You will also see that the install location moved out of the `Sytem32` folder and into `Program Files`. You will also notice names that were `WindowsPowerShell` are now `PowerShell`. You will see this in other places too.
+The original PowerShell used a v1.0 folder but never changed it for future versions. You will also see that the install location moved out of the `C:\Windows\System32` folder and into `c:\Program Files`. You will also notice names that were `WindowsPowerShell` are now `PowerShell`. You will see this in other places too.
 
 ## Modules
 
-You will notice that a fresh install of PowerShell 6.0 will not have any of your modules loaded. This is because all the module install locations have also changed.
+A fresh install of PowerShell 6.0 will not have any of your modules loaded. This is because all the module install locations have also changed.
 
 ``` PowerShell
     # PowerShell 5.1
@@ -71,7 +71,7 @@ You will notice that a fresh install of PowerShell 6.0 will not have any of your
 
 In the list above, you can see all the module locations for my system for each version of PowerShell. Let's take a closer look at the new 6.0 locations.
 
-The first one `C:\Users\$env:username\Documents\PowerShell\Modules` is in my local profile. The folder name changed so it will not have any of your old modules in it. Generally when I install modules, I load them in my local profile.
+The first one `C:\Users\$env:username\Documents\PowerShell\Modules` is in my local profile. The folder name changed. Generally when I install modules, I load them in my local profile.
 
 ``` PowerShell
     Install-Module -Name PSGraph -Scope CurrentUser
@@ -81,9 +81,9 @@ The second one `C:\Program Files\PowerShell\Modules` is for all users of the sys
 
 The third one `c:\program files\powershell\6.0.0-rc.2\Modules` is for modules that are core to PowerShell itself. Generally this is a folder that you would not manage. If you need to add or update a module on your system, you will place it in one of the previous folders.
 
-## $profile
+## $PROFILE
 
-PowerShell 6.0 has a new `$profile` location for us to use.
+PowerShell 6.0 has a new `$PROFILE` location for us to use.
 
 * PS 5.1: `C:\Users\kevma\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 * PS 6.0: `C:\Users\kevma\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
@@ -195,4 +195,4 @@ This is a valid question. [Mark Krause](https://get-powershellblog.blogspot.com/
 
 # Closing comments
 
-I expect the name change will cause a little confusion for those that don't work with PowerShell very closely. Someone is going to see `pwsh.exe` in task manager one day and wonder what it is. When that day comes, I hope you find this article helpful.
+I expect the name change will cause a little confusion for those that don't work with PowerShell very closely. Someone is going to see `pwsh.exe` in task manager one day and wonder what it is. When that day comes, I hope they find this article helpful.
