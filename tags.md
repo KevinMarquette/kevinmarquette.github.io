@@ -190,6 +190,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-11-20 [Powershell: Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-12-17 [Powershell: Introducing PSGraphPlus with Show-GitGraph](/2017-12-17-Powershell-Introducing-PSGraphPlus/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
@@ -219,6 +220,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='pwsh'></a>
+# pwsh
+
+* 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Regex'></a>
 # Regex
