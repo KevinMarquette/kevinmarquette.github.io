@@ -22,6 +22,12 @@ After the install, the folder for it is added to the `PATH` environment variable
 
 ``` PowerShell
     PS:> $env:path -split ';'
+
+    C:\windows\system32
+    C:\windows
+    C:\windows\System32\WindowsPowerShell\v1.0\
+    C:\Program Files\PowerShell\6.0.0-rc.2\
+    C:\Program Files\Microsoft VS Code\bin
 ```
 
 You should be able to run `pwsh` from any run box or other shell window. You can even start it from a PowerShell 5.1 prompt.
