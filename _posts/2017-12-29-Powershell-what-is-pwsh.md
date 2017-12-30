@@ -190,6 +190,8 @@ This is mostly due to the renaming of folder. If you do have important stuff in 
         Sets the window style to Normal, Minimized, Maximized or Hidden.
 ```
 
+The good news here is that all the common parameters have not changed. In most cases, you can substitute the new `pwsh.exe` for the old `powershell.exe` in your scripts and scheduled tasks.
+
 # Why change the name to pwsh?
 
 This is a valid question. [Mark Krause](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) has a good [post summarizing the details](https://get-powershellblog.blogspot.sg/2017/10/why-pwsh-was-chosen-for-powershell-core.html) on his blog. You can also read the [discussion about the name change](https://github.com/PowerShell/PowerShell/issues/4214) on Github.
