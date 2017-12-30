@@ -4,7 +4,7 @@ title: "Powershell: What is pwsh.exe"
 date: 2017-12-29
 tags: [PowerShell,pwsh]
 share-img: "http://kevinmarquette.github.io/img/share-img/2017-12-29-Powershell-what-is-pwsh.png"
-question: "What is pwsh?"
+question: "What is pwsh.exe?"
 answer: "The pwsh.exe process is the new name for PowerShell starting with version 6.0."
 ---
 The `pwsh.exe` process is the new name for PowerShell starting with version 6.0. At the time of this writing, PowerShell 6.0 is only a release candidate. But it is already known that the executable is changing names from `powershell.exe` to `pwsh.exe`. Let's take a look at this executable.
