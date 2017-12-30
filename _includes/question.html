@@ -1,0 +1,22 @@
+{% if page.question and page.answer %}<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Question",
+    "text": "{{ page.question }}",
+    "dateCreated": "{{ page.date }}",
+    "author": {
+        "@type": "Person",
+        "name": "Kevin Marquette"
+    },
+    "answerCount": "1",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ page.answer }}",
+        "dateCreated": "{{ page.date }}",
+        "author": {
+            "@type": "Person",
+            "name": "Kevin Marquette"
+        }
+    }
+}
+</script>{% endif %}
