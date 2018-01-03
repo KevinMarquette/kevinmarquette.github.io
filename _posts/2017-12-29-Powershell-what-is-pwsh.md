@@ -194,7 +194,7 @@ The good news here is that none of the common parameters have changed. In most c
 
 # Why change the name to pwsh?
 
-This is a valid question. [Mark Krause](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) has a good [post summarizing the details](https://get-powershellblog.blogspot.sg/2017/10/why-pwsh-was-chosen-for-powershell-core.html) on his blog. You can read the [discussion about the name change](https://github.com/PowerShell/PowerShell/issues/4214) on Github.
+This is a valid question. [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) has a good [post summarizing the details](https://get-powershellblog.blogspot.sg/2017/10/why-pwsh-was-chosen-for-powershell-core.html) on his blog. You can read the [discussion about the name change](https://github.com/PowerShell/PowerShell/issues/4214) on Github.
 
 # Closing comments
 
