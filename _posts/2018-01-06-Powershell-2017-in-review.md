@@ -89,7 +89,7 @@ I am hoping to grow our attendance numbers this year and I already have speakers
 
 David Christian (from [OverPoweredShell.com](http://overpoweredshell.com)) and I host a SoCal PowerShell user group meeting every month. I was the presenter for two of those meetings where I covered Hashtables and PSGraph. I also did remote presentations for the [Austin](https://www.meetup.com/Austin-PowerShell/events/244271778/), [Dallas](https://sites.google.com/site/powershellsig/), and [Mississippi](http://mspsug.com/2017/09/07/mspsug-september-2017-virtual-meeting-psgraph-a-hierarchical-graph-module/) user groups in 2017.
 
-I submitted a topic for the 2018 PowerShell + DevOps Global Summit and it was accepted this year. I will be presenting on [Writing a DSL (Domain Specific Language) for PowerShell](https://powershelldevopsglobalsummit2018.sched.com/event/CrVQ) at the next summit. Feel free to stop me and say hello.
+I submitted a topic for the [2018 PowerShell + DevOps Global Summit](https://powershelldevopsglobalsummit2018.sched.com/) and it was accepted this year. I will be presenting on [Writing a DSL (Domain Specific Language) for PowerShell](https://powershelldevopsglobalsummit2018.sched.com/event/CrVQ) at the next summit. Feel free to stop me and say hello.
 
 All my [presentation slides, scripts and demos](https://github.com/kevinmarquette) are posted on GitHub.
 
