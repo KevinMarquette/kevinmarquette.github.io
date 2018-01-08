@@ -286,10 +286,10 @@ Up until now, we have only matched values. We can use scriptblock to perform the
 
     switch ( $age )
     {
-        {$psitem -le 18} {
+        {$PSItem -le 18} {
             'child'
         }
-        {$psitem -gt 18} {
+        {$PSItem -gt 18} {
             'adult'
         }
     }
@@ -317,6 +317,21 @@ I do want to revisit regex to touch on something that is not immediately obvious
     WARNING: message may contain a SSN: 123-23-3456
     WARNING: message may contain a credit card number: 1234-5678-1234-5678
 
+## $null
+
+You can match a `$null` value.
+
+    switch ( $value )
+    {
+        $null {
+            'Value is null'
+        }
+        default {
+            'value is not null'
+        }
+    } 
+
+
 # Hashtables
 
 One of my most popular posts is the one I did on [everything you ever wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/). One of the example use-cases for a `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a `switch` statement is often addressing.
@@ -333,6 +348,24 @@ One of my most popular posts is the one I did on [everything you ever wanted to 
     $result = $lookup[$day]
 
 If I am only using a `switch` as a lookup, I will quite often use a `hashtable` instead.
+
+## Enum
+
+PowerShell 5.0 introduced the `Enum` and it is also an option in this case.
+
+    enum DayOfTheWeek {
+        Sunday
+        Monday
+        Tuesday
+        Wednesday
+        Thursday
+        Friday
+        Saturday
+    }
+
+    $result = [DayOfTheWeek]$day
+
+We could go all day looking at different ways to solve this problem. I just wanted to make sure you knew you had options.
 
 # Final words
 
