@@ -16,7 +16,7 @@ Like many other languages, PowerShell has commands for controlling the flow of e
 
 # If statement
 
-One of the first flow control statements that you will learn is the `if` statement. It lets you execute a script block if a statement is true.
+One of the first statements that you will learn is the `if` statement. It lets you execute a script block if a statement is true.
 
     if ( Test-Path $Path )
     {
@@ -33,7 +33,7 @@ You can have much more complicated logic by using `elseif` and `else` statements
     elseif ( $day -eq 5 ) { $result = 'Friday' }
     elseif ( $day -eq 6 ) { $result = 'Saturday' }
 
-It turns out that this is a very common pattern and there are a lot of ways to deal with this. One of them is with a switch.
+It turns out that this is a very common pattern and there are a lot of ways to deal with this. One of them is with a `switch`.
 
 # Switch statement
 
@@ -98,7 +98,7 @@ If you have repeated items in your array, then they will be matched multiple tim
 
 ## PSItem
 
-You can use the `$PSItem` or `$_` to reference the current item that was processed. When we do a simple match, the value will be the value that we are matching. But I will be showing you some advanced matches in the next section where this will be used often.
+You can use the `$PSItem` or `$_` to reference the current item that was processed. When we do a simple match, the value will be the value that we are matching. But I will be showing you some advanced matches in the next section where this will be used.
 
 # Parameters
 
@@ -180,7 +180,7 @@ Now that you are aware of all these documented features, we can use them in the 
 
 ## Expressions
 
-You can switch on an expression instead of a variable.
+The `switch` can be on an expression instead of a variable.
 
     switch ( ( Get-Service | Where status -eq 'running' ).name ) {...}
 
@@ -188,7 +188,7 @@ Whatever the expression evaluates to will be the value used for the match.
 
 ## Multiple matches
 
-You may have already picked up on this, but a switch can match to multiple conditions. This is especially true when using wildcard or regex matches. Be aware that you can add the same condition twice and both will trigger.
+You may have already picked up on this, but a `switch` can match to multiple conditions. This is especially true when using `-wildcard` or `-regex` matches. Be aware that you can add the same condition multiple times and all of them will trigger.
 
     switch ( 'Word' )
     {
@@ -197,62 +197,53 @@ You may have already picked up on this, but a switch can match to multiple condi
         'WORD' { 'uppercase word match' }
     }
 
-All three of these statements will fire. This shows that every condition is checked (in order). This holds true for processing arrays.
+All three of these statements will fire. This shows that every condition is checked (in order). This holds true for processing arrays where each item will check each condition.
 
-## Break
+## Continue
 
-Using the `Break` keyword in a switch has some nuances that are important to understand. Once a match is found, the use of `break` will stop the switch from doing any other matches. `Break` stops the switch statement.
+Normally, this is where I would introduce the `break` statement, but it is better that we learn how to use `continue` first. Just like with a `foreach` loop, `continue` will continue onto the next item in the collection or exit the `switch` if there are no more items. We can rewrite that last example with continue statements so that only one statement executes.
 
     switch ( 'Word' )
     {
         'word' {
             'lowercase word match'
-            break;
+            continue
         }
         'WORD' {
             'uppercase word match'
-            break;
+            continue
+        }
+        'WORD' {
+            'uppercase word match'
+            continue
         }
     }
 
-Instead of matching both items, the first one is matched and the switch exits. For a single value variable, this is exactly what you would expect. Using an array of items complicates things a little bit.
+Instead of matching all three items, the first one is matched and the switch continues to the next value. Because there are no values left to process, the switch exits. This next example is showing how a wildcard could match multiple items.
 
-    $words = @('Word','Test')
-    switch ( $words )
+    switch -Wildcard -File $path
     {
-        'Word' {
-            'found word match'
-            break;
+        '*Error*'
+        {
+            Write-Error -Message $PSItem
+            continue
         }
-        'Test' {
-            'found test match'
-            break;
+        '*Warning*'
+        {
+            Write-Warning -Message $PSItem
+            continue
         }
-    }
-
-Take a moment to review that sample and try to predict what would happen. I thought that it would break for the current item and that the 2nd item would still get matched. I was wrong. In that sample, when the first item hits the `break`, then the whole switch statement exits.
-
-So switches support processing an array but `break` will stop everything.
-
-## Continue
-
-This is where `continue` steps in to save us. It looks a little weird using continue in a switch. It will act like a `break` ending the evaluations for the current item but it will allow the next item to be processed.
-
-
-    $words = @('Word','Test')
-    switch ( $words )
-    {
-        'Word' {
-            'found word match'
-            continue;
-        }
-        'Test' {
-            'found test match'
-            continue;
+        default
+        {
+            Write-Output $PSItem
         }
     }
 
-We need a better example to see how `break` and `continue` work together. I am going to revisit the idea of parsing a log file for errors and warnings.
+Because a line in the input file could contain both the word `Error` and `Warning`, we only want the first one to execute and then continue processing the file.
+
+## Break
+
+A `break` statement will exit the switch. This is the same behavior that `continue` will present for single values. The big difference is when processing an array. `break` will stop all processing in the switch and `continue` will move onto the next item.
 
     switch -Wildcard -File $path
     {
@@ -261,7 +252,8 @@ We need a better example to see how `break` and `continue` work together. I am g
             Write-Error -Message $PSItem
             break;
         }
-        '*Error*' {
+        '*Error*'
+        {
             Write-Warning -Message $PSItem
             continue
         }
@@ -276,13 +268,38 @@ We need a better example to see how `break` and `continue` work together. I am g
         }
     }
 
-In this case, if we hit any lines that start with `Error` then we will get an error and the switch will stop. This is what that `break` statement is doing for us. If we find `Error` inside the string and not just at the beginning, we will write it as a warning. We have the same logic for `Warning`. It is possible that a line could have both the word `Error` and `Warning`, but we only need one to process. This is what the `continue` statement is doing for us.
+In this case, if we hit any lines that start with `Error` then we will get an error and the switch will stop. This is what that `break` statement is doing for us. If we find `Error` inside the string and not just at the beginning, we will write it as a warning. We will do the same thing for `Warning`. It is possible that a line could have both the word `Error` and `Warning`, but we only need one to process. This is what the `continue` statement is doing for us.
 
-So if you are processing a single value variable, then `continue` and `break` do the same thing. If you have an array, `break` will stop everything and `continue` will move onto the next item. This is the same way it is handled with `foreach`.
+## Break labels
+
+The `switch` statement supports `break/continue` labels just like `foreach`.
+
+    :filelist foreach($path in $logs)
+    {
+        :logFile switch -Wildcard -File $path
+        {
+            'Error*'
+            {
+                Write-Error -Message $PSItem
+                break filelist
+            }
+            'Warning*'
+            {
+                Write-Error -Message $PSItem
+                break logFile
+            }
+            default
+            {
+                Write-Output $PSItem
+            }
+        }
+    }
+
+I personally don't like the use of break labels but I wanted to point them out because they are confusing if you have never seen them before. When you have multiple `switch` or `foreach` statements that are nested, you may want to break out of more than the inner most item. You can place a label on a `switch` that can be the target of your `break`.
 
 ## ScriptBlock
 
-Up until now, we have only matched values. We can use scriptblock to perform the evaluation for a match if needed.
+Up until now, we have only matched values. We can use a scriptblock to perform the evaluation for a match if needed.
 
     switch ( $age )
     {
@@ -294,22 +311,41 @@ Up until now, we have only matched values. We can use scriptblock to perform the
         }
     }
 
-I personally don't like this one very much because it adds a lot of complexity. In most cases where you would use something like this it would be better to use `if` and `elseif` statements. I would consider using this if I already had a large switch in place and I needed 2 items to hit the same evaluation block.
+I personally don't like this one very much because it adds a lot of complexity and can make your `switch` hard to read. In most cases where you would use something like this it would be better to use `if` and `elseif` statements. I would consider using this if I already had a large switch in place and I needed 2 items to hit the same evaluation block.
+
+One thing that I think helps with legibility is to place the scriptblock in parentheses.
+
+    switch ( $age )
+    {
+        ({$PSItem -le 18})
+        {
+            'child'
+        }
+        ({$PSItem -gt 18})
+        {
+            'adult'
+        }
+    }
+
+It still executes the same and give a better visual break when quickly looking at it.
 
 ## Regex $matches
 
-I do want to revisit regex to touch on something that is not immediately obvious. The use of regex also populates the `$matches` variable. I do go into the use of `$matches` more when I talk about [The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression). Here is a quick sample to show it in action with named matches.
+We need to revisit regex to touch on something that is not immediately obvious. The use of regex populates the `$matches` variable. I do go into the use of `$matches` more when I talk about [The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression). Here is a quick sample to show it in action with named matches.
 
     $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
     switch -regex ($message)
     {
-        '(?<SSN>\d\d\d-\d\d-\d\d\d\d)' {
+        '(?<SSN>\d\d\d-\d\d-\d\d\d\d)'
+        {
             Write-Warning "message contains a SSN: $($matches.SSN)"
         }
-        '(?<CC>\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d)' {
+        '(?<CC>\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d)'
+        {
             Write-Warning "message contains a credit card number: $($matches.CC)"
         }
-        '(?<Phone>\d\d\d-\d\d\d-\d\d\d\d)' {
+        '(?<Phone>\d\d\d-\d\d\d-\d\d\d\d)'
+        {
             Write-Warning "message contains a phone number: $($matches.Phone)"
         }
     }
@@ -319,18 +355,33 @@ I do want to revisit regex to touch on something that is not immediately obvious
 
 ## $null
 
-You can match a `$null` value.
+You can match a `$null` value that does not have to be the default.
 
     switch ( $value )
     {
-        $null {
+        $null
+        {
             'Value is null'
         }
-        default {
+        default
+        {
             'value is not null'
         }
-    } 
+    }
 
+Same goes for an empty string.
+
+switch ( '' )
+    {
+        ''
+        {
+            'Value is empty'
+        }
+        default
+        {
+            'value is a empty string'
+        }
+    }
 
 # Hashtables
 
@@ -369,4 +420,4 @@ We could go all day looking at different ways to solve this problem. I just want
 
 # Final words
 
-The switch statement is simple on the surface but it offers some advanced features that most people don't realize are available. Stringing those features together makes this into a really powerful feature when it is needed.
+The switch statement is simple on the surface but it offers some advanced features that most people don't realize are available. Stringing those features together makes this into a really powerful feature when it is needed. I hope you learned something that you had not realized before.
