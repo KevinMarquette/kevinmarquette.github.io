@@ -7,7 +7,7 @@ share-img: "http://kevinmarquette.github.io/img/share-img/2017-12-29-Powershell-
 question: "What is pwsh.exe?"
 answer: "The pwsh.exe process is the new name for PowerShell starting with version 6.0."
 ---
-The `pwsh.exe` process is the new name for PowerShell starting with version 6.0. At the time of this writing, PowerShell 6.0 is only a release candidate. But it is already known that the executable is changing names from `powershell.exe` to `pwsh.exe`. Let's take a look at this executable.
+The `pwsh.exe` process is the new name for PowerShell Core starting with version 6.0. The executable changed names from `powershell.exe` to `pwsh.exe`. Let's take a look at this executable.
 <!--more-->
 
 # Index
@@ -27,7 +27,7 @@ After the install, the folder for it is added to the `PATH` environment variable
     C:\windows\system32
     C:\windows
     C:\windows\System32\WindowsPowerShell\v1.0\
-    C:\Program Files\PowerShell\6.0.0-rc.2\
+    C:\Program Files\PowerShell\6.0.0\
     C:\Program Files\Microsoft VS Code\bin
 ```
 
@@ -45,7 +45,7 @@ It is worth pointing out that not only did the name of the executable change, bu
 First is the install location for the executable.
 
 * PS 5.1: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
-* PS 6.0: `C:\Program Files\PowerShell\6.0.0-rc.2\pwsh.exe`
+* PS 6.0: `C:\Program Files\PowerShell\6.0.0\pwsh.exe`
 
 The original PowerShell used a v1.0 folder but never changed it for future versions. The install location moved out of the `C:\Windows\System32` folder and into `c:\Program Files`. All the names that were `WindowsPowerShell` are now `PowerShell`. You will see this in other places too.
 
@@ -67,7 +67,7 @@ A fresh install of PowerShell 6.0 will not have any of your modules loaded. This
 
     C:\Users\kevmar\Documents\PowerShell\Modules
     C:\Program Files\PowerShell\Modules
-    c:\program files\powershell\6.0.0-rc.2\Modules
+    c:\program files\powershell\6.0.0\Modules
 ```
 
 In the list above, you can see all the module locations for my system for each version of PowerShell. Let's take a closer look at the new 6.0 locations.
@@ -80,7 +80,7 @@ The first one `C:\Users\$env:username\Documents\PowerShell\Modules` is in my loc
 
 The second one `C:\Program Files\PowerShell\Modules` is for all users of the system. If you are installing a module for everyone to use, it should be in this location. DSC will look here for modules when it is configuring a system. Again, we have a slight name change.
 
-The third one `c:\program files\powershell\6.0.0-rc.2\Modules` is for modules that are core to PowerShell itself. Generally this is a folder that you would not manage. If you need to add or update a module on your system, you will place it in one of the previous folders.
+The third one `c:\program files\powershell\6.0.0\Modules` is for modules that are core to PowerShell itself. Generally this is a folder that you would not manage. If you need to add or update a module on your system, you will place it in one of the previous folders.
 
 ## $PROFILE
 
