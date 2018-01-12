@@ -192,6 +192,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-12-17 [Powershell: Introducing PSGraphPlus with Show-GitGraph](/2017-12-17-Powershell-Introducing-PSGraphPlus/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-06 [What have you done with PowerShell this year?](/2018-01-06-Powershell-2017-in-review/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
@@ -231,6 +232,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Regex
 
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Remoting'></a>
 # Remoting
