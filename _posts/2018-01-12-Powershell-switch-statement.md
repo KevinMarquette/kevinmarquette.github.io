@@ -26,6 +26,7 @@ One of the first statements that you will learn is the `if` statement. It lets y
 
 You can have much more complicated logic by using `elseif` and `else` statements. Here is an example where I have a numeric value for day of the week and I want to get the name as a string.
 
+    $day = 3
     if ( $day -eq 0 ) { $result = 'Sunday'        }
     elseif ( $day -eq 1 ) { $result = 'Monday'    }
     elseif ( $day -eq 2 ) { $result = 'Tuesday'   }
@@ -33,6 +34,10 @@ You can have much more complicated logic by using `elseif` and `else` statements
     elseif ( $day -eq 4 ) { $result = 'Thursday'  }
     elseif ( $day -eq 5 ) { $result = 'Friday'    }
     elseif ( $day -eq 6 ) { $result = 'Saturday'  }
+    $result
+
+    # Output
+    Wednesday
 
 It turns out that this is a very common pattern and there are a lot of ways to deal with this. One of them is with a `switch`.
 
@@ -40,6 +45,7 @@ It turns out that this is a very common pattern and there are a lot of ways to d
 
 The `switch` statement allows you to provide a variable and a list of possible values. If the value matches the variable, then it's scriptblock will be executed.
 
+    $day = 3
     switch ( $day )
     {
         0 { $result = 'Sunday'    }
@@ -50,6 +56,10 @@ The `switch` statement allows you to provide a variable and a list of possible v
         5 { $result = 'Friday'    }
         6 { $result = 'Saturday'  }
     }
+    $result
+
+    # Output
+    'Wednesday'
 
 For this example, the value of `$day` matches one of the numeric values, then the correct name will be assigned to `$result`. We are only doing a variable assignment in this example, but any PowerShell can be executed in those script blocks.
 
@@ -106,6 +116,9 @@ I was matching numbers in those last examples, but you can also match strings.
         }
     }
 
+    # Output
+    is a role
+
 I decided not to wrap the `Component`,`Role` and `Location` matches in quotes here to hilight that they are optional. The `switch` treats those as a string in most cases.
 
 # Arrays
@@ -118,6 +131,10 @@ One of the cool features of the PowerShell `switch` is the way it handles arrays
         'WEB'        { 'Configure IIS' }
         'FileServer' { 'Configure Share' }
     }
+
+    # Output
+    Configure IIS
+    Configure SQL
 
 If you have repeated items in your array, then they will be matched multiple times by the appropriate section.
 
@@ -137,6 +154,7 @@ The matches are not case sensitive by default. If you need to be case sensitive 
 
 We can enable wildcard support with the `-wildcard` switch. This uses the same wildcard logic as the `-like` operator to do each match.
 
+    $Message = 'Warning, out of disk space'
     switch -Wildcard ( $message )
     {
         'Error*'
@@ -152,6 +170,9 @@ We can enable wildcard support with the `-wildcard` switch. This uses the same w
             Write-Information $message
         }
     }
+
+    # Output 
+    WARNING: Warning, out of disk space
 
 Here we are processing a message and then outputting it on different streams based on the contents.
 
@@ -217,10 +238,15 @@ You may have already picked up on this, but a `switch` can match to multiple con
 
     switch ( 'Word' )
     {
-        'word' { 'lowercase word match' }
-        'Word' { 'uppercase word match' }
-        'WORD' { 'uppercase word match' }
+        'word' { 'lower case word match' }
+        'Word' { 'mixed case word match' }
+        'WORD' { 'upper case word match' }
     }
+
+    # Output
+    lower case word match
+    mixed case word match
+    upper case word match
 
 All three of these statements will fire. This shows that every condition is checked (in order). This holds true for processing arrays where each item will check each condition.
 
@@ -231,18 +257,21 @@ Normally, this is where I would introduce the `break` statement, but it is bette
     switch ( 'Word' )
     {
         'word' {
-            'lowercase word match'
+            'lower case word match'
+            continue
+        }
+        'Word' {
+            'mixed case word match'
             continue
         }
         'WORD' {
-            'uppercase word match'
-            continue
-        }
-        'WORD' {
-            'uppercase word match'
+            'upper case word match'
             continue
         }
     }
+
+    # Output
+    lower case word match
 
 Instead of matching all three items, the first one is matched and the switch continues to the next value. Because there are no values left to process, the switch exits. This next example is showing how a wildcard could match multiple items.
 
@@ -270,12 +299,19 @@ Because a line in the input file could contain both the word `Error` and `Warnin
 
 A `break` statement will exit the switch. This is the same behavior that `continue` will present for single values. The big difference is when processing an array. `break` will stop all processing in the switch and `continue` will move onto the next item.
 
-    switch -Wildcard -File $path
+    $Messages = @(
+        'Downloading update'
+        'Ran into errors downloading file'
+        'Error: out of disk space'
+        'Sending email'
+        '...'
+    )
+    switch -Wildcard ($Messages)
     {
         'Error*'
         {
             Write-Error -Message $PSItem
-            break;
+            break
         }
         '*Error*'
         {
@@ -292,6 +328,13 @@ A `break` statement will exit the switch. This is the same behavior that `contin
             Write-Output $PSItem
         }
     }
+
+    # Output 
+    Downloading update
+    WARNING: Ran into errors downloading file
+    write-error -message $PSItem : Error: out of disk space
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 
 In this case, if we hit any lines that start with `Error` then we will get an error and the switch will stop. This is what that `break` statement is doing for us. If we find `Error` inside the string and not just at the beginning, we will write it as a warning. We will do the same thing for `Warning`. It is possible that a line could have both the word `Error` and `Warning`, but we only need one to process. This is what the `continue` statement is doing for us.
 
@@ -350,6 +393,9 @@ PowerShell 5.0 gave us enums and we can use them in a switch.
         }
     }
 
+    # Output
+    is a role
+
 If you want to keep everything as strongly typed enums, then you can place them in parentheses.
 
     switch ($item )
@@ -374,6 +420,7 @@ The parentheses are needed here so that the switch does not treat the value `[Co
 
 We can use a scriptblock to perform the evaluation for a match if needed.
 
+    $age = 37
     switch ( $age )
     {
         {$PSItem -le 18} {
@@ -383,6 +430,9 @@ We can use a scriptblock to perform the evaluation for a match if needed.
             'adult'
         }
     }
+
+    # Output
+    'adult'
 
 This adds a lot of complexity and can make your `switch` hard to read. In most cases where you would use something like this it would be better to use `if` and `elseif` statements. I would consider using this if I already had a large switch in place and I needed 2 items to hit the same evaluation block.
 
@@ -423,6 +473,7 @@ We need to revisit regex to touch on something that is not immediately obvious. 
         }
     }
 
+    # Output
     WARNING: message may contain a SSN: 123-23-3456
     WARNING: message may contain a credit card number: 1234-5678-1234-5678
 
@@ -430,6 +481,7 @@ We need to revisit regex to touch on something that is not immediately obvious. 
 
 You can match a `$null` value that does not have to be the default.
 
+    $value = $null
     switch ( $value )
     {
         $null
@@ -441,6 +493,9 @@ You can match a `$null` value that does not have to be the default.
             'value is not null'
         }
     }
+
+    # Output
+    Value is null
 
 Same goes for an empty string.
 
@@ -455,6 +510,9 @@ Same goes for an empty string.
             'value is a empty string'
         }
     }
+
+    # Output
+    Value is empty
 
 ## Constant expression
 
@@ -480,6 +538,10 @@ Lee Daily pointed out that we can use a constant `$true` expression to evaluate 
         }
     }
 
+    # Output
+    Do-Action
+    Enabled-AdminMenu
+
 This is a very clean way to evaluate and take action on the status of several boolean fields. The cool thing about this is that you can have one match flip the status of a value that has not been evaluated yet.
 
     $isVisible = $false
@@ -503,6 +565,10 @@ This is a very clean way to evaluate and take action on the status of several bo
         }
     }
 
+    # Output
+    Do-Action
+    Show-Animation
+
 Setting `$isEnabled` to `$true` in this example will make sure the `$isVisible` is also set to `$true`. Then when the `$isVisible` gets evaluated, its scriptblock will be invoked. This is a bit counter-intuitive but is a very clever use of the mechanics.
 
 # Other patterns
@@ -511,6 +577,7 @@ Setting `$isEnabled` to `$true` in this example will make sure the `$isVisible` 
 
 One of my most popular posts is the one I did on [everything you ever wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/). One of the example use-cases for a `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a `switch` statement is often addressing.
 
+    $day = 3
     $lookup = @{
         0 = 'Sunday'
         1 = 'Monday'
@@ -520,7 +587,10 @@ One of my most popular posts is the one I did on [everything you ever wanted to 
         5 = 'Friday'
         6 = 'Saturday'
     }
-    $result = $lookup[$day]
+    $lookup[$day]
+
+    # Output
+    Wednesday
 
 If I am only using a `switch` as a lookup, I will quite often use a `hashtable` instead.
 
@@ -528,6 +598,7 @@ If I am only using a `switch` as a lookup, I will quite often use a `hashtable` 
 
 PowerShell 5.0 introduced the `Enum` and it is also an option in this case.
 
+    $day = 3
     enum DayOfTheWeek {
         Sunday
         Monday
@@ -538,7 +609,11 @@ PowerShell 5.0 introduced the `Enum` and it is also an option in this case.
         Saturday
     }
 
-    $result = [DayOfTheWeek]$day
+    [DayOfTheWeek]$day
+
+    # Output
+    Wednesday
+
 
 We could go all day looking at different ways to solve this problem. I just wanted to make sure you knew you had options.
 
