@@ -27,6 +27,7 @@ One of the first statements that you will learn is the `if` statement. It lets y
 You can have much more complicated logic by using `elseif` and `else` statements. Here is an example where I have a numeric value for day of the week and I want to get the name as a string.
 
     $day = 3
+
     if ( $day -eq 0 ) { $result = 'Sunday'        }
     elseif ( $day -eq 1 ) { $result = 'Monday'    }
     elseif ( $day -eq 2 ) { $result = 'Tuesday'   }
@@ -34,6 +35,7 @@ You can have much more complicated logic by using `elseif` and `else` statements
     elseif ( $day -eq 4 ) { $result = 'Thursday'  }
     elseif ( $day -eq 5 ) { $result = 'Friday'    }
     elseif ( $day -eq 6 ) { $result = 'Saturday'  }
+
     $result
 
     # Output
@@ -46,6 +48,7 @@ It turns out that this is a very common pattern and there are a lot of ways to d
 The `switch` statement allows you to provide a variable and a list of possible values. If the value matches the variable, then it's scriptblock will be executed.
 
     $day = 3
+
     switch ( $day )
     {
         0 { $result = 'Sunday'    }
@@ -56,6 +59,7 @@ The `switch` statement allows you to provide a variable and a list of possible v
         5 { $result = 'Friday'    }
         6 { $result = 'Saturday'  }
     }
+
     $result
 
     # Output
@@ -126,6 +130,7 @@ I decided not to wrap the `Component`,`Role` and `Location` matches in quotes he
 One of the cool features of the PowerShell `switch` is the way it handles arrays. If you give a `switch` an array, it will process each element in that collection.
 
     $roles = @('WEB','Database')
+
     switch ( $roles ) {
         'Database'   { 'Configure SQL' }
         'WEB'        { 'Configure IIS' }
@@ -155,6 +160,7 @@ The matches are not case sensitive by default. If you need to be case sensitive 
 We can enable wildcard support with the `-wildcard` switch. This uses the same wildcard logic as the `-like` operator to do each match.
 
     $Message = 'Warning, out of disk space'
+
     switch -Wildcard ( $message )
     {
         'Error*'
@@ -256,15 +262,18 @@ Normally, this is where I would introduce the `break` statement, but it is bette
 
     switch ( 'Word' )
     {
-        'word' {
+        'word' 
+        {
             'lower case word match'
             continue
         }
-        'Word' {
+        'Word' 
+        {
             'mixed case word match'
             continue
         }
-        'WORD' {
+        'WORD' 
+        {
             'upper case word match'
             continue
         }
@@ -306,6 +315,7 @@ A `break` statement will exit the switch. This is the same behavior that `contin
         'Sending email'
         '...'
     )
+
     switch -Wildcard ($Messages)
     {
         'Error*'
@@ -421,12 +431,15 @@ The parentheses are needed here so that the switch does not treat the value `[Co
 We can use a scriptblock to perform the evaluation for a match if needed.
 
     $age = 37
+
     switch ( $age )
     {
-        {$PSItem -le 18} {
+        {$PSItem -le 18} 
+        {
             'child'
         }
-        {$PSItem -gt 18} {
+        {$PSItem -gt 18} 
+        {
             'adult'
         }
     }
@@ -457,6 +470,7 @@ It still executes the same way and give a better visual break when quickly looki
 We need to revisit regex to touch on something that is not immediately obvious. The use of regex populates the `$matches` variable. I do go into the use of `$matches` more when I talk about [The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression). Here is a quick sample to show it in action with named matches.
 
     $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
+
     switch -regex ($message)
     {
         '(?<SSN>\d\d\d-\d\d-\d\d\d\d)'
@@ -482,6 +496,7 @@ We need to revisit regex to touch on something that is not immediately obvious. 
 You can match a `$null` value that does not have to be the default.
 
     $value = $null
+
     switch ( $value )
     {
         $null
@@ -578,6 +593,7 @@ Setting `$isEnabled` to `$true` in this example will make sure the `$isVisible` 
 One of my most popular posts is the one I did on [everything you ever wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/). One of the example use-cases for a `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a `switch` statement is often addressing.
 
     $day = 3
+
     $lookup = @{
         0 = 'Sunday'
         1 = 'Monday'
@@ -587,6 +603,7 @@ One of my most popular posts is the one I did on [everything you ever wanted to 
         5 = 'Friday'
         6 = 'Saturday'
     }
+
     $lookup[$day]
 
     # Output
@@ -599,6 +616,7 @@ If I am only using a `switch` as a lookup, I will quite often use a `hashtable` 
 PowerShell 5.0 introduced the `Enum` and it is also an option in this case.
 
     $day = 3
+    
     enum DayOfTheWeek {
         Sunday
         Monday
