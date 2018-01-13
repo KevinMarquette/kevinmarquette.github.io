@@ -38,7 +38,7 @@ It turns out that this is a very common pattern and there are a lot of ways to d
 
 # Switch statement
 
-The `switch` statement allows you to provide a variable and a list of possible values. If the value matches the variable, then it's script will be executed.
+The `switch` statement allows you to provide a variable and a list of possible values. If the value matches the variable, then it's scriptblock will be executed.
 
     switch ( $day )
     {
@@ -68,7 +68,7 @@ We can write that last example in another way.
         6 { 'Saturday'  }
     }
 
-We are placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do this same thing with `if` and `foreach` statements.
+We are placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do this same thing with the `if` and `foreach` statements.
 
 ## Default
 
@@ -127,13 +127,13 @@ You can use the `$PSItem` or `$_` to reference the current item that was process
 
 # Parameters
 
-A unique feature of the PowerShell `switch` is that it has a number of switch parameters that change how it performs.
+A unique feature of the PowerShell `switch` is that it has a number of [switch parameters](http://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/) that change how it performs.
 
-## CaseSensitive
+## -CaseSensitive
 
 The matches are not case sensitive by default. If you need to be case sensitive then you can use `-CaseSensitive`. This can be used in combination with the other switch parameters.
 
-## Wildcard
+## -Wildcard
 
 We can enable wildcard support with the `-wildcard` switch. This uses the same wildcard logic as the `-like` operator to do each match.
 
@@ -149,13 +149,13 @@ We can enable wildcard support with the `-wildcard` switch. This uses the same w
         }
         default
         {
-            Write-Output $message
+            Write-Information $message
         }
     }
 
 Here we are processing a message and then outputting it on different streams based on the contents.
 
-## Regex
+## -Regex
 
 The switch statement supports regex matches just like it does wildcards.
 
@@ -171,13 +171,13 @@ The switch statement supports regex matches just like it does wildcards.
         }
         default
         {
-            Write-Output $message
+            Write-Information $message
         }
     }
 
 I have more examples of using regex in another article I wrote: [The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression).
 
-## File
+## -File
 
 A little known feature of the switch statement is that it can process a file with the `-File` parameter. You use `-file` with a path to a file instead of giving it a variable expression.
 
@@ -218,7 +218,7 @@ You may have already picked up on this, but a `switch` can match to multiple con
     switch ( 'Word' )
     {
         'word' { 'lowercase word match' }
-        'WORD' { 'uppercase word match' }
+        'Word' { 'uppercase word match' }
         'WORD' { 'uppercase word match' }
     }
 
@@ -400,7 +400,7 @@ One thing that I think helps with legibility is to place the scriptblock in pare
         }
     }
 
-It still executes the same and give a better visual break when quickly looking at it.
+It still executes the same way and give a better visual break when quickly looking at it.
 
 ## Regex $matches
 
@@ -444,7 +444,7 @@ You can match a `$null` value that does not have to be the default.
 
 Same goes for an empty string.
 
-switch ( '' )
+    switch ( '' )
     {
         ''
         {
@@ -455,6 +455,55 @@ switch ( '' )
             'value is a empty string'
         }
     }
+
+## Constant expression
+
+Lee Daily pointed out that we can use a constant `$true` expression to evaluate `[bool]` items. Imagine if we have a lot of boolean checks that need to happen.
+
+    $isVisible = $false
+    $isEnabled = $true
+    $isSecure = $true
+
+    switch ( $true )
+    {
+        $isEnabled
+        {
+            'Do-Action'
+        }
+        $isVisible
+        {
+            'Show-Animation'
+        }
+        $isAdmin
+        {
+            'Enable-AdminMenu'
+        }
+    }
+
+This is a very clean way to evaluate and take action on the status of several boolean fields. The cool thing about this is that you can have one match flip the status of a value that has not been evaluated yet.
+
+    $isVisible = $false
+    $isEnabled = $true
+    $isSecure = $false
+
+    switch ( $true )
+    {
+        $isEnabled
+        {
+            'Do-Action'
+            $isVisible = $true
+        }
+        $isVisible
+        {
+            'Show-Animation'
+        }
+        $isAdmin
+        {
+            'Enable-AdminMenu'
+        }
+    }
+
+Executing this example will show that setting `$isEnabled` to `$true`, when the match is processed that it will make sure the `$isVisible` is also set to `$true`. Then when the `$isVisible` gets evaluated, its scriptblock will be invoked. This is a bit counter-intuitive but is a very clever use of the mechanics.
 
 # Other patterns
 
