@@ -503,7 +503,7 @@ This is a very clean way to evaluate and take action on the status of several bo
         }
     }
 
-Executing this example will show that setting `$isEnabled` to `$true`, when the match is processed that it will make sure the `$isVisible` is also set to `$true`. Then when the `$isVisible` gets evaluated, its scriptblock will be invoked. This is a bit counter-intuitive but is a very clever use of the mechanics.
+Setting `$isEnabled` to `$true` in this example will make sure the `$isVisible` is also set to `$true`. Then when the `$isVisible` gets evaluated, its scriptblock will be invoked. This is a bit counter-intuitive but is a very clever use of the mechanics.
 
 # Other patterns
 
