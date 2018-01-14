@@ -577,7 +577,7 @@ Same goes for an empty string.
 
 ## Constant expression
 
-Lee Daily pointed out that we can use a constant `$true` expression to evaluate `[bool]` items. Imagine if we have a lot of boolean checks that need to happen.
+Lee Dailey pointed out that we can use a constant `$true` expression to evaluate `[bool]` items. Imagine if we have a lot of boolean checks that need to happen.
 
 ``` powershell
     $isVisible = $false
