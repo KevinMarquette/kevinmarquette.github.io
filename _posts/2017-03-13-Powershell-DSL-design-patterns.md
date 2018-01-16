@@ -194,10 +194,11 @@ This example captures all the hashtables that are created when the `$StateScript
 
 When using a `[scriptblock]`, you leave your DSL open to allow any PowerShell commands to be ran. You can restrict this to the DSL commands you specify with the data command.
 
-    
+``` powershell
     $newScript = "DATA -SupportedCommand Get-State,Set-State {{{0}}}" -f $ScriptBlock.ToString()
     $newScriptBlock = [scriptblock]::Create($newScript)
     & $newScriptBlock
+```
 
 This is most valuable when you are defining your DSL to be used in files that are to be executed by PowerShell. This allows you to treat your DSL based files more like plain text configs and less like scripts that execute code.
 
