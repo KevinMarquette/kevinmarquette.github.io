@@ -203,7 +203,7 @@ Here we are processing a message and then outputting it on different streams bas
 The switch statement supports regex matches just like it does wildcards.
 
 ``` powershell
-    switch -Wildcard ( $message )
+    switch -Regex ( $message )
     {
         '^Error'
         {
