@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: My thoughs on the future of DSC"
+title: "Powershell: My thoughts on the future of DSC"
 date: 2018-01-26
 tags: [PowerShell,DSC,Thoughts]
 ---
