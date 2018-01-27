@@ -13,7 +13,7 @@ I just saw the PowerShell team post an update on [the future of Desired State Co
 
 The first big take away is that they are rewriting DSC from the ground up. This does not surprise me at all. As far as I know, DSC is very tightly integrated into the WMI subsystem in Windows server.
 
-DSC was designed at a time where everything Microsoft was building was integrating with WMI. I think Jeffery Snover's vision at the time was to allow the teams to build DSC Resources in WMI. The teams were already invested in that platform and should be able to leverage a lot of the work they already had done.
+DSC was designed at a time where everything Microsoft was building was integrating with WMI. I think Jeffrey Snover's vision at the time was to allow the teams to build DSC Resources in WMI. The teams were already invested in that platform and should be able to leverage a lot of the work they already had done.
 
 This is also why `Get-WmiObject` was one of the first CmdLets that we ever saw.
 
@@ -23,7 +23,7 @@ The PowerShell team went out of their way to make this point. I expect there was
 
 This is a process that will be executing constantly all over Azure. The performance of the LCM in Azure is very important to Microsoft. The LCM needs to be small, quick, and not use any unneeded resources. At the end of the day, when Microsoft optimizes performance for Azure, we all win.
 
-The use of C++ also fits into a larger vision that Jeffery Snover had for DSC. There is a future where our networking and storage equipment could be running DSC. Instead of waiting for vendors to write their own LCM, open sourcing one in C++ can accelerate that effort. I can see this running on IoT devices and other places where it just isn't feasible to be running .Net Core just to have an LCM.
+The use of C++ also fits into a larger vision that Jeffrey Snover had for DSC. There is a future where our networking and storage equipment could be running DSC. Instead of waiting for vendors to write their own LCM, open sourcing one in C++ can accelerate that effort. I can see this running on IoT devices and other places where it just isn't feasible to be running .Net Core just to have an LCM.
 
 # DSC is not a PowerShell thing
 
