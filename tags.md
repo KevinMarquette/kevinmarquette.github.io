@@ -71,6 +71,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # DSC
 
 * 2016-10-25 [Powershell: Operational Validation Framework](/2016-10-25-Powershell-Operational-Validation-Framework/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-01-26 [Powershell: My thoughs on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='DSL'></a>
 # DSL
@@ -193,6 +194,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-06 [What have you done with PowerShell this year?](/2018-01-06-Powershell-2017-in-review/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-01-26 [Powershell: My thoughs on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
@@ -249,6 +251,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Strings
 
 * 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Thoughts'></a>
+# Thoughts
+
+* 2018-01-26 [Powershell: My thoughs on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Validator'></a>
 # Validator
