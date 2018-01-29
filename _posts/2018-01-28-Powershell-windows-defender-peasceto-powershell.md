@@ -17,7 +17,7 @@ For a period of time, Windows Defender was flagging several important PowerShell
 These are the definition version that I confirmed fix these modules:
 
 * `PackageManagement` 1.261.424.0
-* `PSScriptAnalyzer` 1.261.429.0
+* `PSScriptAnalyzer` 1.261.441.0
 * `MSOnline` 1.261.441.0
 * `VMWare.PowerCLI`  Pending
 
