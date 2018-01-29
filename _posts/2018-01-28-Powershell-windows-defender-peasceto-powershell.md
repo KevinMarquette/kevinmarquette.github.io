@@ -5,7 +5,7 @@ date: 2018-01-28
 tags: [PowerShell]
 ---
 
-For a period of time, Windows Defender was flagging several important PowerShell modules as infected with Peasecto.A. This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, and `PSScriptAnalyzer`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved now. Update your Windows Defender definitions and you will be good going forward.
+For a period of time, Windows Defender was flagging several important PowerShell modules as infected with `Peasecto.A`. This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, and `PSScriptAnalyzer`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved now. Update your Windows Defender definitions and you will be good going forward.
 
 The Windows Defender issue is resolved in definition update 1.261.424.0
 <!--more-->
@@ -17,7 +17,7 @@ The Windows Defender issue is resolved in definition update 1.261.424.0
 
 There was not a lot of options other than disable defender or disable PowerShell AMSI while we waited for the definitions to get updated. I was pulling together what information that I could and posting it here as it came up. Now that the issue is resolved, I rewrote the into so the important information is easy to discover.
 
-There are lingering issues for some users broken modules will need to be re-installed. The `PackageManagement` module will take some special steps that I outlined below.
+There are lingering issues for some users with broken modules that will need to be re-installed. The `PackageManagement` module will take some special steps that I outlined below.
 
 # Reinstall PowerShellGet and PackageManagement
 
