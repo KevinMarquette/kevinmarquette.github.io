@@ -40,6 +40,13 @@ Reddit is also noticing the issue but does not have much for details at this poi
 * [Windows Defender reporting Peasecto.A malware in some Microsoft PSD1 files](https://www.reddit.com/r/PowerShell/comments/7to5dy/windows_defender_reporting_peasectoa_malware_in)
 * [System Center Endpoint protection flagging the MSOnline.psd1 file with Peasecto.A trojan](https://www.reddit.com/r/sysadmin/comments/7tnukh/system_center_endpoint_protection_flagging_the)
 
+# Github Issues
+
+Issues are starting to pop up on GitHub projects.
+
+* [VSCode](https://github.com/Microsoft/vscode/issues/42284)
+* [PowerShell Core](https://github.com/PowerShell/PowerShell/issues/6056)
+
 # Reinstall PowerShellGet and PackageManagement
 
 Because PowerShellGet depends on PackageManagement, issues with PackageManagement can prevent PowerShellGet from working. How do you install modules when Install-Module has issues?
@@ -53,3 +60,6 @@ If Windows Defender did clean up files out of the PackageManagement module, you 
     Install-Module PackageManagement -Force
     Install-Module PowerShellGet -Force
 
+PowerShell 5.1 should have the 1.0.0.1 version of both of these modules. So you should have a old version of the module to import.
+
+PowerShell Core ships with the newer module and is [not as easy to repair](https://github.com/PowerShell/PowerShell/issues/6056).
