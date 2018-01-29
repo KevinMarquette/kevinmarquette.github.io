@@ -5,15 +5,25 @@ date: 2018-01-28
 tags: [PowerShell]
 ---
 
-For a period of time, Windows Defender was flagging several important PowerShell modules as infected with `Peasecto.A`. This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, and `PSScriptAnalyzer`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved now. Update your Windows Defender definitions and you will be good going forward.
+For a period of time, Windows Defender was flagging several important PowerShell modules as infected with `Peasecto.A`. This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, `PSScriptAnalyzer`, and `VMware.PowerCLI`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved for some modules now.
 
-The Windows Defender issue is resolved in definition update 1.261.424.0
 <!--more-->
 
     PS:> Get-MpComputerStatus | Select AntivirusSignature*
 
     AntivirusSignatureLastUpdated   : 1/28/2018 8:28:37 PM
     AntivirusSignatureVersion       : 1.261.424.0
+
+These are the definition version that I confirmed fix these modules:
+
+* `PackageManagement` 1.261.424.0
+* `PSScriptAnalyzer` 1.261.429.0
+* `MSOnline` 1.261.441.0
+* `VMWare.PowerCLI`  Pending
+
+Last tested on 1.261.441.0.
+
+It looks like these module issues will need to be fixed one at a time.
 
 There was not a lot of options other than disable defender or disable PowerShell AMSI while we waited for the definitions to get updated. I was pulling together what information that I could and posting it here as it came up. Now that the issue is resolved, I rewrote the into so the important information is easy to discover.
 
@@ -96,6 +106,10 @@ Issues started to pop up on GitHub projects.
 * [PowerShell Core](https://github.com/PowerShell/PowerShell/issues/6056)
 * [oneget](https://github.com/OneGet/oneget/issues/335)
 * [PSSciptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer/issues/860)
+
+## Other links
+
+* [VMWare.PowerCLI](https://blogs.vmware.com/PowerCLI/2018/01/windows-defender-reports-false-positive-powershell-modules.html)
 
 # For next time
 
