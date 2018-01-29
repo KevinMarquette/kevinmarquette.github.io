@@ -10,6 +10,12 @@ There are reports of a Windows Defender update flagging common PowerShell tools 
 <!--more-->
 Not a lot of options other than disable defender or disable PowerShell AMSI. I'll update this post once I see more information on how this plays out. For now, I'll just share these reports in case those threads pick up traction.
 
+**Update:** A fix is in the works.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">this will be fixed shortly.</p>&mdash; neox_fx (@neox_fx) <a href="https://twitter.com/neox_fx/status/957798550888267776?ref_src=twsrc%5Etfw">January 29, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 # Twitter
 
 These are the first tweets talking about the issue:
@@ -63,3 +69,22 @@ If Windows Defender did clean up files out of the `PackageManagement` module, yo
 PowerShell 5.1 should have the 1.0.0.1 version of both of these modules. So you should have a old version of the module to import.
 
 PowerShell Core ships with the newer module and is [not as easy to repair](https://github.com/PowerShell/PowerShell/issues/6056).
+
+## Indications that you are in a bad state
+
+These are the error messages you get when in this bad state. If you call `Install-Module` or `Find-Module` you should see something like this:
+
+    find-module : The 'find-module' command was found in the module 'PowerShellGet', but the module
+    could not be loaded. For more information, run 'Import-Module PowerShellGet'.
+
+    install-module : The 'install-module' command was found in the module 'PowerShellGet', but the
+    module could not be loaded. For more information, run 'Import-Module PowerShellGet'.
+
+If you try and import the `PowerShellGet` module, then you will see this error message:
+
+    PS:> Import-Module PowerShellGet
+
+    import-module : The required module 'PackageManagement' is not loaded. Load the module or remove
+    the module from 'RequiredModules' in the file 'C:\Program
+    Files\WindowsPowerShell\Modules\powershellget\1.6.0\powershellget.psd1'.
+
