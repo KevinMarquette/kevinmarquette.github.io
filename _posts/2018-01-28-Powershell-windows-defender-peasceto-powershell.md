@@ -5,7 +5,7 @@ date: 2018-01-28
 tags: [PowerShell]
 ---
 
-There are reports of a Windows Defender update flagging common PowerShell tools and modules as infected with Peasecto.A. We don't have a lot of information right now other than indications that PowerShellGet, MSOnline, PSScriptAnalyzer and [VSCode](https://github.com/Microsoft/vscode/issues/42284) are impacted. These are all false positives at this point.
+There are reports of a Windows Defender update flagging common PowerShell tools and modules as infected with Peasecto.A. We don't have a lot of information right now other than indications that PackageManagement, PowerShellGet, MSOnline, PSScriptAnalyzer and [VSCode](https://github.com/Microsoft/vscode/issues/42284) are impacted. These are all false positives at this point.
 
 <!--more-->
 Not a lot of options other than disable defender or disable PowerShell AMSI. I'll update this post once I see more information on how this plays out. For now, I'll just share these reports in case those threads pick up traction.
@@ -40,12 +40,16 @@ Reddit is also noticing the issue but does not have much for details at this poi
 * [Windows Defender reporting Peasecto.A malware in some Microsoft PSD1 files](https://www.reddit.com/r/PowerShell/comments/7to5dy/windows_defender_reporting_peasectoa_malware_in)
 * [System Center Endpoint protection flagging the MSOnline.psd1 file with Peasecto.A trojan](https://www.reddit.com/r/sysadmin/comments/7tnukh/system_center_endpoint_protection_flagging_the)
 
-# Reinstall PowerShellGet
+# Reinstall PowerShellGet and PackageManagement
 
-If Windows Defender did clean up files out of the PowerShellGet module, you can import the old version in a fresh shell to use `Install-Module` again.
+Because PowerShellGet depends on PackageManagement, issues with PackageManagement can prevent PowerShellGet from working. How do you install modules when Install-Module has issues?
+
+If Windows Defender did clean up files out of the PackageManagement module, you can import the old version of PowerShellGet in a fresh shell to use `Install-Module` again.
 
     Get-Module PowerShellGet -ListAvailable |
         Where Version -eq 1.0.0.1 |
         Import-Module
 
+    Install-Module PackageManagement -Force
     Install-Module PowerShellGet -Force
+
