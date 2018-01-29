@@ -21,7 +21,7 @@ These are the definition version that I confirmed fix these modules:
 * `MSOnline` 1.261.441.0
 * `VMWare.PowerCLI`  Pending
 
-Last tested on 1.261.441.0.
+Last tested on 1.261.441.0 (KB2267602).
 
 It looks like these module issues will need to be fixed one at a time.
 
