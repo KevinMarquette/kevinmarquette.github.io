@@ -19,11 +19,11 @@ These are the definition version that I confirmed fix these modules:
 * `PackageManagement` 1.261.424.0
 * `PSScriptAnalyzer` 1.261.441.0
 * `MSOnline` 1.261.441.0
-* `VMWare.PowerCLI`  Pending
+* `VMWare.PowerCLI`  1.261.441.0
 
-Last tested on 1.261.441.0 (KB2267602).
+Last tested on 1.261.441.0. You may have to run Windows Updates if Windows Defender is not pulling the most recent definition.
 
-It looks like these module issues will need to be fixed one at a time.
+It looks like the modules were fixed one at a time. I have a link at the bottom for where to report false positives.
 
 There was not a lot of options other than disable defender or disable PowerShell AMSI while we waited for the definitions to get updated. I was pulling together what information that I could and posting it here as it came up. Now that the issue is resolved, I rewrote the into so the important information is easy to discover.
 
