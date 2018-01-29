@@ -8,7 +8,7 @@ tags: [PowerShell]
 There are reports of a Windows Defender update flagging common PowerShell tools and modules as infected with Peasecto.A. We don't have a lot of information right now other than indications that PowerShellGet, MSOnline, PSScriptAnalyzer and [VSCode](https://github.com/Microsoft/vscode/issues/42284) are impacted. These are all false positives at this point.
 
 <!--more-->
-Not a lot of options other than disable defender or disable PowerShell AMSI. I'll update this post once I see more information on how this plays out. For now, I'll just share these reports in case those thread pick up traction.
+Not a lot of options other than disable defender or disable PowerShell AMSI. I'll update this post once I see more information on how this plays out. For now, I'll just share these reports in case those threads pick up traction.
 
 # Twitter
 
@@ -31,7 +31,7 @@ These are the first tweets talking about the issue:
 
 # TechNet
 
-Mark was talking about this thread: [Latest updates indicated Peasecto.A infection ???](https://social.technet.microsoft.com/Forums/en-US/40fa56dd-b73f-456a-9d97-cdb4500bc7ed/latest-updates-indicated-peasectoa-infection-?forum=WindowsDefenderATPPreview). This thread indicates that MSOnline and the Azure modules are impacted. Lots of good information is collecting here even as I write this.
+Mark was talking about this thread: [Latest updates indicated Peasecto.A infection](https://social.technet.microsoft.com/Forums/en-US/40fa56dd-b73f-456a-9d97-cdb4500bc7ed/latest-updates-indicated-peasectoa-infection-?forum=WindowsDefenderATPPreview). This thread indicates that MSOnline and the Azure modules are impacted. Lots of good information is collecting here even as I write this.
 
 # Reddit
 
