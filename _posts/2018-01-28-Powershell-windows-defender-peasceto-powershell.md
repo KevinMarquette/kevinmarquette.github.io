@@ -40,3 +40,12 @@ Reddit is also noticing the issue but does not have much for details at this poi
 * [Windows Defender reporting Peasecto.A malware in some Microsoft PSD1 files](https://www.reddit.com/r/PowerShell/comments/7to5dy/windows_defender_reporting_peasectoa_malware_in)
 * [System Center Endpoint protection flagging the MSOnline.psd1 file with Peasecto.A trojan](https://www.reddit.com/r/sysadmin/comments/7tnukh/system_center_endpoint_protection_flagging_the)
 
+# Reinstall PowerShellGet
+
+If Windows Defender did clean up files out of the PowerShellGet module, you can import the old version in a fresh shell to use `Install-Module` again.
+
+    Get-Module PowerShellGet -ListAvailable |
+        Where Version -eq 1.0.0.1 |
+        Import-Module
+
+    Install-Module PowerShellGet -Force
