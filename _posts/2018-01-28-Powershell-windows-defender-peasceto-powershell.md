@@ -49,9 +49,9 @@ Issues are starting to pop up on GitHub projects.
 
 # Reinstall PowerShellGet and PackageManagement
 
-Because PowerShellGet depends on PackageManagement, issues with PackageManagement can prevent PowerShellGet from working. How do you install modules when Install-Module has issues?
+Because `PowerShellGet` depends on `PackageManagement`, issues with `PackageManagement` can prevent `PowerShellGet` from working. How do you install modules when `Install-Module` has issues?
 
-If Windows Defender did clean up files out of the PackageManagement module, you can import the old version of PowerShellGet in a fresh shell to use `Install-Module` again.
+If Windows Defender did clean up files out of the `PackageManagement` module, you can import the old version of `PowerShellGet` in a fresh shell to use `Install-Module` again.
 
     Get-Module PowerShellGet -ListAvailable |
         Where Version -eq 1.0.0.1 |
