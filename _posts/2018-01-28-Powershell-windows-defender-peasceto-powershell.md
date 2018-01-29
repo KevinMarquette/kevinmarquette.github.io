@@ -94,3 +94,14 @@ Issues started to pop up on GitHub projects.
 
 * [VSCode](https://github.com/Microsoft/vscode/issues/42284)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell/issues/6056)
+* [oneget](https://github.com/OneGet/oneget/issues/335)
+* [PSSciptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer/issues/860)
+
+# For next time
+
+Lee Holmes pointed out that Microsoft does have a process for submitting false positives.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Here&#39;s where to report false positives: <a href="https://t.co/NsQ34giE3e">https://t.co/NsQ34giE3e</a> - it has nothing to do with AMSI. If the content triggers a signature, it would do it through basic scanning as well.</p>&mdash; Lee Holmes (@Lee_Holmes) <a href="https://twitter.com/Lee_Holmes/status/957692055957880832?ref_src=twsrc%5Etfw">January 28, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+The next time you find Defender attacking the wrong files, you can [submit a file for analysis](https://www.microsoft.com/en-us/wdsi/filesubmission).
