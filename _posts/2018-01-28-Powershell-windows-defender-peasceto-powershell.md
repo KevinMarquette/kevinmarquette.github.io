@@ -66,9 +66,9 @@ If Windows Defender did clean up files out of the `PackageManagement` module, yo
     Install-Module PackageManagement -Force
     Install-Module PowerShellGet -Force
 
-PowerShell 5.1 should have the 1.0.0.1 version of both of these modules. So you should have a old version of the module to import.
+PowerShell 5.1 should have the 1.0.0.1 version of both of these modules. So you should have a old version of the module to import. Also note that only users that updated to the new modules will have this issue.
 
-PowerShell Core ships with the newer module and is [not as easy to repair](https://github.com/PowerShell/PowerShell/issues/6056).
+PowerShell Core ships with the newer module by default and is [not as easy to repair](https://github.com/PowerShell/PowerShell/issues/6056).
 
 ## Indications that you are in a bad state
 
