@@ -10,11 +10,12 @@ There are reports of a Windows Defender update flagging common PowerShell tools 
 <!--more-->
 Not a lot of options other than disable defender or disable PowerShell AMSI. I'll update this post once I see more information on how this plays out. For now, I'll just share these reports in case those threads pick up traction.
 
-**Update:** A fix is in the works.
+**Update 1:** A fix is in the works.
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">this will be fixed shortly.</p>&mdash; neox_fx (@neox_fx) <a href="https://twitter.com/neox_fx/status/957798550888267776?ref_src=twsrc%5Etfw">January 29, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+**Update 2:** This is reported that the issue has been resolved with signature update. I'm still trying to pull it on my local system to verify. 
 
 # Twitter
 
