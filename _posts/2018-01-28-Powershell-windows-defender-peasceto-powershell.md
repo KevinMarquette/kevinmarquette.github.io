@@ -19,13 +19,18 @@ These are the definition version that I confirmed fix these modules:
 * `PackageManagement` 1.261.424.0
 * `PSScriptAnalyzer` 1.261.441.0
 * `MSOnline` 1.261.441.0
-* `VMWare.PowerCLI`  1.261.441.0
+* `VMWare.PowerCLI`  1.261.459.0
 
-Last tested on 1.261.441.0. You may have to run Windows Updates if Windows Defender is not pulling the most recent definition.
+
+
+You may have to run Windows Updates and reboot if Windows Defender is not pulling the most recent definition. I have seen some inconsistent results in my testing on different machines.
 
 It looks like the modules were fixed one at a time. I have a link at the bottom for where to report false positives.
 
-There was not a lot of options other than disable defender or disable PowerShell AMSI while we waited for the definitions to get updated. I was pulling together what information that I could and posting it here as it came up. Now that the issue is resolved, I rewrote the into so the important information is easy to discover.
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Updated: <br><br>Microsoft has released Defender signatures version 1.261.459.0 which fixes all <a href="https://twitter.com/hashtag/PowerCLI?src=hash&amp;ref_src=twsrc%5Etfw">#PowerCLI</a> modules. <a href="https://twitter.com/hashtag/PowerShell?src=hash&amp;ref_src=twsrc%5Etfw">#PowerShell</a><a href="https://t.co/EQ2Qtu8jT2">https://t.co/EQ2Qtu8jT2</a></p>&mdash; VMware PowerCLI (@PowerCLI) <a href="https://twitter.com/PowerCLI/status/958172275034992640?ref_src=twsrc%5Etfw">January 30, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+There was not a lot of options other than disable defender or disable PowerShell AMSI while we waited for the definitions to get updated. I was pulling together what information that I could and posting it here as it came up. Now that the issue is mostly resolved, I rewrote the into so the important information is easy to discover.
 
 There are lingering issues for some users with broken modules that will need to be re-installed. The `PackageManagement` module will take some special steps that I outlined below.
 
