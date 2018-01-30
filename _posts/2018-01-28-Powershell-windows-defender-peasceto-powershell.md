@@ -5,7 +5,7 @@ date: 2018-01-28
 tags: [PowerShell]
 ---
 
-For a period of time, Windows Defender was flagging several important PowerShell modules as infected with `Peasecto.A`. This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, `PSScriptAnalyzer`, and `VMware.PowerCLI`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved for some modules now.
+For a period of time, Windows Defender was flagging several important PowerShell modules as infected with [Peasecto.A](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:PowerShell/Peasecto.A&ThreatID=-2147241818). This would prevent users from running or installing those modules. Some of the impacted modules included `PackageManagement`, `MSOnline`, `PSScriptAnalyzer`, and `VMware.PowerCLI`. Even [VSCode](https://github.com/Microsoft/vscode/issues/42284) was feeling the pain. The good news is that the issue is resolved for some modules now.
 
 <!--more-->
 
