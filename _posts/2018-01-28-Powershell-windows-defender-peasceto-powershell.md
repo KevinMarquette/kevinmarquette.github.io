@@ -18,7 +18,7 @@ These are the definition version that I have seen tested on these modules:
 
 * `PackageManagement` fixed in 1.261.424.0
 * `PSScriptAnalyzer` fixed in 1.261.441.0
-* `MSOnline` broken in 1.261.449.0 
+* `MSOnline` fixed in 1.261.473.0
 * `VMWare.PowerCLI`  fixed in 1.261.459.0
 
 
