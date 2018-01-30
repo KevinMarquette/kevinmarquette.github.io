@@ -14,16 +14,15 @@ For a period of time, Windows Defender was flagging several important PowerShell
     AntivirusSignatureLastUpdated   : 1/28/2018 8:28:37 PM
     AntivirusSignatureVersion       : 1.261.424.0
 
-These are the definition version that I confirmed fix these modules:
+These are the definition version that I have seen tested on these modules:
 
-* `PackageManagement` 1.261.424.0
-* `PSScriptAnalyzer` 1.261.441.0
-* `MSOnline` 1.261.441.0
-* `VMWare.PowerCLI`  1.261.459.0
+* `PackageManagement` fixed in 1.261.424.0
+* `PSScriptAnalyzer` fixed in 1.261.441.0
+* `MSOnline` broken in 1.261.449.0 
+* `VMWare.PowerCLI`  fixed in 1.261.459.0
 
 
-
-You may have to run Windows Updates and reboot if Windows Defender is not pulling the most recent definition. I have seen some inconsistent results in my testing on different machines.
+You may have to run Windows Updates and reboot if Windows Defender is not pulling the most recent definition. I have seen some inconsistent results in my testing on different machines. 
 
 It looks like the modules were fixed one at a time. I have a link at the bottom for where to report false positives.
 
