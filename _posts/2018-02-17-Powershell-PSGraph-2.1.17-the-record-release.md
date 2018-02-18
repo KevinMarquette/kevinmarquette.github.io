@@ -248,7 +248,7 @@ Here is that same diagram with `-Show Value` specified for each `Entity`:
 
 ![same sample data model diagram showing values instead of types](/img/datamodelvalue.png)
 
-I pulled that data model from ScottGu's [LINQ to SQL (Part 2 - Defining our Data Model Classes)](https://weblogs.asp.net/scottgu/linq-to-sql-part-2-defining-our-data-model-classes) article because it was such a great sample model.
+I pulled that data model from [Scott Guthrie's](https://twitter.com/scottgu) [LINQ to SQL (Part 2 - Defining our Data Model Classes)](https://weblogs.asp.net/scottgu/linq-to-sql-part-2-defining-our-data-model-classes) article because it was such a great sample model.
 
 # Closing remarks
 
