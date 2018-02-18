@@ -3,11 +3,12 @@ date: 2018-02-17
 layout: post
 title: "Powershell: PSGraph 2.1.17 the record release"
 tags: [PSGraph]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release.png"
+share-img: "http://kevinmarquette.github.io/img/datamodel.png"
 ---
 
 I just released another major update to PSGraph. This release includes new keywords and helps unlock more features of Graphviz. These features will make it easier to build entity and data model diagrams.
 
+![sample data model diagram showing products and orders tables](/img/datamodel.png)
 <!--more-->
 # Index
 
@@ -171,6 +172,8 @@ Here is the same object showing the values.
 
 ![An entity showing the object values](/img/entityvalue.png)
 
+The entity will automatically name each row with the property name. This will allow you to draw edges directly to them. I have a more complex example at the end of this article that shows this in action.
+
 ## -Name
 
 If you have a small collection of objects that you want to place on a graph, make sure you give each one a custom name.
@@ -196,6 +199,53 @@ The `Export-PSGraph` command has a parameter called `-ShowGraph` that will show 
     Graph {
         Node test
     } | Show-PSGraph
+
+# Pulling it together
+
+I opened the article with this simple 4 table diagram.
+
+    $product = [ordered]@{
+        ProductName = 'Sandbox'
+        ProductID = 'P4576'
+        CategoryID = 'C728'
+        Description = 'Tractor tire with sand'
+    }
+
+    $Category = [ordered]@{
+        CategoryID = 'C728'
+        CategoryName = 'Backyard'
+    }
+
+    $OrderDetail = [ordered]@{
+        OrderID = 'O3294'
+        ProductID = 'P4576'
+        UnitPrice = 280.00
+        Quantity = 1
+    }
+
+    $Order = [ordered]@{
+        OrderID = 'O3294'
+        CustomerID = 'C1034'
+        Address = '123 Street, Irvine CA'
+    }
+
+    Graph @{rankdir='LR'} {
+
+        Entity $Product -Name Product
+        Entity $Category -Name Category
+        Entity $OrderDetail -Name OrderDetail
+        Entity $Order -Name Order
+
+        Edge Product:CategoryID -to Category:CategoryID
+        Edge OrderDetail:OrderID -to Order:OrderID
+        Edge OrderDetail:ProductID -to Product:ProductID
+    } | Show-PSGraph
+
+![sample data model diagram showing products and orders tables](/img/datamodel.png)
+
+Here is that same diagram with `-Show Value` specified for each entity:
+
+![same sample data model diagram showing values instead of types](/img/datamodelvalue.png)
 
 # Closing remarks
 
