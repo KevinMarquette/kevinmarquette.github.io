@@ -225,6 +225,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-01-30 [Powershell: PSGraph, A graph module built on GraphViz](/2017-01-30-Powershell-PSGraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='pwsh'></a>
 # pwsh

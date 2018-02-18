@@ -1,3 +1,4 @@
+* 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-28 [Powershell: Windows Defender vs PowerShell Modules, Peasecto.A](/2018-01-28-Powershell-windows-defender-peasceto-powershell/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-26 [Powershell: My thoughts on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-12-17 [Powershell: Introducing PSGraphPlus with Show-GitGraph](/2017-12-17-Powershell-Introducing-PSGraphPlus/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2017-11-20 [Powershell: Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-11-14 [Powershell: Tracking changes](/2017-11-14-Powershell-tracking-changes-for-anything/?utm_source=blog&utm_medium=blog&utm_content=recent)
