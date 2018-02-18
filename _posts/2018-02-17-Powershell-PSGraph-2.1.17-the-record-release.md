@@ -202,7 +202,7 @@ The `Export-PSGraph` command has a parameter called `-ShowGraph` that will show 
 
 # Pulling it together
 
-I opened the article with this simple 4 table diagram.
+I opened the article with a table diagram showing the `Entity` command in action. I create 4 hahstables that represent database tables. I provide sample data so the types can be auto-discovered. I add all 4 of them to the graph as an `Entity` with a `-Name`. Then I create edges between the properties that would be the primary and foreign key relationships.
 
     $product = [ordered]@{
         ProductName = 'Sandbox'
@@ -239,6 +239,7 @@ I opened the article with this simple 4 table diagram.
         Edge Product:CategoryID -to Category:CategoryID
         Edge OrderDetail:OrderID -to Order:OrderID
         Edge OrderDetail:ProductID -to Product:ProductID
+
     } | Show-PSGraph
 
 ![sample data model diagram showing products and orders tables](/img/datamodel.png)
@@ -246,6 +247,7 @@ I opened the article with this simple 4 table diagram.
 Here is that same diagram with `-Show Value` specified for each entity:
 
 ![same sample data model diagram showing values instead of types](/img/datamodelvalue.png)
+
 
 # Closing remarks
 
