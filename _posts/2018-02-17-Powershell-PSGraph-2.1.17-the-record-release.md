@@ -244,7 +244,7 @@ I opened the article with a table diagram showing the `Entity` command in action
 
 ![sample data model diagram showing products and orders tables](/img/datamodel.png)
 
-Here is that same diagram with `-Show Value` specified for each entity:
+Here is that same diagram with `-Show Value` specified for each `Entity`:
 
 ![same sample data model diagram showing values instead of types](/img/datamodelvalue.png)
 
@@ -255,7 +255,7 @@ For people coming from Graphviz, the `Record` is not a true record object as def
 
 I don't offer a lot of customization on these new objects yet. The look and style is a little rigid for now. I have not decided on the best way to expose and implement the styling options yet.
 
-I have already found the use of `Record` and `Row` to be useful in my graphs. I should have added them a long time ago. If you find any bugs or unexpected behavior, feel free to open an issue on the [GitHub project page](https://github.com/KevinMarquette/PSGraph).
+I have already found the use of `Record` to be useful in my graphs. I should have added it a long time ago. If you find any bugs or unexpected behavior, feel free to open an issue on the [GitHub project page](https://github.com/KevinMarquette/PSGraph).
 
 The 2.1.17 release is already live on the PSGallery.
 
