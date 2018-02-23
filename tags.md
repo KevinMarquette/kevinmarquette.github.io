@@ -196,6 +196,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-26 [Powershell: My thoughts on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-28 [Powershell: Windows Defender vs PowerShell Modules, Peasecto.A](/2018-01-28-Powershell-windows-defender-peasceto-powershell/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
