@@ -60,3 +60,5 @@ Or do the reverse and query a server to figure out what role or environment it i
 # Closing thoughts
 
 My main example was servers, but this applies to all common sources of data. Having the data available makes it easier for you to use it too. So go make your `Get-MyServer` function and let me know how well it works for you.
+
+After I initially posted this, [Mike Shepard](https://twitter.com/MikeShepard70) shared with me an article he wrote that takes this idea a little deeper with more examples: [It’s 10 O’Clock. Do you know where your servers are?](https://powershellstation.com/2013/12/13/its-10-oclock-do-you-know-where-your-servers-are/). it is defiitly worth a read.
