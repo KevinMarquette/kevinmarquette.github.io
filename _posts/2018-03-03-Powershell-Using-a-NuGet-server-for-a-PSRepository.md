@@ -20,11 +20,11 @@ A NuGet server or feed is the reccomended way to distribute your modules. This i
 
 A NuGet feed also makes it easy to distribute modules to systems that are not part of your domain. This is just a website when it comes down to it. If you open access up to your DMZ, those systems can pull modules off this feed.
 
-A file share is fine for local testing but for production you want a NuGet feed. With docker, you will see it is just as easy to test with a NuGet feed.
+A file share is fine for local testing but for production you want a NuGet feed. With Docker, you will see it is just as easy to test with a NuGet feed.
 
 # Getting Started
 
-The first thing we need is a NuGet server. There are lot of options for creating your own site to host feeds and there are a few pre-built servers available. The Microsoft docs has a good list here: [Hosting your own NuGet feeds](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). For todays post, we are going to spin up an instance in Docker.
+The first thing we need is a NuGet server. There many options for creating your own site to host feeds and there are a few pre-built servers available. The Microsoft docs site has a good list here: [Hosting your own NuGet feeds](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). For todays post, we are going to spin up an instance in Docker.
 
 
 ## docker run sunside/simple-nuget-server
@@ -47,12 +47,12 @@ The [sunside/simple-nuget-server](https://hub.docker.com/r/sunside/simple-nuget-
 
 Make sure you save that `$apiKey`. We will need it in later examples.
 
-I'm running this on my Windows 10 system so I had to make sure my local docker was set to run linux containers.
+I'm running this on my Windows 10 system so I had to make sure my local Docker was set to run linux containers.
 
 
 # Register this repository
 
-Now that our server is running, we need to register it as a repository. The docker run command mapped port 80 to port 5000 on our localhost.
+Now that our server is running, we need to register it as a repository. The `docker run` command mapped port 80 to port 5000 on our localhost.
 
     Import-Module PowerShellGet
 
@@ -90,4 +90,4 @@ The focus of this article was on Modules, but you can use NuGet to distribute ot
 
 I found that having them in the same feed creates a lot of clutter and makes your feed more confusing. Running `Find-Package` would list your modules. If you called `Install-Package` on a module, it does not install it like `Install-Module` would. Create different feeds for different package types.
 
-This docker container is the simplest NuGet server possible so it only supports the one feed. If you use any of the pre-packaged NuGet servers, then you should have the option to configure more feeds.
+This Docker container is the simplest NuGet server possible so it only supports the one feed. If you use any of the pre-packaged NuGet servers, then you should have the option to configure more feeds.
