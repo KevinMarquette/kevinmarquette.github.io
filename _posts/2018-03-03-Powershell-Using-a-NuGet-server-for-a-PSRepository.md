@@ -6,7 +6,7 @@ tags: [PowerShell,NuGet,PowerShellGet,Modules]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository.png"
 ---
 
-In my post talking about [Your first internal PSScript repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget), I used a network share to show how easy it is to get started. I am going to take that idea to the next step and publish a module to a NuGet server. This is how we manage our modules internally.
+In my post talking about [Your first internal PSScript repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget), I used a network share to show how easy it is to get started. I am going to take that idea to the next step and publish a module to a [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) server. This is how we manage our modules internally.
 <!--more-->
 
 # Index
@@ -24,7 +24,7 @@ A file share is fine for local testing but for production you want a NuGet feed.
 
 # Getting Started
 
-The first thing we need is a NuGet server. There many options for creating your own site to host feeds and there are a few pre-built servers available. The Microsoft docs site has a good list here: [Hosting your own NuGet feeds](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). For todays post, we are going to spin up an instance in Docker.
+The first thing we need is a NuGet server. There many options for creating your own site to host feeds and there are a few pre-built servers available. The Microsoft docs site has a good list here: [Hosting your own NuGet feeds](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview). If you are already using VSTS (Visual Studio Team Services), they have a [NuGet Package Management](https://www.visualstudio.com/team-services/package-management/) offering that you can use. For todays post, we are going to spin up a local instance in Docker.
 
 
 ## docker run sunside/simple-nuget-server
