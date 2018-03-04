@@ -84,7 +84,7 @@ One important difference is that we need to provide a NuGet API key when publish
 
 This is the same API key we specified when setting up the server.
 
-# Regular Packages
+# Regular packages
 
 The focus of this article was on Modules, but you can use NuGet to distribute other packages too. We package all of our software installs as NuGet packages and distribute them with `Install-Package`. But I do recommend that you do not mix modules and regular packages.
 
