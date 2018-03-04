@@ -17,6 +17,9 @@ Setting up a basic internal repository for scripts and modules is surprisingly s
 
 We need the `PowerShellGet` module and a folder on a network share.
 
+--Update 2018-03-03--
+I have a follow up post where I use a NuGet Docker container instead of a network share: [Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=psscriptrepo)
+
 ## PowerShellGet
 
 > "PowerShellGet module contains cmdlets for discovering, installing, updating and publishing the PowerShell artifacts like Modules, DSC Resources, Role Capabilities and Scripts from the https://www.PowerShellGallery.com and other private repositories." -[JuanPablo Jofre: The PowerShell Gallery](https://msdn.microsoft.com/powershell/gallery/readme)
@@ -112,4 +115,8 @@ Personally, I have never published a script to any repository before now. With t
 
 # In closing
 
-I mostly wanted to bring more visibility to using `Register-PSRepository` to create this basic repository. This could be a good stepping stone on your way to setting up a proper [NuGet server](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
+I mostly wanted to bring more visibility to using `Register-PSRepository` to create this basic repository. This could be a good stepping stone on your way to setting up a proper NuGet Server.
+
+--Update 2018-03-03--
+I have a follow up post where I use a NuGet Docker container instead of a network share: [Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=psscriptrepo)
+

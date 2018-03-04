@@ -74,6 +74,8 @@ This is the same example that I used in my last article except I am now using th
     MyRepository Trusted            http://localhost:5000/
     PSGallery    Untrusted          https://www.powershellgallery.com/api/v2/
 
+You may notice that `MyRepository` is trusted. If you take a close look at the parameters that were used to register it, I set `InstallationPolicy = 'Trusted'`.
+
 # Using your repository
 
 You use this repository just like any other repository. I already covered how to use `Publish-Module`, `Find-Module`, and `Install-Module` from a repository in my [Your first internal PSScript repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget) post. All those commands still apply to this repository so I am not going to cover all of them again.
