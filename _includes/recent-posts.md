@@ -1,4 +1,4 @@
-* 2018-03-06 [Powershell: Publishing community modules to an internal Repository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2018-03-06 [Powershell: Publishing community modules to an internal PSRepository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=recent)
