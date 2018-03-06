@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Publishing community modules to an intneral Repository"
+title: "Powershell: Publishing community modules to an internal Repository"
 date: 2018-03-06
 tags: [PowerShell,Modules,Build]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-03-06-Powershell-Managing-community-modules.png"
