@@ -99,3 +99,5 @@ The focus of this article was on Modules, but you can use NuGet to distribute ot
 I found that having them in the same feed creates a lot of clutter and makes your feed more confusing. Running `Find-Package` would list your modules. If you called `Install-Package` on a module, it does not install it like `Install-Module` would. Create different feeds for different package types.
 
 This Docker container is the simplest NuGet server possible so it only supports the one feed. If you use any of the pre-packaged NuGet servers, then you should have the option to configure more feeds.
+
+In my next post, I cover [publishing community modules to an internal Repository](/2018-03-06-Powershell-Managing-community-modules).
