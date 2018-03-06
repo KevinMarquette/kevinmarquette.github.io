@@ -139,7 +139,7 @@ If everything checks out, then we can publish the modules to our internal reposi
 
         $publishParam = @{
             Path        = $path
-            Repository  = `MyRepository`
+            Repository  = 'MyRepository'
             NuGetApiKey = $apiKey
             Force       = $true
         }
