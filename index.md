@@ -27,6 +27,7 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 {% include recent-posts.md %}
 * [More](/tags/?utm_source=blog&utm_medium=blog&utm_content=recent)
+
 ## PSHonolulu
 
 [PSHonolulu](https://github.com/KevinMarquette/PSHonolulu) is a PowerShell Module that allows you to launch Honolulu to a specified server with a `Show-Computer $ComputerName` command.
