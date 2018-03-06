@@ -13,7 +13,7 @@ As your library of scripts and automation grows, everything you do will start to
 
 What you need is a `Get-MyServer` function. Put all your server list building logic into that function. Even if all it does is import a csv at first.
 
-``` PowerShell
+``` powershell
     function Get-MyServer
     {
         [cmdletbinding()]
@@ -24,7 +24,7 @@ What you need is a `Get-MyServer` function. Put all your server list building lo
 
 Over time, you can add features to your function and all your future scripts will benefit from it. Adding a quick filter can make a big difference in your `Get-MyServer` function.
 
-``` PowerShell
+``` powershell
     function Get-MyServer
     {
         [cmdletbinding()]
