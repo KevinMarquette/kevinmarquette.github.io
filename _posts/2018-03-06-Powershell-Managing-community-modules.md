@@ -10,7 +10,7 @@ I touched base on the idea of [Using a NuGet server for a PSRepository](/2018-03
 
 I'm already using the internal repository for my modules and I like the idea of having all my modules published to one place.
 
-There are several reasons to use an internal repository. The primary one is when your servers or systems don't have access to the external internet. Another reason is to control the version of the modules in use across your teams and servers. My primary reason is so I can test them before they get introduced to my environment.
+There are several reasons to use an internal repository. The primary one is when your servers or systems don't have access to the external internet. Another reason is to control the version of the modules in use across your teams and servers. My primary reason is so I can test them before they get introduced into my environment.
 
 
 # Index
@@ -26,7 +26,7 @@ Here is the plan. We write a script to download the modules that we care about. 
 
 We need to have a way to define the list of modules that we will manage. I use a JSON document that looks like this:
 
-``` JSON
+``` json
     {
         "Modules":[
             {
@@ -55,7 +55,7 @@ The last section is how I define what projects to test and in what order to test
 
 My script will walk the module list and execute `Save-Module` for each one. In this example, I am saving them to an `output` folder.
 
-``` PowerShell
+``` powershell
     $config = Get-Content -Path .\config.json | ConvertFrom-Json
     foreach ( $module in $config.Modules )
     {
@@ -90,7 +90,7 @@ At the moment, I download the entire list of modules even if I don't need to upd
 
 After I download the module, I import them in the same order.
 
-``` PowerShell
+``` powershell
     foreach( $module in $config.Modules )
     {
         $path = Join-Path .\Output $module.Name
@@ -104,7 +104,7 @@ This is the first sanity check on these modules. You should be able to call `Imp
 
 This is the point where I test all my projects that depend on these modules. All of my modules have a `build.ps1` script that processes my project and runs the Pester tests. This step looks something like this:
 
-``` PowerShell
+``` powershell
     foreach($project in $config.TestOrder)
     {
         $repo = 'https://github.com/KevinMarquette/{0}.git' -f $project
@@ -132,7 +132,7 @@ Having the opportunity to run these tests is the whole reason I built this pipel
 
 If everything checks out, then we can publish the modules to our internal repository.
 
-``` PowerShell
+``` powershell
     foreach($module in $config.Modules)
     {
         $path = '.\Output\{0}\*\{0}.psd1' -f $module.Name
