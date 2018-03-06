@@ -31,6 +31,7 @@ The first thing we need is a NuGet server. There many options for creating your 
 
 The [sunside/simple-nuget-server](https://hub.docker.com/r/sunside/simple-nuget-server/) was the first container that I could find. Here is the command that I ran to start this instance.
 
+``` PowerShell
     $apiKey = New-Guid
     $arguments = @(
         'run'
@@ -44,6 +45,7 @@ The [sunside/simple-nuget-server](https://hub.docker.com/r/sunside/simple-nuget-
     )
 
     Start-Process Docker -ArgumentList $arguments -Wait -NoNewWindow
+```
 
 Make sure you save that `$apiKey`. We will need it in later examples.
 
@@ -54,6 +56,7 @@ I'm running this on my Windows 10 system so I had to make sure my local Docker w
 
 Now that our server is running, we need to register it as a repository. The `docker run` command mapped port 80 to port 5000 on our localhost.
 
+``` PowerShell
     Import-Module PowerShellGet
 
     $uri = 'http://localhost:5000'
@@ -64,6 +67,7 @@ Now that our server is running, we need to register it as a repository. The `doc
         InstallationPolicy = 'Trusted'
     }
     Register-PSRepository @repo
+```
 
 This is the same example that I used in my last article except I am now using the uri to my server.
 
@@ -82,7 +86,9 @@ You use this repository just like any other repository. I already covered how to
 
 One important difference is that we need to provide a NuGet API key when publishing.
 
+``` PowerShell
     Publish-Module -Name MyModule -Repository MyRepository -NuGetApiKey $apiKey
+```
 
 This is the same API key we specified when setting up the server.
 

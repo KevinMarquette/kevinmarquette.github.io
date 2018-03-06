@@ -1,3 +1,4 @@
+* 2018-03-06 [Powershell: Publishing community modules to an intneral Repository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2018-01-26 [Powershell: My thoughts on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-06 [What have you done with PowerShell this year?](/2018-01-06-Powershell-2017-in-review/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2017-12-29 [Powershell: What is pwsh.exe](/2017-12-29-Powershell-what-is-pwsh/?utm_source=blog&utm_medium=blog&utm_content=recent)

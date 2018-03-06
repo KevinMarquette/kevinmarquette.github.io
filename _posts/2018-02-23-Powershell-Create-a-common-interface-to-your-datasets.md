@@ -13,20 +13,27 @@ As your library of scripts and automation grows, everything you do will start to
 
 What you need is a `Get-MyServer` function. Put all your server list building logic into that function. Even if all it does is import a csv at first.
 
+``` PowerShell
     function Get-MyServer
     {
+        [cmdletbinding()]
+        param()
         Import-CSV $PSScriptRoot\servers.csv
     }
+```
 
 Over time, you can add features to your function and all your future scripts will benefit from it. Adding a quick filter can make a big difference in your `Get-MyServer` function.
 
+``` PowerShell
     function Get-MyServer
     {
+        [cmdletbinding()]
         param($ComputerName = '*')
 
         Import-CSV $PSScriptRoot\servers.csv |
             Where ComputerName -like $ComputerName
     }
+```
 
 I would even go so far as to create a module just for functions like these.
 
