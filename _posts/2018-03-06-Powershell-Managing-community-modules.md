@@ -24,7 +24,7 @@ Here is the plan. We write a script to download the modules that we care about. 
 
 # The list
 
-We need to have a way to define the list of modules that we will manage. I use a JSON document that looks like this:
+We need to have a way to define the list of modules that we will manage. I use a JSON document called `config.json` that looks like this:
 
 ``` json
     {
@@ -53,7 +53,7 @@ The last section is how I define what projects to test and in what order to test
 
 # Downloading modules
 
-My script will walk the module list and execute `Save-Module` for each one. In this example, I am saving them to an `output` folder.
+My script will walk the module list and execute `Save-Module` for each one. In this example, I am saving them to a `downloads` folder.
 
 ``` powershell
     $config = Get-Content -Path .\config.json | ConvertFrom-Json
@@ -61,7 +61,7 @@ My script will walk the module list and execute `Save-Module` for each one. In t
     {
         $saveParam = @{
             Name = $module.Name
-            Path = '.\Output'
+            Path = '.\downloads'
             Repository = 'PSGallery'
         }
 
@@ -76,15 +76,15 @@ My script will walk the module list and execute `Save-Module` for each one. In t
 
 At the moment, I download the entire list of modules even if I don't need to update them. The reason I do this is that I need them available for testing. After this runs, we have a local copy of each module.
 
-    PS> Get-ChildItem .\output\
+    PS> Get-ChildItem .\downloads\
 
-    Directory: .\output
+    Directory: .\downloads
 
     Mode                LastWriteTime         Length Name
     ----                -------------         ------ ----
-    d-----         3/5/2018   4:54 AM                Pester
-    d-----         3/5/2018   4:54 AM                Plaster
-    d-----         3/5/2018   4:54 AM                PSScriptAnalyzer
+    d-----         3/5/2018   4:54 PM                Pester
+    d-----         3/5/2018   4:54 PM                Plaster
+    d-----         3/5/2018   4:54 PM                PSScriptAnalyzer
 
 # Import the modules
 
@@ -93,7 +93,7 @@ After I download the module, I import them in the same order.
 ``` powershell
     foreach( $module in $config.Modules )
     {
-        $path = Join-Path .\Output $module.Name
+        $path = Join-Path .\downloads $module.Name
         Import-Module $path -Force
     }
 ```
@@ -120,9 +120,9 @@ You don't have to have a build script for this to work. Calling `Invoke-Pester` 
 
 ## Why this is important
 
-The reason I rebuild everything and run all my tests is to know if any module will cause me issues before I introduce it into my environment. I want to catch this failure here before someone else discovers it on their machine or after they update modules on a server.
+The reason I rebuild everything and run all my tests is to know if any module will cause me issues before I introduce it into my environment. I want to catch this failure here before someone else discovers it on their machine, or after they update modules on a server.
 
-I run the full build because my build process depends on a lot of community modules. My built and published module may be fine, but I still want the build to work without issue on every system. It's easy to control version on the CI/CD pipeline, but this allows me to detect these problems early.
+I run the full build because my build process depends on a lot of community modules. My built and published module may be fine, but I still want the build to work without issue on every system. It's easy to control versioning on the CI/CD pipeline, but this allows me to detect these problems early.
 
 When the tests fail, I get to intervene and root cause the issue before anything actually breaks. I can pin the version of the module in the `config.json` while I remediate the tests or the project that does not work with the updated module.
 
@@ -135,7 +135,7 @@ If everything checks out, then we can publish the modules to our internal reposi
 ``` powershell
     foreach($module in $config.Modules)
     {
-        $path = '.\Output\{0}\*\{0}.psd1' -f $module.Name
+        $path = '.\downloads\{0}\*\{0}.psd1' -f $module.Name
 
         $publishParam = @{
             Path        = $path
