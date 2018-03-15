@@ -163,6 +163,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-12 [Powershell: Adventures in Plaster](/2017-05-12-Powershell-Plaster-adventures-in/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-14 [Powershell: GetPlastered, a Plaster template to create a Plaster template](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='Podcast'></a>
+# Podcast
+
+* 2018-03-14 [Powershell: The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='PowerShell'></a>
 # PowerShell
 
