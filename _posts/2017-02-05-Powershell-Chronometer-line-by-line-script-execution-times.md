@@ -14,7 +14,7 @@ I just published a new module to the [Powershell Gallery](https://www.powershell
 # How does that work?
 This idea was inspired by Pester's ability to give you the code coverage of your tests. I took a close look at it and they did something clever. They set a breakpoint for every line in the specified script. Then after they run all the tests, they walk the breakpoints to see how many were hit.
 
-I decided to do the same thing and measure the time deltas between executions. I was able to flesh out a working prototype failry quickly and then spent the next several days polishing it into something usable.
+I decided to do the same thing and measure the time deltas between executions. I was able to flesh out a working prototype fairly quickly and then spent the next several days polishing it into something usable.
 
 Because I have the line by line execution times, I also tracked how many times each line was ran. There are also other stats that I collect like average, min and max times.
 
