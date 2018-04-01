@@ -233,7 +233,7 @@ This is just like `Get-Content -Path $Path` in that you will end up with a colle
 
 The `$Path` must be the full path or it will try to save the file to your `C:\Windows\System32` folder. This is why I use `Resolve-Path` in this example.
 
-Here is an example CmdLet that I built around these .Net calls: [Import-Content](https://github.com/KevinMarquette/PowershellWorkspace/blob/master/Modules/Kevmar/functions/Import-Content.ps1)
+Here is an example Cmdlet that I built around these .Net calls: [Import-Content](https://github.com/KevinMarquette/PowershellWorkspace/blob/master/Modules/Kevmar/functions/Import-Content.ps1)
 
 ## Writes with System.IO.StreamWriter
 

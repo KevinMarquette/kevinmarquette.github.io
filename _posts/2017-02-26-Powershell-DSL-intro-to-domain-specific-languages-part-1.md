@@ -117,9 +117,9 @@ Here is an example of how it was used:
 The pattern was to import the contents of a file into a string like the one above and either `Invoke-Expression` on it or create a `[scriptblock]` and run `invoke()`.
 
 ## The original DSL feature
-After tracking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of CmsLets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.  
+After tracking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of Cdmlets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.  
 
-# CmdLet based DSL example
+# Cmdlet based DSL example
 The most common way we have seen a custom DSL implemented in Powershell is with CmdLets. They tend not to use the noun-verb structure and they make heavy use of positional parameters. Lets take a look at an example from pester.
 
     Describe "Unit Test" {
@@ -149,6 +149,6 @@ This looks a little more like the Powershell we know, but it still takes advanta
 If you had to write all your tests like that it would be easier to just write your tests with normal Powershell. Hopefully that helps show the value of a well written DSL.
 
 # What's next?
-Next week we will build a DSL based CmdLet to generate rdg files for Microsoft's Remote Desktop Connection Manager. I can't say that we need a DSL for that but it will be a simple example that introduces a few different techniques.
+Next week we will build a DSL based Cmdlet to generate rdg files for Microsoft's Remote Desktop Connection Manager. I can't say that we need a DSL for that but it will be a simple example that introduces a few different techniques.
 
 Continue to part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
