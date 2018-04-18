@@ -56,6 +56,10 @@ I even added `-All` as a switch to create a breakpoint at each point in the call
 
     $error[0] | ConvertTo-BreakPoint -All
 
+## VSCode debugger
+
+In my experimentation with VSCode and `Set-PSBreakpoint`; I discovered that you have to have the debugger running for `Set-PSBreakpoint` to set breakpoints. There is an issue on github about this already. This is why I did the demo video in the ISE.
+
 # Where do I find it?
 
 This is already published in the PSGallery. You can install it and start experimenting with it right away.
@@ -81,6 +85,3 @@ I tried something new and recored the creation of this module from the start. I 
 
 Let me know on [Twitter](https://twitter.com/KevinMarquette) if this is something you would like to see me do more of. I would love to hear your feedback.
 
-# VSCode debugger
-
-In my experimentation with VSCode and `Set-PSBreakpoint`; I discovered that you have to have the debugger running for `Set-PSBreakpoint` to set breakpoints. There is an issue on github about this already. This is why I did the demo video in the ISE.
