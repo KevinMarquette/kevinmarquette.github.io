@@ -19,6 +19,8 @@ One idea came to me while sitting in [Kirk Munro](https://twitter.com/Poshoholic
 
 I often check the `$error[0].ScriptStackTrace` for the source of an error and then go place a breakpoint where the error was raised. I realized that I could parse the `ScriptStackTrace` and call `Set-PSBreakPoint` directly. It is a fairly simple idea and it turned out to be just as easy to write.
 
+![PSGraph](/img/ConvertTo-Breakpoint.gif)
+
 # Putting it all together
 
 If you ever looked at a `ScriptStackTrace` on an error, you would see something like this:
@@ -51,8 +53,6 @@ I added proper pipeline support so you can give it all your errors.
 I even added `-All` as a switch to create a breakpoint at each point in the callstack instead of just the source of the error.
 
     $error[0] | ConvertTo-BreakPoint -All
-
-![PSGraph](/img/ConvertTo-Breakpoint.gif)
 
 # Where do I find it?
 
