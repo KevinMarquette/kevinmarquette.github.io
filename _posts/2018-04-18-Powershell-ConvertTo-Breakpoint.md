@@ -23,17 +23,16 @@ I often check the `$error[0].ScriptStackTrace` for the source of an error and th
 
 If you ever looked at a `ScriptStackTrace` on an error, you would see something like this:
 
+    PS> $error[0].ScriptStackTrace
     at New-Error, C:\workspace\ConvertTo-Breakpoint\testing.ps1: line 2
     at Get-Error, C:\workspace\ConvertTo-Breakpoint\testing.ps1: line 6
     at <ScriptBlock>, C:\workspace\ConvertTo-Breakpoint\testing.ps1: line 9
 
-While the data is just a string, it is very consistent and easy to parse with regex. Here is the regex pattern that I used:
-
-    'at .+, (?<Script>.+): line (?<Line>\d+)'
+While the data is just a string, it is very consistent and easy to parse with regex. Here is the regex pattern that I used to match each line: `at .+, (?<Script>.+): line (?<Line>\d+)`
 
 I was a little fancy and used [named sub-expression matches](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog#regex-matches). I do this so I can access them by name with `$matches.Script` and `$matches.Line`.
 
-Once I had the data that I needed, it was a simple call to `Set-PSBreakPoint` to set the breakpoint.
+Once I had the data that I needed, it was a quick call to `Set-PSBreakPoint` to set the breakpoint.
 
     Set-PSBreakPoint -Script $matches.Script -Line $matches.Line
 
@@ -53,7 +52,7 @@ I even added `-All` as a switch to create a breakpoint at each point in the call
 
     $error[0] | ConvertTo-BreakPoint -All
 
-![PSGraph](/img/ConvertTo-Breakpoint.png)
+![PSGraph](/img/ConvertTo-Breakpoint.gif)
 
 # Where do I find it?
 
