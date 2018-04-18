@@ -40,6 +40,8 @@ Once I had the data that I needed, it was a quick call to `Set-PSBreakPoint` to 
 
 I put a bit more polish on it and called it `ConvertTo-Breakpoint`.
 
+I do a full step by step walk of the entire function in this video: [ConvertTo-Breakpoint: Writing the cmdlet](https://youtu.be/2tsA1zsIwGE?t=27m26s).
+
 # How to use
 
 This is the cool part. I can now take any `$error` and pipe it to `ConvertTo-Breakpoint`. Then a breakpoint will be created where the error was thrown.
@@ -64,7 +66,7 @@ If you would like to checkout the source, I published it on github with all my o
 
 * [https://github.com/KevinMarquette/ConvertTo-Breakpoint](https://github.com/KevinMarquette/ConvertTo-Breakpoint/blob/master/module/public/ConvertTo-Breakpoint.ps1)
 
-# On video
+# More videos
 
 I tried something new and recored the creation of this module from the start. I walk through the idea, prototype it, create tests, create the function, build the module, add build scripts, and publish it. The entire process was captured.
 
