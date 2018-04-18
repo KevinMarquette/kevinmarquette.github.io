@@ -30,114 +30,156 @@ HTML, CSS, XML and SQL are all DSLs. Here are some basic snippets.
 
 _HTML_
 
+``` html
     <html>
         <body>
         <h1>My heading</h1>
             A basic page of html
         </body>
     </html>
+```
 
 _CSS_
 
-    h1 {
-        color: red;
-    }
-    
+``` css
+p {
+  color: red;
+  text-align: center;
+}
+```
+
 _XML_
 
-    <persons>
-        <person name="Kevin Marquette" />
-    <persons>
+``` xml
+<persons>
+    <person first="Kevin" last="Marquette" />
+<persons>
+```
 
 _SQL_
 
-    Select Name From tablePerson Where ID = 1
+``` sql
+Select Name From tablePerson Where ID = 1
+```
 
-In each case they have their own domain of terminology and patterns. We also have several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph/) are all implemented as a DSL. 
+In each case they have their own domain of terminology and patterns. We also have several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph/) are all implemented as a DSL.
 
 _DSC_
 
-    Configuration myConfig {
-        Node 'localhost' {
-            File 'tools' {
-                Destination = 'c:\tools'
-            }
+``` powershell
+Configuration myConfig {
+    Node 'localhost' {
+        File 'tools' {
+            Destination = 'c:\tools'
         }
     }
+}
+```
 
 _Pester_
 
-    Describe "Unit Test" {
-        It "Does something" {
-            "Something" | Should Be "Something"
-        }
+``` powershell
+Describe "Unit Test" {
+    It "Does something" {
+        "Something" | Should -Be "Something"
     }
+}
+```
 
 _psake_
 
-    Task default -Depends Test
+``` powershell
+Task default -Depends Test
 
-    Task Test -Depends Compile {
-        "This is a test"
-    }
+Task Test -Depends Compile {
+    "This is a test"
+}
 
-    Task Compile {
-        "Compile"
-    }
+Task Compile {
+    "Compile"
+}
+```
 
-_psraph_
+_InvokeBuild_
 
-    Graph "myGraph" {
-        Node @{shape='rectangle'}
-        Edge start,middle,end        
-    }
+``` powershell
+Task Default Test
+
+Task Test Compile,{
+    "This is a test"
+}
+
+Task Compile {
+    "Compile"
+}
+```
+
+_PSGraph_
+
+``` powershell
+Graph {
+    Node @{shape='rectangle'}
+    Edge start -To end
+}
+```
 
 # A DSL in Powershell
 There are two approaches to creating a DSL. The first one uses data sections to limit available commands. The other abuses the mechanics of parameters. It is worth learning both because they can be mixed together.
 
 # Data sections
-There is a little known keyword in Powershell that lets you define a [data section](https://technet.microsoft.com/en-us/library/dd347678.aspx). This is a script block that only contains data unless you specify otherwise. 
+There is a little known keyword in Powershell that lets you define a [data section](https://technet.microsoft.com/en-us/library/dd347678.aspx). This is a script block that only contains data unless you specify otherwise.
 
+``` powershell
     Data {'Hellow Wolrd'}
+```
 
 It can handle some basic logic but most cmdlets are not allowed to be executed in a data section. If you have some special commands that you want to include, then you need specify them as `-SupportedCommands`.
 
-    DATA -SupportedCommand Format-XML {    
+``` powershell
+    DATA -SupportedCommand Format-XML {
         Format-XML -strings string1, string2, string3
     }
+```
 
 ## In practice
 I went looking for examples in Github. The common use case I saw for this was when importing a text file that contained their specific DSL. The `-SuppportedCommand` was used to limit the text file to only data and their DSL commands.
 
 Here is an example of how it was used:
 
+``` powershell
     $Content = Get-Conent -Path $Path
-    Invoke-Expression -Command "DATA -SupportedCommand Import-DscConfigurationData,Import-PSEncryptedCredential,Import-PSEncryptedData {$($Content)}" 
+    Invoke-Expression -Command "DATA -SupportedCommand Import-DscConfigurationData,Import-PSEncryptedCredential,Import-PSEncryptedData {$($Content)}"
+```
 
 The pattern was to import the contents of a file into a string like the one above and either `Invoke-Expression` on it or create a `[scriptblock]` and run `invoke()`.
 
 ## The original DSL feature
-After tracking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of Cdmlets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.  
+After tracking down some early talks about how Powershell can be used for creating a DSL, I feel that this was the feature they were talking about. I think the use of Cdmlets for DSLs the way I describe in the next section was unexpected when they first arrived on the scene.
 
 # Cmdlet based DSL example
 The most common way we have seen a custom DSL implemented in Powershell is with CmdLets. They tend not to use the noun-verb structure and they make heavy use of positional parameters. Lets take a look at an example from pester.
 
+``` powershell
     Describe "Unit Test" {
         It "Does something" {
             "Something" | Should Be "Something"
         }
     }
+```
 
 At first glance, that looks nothing like Powershell. Let me translate that into traditional Powershell.
 
+``` powershell
     Describe -Name "Unit Test" -Fixture {
         It -Name "Does Something" -Fixture {
             Should -ActualValue "Something" -Be -ExpectedContent "Something"
         }
     }
+```
 
 This looks a little more like the Powershell we know, but it still takes advantage of the `[scriptblock]` in a less common way. Here is one more translation that don't nest the `[scriptblock]`.
 
+``` powershell
     $TestScript = {
         Should -ActualValue "Something" -Be -ExpectedContent "Something"
     }
@@ -145,6 +187,7 @@ This looks a little more like the Powershell we know, but it still takes advanta
         It -Name "Does Something" -Fixture $TestScript
     }
     Describe -Name "Unit Test" -Fixture $DescribeScript
+```
 
 If you had to write all your tests like that it would be easier to just write your tests with normal Powershell. Hopefully that helps show the value of a well written DSL.
 
@@ -152,3 +195,5 @@ If you had to write all your tests like that it would be easier to just write yo
 Next week we will build a DSL based Cmdlet to generate rdg files for Microsoft's Remote Desktop Connection Manager. I can't say that we need a DSL for that but it will be a simple example that introduces a few different techniques.
 
 Continue to part 2: [Writing a DSL for RDC Manager](/2017-03-04-Powershell-DSL-example-RDCMan)
+
+test

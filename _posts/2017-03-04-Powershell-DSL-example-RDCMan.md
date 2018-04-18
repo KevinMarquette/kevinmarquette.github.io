@@ -98,6 +98,7 @@ There was a lot more stuff in that file, but I think we can abstract it away in 
 
 The `Server` element looks really easy. We just need a function that returns that chunk of XML with the correct server name.
 
+``` powershell
     function Get-RdcServer
     {
         param($ComputerName)
@@ -109,6 +110,7 @@ The `Server` element looks really easy. We just need a function that returns tha
         </server>
     "@
     }
+```
 
 This would be a great start, but I want to spruce it up a bit to give us more flexibility. Here is a full advanced function that we will use going forward.
 
