@@ -80,3 +80,7 @@ I tried something new and recored the creation of this module from the start. I 
 * [Bug hunt](https://www.youtube.com/watch?v=IWH9M5E03Wg&list=PLOcTmsj9WHDp61KpLt4d5k5SOsq_BTQDX&index=5&t=0s)
 
 Let me know on [Twitter](https://twitter.com/KevinMarquette) if this is something you would like to see me do more of. I would love to hear your feedback.
+
+# VSCode debugger
+
+In my experimentation with VSCode and `Set-PSBreakpoint`; I discovered that you have to have the debugger running for `Set-PSBreakpoint` to set breakpoints. There is an issue on github about this already. This is why I did the demo video in the ISE.
