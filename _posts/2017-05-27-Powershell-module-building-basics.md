@@ -65,7 +65,7 @@ Sometimes you may have utility functions in your module that should stay interna
         param($ComputerName)
         Get-WmiObject -ComputerName $ComputerName -Class Win32_BIOS
     }
-    Export-ModuleMember -Functions 'GetInfo'
+    Export-ModuleMember -Function 'GetInfo'
 
 If you don't call `Export-ModuleMember` to specify exactly what you want exported, then everything is exported from this `.psm1` file.
 

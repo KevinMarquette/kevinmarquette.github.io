@@ -229,7 +229,7 @@ This is something I have done for a long time and already have a good module loa
         }
     }
 
-    Export-ModuleMember -function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
+    Export-ModuleMember -Function (Get-ChildItem -Path "$PSScriptRoot\public\*.ps1").basename
 
 
 Because I have a build process, I may end up adding a build step to pull all these external files into the psm1 file at publish time. The module would load faster if it did that. 
