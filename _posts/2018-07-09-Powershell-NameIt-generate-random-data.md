@@ -5,7 +5,7 @@ date: 2018-07-09
 tags: [PowerShell,Modules]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-07-09-Powershell-NameIt-generate-random-data.png"
 ---
-I find that I often need random datasets for testing or as examples in my presentations. My favorite tool for that is [NameIt](https://github.com/dfinke/NameIT). This is a PowerShell module written by [Doug Finke](https://twitter.com/dfinke) that makes it super easy to create good looking but random data.
+I find that I often need random datasets for testing or for examples in my presentations. My favorite tool for that is [NameIT](https://github.com/dfinke/NameIT). This is a PowerShell module written by [Doug Finke](https://twitter.com/dfinke) that makes it super easy to create good looking but random data.
 
     PS:> Invoke-Generate '[person]' -Count 3
     Heather Rogers
@@ -19,7 +19,7 @@ I find that I often need random datasets for testing or as examples in my presen
 * TOC
 {:toc}
 
-# Installing NameIt
+# Installing NameIT
 
 This module is published to the PSGallery. All we have to do is install it.
 
@@ -34,19 +34,19 @@ This module is published to the PSGallery. All we have to do is install it.
     PS:> Invoke-Generate
     lhcqalmf
 
-The real magic happens when we start to provide template strings with patterns in them. Quite often, we have a pattern in mind and NameIt lets us build on that. Here we use '?' for random characters and '#' for random numbers.
+The real magic happens when we start to provide template strings with patterns in them. Quite often, we have a pattern in mind and NameIT lets us build on that. Here we use '?' for random characters and '#' for random numbers.
 
     PS:> Invoke-Generate "cafe###-???"
     cafe176-yhj
 
 ## Template functions
 
-There is also support for in-line template functions for common patterns or random data. If we need a random name and an address for example:
+There is also support for in-line template functions for common patterns. If we need a random name and an address for example:
 
     PS:> Invoke-Generate "[person], [address]"
     Sarah Garcia, 10096 Tililebuik Commons
 
-The reason that I use NameIt is because it includes a good set of template functions that are easy to use.
+The reason that I use NameIT is because it includes a good set of template functions that are easy to use.
 
     `[alpha]`: selects a random character (constrained by the -Alphabet parameter).
     `[numeric]`: selects a random numeric (constrained by the -Numbers parameter).
@@ -186,11 +186,11 @@ There is also nothing wrong with creating an object with random properties.
     }
 ```
 
-This is exactly how I create my test objects.
+I don't have to craft some special string this way. It's all PowerShell. This is exactly how I create my test objects.
 
 # NameIT in action
 
-With the basics out of the way, Let's take a look at some more examples that I used for other projects.
+Here are a few examples that I pulled out of my scripts where I am alrady using NameIT.
 
 ## Example server info
 
