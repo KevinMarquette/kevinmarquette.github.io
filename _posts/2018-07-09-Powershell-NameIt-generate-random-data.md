@@ -34,7 +34,7 @@ This module is published to the PSGallery. All we have to do is install it.
     PS:> Invoke-Generate
     lhcqalmf
 
-The real magic happens when we start to provide template strings with patterns in them. Quite often, we have a pattern in mind and NameIT lets us build on that. Here we use '?' for random characters and '#' for random numbers.
+The real magic happens when we start to provide template strings with patterns in them. Quite often, we have a pattern in mind and NameIT lets us build on that. Here we use '?' for random letters and '#' for random numbers.
 
     PS:> Invoke-Generate "cafe###-???"
     cafe176-yhj
