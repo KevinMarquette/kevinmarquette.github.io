@@ -1,3 +1,4 @@
+* 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-14 [Powershell: The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-06 [Powershell: Publishing community modules to an internal PSRepository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-01-28 [Powershell: Windows Defender vs PowerShell Modules, Peasecto.A](/2018-01-28-Powershell-windows-defender-peasceto-powershell/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2018-01-26 [Powershell: My thoughts on the future of DSC](/2018-01-26-Powershell-Future-of-DSC/?utm_source=blog&utm_medium=blog&utm_content=recent)

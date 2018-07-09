@@ -6,29 +6,31 @@ https://kevinmarquette.github.io
 I am the sole maintainer of a website that shares my open source PowerShell projects and it hosts my PowerShell blog. In the last 12 months, I have 32 new posts up.
 
 According to Google analytics, here are my stats for the last 12 months.
-New Users: 227,343
-Sessions: 364,963
-Page Views: 418,135
+New Users: 261,967
+Sessions: 425,640
+Page Views: 486,414
 
-Posts: 32
-Visitors: 227000
+Posts: 26
+Visitors: 425640
 
 ---
-User Group Owner
+Site Owner
 Own and manage a website for a PowerShell user group
 http://socalpowershell.org
 This is the main landing page for the SoCal PowerShell user group. I own the domain, created and manage the site for the user group.
 
 I don't have any tracking info on this website.
 
+Posts: 1
+
 ---
-Webcast
+User Group Owner
 8/1/2017
 Creator and owner of the SoCal PowerShell user group
 https://www.meetup.com/SoCal-PowerShell-user-group/
 I started and run the user group on Aug 1st, 2017 and have held monthly group sessions.
-meetings: 7
-members: 89
+meetings: 8
+members: 104
 
 ---
 Webcast
@@ -37,7 +39,7 @@ Episode 6 - Interview with Kevin Marquette from the SoCal PowerShell User Group
 https://powershellnews.podbean.com/e/interview-with-kevin-marquette-from-the-socal-powershell-user-group/
 Mick was heading to San Diego from the Microsoft MVP Global Summit in Seattle and made a stopover to do a podcast in person with Kevin Marquette and Harjit Dhaliwal from Seattle.
 
-Downloads: 643
+Downloads: 845
 
 ---
 Forum Participation
@@ -56,8 +58,8 @@ commits: 9
 
 ---
 Open Source Projects
-Select-AST
 2/25/2018
+Select-AST
 https://github.com/KevinMarquette/Select-Ast
 Created and maintain a module for working with the PowerShell AST
 Projects: 1
@@ -69,7 +71,7 @@ Open Source Projects
 Maintainer of PSGraphPlus
 https://github.com/KevinMarquette/PSGraphPlus
 I maintain an open source Powershell module that graphs basic information about the local system
-
+Commits: 30
 ---
 
 Open Source Projects
@@ -149,7 +151,7 @@ Video
 PowerShell Hashtables as presented to the SoCalPowerShell user group
 https://www.youtube.com/watch?v=EtHxfTfZD3I
 I presented to the SoCal PowerShell user group on how to work with PowerShell Hashtables
-Views: 192
+Views: 229
 
 ---
 
@@ -158,10 +160,10 @@ Video
 SoCal PowerShell User Group: Working with PSGraph
 https://www.youtube.com/watch?v=pR_xzZh9qoI
 I presented to the SoCal PowerShell user group on how to work with the PSGraph PowerShell module
-Views: 113
+Views: 125
 
 ---
-Conference Presentation
+Speaking (Conference)
 4/12/2018
 Writing A DSL (Domain Specific Language) for PowerShell
 https://powershelldevopsglobalsummit2018.sched.com/event/CrVQ
@@ -169,6 +171,15 @@ I gave a presentation at the PowerShell and DevOps Summit as part of the main de
 Attendees: 60
 ---
 
+Speaking (User Group)
+5/1/2017
+Custom DSC Resources with Kevin Marquette
+https://www.meetup.com/SoCal-PowerShell-user-group/events/248384828/
+I presented to the SoCal PowerShell user group on how to create custom DSC resource.
+
+Attendees: 23
+
+---
 blog
 https://kevinmarquette.github.io/blog
 
@@ -184,3 +195,4 @@ https://github.com/KevinMarquette
 facebook
 https://www.facebook.com/kevin.marquette
 
+YouTube

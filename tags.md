@@ -121,6 +121,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-10-14 [PowerShell: Automatic Module Semantic Versioning](/2017-10-14-Powershell-module-semantic-version/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-03-06 [Powershell: Publishing community modules to an internal PSRepository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Monthly'></a>
 # Monthly
@@ -213,6 +214,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-03-06 [Powershell: Publishing community modules to an internal PSRepository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
