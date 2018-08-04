@@ -173,10 +173,10 @@ From the root of our project, we can run this command to create the module manif
 
 ``` posh
     $manifestSplat = @{
-        Path = ".\$module\$module.psd1"
-        Author = 'Kevin Marquette'
-        NestedModules = @('bin\MyModule.dll')
-        RootModule = "$module.psm1"
+        Path              = ".\$module\$module.psd1"
+        Author            = 'Kevin Marquette'
+        NestedModules     = @('bin\MyModule.dll')
+        RootModule        = "$module.psm1"
         FunctionsToExport = @('Resolve-MyCmdlet')
     }
     New-ModuleManifest @manifestSplat
@@ -197,8 +197,10 @@ I compile everything together into an output folder. We need to create a build s
 ``` posh
     $module = 'MyModule'
     Push-Location $PSScriptroot
+
     dotnet build $PSScriptRoot\src -o $PSScriptRoot\output\$module\bin
     Copy-Item "$PSScriptRoot\$module\*" "$PSScriptRoot\output\$module" -Recurse -Force
+
     Import-Module "$PSScriptRoot\Output\$module\$module.psd1"
     Invoke-Pester "$PSScriptRoot\Tests"
 ```
@@ -238,6 +240,12 @@ I do most of my PowerShell dev work in [VSCode](https://code.visualstudio.com). 
 ### Nested PowerShell sessions
 
 One other option is to have good Pester test coverage. Then you can adjust the build.ps1 script to start a new PowerShell session, perform the build, run the tests, then close the session.
+
+### Updating installed modules
+
+This locking can be annoying when trying to update your locally installed module. If any session has it loaded, you have to go hunt it down and close it. This is less of an issue when installing from a PSGallery because module versioning places the new one in a different folder.
+
+You can set up a local PSGallery and publish to that as part of your build. Then do your local install from that PSGallery. This sounds like a lot of work, but this can be as simple as starting a docker container. I cover a way to do that in my post on [Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=standardlibrary).
 
 # Why binary modules?
 
