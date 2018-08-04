@@ -267,4 +267,4 @@ I kept the build script simple here. I generally use a large `Invoke-Build` scri
 
 # Final thoughts
 
-Binary modules are very easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but there is plenty of documentation on it. [Windows PowerShell Cmdlet Concepts](https://docs.microsoft.com/en-us/powershell/developer/cmdlet/windows-powershell-cmdlet-concepts). It is definitely something worth experimenting with as a stepping stone into C#.
+Binary modules are very easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but there is plenty of documentation on it. [Windows PowerShell Cmdlet Concepts](https://docs.microsoft.com/en-us/powershell/developer/cmdlet/windows-powershell-cmdlet-concepts). It is definitely something worth experimenting with as a stepping stone into more serious C#.
