@@ -76,7 +76,7 @@ Using the dotnet command, create a new class library.
 
 ``` posh
     dotnet new classlib --name $module
-``` posh
+```
 
 This created the library project in a subfolder but I don't want that extra level of nesting. I am going to move those files up a level.
 
@@ -135,7 +135,7 @@ We need to update the `src\Class1.cs` to contain this starter cmdlet:
 We will rename the file to match the class name.
 
 ``` posh
-    Move-Item .\Class1.cs .\ResolveMyCmdletCommand.cs
+    Rename-Item .\Class1.cs .\ResolveMyCmdletCommand.cs
 ```
 
 Then we can build our module.
@@ -192,7 +192,7 @@ This allows me to mix both normal PowerShell functions and binary Cmdlets in the
 
 ## Building the full module
 
-I compile everything together into an output folder. We need to create a build script to do that. I would normally add this to a `Invoke-Build` script, but we can keep it simple for this example. Add this to a `build.ps1` at the root of the project.
+I compile everything together into an output folder. We need to create a build script to do that. I would normally add this to an `Invoke-Build` script, but we can keep it simple for this example. Add this to a `build.ps1` at the root of the project.
 
 ``` posh
     $module = 'MyModule'
