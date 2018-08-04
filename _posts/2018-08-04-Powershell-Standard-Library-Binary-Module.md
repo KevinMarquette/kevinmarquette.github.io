@@ -41,17 +41,21 @@ I normally use a Plaster template but my current template does not have any bina
 
 First I need to create the folder and create the git repo. I will be using `$module` as a place holder for the module name. This should make it easier for you to reuse these examples if needed.
 
+``` posh
     $module = 'MyModule'
     New-Item -Path $module -Type Directory
     Set-Location $module
     git init
+```
 
 Then create the root level folders.
 
+``` posh
     New-Item -Path 'src' -Type Directory
     New-Item -Path 'Output' -Type Directory
     New-Item -Path 'Tests' -Type Directory
     New-Item -Path $module -Type Directory
+```
 
 ## Binary module setup
 
@@ -221,7 +225,7 @@ Once a binary module is loaded, you can't really unload it. The DLL file will be
 
 ### VSCode reload window action
 
-I do most of my PowerShell dev work in VSCode. When I am working on a binary module (or a module with classes), I have gotten myself into the habit of reloading VSCode every time I build. `Ctrl + Shift + P` will pop the command window and `Reload Window` is always at the top of my list.
+I do most of my PowerShell dev work in [VSCode](https://code.visualstudio.com). When I am working on a binary module (or a module with classes), I have gotten myself into the habit of reloading VSCode every time I build. `Ctrl + Shift + P` will pop the command window and `Reload Window` is always at the top of my list.
 
 ### Nested PowerShell sessions
 
