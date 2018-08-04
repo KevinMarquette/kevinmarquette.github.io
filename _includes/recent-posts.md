@@ -1,3 +1,4 @@
+* 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-14 [Powershell: The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2018-01-28 [Powershell: Windows Defender vs PowerShell Modules, Peasecto.A](/2018-01-28-Powershell-windows-defender-peasceto-powershell/?utm_source=blog&utm_medium=blog&utm_content=recent)
