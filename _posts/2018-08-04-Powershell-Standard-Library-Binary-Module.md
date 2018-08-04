@@ -251,7 +251,7 @@ You can set up a local PSGallery and publish to that as part of your build. Then
 
 I jumped right into how to make a binary module and didn't mention why you would want to make one. In reality, you are writing C# and give up easy access to PowerShell Cmdlets and functions. That is a big reason why I have not shifted to binary modules sooner.
 
-But if you are creating a module that does not depend on a lot of other PowerShell commands, the performance benefit can be quite large. By dropping into C#, you get to shed the overhead added by PowerShell. PowerShell was optimized for the administrator, not the computer. A little overhead is expected.
+But if you are creating a module that does not depend on a lot of other PowerShell commands, the performance benefit can be quite large. By dropping into C#, you get to shed the overhead added by PowerShell. PowerShell was optimized for the administrator, not the computer and that adds a little overhead.
 
 At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized the PowerShell as much as we could but this process was still running for 12 minutes. The module already contained a lot of C# style PowerShell. This made the conversion to a binary module was very clean and easy to do. Our conversion cut that process down from over 12 minutes to under 4 minutes. That opened my eyes a little bit.
 
