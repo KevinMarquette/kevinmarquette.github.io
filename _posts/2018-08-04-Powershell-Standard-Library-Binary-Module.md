@@ -6,7 +6,7 @@ tags: [PowerShell,Module]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-04-Powershell-Standard-Library-Binary-Module.png"
 ---
 
-I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module with the .NET Core command-line interface tools](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra commentary along the way.
+I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra commentary along the way.
 
 <!--more-->
 
@@ -37,7 +37,7 @@ The plan for this module is to create a `src` folder for the C# code and structu
 
 # Getting Started
 
-I normally use a Plaster template but my current template does not have any binary module support yet. Not a big deal, so I'll create this one by hand.
+I normally use a Plaster template but my current template does not have any binary module support yet. Not a big deal, I'll create this one by hand this time.
 
 First I need to create the folder and create the git repo. I will be using `$module` as a place holder for the module name. This should make it easier for you to reuse these examples if needed.
 
@@ -59,14 +59,14 @@ Then create the root level folders.
 
 ## Binary module setup
 
-The focus of this will be on the binary module so that is where we will start. This section pulls examples from the [Creating a cross-platform binary module with the .NET Core command-line interface tools](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide so please review it if you need more details or have any issues.
+The focus of this will be on the binary module so that is where we will start. This section pulls examples from the [Creating a cross-platform binary module](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide. Please review that guide if you need more details or have any issues.
 
 First thing we want to do is check the version of the [dotnet core SDK](https://www.microsoft.com/net/download/core) that we have installed. I am using 2.1.4, but you should have 2.0.0 or newer before continuing.
 
     PS:> dotnet --version
     2.1.4
 
-I will be working out of the src folder for this section.
+I will be working out of the `src` folder for this section.
 
 ``` posh
     Set-Location 'src'
@@ -111,6 +111,7 @@ We are now ready to add our own code to the project.
 
 We need to update the `src\Class1.cs` to contain this starter cmdlet:
 
+``` csharp
     using System;
     using System.Management.Automation;
 
@@ -129,8 +130,9 @@ We need to update the `src\Class1.cs` to contain this starter cmdlet:
             }
         }
     }
+```
 
-We should also rename the file to match the class name.
+We will rename the file to match the class name.
 
 ``` posh
     Move-Item .\Class1.cs .\ResolveMyCmdletCommand.cs
@@ -169,6 +171,7 @@ It's cool that we can import the dll and have a working module. I like to keep g
 
 From the root of our project, we can run this command to create the module manifest that we need.
 
+``` posh
     $manifestSplat = @{
         Path = ".\$module\$module.psd1"
         Author = 'Kevin Marquette'
@@ -177,10 +180,13 @@ From the root of our project, we can run this command to create the module manif
         FunctionsToExport = @('Resolve-MyCmdlet')
     }
     New-ModuleManifest @manifestSplat
+```
 
 I'm also going to create an empty root module for future PowerShell functions.
 
+``` posh
     Set-Content -Value '' -Path ".\$module\$module.psm1"
+```
 
 This allows me to mix both normal PowerShell functions and binary Cmdlets in the same project.
 
@@ -211,7 +217,9 @@ This will build our DLL and place it into our `output\$module\bin` folder. It wi
 
 At this point, we are able to import our module with the psd1 file.
 
+``` posh
     Import-Module ".\Output\$module\$module.psd1"
+```
 
 From here, we can drop the `.\Output\$module` folder into our `$env:PSModulePath` directory and it will auto-load our command whenever we need it.
 
@@ -235,15 +243,15 @@ One other option is to have good Pester test coverage. Then you can adjust the b
 
 I jumped right into how to make a binary module and didn't mention why you would want to make one. In reality, you are writing C# and give up easy access to PowerShell Cmdlets and functions. That is a big reason why I have not shifted to binary modules sooner.
 
-But if you are creating a module that does not depend on a lot of other PowerShell commands, the performance benefit can be quite large. By dropping into C#, you get to shed the overhead added by PowerShell. PowerShell was optimized for the administrator, not the computer. So a little overhead is expected.
+But if you are creating a module that does not depend on a lot of other PowerShell commands, the performance benefit can be quite large. By dropping into C#, you get to shed the overhead added by PowerShell. PowerShell was optimized for the administrator, not the computer. A little overhead is expected.
 
-At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized the PowerShell as much as we could but this process was still running for 12 minutes. The module already contained a lot of C# style PowerShell so the conversion to a binary module was very clean and easy to do. Our conversion cut that process down from over 12 minutes to under 4 minutes. That opened my eyes a little bit.
+At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized the PowerShell as much as we could but this process was still running for 12 minutes. The module already contained a lot of C# style PowerShell. This made the conversion to a binary module was very clean and easy to do. Our conversion cut that process down from over 12 minutes to under 4 minutes. That opened my eyes a little bit.
 
 ## Hybrid modules
 
-You can mix a binary Cmdlets with PowerShell advanced functions. That is exactly what I am doing in this guide. So you can take everything you know about script modules and it all applies the same way. The empty psm1 that I created today is there just so you can drop in other PowerShell functions.
+You can mix a binary Cmdlets with PowerShell advanced functions. That is exactly what I am doing in this guide. You can take everything you know about script modules and it all applies the same way. The empty `psm1` file that I created today is there just so you can drop in other PowerShell functions laters.
 
-Almost all of the compiled cmdlets that we created started out as a PowerShell function first. So all of our binary modules are really hybrid modules.
+Almost all of the compiled cmdlets that we created started out as a PowerShell function first. All of our binary modules are really hybrid modules.
 
 ## Build scripts
 
