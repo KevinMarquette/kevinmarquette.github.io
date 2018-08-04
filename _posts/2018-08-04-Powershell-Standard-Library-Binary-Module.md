@@ -253,11 +253,11 @@ I jumped right into how to make a binary module and didn't mention why you would
 
 But if you are creating a module that does not depend on a lot of other PowerShell commands, the performance benefit can be quite large. By dropping into C#, you get to shed the overhead added by PowerShell. PowerShell was optimized for the administrator, not the computer and that adds a little overhead.
 
-At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized the PowerShell as much as we could but this process was still running for 12 minutes. The module already contained a lot of C# style PowerShell. This made the conversion to a binary module was very clean and easy to do. Our conversion cut that process down from over 12 minutes to under 4 minutes. That opened my eyes a little bit.
+At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized the PowerShell as much as we could but this process was still running for 12 minutes. The module already contained a lot of C# style PowerShell. This made the conversion to a binary module very clean and easy to do. Our conversion cut that process down from over 12 minutes to under 4 minutes. That opened my eyes a little bit.
 
 ## Hybrid modules
 
-You can mix a binary Cmdlets with PowerShell advanced functions. That is exactly what I am doing in this guide. You can take everything you know about script modules and it all applies the same way. The empty `psm1` file that I created today is there just so you can drop in other PowerShell functions laters.
+You can mix binary Cmdlets with PowerShell advanced functions. That is exactly what I am doing in this guide. You can take everything you know about script modules and it all applies the same way. The empty `psm1` file that I created today is there just so you can drop in other PowerShell functions later.
 
 Almost all of the compiled cmdlets that we created started out as a PowerShell function first. All of our binary modules are really hybrid modules.
 
