@@ -6,7 +6,7 @@ tags: [PowerShell,Module]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-04-Powershell-Standard-Library-Binary-Module.png"
 ---
 
-I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module with the .NET Core command-line interface tools](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra comentary along the way.
+I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module with the .NET Core command-line interface tools](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra commentary along the way.
 
 <!--more-->
 
@@ -64,13 +64,17 @@ First thing we want to do is check the version of the [dotnet core SDK](https://
 
 I will be working out of the src folder for this section.
 
-   Set-Location 'src'
+``` posh
+    Set-Location 'src'
+```
 
 Using the dotnet command, create a new class library.
 
-   dotnet new classlib --name $module
+``` posh
+    dotnet new classlib --name $module
+``` posh
 
-This created the library project in a subfolder but I don't want that extra level of nesting so I am going to move those files up a level.
+This created the library project in a subfolder but I don't want that extra level of nesting. I am going to move those files up a level.
 
 ``` posh
     Move-Item -Path .\$module\* -Destination .\
@@ -101,7 +105,7 @@ We are now ready to add our own code to the project.
 
 ### Building a binary cmdlet
 
-I'm going to update the `src\Class1.cs` to contain this starter cmdlet:
+We need to update the `src\Class1.cs` to contain this starter cmdlet:
 
     using System;
     using System.Management.Automation;
@@ -146,8 +150,8 @@ Then we can build our module.
 
 We can call `Import-Module` on the new dll and it will load our new CMDlet.
 
-    PS:> Import-Module .\bin\Debug\netstandard2.0\MyModule.dll
-    PS:> Get-Command -Module MyModule
+    PS:> Import-Module .\bin\Debug\netstandard2.0\$module.dll
+    PS:> Get-Command -Module $module
 
     CommandType Name                    Version Source
     ----------- ----                    ------- ------
@@ -157,7 +161,7 @@ If the import fails on your system, try updating .Net to 4.7.1 or newer. The [Cr
 
 ## Module manifest
 
-It's cool that we can import the dll and we have a working module. I like to keep going with it and create a module manifest. We will need this if we want to publish to the PSGallery.
+It's cool that we can import the dll and have a working module. I like to keep going with it and create a module manifest. We will need this if we want to publish to the PSGallery later.
 
 From the root of our project, we can run this command to create the module manifest that we need.
 
@@ -178,7 +182,7 @@ This allows me to mix both normal PowerShell functions and binary Cmdlets in the
 
 ## Building the full module
 
-I like to compile everything together into an output folder. We need to create a build script to do that. I would normally add this to a `Invoke-Build` script, but we can keep it simple for this example. Add this to a `build.ps1` at the root of the project.
+I compile everything together into an output folder. We need to create a build script to do that. I would normally add this to a `Invoke-Build` script, but we can keep it simple for this example. Add this to a `build.ps1` at the root of the project.
 
 ``` posh
     $module = 'MyModule'
@@ -205,7 +209,7 @@ At this point, we are able to import our module with the psd1 file.
 
     Import-Module ".\Output\$module\$module.psd1"
 
-From here, we can drop the `.\Output\$module` folder into our module directory and it will auto-load our command whenever we need it.
+From here, we can drop the `.\Output\$module` folder into our `$env:PSModulePath` directory and it will auto-load our command whenever we need it.
 
 # Important details
 
@@ -213,7 +217,7 @@ Before we end this article, here are a few other details worth mentioning.
 
 ## Unloading DLL's
 
-Once a binary module is loaded, you can't really unload it. The DLL file will also be locked until you unload it. This can be annoying when developing because every time you make a change and want to build it, the file will often be locked. The only reliable way to resolve this is to close the PowerShell session that loaded the DLL.
+Once a binary module is loaded, you can't really unload it. The DLL file will be locked until you unload it. This can be annoying when developing because every time you make a change and want to build it, the file will often be locked. The only reliable way to resolve this is to close the PowerShell session that loaded the DLL.
 
 ### VSCode reload window action
 
