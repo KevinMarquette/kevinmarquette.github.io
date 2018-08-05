@@ -9,6 +9,7 @@ share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-04-Powershell-
 I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra commentary along the way.
 
 <!--more-->
+--Update:-- I found an easier way to do a few of the binary module steps and I added them to the end of the article.
 
 # Index
 
@@ -268,3 +269,24 @@ I kept the build script simple here. I generally use a large `Invoke-Build` scri
 # Final thoughts
 
 Binary modules are very easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but there is plenty of documentation on it. [Windows PowerShell Cmdlet Concepts](https://docs.microsoft.com/en-us/powershell/developer/cmdlet/windows-powershell-cmdlet-concepts). It is definitely something worth experimenting with as a stepping stone into more serious C#.
+
+# Update: dotnet new PSModule
+
+I learned that there is a `PSModule` `dotnet new` template.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">It&#39;s worthwhile adding that dotnet new recently added templating for PS:<br>dotnet new -i Microsoft.PowerShell.Standard.Module.Template<br>dotnet new psmodule<br>(taken from <a href="https://twitter.com/TylerLeonhardt?ref_src=twsrc%5Etfw">@TylerLeonhardt</a> : <a href="https://t.co/RGLVcjGXUF">https://t.co/RGLVcjGXUF</a>)</p>&mdash; Chris Bergmeister [MVP] (@CBergmeister) <a href="https://twitter.com/CBergmeister/status/1026153832617783296?ref_src=twsrc%5Etfw">August 5, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+All the steps that I outlined above are still valid, but this template cuts a lot of them out. It is still a fairly new template that is still getting some polish placed on it. Expect it to keep getting better from here.
+
+This is how you use install and use the PSModule template.
+
+``` posh
+    dotnet new -i Microsoft.PowerShell.Standard.Module.Template
+    dotnet new psmodule
+    dotnet build
+    Import-Module "bin\Debug\netstandard2.0\$module.dll"
+    Get-Module $module
+```
+
+This minimal viable template takes care of adding the .Net SDK, PowerShell Standard Library, and creates an example class in the project. You can build it and run it right away.
