@@ -3,11 +3,6 @@ layout: page
 title: PowerShell
 ---
 
-# Index
-
-* TOC
-{:toc}
-
 # Popular reference pages
 
 * [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=popref)
@@ -20,7 +15,7 @@ title: PowerShell
 * [Regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=popref)
 * [More](/tags/?utm_source=blog&utm_medium=blog&utm_content=popref)
 
-# About me
+# About Kevin Marquette
 
 I am a Sr. DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
 
