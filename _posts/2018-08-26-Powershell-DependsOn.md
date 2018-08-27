@@ -131,7 +131,7 @@ This will produce this list:
 
 # DependsOn alias
 
-The alias for `Resolve-DependencyOrder` is `DependsOn`. I thing the name is\ a little long so I personally prefer the alias for this one.
+The alias for `Resolve-DependencyOrder` is `DependsOn`. I thing the name is a little long so I personally prefer the alias for this one.
 
 ``` posh
     $familyTree |
@@ -175,7 +175,7 @@ I used a hashtable here, but it easily could have been a call to a database or a
 This module is published to the PSGallery.
 
 ``` posh
-    Install-Module DependsOne -Scope CurrentUser
+    Install-Module DependsOn -Scope CurrentUser
 ```
 
 # About DependsOn
