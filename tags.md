@@ -108,6 +108,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2016-08-28 [PowerShell: Passing variables to remote commands](/2016-08-28-PowerShell-variables-to-remote-commands/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='loanDepot'></a>
+# loanDepot
+
+* 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='Module'></a>
 # Module
 
@@ -221,6 +226,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet

@@ -23,15 +23,10 @@ subtitle: Sr. DevOps Engineer
     }
 }
 </script>
-I am a Sr. DevOps Engineer for LoanDepot in Orange County, CA. I have been very passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
+I am a Sr. DevOps Engineer for LoanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
 
-Social Media
-* [Twitter](https://twitter.com/KevinMarquette)
+## Social Media / Contact Info
+* [Email: kevmar@gmail.com](mailto:kevmar@gmail.com)
+* [Twitter: @KevinMarquette](https://twitter.com/KevinMarquette)
 * [GitHub](https://github.com/KevinMarquette)
 * [LinkedIn](https://www.linkedin.com/in/kevinmarquette)
-
-Projects
-* [PSGraph](/2017-01-30-Powershell-PSGraph/)
-* [Chronometer](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/)
-
-
