@@ -180,6 +180,18 @@ I presented to the SoCal PowerShell user group on how to create custom DSC resou
 Attendees: 23
 
 ---
+
+Speaking (User Group)
+5/1/2017
+Everything you wanted to know about hashtables
+https://www.meetup.com/Research-Triangle-PowerShell-Users-Group/events/251494859/
+I presented to the Research Triangle PowerShell user group about hashtables.
+
+Attendees: 60
+
+---
+
+---
 blog
 https://kevinmarquette.github.io/blog
 

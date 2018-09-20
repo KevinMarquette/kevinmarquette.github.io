@@ -1,3 +1,4 @@
+* 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2018-03-14 [Powershell: The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-06 [Powershell: Publishing community modules to an internal PSRepository](/2018-03-06-Powershell-Managing-community-modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-03-03 [Powershell: Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2018-02-23 [Powershell: You need a Get-MyServer function](/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets/?utm_source=blog&utm_medium=blog&utm_content=recent)

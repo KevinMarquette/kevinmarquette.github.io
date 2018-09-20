@@ -1,4 +1,4 @@
-Task Default UpdateTags, RecentPosts, Build
+Task Default UpdateTags, RecentPosts, Build, Image
 
 Task UpdateTags -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\tags.md" {
     .\UpdateTags.ps1
@@ -13,10 +13,10 @@ Task RecentPosts -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscr
 }
 
 Task Build {
-    docker run --rm -it --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder jekyll/jekyll /bin/sh -c 'cd /srv/jekyll; bundle install; bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
+    docker run --rm -it --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder jekyll/jekyll /bin/sh -c 'cd /srv/jekyll; bundle update; bundle install; bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
 }
 
-Task Run Stop, Build, {
+Task Run {
     'Starting container to host this site' 
     docker run --name bloghost --volume=$($PSScriptRoot)/_site:/usr/share/nginx/html:ro -d -p 8080:80 nginx
     'http://localhost:8080'
