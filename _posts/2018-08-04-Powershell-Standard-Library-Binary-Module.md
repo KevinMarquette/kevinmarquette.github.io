@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: How to create a Standard Library Binary Module"
 date: 2018-08-04
-tags: [PowerShell,Module]
+tags: [PowerShell,Modules]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-04-Powershell-Standard-Library-Binary-Module.png"
 ---
 

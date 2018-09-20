@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Building Modules with the Azure DevOps Pipeline"
 date: 2018-09-20
-tags: [PowerShell]
+tags: [PowerShell,Modules]
 share-img: "/img/share-img/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline.png"
 ---
 Microsoft just released a new [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/?nav=min) service offering called [Azure Pipleines](https://azure.microsoft.com/en-us/services/devops/pipelines) that is free for open source projects. I decided to check it out by moving my PSGraph build and release pipeline over to Azure Pipelines.
