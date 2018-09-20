@@ -57,7 +57,7 @@ One important detail about my previous build was that I had an encrypted value f
 
 I started with the `Variables` tab on the build. I added a new one with the name `NuGetApiKey`, specified my API key, then clicked the little padlock icon to secure it. If you don't remember your API Key, then you can generate a new one from the PSGallery website.
 
-![Build variables](/img/azuredevops/08 variables.png)
+![Build variables](/img/azuredevops/08 Variables.png)
 
 Build variables are normally also environment variables. But this is not automatic for the secured variables. So we have to map it into our script. So go back to the tasks and select the PowerShell build step that we added previously. Expand the Environment variables and add our API Key. I used the same name so it is called `NuGetApiKey` with a value of `$(NuGetApiKey)`.
 
