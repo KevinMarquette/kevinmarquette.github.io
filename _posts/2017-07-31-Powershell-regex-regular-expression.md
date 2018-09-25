@@ -35,7 +35,7 @@ You can use normal numbers and characters in your patterns for exact matches. Th
     () sub-expression 
     \  escape the next character
 
-So a pattern of `\d\d\d-\d\d-\d\d\d\d` will match a social security number. Three digits, then a dash, two digits, then a dash and then 4 digits. There are better and more compact ways to represent that same pattern. But this will work for our examples today.
+So a pattern of `\d\d\d-\d\d-\d\d\d\d` will match a USA social security number. Three digits, then a dash, two digits, then a dash and then 4 digits. There are better and more compact ways to represent that same pattern. But this will work for our examples today.
 
 
 ## Regex resources
