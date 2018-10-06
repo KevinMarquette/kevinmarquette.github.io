@@ -32,7 +32,7 @@ You can use normal numbers and characters in your patterns for exact matches. Th
     \w alpha numeric [a-zA-Z0-9_]
     \s whitespace character
     .  any character except newline
-    () sub-expression 
+    () sub-expression
     \  escape the next character
 
 So a pattern of `\d\d\d-\d\d-\d\d\d\d` will match a USA social security number. Three digits, then a dash, two digits, then a dash and then 4 digits. There are better and more compact ways to represent that same pattern. But this will work for our examples today.
@@ -59,29 +59,38 @@ Documentation and training:
 
 # Select-String
 
-This cmdlet is great for searching files or strings for a text pattern. 
+This cmdlet is great for searching files or strings for a text pattern.
 
+``` posh
     Get-ChildItem -Path $logFolder | Select-String -Pattern 'Error'
+```
 
-This example searches all the files in the `$logFolder` for lines that have the word `Error`. The pattern parameter is a regular expression and in this case, the word `Error` is valid regex. It will find any line that has the word error in it. 
+This example searches all the files in the `$logFolder` for lines that have the word `Error`. The pattern parameter is a regular expression and in this case, the word `Error` is valid regex. It will find any line that has the word error in it.
 
+``` posh
     Get-ChildItem -Path $logFolder |
         Select-String -Pattern '\d\d\d-\d\d-\d\d\d\d'
+```
 
-This one would search text documents for numbers that look like a social security number.
+This one would search text documents for numbers that look like a USA Social Security Number.
 
 
 # -match
 
 The `-match` opperator takes a regular expression and returns `$true` if the pattern matches.
 
-    $message = 'there is an error with your file'
-    $message -match 'error'
+``` posh
+    PS> $message = 'there is an error with your file'
+    PS> $message -match 'error'
+    True
 
-    '123-45-6789' -match '\d\d\d-\d\d-\d\d\d\d'
+    PS> '123-45-6789' -match '\d\d\d-\d\d-\d\d\d\d'
+    True
+```
 
 If you apply a match to an array, you will get a list of all the items that match the pattern.
 
+``` posh
     PS> $data = @(
            "General text without meaning"
            "my ssn is 123-45-6789"
@@ -92,6 +101,7 @@ If you apply a match to an array, you will get a list of all the items that matc
 
     my ssn is 123-45-6789
     another SSN 123-12-1234
+```
 
 ## Variations
 
@@ -107,20 +117,25 @@ The `i` and `c` variants of an operator is available for all comparison operator
 
 The `-like` command is like `-match` except it does not use regex. It uses a simpler wildcard pattern where `?` is any character and `*` is multiple unknown characters.
 
+``` posh
     $message -like '*error*'
+```
 
  One important difference is that the `-like` command expects an exact match unless you include the wildcards. So if you are looking for a pattern within a larger string, you will need to add the wildcards on both ends. `'*error*'`
 
-Sometimes all you need is a basic wildcard and that is where `-like` comes in. 
+Sometimes all you need is a basic wildcard and that is where `-like` comes in.
 
 This operator has `-ilike`, `-clike`, `-notlike` variants.
 
 ## String.Contains()
 
-If all you want to do is test to see if your string has a substring, you can use the `string.contains($substring)` appraoch. 
+If all you want to do is test to see if your string has a substring, you can use the `string.contains($substring)` appraoch.
 
-    $message = 'there is an error with your file'
-    $message.contains('error')
+``` posh
+    PS> $message = 'there is an error with your file'
+    PS> $message.contains('error')
+    True
+```
 
 `string.contains()` is case sensitive. This will perform faster then using the other opperators for this substring scenario.
 
@@ -128,6 +143,7 @@ If all you want to do is test to see if your string has a substring, you can use
 
 The replace command uses regex for it's pattern matching.
 
+``` posh
     PS> $message = "Hi, my name is Dave."
     PS> $message -replace 'Dave','Kevin'
     Hi, my name is Kevin.
@@ -135,6 +151,7 @@ The replace command uses regex for it's pattern matching.
     PS> $message = "My SSN is 123-45-6789."
     PS> $message -replace '\d\d\d-\d\d-\d\d\d\d', '###-##-####'
     My SSN is ###-##-####.
+```
 
 The other variants of this command are `-creplace` and `-ireplace`.
 
@@ -142,9 +159,11 @@ The other variants of this command are `-creplace` and `-ireplace`.
 
 The .Net `String.Replace($pattern,$replacement)` funciton does not use regex. I mention this because it performs faster than `-replace`.
 
+``` posh
     PS> $message = "Hi, my name is Dave."
     PS> $message.replace('Dave','Kevin')
     Hi, my name is Kevin.
+```
 
 This one is also case sensitive. Infact, all the string funtions are case sensitive.
 
@@ -152,14 +171,16 @@ This one is also case sensitive. Infact, all the string funtions are case sensit
 
 This command is very often overlooked as one that uses a regex. We are often splitting on simple patterns that happen to be regex compatible that we never even notice.
 
+``` posh
     PS> 'CA,TX,NE' -split ','
     CA
     TX
     NE
+```
 
 Every once and a while, we will try to use some other character that means something else in regex. This will lead to very unexpected results. If we change our comma to a period, we get a bunch of blank lines.
 
-
+``` posh
     PS> 'CA.TX.NE' -split '.'
 
 
@@ -170,11 +191,14 @@ Every once and a while, we will try to use some other character that means somet
 
 
     PS>
+```
 
 The reason is that `.` will match any character, so in this case it matches every character. It ends up spliting at every character and giving us 9 empty values.
 
+``` posh
     PS> ('CA.TX.NE' -split '.').count
     9
+```
 
 This is why it is important to remember what commands use regex.
 
@@ -190,6 +214,7 @@ Like with the replace command, there is a `String.Split()` function that does no
 
 By default, the `switch` statement does exact matches. But it does have an `-regex` option to use regex matches instead.
 
+``` posh
     switch -regex ($message)
     {
         '\d\d\d-\d\d-\d\d\d\d' {
@@ -202,6 +227,7 @@ By default, the `switch` statement does exact matches. But it does have an `-reg
             Write-Warning 'message may contain a phone number'
         }
     }
+```
 
 This feature of `switch` is often overlooked.
 
@@ -211,17 +237,20 @@ The interesting thing about using regex in a switch is that it will test each pa
 
 Run this example with the above switch statement:
 
+``` posh
     PS> $message = "Hey, call me at 123-456-1234, there is an issue with my 1234-5678-8765-4321 card"
 
     WARNING: message may contain a credit card number
     WARNING: message may contain a phone number
+```
 
 Even though we had one string in the `$message`, 2 of the switch statements executed.
 
 # ValidatePattern
 
-When creating an advanced function, you can add a `[ValidatePattern()]` to your parameter. This will validate the incomming value has the pattern that you expect. 
+When creating an advanced function, you can add a `[ValidatePattern()]` to your parameter. This will validate the incomming value has the pattern that you expect.
 
+``` posh
     function Get-Data
     {
         [cmdletbinding()]
@@ -233,19 +262,23 @@ When creating an advanced function, you can add a `[ValidatePattern()]` to your 
 
         # ... #
     }
+```
 
 This example requests a SSN from the user and it does the validation on the input. This will give the user an error message if not valid. My issue with this is that it does not give a good error message by default.
 
+``` posh
     PS> Get-Data 'Kevin'
 
-    get-data : Cannot validate argument on parameter 'SSN'. The argument "Kevin" does not match 
-    the "\d\d\d-\d\d-\d\d\d\d" pattern. Supply an argument that matches "\d\d\d-\d\d-\d\d\d\d" 
+    get-data : Cannot validate argument on parameter 'SSN'. The argument "Kevin" does not match
+    the "\d\d\d-\d\d-\d\d\d\d" pattern. Supply an argument that matches "\d\d\d-\d\d-\d\d\d\d"
     and try the command again.
+```
 
 ## ValidateScript
 
 One way around that is to use a `[ValidateScript({...})]` instead that throws a custom error message.
 
+``` posh
     [ValidateScript({
         if( $_ -match '\d\d\d-\d\d-\d\d\d\d')
         {
@@ -256,20 +289,40 @@ One way around that is to use a `[ValidateScript({...})]` instead that throws a 
             throw 'Please provide a valid SSN (ex 123-45-5678)'
         }
     })]
+```
 
 Now we get this error message
 
+``` posh
     PS> get-data 'Kevin'
 
     get-data : Cannot validate argument on parameter 'SSN'.
     Please provide a valid SSN (ex 123-45-5678)
+```
 
 It may complicate our parameter, but it is much easier for our users to understand.
+
+## Validate ErrorMessage in PS 6
+
+The use of a validate script just to give a good error message is kind of ugly. A new feature in PS 6 is that you can specify a custom error message for the ValiatePattern by using the ErrorMessage parameter. Here is how you would specify the ErrorMessage
+
+``` posh
+    [ValidatePattern('\d\d\d-\d\d-\d\d\d\d',ErrorMessage = 'The pattern does not match a valid US SSN format.')]
+```
+
+When a value does not match, then the user is presented with the error below.
+
+    Get-Data : Cannot validate argument on parameter 'SSN'. The pattern does not match a valid US SSN format.
+
+While this is a great new feature, it makes the code invalid for older versions of PowerShell. If I run that same code in Windows Powershell, I get this error message:
+
+    Property 'ErrorMessage' cannot be found for type 'System.Management.Automation.ValidatePatternAttribute'.
 
 ## Validators on variables
 
 We mostly think of validators as part of an advanced function but the reality is that they apply to the variable and can be used outside of an advanced function.
 
+``` posh
     PS> [ValidatePattern('\d\d\d-\d\d-\d\d\d\d')]
     PS> [string]$SSN = '123-45-6789'
 
@@ -277,24 +330,32 @@ We mostly think of validators as part of an advanced function but the reality is
 
     The variable cannot be validated because the value `I don't know`
     is not a valid value for the SSN variable.
+```
 
-I can't say that I realy ever do this, but this would be a good trick to know. 
+I can't say that I realy ever do this, but this would be a good trick to know.
 
 # $Matches
 
 When you use the `-match` operator, an automatic variable called `$matches` contains the results of the match. If you have any sub expressions in your regex, those sub matches are also listed.
 
+``` posh
     $message = 'My SSN is 123-45-6789.'
 
     $message -match 'My SSN is (\d\d\d-\d\d-\d\d\d\d)\.'
     $Matches[0]
     $Matches[1]
+```
 
+``` PlainText
+    My SSN is 123-45-6789.
+    123-45-6789
+```
 
 ## Named matches
 
 This is one of my favorite features that most people don't know about.If you use a named regex match, then you can access that match by name on the matches.
 
+``` posh
     $message = 'My Name is Kevin and my SSN is 123-45-6789.'
 
     if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>\d\d\d-\d\d-\d\d\d\d)\.')
@@ -302,6 +363,7 @@ This is one of my favorite features that most people don't know about.If you use
         $Matches.Name
         $Matches.SSN
     }
+```
 
 In the example above, the `(?<Name>.+)` is a named sub expression. This value is then placed in the `$Matches.Name` property. Same goes for SSN.
 
@@ -310,7 +372,9 @@ In the example above, the `(?<Name>.+)` is a named sub expression. This value is
 
 Because this is PowerShell, we have full access to the .net regex object. Most of them are covered by the functionality above. If you are getting into more advanced regex where you need custom options, then take a second look at this object.
 
+``` posh
     [regex]::new($pattern) | Get-Member
+```
 
 All the .Net regex methods are case sensitive.
 
@@ -321,13 +385,20 @@ I'm going to touch on `[regex]::Escape()` because there is not a PowerShell equi
 
 regex is a complex language with common symbols and a shorthand syntax. There are times where you may want to match a literal value instead of a pattern. The `[regex]::Escape()` will escape out all the regex syntax for you.
 
-Take this string for example `(123)456-7890`. It contains regex syntax that may not be obvious to you. 
+Take this string for example `(123)456-7890`. It contains regex syntax that may not be obvious to you.
 
-    $message -match '(123)456-7890'
+``` posh
+    PS> $message = $message = 'My phone is (123)456-7890'
+    PS> $message -match '(123)456-7890'
+    False
+```
 
 You may think this is matching a specific phone number but the thing it would match is `123456-7890`. My point is that when you use a literal string where a regex is expected, that you will get unexpected results. This is where the `[regex]::Escape()` solves that issue.
 
-    $message -match [regex]::Escape('(123)456-7890')
+``` posh
+    PS> $message -match [regex]::Escape('(123)456-7890')
+    True
+```
 
 I don't want to talk on this too much because this is an anti-pattern. If you are needing to regex escape your entire pattern before you match it, then you should use the `String.Contains()` method instead.
 
@@ -335,26 +406,60 @@ The only time you should be escaping a regex is if you are placing that value in
 
 If you are using this in your code. Rethink why you need it because odds are, you are using the wrong operator or method.
 
+# Multiple matches per line
+
+The `-Match` operator will only match once per line so the `$matches` variable only contains that first match. There are times where I want to grab every occurace of a pattern even if there are multiples per line. I have 2 ways that I approach this scenario.
+
+## -AllMatches
+
+`Select-String` offers support for this with the `-AllMatches` parameter. In this case the returned object contains a `Matches` property for every match.
+
+``` posh
+    PS> $data = 'The event runs from 2018-10-06 to 1018-10-09'
+    PS> $datePattern = '\d\d\d\d-\d\d-\d\d'
+    PS> $results = $data | Select-String $datePattern -AllMatches
+    PS> $results.Matches.Value
+
+    2018-10-06
+    2018-10-09
+```
+
+## Regex Matches()
+
+The `[Regex]` object method [Matches](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.matches?view=netframework-4.7.2) is the other option.
+
+``` posh
+    PS> $data = 'The event runs from 2018-10-06 to 1018-10-09'
+    PS> $datePattern = [Regex]::new('\d\d\d\d-\d\d-\d\d')
+    PS> $matches = $datePattern.Matches($data)
+    PS> $matches.Value
+
+    2018-10-06
+    2018-10-09
+```
+
 # Should match
 
 When using Pester tests, the `Should Match` uses a regular expression.
 
+``` posh
     It "contains a SSN"{
         $message = Get-Data
         $message | Should Match '\d\d\d-\d\d-\d\d\d\d'
     }
+```
 
 When with Pester is the exception to the rule of not using `[regex]::Escape()`. Pester does not have a substring match alternative.
 
+``` posh
     It "contains $subString"{
         $message = Get-Data
         $message | Should Match ([regex]::Escape($subString))
     }
-
+```
 
 # Putting it all together
 
 As you can see, there are a lot of places where you can use regex or may already using regex and not even know it. PowerShell did a good job of integrating these into the language. But be wary of using them if performance is a concern and you are not actually using regex pattern.
 
 Let me know if you discover any other common ways to use regex in PowerShell. I would love to hear about them and add them to my list.
-
