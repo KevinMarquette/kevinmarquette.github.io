@@ -9,7 +9,7 @@ tags: [PowerShell,Basics,Arrays]
 
 <!--more-->
 
-# Index
+# Page Index
 
 * TOC
 {:toc}
@@ -113,11 +113,11 @@ This would mean that the last item is at offset 3.
 
 ### Index
 
-And now you can see why I picked the values that I did for this example. I introduced this as an offset because that is what it really is, but it is more commonly referred to as an index. An index that starts at 0. For the rest of this article I will call the offset an index.
+Now you can see why I picked the values that I did for this example. I introduced this as an offset because that is what it really is, but this offset is more commonly referred to as an index. An index that starts at `0`. For the rest of this article I will call the offset an index.
 
 ### Special index tricks
 
-In most languages, you can only specify a single number as the index and get only one item back. PowerShell is much more flexible. You can actually use multiple indexes at once. By providing a list of indexes, we can select several items we want at once.
+In most languages, you can only specify a single number as the index and you will get a single item back. PowerShell is much more flexible. You can use multiple indexes at once. By providing a list of indexes, we can select several items.
 
 ``` posh
     PS> $data[0,2,3]
@@ -126,7 +126,7 @@ In most languages, you can only specify a single number as the index and get onl
     Three
 ```
 
-We can also specify a sequence of numbers with the `..` operator.
+We can specify a sequence of numbers with the `..` operator.
 
 ``` posh
     PS> $data[1..3]
@@ -135,7 +135,7 @@ We can also specify a sequence of numbers with the `..` operator.
     Three
 ```
 
-This also works in reverse.
+This works in reverse too.
 
 ``` posh
     PS> $data[3..1]
@@ -259,7 +259,7 @@ Arrays and the PowerShell pipeline are meant for each other. This is one of the 
 
 ### ForEach loop
 
-The `ForEach` loop also works really well with collections. Using they syntax: `foreach ( <variable> in <collection> )`
+The `ForEach` loop works well with collections. Using they syntax: `foreach ( <variable> in <collection> )`
 
 ``` posh
     foreach ( $node in $data )
@@ -270,7 +270,7 @@ The `ForEach` loop also works really well with collections. Using they syntax: `
 
 ### ForEach method
 
-I tend to forget about this one but it also works well for simple operations. PowerShell allows you to call `.ForEach()` on a collections.
+I tend to forget about this one but it works well for simple operations. PowerShell allows you to call `.ForEach()` on a collections.
 
 ``` posh
     PS> $data.foreach({"Item [$PSItem]"})
@@ -353,9 +353,9 @@ The exception to that statement is the `for` loop. If you are wanting to walk an
 
 This examples takes a value by index, makes a few changes, and then uses that same index to assign it back.
 
-# Arrays of Objets
+# Arrays of Objects
 
-So far the only thing we have placed in an array is a value type. Arrays can also contain objects.
+So far the only thing we have placed in an array is a value type. Arrays can contain objects.
 
 ``` posh
    $data = @(
@@ -384,7 +384,7 @@ We can use an index to access an individual item in a collection just like with 
     Kevin Marquette
 ```
 
-We can also get and update properties directly.
+We can access and update properties directly.
 
 ``` posh
     PS> $data[0].first
@@ -440,7 +440,7 @@ This is where `Where-Object` comes in so we can filter and select what we want o
     Kevin Marquette
 ```
 
-We can also write that same query like this to get what we are looking for.
+We can write that same query like this to get what we are looking for.
 
 ``` posh
     $data | Where first -eq Kevin
@@ -590,7 +590,7 @@ I'll revisit this in a moment when we talk about testing for `$null`.
 
 ## -match
 
-The `-match` operator will also try to match each item in the collection.
+The `-match` operator will try to match each item in the collection.
 
 ``` posh
     PS> $servers = @(
@@ -606,7 +606,7 @@ The `-match` operator will also try to match each item in the collection.
 
 When you use `-match` with a single value, a special variable `$Matches` gets populated with match info. This is not the case when an array is processed this way.
 
-We can also do the same thing with `Select-String`.
+We can take the same approach with `Select-String`.
 
 ``` posh
     $servers | Select-String SQL
@@ -775,7 +775,7 @@ We are calling into .Net to get this type. In this case we are using the default
 
 The reason I am using `[void]` at the beginning of the line is to suppress the return code.
 
-If the only data that you have in your array is strings, then you can also look at using [StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arraysinline). It is almost the same thing but has some methods that are just for dealing with strings. It is also designed for performance.
+If the only data that you have in your array is strings, then also take a look at using [StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arraysinline). It is almost the same thing but has some methods that are just for dealing with strings. The `StringBuilder` is specially designed for performance.
 
 * [Concatenate strings using StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arrays)
 
@@ -967,6 +967,6 @@ The catch is that you will have a new array. If that is ever a problem, you can 
 
 # Anything else?
 
-I know this is all a lot to take in. My hope is that you will learn something from this article every time you read it and that it will turn out to be a good reference for you for a long time to come. If you found this to be helpful, please share it with others that you think will also get value out of it.
+I know this is all a lot to take in. My hope is that you will learn something from this article every time you read it and that it will turn out to be a good reference for you for a long time to come. If you found this to be helpful, please share it with others that you think will get value out of it.
 
 From here, I would recommend you check out a similar post that I wrote about [hashtables](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=arrays).
