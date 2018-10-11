@@ -434,7 +434,7 @@ The enumeration still happens but we don't see the complexity behind it.
 
 ## Where-Object filtering
 
-This is where `Where-Object` comes in so we can filter and select what we want out of the array based on the properties of the object
+This is where `Where-Object` comes in so we can filter and select what we want out of the array based on the properties of the object.
 
 ``` posh
     PS> $data | Where-Object {$_.FirstName -eq 'Kevin'}
@@ -508,7 +508,7 @@ One of the features that I like about the `-join` operator is that it handles si
     1
 ```
 
-One of the places that I find myself using this is inside logging and verbose messages.
+I use this inside logging and verbose messages.
 
 ``` posh
     PS> $data = @(1,2,3,4)
@@ -579,7 +579,7 @@ When you use the `-ne` operator, we will get all the values that are not equal t
     blue
 ```
 
-When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is return then it is a `False` value. Both of these next statements will evaluate to `True`.
+When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is returned then it is a `False` value. Both of these next statements will evaluate to `True`.
 
 ``` posh
     $data = @('red','green','blue')
@@ -618,6 +618,8 @@ We can take the same approach with `Select-String`.
 ``` posh
     $servers | Select-String SQL
 ```
+
+I take a closer look at `Select-String`,`-match` and the `$matches` variable in another post called [The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=arrays).
 
 # $null or empty
 
@@ -692,7 +694,7 @@ I recently saw someone ask [how to verify that every value in an array matches a
 
 # Adding to arrays
 
-At this point, your starting to wonder how to add objects to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and like it is a lot of work. PowerShell hides the complexity of creating a new array.
+At this point, your starting to wonder how to add items to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and it is a lot of work. PowerShell hides this complexity of creating a new array.
 
 ## Array addition
 
