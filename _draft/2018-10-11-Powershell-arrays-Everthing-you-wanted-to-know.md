@@ -151,7 +151,7 @@ And finally, you can use negitive index values to offset from the end. So if you
     Three
 ```
 
-You cannot combine the `-1` one with a sequence to get a list starting from the last element. This is because `-1..0` enumerates to the values `-1,0`. It will give you the first and last item without any items between them. This is a common mistake people make once they learn about these two details.
+You cannot combine the `-1` with a sequence to get a list starting from the last element. This is because `-1..0` enumerates to the values `-1,0`. It will give you the first and last item without any items between them. This is a common mistake people make once they learn about these two details.
 
 ### Out of bounds
 
@@ -250,6 +250,7 @@ At some point, you will need to walk or iterate the entire list and perform some
 Arrays and the PowerShell pipeline are meant for each other. This is one of the simplest ways to process over those values. When you pass an array to a pipeline, then each item inside the array is processed individually.
 
 ``` posh
+    PS> $data = 'Zero','One','Two','Three'
     PS> $data | ForEach-Object {"Item: [$PSItem]"}
     Item: [Zero]
     Item: [One]
@@ -290,7 +291,7 @@ This is a lesser known syntax but it works just the same.
 
 ### For loop
 
-This brings us back to the `for` loop. The `for` loop is used heavilly is most other languages and you don't see it much in PowerShell. But when you do see it, it's often in the context of walking an array.
+The `for` loop is used heavily is most other languages and you don't see it much in PowerShell. But when you do see it, it's often in the context of walking an array.
 
 ``` posh
     for ( $index = 0; $index -lt $data.count; $index++)
@@ -299,15 +300,16 @@ This brings us back to the `for` loop. The `for` loop is used heavilly is most o
     }
 ```
 
-The first thing we do is initalize a `$index` to 0. Then we add the condition that `$index` must be less than `$data.count`. Finally, we specify that every time we loop that me must increase the index by 1. In this case `$index++` is short for `$index = $index + 1`.
+The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must be less than `$data.count`. Finally, we specify that every time we loop that me must increase the index by `1`. In this case `$index++` is short for `$index = $index + 1`.
 
-Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are every so slightly wrong. That would cause your result to process to many items or to few items. This is the classic off my one error.
+Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are every so slightly wrong. That would cause your result to process too many items or too few items. This is the classic off my one error.
 
 ### Switch loop
 
 This is one that is very easy to overlook. If you provide an array to a [switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=arrays), it will match on each item in the array.
 
 ``` posh
+    $data = 'Zero','One','Two','Three'
     switch( $data )
     {
         'One'
@@ -359,8 +361,8 @@ So far the only thing we have placed in an array is a value type. Arrays can con
 
 ``` posh
    $data = @(
-       [pscustomobject]@{first='Kevin';last='Marquette'}
-       [pscustomobject]@{first='John';last='Doe'}
+       [pscustomobject]@{FirstName='Kevin';LastName='Marquette'}
+       [pscustomobject]@{FirstName='John'; LastName='Doe'}
    )
 ```
 
@@ -379,32 +381,32 @@ We can use an index to access an individual item in a collection just like with 
 ``` posh
     PS> $data[0]
 
-    first last
-    ----- ----
-    Kevin Marquette
+    FirstName LastName
+    -----     ----
+    Kevin     Marquette
 ```
 
 We can access and update properties directly.
 
 ``` posh
-    PS> $data[0].first
+    PS> $data[0].FirstName
 
     Kevin
 
-    PS> $data[0].first = 'Jay'
+    PS> $data[0].FirstName = 'Jay'
     PS> $data[0]
 
-    first last
-    ----- ----
-    Jay   Marquette
+    FirstName LastName
+    -----     ----
+    Kevin     Marquette
 ```
 
 ### Array properties
 
-One unique feature of PowerShell arrays is that you can specify a property of a object from inside that array on the array and get back all the values of that property from all the objects. Normally you would have to enumerate the whole list like this:
+Normally you would have to enumerate the whole list like this to access all the properties:
 
 ``` posh
-    PS> $data | ForEach-Object {$_.last}
+    PS> $data | ForEach-Object {$_.LastName}
 
     Marquette
     Doe
@@ -413,37 +415,39 @@ One unique feature of PowerShell arrays is that you can specify a property of a 
 Or by using the `Select-Object -ExpandProperty` cmdlet.
 
 ``` posh
-    PS> $data | Select-Object -ExpandProperty last
+    PS> $data | Select-Object -ExpandProperty LastName
 
     Marquette
     Doe
 ```
 
-But PowerShell offers us the ability to request `last` directly. PowerShell will enumerate them all for us and give us a clean list.
+But PowerShell offers us the ability to request `LastName` directly. PowerShell will enumerate them all for us and give us a clean list.
 
 ``` posh
-    PS> $data.last
+    PS> $data.LastName
 
     Marquette
     Doe
 ```
+
+The enumeration still happens but we don't see the complexity behind it.
 
 ## Where-Object filtering
 
 This is where `Where-Object` comes in so we can filter and select what we want out of the array based on the properties of the object
 
 ``` posh
-    PS> $data | Where-Object {$_.first -eq 'Kevin'}
+    PS> $data | Where-Object {$_.FirstName -eq 'Kevin'}
 
-    First Last
-    ----- ----
-    Kevin Marquette
+    FirstName LastName
+    -----     ----
+    Kevin     Marquette
 ```
 
-We can write that same query like this to get what we are looking for.
+We can write that same query like this to get the `FirstName` we are looking for.
 
 ``` posh
-    $data | Where first -eq Kevin
+    $data | Where FirstName -eq Kevin
 ```
 
 ### Where()
@@ -451,7 +455,7 @@ We can write that same query like this to get what we are looking for.
 Arrays have a `Where()` method on them that allows you to specify a `scriptblock` for the filter.
 
 ``` posh
-    $data.Where({$_.first -eq 'Kevin'})
+    $data.Where({$_.FirstName -eq 'Kevin'})
 ```
 
 
@@ -462,7 +466,7 @@ With value types, the only way to update the array is to use a for loop because 
 ``` posh
     foreach($person in $data)
     {
-        $person.first = 'Kevin'
+        $person.FirstName = 'Kevin'
     }
 ```
 
@@ -473,7 +477,10 @@ You still can't replace the whole object this way. If you try to assign a new ob
 ```
     foreach($person in $data)
     {
-        [pscustomobject]@{first='Kevin';last='Marquette'}
+        $person = [pscustomobject]@{
+            FirstName='Kevin'
+            LastName='Marquette'
+        }
     }
 ```
 
