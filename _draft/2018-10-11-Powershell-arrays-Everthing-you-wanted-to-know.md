@@ -24,7 +24,7 @@ I'll touch on each of those details as we go.
 
 # Basic usage
 
-Because arrays are such a basic feature of PowerShell, there is a simple syntax for working with them.
+Because arrays are such a basic feature of PowerShell, there is a simple syntax for working with them in PowerShell.
 
 ## Create an array
 
@@ -50,9 +50,9 @@ We can create an array and seed it with values just by placing them in the `@()`
     Three
 ```
 
-This array has 4 items. When we call the `$array` variable, we see the list of our items. If it is an array of strings, then we will have one line per string.
+This array has 4 items. When we call the `$data` variable, we see the list of our items. If it is an array of strings, then we will have one line per string.
 
-We can declare an array on multiple lines without any issues. The comma is optional in this case and generally left out.
+We can declare an array on multiple lines. The comma is optional in this case and generally left out.
 
 ``` posh
     $data = @(
@@ -63,7 +63,7 @@ We can declare an array on multiple lines without any issues. The comma is optio
     )
 ```
 
-I generally prefer to declare my arrays on multiple lines like that. Not only does it get easier to read when you have multiple items, it also makes it easier to compare to previous versions when using source control.
+I prefer to declare my arrays on multiple lines like that. Not only does it get easier to read when you have multiple items, it also makes it easier to compare to previous versions when using source control.
 
 ### Other syntax
 
@@ -81,17 +81,18 @@ One cool little trick worth mentioning is that you can use `Write-Output` to qui
     $data = Write-Output Zero One Two Three
 ```
 
-This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never us this in a script but it's fair game in the console.
+This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never this in a script but it's fair game in the console. 
 
 ## Accessing items
 
-Now that you have an array with items in it, you will often want to work with the items in it.
+Now that you have an array with items in it, you will often want to access and update with the items in it.
 
 ### Offset
 
 To access individual items, we uses the brackets `[]` with an offset value starting at 0. This is how we get the first item in our array:
 
 ``` posh
+    PS> $data = 'Zero','One','Two','Three'
     PS> $data[0]
     Zero
 ```
@@ -143,14 +144,35 @@ This also works in reverse.
     One
 ```
 
-And finally, you can use negitive index values to offset from the end. So if you need the last item in the list, you can use -1.
+And finally, you can use negitive index values to offset from the end. So if you need the last item in the list, you can use `-1`.
 
 ``` posh
     PS> $data[-1]
     Three
 ```
 
-You cannot combine the -1 one with a sequence to get a list starting from the last element. This is because `-1..0` enumerates to the values `-1,0`. It will give you the first and last item without any items between them. This is a common mistake people make once they learn about these two details.
+You cannot combine the `-1` one with a sequence to get a list starting from the last element. This is because `-1..0` enumerates to the values `-1,0`. It will give you the first and last item without any items between them. This is a common mistake people make once they learn about these two details.
+
+### Out of bounds
+
+In most languages, if you try to access an index of an item that is past the end of the array, you would get some type of error or an exception. PowerShell will silently give you nothing.
+
+``` posh
+    PS> $null -eq $data[9000]
+    True
+```
+
+### Cannot index into a null array
+
+If your variable is `$null` and you try to index it like an array, you will get a `System.Management.Automation.RuntimeException` exception with the message `Cannot index into a null array`.
+
+``` posh
+    PS> $empty = $null
+    SP> $empty[0]
+    Error: Cannot index into a null array.
+```
+
+So make sure your arrays are not `$null` before you try to access elements inside them.
 
 ### Count
 
@@ -164,7 +186,7 @@ Arrays and other collections have a count property that tells you how many items
 PowerShell 3.0 added a count property to most objects. you can have a single object and it should give you a count of `1`.
 
 ``` posh
-    PS> $date = Get-Count
+    PS> $date = Get-Date
     PS> $date.count
     1
 ```
@@ -179,9 +201,9 @@ Even `$null` has a count property except it returns `0`.
 
 ### Off by one errors
 
-In most languages, arrays start at index 0. This allows for one of the most common errors programming. The off by one error. It can be introduced in two very common ways.
+In most languages, arrays start at index `0`. This allows for one of the most common programming errors. The off by one error. It can be introduced in two very common ways.
 
-The first is by mentally thinking you want the 2nd item and using an index of 2 and really getting the third item. Or by thinking that you have 4 items and you want last item, so you will just use the size to access the last item.
+The first is by mentally thinking you want the 2nd item and using an index of `2` and really getting the third item. Or by thinking that you have `4` items and you want last item, so you will just use the size to access the last item.
 
 ``` posh
     $data[ $data.count ]
@@ -647,6 +669,19 @@ If you are still on PowerShell 5.1, you can wrap the object in an array before c
         'Array is not empty'
     }
 ```
+
+## All -eq
+
+I recently saw someone ask [how to verify that every value in an array matches a given value](https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition). Reddit user /u/bis had this clever [solution](https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition/e7iizca) that checks for any incorrect values and then flips the result.
+
+``` posh
+    $results = Test-Something
+    if ( -not ( $results -ne 'Passed') )
+    {
+        'All results a Passed'
+    }
+```
+
 
 # Adding to arrays
 
