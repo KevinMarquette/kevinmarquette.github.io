@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "Powershell: Everthing you wanted to know about arrays"
-date: 2018-10-11
+date: 2018-10-15
 tags: [PowerShell,Basics,Arrays]
+share-img: "http://kevinmarquette.github.io/img/share-img/2018-10-15-Powershell-arrays-Everthing-you-wanted-to-know.png"
 ---
 
-[Arrays](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&viewFallbackFrom=powershell-Microsoft.PowerShell.Core) are a fundamental language feature of most languages. They are a collection of values or objects and it's a feature that is hard to avoid. Let's take a close look at arrays and everything they have to offer.
+[Arrays](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&viewFallbackFrom=powershell-Microsoft.PowerShell.Core) are a fundamental language feature of most programming languages. They are a collection of values or objects and are therefore, difficult to avoid. Let's take a close look at arrays and everything they have to offer.
 
 <!--more-->
 
@@ -16,7 +17,7 @@ tags: [PowerShell,Basics,Arrays]
 
 # What is an array?
 
-I am going to start with a basic technical description of what arrays are in the general sense as used by most programming languages before I shift into the other ways PowerShell makes use of them.
+I am going to start with a basic technical description of what arrays are and how they are used by most programming languages before I shift into the other ways PowerShell makes use of them.
 
 An array is a data structure that serves as a collection of multiple items. You can iterate over the array or access individual items using an index. The array is created as a sequential chunk of memory where each value is stored right next to the other.
 
@@ -75,17 +76,17 @@ It's commonly understood that `@()` is the syntax for creating an array, but com
 
 ### Write-Output to create arrays
 
-One cool little trick worth mentioning is that you can use `Write-Output` to quickly crate strings at the console.
+One cool little trick worth mentioning is that you can use `Write-Output` to quickly create strings at the console.
 
 ``` posh
     $data = Write-Output Zero One Two Three
 ```
 
-This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never this in a script but it's fair game in the console. 
+This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never do this in a script but it's fair game in the console. 
 
 ## Accessing items
 
-Now that you have an array with items in it, you will often want to access and update with the items in it.
+Now that you have an array with items in it, you may want to access and update those items.
 
 ### Offset
 
@@ -201,7 +202,7 @@ Even `$null` has a count property except it returns `0`.
 
 ### Off by one errors
 
-In most languages, arrays start at index `0`. This allows for one of the most common programming errors. The off by one error. It can be introduced in two very common ways.
+A common programming error is created because arrays start at index 0. An off by one error can be introduced in two very common ways.
 
 The first is by mentally thinking you want the 2nd item and using an index of `2` and really getting the third item. Or by thinking that you have `4` items and you want last item, so you will just use the size to access the last item.
 
@@ -260,7 +261,7 @@ Arrays and the PowerShell pipeline are meant for each other. This is one of the 
 
 ### ForEach loop
 
-The `ForEach` loop works well with collections. Using they syntax: `foreach ( <variable> in <collection> )`
+The `ForEach` loop works well with collections. Using the syntax: `foreach ( <variable> in <collection> )`
 
 ``` posh
     foreach ( $node in $data )
@@ -291,7 +292,7 @@ This is a lesser known syntax but it works just the same.
 
 ### For loop
 
-The `for` loop is used heavily is most other languages and you don't see it much in PowerShell. But when you do see it, it's often in the context of walking an array.
+The `for` loop is used heavily in most other languages but you don’t see it much in PowerShell. When you do see it, it is often in the context of walking an array.
 
 ``` posh
     for ( $index = 0; $index -lt $data.count; $index++)
@@ -302,7 +303,7 @@ The `for` loop is used heavily is most other languages and you don't see it much
 
 The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must be less than `$data.count`. Finally, we specify that every time we loop that me must increase the index by `1`. In this case `$index++` is short for `$index = $index + 1`.
 
-Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are every so slightly wrong. That would cause your result to process too many items or too few items. This is the classic off my one error.
+Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are every so slightly wrong. That would cause your result to process too many or too few items. This is the classic off by one error.
 
 ### Switch loop
 
@@ -342,7 +343,7 @@ There are a lot of cool things like this that we can do with the switch statemen
 
 ### Updating values
 
-When your array is a collection of string or integers (value types), some times you will want to update the values in the array as you enumerate them. Most of the iteration loops above use a variable in the loop that holds the value. If you update that variable, the original value in the array is not updated.
+When your array is a collection of string or integers (value types), sometimes you will want to update the values in the array as you enumerate them. Most of the iteration loops above use a variable in the loop that holds the value. If you update that variable, the original value in the array is not updated.
 
 The exception to that statement is the `for` loop. If you are wanting to walk an array and update values inside it, then the `for` loop is what you are looking for.
 
@@ -357,7 +358,7 @@ This examples takes a value by index, makes a few changes, and then uses that sa
 
 # Arrays of Objects
 
-So far the only thing we have placed in an array is a value type. Arrays can contain objects.
+So far, the only thing we have placed in an array is a value type, but arrays can also contain objects.
 
 ``` posh
    $data = @(
@@ -540,7 +541,7 @@ The `-contains` operator will allow you to check an array of values to see if it
 
 ## -in
 
-When you have a single value that you would like to see if it matches one of several values, you can use the `-in` operator. The value would be on the left and the array on the right hand side of the operation.
+When you have a single value that you would like to verify matches one of several values, you can use the `-in` operator. The value would be on the left and the array on the right hand side of the operation.
 
 ``` posh
     PS> $data = @('red','green','blue')
@@ -694,7 +695,7 @@ I recently saw someone ask [how to verify that every value in an array matches a
 
 # Adding to arrays
 
-At this point, your starting to wonder how to add items to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and it is a lot of work. PowerShell hides this complexity of creating a new array.
+At this point, your starting to wonder how to add items to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and like a lot of work, however, PowerShell hides the complexity of creating the new array.
 
 ## Array addition
 
@@ -769,7 +770,7 @@ You can create an array of any type using a similar syntax. When you create a st
 
 ## ArrayList
 
-Adding items to an array is one of it's biggest limitations. There are a few other collections that we can turn to that solve this problem.
+Adding items to an array is one of its biggest limitations, but there are a few other collections that we can turn to that solve this problem. 
 
 The `ArrayList` is commonly one of the first things that we think of when we need an array that is faster to work with. It acts like an object array every place that we need it, but it handles adding items quickly.
 
@@ -836,12 +837,11 @@ And we can still access the elements like other arrays.
 
 ### List[PSObject]
 
-You can have a list of any type. But when you don't know the type of the objects, you can use `[List[PSObject]]` to contain them.
+You can have a list of any type, but when you don’t know the type of objects, you can use `[List[PSObject]]` to contain them.
 
 ``` posh
     $list = [List[PSObject]]::new()
 ```
-
 
 # Other nuances
 
@@ -925,7 +925,7 @@ Here are two ways we can create a 2 dimensional array.
     )
 ```
 
-The comma is very important in those examples. I gave an earlier example of a normal array on multiple likes where the comma was optional. That is not the case with a multi-dimensional array.
+The comma is very important in those examples. I gave an earlier example of a normal array on multiple lines where the comma was optional. That is not the case with a multi-dimensional array.
 
 The way we use the index notation changes slightly now that we have a nested array. Using the `$data` above, this is how we would access the value 3.
 
@@ -967,9 +967,9 @@ I have a second way to do this that's more of a hack (and I try to avoid hacks l
     ...
 ```
 
-### return an array
+### Return an array
 
-This un-wrapping of arrays also happen when you output or return values from a function. You can still get an array if you assign the output to a variable so this is not commonly an issue.
+This un-wrapping of arrays also happens when you output or return values from a function. You can still get an array if you assign the output to a variable so this is not commonly an issue.
 
 The catch is that you will have a new array. If that is ever a problem, you can use `Write-Output -NoEnumerate $array` or `return ,$array` to work around it.
 
