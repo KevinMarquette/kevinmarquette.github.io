@@ -199,6 +199,7 @@ Even `$null` has a count property except it returns `0`.
     0
 ```
 
+There are some traps here that I cover when I will revisit when I cover checking for `$null` or empty arrays later on in this article.
 
 ### Off by one errors
 
@@ -675,6 +676,15 @@ If you are still on PowerShell 5.1, you can wrap the object in an array before c
 
 ``` posh
     if ( @($array).count -ge 1 )
+    {
+        'Array is not empty'
+    }
+```
+
+To fully play it safe, check for `$null`, then check the count.
+
+``` posh
+    if ( $null -ne $array -and @($array).count -ge 1 )
     {
         'Array is not empty'
     }
