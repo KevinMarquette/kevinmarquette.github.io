@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Powershell: Everthing you wanted to know about arrays"
+title: "Powershell: Everything you wanted to know about arrays"
 date: 2018-10-15
 tags: [PowerShell,Basics,Arrays]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-10-15-Powershell-arrays-Everthing-you-wanted-to-know.png"
+share-img: "http://kevinmarquette.github.io/img/share-img/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know.png"
 ---
 
 [Arrays](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&viewFallbackFrom=powershell-Microsoft.PowerShell.Core) are a fundamental language feature of most programming languages. They are a collection of values or objects and are therefore, difficult to avoid. Let's take a close look at arrays and everything they have to offer.
