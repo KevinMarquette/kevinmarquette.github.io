@@ -27,7 +27,7 @@ I'll touch on each of those details as we go.
 
 Because arrays are such a basic feature of PowerShell, there is a simple syntax for working with them in PowerShell.
 
-## Create an array
+## Create an array with @()
 
 An empty array can be created by using `@()`
 
@@ -127,7 +127,16 @@ In most languages, you can only specify a single number as the index and you wil
     Three
 ```
 
-We can specify a sequence of numbers with the `..` operator.
+The items will be returned based on the order of the indexes provided. If you duplicate an index, you will get that item both times.
+
+``` posh
+    PS> $data[3,0,3]
+    Three
+    Zero
+    Three
+```
+
+We can specify a sequence of numbers with the built in `..` operator.
 
 ``` posh
     PS> $data[1..3]
@@ -145,14 +154,14 @@ This works in reverse too.
     One
 ```
 
-And finally, you can use negitive index values to offset from the end. So if you need the last item in the list, you can use `-1`.
+You can use negitive index values to offset from the end. So if you need the last item in the list, you can use `-1`.
 
 ``` posh
     PS> $data[-1]
     Three
 ```
 
-You cannot combine the `-1` with a sequence to get a list starting from the last element. This is because `-1..0` enumerates to the values `-1,0`. It will give you the first and last item without any items between them. This is a common mistake people make once they learn about these two details.
+One word of caution here with the `..` operator. The sequence `0..-1` and `-1..0` evaluate to the values `0,-1` and `-1,0`. It's easy to see `$data[0..-1]` and think it would enumerate all items if you forget this detail. `$data[0..-1]` gives you the same value as `$data[0,-1]` by giving you the first and last item in the array (and none of the other values).
 
 ### Out of bounds
 
@@ -289,7 +298,7 @@ The `.foreach()` takes a parameter that is a script block. You can drop the pare
     $data.foreach{"Item [$PSItem]"}
 ```
 
-This is a lesser known syntax but it works just the same.
+This is a lesser known syntax but it works just the same. This `foreach` method was added in PowerShell 4.0.
 
 ### For loop
 
@@ -400,7 +409,7 @@ We can access and update properties directly.
 
     FirstName LastName
     -----     ----
-    Kevin     Marquette
+    Jay       Marquette
 ```
 
 ### Array properties
@@ -460,6 +469,7 @@ Arrays have a `Where()` method on them that allows you to specify a `scriptblock
     $data.Where({$_.FirstName -eq 'Kevin'})
 ```
 
+This feature was added in PowerShell 4.0.
 
 ## Updating objects in loops
 
@@ -658,7 +668,7 @@ This is why it's a best practice to place the `$null` on the left side of the op
 A `$null` array is not the same thing as an empty array. If you know you have an array, check the count of objects in it. If the array is `$null`, the count will be `0`.
 
 ``` posh
-    if ( $array.count -ge 1 )
+    if ( $array.count -gt 0 )
     {
         'Array is not empty'
     }
@@ -675,7 +685,7 @@ There is one more trap to watch out for here. You can use the `count` even if yo
 If you are still on PowerShell 5.1, you can wrap the object in an array before checking the count to get an accurate count.
 
 ``` posh
-    if ( @($array).count -ge 1 )
+    if ( @($array).count -gt 0 )
     {
         'Array is not empty'
     }
@@ -684,7 +694,7 @@ If you are still on PowerShell 5.1, you can wrap the object in an array before c
 To fully play it safe, check for `$null`, then check the count.
 
 ``` posh
-    if ( $null -ne $array -and @($array).count -ge 1 )
+    if ( $null -ne $array -and @($array).count -gt 0 )
     {
         'Array is not empty'
     }
@@ -793,7 +803,7 @@ Here is how we create an `ArrayList` and add items to it.
 
 We are calling into .Net to get this type. In this case we are using the default constructor to create it. Then we call the `Add` method to add an item to it.
 
-The reason I am using `[void]` at the beginning of the line is to suppress the return code.
+The reason I am using `[void]` at the beginning of the line is to suppress the return code. Some .Net calls will do this and can create unexpected output.
 
 If the only data that you have in your array is strings, then also take a look at using [StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arraysinline). It is almost the same thing but has some methods that are just for dealing with strings. The `StringBuilder` is specially designed for performance.
 
@@ -832,10 +842,10 @@ We can shorten the syntax a little bit with the `using namespace` statement in P
 
 This makes the `List` much more usable.
 
-You have the same `Add` method available to you.
+You have a similar `Add` method available to you. Unlike the ArrayList, there is no return value on the `Add` method so we don't have to `void` it.
 
 ``` posh
-    [void]$myList.Add(10)
+    $myList.Add(10)
 ```
 
 And we can still access the elements like other arrays.
@@ -852,6 +862,10 @@ You can have a list of any type, but when you don’t know the type of objects, 
 ``` posh
     $list = [List[PSObject]]::new()
 ```
+
+## More collections
+
+There are many other collections that can be used but these are the good generic array replacements. If you are interested in learning about more of these options, take a look at this [Gist](https://gist.github.com/kevinblumenfeld/4a698dbc90272a336ed9367b11d91f1c) that [Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) put together.
 
 # Other nuances
 
