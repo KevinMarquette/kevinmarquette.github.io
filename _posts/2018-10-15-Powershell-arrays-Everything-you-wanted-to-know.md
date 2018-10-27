@@ -208,7 +208,7 @@ Even `$null` has a count property except it returns `0`.
     0
 ```
 
-There are some traps here that I cover when I will revisit when I cover checking for `$null` or empty arrays later on in this article.
+There are some traps here that I will revisit when I cover checking for `$null` or empty arrays later on in this article.
 
 ### Off by one errors
 
@@ -224,6 +224,22 @@ PowerShell is perfectly happy to let you do that and give you exactly what item 
 
 ``` posh
     PS> $data[ $data.count - 1 ]
+    Three
+```
+
+This is where you can use the `-1` index to get the last element.
+
+
+``` posh
+    PS> $data[ -1 ]
+    Three
+```
+
+Lee Dailey also pointed out to me that we can use `$data.GetUpperBound(0)` to get the max index number.
+
+
+``` posh
+    PS> $data.GetUpperBound(0)
     Three
 ```
 
@@ -258,7 +274,7 @@ At some point, you will need to walk or iterate the entire list and perform some
 
 ### Pipeline
 
-Arrays and the PowerShell pipeline are meant for each other. This is one of the simplest ways to process over those values. When you pass an array to a pipeline, then each item inside the array is processed individually.
+Arrays and the PowerShell pipeline are meant for each other. This is one of the simplest ways to process over those values. When you pass an array to a pipeline, each item inside the array is processed individually.
 
 ``` posh
     PS> $data = 'Zero','One','Two','Three'
@@ -268,6 +284,8 @@ Arrays and the PowerShell pipeline are meant for each other. This is one of the 
     Item: [Two]
     Item: [Three]
 ```
+
+If you have not seen `$PSItem` before, just know that its the same thing as `$_`. You can use either one because they both represent the current object in the pipeline.
 
 ### ForEach loop
 
@@ -313,7 +331,7 @@ The `for` loop is used heavily in most other languages but you don’t see it mu
 
 The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must be less than `$data.count`. Finally, we specify that every time we loop that me must increase the index by `1`. In this case `$index++` is short for `$index = $index + 1`.
 
-Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are every so slightly wrong. That would cause your result to process too many or too few items. This is the classic off by one error.
+Whenever you are using a `for` loop, pay special attention to the condition. I used `$index -lt $data.count` here. It is very easy to get the condition slightly wrong to get an off by one error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are ever so slightly wrong. That would cause your result to process too many or too few items. This is the classic off by one error.
 
 ### Switch loop
 
@@ -353,7 +371,7 @@ There are a lot of cool things like this that we can do with the switch statemen
 
 ### Updating values
 
-When your array is a collection of string or integers (value types), sometimes you will want to update the values in the array as you enumerate them. Most of the iteration loops above use a variable in the loop that holds the value. If you update that variable, the original value in the array is not updated.
+When your array is a collection of string or integers (value types), sometimes you will want to update the values in the array as you loop over them. Most of the loops above use a variable in the loop that holds a copy of the value. If you update that variable, the original value in the array is not updated.
 
 The exception to that statement is the `for` loop. If you are wanting to walk an array and update values inside it, then the `for` loop is what you are looking for.
 
@@ -715,7 +733,7 @@ I recently saw someone ask [how to verify that every value in an array matches a
 
 # Adding to arrays
 
-At this point, your starting to wonder how to add items to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and like a lot of work, however, PowerShell hides the complexity of creating the new array.
+At this point, you're starting to wonder how to add items to an array. The quick answer is that you can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then you need to create a new array and copy all the values over from the old array. This sounds expensive and like a lot of work, however, PowerShell hides the complexity of creating the new array.
 
 ## Array addition
 
@@ -757,7 +775,7 @@ We can create a new array in place and add an item to it like this:
     $data += 'four'
 ```
 
-Just remember that every time you use `+=` that you are duplicating and creating a new array. This is a not an issue for small datasets but it does not scale very well.
+Just remember that every time you use `+=` that you are duplicating and creating a new array. This is a not an issue for small datasets but it scales extremely poorly.
 
 ## Pipeline assignment
 
@@ -833,7 +851,7 @@ We can cast an existing array to a list like this without creating the object fi
     $mylist = [System.Collections.Generic.List[int]]@(1,2,3)
 ```
 
-We can shorten the syntax a little bit with the `using namespace` statement in PowerShell 5 and newer. The `using` statement needs to be the fist line of your script. By declaring a namespace, PowerShell will let you leave it off of the datatypes when you reference them.
+We can shorten the syntax a little bit with the `using namespace` statement in PowerShell 5 and newer. The `using` statement needs to be the first line of your script. By declaring a namespace, PowerShell will let you leave it off of the datatypes when you reference them.
 
 ``` posh
     using namespace System.Collections.Generic
@@ -862,6 +880,33 @@ You can have a list of any type, but when you don’t know the type of objects, 
 ``` posh
     $list = [List[PSObject]]::new()
 ```
+
+### Remove()
+
+The `ArrayList` and the generic `List[]` both support removing items from the collection.
+
+``` posh
+    using namespace System.Collections.Generic
+    $myList = [List[string]]@('Zero','One','Two','Three')
+    [void]$myList.Remove("Two")
+    Zero
+    One
+    Three
+```
+
+When working with value types, it will remove the first one from the list. You can call it over and over again to keep removing that value. If you have reference types, you have to provide the object that you want removed.
+
+``` posh
+    [list[System.Management.Automation.PSDriveInfo]]$drives = Get-PSDrive
+    $drives.remove($drives[2])
+```
+
+``` posh
+    $delete = $drives[2]
+    $drives.remove($delete)
+```
+
+The remove method will return true if it was able to find and remove the item from the collection.
 
 ## More collections
 
