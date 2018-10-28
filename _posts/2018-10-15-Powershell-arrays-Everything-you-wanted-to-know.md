@@ -546,6 +546,24 @@ I use this inside logging and verbose messages.
     Data is 1,2,3,4.
 ```
 
+### -join $array
+
+Here is a clever trick that Lee Dailey pointed out to me. If you ever want to join everything without a delimiter, instead of doing this:
+
+``` posh
+    PS> $data = @(1,2,3,4)
+    PS> $data -join $null
+    1234
+```
+
+You can use `-join` with the array as the parameter with no prefix. Take a look at this example to see that I am talking about.
+
+``` posh
+    PS> $data = @(1,2,3,4)
+    PS> -join $data
+    1234
+```
+
 ## -replace and -split
 
 The other operators like `-replace` and `-split` will execute on each item in the array. I can't say that I have ever used them this way but here is an example.
