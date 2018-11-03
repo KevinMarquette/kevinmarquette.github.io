@@ -64,6 +64,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-02-19 [Powershell: Creating and using custom attributes](/2017-02-19-Powershell-custom-attribute-validator-transform/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-20 [Powershell: Creating parameter validators and transforms](/2017-02-20-Powershell-creating-parameter-validators-and-transforms/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='DevOps'></a>
+# DevOps
+
+* 2018-11-03 [Powershell: PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='Docker'></a>
 # Docker
 
@@ -232,6 +237,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-11-03 [Powershell: PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet
@@ -263,6 +269,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-05-08 [Powershell: PSGraph the Get-Help related links](/2017-05-08-Powershell-PSGraph-get-help-related-links/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-10-22 [Powershell: PSGraph 1.2, The SubGraph Release](/2017-10-22-Powershell-PSGraph-1.2-the-subgraph/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-02-17 [Powershell: PSGraph 2.1.17 the record release](/2018-02-17-Powershell-PSGraph-2.1.17-the-record-release/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='PSSummit'></a>
+# PSSummit
+
+* 2018-11-03 [Powershell: PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='pwsh'></a>
 # pwsh
