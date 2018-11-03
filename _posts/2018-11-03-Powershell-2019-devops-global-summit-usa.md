@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: PowerShell and DevOps Global Summit 2019"
 date: 2018-11-03
 tags: [PowerShell,DevOps,PSSummit,PSGraph]
-share-img: "/img/summit_speaking_2019.png"
+share-img: "/img/summit_speaking_2019.jpg"
 ---
 
 The [PowerShell and DevOps Global Summit 2019](https://powershell.org/summit) is one of the largest gatherings of people from the [PowerShell community](https://twitter.com/hashtag/PSHSummit?src=hash&lang=en). Not only is this conference packed full of sessions, it also gives you a chance to connect with many people from the community. This is a conference that has something for everyone.<!--more--> If you are just getting started with PowerShell, this year the Summit is offering an [OnRamp track](https://powershell.org/summit/summit-onramp/).
@@ -38,4 +38,4 @@ If you are interested in the selection process for the Summit, take a look at th
 
 If you make it out to the Summit, feel free to say hello if you see me. I look just like my avatar so I am easy to spot. I was very honored meeting so many of my readers last year that just wanted to say thank you. I do appreciate it. My content has helped the community so much more than I ever expected that it would. Thank you.
 
-![I'm speaking at the Summit](/img/summit_speaking_2019.png)
+![I'm speaking at the Summit](/img/summit_speaking_2019.jpg)
