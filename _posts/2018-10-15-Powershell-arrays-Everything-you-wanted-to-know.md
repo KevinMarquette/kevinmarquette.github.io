@@ -800,7 +800,7 @@ Just remember that every time you use `+=` that you are duplicating and creating
 You can assign the results of any pipeline into a variable. It will be an array if it contains multiple items.
 
 ``` posh
-    $array = 1..5 | % {
+    $array = 1..5 | ForEach-Object {
         "ATX-SQL-$PSItem"
     }
 ```
