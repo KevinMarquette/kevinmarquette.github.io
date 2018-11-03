@@ -797,6 +797,14 @@ Just remember that every time you use `+=` that you are duplicating and creating
 
 ## Pipeline assignment
 
+You can assign the results of any pipeline into a variable. It will be an array if it contains multiple items.
+
+``` posh
+    $array = 1..5 | % {
+        "ATX-SQL-$PSItem"
+    }
+```
+
 Normally when we think of using the pipeline, we think of the typical PowerShell one-liners. We can leverage the pipeline with `foreach()` statements and other loops. So instead of adding items to an array in a loop, we can drop items onto the pipeline.
 
 ``` posh
