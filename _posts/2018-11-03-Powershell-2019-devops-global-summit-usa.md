@@ -6,7 +6,7 @@ tags: [PowerShell,DevOps,PSSummit,PSGraph]
 share-img: "/img/summit_speaking_2019.jpg"
 ---
 
-The [PowerShell and DevOps Global Summit 2019](https://powershell.org/summit) is one of the largest gatherings of people from the [PowerShell community](https://twitter.com/hashtag/PSHSummit?src=hash&lang=en). Not only is this conference packed full of sessions, it also gives you a chance to connect with many people from the community. This is a conference that has something for everyone.<!--more--> If you are just getting started with PowerShell, this year the Summit is offering an [OnRamp track](https://powershell.org/summit/summit-onramp/).
+The [PowerShell and DevOps Global Summit 2019](https://powershell.org/summit) is one of the largest gatherings of the [PowerShell community](https://twitter.com/hashtag/PSHSummit?src=hash&lang=en). Not only is this conference packed full of sessions, it also gives you a chance to connect with many people from the community. This is a conference that has something for everyone.<!--more--> If you are just getting started with PowerShell, this year the Summit is offering an [OnRamp track](https://powershell.org/summit/summit-onramp/).
 
     Dates: April 29 - May 2, 2019
     Location: Bellevue, WA, USA
