@@ -1,4 +1,4 @@
-* 2018-11-03 [Powershell: PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2018-11-03 [PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=recent)

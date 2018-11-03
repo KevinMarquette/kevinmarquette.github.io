@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: PowerShell and DevOps Global Summit 2019"
+title: "PowerShell and DevOps Global Summit 2019"
 date: 2018-11-03
 tags: [PowerShell,DevOps,PSSummit,PSGraph]
 share-img: "/img/summit_speaking_2019.jpg"
