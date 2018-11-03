@@ -60,6 +60,8 @@ This is an important detail because if you misspell a variable name, you will ge
 
 ## Types
 
+PowerShell variables are untyped by default. What I mean by that is that a variable can contain any data of any type. You are free to reuse variables for different things. As a scritping language, this is very common feature. But there are good reasons to understand the type of data that you have.
+
 Every value and object has a type associated with it. Variables can be strongly typed so that they only contain data of a specified type.
 
     [int]$number = 1
