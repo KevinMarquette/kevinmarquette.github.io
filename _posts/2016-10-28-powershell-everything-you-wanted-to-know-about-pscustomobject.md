@@ -132,7 +132,7 @@ But if the value could be `$null` and you still need to check for it, you can ch
 
 # Adding object methods
 
-If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`. You have to use the `this` automatic varialbe reference the current object. Here is a scriptblock to turn a object into a hashtable. (same code form the last example)
+If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`. You have to use the `this` automatic variable reference the current object. Here is a scriptblock to turn a object into a hashtable. (same code form the last example)
 
     $ScriptBlock = {
         $hashtable = @{}
@@ -146,10 +146,10 @@ If you need to add a script method to an object, you can do it with `Add-Member`
 Then we add it to our object as a script property.
 
     $memberParam = @{
-        MemberType ScriptMethod
-        InputObject $myobject
-        Name "ToHashtable"
-        Value $scriptBlock
+        MemberType = "ScriptMethod"
+        InputObject = $myobject
+        Name = "ToHashtable"
+        Value = $scriptBlock
     }
     Add-Member @memberParam
 
