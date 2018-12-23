@@ -121,7 +121,7 @@ If you try to access a property or sub property of an object that does not have 
 
 ### Method on a null-valued expression
 
-Calling a method on a `$null` object will throw an exception.
+Calling a method on a `$null` object will throw a `RuntimeException` exception.
 
 ``` posh
     PS> $value = $null
@@ -134,7 +134,7 @@ Calling a method on a `$null` object will throw an exception.
       + FullyQualifiedErrorId : InvokeMethodOnNull
 ```
 
-Whenever I see the phrase `You cannot call a method on a null-valued expression` then the first thing I do is look for places that I am calling a method on a variable without first checking it for `$null`.
+Whenever I see the phrase `You cannot call a method on a null-valued expression` then the first thing I do is look for is places that I am calling a method on a variable without first checking it for `$null`.
 
 # Checking for $null
 
@@ -161,6 +161,12 @@ If I do not define `$value` then the first one will evaluate to `$true` and our 
 
 In this case the `$value` is an array and the `-eq` will check every value in the array. The fist one finds a `$null` so it is `$true` and the second one finds a value that is not `$null` so it is also `$true`.
 
+``` posh
+    'The array is $null'
+    'The array is not $null'
+```
+
+
 ## Simple if check
 
 A common way that people check for a non `$null` value is to use a simple `if()` statement without the comparison.
@@ -172,7 +178,9 @@ A common way that people check for a non `$null` value is to use a simple `if()`
     }
 ```
 
-If the value is `$null`, this will evaluate to `$false`. This is simple and easy to read, but be careful that it is looking for exactly what you are expecting it to look for. I read that line of code as `If $value has a value`, but thats not the whole story. That line is actaully saying `If $value is not $null or 0 or $false or an empty string` Here is a more complete sample of the same thing.
+If the value is `$null`, this will evaluate to `$false`. This is simple and easy to read, but be careful that it is looking for exactly what you are expecting it to look for. I read that line of code as `If $value has a value`, but thats not the whole story. That line is actually saying `If $value is not $null or 0 or $false or an empty string`. 
+
+Here is a more complete sample of that statement.
 
 ``` posh
     if ( $null -ne $value -and $value -ne 0 and $value -ne '' and $value -ne $false )
@@ -192,7 +200,7 @@ I ran into this issue when refactoring some code a few days ago. It had a basic 
     }
 ```
 
-I wanted to assign a value to the object property only if it existed. In most cases, the original object had a value that would evaluate to `$true` in the `if` statement. But I ran into issue that the value was occasionally not getting set. I debugged into and I found that the object did have the property but it was a blank string value. This prevented it from ever getting updated with the previous logic. So I added a proper `$null` check and everything worked.
+I wanted to assign a value to the object property only if it existed. In most cases, the original object had a value that would evaluate to `$true` in the `if` statement. But I ran into an issue where the value was occasionally not getting set. I debugged into and I found that the object did have the property but it was a blank string value. This prevented it from ever getting updated with the previous logic. So I added a proper `$null` check and everything worked.
 
 ``` posh
     if ( $null -ne $object.property )
@@ -200,6 +208,8 @@ I wanted to assign a value to the object property only if it existed. In most ca
         $object.property = $value
     }
 ```
+
+It's little bugs like this that are hard to spot that make me aggressivly check values for `$null`.
 
 # $null.Count
 
@@ -211,7 +221,7 @@ If you try to access a property on a `$null` value, that the property will also 
     0
 ```
 
-When you have a `$null` value, then the count will be `0`. This special property is added by PowerShell.
+When you have a `$null` value, then the `count` will be `0`. This special property is added by PowerShell.
 
 ## [PSCustomObject] Count
 
@@ -253,7 +263,7 @@ If you compare it with `$null` then you will get a `$null` value. When used in a
     1
 ```
 
-You can have an array that contains one `$null` value and its count will be 1. But if you place an empty result inside an array then it is not counted as an item. The count will be 0.
+You can have an array that contains one `$null` value and its `count` will be `1`. But if you place an empty result inside an array then it is not counted as an item. The count will be `0`.
 
 If you treat the empty `$null` like a collection, then it is empty.
 
@@ -270,7 +280,7 @@ The primary place you will see the difference is when using the pipeline. You ca
 Depending on your code, you should account for the `$null` in your logic.
 
 * Either check for `$null` first
-* Filter out null on the pipeline (`$null | Where {$null -ne $_} | ...`)
+* Filter out null on the pipeline (`... | Where {$null -ne $_} | ...`)
 * Handle it in the pipeline function
 
 # foreach
@@ -288,7 +298,7 @@ This saves me from having to `$null` check the collection before I enumerate it.
 
 The foreach started working this way with PowerShell 3.0. If you happen to be on a older version then this is not the case. This is one of the important changes to be aware of when backporting code for 2.0 compatibility.
 
-# value types
+# Value types
 
 Technically, only refference types can be `$null`. But PowerShell is very generous and allows for variables to be any type. If you decide to stronly type a value type then it cannot be `$null`. PowerShell can convert `$null` to a default value for many types.
 
@@ -318,7 +328,7 @@ There are some types that do not have a valid conversion from `$null`. These typ
         + FullyQualifiedErrorId : RuntimeException
 ```
 
-## function parameters
+## Function parameters
 
 Using a strongly typed value is in function parameters is very common. We generally learn to define the types of our parameters even if we tend not to define the types of other variables in our scripts. You may already have some strongly typed variables in your functions and not even realize it.
 
@@ -372,7 +382,7 @@ I much prefer using `if` or `foreach` over using `try/catch`. Don't get me wrong
 
 I also tend to check for `$null` before I index into a value or call methods on an object. These two actions will fail if they are on a `$null` object so I find it important to validate them first.
 
-# initalizing to $null
+# Initalizing to $null
 
 One habbit that I have picked up is initalizing all my variables before I use them. You are required to do this other languages. At the top of my function or as I enter a foreach loop, I will define all the values that I will be using.
 
@@ -448,7 +458,7 @@ If I take that same `Do-something` example and remove the loop:
     }
 ```
 
-If the call to Get-Something were to throw an exception, then my `$null` check will find the `$result` from `Invoke-Something`. Initalizing the value inside your function mitigates this issue.
+If the call to `Get-Something` were to throw an exception, then my `$null` check will find the `$result` from `Invoke-Something`. Initalizing the value inside your function mitigates this issue.
 
 Naming variables is hard and it is very common for an author to use the same variable names in multiple functions. I know I use `$node`,`$result`,`$data` all the time. So it would be very easy for values from different scopes to show up in places where they should not be.
 
