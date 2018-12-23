@@ -1,3 +1,4 @@
+* 2018-12-23 [Powershell: Evertying you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-11-03 [PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2018-03-14 [Powershell: The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog&utm_content=recent)
