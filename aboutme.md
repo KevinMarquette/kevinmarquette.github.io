@@ -30,3 +30,4 @@ I am a Sr. DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 Powe
 * [Twitter: @KevinMarquette](https://twitter.com/KevinMarquette)
 * [GitHub](https://github.com/KevinMarquette)
 * [LinkedIn](https://www.linkedin.com/in/kevinmarquette)
+* [YouTube](https://www.youtube.com/kevinmarquette)
