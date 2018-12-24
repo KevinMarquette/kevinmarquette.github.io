@@ -380,11 +380,11 @@ I am a defensive scripter. Anytime I call a function and assign it to a variable
 
 I much prefer using `if` or `foreach` over using `try/catch`. Don't get me wrong, I still use `try/catch` a lot. But if I can test for an error condition or an empty set of results, I can allow my exception handling be for true exceptions.
 
-I also tend to check for `$null` before I index into a value or call methods on an object. These two actions will fail if they are on a `$null` object so I find it important to validate them first.
+I also tend to check for `$null` before I index into a value or call methods on an object. These two actions will fail if they are on a `$null` object so I find it important to validate them first. I already covered those senarios earlier in this post.
 
 # Initalizing to $null
 
-One habbit that I have picked up is initalizing all my variables before I use them. You are required to do this other languages. At the top of my function or as I enter a foreach loop, I will define all the values that I will be using.
+One habbit that I have picked up is initalizing all my variables before I use them. You are required to do this in other languages. At the top of my function or as I enter a foreach loop, I will define all the values that I will be using.
 
 Here is a scenario that I want you to take a close look at. It's a recreation of a bug I had to chase down before.
 
@@ -412,9 +412,9 @@ Here is a scenario that I want you to take a close look at. It's a recreation of
 
 The expectation here is that Get-Something will either return a result or an empty `$null`. If there is an error then we log it. Then we check to make sure we got a valid result before processing it.
 
-The bug hidding in this code is when `Get-Something` throws an exception and does not assign a value to `$result`. It fails before the assignment so we don't even assign `$null` to the value. `$result` will still contain the previous valid `$result` from other itterations. `Update-Something` to execute multiple times on the same object in this example.
+The bug hidding in this code is when `Get-Something` throws an exception and does not assign a value to `$result`. It fails before the assignment so we don't even assign `$null` to the `$result` varialbe. `$result` will still contain the previous valid `$result` from other iterations. `Update-Something` to execute multiple times on the same object in this example.
 
-I will set `$result` to `$null` right inside the foreach loop before I use it.
+I will set `$result` to `$null` right inside the foreach loop before I use it to mitigate this issue.
 
 ``` posh
     foreach ( $node in 1..6 )
@@ -427,11 +427,11 @@ I will set `$result` to `$null` right inside the foreach loop before I use it.
 
 ## Scope issues
 
-This also helps mitigate scoping issues. In that example, we set `$result` over and over in a loop. But because PowerShell allows variable values from outside the function to bleed into the scope of the current function, initalizing them inside your function will mitigate bugs that can be introduced that way.
+This also helps mitigate scoping issues. In that example, we assign values to `$result` over and over in a loop. But because PowerShell allows variable values from outside the function to bleed into the scope of the current function, initalizing them inside your function will mitigate bugs that can be introduced that way.
 
 An uninitalized variable in your function will not be `$null` if it is set to a value in a parent scope. This can be other functions callig your function that happen to use the same variable names.
 
-If I take that same `Do-something` example and remove the loop:
+If I take that same `Do-something` example and remove the loop I would end up with something that looks like this example:
 
 ``` posh
     function Invoke-Something
@@ -460,15 +460,15 @@ If I take that same `Do-something` example and remove the loop:
 
 If the call to `Get-Something` were to throw an exception, then my `$null` check will find the `$result` from `Invoke-Something`. Initalizing the value inside your function mitigates this issue.
 
-Naming variables is hard and it is very common for an author to use the same variable names in multiple functions. I know I use `$node`,`$result`,`$data` all the time. So it would be very easy for values from different scopes to show up in places where they should not be.
+Naming variables is hard and it is common for an author to use the same variable names in multiple functions. I know I use `$node`,`$result`,`$data` all the time. So it would be very easy for values from different scopes to show up in places where they should not be.
 
-# redirect output to $null
+# Redirect output to $null
 
 I have been talking about `$null` values for this entire article but the topic is not complete if I didn't mention redirecting output to `$null`. There will be times where you will have commands that output information or objects that you want to suppress. Redirecting output to `$null` does exactly that.
 
 ## Out-Null
 
-The Out-Null command is the built in way to redirect pipeline data to `$null`
+The Out-Null command is the built-in way to redirect pipeline data to `$null`.
 
 ``` posh
     New-Item -Type Directory -Path $path | Out-Null
@@ -476,7 +476,7 @@ The Out-Null command is the built in way to redirect pipeline data to `$null`
 
 ## Assign to $null
 
-In many cases you can also assign the results to `$null` for the same effect as using `Out-Null`.
+You can assign the results of a command to `$null` for the same effect as using `Out-Null`.
 
 ``` posh
     $null = New-Item -Type Directory -Path $path
@@ -484,7 +484,7 @@ In many cases you can also assign the results to `$null` for the same effect as 
 
 Because `$null` is a constant value, you can never overwrite it. I don't like the way it looks in my code but it often performs faster than `Out-Null`.
 
-## redirect to $null
+## Redirect to $null
 
 You can also use the redirection opperator to send output to `$null`.
 
@@ -500,4 +500,4 @@ If you are dealing with command line executables that output on the different st
 
 # Summary
 
-I covered a lot of ground on this one and I know this article is more fragmented than most of my deep dives. Thats because `$null` values can pop up in many different places in PowerShell and all the nuances are specific to where you find it. I hope you walk away from this with a better understanding of `$null` and an awareness of the more obscure scenarios you may run into.
+I covered a lot of ground on this one and I know this article is more fragmented than most of my deep dives. That is because `$null` values can pop up in many different places in PowerShell and all the nuances are specific to where you find it. I hope you walk away from this with a better understanding of `$null` and an awareness of the more obscure scenarios you may run into.
