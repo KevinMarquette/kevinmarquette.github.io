@@ -153,19 +153,13 @@ Look at this next example and try to predict what the results will be:
     }
 ```
 
-If I do not define `$value` then the first one will evaluate to `$true` and our message will be `The array is $null`. The trap here is that it is possible to create a `$value` that will allow both of them to be `$true`
+If I do not define `$value` then the first one will evaluate to `$true` and our message will be `The array is $null`. The trap here is that it is possible to create a `$value` that will allow both of them to be `$false`
 
 ``` posh
-   $value = @( $null, $true )
+   $value = @( $null )
 ```
 
-In this case the `$value` is an array and the `-eq` will check every value in the array. The fist one finds a `$null` so it is `$true` and the second one finds a value that is not `$null` so it is also `$true`.
-
-``` posh
-    'The array is $null'
-    'The array is not $null'
-```
-
+In this case the `$value` is an array that contains a `$null`. The `-eq` will check every value in the array and returns the `$null` that is matched (This evaluates to `$false`). The `-ne` will return everything that does not match `$null` and in this case there are no results (This also evaluates to `$false`). Neither one will be `$true` even though it looks like one of them should be.
 
 ## Simple if check
 
