@@ -177,7 +177,10 @@ If the value is `$null`, this will evaluate to `$false`. This is simple and easy
 Here is a more complete sample of that statement.
 
 ``` posh
-    if ( $null -ne $value -and $value -ne 0 and $value -ne '' and $value -ne $false )
+    if ( $null -ne $value -and
+         $value -ne 0 -and
+         $value -ne '' -and
+         $value -ne $false )
     {
         Do-Something
     }
