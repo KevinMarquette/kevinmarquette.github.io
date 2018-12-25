@@ -161,6 +161,20 @@ If I do not define `$value` then the first one will evaluate to `$true` and our 
 
 In this case the `$value` is an array that contains a `$null`. The `-eq` will check every value in the array and returns the `$null` that is matched (This evaluates to `$false`). The `-ne` will return everything that does not match `$null` and in this case there are no results (This also evaluates to `$false`). Neither one will be `$true` even though it looks like one of them should be.
 
+## PSScriptAnalyzer and VSCode
+
+The [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) module has a rule that checks for this issue called `PSPossibleIncorrectComparisonWithNull`.
+
+``` text
+    PS> Invoke-ScriptAnalyzer ./myscript.ps1
+
+    RuleName                              Message
+    --------                              -------
+    PSPossibleIncorrectComparisonWithNull $null should be on the left side of equality comparisons.
+```
+
+Because VSCode uses the PSScriptAnalyser rules too, it will also hilight or identify this as a problem in your script.
+
 ## Simple if check
 
 A common way that people check for a non `$null` value is to use a simple `if()` statement without the comparison.
