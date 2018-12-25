@@ -636,6 +636,23 @@ This is a very clean way to evaluate and take action on the status of several bo
 
 Setting `$isEnabled` to `$true` in this example will make sure the `$isVisible` is also set to `$true`. Then when the `$isVisible` gets evaluated, its scriptblock will be invoked. This is a bit counter-intuitive but is a very clever use of the mechanics.
 
+# $switch automatic variable
+
+When the `switch` is processing its values, it creates an enumerator and calls it `$switch`. This is an automatic variable created by PowerShell and you have the option to manipulate it directly.
+
+This was pointed out to me by [/u/frmadsen](https://www.reddit.com/user/frmadsen)
+
+<div class="reddit-embed" data-embed-media="www.redditmedia.com" data-embed-parent="false" data-embed-live="false" data-embed-uuid="8f6edbf1-abc6-4513-971e-ccd1d202889d" data-embed-created="2018-12-25T22:05:33.986Z"><a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/ecj2kji/">Comment</a> from discussion <a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/">What should I (IT student) learn to master PowerShell?</a>.</div><script async src="https://www.redditstatic.com/comment-embed.js"></script>
+
+This will give you the results of:
+
+```
+    2
+    4
+```
+
+ By moving the enumerator forward, the next item will not get processed by the `switch`. I would call it madness.
+
 # Other patterns
 
 ## Hashtables

@@ -393,6 +393,10 @@ I much prefer using `if` or `foreach` over using `try/catch`. Don't get me wrong
 
 I also tend to check for `$null` before I index into a value or call methods on an object. These two actions will fail if they are on a `$null` object so I find it important to validate them first. I already covered those senarios earlier in this post.
 
+## No results senario
+
+It is important to know that different functions and commands handle the no results scenario differently. Many PowerShell commands return the empty `$null` and an error in the error stream. But other will throw exceptions or give you a status object. It is still up to you to know how the commands you are calling deal with the no results and error scenarios.
+
 # Initalizing to $null
 
 One habbit that I have picked up is initalizing all my variables before I use them. You are required to do this in other languages. At the top of my function or as I enter a foreach loop, I will define all the values that I will be using.
