@@ -5,7 +5,7 @@ date: 2017-06-12
 tags: [PowerShell,Plaster,Modules]
 ---
 
-One of the cool things about Plaster is that you can package your templates into [PowerShell modules](http://kevinmarquette.github.io/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=plasterTemplatePublishing). This makes it easy to distribute and share them. You can publish them to an [internal repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=plasterTemplatePublishing) or even share them on the [PowerShell Gallery](https://www.powershellgallery.com/).
+One of the cool things about Plaster is that you can package your templates into [PowerShell modules](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=plasterTemplatePublishing). This makes it easy to distribute and share them. You can publish them to an [internal repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=plasterTemplatePublishing) or even share them on the [PowerShell Gallery](https://www.powershellgallery.com/).
 <!--more-->
 
 # Index
@@ -15,7 +15,7 @@ One of the cool things about Plaster is that you can package your templates into
 
 # Our Plaster template
 
-For this example, I am going to take a fun Plaster template that I built in a [previous post called GetPlastered](https://kevinmarquette.github.io/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent). It allows you to take a project folder and turn it into a Plaster template. While that template may be a little complex, the structure to is is very simple.
+For this example, I am going to take a fun Plaster template that I built in a [previous post called GetPlastered](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent). It allows you to take a project folder and turn it into a Plaster template. While that template may be a little complex, the structure to is is very simple.
 
 Right now we only have 2 files inside this template.
 

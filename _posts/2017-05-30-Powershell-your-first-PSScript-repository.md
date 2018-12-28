@@ -61,7 +61,7 @@ Other than creating a folder, there is no complicated setup to creating this rep
 
 # Modules
 
-I recently covered how to [create a module](https://kevinmarquette.github.io/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=psrepository) as a way to package your functions. We can use this repository to distribute and share your modules.
+I recently covered how to [create a module](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=psrepository) as a way to package your functions. We can use this repository to distribute and share your modules.
 
 ## Publishing modules
 

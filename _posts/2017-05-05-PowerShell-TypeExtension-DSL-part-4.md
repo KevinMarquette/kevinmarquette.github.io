@@ -73,7 +73,7 @@ I say that because as I was looking at the example, I felt like it would be a go
 
 I see three thing that I need to figure out how to do. How to add a method, an alias property and a calculated property to a type.
 
-In my post about [PSCustomObjects](https://kevinmarquette.github.io/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension), I quickly mention the use of [Update-TypeData](https://kevinmarquette.github.io/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension#update-typedata-with-defaultpropertyset). I think I can use that as a starting point.
+In my post about [PSCustomObjects](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension), I quickly mention the use of [Update-TypeData](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=PSTypeExtension#update-typedata-with-defaultpropertyset). I think I can use that as a starting point.
 
 The first thing I am going to do is walk that example DSL and do each of those by hand. I need to know how to do it in PowerShell before I get clever with it.
 

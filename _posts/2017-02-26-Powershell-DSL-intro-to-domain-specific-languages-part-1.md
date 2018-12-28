@@ -62,7 +62,7 @@ _SQL_
 Select Name From tablePerson Where ID = 1
 ```
 
-In each case they have their own domain of terminology and patterns. We also have several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph/) are all implemented as a DSL.
+In each case they have their own domain of terminology and patterns. We also have several good examples in Powershell now. DSC, [Pester](https://github.com/pester/Pester/wiki), [psake](http://psake.readthedocs.io/en/latest/) and [PSGraph](/2017-01-30-Powershell-PSGraph/) are all implemented as a DSL.
 
 _DSC_
 

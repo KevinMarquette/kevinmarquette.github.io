@@ -368,7 +368,7 @@ Then use it in the test like this:
 
 You can place any PowerShell ScriptBlock into a text parameter. Should you do that? Prabably not. Your code really should be in the tests and not in the specifications.
 
-I do have to warn you that by using `Invoke-Expression` or even creating a `ScriptBlock` that you are turning a specification file into an executable file. You could consider limiting the commands that could be used in your specification. If you are interested in that, I have a better write up about [Domain Specific Languages](https://kevinmarquette.github.io/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1/?utm_source=blog&utm_medium=blog&utm_content=Gherkin2#data-sections) that covers that in more detail. 
+I do have to warn you that by using `Invoke-Expression` or even creating a `ScriptBlock` that you are turning a specification file into an executable file. You could consider limiting the commands that could be used in your specification. If you are interested in that, I have a better write up about [Domain Specific Languages](/2017-02-26-Powershell-DSL-intro-to-domain-specific-languages-part-1/?utm_source=blog&utm_medium=blog&utm_content=Gherkin2#data-sections) that covers that in more detail. 
  
 # Running scenarios multiple times
 

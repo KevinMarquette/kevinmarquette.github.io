@@ -849,9 +849,9 @@ We are calling into .Net to get this type. In this case we are using the default
 
 The reason I am using `[void]` at the beginning of the line is to suppress the return code. Some .Net calls will do this and can create unexpected output.
 
-If the only data that you have in your array is strings, then also take a look at using [StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arraysinline). It is almost the same thing but has some methods that are just for dealing with strings. The `StringBuilder` is specially designed for performance.
+If the only data that you have in your array is strings, then also take a look at using [StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arraysinline). It is almost the same thing but has some methods that are just for dealing with strings. The `StringBuilder` is specially designed for performance.
 
-* [Concatenate strings using StringBuilder](https://kevinmarquette.github.io/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arrays)
+* [Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=arrays)
 
 It is really common to see people move to `ArrayList` from arrays. But it comes from a time where C# did not have generic support. The `ArrayList` is depreciated in support for the generic `List[]`
 
@@ -1073,4 +1073,4 @@ The catch is that you will have a new array. If that is ever a problem, you can 
 
 I know this is all a lot to take in. My hope is that you will learn something from this article every time you read it and that it will turn out to be a good reference for you for a long time to come. If you found this to be helpful, please share it with others that you think will get value out of it.
 
-From here, I would recommend you check out a similar post that I wrote about [hashtables](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=arrays).
+From here, I would recommend you check out a similar post that I wrote about [hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=arrays).

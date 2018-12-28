@@ -11,14 +11,14 @@ I did a lot more this month than I expected. Here is a breakdown of all the post
 
 These are the projects and idea that I do on my own time for the community. Most of my personal projects are published on this blog or as a contribution on GitHub.<!--more-->
 
-* Blog post on [Writing a DSL for RDC Manager, DSLs part 2](https://kevinmarquette.github.io/2017-03-04-Powershell-DSL-example-RDCMan/?utm_source=blog&utm_medium=blog&utm_content=monthly)
-* Blog post on [DSL design patterns, DSLs part 3](https://kevinmarquette.github.io/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=monthly)
-* Blog post on [Gherkin specification validation](https://kevinmarquette.github.io/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=monthly)
-* Blog post on [The many ways to read and write to files](https://kevinmarquette.github.io/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=monthly)
-* Blog post on a [Mnemonic wordlist](https://kevinmarquette.github.io/2017-03-25-mnemonic-wordlist/?utm_source=blog&utm_medium=blog&utm_content=monthly)
+* Blog post on [Writing a DSL for RDC Manager, DSLs part 2](/2017-03-04-Powershell-DSL-example-RDCMan/?utm_source=blog&utm_medium=blog&utm_content=monthly)
+* Blog post on [DSL design patterns, DSLs part 3](/2017-03-13-Powershell-DSL-design-patterns/?utm_source=blog&utm_medium=blog&utm_content=monthly)
+* Blog post on [Gherkin specification validation](/2017-03-17-Powershell-Gherkin-specification-validation/?utm_source=blog&utm_medium=blog&utm_content=monthly)
+* Blog post on [The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=monthly)
+* Blog post on a [Mnemonic wordlist](/2017-03-25-mnemonic-wordlist/?utm_source=blog&utm_medium=blog&utm_content=monthly)
 * Spent some time experimenting with Newtonsoft JSON.net library.
 * I got two very minor contributions merged into Powershell to get my contributer tag.
-* I reworked the landing page and reorganized my blog with [tag support](https://kevinmarquette.github.io/tags/#DSL).
+* I reworked the landing page and reorganized my blog with [tag support](/tags/#DSL).
 * I wrote a script to parse all my posts and re-generate my tags page. [UpdateTags.ps1](https://github.com/KevinMarquette/kevinmarquette.github.io/blob/master/UpdateTags.ps1)
 
 # Work/Consulting efforts

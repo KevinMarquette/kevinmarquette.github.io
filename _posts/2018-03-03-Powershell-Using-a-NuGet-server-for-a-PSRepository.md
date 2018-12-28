@@ -6,7 +6,7 @@ tags: [PowerShell,NuGet,PowerShellGet,Modules]
 share-img: "http://kevinmarquette.github.io/img/share-img/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository.png"
 ---
 
-In my post talking about [Your first internal PSScript repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget), I used a network share to show how easy it is to get started. I am going to take that idea to the next step and publish a module to a [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) server. This is how we manage our modules internally.
+In my post talking about [Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget), I used a network share to show how easy it is to get started. I am going to take that idea to the next step and publish a module to a [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) server. This is how we manage our modules internally.
 <!--more-->
 
 # Index
@@ -82,7 +82,7 @@ You may notice that `MyRepository` is trusted. If you take a close look at the p
 
 # Using your repository
 
-You use this repository just like any other repository. I already covered how to use `Publish-Module`, `Find-Module`, and `Install-Module` from a repository in my [Your first internal PSScript repository](https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget) post. All those commands still apply to this repository so I am not going to cover all of them again.
+You use this repository just like any other repository. I already covered how to use `Publish-Module`, `Find-Module`, and `Install-Module` from a repository in my [Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget) post. All those commands still apply to this repository so I am not going to cover all of them again.
 
 One important difference is that we need to provide a NuGet API key when publishing.
 

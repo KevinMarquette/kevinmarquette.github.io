@@ -10,7 +10,7 @@ I saw this tweet by Glenn Sarti where he was building a graph database of the Po
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/MSFTzachal">@MSFTzachal</a> As promised I wrote my PowerShell Help graph presentation (PS Summit) as a blog post instead <a href="https://t.co/zuQzXf7ysy">https://t.co/zuQzXf7ysy</a></p>&mdash; Glenn Sarti (@GlennSarti) <a href="https://twitter.com/GlennSarti/status/861081215633412096">May 7, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I thought it was a cool idea and I was curious what I could do with my [PSGraph module](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) on that same dataset. I am pulling examples right from [Glenn Sarti's article](http://glennsarti.github.io/blog/graph-all-the-powershell-things) because he did a great job explaining it.
+I thought it was a cool idea and I was curious what I could do with my [PSGraph module](/2017-01-30-Powershell-PSGraph) on that same dataset. I am pulling examples right from [Glenn Sarti's article](http://glennsarti.github.io/blog/graph-all-the-powershell-things) because he did a great job explaining it.
 <!--more-->
 
 # PowerShell help example
@@ -63,4 +63,4 @@ The whole reason I wrote PSGraph was to be able to visualize data like this very
 
 # Closing remarks
 
-I want to say thank you to Glenn for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph), please check [this post](https://kevinmarquette.github.io/2017-01-30-Powershell-PSGraph) where I cover it in more detail.
+I want to say thank you to Glenn for the idea. I hope he does not mind me building off [his article](http://glennsarti.github.io/blog/graph-all-the-powershell-things/) like this. If you would like more information on how to install or use [PSGraph](/2017-01-30-Powershell-PSGraph), please check [this post](/2017-01-30-Powershell-PSGraph) where I cover it in more detail.

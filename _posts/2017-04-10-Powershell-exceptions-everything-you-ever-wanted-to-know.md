@@ -321,7 +321,7 @@ Then we can catch it like this:
 
 I compiled a master list with the help of the [Reddit/r/PowerShell community](https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/) that contains hundreds of .Net exceptions to complement this post.
 
-* [The big list of .Net exceptions](https://kevinmarquette.github.io/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=crosspost)
+* [The big list of .Net exceptions](/2017-04-07-all-dotnet-exception-list/?utm_source=blog&utm_medium=blog&utm_content=crosspost)
 
 I start by searching that list for exceptions that feel like they would be a good fit for my situation. You should try to use exceptions in the base `System` namespace.
 

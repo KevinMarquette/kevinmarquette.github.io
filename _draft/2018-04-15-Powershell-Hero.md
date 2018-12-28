@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: 2018 PowerShell Community Hero"
 date: 2018-04-21
 tags: [PowerShell]
-share-img: "http://kevinmarquette.github.io/img/PowerShellHero2018.jpg"
+share-img: "/img/PowerShellHero2018.jpg"
 ---
 I appreciate having the opportunity to connect with everyone from the community at the 2018 PowerShell and DevOps Summit. There were so many great contributers that I have followed for a long time that I was able to finally meet in person.
 

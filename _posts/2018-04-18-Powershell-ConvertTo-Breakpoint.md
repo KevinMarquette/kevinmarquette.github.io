@@ -32,7 +32,7 @@ If you ever looked at a `ScriptStackTrace` on an error, you would see something 
 
 While the data is just a string, it is very consistent and easy to parse with regex. Here is the regex pattern that I used to match each line: `at .+, (?<Script>.+): line (?<Line>\d+)`
 
-I was a little fancy and used [named sub-expression matches](https://kevinmarquette.github.io/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog#regex-matches). I do this so I can access them by name with `$matches.Script` and `$matches.Line`.
+I was a little fancy and used [named sub-expression matches](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog#regex-matches). I do this so I can access them by name with `$matches.Script` and `$matches.Line`.
 
 Once I had the data that I needed, it was a quick call to `Set-PSBreakPoint` to set the breakpoint.
 

@@ -49,4 +49,4 @@ Here is a full sample that I reuse in my scripts for installing MSI files. I use
 
 Not only does it do the silent install, it also captures a verbose log of the install.
 
-Now that you know how to execute a MSI silently, the next step is to run that on a remote system. See my post on [Installing remote software](https://kevinmarquette.github.io/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=installingmsifiles) on how to approach that.
+Now that you know how to execute a MSI silently, the next step is to run that on a remote system. See my post on [Installing remote software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=installingmsifiles) on how to approach that.
