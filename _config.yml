@@ -15,7 +15,7 @@ excerpt_separator: <!--more-->
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Kevin Marquette on PowerShell Theory
+title: PowerShell Explained with Kevin Marquette
 
 # Short description of your site
 description: I love to explore and discover how Powershell works.
@@ -27,13 +27,14 @@ description: I love to explore and discover how Powershell works.
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme/?utm_source=blog&utm_medium=blog&utm_content=navbar"
-  Blog: "blog/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+  Search: "search/?utm_source=blog&utm_medium=blog&utm_content=navbar"
   Resources:
-    - GitHub Pages: "https://pages.github.com/"
-    - MSSQL Server: "sql/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - Blog: "blog/?utm_source=blog&utm_medium=blog&utm_content=navbar"
     - Tags: "tags/?utm_source=blog&utm_medium=blog&utm_content=navbar"
     - SiteMap: "sitemap/?utm_source=blog&utm_medium=blog&utm_content=navbar"
-  Home: "/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - MSSQL Server: "sql/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - GitHub Pages: "https://pages.github.com/"
+  Home: "?utm_source=blog&utm_medium=blog&utm_content=navbar"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -171,7 +172,7 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
-gems:
+plugins:
   - jekyll-paginate
 
 plugins:

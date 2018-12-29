@@ -1,6 +1,7 @@
 ---
 layout: page
-title: PowerShell
+title: PowerShell Explained
+subtitle: With Kevin Marquette
 ---
 
 # Popular reference pages
