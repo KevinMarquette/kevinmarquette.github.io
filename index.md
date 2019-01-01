@@ -56,3 +56,27 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### Select-Ast
 [SelectAst](https://github.com/KevinMarquette/Select-Ast) is a helper command for working with the AST. It takes care of the delegate logic for you so you can select what you want with simpler syntax.
+
+<script type="application/ld+json">
+ { 
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "PowerShell Explained",
+    "url": "http://powershellexplained.com",
+    "founders": [
+        {
+            "@type": "Person",
+            "name": "Kevin Marquette"
+        }
+    ],
+    "sameAs": [
+        "https://twitter.com/KevinMarquette",
+        "https://powershellexplained.org",
+        "https://kevinmarquette.com",
+        "https://www.linkedin.com/in/kevinmarquette",
+        "https://www.youtube.com/kevinmarquette",
+        "https://github.com/KevinMarquette",
+        "https://plus.google.com/u/0/+KevinMarquette"
+    ]
+}
+</script>

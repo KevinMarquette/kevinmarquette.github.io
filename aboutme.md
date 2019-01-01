@@ -14,13 +14,18 @@ subtitle: Sr. DevOps Engineer
         "addressLocality": "Orange County",
         "addressRegion": "CA"
       },
-  "url": "https://kevinmarquette.github.io",
-  "sameAs" : [ "https://twitter.com/KevinMarquette",
+  "url": "https://powershellexplained.com",
+  "sameAs" : [
+      "https://twitter.com/KevinMarquette",
+      "https://powershellexplained.org",
+      "https://kevinmarquette.com",
       "https://www.linkedin.com/in/kevinmarquette",
       "https://www.youtube.com/kevinmarquette",
       "https://github.com/KevinMarquette",
-      "https://plus.google.com/u/0/+KevinMarquette"]
-    }
+      "https://plus.google.com/u/0/+KevinMarquette",
+      "https://www.twitch.tv/kevinmarquette"
+    ]
+  }
 }
 </script>
 I am a Sr. DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
