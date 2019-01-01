@@ -116,6 +116,7 @@ img {
 
 .navbar-custom .navbar-brand {
   font-size: 12px;
+  padding: 15px 0px 15px 15px;
 }
 
 .navbar-custom .navbar-brand:hover,
