@@ -172,7 +172,7 @@ Attendees: 60
 ---
 
 Speaking (User Group)
-5/1/2017
+5/1/2018
 Custom DSC Resources with Kevin Marquette
 https://www.meetup.com/SoCal-PowerShell-user-group/events/248384828/
 I presented to the SoCal PowerShell user group on how to create custom DSC resource.
