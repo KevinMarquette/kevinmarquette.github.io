@@ -193,7 +193,7 @@ Attendees: 60
 
 ---
 blog
-https://kevinmarquette.github.io/blog
+https://powershellexplained.comblog
 
 twitter
 https://twitter.com/KevinMarquette

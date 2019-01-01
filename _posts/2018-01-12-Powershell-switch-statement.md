@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Everything you ever wanted to know about the switch statement"
 date: 2018-01-12
 tags: [PowerShell,Regex]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-01-12-Powershell-switch-statement.png"
+share-img: "/img/share-img/2018-01-12-Powershell-switch-statement.png"
 ---
 
 Like many other languages, PowerShell has commands for controlling the flow of execution within your scripts. One of those statement is the [switch](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-5.1) statement and in PowerShell, it offers features that are not found in other languages. Today we will take a deep dive into working with the PowerShell `switch`.

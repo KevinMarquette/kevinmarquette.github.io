@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Using a NuGet server for a PSRepository"
 date: 2018-03-03
 tags: [PowerShell,NuGet,PowerShellGet,Modules]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository.png"
+share-img: "/img/share-img/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository.png"
 ---
 
 In my post talking about [Your first internal PSScript repository](/2017-05-30-Powershell-your-first-PSScript-repository/?utm_source=blog&utm_medium=blog&utm_content=nuget), I used a network share to show how easy it is to get started. I am going to take that idea to the next step and publish a module to a [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) server. This is how we manage our modules internally.

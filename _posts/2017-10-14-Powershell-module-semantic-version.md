@@ -3,7 +3,7 @@ layout: post
 title: "PowerShell: Automatic Module Semantic Versioning"
 date: 2017-10-14
 tags: [PowerShell,Build,Modules]
-share-img: http://kevinmarquette.github.io/img/share-img/2017-10-14-Powershell-module-semantec-version.png
+share-img: /img/share-img/2017-10-14-Powershell-module-semantec-version.png
 redirect_from: "/2017-10-14-Powershell-module-semantec-version"
 ---
 

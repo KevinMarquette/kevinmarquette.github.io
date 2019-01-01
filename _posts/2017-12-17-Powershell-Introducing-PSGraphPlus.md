@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Introducing PSGraphPlus with Show-GitGraph"
 date: 2017-12-17
 tags: [PowerShell]
-share-img: "http://kevinmarquette.github.io/img/share-img/2017-12-17-Powershell-Introducing-PSGra
+share-img: "/img/share-img/2017-12-17-Powershell-Introducing-PSGra
 phPlus.png"
 ---
 

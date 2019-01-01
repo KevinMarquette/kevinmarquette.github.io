@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Publishing community modules to an internal PSRepository"
 date: 2018-03-06
 tags: [PowerShell,Modules,Build]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-03-06-Powershell-Managing-community-modules.png"
+share-img: "/img/share-img/2018-03-06-Powershell-Managing-community-modules.png"
 ---
 I touched base on the idea of [Using a NuGet server for a PSRepository](/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=modulemanager) a few days ago. This is the ideal way to distribute modules to other systems. This can include community modules. Today, I am going to cover the process that I use to republish modules from the PSGallery to an internal PSRepository.
 <!--more-->

@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: What is pwsh.exe"
 date: 2017-12-29
 tags: [PowerShell,pwsh]
-share-img: "http://kevinmarquette.github.io/img/share-img/2017-12-29-Powershell-what-is-pwsh.png"
+share-img: "/img/share-img/2017-12-29-Powershell-what-is-pwsh.png"
 question: "What is pwsh.exe?"
 answer: "The pwsh.exe process is the new name for PowerShell starting with version 6.0."
 ---

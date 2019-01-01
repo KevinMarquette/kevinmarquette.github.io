@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: DependsOn Module"
 date: 2018-08-26
 tags: [PowerShell,loanDepot]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-26-Powershell-DependsOn.png"
+share-img: "/img/share-img/2018-08-26-Powershell-DependsOn.png"
 ---
 
 One nice feature of a DSC configuration is that all resources support specifying a `DependsOn` property that ensures that the resources that it depends on are ran first. Every once in a while, I find myself wanting to use that feature in other scripts. I created a module called [DependsOn](https://github.com/loanDepot/DependsOn) to do that for me.

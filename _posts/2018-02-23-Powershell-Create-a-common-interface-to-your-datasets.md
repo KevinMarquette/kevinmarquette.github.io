@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: You need a Get-MyServer function"
 date: 2018-02-23
 tags: [PowerShell]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets.png"
+share-img: "/img/share-img/2018-02-23-Powershell-Create-a-common-interface-to-your-datasets.png"
 ---
 
 As your library of scripts and automation grows, everything you do will start to depend on your common datasets. Datasets like your user information or server details. Just think about how many scripts and tools you already have that either get a list of servers or you provide it a list of servers. It may be time for you to create a common interface to your data.

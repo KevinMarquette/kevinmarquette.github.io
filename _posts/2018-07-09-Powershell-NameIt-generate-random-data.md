@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Generating random data with NameIT"
 date: 2018-07-09
 tags: [PowerShell,Modules]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-07-09-Powershell-NameIt-generate-random-data.png"
+share-img: "/img/share-img/2018-07-09-Powershell-NameIt-generate-random-data.png"
 ---
 I find that I often need random datasets for testing or for examples in my presentations. My favorite tool for that is [NameIT](https://github.com/dfinke/NameIT). This is a PowerShell module written by [Doug Finke](https://twitter.com/dfinke) that makes it super easy to create good looking but random data.
 

@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: How to create a Standard Library Binary Module"
 date: 2018-08-04
 tags: [PowerShell,Modules]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-08-04-Powershell-Standard-Library-Binary-Module.png"
+share-img: "/img/share-img/2018-08-04-Powershell-Standard-Library-Binary-Module.png"
 ---
 
 I recenty had an idea for module that I wanted to implement as a binary module. I have yet to create one using the [PowerShell Standard Library](https://github.com/PowerShell/PowerShellStandard) so this felt like a good opportunity. I was able to use the [Creating a cross-platform binary module](https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md) guide to create this module without any roadblocks. We are going to walk that same process and I'll add a little extra commentary along the way.

@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: ConvertTo-Breakpoint"
 date: 2018-04-18
 tags: [PowerShell]
-share-img: "http://kevinmarquette.github.io/img/share-img/2018-04-18-Powershell-ConvertTo-Breakpoint.png"
+share-img: "/img/share-img/2018-04-18-Powershell-ConvertTo-Breakpoint.png"
 ---
 I was just at the PowerShell and DevOps Summit last week. It was great to meet so many of the people that I have worked with online. I also walked way with several ideas that I wanted to work on.
 

@@ -3,7 +3,7 @@ date: 2018-02-17
 layout: post
 title: "Powershell: PSGraph 2.1.17 the record release"
 tags: [PSGraph]
-share-img: "http://kevinmarquette.github.io/img/datamodel.png"
+share-img: "/img/datamodel.png"
 ---
 
 I just released another major update to PSGraph. This release includes new keywords and helps unlock more features of Graphviz. These features will make it easier to build entity and data model diagrams.

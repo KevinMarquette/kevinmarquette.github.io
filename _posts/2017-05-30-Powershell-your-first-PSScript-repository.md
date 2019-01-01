@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Your first internal PSScript repository"
 date: 2017-05-30
 tags: [Powershell,Modules,PowerShellGet]
-share-img: "http://kevinmarquette.github.io/img/share-img/2017-05-30-Powershell-your-first-PSScript-repository.png"
+share-img: "/img/share-img/2017-05-30-Powershell-your-first-PSScript-repository.png"
 ---
 
 Setting up a basic internal repository for scripts and modules is surprisingly simple. I had no idea how easy this was for the longest time. If you are looking for ways to distribute your modules to others in your team, then you should consider this approach.<!--more-->

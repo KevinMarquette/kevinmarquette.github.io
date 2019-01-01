@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: The many ways to use regex"
 date: 2017-07-31
 tags: [PowerShell,Regex]
-share-img: http://kevinmarquette.github.io/img/share-img/2017-07-31-Powershell-regex-regular-expression.png
+share-img: /img/share-img/2017-07-31-Powershell-regex-regular-expression.png
 ---
 
 Regular expressions (regex) match and parse text. The regex language is a powerful shorthand for describing patterns. Powershell makes use of regular expressions in several ways. Sometimes it is easy to forget that these commands are using regex becuase it is so tightly integrated. You may already be using some of these commands and not even realize it.

@@ -66,6 +66,6 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
 
     $bmp.Save($filename) 
     $filename 
-    'share-img: "http://kevinmarquette.github.io/img/share-img/{0}"' -f (Split-Path $filename -Leaf)
+    'share-img: "/img/share-img/{0}"' -f (Split-Path $filename -Leaf)
     #https://cards-dev.twitter.com/validator
 }

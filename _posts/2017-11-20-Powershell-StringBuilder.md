@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: Concatenate strings using StringBuilder"
 date: 2017-11-20
 tags: [PowerShell,DotNet]
-share-img: http://kevinmarquette.github.io/img/share-img/2017-11-20-Powershell-StringBuilder.png
+share-img: /img/share-img/2017-11-20-Powershell-StringBuilder.png
 ---
 Have you ever noticed that some people use [StringBuilder](https://msdn.microsoft.com/en-us/library/system.text.stringbuilder) in their PowerShell scripts and wondered why? The whole point of using `StringBuilder` is to concatenate or build large strings. There are ways to do this in PowerShell already, so why would someone turn to this DotNet object?
 <!--more-->
