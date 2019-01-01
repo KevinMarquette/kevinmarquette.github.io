@@ -19,11 +19,13 @@ subtitle: Sr. DevOps Engineer
       "https://twitter.com/KevinMarquette",
       "https://powershellexplained.org",
       "https://kevinmarquette.com",
+      "https://kevinmarquette.github.io",
       "https://www.linkedin.com/in/kevinmarquette",
       "https://www.youtube.com/kevinmarquette",
       "https://github.com/KevinMarquette",
       "https://plus.google.com/u/0/+KevinMarquette",
-      "https://www.twitch.tv/kevinmarquette"
+      "https://www.twitch.tv/kevinmarquette",
+      "http://kevinmarquette.blogspot.com"
     ]
   }
 }
