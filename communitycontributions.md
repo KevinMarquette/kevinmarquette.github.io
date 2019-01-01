@@ -208,3 +208,25 @@ facebook
 https://www.facebook.com/kevin.marquette
 
 YouTube
+
+
+
+
+2018 user group presentations:
+
+
+* [Custom DSC Resources](https://www.meetup.com/SoCal-PowerShell-user-group/events/248384828/)
+* [Dynamic DSC Configuration Data with David and Kevin](https://www.meetup.com/SoCal-PowerShell-user-group/events/248384992/)
+* [Enterprise scale DSC, DevOps at loanDepot](https://www.meetup.com/SoCal-PowerShell-user-group/events/251447753/)
+* [Advanced Functions](https://www.meetup.com/SoCal-PowerShell-user-group/events/254689518/)
+* [Pester in Action](https://www.meetup.com/SoCal-PowerShell-user-group/events/256740027/)
+
+The other half of our sessions were covered either by David, guest speakers or remote presenters.
+
+### Other User Groups
+
+I was able to present a few sessions to the Research Triangle and Portland user groups.
+
+* RTP [Everything you wanted to know about hashtables](https://www.meetup.com/Research-Triangle-PowerShell-Users-Group/events/251494859/)
+* RTP [PSGraph: Creating Dynamic Graphs and Diagrams on the fly!](https://www.meetup.com/Research-Triangle-PowerShell-Users-Group/events/256193788/)
+* PUG [Everything you wanted to know about hashtables](https://www.evensi.us/monthly-pug-meetup-kevin-marquette-viewpoint/271644771)
