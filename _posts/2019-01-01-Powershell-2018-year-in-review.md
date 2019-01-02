@@ -13,7 +13,7 @@ Over on [/r/PowerShell](https://www.reddit.com/r/PowerShell), we share with each
 * TOC
 {:toc}
 
-# Community Efforts
+# Community efforts
 
 I really love the PowerShell community and I have done a lot of work to contribute to it. Here is a look at what I did for the community (and what the community did for me) this year.
 
@@ -69,7 +69,7 @@ I am sitting 10th on the [FeedSpot Top PowerShell RSS Feeds](https://blog.feedsp
 
 SQLShack posted their [Top 50 PowerShell Bloggers](https://www.sqlshack.com/top-50-powershell-bloggers-of-2018/) at the end of August. I was shocked to see my name sitting 2nd place on that list. After my experience at the PowerShell Summit and receiving my Microsoft MVP, maybe I should not have been so surprised, but I see a lot of great names on that list that have been creating good content for a long time now. It could be that 2018 was just my year or maybe it's a classic case of [Impostor Syndrome](https://winsysblog.com/2018/12/i-have-impostor-syndrome.html).
 
-### Blogging By the numbers
+### Blogging by the numbers
 
 My website is one of my most visible contributions to the community. While it is awesome to see my blog listed high in those top 50 lists, its the numbers that really tell the story. Here is a quick peek at the last 12 months of activity from Google Analytics.
 
@@ -77,7 +77,7 @@ My website is one of my most visible contributions to the community. While it is
 
 Thats 482,000 users and 964,00 page views in the last 12 months. I had no idea those numbers were climbing so high. This is over 250% increase over the year before. 
 
-## User Groups
+## User groups
 
 A big part of giving back to the community is interacting with the PowerShell user groups. I started the SoCal PowerShell User Group in 2017 and we had a lot of good sessions this year. I teamed up with [David Christian](https://overpoweredshell.com/about/) and did several sessions covering all aspects of DSC. My favorite aspect of the group this year is that we are seeing more and more people becoming regular attendees.
 
@@ -97,7 +97,7 @@ I presented 8 sessions this year between my group and others in the community. M
 
 I posted about 30 videos on [YouTube](https://www.youtube.com/kevinmarquette) this year. A few of them are actual [presentations](https://www.youtube.com/playlist?list=PLOcTmsj9WHDrbxPh0CRRlaEdYOmidHWr4) that I did this year. Most of the others are coding live streams or other video experiments.
 
-## Other Social Media Stats
+## Other social media stats
 
 While my other social media stats are not that big of a deal, I'm making note of them here so I can compare the numbers next year.
 
@@ -139,7 +139,7 @@ The cut-over to this project was an accomplishment all on it's own. The team rea
 
 I created and reworked a lot of our component onboarding tooling. The LDX Project enabled much better templating scenarios for us to take advantage of. 
 
-### SSDT, SSIS, NPM pipleines
+### SSDT, SSIS, NPM tooling
 
 I built out the initial tooling, metadata, CI/CD pipelines, and documentation for our SSDT, SSIS, and NPM projects.
 
