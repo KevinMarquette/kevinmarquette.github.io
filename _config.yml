@@ -27,10 +27,12 @@ description: I love to explore and discover how Powershell works.
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme/?utm_source=blog&utm_medium=blog&utm_content=navbar"
-  Search: "search/?utm_source=blog&utm_medium=blog&utm_content=navbar"
-  Resources:
-    - Blog: "blog/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+  Blog: 
+    - Posts: "blog/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - Search: "search/?utm_source=blog&utm_medium=blog&utm_content=navbar"
     - Tags: "tags/?utm_source=blog&utm_medium=blog&utm_content=navbar"
+    - RSS: "feed.xml"
+  Resources:
     - SiteMap: "sitemap/?utm_source=blog&utm_medium=blog&utm_content=navbar"
     - MSSQL Server: "sql/?utm_source=blog&utm_medium=blog&utm_content=navbar"
     - GitHub Pages: "https://pages.github.com/"
