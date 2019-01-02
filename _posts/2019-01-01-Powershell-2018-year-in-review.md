@@ -67,19 +67,19 @@ I am sitting 10th on the [FeedSpot Top PowerShell RSS Feeds](https://blog.feedsp
 
 ### SQLShack Top 5 PowerShell bloggers of 2018
 
-SQLShack posted their [Top 50 PowerShell Bloggers](https://www.sqlshack.com/top-50-powershell-bloggers-of-2018/) at the end of August. I was shocked to see my name sitting 2nd place on that list. After my experience at the PowerShell Summit and receiving my Microsoft MVP, maybe I should not have been so surprised, but I see a lot of great names on that list that have been creating good content for a long time now. It could be that 2018 was just my year or maybe it's a classic case of [Impostor Syndrome](https://winsysblog.com/2018/12/i-have-impostor-syndrome.html).
+[SQLShack](https://www.sqlshack.com/) posted their [Top 50 PowerShell Bloggers](https://www.sqlshack.com/top-50-powershell-bloggers-of-2018/) at the end of August. I was shocked to see my name sitting 2nd place on that list. After my experience at the PowerShell Summit and receiving my Microsoft MVP, maybe I should not have been so surprised, but I see a lot of great names on that list that have been creating good content for a long time now. It could be that 2018 was just my year or maybe it's a classic case of [Impostor Syndrome](https://winsysblog.com/2018/12/i-have-impostor-syndrome.html).
 
 ### Blogging by the numbers
 
-My website is one of my most visible contributions to the community. While it is awesome to see my blog listed high in those top 50 lists, its the numbers that really tell the story. Here is a quick peek at the last 12 months of activity from Google Analytics.
+My website is one of my most visible contributions to the community. While it is awesome to see my site listed high in those top 50 lists, its the numbers that really tell the story. Here is a quick peek at the last 12 months of activity from Google Analytics.
 
 ![2018 blog stats](/img/2018blogstats.png)
 
-Thats 482,000 users and 964,00 page views in the last 12 months. I had no idea those numbers were climbing so high. This is over 250% increase over the year before. 
+Thats 482,000 users and 964,00 page views in the last 12 months. I had no idea those numbers were climbing so high. This is a 250% increase over the year before.
 
 ## User groups
 
-A big part of giving back to the community is interacting with the PowerShell user groups. I started the SoCal PowerShell User Group in 2017 and we had a lot of good sessions this year. I teamed up with [David Christian](https://overpoweredshell.com/about/) and did several sessions covering all aspects of DSC. My favorite aspect of the group this year is that we are seeing more and more people becoming regular attendees.
+A big part of giving back to the community is interacting with the PowerShell user groups. I started the [SoCal PowerShell User Group](https://socalpowershell.org/) in 2017 and we had a lot of good sessions this year. I teamed up with [David Christian](https://overpoweredshell.com/about/) and did several sessions covering all aspects of DSC. My favorite aspect of the group this year is that we are seeing more and more regular attendees.
 
 ### User group presentations
 
@@ -103,9 +103,9 @@ While my other social media stats are not that big of a deal, I'm making note of
 
 I picked up 883 new [Twitter](https://twitter.com/KevinMarquette) followers this year to hit a total of 1544. I have no idea where my [linkedIn](https://www.linkedin.com/in/kevinmarquette/) connections started, but I am sitting at 662 right now. I have the same story for [YouTube](https://www.youtube.com/kevinmarquette) with 181 subscribers. I just got [twitch](https://www.twitch.tv/kevinmarquette) setup this month so I am going into the new year with 27 followers.
 
-## Open Source Contributions
+## Open source Contributions
 
-I participated in Hacktoberfest this year and got my needed pull requests out to other projects. I did get around 10 pull requests into the PowerShell repositories but most of my changes there were adding or cleaning up tests.
+I participated in [Hacktoberfest](https://hacktoberfest.digitalocean.com/) this year and got my needed pull requests out to other projects. I did get around 10 pull requests last year to the PowerShell repositories but most of my changes there were adding or cleaning up tests.
 
 ## Personal projects
 
@@ -114,9 +114,11 @@ I created these utility functions this year.
 * [Select-Ast](https://github.com/KevinMarquette/Select-Ast)
 * [ConvertTo-Breakpoint](https://github.com/KevinMarquette/ConvertTo-Breakpoint)
 
+They were small projects but both of them helped me with minor annoyances. My larger projects are posted on the loanDepot GitHub site.
+
 ### loanDepot on GitHub
 
-This year was also the start of the loanDepot DevOps team sharing our Modules on GitHub. This is a low priority effort for the team but I have gotten these projects of mine posted.
+This year was also the start of the l[oanDepot DevOps team](https://github.com/loanDepot) sharing our Modules on GitHub. This is a low priority effort for the team but I have gotten these projects of mine posted.
 
 * [DependsOn](https://github.com/loanDepot/DependsOn)
 * [VsoLoggingCommands](https://github.com/loanDepot/VsoLoggingCommands)
@@ -131,7 +133,7 @@ My community efforts listed above are more than enough to keep me busy, but I am
 
 ## The LDX Project
 
-This was a major team wide retooling effort that I started the year before and delivered on in Q1. We have this metadata database that sits above all our automation as the source of truth for everything our team does. I lead the design and implementation of a revised metadata database and engine to support our growing demands on the system. The end result was drastically different under the hood that what we were using at the time.
+This was a major team wide retooling effort that I started the year before and delivered on in Q1. We have this metadata database that sits above all our automation as the source of truth for everything our team does. I lead the design and implementation of a revised metadata database and engine to support our growing demands on the system. The end result was drastically different under the hood than what we were using at the time.
 
 The cut-over to this project was an accomplishment all on it's own. The team really stepped up for this one and we made the change happen without most of the organization realizing anything changed.
 
@@ -145,11 +147,11 @@ I built out the initial tooling, metadata, CI/CD pipelines, and documentation fo
 
 ## Better modules
 
-I overhauled the way we built and deployed PowerShell modules this year. Everything got its own CI/CD pipeline and publishes to an internal PSRepository (and directly to some key servers). I added script analyzer validation, comment based help checks, test coverage requirements, and automatic semantic versioning. I also refactored and cleaned up many of those existing modules along the way.
+I overhauled the way we built and deployed PowerShell modules this year. Everything got its own CI/CD pipeline and published to an internal PSRepository (and directly to some key servers). I added [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) validation, comment based help checks, [test coverage](https://github.com/pester/Pester) requirements, and automatic semantic versioning. I also refactored and cleaned up many of those existing modules along the way.
 
 ### F5 tooling rework and new features
 
-The work I did on the F5 module and tooling this year was significant.
+The work I did on the F5 module and related tooling this year was significant.
 
 * LDX refactor
 * added LTM/GTM state management (nodes, pools, pool members, VIPs, WideIPs, WideIPPools)
