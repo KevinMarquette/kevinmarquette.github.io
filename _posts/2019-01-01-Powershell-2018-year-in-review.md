@@ -19,51 +19,51 @@ I really love the PowerShell community and I have done a lot of work to contribu
 
 ## PowerShell News Podcast
 
-I was a guest speaker on [The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog) early in the year. I was able to have a great conversation with [Mick Pletcher](https://twitter.com/mick_pletcher) and [Harjit Dhaliwal](https://twitter.com/Hoorge) about some of the projects that I was working on at the time.
+I was a guest speaker on [The PowerShell News Podcast](/2018-03-14-Powershell-The-PowerShell-News-Podcast/?utm_source=blog&utm_medium=blog) early in the year. I had a great conversation with [Mick Pletcher](https://twitter.com/mick_pletcher) and [Harjit Dhaliwal](https://twitter.com/Hoorge) about some of the projects that I was working on at the time.
 
-## PowerShell and DevOps Summit
+## PowerShell + DevOps Global Summit
 
-This was my first year attending the Summit. Getting to this conference has been on my list for a long time. My employer sent two people the previous year, but I was new to the team and did not get one of those spots. This time I submitted a talk that was selected to help ensure my spot.
+This was my first year attending the [PowerShell Summit](https://powershell.org/summit/). Getting to this conference has been on my list for a long time. My employer sent two people the previous year, but I was new to the team and did not get one of those spots. This time I submitted a talk that was selected to help ensure my spot.
 
 ### Meeting my readers
 
 It was such an honor to meet so many people that were helped by my blog and other content. People started coming up to me during the social event the night before the PSSummit to say thank you. I was surprised and was very happy to talk with them. My coworkers that were traveling with me decided to keep track of how many people spotted me. Apparently, I look just like my avatar because we were already starting to lose count on the first day. Then something truly amazing happened.
 
-I was given the honor of being designated a 2018 PowerShell Community Hero for my contributions to the community. I realized that I was not some unknown person writing posts that nobody ever saw. My writing has made a real difference to many people. People were connecting with me the entire conference to either thank me for my posts or to congratulate me on my award.
+I was given the honor of being designated a 2018 PowerShell Community Hero for my contributions to the community. I realized that I was not some unknown person writing posts that nobody ever saw. My willingness to help others has made a real difference to many people. Attendees were connecting with me the entire conference to either thank me for my posts or to congratulate me on my award.
 
 I truly appreciate every one of those encounters. It means so much to me when someone is willing to step out and say thank you to someone they have never met before. I love to hear it when my work has helped someone discover something new or help them past a roadblock. If you see me at the next summit, I am always open to meeting new people.
 
 ### 2018 PowerShell Community Hero
 
-On the first day of the conference, all of us were in one large room for the keynote sessions. There was a lot of great content the first day from the PowerShell team and other people that have been important to PowerShell (and the community). One of the special awards that they gave out was the 2018 PowerShell Community Hero award.
+On the first day of the conference, all of us were in one large room for the keynote sessions. There was a lot of great content the first day from the PowerShell team and other people that are important to PowerShell (and the community). One of the special awards that they gave out was the 2018 PowerShell Community Hero award.
 
-2018 PowerShell Community Hero award was based off of nominations from the community. The PowerShell team was looking for people that went above and beyond or was a special help to the community. Then the PowerShell team used those nominations to select 7 individual to receive the award. The Heroes were named one at a time. When they got to number 6, it was my avatar picture up on that slide.
+2018 PowerShell Community Hero award was based off of nominations from the community. The PowerShell team was looking for people that went above and beyond or was a special help to the community. The PowerShell team used those nominations to select 7 individual to receive this award. The Heroes were named one at a time. When they got to number 6, it was my avatar picture up on that slide.
 
 I am very honored to have received the 2018 PowerShell Community Hero award. I only had time to read a few of the nominations displayed as I went up to receive the award. They were all very kind and touching words that showed true appreciation for how I helped those individuals. I am very proud of this award.
 
-### Presenting to the PowerShell Summit
+### Presenting at the PowerShell Summit
 
 Getting selected to present at the summit was a big deal for me. Just as I was about to start my session, Jeffrey Snover walked in and sat in the front row. I was very pleased at how well the demos came together and how the session turned out.
 
 The session recording can be found on the PowerShell.org YouTube channel: [Writing a DSL (Domain Specific Language) for PowerShell by Kevin Marquette](https://www.youtube.com/watch?v=9Cg-20618ac)
 
-This was my first time presenting at a major conference and it was a very positive experience for me. I am now on the schedule to present two sessions at the next PowerShell Summit.
+This was my first time presenting at a major conference and it was a very positive experience for me. I am now on the schedule to present two sessions at the next [PowerShell + Devops Global Summit](https://powershell.org/summit/).
 
 ## Microsoft MVP, Cloud and Datacenter Management
 
-I thought that the PowerShell Hero award was going to be the highlight of my year. Then I received the Microsoft MVP at the beginning of August in the category of Cloud and Datacenter Management. While the MVP category is Cloud and Datacenter Management, almost all my contributions have been in the PowerShell subcategory.
+I thought that the PowerShell Hero award was going to be the highlight of my year. Then I received the [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5003187?fullName=Kevin%20Marquette) at the beginning of August in the category of Cloud and Datacenter Management. While the MVP category is Cloud and Datacenter Management, almost all my contributions have been in the PowerShell subcategory.
 
 This is the recognition that I am most proud to have received this year. I am so very honored to be a [Microsoft MVP](https://mvp.microsoft.com/) and I am not sure what more I can say to reflect that.
 
 ## Blog/Website
 
-The reach of my writing has really grown this year. This is reflected in the lists of top PowerShell blogs and in the analytics that I am tracking.
+The reach of my writing on this site has really grown this year. This is reflected in the lists of top PowerShell blogs and in the analytics that I am tracking.
 
 ### Feedspot Top 50 PowerShell Blogs
 
-I started the year by making it on the [Feedspot top 50 PowerShell Blogs](https://blog.feedspot.com/powershell_blogs/) list. When my blog was added to that list, it was ranked about 13th. I was excited to see my blog listed among all the great community blogs and other Microsoft Resources. It was a great way to start the year.
+I started the year by making it on the [Feedspot top 50 PowerShell Blogs](https://blog.feedspot.com/powershell_blogs/) list. When my blog was added to that list, it was ranked about 13th. I was excited to see my blog listed among all the great community blogs and other Microsoft Resources. It was the perfect way to start the year.
 
-I am sitting 10th on the [FeedSpot Top PowerShell RSS Feeds](https://blog.feedspot.com/powershell_rss_feeds) and 11th on the [Feedspot Top 50 PowerShell Blogs And Websites For Developers To Follow in 2019](https://blog.feedspot.com/powershell_blogs/) a the time of this writing.
+I am sitting 10th on the [FeedSpot Top PowerShell RSS Feeds](https://blog.feedspot.com/powershell_rss_feeds) and 11th on the [Feedspot Top 50 PowerShell Blogs And Websites For Developers To Follow in 2019](https://blog.feedspot.com/powershell_blogs/) at the time of this writing.
 
 ### SQLShack Top 5 PowerShell bloggers of 2018
 
