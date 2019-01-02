@@ -6,7 +6,7 @@ tags: [Review]
 share-img: "/img/share-img/2019-01-01-Powershell-2018-year-in-review.png"
 ---
 
-Over on [/r/PowerShell](https://www.reddit.com/r/PowerShell), we share with each other everything that we have done with PowerShell every month and reflect on that at the end of the year. This has been a big year for me. Not only have I been able to work on some great projects professionally, I also received a lot of recognition this year for my community efforts. As I reflect back on this year, I accomplished way more than I expected.
+Over on [/r/PowerShell](https://www.reddit.com/r/PowerShell/comments/abodo7/2018_retrospection_what_have_you_done_with), we share with each other everything that we have done with PowerShell every month and reflect on that at the end of the year. This has been a big year for me. Not only have I been able to work on some great projects professionally, I also received a lot of recognition this year for my community efforts. As I reflect back on this year, I accomplished way more than I expected.
 <!--more-->
 # Index
 
@@ -107,7 +107,7 @@ I picked up 883 new [Twitter](https://twitter.com/KevinMarquette) followers this
 
 I participated in [Hacktoberfest](https://hacktoberfest.digitalocean.com/) this year and got my needed pull requests out to other projects. I did get around 10 pull requests last year to the PowerShell repositories but most of my changes there were adding or cleaning up tests.
 
-## Personal projects
+### Personal projects
 
 I created these utility functions this year.
 
@@ -159,7 +159,7 @@ The work I did on the F5 module and related tooling this year was significant.
 
 This enabled zero downtime and rolling release scenarios that we were not leveraging before.
 
-### TfsTestRunner
+## TfsTestRunner
 
 I created a module and tooling for running various integration tests at deploy time for every release into every environment. This was paired with my zero downtime release scenarios to allow failed tests to halt the deployment before it would impact production.
 
