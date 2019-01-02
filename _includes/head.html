@@ -31,7 +31,7 @@
   <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}" /> {% if page.share-img %}
-  <meta name="twitter:image" content="{{ page.share-img }}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ page.share-img }}" />
   <meta name="twitter:card" content="summary_large_image" /> {% elsif site.avatar %}
   <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
   <meta name="twitter:card" content="summary" /> {% else %}
