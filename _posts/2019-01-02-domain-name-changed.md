@@ -28,7 +28,7 @@ My branding efforts have been a success. All of my content is easy to identify a
 
 ## Why change the domain?
 
-I was reflecting on the previous year and reviewing all my stats for the website. I saw awesome growth over the last two years and I realized something very important. GitHub pages is a free service and there is a limit to how much you can use a free service.
+I was reflecting on the [previous year](https://powershellexplained.com/2019-01-01-Powershell-2018-year-in-review/?utm_source=blog&utm_medium=blog&utm_content=domainchange#blogging-by-the-numbers) and reviewing all my stats for the website. I saw awesome growth over the last two years and I realized something very important. GitHub pages is a free service and there is a limit to how much you can use a free service.
 
 I have no idea if I'm on the edge of that limit or if it's long ways away. I don't care where it is (ok, I care but that is not important right now). My realization was that as long as I was using the `kevinmarquette.github.io` domain name that I would be pinned to the GitHub Pages service. They own that domain, not me. Don't get me wrong, it is a wonderful service and I like GitHub (even after Microsoft owns it). I feel like it is a big mistake not to have an exit plan. Especially now that this little blog has become an important reference site to many people. 
 
