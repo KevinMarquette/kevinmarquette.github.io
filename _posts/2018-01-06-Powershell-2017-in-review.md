@@ -2,7 +2,7 @@
 layout: post
 title: "What have you done with PowerShell this year?"
 date: 2018-01-06
-tags: [PowerShell]
+tags: [Review]
 ---
 
 Over on [/r/PowerShell](https://www.reddit.com/r/PowerShell/comments/7nfms9/2017_retrospection_what_have_you_done_with/), we share with each other things that we have done with PowerShell every month and reflect on that at the end of the year. As I look back on my year in PowerShell, I see that I have accomplished quite a bit. Not only have I done great work in a professional setting but I have also done a lot for the PowerShell community this year.

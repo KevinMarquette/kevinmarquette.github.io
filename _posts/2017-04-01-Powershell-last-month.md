@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: What have you done this month? March 2017"
 date: 2017-04-01
-tags: [Monthly]
+tags: [Review]
 ---
 
 I did a lot more this month than I expected. Here is a breakdown of all the posts and other Powershell projects that I worked on.
