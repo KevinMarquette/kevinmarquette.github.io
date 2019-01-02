@@ -5,7 +5,7 @@ date: 2019-01-02
 share-img: "/img/share-img/2019-01-02-domain-name-changed.png"
 ---
 
-I wanted to let all my regular readers know that `kevinmarquette.gitub.io` has moved to [powershellexplained.com](https://powershellexplained.com). This is still the same site you were using before with all the same content under a new name. <!--more-->Keep reading if you want to know more about why this change was important.
+I wanted to let all my regular readers know that `kevinmarquette.gitub.io` has moved to [powershellexplained.com](https://powershellexplained.com). This is still the same site you were using before with all the same content under a new name. <!--more-->I dive into the details behind that change below.
 
 # Index
 
