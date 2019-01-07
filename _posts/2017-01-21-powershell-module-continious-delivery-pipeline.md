@@ -7,7 +7,7 @@ tags: [PowerShell,Modules]
 
 A fresh start to building a module.
 
-I have not built a module from scratch in a long time. My process has evolved and I have incorporated a lot of ideas into my process. Most of the time, I copy an existing module and just gut out all the functions. This has worked because each module grows a little more from the last time I built one. 
+I have not built a module from scratch in a long time. My process has evolved and I have incorporated a lot of ideas into my process. Most of the time, I copy an existing module and just got out all the functions. This has worked because each module grows a little more from the last time I built one. 
 
 I also realize that I may have some older ideas baked into my process. I have seen a lot of good work in the community that I have not formally adopted because what I had just worked. It was quick and easy to run with. 
 
@@ -155,7 +155,7 @@ After a bit of review, this looks like it allows the build system to deploy the 
 I don't think I need to even change anything in this file. I like the way it looks and what it does. That `$ENV:NugetApiKey` is my API key for the PS Gallery. That was securely created and added to the appvoyer.yml.
 
 ## Pester test
-I also need my first Pester test. When I run the build script, it dpends on me having passing tests. I'll do something simple like validate that the powershell is mostly valid code. This is my starter `tests\Project.Tests.ps1`
+I also need my first Pester test. When I run the build script, it depends on me having passing tests. I'll do something simple like validate that the powershell is mostly valid code. This is my starter `tests\Project.Tests.ps1`
 
     $projectRoot = Resolve-Path "$PSScriptRoot\.."
     $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psm1")
