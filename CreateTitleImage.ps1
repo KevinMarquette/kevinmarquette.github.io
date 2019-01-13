@@ -1,7 +1,8 @@
 [cmdletbinding()]
 param(
     $width = 230,
-    $path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
+    #$path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
+    $path = 'C:\workspace\kevinmarquette.github.io\_posts\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about.md',
     [ValidateSet('Heading','WordCloud')]
     $Type = 'WordCloud'
 )
@@ -77,27 +78,26 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
         "WordCloud"
         {
             $content = Get-Content -Path $node 
-            if ( $content -match 'share-img' )
-            {
-                $tempfile = '{0}.png' -f (New-TemporaryFile).FullName
-                $content = $content -replace 'utm_medium|utm_source|utm_content|http'
-                $content = $content -replace 'powershell','PowerShell'
-                $size = [System.Drawing.size]::new(600,314)
-                $content | New-WordCloud -path $tempfile -ImageSize $size -OutputFormat png -FontFamily 'Lucida Console'
+        
+            $tempfile = '{0}.png' -f (New-TemporaryFile).FullName
+            $content = $content -replace 'utm_medium|utm_source|utm_content|http'
+            $content = $content -replace 'powershell','PowerShell'
+            $size = [System.Drawing.size]::new(600,314)
+            $content | New-WordCloud -path $tempfile -ImageSize $size -OutputFormat png -FontFamily 'Lucida Console'
 
-                # Add branding
-                $image = [System.Drawing.Image]::FromFile($tempfile)
-                
-                $font = new-object System.Drawing.Font 'Lucida Console', 14
-                $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
-                $brushFg = [System.Drawing.Brushes]::White 
-                
-                $graphics = [System.Drawing.Graphics]::FromImage($image) 
-                $graphics.FillRectangle($brushBg, 0, 0, $image.Width, 30) 
-                $graphics.DrawString('PowerShellExplained.com with @KevinMarquette', $font, $brushFg, 35, 5) 
-                $graphics.Dispose()
-                $image.Save($filename)
-            } 
+            # Add branding
+            $image = [System.Drawing.Image]::FromFile($tempfile)
+            
+            $font = new-object System.Drawing.Font 'Lucida Console', 14
+            $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
+            $brushFg = [System.Drawing.Brushes]::White 
+            
+            $graphics = [System.Drawing.Graphics]::FromImage($image) 
+            $graphics.FillRectangle($brushBg, 0, 0, $image.Width, 30) 
+            $graphics.DrawString('PowerShellExplained.com with @KevinMarquette', $font, $brushFg, 35, 5) 
+            $graphics.Dispose()
+            $image.Save($filename)
+        
         }
     }
     $filename 
