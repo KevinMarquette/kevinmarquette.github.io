@@ -3,6 +3,7 @@ layout: post
 title: "Powershell: Let's build the CI/CD pipeline for a new module"
 date: 2017-01-21
 tags: [PowerShell,Modules]
+share-img: "/img/share-img/2017-01-21-powershell-module-continious-delivery-pipeline.png"
 ---
 
 A fresh start to building a module.
