@@ -161,6 +161,12 @@ If I do not define `$value` then the first one will evaluate to `$true` and our 
 
 In this case the `$value` is an array that contains a `$null`. The `-eq` will check every value in the array and returns the `$null` that is matched (This evaluates to `$false`). The `-ne` will return everything that does not match `$null` and in this case there are no results (This also evaluates to `$false`). Neither one will be `$true` even though it looks like one of them should be.
 
+Not only can we create a value that makes both of them evaluate to `$false`, it is possible to create a value where they both evaluate to `$true`. [Mathias Jessen @IISResetMe](https://blog.iisreset.me/author/iisresetme) has a good post that dives into that scenario.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you like <a href="https://twitter.com/hashtag/PowerShell?src=hash&amp;ref_src=twsrc%5Etfw">#PowerShell</a> and puzzles, here&#39;s a funny existential crisis in code!<br><br>New blog post: &quot;Schrödinger&#39;s  -ArgumentList&quot;<a href="https://t.co/np7TQcpksf">https://t.co/np7TQcpksf</a></p>&mdash; Mathias Jessen (@IISResetMe) <a href="https://twitter.com/IISResetMe/status/1085556351441555456?ref_src=twsrc%5Etfw">January 16, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 ## PSScriptAnalyzer and VSCode
 
 The [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) module has a rule that checks for this issue called `PSPossibleIncorrectComparisonWithNull`.
