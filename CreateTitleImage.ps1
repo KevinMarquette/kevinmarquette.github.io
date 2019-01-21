@@ -1,9 +1,9 @@
 [cmdletbinding()]
 param(
     $width = 230,
-    #$path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
-    $path = 'C:\workspace\kevinmarquette.github.io\_posts\2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about.md',
-    [ValidateSet('Heading','WordCloud')]
+    $path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
+    #$path = 'C:\workspace\kevinmarquette.github.io\_posts\2017-01-13-powershell-variable-substitution-in-strings.md',
+    [ValidateSet('Heading', 'WordCloud')]
     $Type = 'WordCloud'
 )
 $path = Resolve-Path $path
@@ -80,10 +80,27 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
             $content = Get-Content -Path $node 
         
             $tempfile = '{0}.png' -f (New-TemporaryFile).FullName
-            $content = $content -replace 'utm_medium|utm_source|utm_content|http'
-            $content = $content -replace 'powershell','PowerShell'
-            $size = [System.Drawing.size]::new(600,314)
-            $content | New-WordCloud -path $tempfile -ImageSize $size -OutputFormat png -FontFamily 'Lucida Console'
+            $exclude = @(
+                'utm_medium'
+                'utm_source'
+                'utm_content'
+                'http'
+                'will'
+                'value'
+            )
+            $content = $content -replace 'powershell', 'PowerShell'
+            $content = $content -replace 'posh', 'PowerShell'
+            #$content = $content -replace '$null','null'
+            $size = [System.Drawing.size]::new(600, 314)
+
+            $newWordCloudSplat = @{
+                FontFamily   = 'Lucida Console'
+                ExcludeWord  = $exclude
+                path         = $tempfile
+                OutputFormat = 'png'
+                ImageSize    = $size
+            }
+            $content | New-WordCloud @newWordCloudSplat
 
             # Add branding
             $image = [System.Drawing.Image]::FromFile($tempfile)
