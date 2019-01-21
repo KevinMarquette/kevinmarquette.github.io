@@ -4,7 +4,8 @@ param(
     $path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
     #$path = 'C:\workspace\kevinmarquette.github.io\_posts\2017-01-13-powershell-variable-substitution-in-strings.md',
     [ValidateSet('Heading', 'WordCloud')]
-    $Type = 'WordCloud'
+    $Type = 'WordCloud',
+    $FocusWord = $null
 )
 $path = Resolve-Path $path
 foreach ($node in $path)
@@ -87,6 +88,7 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
                 'http'
                 'will'
                 'value'
+                'popref'
             )
             $content = $content -replace 'powershell', 'PowerShell'
             $content = $content -replace 'posh', 'PowerShell'
@@ -99,6 +101,10 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
                 path         = $tempfile
                 OutputFormat = 'png'
                 ImageSize    = $size
+            }
+            if($FocusWord)
+            {
+                $newWordCloudSplat['FocusWord'] = $FocusWord
             }
             $content | New-WordCloud @newWordCloudSplat
 

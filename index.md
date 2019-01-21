@@ -2,6 +2,7 @@
 layout: page
 title: PowerShell Explained
 subtitle: With Kevin Marquette
+share-img: "/img/share-img/index.png"
 ---
 
 # Popular reference pages
