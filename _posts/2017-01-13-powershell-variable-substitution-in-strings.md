@@ -156,7 +156,7 @@ Again, this is something that I am reaching out to .Net for. I don't use it ofte
 
 # Delineation with braces
 
-This is used for suffix concatination within the string. Sometimes your variable does not have a clean word boundary. 
+This is used for suffix concatenation within the string. Sometimes your variable does not have a clean word boundary. 
 
     $test = "Bet"
     $tester = "Better"

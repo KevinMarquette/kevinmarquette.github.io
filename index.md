@@ -37,7 +37,7 @@ When I cover fundamentals, my intention is that everyone walks away learning som
 
 ### DependsOn
 
-[DependsOn](https://github.com/loanDepot/DependsOn) is a PowerShell that allows you to define dependencies in your data and order the data based on those dependencies.
+[DependsOn](https://github.com/loanDepot/DependsOn) is a PowerShell Module that allows you to define dependencies in your data and order the data based on those dependencies.
 
 ### PSGraph
 

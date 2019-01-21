@@ -61,7 +61,7 @@ A `graph` defines a new graph for us. A `node` is an individual object on the gr
         edge -from a -to b @{label='Edge'}
     } | Export-PSGraph -ShowGraph 
 
-All three command allow you to specify a `[hashtable]` to set various properties. I tell the graph to render left to right. I also give the nodes and the edge a label. Using a label for a node a allows you to use a shortname as a refference but still display a more verbose name in the final graph
+All three command allow you to specify a `[hashtable]` to set various properties. I tell the graph to render left to right. I also give the nodes and the edge a label. Using a label for a node a allows you to use a shortname as a reference but still display a more verbose name in the final graph
 
 ## Example: Project flow
 Let me map out something real so you have a better idea of what these commands can do. This is my project workflow.

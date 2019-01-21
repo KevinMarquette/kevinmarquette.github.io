@@ -317,7 +317,7 @@ The foreach started working this way with PowerShell 3.0. If you happen to be on
 
 # Value types
 
-Technically, only refference types can be `$null`. But PowerShell is very generous and allows for variables to be any type. If you decide to stronly type a value type then it cannot be `$null`. PowerShell can convert `$null` to a default value for many types.
+Technically, only reference types can be `$null`. But PowerShell is very generous and allows for variables to be any type. If you decide to stronly type a value type then it cannot be `$null`. PowerShell can convert `$null` to a default value for many types.
 
 ``` posh
     PS> [int]$number = $null

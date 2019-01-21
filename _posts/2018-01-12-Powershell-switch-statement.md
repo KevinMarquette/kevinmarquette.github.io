@@ -594,7 +594,7 @@ Lee Dailey pointed out that we can use a constant `$true` expression to evaluate
         {
             'Show-Animation'
         }
-        $isAdmin
+        $isSecure
         {
             'Enable-AdminMenu'
         }
@@ -610,7 +610,7 @@ This is a very clean way to evaluate and take action on the status of several bo
 ``` powershell
     $isVisible = $false
     $isEnabled = $true
-    $isSecure = $false
+    $isAdmin = $false
 
     switch ( $true )
     {

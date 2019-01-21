@@ -43,7 +43,7 @@ A hashtable is a data structure much like an array, except you store each value 
 
     $ageList = @{}
 
-Notice the braces vs the parenthesis used when defining an array above. Then we add an item by using a key like this:
+Notice the braces vs the parentheses used when defining an array above. Then we add an item by using a key like this:
 
     $key = 'Kevin'
     $value = 36
@@ -647,7 +647,7 @@ This will add each row into a hashtable and use the specified property as the ke
 
 # Copying Hashtables
 
-One thing that is important to know is that hashtables are objecs and each variable is just a refference to an object. This just means that it takes a little more work work to make a valid copy of a hashtable.
+One thing that is important to know is that hashtables are objecs and each variable is just a reference to an object. This just means that it takes a little more work to make a valid copy of a hashtable.
 
 ## Assigning reference types
 
@@ -662,7 +662,7 @@ When you have one hashtable and assign it to a second variable, both variables p
     Copy: [copy]
     Orig: [copy]
 
-This hilights that they are the same because altering the values in one will also alter the values in the other. This also applies when passing hashtables into other fucntions. If those functions make changes to that hashtable, your original is also altered.
+This highlights that they are the same because altering the values in one will also alter the values in the other. This also applies when passing hashtables into other functions. If those functions make changes to that hashtable, your original is also altered.
 
 ## Shallow copies, single level
 
@@ -682,7 +682,7 @@ This will allow us to make some basic changes to one that don't impact the other
 
 ## Shallow copies, nested
 
-The reason why it is called a shallow copy is becuase it only copies the base level properties. If one of those properties is a refference type (like another hashtable), then those nested objects will still point to eachother.
+The reason why it is called a shallow copy is because it only copies the base level properties. If one of those properties is a reference type (like another hashtable), then those nested objects will still point to eachother.
 
     PS> $orig = @{
             person=@{

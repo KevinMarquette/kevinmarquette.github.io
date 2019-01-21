@@ -95,7 +95,7 @@ We can get this same list off of the `psobject` property too.
 
 ## Dynamically accessing properties
 
-I already mentioned that you an access property values directly.
+I already mentioned that you can access property values directly.
 
     $myObject.Name
 
@@ -194,7 +194,7 @@ Now that we have an object, there are a few more things we can do with it that m
 
     $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 
-I recently discovered another way to do this from this [post by /u/markekraus](https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/). I did a little digging and more posts about the idea from [Adam Bertram](http://www.adamtheautomator.com/building-custom-object-types-powershell-pstypename/) and [Mike Shepard](https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/) where they talks about this approach that allows you to define it inline.
+I recently discovered another way to do this from this [post by /u/markekraus](https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/). I did a little digging and more posts about the idea from [Adam Bertram](http://www.adamtheautomator.com/building-custom-object-types-powershell-pstypename/) and [Mike Shepard](https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/) where they talk about this approach that allows you to define it inline.
 
     $myObject = [PSCustomObject]@{
         PSTypeName = 'My.Object'
@@ -242,7 +242,7 @@ Something else that I got out of that video was creating script properties for y
     }
     Update-TypeData @TypeData
 
-You can do this before your object is created or after and it will still work. This is what makes this different then using `Add-Member` with a script property. When you use `Add-Member` the way I refferenced earlier, it only exists on that specific instance of the object. This one applies to all objects with this `TypeName`.
+You can do this before your object is created or after and it will still work. This is what makes this different then using `Add-Member` with a script property. When you use `Add-Member` the way I referenced earlier, it only exists on that specific instance of the object. This one applies to all objects with this `TypeName`.
 
 # Function parameters
 
