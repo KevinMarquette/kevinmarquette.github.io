@@ -19,12 +19,15 @@ In this post, we will turn a common script scenario into a full module one step 
 
 There is a natural progression when working with PowerShell. You start with small script and work into making much larger ones. When your scripts get large, you start using more functions. These functions could be from someone else or functions that you write yourself. These functions start collecting at the top of your script.
 
-    function GetInfo{
+``` posh
+    function Get-Info
+    {
         param($ComputerName)
         Get-WmiObject -ComputerName $ComputerName -Class Win32_BIOS
     }
 
-    GetInfo -ComputerName localhost
+    Get-Info -ComputerName localhost
+```
 
 You scripts are still long because all these functions are still taking up space in your script. This is the common scenario that we are going to build on. I have one function here but having several of them is common.
 
@@ -64,7 +67,7 @@ Sometimes you may have utility functions in your module that should stay interna
     function GetInfo{
         param($ComputerName)
         Get-WmiObject -ComputerName $ComputerName -Class Win32_BIOS
-    }
+    }   
     Export-ModuleMember -Function 'GetInfo'
 
 If you don't call `Export-ModuleMember` to specify exactly what you want exported, then everything is exported from this `.psm1` file.
