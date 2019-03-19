@@ -12,7 +12,7 @@ foreach ($node in $path)
 {
     Write-Verbose $node -Verbose
     $imgRoot = 'C:\workspace\kevinmarquette.github.io\img\share-img\'
-    $filename = Join-Path $imgRoot (Split-Path $node -leaf).replace('.md', '.png')
+    $filename = Join-Path $imgRoot (Split-Path $node -leaf).replace('.md', '.svg')
 
     switch ($Type)
     {
@@ -78,9 +78,26 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
         }
         "WordCloud"
         {
+            $templatePath = '{0}.png' -f (New-TemporaryFile).FullName
+
+            $image = [System.Drawing.Bitmap]::new(600,314)
+            #$image = [System.Drawing.Image]::FromFile($tempfile)
+            
+            $font = new-object System.Drawing.Font 'Lucida Console', 14
+            $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
+            $brushFg = [System.Drawing.Brushes]::White 
+            $brushBlack = [System.Drawing.Brushes]::Black 
+            
+            $graphics = [System.Drawing.Graphics]::FromImage($image) 
+            $graphics.FillRectangle($brushBlack,0,0,$image.Width,$image.Height)
+            $graphics.FillRectangle($brushBg, 0, 0, $image.Width, 30) 
+            $graphics.DrawString('PowerShellExplained.com with @KevinMarquette', $font, $brushFg, 35, 5) 
+            $graphics.Dispose()
+            $image.Save($templatePath)
+
             $content = Get-Content -Path $node 
         
-            $tempfile = '{0}.png' -f (New-TemporaryFile).FullName
+            #$tempfile = '{0}.svg' -f (New-TemporaryFile).FullName
             $exclude = @(
                 'utm_medium'
                 'utm_source'
@@ -93,33 +110,23 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
             $content = $content -replace 'powershell', 'PowerShell'
             $content = $content -replace 'posh', 'PowerShell'
             #$content = $content -replace '$null','null'
-            $size = [System.Drawing.size]::new(600, 314)
+           
 
             $newWordCloudSplat = @{
                 FontFamily   = 'Lucida Console'
                 ExcludeWord  = $exclude
-                path         = $tempfile
-                OutputFormat = 'png'
-                ImageSize    = $size
+                path         = $filename
+                BackgroundImage = $templatePath
+                #ImageSize    = $size
             }
             if($FocusWord)
             {
                 $newWordCloudSplat['FocusWord'] = $FocusWord
             }
-            $content | New-WordCloud @newWordCloudSplat
-
+            $content | New-WordCloud @newWordCloudSplat -Verbose
             # Add branding
-            $image = [System.Drawing.Image]::FromFile($tempfile)
+            #$size = [System.Drawing.size]::new(600, 314)
             
-            $font = new-object System.Drawing.Font 'Lucida Console', 14
-            $brushBg = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(1, 36, 86))
-            $brushFg = [System.Drawing.Brushes]::White 
-            
-            $graphics = [System.Drawing.Graphics]::FromImage($image) 
-            $graphics.FillRectangle($brushBg, 0, 0, $image.Width, 30) 
-            $graphics.DrawString('PowerShellExplained.com with @KevinMarquette', $font, $brushFg, 35, 5) 
-            $graphics.Dispose()
-            $image.Save($filename)
         
         }
     }

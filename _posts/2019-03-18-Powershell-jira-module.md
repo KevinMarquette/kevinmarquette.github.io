@@ -3,6 +3,7 @@ layout: post
 title: "Powershell: Jira module project"
 date: 2019-03-18
 tags: [PowerShell,Jira,Module]
+share-img: "/img/share-img/2019-03-18-Powershell-jira-module.svg"
 ---
 
 Let me tell you about a Jira module that I have been building over the last two weeks. I have been thinking about creating my own module for a while now. After talking about my idea after a recent PowerShell user group, I was given a lot of positive feedback on the idea. So I decided to jump in and write it.
