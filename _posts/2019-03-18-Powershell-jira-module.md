@@ -55,6 +55,8 @@ It would be best to consider this project an early alpha. It works, but I have n
     Get-Issue -ID "Test-Issue"
 ```
 
+All the source is posted on github [kevinmarquette/jira](https://github.com/KevinMarquette/jira) if you want to have a closer look.
+
 ## Requirements and dependencies 
 
 This module depends on two other community modules. `CredentialManager` and `PSFramework`. These should install for you if you use `Install-Module`. Too soon to tell if I will still depend on these for the final release.
