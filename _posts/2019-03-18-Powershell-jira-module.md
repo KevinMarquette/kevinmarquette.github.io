@@ -7,7 +7,7 @@ tags: [PowerShell,Jira,Module]
 
 Let me tell you about a Jira module that I have been building over the last two weeks. I have been thinking about creating my own module for a while now. I was talking about my idea after a recent user group and got a lot of positive feedback on the idea. So I decided to jump in and write it.
 
-To set the stage here, I work with the JiraPS quite a bit. Our development cycle has deeply integrated Jira into the workflow so we have quite a bit of automation around Jira tickets. There are times that we push JiraPS harder than it was intended to be pushed. 
+To set the stage here, I work with the [JiraPS](https://atlassianps.org/docs/JiraPS/) quite a bit. Our development cycle has deeply integrated Jira into the workflow so we have quite a bit of automation around Jira tickets. There are times that we push JiraPS harder than it was intended to be pushed. 
 
 <!--more-->
 
