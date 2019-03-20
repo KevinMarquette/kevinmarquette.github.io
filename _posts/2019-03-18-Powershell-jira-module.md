@@ -77,6 +77,7 @@ Let's take a look at the Cmdlets that I have implemented already. This is what y
 * Add-Comment
 * Invoke-IssueTransition
 
+The commands have very generic names at the moment. I expect the final version to have some kind of a prefix. Normally I would prefix them with `Jira` but I am trying to avoid `JiraPS` name conflicts.
 
 ## Jira session management
 
