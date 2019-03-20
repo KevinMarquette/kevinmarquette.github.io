@@ -27,7 +27,7 @@ It also has a large user base with hundreds of thousands of downloads and is use
 
 By building my own module, I get to start clean. I have no user-base yet, so backwards compatibility is not something that I have to deal with. I get the opportunity to make very different design decisions. Ultimately, I am building this module for myself but I feel that others will find some value in it. 
 
-# Bulk Scenario
+# Bulk scenario
 
 Our software development lifecycle and workflow is very dependent on Jira. We have a unique Jira issue for every code merge into a main branch. We have automated scripts that update the issues when the code gets built and again for every release into a new environment. Our largest releases have more than 800 issues that are updated as part of the production deployment.
 
@@ -172,9 +172,9 @@ At the moment, I also support adding comments and transitioning issues.
 
 This is about all I have for standard issue updates. I started with these because they cover most of my use cases. I'm sure that I'll add a few other options like adding labels and attachments. I want to cover the feature that you may be doing in bulk and allow you to lean on JiraPS for the things that it does really well.
 
-# Async Experiments
+# Async experiments
 
-One experimental feature that I have in this project is the use of async logic for all my commands. There are two ways this will impact this module. The first is that you can run a long query, go run other powershell, then come back and collect the result.
+One experimental feature that I have in this project is the use of async logic for all my commands. There are two ways this will impact this module. The first is that you can run a long query, execute some other commands, then come back and collect the result.
 
 ``` posh
     $asyncResult = Get-Issue -Query $largeQuery -Async
