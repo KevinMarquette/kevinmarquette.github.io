@@ -8,7 +8,7 @@ share-img: "/img/share-img/2019-03-18-Powershell-jira-module.svg"
 
 Let me tell you about a Jira module that I have been building over the last two weeks. I have been thinking about creating my own module for a while now. After talking about my idea after a recent PowerShell user group, I was given a lot of positive feedback on the idea. So I decided to jump in and write it.
 
-To set the stage here, I work with the [JiraPS](https://atlassianps.org/docs/JiraPS/) quite a bit. Our development cycle has deeply integrated Jira into the workflow so we have quite a bit of automation around Jira tickets. There are times that we push JiraPS harder than it was intended to be pushed. 
+To set the stage here, I work with the [JiraPS](https://atlassianps.org/docs/JiraPS/) quite a bit. Our development cycle has deeply integrated Jira into the workflow so we have quite a bit of automation around Jira issues. There are times that we push JiraPS harder than it was intended to be pushed. 
 
 <!--more-->
 
@@ -25,13 +25,13 @@ It also has a large user base with hundreds of thousands of downloads and is use
 
 ## Clean start
 
-By building my own module, I get to start clean. I have no user-base yet, so backwards compatibility is not something that I have to deal with. I get the opportunity to make very different design decisions. Ultimately, I am building this module for myself but I feel that other will find some value in it. 
+By building my own module, I get to start clean. I have no user-base yet, so backwards compatibility is not something that I have to deal with. I get the opportunity to make very different design decisions. Ultimately, I am building this module for myself but I feel that others will find some value in it. 
 
 # Bulk Scenario
 
-Our software development lifecycle and workflow is very dependent on Jira. We have a unique Jira issue for every code merge into a main branch. We have automated scripts that update the tickets when the code gets built and again for every release into a new environment. Our largest releases have more than 800 tickets that are updated as part of the production deployment.
+Our software development lifecycle and workflow is very dependent on Jira. We have a unique Jira issue for every code merge into a main branch. We have automated scripts that update the issues when the code gets built and again for every release into a new environment. Our largest releases have more than 800 issues that are updated as part of the production deployment.
 
-It is those larger releases where we are waiting on a hundred tickets at a time to be transitioned and updated with a release data by JiraPS. In our environment, it takes JiraPS about 2 seconds for every action on a ticket. So each Jira ticket associated with a release ends up adding 3-4 seconds to the release. Every hundred tickets add 5-6 minutes to the release time.
+It is those larger releases where we are waiting on a hundred issuess at a time to be transitioned and updated with a release data by JiraPS. In our environment, it takes JiraPS about 2 seconds for every action on an issue. So each Jira issues associated with a release ends up adding 3-4 seconds to the release. Every hundred issues add 5-6 minutes to the release time.
 
 I wanted to see if I could do something to speed that up.
 
@@ -115,14 +115,14 @@ From what I can tell, the Jira SDK does a single request for all those issues. T
 
     Get-Issue -Query "Key = Test-1" -MaxResults 200 -StartAt 0
 
-This offers you flexibility to get the same tickets that you are getting in your dashboards or whatever else that you need. I also added some basic paging features incase you may need it.
+This offers you flexibility to get the same issues that you are getting in your dashboards or whatever else that you need. I also added some basic paging features incase you may need it.
 
 ## Modifying issues
 
 Once you have the issue, the next thing you need to do is make changes to it. There are two ways to update an Issue. The first is to modify the object and then save it.
 
 ``` posh
-    $issue = Get-Issue -ID $Ticket
+    $issue = Get-Issue -ID $issueID
     $issue.Description = 'This is a test issues'
     $issue | Save-Issue
 ```
@@ -141,16 +141,16 @@ The `Save-Issue` commits the changes that you made to the local object.
 The other way to make changes is to use the `Set-Issue` command and it will auto save your changes.
 
 ``` posh
-    Set-Issue -ID $Ticket -Description 'This is a test issue'
+    Set-Issue -ID $issueID -Description 'This is a test issue'
 
-    Get-Issue -ID $Ticket | 
+    Get-Issue -ID $issueID | 
         Set-Issue -Description 'This is a test issue'
 ```
 
 Custom fields are handled a little bit differently. For now, I accept a hashtable of values.
 
 ``` posh
-    Get-Issue $Ticket |
+    Get-Issue $issueID |
         Set-Issue -CustomField @{
             CustomField = 'Test Value'
         } 
@@ -162,10 +162,10 @@ For all of the commands that modify an issue, you should be able to specify the 
 
 ### Other common features
 
-At the moment, I also support adding comments and transitioning tickets.
+At the moment, I also support adding comments and transitioning issues.
 
 ``` posh
-    $issue = Get-Issue -ID $Ticket
+    $issue = Get-Issue -ID $issueID
     $issue | Add-Comment 'Oh, Man! adding Comments'
     $issue | Invoke-IssueTransition -TransitionTo "In Progress"
 ```
@@ -196,5 +196,5 @@ The `Invoke-IssueTransition` command will take a large list of issues and make a
 
 # Closing thoughts
 
-The async logic is what will make or break this module. I have tested this on a small scale and everything feels solid. I'll know more when I start doing testing at a larger scale. My target use-case is querying thousands of tickets and updating hundreds of tickets at once. Let me know if you can find value in this module.
+The async logic is what will make or break this module. I have tested this on a small scale and everything feels solid. I'll know more when I start doing testing at a larger scale. My target use-case is querying thousands of issues and updating hundreds of issues at once. Let me know if you can find value in this module.
 
