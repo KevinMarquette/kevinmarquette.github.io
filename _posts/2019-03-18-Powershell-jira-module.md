@@ -52,11 +52,11 @@ It would be best to consider this project an early alpha. It works, but I have n
 ``` posh
     Find-Module jira -AllowPrerelease
     Install-Module -Scope CurrentUser -Name Jira -AllowPrerelease
-    Open-JiraSession -Credential (Get-Credential) -Uri "https://youjiraserver" -Save
-    Get-Issue -ID "Test-Issue"
+    Open-JSession -Credential (Get-Credential) -Uri "https://youjiraserver" -Save
+    Get-JIssue -ID "Test-Issue"
 ```
 
-All the source is posted on github [kevinmarquette/jira](https://github.com/KevinMarquette/jira) if you want to have a closer look.
+The published version of the module that matches this article is `0.3.1-alpha`. All the source is posted on github [kevinmarquette/jira](https://github.com/KevinMarquette/jira) if you want to have a closer look.
 
 ## Requirements and dependencies 
 
@@ -70,12 +70,12 @@ I am targeting .Net Standard 2.0. You may need to update your version of .Net if
 
 Let's take a look at the Cmdlets that I have implemented already. This is what you are all here for.
 
-* Open-JiraSession
-* Get-Issue
-* Save-Issue
-* Set-Issue
-* Add-Comment
-* Invoke-IssueTransition
+* Open-JSession
+* Get-JIssue
+* Save-JIssue
+* Set-JIssue
+* Add-JComment
+* Invoke-JIssueTransition
 
 The commands have very generic names at the moment. I expect the final version to have some kind of a prefix. Normally I would prefix them with `Jira` but I am trying to avoid `JiraPS` name conflicts.
 
@@ -86,13 +86,13 @@ I often use the concept of creating a session for my modules where I want to per
 ``` posh
     $Credential = Get-Credential
     $Uri = 'https://jira.contoso.com'
-    Open-JiraSession -Credential $Credential -Uri $uri -Save
+    Open-JSession -Credential $Credential -Uri $uri -Save
 ```
 
 I added a `-Save` switch to persist those values for future sessions. So once you save your session info, then you can just call `Open-JiraSession` with no parameters.
 
 ``` posh
-    Open-JiraSession
+    Open-JSession
 ```
 
 When you call `Open-JiraSession`, a request is made to the Jira endpoint to verify that you can access the endpoint that you specified. It gives me a place to do some error handling before you need to use it for other commands.
@@ -102,19 +102,19 @@ When you call `Open-JiraSession`, a request is made to the Jira endpoint to veri
 The whole point of this module is to get issues faster so I have to have a `Get-Issue` Cmdlet. Once you open your session, you can call `Get-Issue` to get the issue that you are looking for.
 
 ``` posh
-    Get-Issue TEST-1
+    Get-JIssue TEST-1
 ```
 
 Running this will get us a rich object back from the Jira SDK that shows the common fields and grants you access to all your custom fields. Not only can you query for a single issue, we can query for an entire list of issues at once.
 
 ``` posh
     $issues = 1..30 | ForEach-Object {"Test-$_"}
-    Get-Issue $issues
+    Get-JIssue $issues
 ```
 
 From what I can tell, the Jira SDK does a single request for all those issues. This is where we start to see the largest performance improvements. The last option is to provide your own custom JQL query to get the data. 
 
-    Get-Issue -Query "Key = Test-1" -MaxResults 200 -StartAt 0
+    Get-JIssue -Query "Key = Test-1" -MaxResults 200 -StartAt 0
 
 This offers you flexibility to get the same issues that you are getting in your dashboards or whatever else that you need. I also added some basic paging features incase you may need it.
 
@@ -123,16 +123,16 @@ This offers you flexibility to get the same issues that you are getting in your 
 Once you have the issue, the next thing you need to do is make changes to it. There are two ways to update an Issue. The first is to modify the object and then save it.
 
 ``` posh
-    $issue = Get-Issue -ID $issueID
+    $issue = Get-JIssue -ID $issueID
     $issue.Description = 'This is a test issues'
-    $issue | Save-Issue
+    $issue | Save-JIssue
 ```
 
 Modifying custom fields are also supported but they use a different syntax that is more like how you would update values in a hashtable.
 
 ``` posh
     $issue["CustomField"] = 'Test value'
-    $issue | Save-Issue
+    $issue | Save-JIssue
 ```
 
 The `Save-Issue` commits the changes that you made to the local object.
@@ -142,17 +142,17 @@ The `Save-Issue` commits the changes that you made to the local object.
 The other way to make changes is to use the `Set-Issue` command and it will auto save your changes.
 
 ``` posh
-    Set-Issue -ID $issueID -Description 'This is a test issue'
+    Set-JIssue -ID $issueID -Description 'This is a test issue'
 
-    Get-Issue -ID $issueID | 
-        Set-Issue -Description 'This is a test issue'
+    Get-JIssue -ID $issueID | 
+        Set-JIssue -Description 'This is a test issue'
 ```
 
 Custom fields are handled a little bit differently. For now, I accept a hashtable of values.
 
 ``` posh
-    Get-Issue $issueID |
-        Set-Issue -CustomField @{
+    Get-JIssue $issueID |
+        Set-JIssue -CustomField @{
             CustomField = 'Test Value'
         } 
 ```
@@ -166,9 +166,9 @@ For all of the commands that modify an issue, you should be able to specify the 
 At the moment, I also support adding comments and transitioning issues.
 
 ``` posh
-    $issue = Get-Issue -ID $issueID
-    $issue | Add-Comment 'Oh, Man! adding Comments'
-    $issue | Invoke-IssueTransition -TransitionTo "In Progress"
+    $issue = Get-JIssue -ID $issueID
+    $issue | Add-JComment 'Oh, Man! adding Comments'
+    $issue | Invoke-JIssueTransition -TransitionTo "In Progress"
 ```
 
 This is about all I have for standard issue updates. I started with these because they cover most of my use cases. I'm sure that I'll add a few other options like adding labels and attachments. I want to cover the feature that you may be doing in bulk and allow you to lean on JiraPS for the things that it does really well.
@@ -178,10 +178,10 @@ This is about all I have for standard issue updates. I started with these becaus
 One experimental feature that I have in this project is the use of async logic for all my commands. There are two ways this will impact this module. The first is that you can run a long query, execute some other commands, then come back and collect the result.
 
 ``` posh
-    $asyncResult = Get-Issue -Query $largeQuery -Async
+    $asyncResult = Get-JIssue -Query $largeQuery -Async
     Do-SomethingElse
-    $issues | Receive-AsyncResult
-    $issues | Invoke-IssueTransition -TransitionTo "In Progress"
+    $issues | Receive-JAsyncResult
+    $issues | Invoke-JIssueTransition -TransitionTo "In Progress"
 ```
 
 The idea is that the large query can go run on its own while I let other PowerShell run. When it is time to use the `$issues`, I can call `Receive-AsyncResult` to get them. If they are not ready yet, then we will wait for them to finish.
@@ -189,8 +189,8 @@ The idea is that the large query can go run on its own while I let other PowerSh
 The other way this is impacting the module is that all the commands are using async logic internally. So when we pipe a large list of issues, each action is kicked off in a async way. Then I wait for all the results to finish before returning. Take a look at this example.
 
 ``` posh
-    $issues = Get-Issue -Query $largeQuery
-    $issues | Invoke-IssueTransition -TransitionTo "In Progress"
+    $issues = Get-JIssue -Query $largeQuery
+    $issues | Invoke-JIssueTransition -TransitionTo "In Progress"
 ```
 
 The `Invoke-IssueTransition` command will take a large list of issues and make an async call for each one of them to perform the transition. Those async calls are collected and `Invoke-IssueTransition` waits for them to finish before returning. My hope is that this will provide a noticeable performance difference when working with large sets of issues. 
