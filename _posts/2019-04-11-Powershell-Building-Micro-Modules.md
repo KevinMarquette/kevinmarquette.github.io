@@ -48,7 +48,7 @@ Watch-Command
 
 ## Module files
 
-The `Watch-Command` folder is the actual module with 3 files. The `.psm1` file has 90 lines of PowerShell for the 1 function (named the same as my module). The `.psd1` is still important and is required to publish to the PSGallery. I also have a `LICSNSE` file in this folder so it gets delivered with the module.
+The `Watch-Command` folder is the actual module with 3 files. The `.psm1` file has 90 lines of PowerShell for the 1 function (named the same as my module). The `.psd1` is still important and is required to publish to the PSGallery. I also have a `LICENSE` file in this folder so it gets delivered with the module.
 
 # Continuous Delivery
 
@@ -81,7 +81,7 @@ It is basically a call to `Publish-Module` with a little verbosity. The importan
 
 ### azure-pipelines.yml
 
-I am using azure devops pipelines to manage the deployment. I define the whole build in the `azure-pipelines.yml` file. This allows me to just point the pipleine at my source and the build will just work.
+I am using azure devops pipelines to manage the deployment. I define the whole build in the `azure-pipelines.yml` file. This allows me to just point the pipeline at my source and the build will just work.
 
 ``` yaml
 trigger:
@@ -128,4 +128,4 @@ Here is an example of it showing the local process list sorted by cpu time.
 Watch-Command {Get-Process | Sort cpu -desc}
 ```
 
-This micro module pattern was fast to set up. I was able to write my `Watch-Command` module and have the pipleine publishing it the same day. This allowed me to focus on my ideas and quickly get it out the door.
+This micro module pattern was fast to set up. I was able to write my `Watch-Command` module and have the pipeline publishing it the same day. This allowed me to focus on my ideas and quickly get it out the door.
