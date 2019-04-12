@@ -133,6 +133,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Module
 
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Modules'></a>
 # Modules
@@ -242,6 +243,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-11-03 [PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='powershellexplained.com'></a>
 # powershellexplained.com
