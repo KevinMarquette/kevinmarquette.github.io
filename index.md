@@ -19,7 +19,7 @@ share-img: "/img/share-img/index.png"
 
 # About Kevin Marquette
 
-I am a Sr. DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
+I am the Principal DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing everything that I discover.
 
 # Projects
 

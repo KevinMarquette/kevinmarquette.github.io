@@ -1,14 +1,14 @@
 ---
 layout: page
 title: About Kevin
-subtitle: Sr. DevOps Engineer
+subtitle: Principal DevOps Engineer
 ---
 <script type="application/ld+json">
 {
   "@context": "http://schema.org/",
   "@type": "Person",
   "name": "Kevin Marquette",
-  "jobTitle": "Sr. DevOps Engineer",
+  "jobTitle": "Principal DevOps Engineer",
   "address": {
         "@type": "PostalAddress",
         "addressLocality": "Orange County",
@@ -23,7 +23,7 @@ subtitle: Sr. DevOps Engineer
     }
 }
 </script>
-I am a Sr. DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
+I am the Principal DevOps Engineer for loanDepot in Irvine, CA, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing the things that I discover.
 
 ## Social Media / Contact Info
 * [Email: kevmar@gmail.com](mailto:kevmar@gmail.com)
