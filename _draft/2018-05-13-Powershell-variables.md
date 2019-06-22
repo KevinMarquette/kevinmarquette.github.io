@@ -5,7 +5,7 @@ date: 2018-05-13
 tags: [PowerShell]
 ---
 
-One of the fundamental concepts in PowerShell (and most languages) is the use of [variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-6). They allow you to hold information or data and user it later in your script. This looks to be such a simple topic on face value, but there is so much more to learn.
+One of the fundamental concepts in PowerShell (and most languages) is the use of [variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-6). They allow you to hold information or data and reuse it later in your script. This looks to be such a simple topic on face value, but there is so much more to learn.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ Variables are used to store data. This data can be a number or a string or somet
 
 ## Assigning a value
 
-We use the `=` operator to assign values to variables. The `=` is known as the equals sign but we call it the assignment operator in this case.
+We use the `=` operator to assign values to variables. The `=` an equals sign but we call it the assignment operator in this case.
 
     $myVariable = 1
 
@@ -28,19 +28,19 @@ Here we assign the value `1` to a variable named `myVariable`. We can also store
 
     $myServices = Get-Service
 
-Instead of all the services getting listed in the console, they are all stored in the `$myServices`
+Instead of all the services getting listed in the console, they are all stored in the `$myServices`.
 
 ## Using a variable
 
 Once you assign a value to a variable, you can then retrieve the value it contains by using the variable name in this way:
 
     $myVariable = 1
-    $myVariable + 2
+    $myVariable
 
     $myMessage = 'Test message'
     Write-Output $myMessage
 
-If you just place the variable all by itself on a line, it will place the value on the pipeline (output stream).
+If you just place the variable all by itself on a line, it will place the value on the pipeline (output stream). Because we are not assigning the variable to anything, the console will see it in the output stream and show it to you.
 
     $myVariable
 
@@ -48,15 +48,15 @@ You can also use variables inside string.
 
     "This is my $myVariable"
 
-Working with variables inside strings is a whole topic on its own and I have another blog post that covers that: [Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings)
+Just know that this was the simplest example and there are multiple ways to get your variable values into strings. Substituting variables inside strings is a whole topic on its own and I have another blog post that covers that: [Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings).
 
 ## Default value
 
-Because PowerShell is a scripting language, you don't have to define a variable before you use it. While you should always assign a value to your variable, PowerShell will not throw an error if you use a variable that is not yet defined. You will get a $null value instead.
+Because PowerShell is a scripting language, you don't have to define a variable before you use it. While you should always assign a value to your variable, PowerShell will not throw an error if you use a variable that is not yet defined. You will get a `$null` value instead.
 
     $null -eq $undefinedVariable
 
-This is an important detail because if you misspell a variable name, you will get that `$null` value that could cause unexpected results in your scripts.
+This is an important detail because if you misspell a variable name, you will get that `$null` value that could cause unexpected results in your scripts. The `$null` is a special variable in PowerShell
 
 ## Types
 
