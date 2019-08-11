@@ -1,7 +1,7 @@
 [cmdletbinding()]
 param(
     $width = 230,
-    $path = (LS 'C:\workspace\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
+    $path = (LS 'C:\source\kevinmarquette.github.io\_posts\*.md' | select -last 1).fullname,
     #$path = 'C:\workspace\kevinmarquette.github.io\_posts\2017-01-13-powershell-variable-substitution-in-strings.md',
     [ValidateSet('Heading', 'WordCloud')]
     $Type = 'WordCloud',
@@ -11,7 +11,7 @@ $path = Resolve-Path $path
 foreach ($node in $path)
 {
     Write-Verbose $node -Verbose
-    $imgRoot = 'C:\workspace\kevinmarquette.github.io\img\share-img\'
+    $imgRoot = 'C:\source\kevinmarquette.github.io\img\share-img\'
     $filename = Join-Path $imgRoot (Split-Path $node -leaf).replace('.md', '.svg')
 
     switch ($Type)

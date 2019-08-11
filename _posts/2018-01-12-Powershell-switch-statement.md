@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Everything you ever wanted to know about the switch statement"
 date: 2018-01-12
-tags: [PowerShell,Regex]
+tags: [PowerShell,Everything]
 share-img: "/img/share-img/2018-01-12-Powershell-switch-statement.png"
 ---
 

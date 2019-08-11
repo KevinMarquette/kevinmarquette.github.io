@@ -1,5 +1,5 @@
-﻿$path = 'C:\workspace\kevinmarquette.github.io\_posts'
-$tagFile = 'C:\workspace\kevinmarquette.github.io\tags.md'
+﻿$path = "C:\source\kevinmarquette.github.io\_posts"
+$tagFile = 'C:\source\kevinmarquette.github.io\tags.md'
 $postList = LS $path -Filter *.md
 
 $template = @'

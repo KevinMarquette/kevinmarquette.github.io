@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Everything you wanted to know about $null"
 date: 2018-12-23
-tags: [PowerShell]
+tags: [PowerShell,Everything]
 share-img: "/img/share-img/2018-12-23-Powershell-null-everything-you-wanted-to-know.png"
 ---
 

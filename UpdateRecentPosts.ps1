@@ -1,6 +1,6 @@
 ﻿[cmdletbinding()]
 param(
-    $path = 'C:\workspace\kevinmarquette.github.io\_posts\*.md' 
+    $path = 'C:\source\kevinmarquette.github.io\_posts\*.md' 
 )
 $path = (LS $path | sort name -Descending | select -First 8).fullname
 $lineTemplate = '* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=recent)'
@@ -30,4 +30,4 @@ $output = foreach ($node in $path)
     $lineTemplate -f $postInfo.Date, $postInfo.Title, $postInfo.Post
 }
 
-$output | Set-Content -Path 'C:\workspace\kevinmarquette.github.io\_includes\recent-posts.md'
+$output | Set-Content -Path 'C:\source\kevinmarquette.github.io\_includes\recent-posts.md'

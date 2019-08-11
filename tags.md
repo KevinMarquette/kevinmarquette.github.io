@@ -39,7 +39,6 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2016-10-21 [Powershell: Installing MSI files](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-10-28 [Powershell: Everything you wanted to know about PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-01-13 [Powershell: Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-18 [Powershell: The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-04-10 [PowerShell: Everything you wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -95,6 +94,14 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-30 [Powershell: Advanced Gherkin features in Pester 4.0](/2017-04-30-Powershell-Gherkin-advanced-features/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-05 [Powershell: Writing a TypeExtension DSL, DSLs part 4](/2017-05-05-PowerShell-TypeExtension-DSL-part-4/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-18 [Powershell: Writing an alternate TypeExtension DSL, DSLs part 5](/2017-05-18-Powershell-TypeExtension-DSL-part-5/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
+<a name='Everything'></a>
+# Everything
+
+* 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Exceptions'></a>
 # Exceptions
@@ -237,6 +244,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2018-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -296,7 +304,6 @@ This is a collection of all the tags I use in my blog and links back to the page
 # Regex
 
 * 2017-07-31 [Powershell: The many ways to use regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Remoting'></a>
 # Remoting

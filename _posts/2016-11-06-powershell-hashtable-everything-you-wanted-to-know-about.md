@@ -2,7 +2,7 @@
 layout: post
 title: "Powershell: Everything you wanted to know about hashtables"
 date: 2016-11-06
-tags: [PowerShell,Hashtables,Basics]
+tags: [PowerShell,Hashtables,Everything]
 share-img: "/img/share-img/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about.png"
 ---
 
