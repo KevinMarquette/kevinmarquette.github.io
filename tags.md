@@ -100,8 +100,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 
 * 2016-11-06 [Powershell: Everything you wanted to know about hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2018-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2019-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Exceptions'></a>
 # Exceptions
@@ -244,7 +244,6 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-04-18 [Powershell: ConvertTo-Breakpoint](/2018-04-18-Powershell-ConvertTo-Breakpoint/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-07-09 [Powershell: Generating random data with NameIT](/2018-07-09-Powershell-NameIt-generate-random-data/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-08-04 [Powershell: How to create a Standard Library Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=tags)
-* 2018-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-08-26 [Powershell: DependsOn Module](/2018-08-26-Powershell-DependsOn/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-09-20 [Powershell: Building Modules with the Azure DevOps Pipeline](/2018-09-20-Powershell-Building-Modules-with-the-Azure-DevOps-Pipeline/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -252,6 +251,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2019-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='powershellexplained.com'></a>
 # powershellexplained.com

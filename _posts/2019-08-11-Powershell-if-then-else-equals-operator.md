@@ -18,7 +18,7 @@ Like many other languages, PowerShell has statements for conditionally executing
 
 Your scripts will often need to make decisions and perform different logic based on those decisions. This is what I mean by conditional execution. You have one statement or value to evaluate, then execute a different sections of code based on that evaluation. This is exactly what the `if` statement does.
 
-# If statement
+# if statement
 
 Here is a very basic example of the `if` statement:
 
@@ -36,7 +36,7 @@ In the previous example, the `if` statement was just evaluating the `$condition`
 
 In some languages, you can place a single line of code after the `if` statement and it will get executed. That is not the case in PowerShell. You need to provide a full `scriptblock` with braces for it to work correctly.
 
-# Comparison Operators
+# Comparison operators
 
 The most common things you will use the `if` statements for is comparing two items with each other. Powershell has special operators for different comparison scenarios. When you use a comparison operator, the value on the left hand side is compared to the value on the right hand side.
 
@@ -113,7 +113,7 @@ These operators are used when checking to see if a value is larger or smaller th
 * `-ile` less than or equal, case insensitive
 * `-cle` less than or equal, case sensitive
 
-I don't know why you would use-case sensitive and insensitive options for these operators.
+I don't know why you would use case sensitive and insensitive options for these operators.
 
 ## -like wildcard matches
 
@@ -188,18 +188,20 @@ Regex is a complex language of its own and worth looking into. I talk more about
 You are able to check a value's type with the `-is` operator.
 
 ``` posh
-if ( $value -is [string] )
-{
-    # do something
-}
+    if ( $value -is [string] )
+    {
+        # do something
+    }
 ```
 
 You may use this if you are working with classes or accepting various objects over the pipeline. You could have either a service or a service name as your input. Then check to see if you have a service and fetch the service if you only have the name.
 
-if ( $Service -isnot [System.ServiceProcess.ServiceController] )
-{
-    $Service = Get-Service -Name $Service
-}
+``` posh
+    if ( $Service -isnot [System.ServiceProcess.ServiceController] )
+    {
+        $Service = Get-Service -Name $Service
+    }
+```
 
 **Variations:**
 
@@ -216,7 +218,7 @@ When you use the previous operators with a single value, the result is `$true` o
     3
 ```
 
-This still works correctly in a `if` statement. If any value is returned then it evaluates to `$true`. So if anything matches your operator, then the whole statement is `$true`.
+This still works correctly in a `if` statement. So a value is returned by your operator, then the whole statement is `$true`.
 
 ``` posh
     $array = 1..6
@@ -290,11 +292,15 @@ Logical operators are used to invert or combine other expressions.
 
 ## -not
 
-The `-not` operator flips an expression from `$false` to `$true` or from `$true` to `$false`. Most of the operators we talked about do have a variation where you would not need to use the `-not` operator, but there are still times you would use it. Here is an example where we want to perform an action when `Test-Path` is `$false`.
+The `-not` operator flips an expression from `$false` to `$true` or from `$true` to `$false`.  Here is an example where we want to perform an action when `Test-Path` is `$false`.
 
 ``` posh
     if ( -not ( Test-Path -Path $path ) )
 ```
+
+Most of the operators we talked about do have a variation where you would not need to use the `-not` operator, but there are still times you would use it.
+
+### !
 
 You can use `!` as an alias for `-not`, but I prefer to type it out.
 
@@ -303,11 +309,11 @@ You can use `!` as an alias for `-not`, but I prefer to type it out.
     if ( !$value ){}
 ```
 
-You will see `!` used more by people that come from other languages like C#.
+You will see `!` used more by people that come from another languages like C#.
 
 ## -and
 
-You will need check multiple conditions very often. You can combine expressions with the `-and` operator. When you do that, both sides need to be `$true` for the whole expression to be `$true`.
+You can combine expressions with the `-and` operator. When you do that, both sides need to be `$true` for the whole expression to be `$true`.
 
 ``` posh
     if ( ($age -gt 13) -and ($age -lt 55) )
@@ -367,19 +373,19 @@ We can use normal PowerShell inside the condition statement.
 `Test-Path` returns `$true` or `$false` when it executes. This also applies to commands that return other values.
 
 ``` posh
-if ( Get-Process Notepad* )
+    if ( Get-Process Notepad* )
 ```
 
 It will evaluate to `$true` if there is a returned process and `$false` if there is nothing. It is perfectly valid to use pipeline expressions or other PowerShell statements like this:
 
 ``` posh
-if ( Get-Process | Where Name -eq Notepad )
+    if ( Get-Process | Where Name -eq Notepad )
 ```
 
 These expressions can be combined with each other with the `-and` and `-or` operators, but you may have to use parenthesis to break them into sub-expressions.
 
 ``` posh
-if ( (Get-Process) -and (Get-Service) )
+    if ( (Get-Process) -and (Get-Service) )
 ```
 
 ## Checking for $null
@@ -387,7 +393,7 @@ if ( (Get-Process) -and (Get-Service) )
 Having a no result or a `$null` value evaluates to `$false` in the `if` statement. When checking specifically for `$null`, it is a best practice to place the `$null` on the left hand side.
 
 ``` posh
-if ( $null -eq $value )
+    if ( $null -eq $value )
 ```
 
 There are quite a few nuances when dealing with `$null` values in PowerShell. If you are interested in diving deeper, I have an article about [everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=ifstatement).
@@ -401,14 +407,14 @@ The `if` statement allows you to specify an action for not only when the stateme
 The `else` statement is always the last part of the `if` statement when used.
 
 ``` posh
-if ( Test-Path -Path $Path -PathType Leaf )
-{
-    Move-Item -Path $Path -Destination $archivePath
-}
-else
-{
-    Write-Warning "$path does not exist or is not a file."
-}
+    if ( Test-Path -Path $Path -PathType Leaf )
+    {
+        Move-Item -Path $Path -Destination $archivePath
+    }
+    else
+    {
+        Write-Warning "$path does not exist or is not a file."
+    }
 ```
 
 In this example, we check the `$path` to make sure it is a file. If we find the file, we move it. If not, we write a warning. This type of branching logic is very common.
@@ -419,21 +425,21 @@ In this example, we check the `$path` to make sure it is a file. If we find the 
 The `if` and `else` statements take a script block, so we can place any PowerShell command inside them, including another `if` statement. This allows you to make use of much more complicated logic.
 
 ``` posh
-if ( Test-Path -Path $Path -PathType Leaf )
-{
-    Move-Item -Path $Path -Destination $archivePath
-}
-else
-{
-    if ( Test-Path -Path $Path )
+    if ( Test-Path -Path $Path -PathType Leaf )
     {
-        Write-Warning "A file was required but a directory was found instead."
+        Move-Item -Path $Path -Destination $archivePath
     }
     else
     {
-        Write-Warning "$path could not be found."
+        if ( Test-Path -Path $Path )
+        {
+            Write-Warning "A file was required but a directory was found instead."
+        }
+        else
+        {
+            Write-Warning "$path could not be found."
+        }
     }
-}
 ```
 
 In this example, we test the happy path first and then take action on it. If that fails, we do another check and to provide more detailed information to the user.
@@ -443,18 +449,18 @@ In this example, we test the happy path first and then take action on it. If tha
 We are not limited to just a single conditional check. We can chain `if` and `else` statements together instead of nesting them by using the `else if` operator.
 
 ``` posh
-if ( Test-Path -Path $Path -PathType Leaf )
-{
-    Move-Item -Path $Path -Destination $archivePath
-}
-else if ( Test-Path -Path $Path )
-{
-    Write-Warning "A file was required but a directory was found instead."
-}
-else
-{
-    Write-Warning "$path could not be found."
-}
+    if ( Test-Path -Path $Path -PathType Leaf )
+    {
+        Move-Item -Path $Path -Destination $archivePath
+    }
+    else if ( Test-Path -Path $Path )
+    {
+        Write-Warning "A file was required but a directory was found instead."
+    }
+    else
+    {
+        Write-Warning "$path could not be found."
+    }
 ```
 
 The execution happens from the top to the bottom. The top `if` statement is evaluated first. If that is `$false`, then it moves down to the next `else if` or `else` in the list. That last `else` is the default action to take if none of the others return `$true`.
@@ -491,18 +497,18 @@ There three possible values that can match the `$itemType`. In this case, it wil
 The pipeline is a very unique and important feature of PowerShell. Any value that is not suppressed or assigned to a variable gets placed in the pipeline. The `if` provides us a way to take advantage of the pipeline in a way that is not alway obvious.
 
 ``` posh
-$discount = if ( $age -ge 55 )
-{
-    Get-SeniorDiscount
-}
-else if ( $age -le 13 )
-{
-    Get-ChildDiscount
-}
-else
-{
-    0.00
-}
+    $discount = if ( $age -ge 55 )
+    {
+        Get-SeniorDiscount
+    }
+    else if ( $age -le 13 )
+    {
+        Get-ChildDiscount
+    }
+    else
+    {
+        0.00
+    }
 ```
 
 Each script block is placing the results the commands or the value into the pipeline. Then we are assigning the result of the if statement to the `$discount` variable. That example could have just as easily assigned those values to the `$discount` variable directly in each scriptblock. I can't say that I use this with the `if` statement very often, but I do have an example where I have used this recently.
@@ -512,26 +518,26 @@ Each script block is placing the results the commands or the value into the pipe
 I have a function called [Invoke-SnowSql](https://github.com/loanDepot/SnowSQL/blob/a3731b52e4ab4ecb503fb81e2d8cb131e8f90410/SnowSQL/public/Invoke-SnowSql.ps1#L90) that launches an executable with several commandline arguments. Here is a clip from that function where I build the array of arguments.
 
 ``` posh
-$snowSqlParam = @(
-    '--accountname', $Endpoint
-    '--username', $Credential.UserName
-    '--option', 'exit_on_error=true'
-    '--option', 'output_format=csv'
-    '--option', 'friendly=false'
-    '--option', 'timing=false'
-    if ($Debug)
-    {
-        '--option', 'log_level=DEBUG'
-    }
-    if ($Path)
-    {
-        '--filename', $Path
-    }
-    else
-    {
-        '--query', $singleLineQuery
-    }
-)
+    $snowSqlParam = @(
+        '--accountname', $Endpoint
+        '--username', $Credential.UserName
+        '--option', 'exit_on_error=true'
+        '--option', 'output_format=csv'
+        '--option', 'friendly=false'
+        '--option', 'timing=false'
+        if ($Debug)
+        {
+            '--option', 'log_level=DEBUG'
+        }
+        if ($Path)
+        {
+            '--filename', $Path
+        }
+        else
+        {
+            '--query', $singleLineQuery
+        }
+    )
 ```
 
 The `$Debug` and `$Path` variables are parameters on the function that are provided by the end user. I evaluate them inline inside the initialization of my array. If `$Debug` is true, then those values fall into the `$snowSqlParam` in the correct place. Same holds true for the `$Path` variable.
@@ -551,7 +557,7 @@ It is inevitable that you run into a situation that has way too many comparisons
 
 They can be hard to read and that make you more prone to make mistakes. There are a few things we can do about that.
 
-## line continuation
+## Line continuation
 
 There some operators in PowerShell that let you wrap you command to the next line. The logical operators `-and` and `-or` are good operators to use if you want to break your expression into multiple lines.
 
@@ -641,6 +647,22 @@ We can also pull all that validation logic out of your script and push it into a
 You still have to create the function to do the validation, but it makes this code much easier to work with. It makes this code easier to test. In your tests, you can mock the call to `Test-ADDriveConfiguration` and you only need two tests for this function. One where it returns `$true` and one where it returns `$false`. Testing the other function will be simpler because it is so small.
 
 The body of that function could still be that one-liner we started with or the exploded logic that we used in the last section. This works well for both scenarios and allows you to easily change that implementation later.
+
+
+# Error handling
+
+One really important use of the `if` statement is to check for error conditions before you run into errors. One good example is to check if a folder already exists before you try and create it.
+
+``` posh
+   if ( -not (Test-Path -Path $folder) )
+   {
+       New-Item -Type Directory -Path $folder
+   }
+```
+
+I like to say that if you expect an exception to happen, then it's not really an exception. So check your values and validate your conditions where you can.
+
+If you want to dive a little more into actual exception handling, I have an article on [everything you ever wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=ifstatement).
 
 
 # Final words
