@@ -400,6 +400,33 @@ Having a no result or a `$null` value evaluates to `$false` in the `if` statemen
 
 There are quite a few nuances when dealing with `$null` values in PowerShell. If you are interested in diving deeper, I have an article about [everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=ifstatement).
 
+## Variable assignment
+
+I almost forgot to add this one until [Prasoon Karunan V](https://twitter.com/prasoonkarunan) reminded me of it.
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">you could add below case as well :-)<br>if($process=Get-Process notepad -ErrorAction ignore){$process}else{$false}</p>&mdash; Prasoon Karunan V (@prasoonkarunan) <a href="https://twitter.com/prasoonkarunan/status/1160752165842853888?ref_src=twsrc%5Etfw">August 12, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Normally when you assign a value to a variable, the value is not passed onto the pipeline or console. When do a variable assignment in a sub expression, it does get passed on to the pipleine.
+
+``` posh
+    PS> $first = 1
+    PS> ($second = 2)
+    2
+```
+
+See how the `$first` assignment has no output and the `$second` assignment does? When an assignment is done in an `if` statement, it will execute just like the `$second` assignment above. Here is a clean example on how you could use it:
+
+``` posh
+    if ( $process = Get-Process Notepad* )
+    {
+        $process | Stop-Process
+    }
+```
+
+If `$process` gets assigned a value, then the statement will be true and then the `$process` will get stopped.
+
+Make sure you don't confuse this with `-eq` because this is not an equality check. This is a more obscure feature that most people don't realize works this way.
+
 # Alternate execution path
 
 The `if` statement allows you to specify an action for not only when the statement is `$true`, but also for when it is `$false`. This is where the `else` statement comes into play.
