@@ -3,6 +3,8 @@ layout: post
 title: "Powershell: Everything you wanted to know about the IF statement"
 date: 2019-08-11
 tags: [PowerShell,Everything]
+share-img: "/img/share-img/2019-08-11-Powershell-if-then-else-equals-operator.svg"
+
 ---
 
 Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statements is the [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-5.1) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
