@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Powershell: Everything you wanted to know about the if statement"
+title: "Powershell: Everything you wanted to know about the IF statement"
 date: 2019-08-11
 tags: [PowerShell,Everything]
 ---
 
-Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statement is the [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-5.1) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
+Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statements is the [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-5.1) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
 
 <!--more-->
 
@@ -18,7 +18,7 @@ Like many other languages, PowerShell has statements for conditionally executing
 
 Your scripts will often need to make decisions and perform different logic based on those decisions. This is what I mean by conditional execution. You have one statement or value to evaluate, then execute a different sections of code based on that evaluation. This is exactly what the `if` statement does.
 
-# if statement
+# The if statement
 
 Here is a very basic example of the `if` statement:
 
@@ -38,7 +38,7 @@ In some languages, you can place a single line of code after the `if` statement 
 
 # Comparison operators
 
-The most common things you will use the `if` statements for is comparing two items with each other. Powershell has special operators for different comparison scenarios. When you use a comparison operator, the value on the left hand side is compared to the value on the right hand side.
+The most common thing you will use the `if` statement for is comparing two items with each other. Powershell has special operators for different comparison scenarios. When you use a comparison operator, the value on the left hand side is compared to the value on the right hand side.
 
 ## -eq for equality
 
@@ -86,7 +86,7 @@ Use this to make sure that the action only executes if the value is not `5`. A g
 
 These are just inverse variations of `-eq`. I'll group these types together when I list variations for other operators.
 
-## -gt -ge -lt -le greater than or less than
+## -gt -ge -lt -le for greater than or less than
 
 These operators are used when checking to see if a value is larger or smaller than another value. The `-gt -ge -lt -le` stand for GreaterThan, GreaterThanOrEqual, LessThan, and LessThanOrEqual.
 
@@ -149,7 +149,7 @@ It is important to point out that the pattern matches the whole string. If you n
 * `-inotlike` case insensitive wildcard not matched
 * `-cnotlike` case sensitive wildcard not matched
 
-## -match rexex
+## -match regular expression
 
 The `-match` operator allows you to check a string for a regular expression based match. Use this when the wildcard patterns are not flexible enough for you.
 
@@ -302,14 +302,14 @@ Most of the operators we talked about do have a variation where you would not ne
 
 ### !
 
-You can use `!` as an alias for `-not`, but I prefer to type it out.
+You can use `!` as an alias for `-not`.
 
 ``` posh
     if ( -not $value ){}
     if ( !$value ){}
 ```
 
-You will see `!` used more by people that come from another languages like C#.
+You will see `!` used more by people that come from another languages like C#. I prefer to type it out because I find it hard to see when quickly looking at my scripts.
 
 ## -and
 
@@ -494,7 +494,7 @@ There three possible values that can match the `$itemType`. In this case, it wil
 
 # Pipeline
 
-The pipeline is a very unique and important feature of PowerShell. Any value that is not suppressed or assigned to a variable gets placed in the pipeline. The `if` provides us a way to take advantage of the pipeline in a way that is not alway obvious.
+The pipeline is a very unique and important feature of PowerShell. Any value that is not suppressed or assigned to a variable gets placed in the pipeline. The `if` provides us a way to take advantage of the pipeline in a way that is not always obvious.
 
 ``` posh
     $discount = if ( $age -ge 55 )
@@ -635,7 +635,7 @@ The obvious downside is that it is so much more code to write. The code is more 
 
 ## Using functions
 
-We can also pull all that validation logic out of your script and push it into a function. Look at how clean this looks at a glance.
+We can also move all that validation logic into a function. Look at how clean this looks at a glance.
 
 ``` posh
     if ( Test-SecureDriveConfiguration -ADUser $user )
@@ -651,7 +651,7 @@ The body of that function could still be that one-liner we started with or the e
 
 # Error handling
 
-One really important use of the `if` statement is to check for error conditions before you run into errors. One good example is to check if a folder already exists before you try and create it.
+One really important use of the `if` statement is to check for error conditions before you run into errors. A good example is to check if a folder already exists before you try and create it.
 
 ``` posh
    if ( -not (Test-Path -Path $folder) )
