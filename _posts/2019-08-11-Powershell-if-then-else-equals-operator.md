@@ -3,8 +3,7 @@ layout: post
 title: "Powershell: Everything you wanted to know about the IF statement"
 date: 2019-08-11
 tags: [PowerShell,Everything]
-share-img: "/img/share-img/2019-08-11-Powershell-if-then-else-equals-operator.svg"
-
+share-img: "/img/share-img/2019-08-11-Powershell-if-then-else-equals-operator.png"
 ---
 
 Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statements is the [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-5.1) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
@@ -473,16 +472,16 @@ The `if` and `else` statements take a script block, so we can place any PowerShe
 
 In this example, we test the happy path first and then take action on it. If that fails, we do another check and to provide more detailed information to the user.
 
-## else if
+## elseif
 
-We are not limited to just a single conditional check. We can chain `if` and `else` statements together instead of nesting them by using the `else if` operator.
+We are not limited to just a single conditional check. We can chain `if` and `else` statements together instead of nesting them by using the `elseif` statement.
 
 ``` posh
     if ( Test-Path -Path $Path -PathType Leaf )
     {
         Move-Item -Path $Path -Destination $archivePath
     }
-    else if ( Test-Path -Path $Path )
+    elseif ( Test-Path -Path $Path )
     {
         Write-Warning "A file was required but a directory was found instead."
     }
@@ -492,7 +491,7 @@ We are not limited to just a single conditional check. We can chain `if` and `el
     }
 ```
 
-The execution happens from the top to the bottom. The top `if` statement is evaluated first. If that is `$false`, then it moves down to the next `else if` or `else` in the list. That last `else` is the default action to take if none of the others return `$true`.
+The execution happens from the top to the bottom. The top `if` statement is evaluated first. If that is `$false`, then it moves down to the next `elseif` or `else` in the list. That last `else` is the default action to take if none of the others return `$true`.
 
 ## switch
 
@@ -530,7 +529,7 @@ The pipeline is a very unique and important feature of PowerShell. Any value tha
     {
         Get-SeniorDiscount
     }
-    else if ( $age -le 13 )
+    elseif ( $age -le 13 )
     {
         Get-ChildDiscount
     }

@@ -1,4 +1,4 @@
-* 2019-08-11 [Powershell: Everything you wanted to know about the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* 2019-08-11 [Powershell: Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-01-02 [What happened to kevinmarquette.github.io?](/2019-01-02-domain-name-changed/?utm_source=blog&utm_medium=blog&utm_content=recent)
