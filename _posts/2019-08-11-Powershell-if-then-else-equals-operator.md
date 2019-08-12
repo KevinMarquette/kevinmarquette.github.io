@@ -406,7 +406,7 @@ I almost forgot to add this one until [Prasoon Karunan V](https://twitter.com/pr
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">you could add below case as well :-)<br>if($process=Get-Process notepad -ErrorAction ignore){$process}else{$false}</p>&mdash; Prasoon Karunan V (@prasoonkarunan) <a href="https://twitter.com/prasoonkarunan/status/1160752165842853888?ref_src=twsrc%5Etfw">August 12, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Normally when you assign a value to a variable, the value is not passed onto the pipeline or console. When do a variable assignment in a sub expression, it does get passed on to the pipleine.
+Normally when you assign a value to a variable, the value is not passed onto the pipeline or console. When you do a variable assignment in a sub expression, it does get passed on to the pipeline.
 
 ``` posh
     PS> $first = 1
@@ -423,7 +423,7 @@ See how the `$first` assignment has no output and the `$second` assignment does?
     }
 ```
 
-If `$process` gets assigned a value, then the statement will be true and then the `$process` will get stopped.
+If `$process` gets assigned a value, then the statement will be `$true` and then the `$process` will get stopped.
 
 Make sure you don't confuse this with `-eq` because this is not an equality check. This is a more obscure feature that most people don't realize works this way.
 
