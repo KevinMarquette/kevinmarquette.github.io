@@ -9,7 +9,7 @@
 		ga('send', 'pageview');
 	</script>
 	<!-- End Google Analytics -->
-	
+
 	<!-- Google Analytics Scroll tracking -->
 	<script>
 		document.addEventListener('scroll', function(){
@@ -26,17 +26,33 @@
 		{
 			ga('send', 'event', 'Scrolling', 'moreThan20%', '{{Page URL}}', { 'nonInteraction': 0 });
 		}
+		else if (percent == 30)
+		{
+			ga('send', 'event', 'Scrolling', 'moreThan30%', '{{Page URL}}', { 'nonInteraction': 0 });
+		}
 		else if (percent == 40)
 		{
 			ga('send', 'event', 'Scrolling', 'moreThan40%', '{{Page URL}}', { 'nonInteraction': 0 });
+		}
+		else if (percent == 50)
+		{
+			ga('send', 'event', 'Scrolling', 'moreThan50%', '{{Page URL}}', { 'nonInteraction': 0 });
 		}
 		else if (percent == 60)
 		{
 			ga('send', 'event', 'Scrolling', 'moreThan60%', '{{Page URL}}', { 'nonInteraction': 0 });
 		}
+		else if (percent == 70)
+		{
+			ga('send', 'event', 'Scrolling', 'moreThan70%', '{{Page URL}}', { 'nonInteraction': 0 });
+		}
 		else if (percent == 80)
 		{
 			ga('send', 'event', 'Scrolling', 'moreThan80%', '{{Page URL}}', { 'nonInteraction': 0 });
+		}
+		else if (percent == 90)
+		{
+			ga('send', 'event', 'Scrolling', 'moreThan90%', '{{Page URL}}', { 'nonInteraction': 0 });
 		}
 		   
 		});
