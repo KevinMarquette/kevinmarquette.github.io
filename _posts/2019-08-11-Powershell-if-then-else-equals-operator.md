@@ -118,7 +118,7 @@ I don't know why you would use case sensitive and insensitive options for these 
 
 ## -like wildcard matches
 
-PowerShell has it's own wildcard based pattern matching syntax and you can use it with the `-like` operator. These wildcard patterns are fairly basic.
+PowerShell has its own wildcard based pattern matching syntax and you can use it with the `-like` operator. These wildcard patterns are fairly basic.
 
 * `?` will match any single character
 * `*` will match any number of characters
@@ -600,7 +600,7 @@ There some operators in PowerShell that let you wrap you command to the next lin
     }
 ```
 
-There is still a lot going on there, but placing each piece on it's own line makes a big difference. I generally only do this when I get more than two comparisons or if I have to scroll to the right to read any of the ligic.
+There is still a lot going on there, but placing each piece on its own line makes a big difference. I generally only do this when I get more than two comparisons or if I have to scroll to the right to read any of the ligic.
 
 ## Pre-calculating results
 
@@ -688,7 +688,7 @@ One really important use of the `if` statement is to check for error conditions 
    }
 ```
 
-I like to say that if you expect an exception to happen, then it's not really an exception. So check your values and validate your conditions where you can.
+I like to say that if you expect an exception to happen, then its not really an exception. So check your values and validate your conditions where you can.
 
 If you want to dive a little more into actual exception handling, I have an article on [everything you ever wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=ifstatement).
 
