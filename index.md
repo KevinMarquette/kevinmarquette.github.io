@@ -11,8 +11,7 @@ Welcome to PowerShell Explained. Here is a collection of popular resources I hav
 
 Here are the most recent articles that have been posted to the site.
 
-{% include recent-posts.md %}
-* [More](sitemap/?utm_source=blog&utm_medium=blog&utm_content=recent)
+{% include recent-posts.md %}* [More](sitemap/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
 # Language Reference Pages
 
@@ -47,7 +46,7 @@ There are many more articles that I have written that contain information that i
 PowerShell is a large topic and you will run into questions that I have not covered on this site. Here are a few communities that can help you.
 
 * [PowerShell.org/forums](https://powershell.org/forums/) A place where you can ask your questions and talk with members of the community.
-* [/r/PowerShell](httos://reddit.com/r/powershell) Another great community for you to ask your questions.
+* [Reddit.com/r/PowerShell](https://reddit.com/r/powershell) Another great community for you to ask your questions.
 * [PowerShell Slack](http://slack.poshcode.org) A very active slack for all things PowerShell.
 
-Please report any issues with this site as a [GitHub Issue](https://github.com/KevinMarquette/kevinmarquette.github.io/issues/new).
+Please report any issues with this site as a [GitHub Issue](https://github.com/KevinMarquette/kevinmarquette.github.io/issues).
