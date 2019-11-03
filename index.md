@@ -5,55 +5,49 @@ subtitle: With Kevin Marquette
 share-img: "/img/share-img/index.png"
 ---
 
-# Popular reference pages
+Welcome to PowerShell Explained. Here is a collection of popular resources I have created to explain the way PowerShell works.
 
-* [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Reading and writing to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Variable substitution](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Switch Statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [Regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=popref)
-* [More](/tags/?utm_source=blog&utm_medium=blog&utm_content=popref)
+# Recent Articles
 
-# About Kevin Marquette
-
-I am Systems Development Engineer for Amazon, Microsoft MVP, 2018 PowerShell Hero, and SoCal PowerShell User Group Organizer. I have been passionate about PowerShell for a very long time. I enjoy learning about PowerShell and sharing everything that I discover.
-
-# Projects
-
-## Blog\Research
-
-The primary focus of my [blog](/blog/?utm_source=blog&utm_medium=blog&utm_content=index) is on PowerShell. I love to learn and research ideas in PowerShell. When I find something interesting or new, I write about those discoveries.
-
-When I cover fundamentals, my intention is that everyone walks away learning something. My coverage on [hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=index) gently introduces hashtables and continues on to take the topic to the most advanced details.
-
-### Recent posts
+Here are the most recent articles that have been posted to the site.
 
 {% include recent-posts.md %}
-* [More](/tags/?utm_source=blog&utm_medium=blog&utm_content=recent)
+* [More](sitemap/?utm_source=blog&utm_medium=blog&utm_content=recent)
 
-## PowerShell Modules
+# Language Reference Pages
 
-### DependsOn
+These articles first introduce a basic PowerShell language feature, show how to use it, and then dives deeper and deeper into the topic. They will have something for all skill levels and were designed for you to return to over and over as your PowerShell skills improve.
 
-[DependsOn](https://github.com/loanDepot/DependsOn) is a PowerShell Module that allows you to define dependencies in your data and order the data based on those dependencies.
+* [Variable substitution](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [If Statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Switch Statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 
-### PSGraph
+# Doing stuff with PowerShell
 
-[PSGraph](/2017-01-30-Powershell-PSGraph//?utm_source=blog&utm_medium=blog&utm_content=projects) is a Powershell Module that allows you to script the generation of graphs using the GraphViz engine. It makes it easy to produce data driven visualizations.
+In this collection of articles, I cover specific tasks that can be performed with PowerShell. These are the common things that you will run into as you start to use PowerShell. The more advanced topics can be found by using the links in the more section.
 
-### PSGraphPlus
+* [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
+* [Reading and writing to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
 
-[PSGraphPlus](https://github.com/KevinMarquette/PSGraphPlus) is a Powershell Module generates graphs using PSGraph. It has commands that will generate graphs of git repos and local network connections. Most of my best demos are captured as functions in this module. It saves you the work of crafting those graphs yourself.
 
-### Chronometer
+# More
 
-[Chronometer](/2017-02-05-Powershell-Chronometer-line-by-line-script-execution-times/?utm_source=blog&utm_medium=blog&utm_content=projects) analyzes a script or module during execution and reports line by line execution times. It allows you to see your code coverage and where most of your execution time is spent.
+There are many more articles that I have written that contain information that is just as valuable as those featured on the front page. Please use these links to access the rest of my content.
 
-### GetPlastered
-[GetPlastered](/2017-05-14-Powershell-Plaster-GetPlastered-template/?utm_source=blog&utm_medium=blog&utm_content=recent) is a Plaster template that will turn a folder into a Plaster template that can deploy that folder. The idea is to use this as a starting point to create the Plaster manifest when you know it will contain a lot of files.
+* [Blog](blog/?utm_source=blog&utm_medium=blog&utm_content=more)
+* [Tags](/tags/?utm_source=blog&utm_medium=blog&utm_content=more)
+* [All Posts](sitemap/?utm_source=blog&utm_medium=blog&utm_content=more)
 
-### Select-Ast
-[SelectAst](https://github.com/KevinMarquette/Select-Ast) is a helper command for working with the AST. It takes care of the delegate logic for you so you can select what you want with simpler syntax.
+## Other
+
+PowerShell is a large topic and you will run into questions that I have not covered on this site. Here are a few communities that can help you.
+
+* [PowerShell.org/forums](https://powershell.org/forums/) A place where you can ask your questions and talk with members of the community.
+* [/r/PowerShell](httos://reddit.com/r/powershell) Another great community for you to ask your questions.
+* [PowerShell Slack](http://slack.poshcode.org) A very active slack for all things PowerShell.
+
+Please report any issues with this site as a [GitHub Issue](https://github.com/KevinMarquette/kevinmarquette.github.io/issues/new).
