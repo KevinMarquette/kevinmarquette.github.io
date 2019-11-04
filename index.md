@@ -20,8 +20,10 @@ These articles first introduce a basic PowerShell language feature, show how to 
 * [Variable substitution](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 * [If Statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 * [Switch Statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=indexref)
-* [Hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Hashtable](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 * [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog&utm_content=indexref)
+* [Arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 * [Exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 * [Regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog&utm_content=indexref)
 
@@ -29,9 +31,11 @@ These articles first introduce a basic PowerShell language feature, show how to 
 
 In this collection of articles, I cover specific tasks that can be performed with PowerShell. These are the common things that you will run into as you start to use PowerShell. The more advanced topics can be found by using the links in the more section.
 
-* [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
 * [Reading and writing to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
-
+* [Installing MSIs](/2016-10-21-powershell-installing-msi-files/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
+* [Installing Remote Software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
+* [Creating a Basic Module](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
+* [Creating a Binary Module](/2018-08-04-Powershell-Standard-Library-Binary-Module/?utm_source=blog&utm_medium=blog&utm_content=indexactions)
 
 # More
 
