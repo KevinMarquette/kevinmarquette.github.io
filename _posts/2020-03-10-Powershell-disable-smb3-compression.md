@@ -3,7 +3,7 @@ layout: post
 title: "Powershell: How to Disable SMBv3 Compression"
 date: 2020-03-10
 tags: [PowerShell]
-share-img: "/img/share-img/2020-03-10-Powershell-disable-smb3-compression.svg"
+share-img: "/img/share-img/2020-03-10-Powershell-disable-smb3-compression.png"
 ---
 
 If you are working on the [ADV200005 Security Advisory](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv200005) for [CVE-2020-0796](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796), the primary workaround is to disable SMB Compression on the server. Let's take a look at how to do that in the registry with PowerShell.
