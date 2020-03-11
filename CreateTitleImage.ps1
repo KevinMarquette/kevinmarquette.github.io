@@ -126,7 +126,6 @@ tags: [{Tags:PowerShell,PSGraph,GraphViz}]
             $content | New-WordCloud @newWordCloudSplat -Verbose
             # Add branding
             #$size = [System.Drawing.size]::new(600, 314)
-            
         
         }
     }

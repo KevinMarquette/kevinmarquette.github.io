@@ -1,3 +1,4 @@
+* 2020-03-10 [Powershell: How to Disable SMBv3 Compression](/2020-03-10-Powershell-disable-smb3-compression/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-08-11 [Powershell: Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=recent)
@@ -5,4 +6,3 @@
 * 2019-01-01 [2018: What have you done with PowerShell this year?](/2019-01-01-Powershell-2018-year-in-review/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
 * 2018-11-03 [PowerShell and DevOps Global Summit 2019](/2018-11-03-Powershell-2019-devops-global-summit-usa/?utm_source=blog&utm_medium=blog&utm_content=recent)
-* 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=recent)
