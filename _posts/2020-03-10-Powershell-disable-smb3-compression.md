@@ -6,7 +6,7 @@ tags: [PowerShell]
 share-img: "/img/share-img/2020-03-10-Powershell-disable-smb3-compression.png"
 ---
 
-If you are working on the [ADV200005 Security Advisory](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv200005) for [CVE-2020-0796](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796), the primary workaround is to disable SMB Compression on the server. Let's take a look at how to do that in the registry with PowerShell.
+If you are working on the [ADV200005 Security Advisory](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv200005) for [CVE-2020-0796](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796), the primary workaround is to disable SMB Compression on the host. Let's take a look at how to do that in the registry with PowerShell.
 <!--more-->
 
 # Index
@@ -30,7 +30,7 @@ $parameters = @{
 Set-ItemProperty @parameters
 ```
 
-You do have to run this on every server. We can use `Invoke-Command` to do that (Assuming [PowerShell remoting](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7) is working in your environment). We place our original script inside its scriptblock.
+You do have to run this on every host. We can use `Invoke-Command` to do that (Assuming [PowerShell remoting](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7) is working in your environment). We place our original script inside its scriptblock.
 
 ``` powershell
 $Session = New-PSSession -ComputerName 'ATX-FILE01','ATX-FILE02','LAX-SQL05'
@@ -85,7 +85,7 @@ if (1 -eq $properties.DisableCompression){
 
 I could have used Get-ItemProperty to get just the value of `DisableCompression`, but it will throw an error if that property does not exist. My logic above is very subtly working around that scenario.
 
-We can also wrap this in an `Invoke-Command` to get the results from multiple servers.
+We can also wrap this in an `Invoke-Command` to get the results from multiple hosts.
 
 ``` powershell
 $Session = New-PSSession -ComputerName 'ATX-FILE01','ATX-FILE02','LAX-SQL05'
@@ -106,15 +106,15 @@ $Session | Remove-Session
 
 ## PSSessions
 
-You may have noticed that I used `New-PSSession` to create sessions instead of using `Invoke-Command -ComputerName`. I did this because I tend to run multiple commands back to back on a collection of servers. I first run my script to get the current status. This gives me a clear picture of what I am about to change. I then run my change for a small set of servers before running it on everything. When I am done, I run the status check again to verify everything is correct.
+You may have noticed that I used `New-PSSession` to create sessions instead of using `Invoke-Command -ComputerName`. I did this because I tend to run multiple commands back to back on a collection of hosts. I first run my script to get the current status. This gives me a clear picture of what I am about to change. I then run my change for a small set of hosts before running it on everything. When I am done, I run the status check again to verify everything is correct.
 
 While I did include the creation and cleanup of sessions in both examples, I do reuse the sessions over and over when making my changes.
 
 ## Idempotent changes
 
-It is important to make your change script safe to execute multiple times on the same server. This example is just setting a registry key and it is safe to set that over and over. If you are making other changes like deleting a file, make sure the script does not error out if the file does not exist on a second run.
+It is important to make your change script safe to execute multiple times on the same host. This example is just setting a registry key and it is safe to set that over and over. If you are making other changes like deleting a file, make sure the script does not error out if the file does not exist on a second run.
 
-You never know when you will be part of the way through changing a large group of servers and have to start over for some reason. If you can safely rerun your script on the entire group, it saves you from having to go research what servers got changed and exclude them from the next run.
+You never know when you will be part of the way through changing a large group of hosts and have to start over for some reason. If you can safely rerun your script on the entire group, it saves you from having to go research what hosts got changed and exclude them from the next run.
 
 # Configuration management
 
@@ -137,11 +137,11 @@ DisableSMBv3CompressionConfig -Output c:\DSC
 Start-DscConfiguration -Path C:\DSC -Wait -Force -Verbose
 ```
 
-This example just configures `localhost` but you could specify your servers instead. Ideally, you are already using DSC and can just add this to your existing configuration.
+This example just configures `localhost` but you could specify your hosts instead. Ideally, you are already using DSC and can just add this to your existing configuration.
 
 ## Why configuration management
 
-I just want to call out that even if you blast out a change like this to every sever, it is important to move this into your configuration management system. Making this change this way only gets the systems that are online at this very moment. If a system is powered off, or reverted to a snapshot, or restored from backup, or a new server is deployed, they also need to have these changes made.
+I just want to call out that even if you blast out a change like this to every sever, it is important to move this into your configuration management system. Making this change this way only gets the hosts that are online at this very moment. If a host is powered off, or reverted to a snapshot, or restored from backup, or a new host is deployed, they also need to have these changes made.
 
 I am often quick to rush out a change, but the task isn't really done until its a managed setting. I don't care if thats Group Policy, SCCM, DSC, Puppet, Chef, or something else. Don't just fire and forget changes like this.
 
