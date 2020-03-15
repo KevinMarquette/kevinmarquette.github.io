@@ -9,6 +9,8 @@ share-img: "/img/share-img/2020-03-10-Powershell-disable-smb3-compression.png"
 If you are working on the [ADV200005 Security Advisory](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv200005) for [CVE-2020-0796](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796), the primary workaround is to disable SMB Compression on the host. Let's take a look at how to do that in the registry with PowerShell.
 <!--more-->
 
+**Update:** Microsoft has released [KB4551762](https://support.microsoft.com/en-us/help/4551762/windows-10-update-kb4551762) that resolved the security advisory. This workaround is no longer needed but I am leaving this post here because it covers the general approach to applying registry changes in your organization using PowerShell.
+
 # Index
 
 * TOC
@@ -46,7 +48,7 @@ Invoke-Command -Session $Session -ScriptBlock {
     Write-Verbose "Disabling [$env:computername]" -Verbose
     Set-ItemProperty @parameters
 }
-$Session | Remove-Session
+$Session | Remove-PSSession
 ```
 
 # Enabling
@@ -101,7 +103,7 @@ Invoke-Command -Session $Session -ScriptBlock {
         Write-Verbose "[$env:ComputerName] is Enabled" -Verbose
     }
 }
-$Session | Remove-Session
+$Session | Remove-PSSession
 ```
 
 ## PSSessions
