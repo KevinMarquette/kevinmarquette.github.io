@@ -102,6 +102,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2018-01-12 [Powershell: Everything you ever wanted to know about the switch statement](/2018-01-12-Powershell-switch-statement/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-12-23 [Powershell: Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-08-11 [Powershell: Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2020-03-15 [Powershell: Everything you wanted to know about ShouldProcess](/2020-03-15-Powershell-shouldprocess-whatif-confirm-shouldcontinue-everything/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Exceptions'></a>
 # Exceptions
@@ -252,6 +253,8 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2019-03-18 [Powershell: Jira module project](/2019-03-18-Powershell-jira-module/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-04-11 [Powershell: Building Micro Modules](/2019-04-11-Powershell-Building-Micro-Modules/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2019-08-11 [Powershell: Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2020-03-10 [Powershell: How to Disable SMBv3 Compression](/2020-03-10-Powershell-disable-smb3-compression/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2020-03-15 [Powershell: Everything you wanted to know about ShouldProcess](/2020-03-15-Powershell-shouldprocess-whatif-confirm-shouldcontinue-everything/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='powershellexplained.com'></a>
 # powershellexplained.com
