@@ -20,7 +20,7 @@ This is a really easy feature that you can enable in your functions that provide
 
 Before we look at implementing these [common parameters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7), I want to take a quick look at how they are used.
 
-# -WhatIf
+# Using -WhatIf
 
 When a command supports the `-WhatIf` parameter, it allows you to see what the command would have done instead of making changes. It is a good way to test out the impact of a command, especially before you do something destructive.
 
@@ -38,7 +38,7 @@ What if: Performing the operation "Remove File" on target "C:\Temp\myfile2.txt".
 What if: Performing the operation "Remove File" on target "C:\Temp\importantfile.txt".
 ```
 
-# -Confirm
+# Using -Confirm
 
 Commands that support `-WhatIf` also support `-Confirm`. This gives you a chance confirm an action before performing it.
 
@@ -348,7 +348,7 @@ This brings us back to an earlier warning: There are nuances as to when `-WhatIf
 
 # $PSCmdlet.ShouldContinue
 
-If you need more control than it provides, you can trigger the prompt directly with `ShouldContinue`. `ShouldContinue` ignores `$ConfirmPreference`, `ConfirmImpact`, `-Confirm`, `$WhatIfPreference`, and `-WhatIf` because it will prompt every time it is executed.
+If you need more control than `ShouldProcess` provides, you can trigger the prompt directly with `ShouldContinue`. `ShouldContinue` ignores `$ConfirmPreference`, `ConfirmImpact`, `-Confirm`, `$WhatIfPreference`, and `-WhatIf` because it will prompt every time it is executed.
 
 At a quick glance, it is easy to confuse `ShouldProcess` and `ShouldContinue`. I tend to remember to use `ShouldProcess` because the parameter is called `SupportsShouldProcess` in the `CmdletBinding`. You should use `ShouldProcess` in almost every scenario. That is why I covered that method first.
 
