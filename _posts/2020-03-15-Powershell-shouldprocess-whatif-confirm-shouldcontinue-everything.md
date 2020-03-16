@@ -147,7 +147,7 @@ function Test-ShouldProcess {
 }
 ```
 
-The call to `$PSCmdlet.ShouldProcess($file.name)` checks for the `-WhatIf` (and `-Confirm` parameter) then handles it accordingly. The `-WhatIf` will output a description of the change and return `$true`:
+The call to `$PSCmdlet.ShouldProcess($file.name)` checks for the `-WhatIf` (and `-Confirm` parameter) then handles it accordingly. The `-WhatIf` will cause `ShouldProcess` to output a description of the change and return `$false`:
 
 ``` powershell
 PS> Test-ShouldProcess -WhatIf
