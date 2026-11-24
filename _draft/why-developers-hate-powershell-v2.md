@@ -7,10 +7,10 @@ tags: [PowerShell, Developer Experience]
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
 
-At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both.
+I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
 
 <!--more-->
-I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quick, but it's hard to avoid that.
+At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both.
 
 # Index
 
@@ -51,7 +51,7 @@ function writeIntro([string]$FirstName, [string]$LastName) {
 }
 ```
 
-The new output confirms our suspicions. The argument values are not landing in the parameters the way we expected.
+The new output shows us the problem. The argument values are not landing in the parameters the way we expected.
 
 ```powershell
 PS> writeIntro("Kevin", "Marquette")
@@ -102,7 +102,9 @@ Our debug messages ended up in the email. The function returned three values whe
 
 The whole point of `return` in other languages is to return the specified value and exit. In PowerShell, [`return`](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return) exits the function, and the value you give it is added to the output. It doesn't stop anything else from being output. Everything a function outputs goes into the pipeline, which is how PowerShell passes values from one command to the next, one item at a time. Every value that is not captured or redirected is sent to the pipeline, and the caller gets all of it.
 
-If you want debug messages that stay out of the return value, my preference is `Write-Verbose`. It writes to the verbose stream, which stays hidden until you ask for it with `-Verbose`. Let's switch to the modern PowerShell style for functions with a `param` block and add `[CmdletBinding()]` to the function (consider it boilerplate for now). That gives us the `-Verbose` switch automatically. I'll also adopt the Verb-Noun naming standard going forward. More on that at the end.
+If you want debug messages that stay out of the return value, my preference is `Write-Verbose`. It writes to the verbose stream, which stays hidden until you ask for it with `-Verbose`.
+
+Let's switch to the modern PowerShell style for functions with a `param` block and add `[CmdletBinding()]` to the function (consider it boilerplate for now). That gives us the `-Verbose` switch automatically. I'll also adopt the Verb-Noun naming standard going forward. More on that at the end.
 
 ```powershell
 function Get-Intro {
@@ -145,8 +147,9 @@ PS> $result.Count
 PS> $result
     Directory: C:\Temp
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
 d-----        11/21/2026   2:00 PM                TestFolder
 Created folder at C:\Temp\TestFolder
 ```
@@ -191,21 +194,21 @@ Marquette
 Now that we know everything gets sent to the pipeline, here is a nasty surprise. Let's write a function that returns an array with one item in it:
 
 ```powershell
-function getNames {
+function Get-Names {
     $names = @('Kevin')
     return $names
 }
 ```
 
 ```powershell
-PS> $result = getNames
+PS> $result = Get-Names
 PS> $result[0]
 K
 PS> $result.GetType().FullName
 System.String
 ```
 
-We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null`. Most of the time, PowerShell doesn't care what the type is and will often do the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
+We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null`. Most of the time, PowerShell doesn't care what the type is and does the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
 
 If you absolutely have to preserve the collection, then you can use the unary comma operator to wrap the collection in another array or use `Write-Output -NoEnumerate`.
 
@@ -245,9 +248,11 @@ Ten is not bigger than five? Let's look at the current folder:
 
 ```powershell
 PS> Get-ChildItem
+    Directory: C:\Temp
+
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
--a---          11/21/2026 11:36 PM              4 5
+-a----        11/21/2026  11:36 PM             10 5
 ```
 
 There is now a file named `5` with `10` in it. In a shell, `>` [redirects output to a file](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection). That is what it has meant in shells for decades, and admins expect it. The redirection produced no output, so the `if` statement saw nothing and treated it as `$False`.
@@ -374,12 +379,10 @@ That `"False"` case comes up when you read values from a config file or a CSV an
 We have been putting variables in strings this whole time. That works great until you use a property for the first time.
 
 ```powershell
-PS> $user = [pscustomobject]@{ Name = 'Kevin' }
+PS> $user = @{ Name = 'Kevin' }
 PS> "Hello $user.Name"
-Hello @{Name=Kevin}.Name
+Hello System.Collections.Hashtable.Name
 ```
-
-If `[pscustomobject]` is new to you, I cover it in [Everything you wanted to know about PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog).
 
 PowerShell only expands the variable `$user`. The `.Name` is left as text. To use a property or any other expression in a string, wrap it in a `$()` subexpression.
 
@@ -406,7 +409,11 @@ Hello []
 
 I misspelled the variable and PowerShell gave me an empty value. A variable that was never set is `$null`, and there is no compiler to catch it. This is also why I wrap variables in brackets when I write them out. It makes it easy to see when a variable is empty vs the message getting truncated.
 
-This is the right time to call out `Set-StrictMode -Version Latest` to catch things like this even though I don't see it used very often.
+This is a good place to call out `Set-StrictMode -Version Latest`. It turns a reference to a variable that was never set into an error. I don't see it used very often, but it would have caught this one with this error:
+
+```text
+InvalidOperation: The variable '$FristName' cannot be retrieved because it has not been set.
+```
 
 ## [string] is never $null
 
@@ -427,7 +434,7 @@ PS> Get-Welcome -FirstName "Kevin"
 Hello Kevin .
 ```
 
-Our `$null` check never matched because `[string]$LastName` is strongly typed and `[string]` is not nullable in PowerShell (so it can never be `$null` like it can in C#). When you cast `$null` to a `[string]`, you get an empty string.
+Our `$null` check never matched. `[string]` is not nullable in PowerShell, so unlike C#, a `[string]` variable can never be `$null`. When you cast `$null` to a `[string]`, you get an empty string.
 
 ```powershell
 PS> [string]$value = $null
@@ -454,17 +461,17 @@ if ($LastName) {
 I go into more detail on this in [Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 
-## Dirty Session?
+## Dynamic Scope
 
-Sometimes we get so used to code working a certain way, we forget that is not how it actually works. Here is a function that will likely pass all its tests.
+Here is a function that will pass all of its tests and still has a bug in it.
 
 ```powershell
 function Invoke-SecureRequest {
     param([string]$Uri)
-    if($Uri -match '^https'){
-        $secure=$True
+    if ($Uri -match '^https'){
+        $secure = $True
     }
-    if($secure){
+    if ($secure)  {
         # Invoke-WebRequest $Uri
         return $True
     }
@@ -491,7 +498,7 @@ That example output will only match the first time you run it in a session. And 
 
 The catch is that PowerShell uses dynamic [scope](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes) (most languages use lexical scope) so a function can read every variable from the scope that called it. When it assigns a value to one of those variables, it creates a new local variable with the same name, and the original is left alone. It's based on who called the function, not where the function was written.
 
-This is one of the scenarios where even Strict Mode won't catch issues with you mixing scope within a script. The real version of this bug is the variable left over from your last F5/F8 run, not a user who happens to name a variable `$Secure`.
+This is one of the scenarios where Strict Mode won't always catch this one, because the variable does exist. It just isn't the one you meant. The real version of this bug is the variable left over from your last F5/F8 run creating a dirty session, not a user who happens to name a variable `$Secure`.
 
 Let's look at a more direct demonstration of dynamic scope:
 
@@ -606,8 +613,14 @@ At line:1 char:1
 PowerShell's current location and the process's current directory are two different things. `Set-Location` changes the PowerShell location, but dotnet methods use the process directory, which is usually wherever PowerShell started. Make sure you give dotnet methods full paths like this:
 
 ```powershell
-$path = Resolve-Path -Path 'names.txt'
+$path = Convert-Path -Path 'names.txt'
 [System.IO.File]::ReadAllText($path)
+```
+
+The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working dirctory) variable.
+
+```powershell
+Join-Path -Path $PWD -ChildPath 'names.txt'
 ```
 
 # Error handling
@@ -683,7 +696,7 @@ PS> $LASTEXITCODE
 
 You have to check `$LASTEXITCODE` yourself after each call. Be careful, because not every tool uses `0` for success and everything else for failure. `robocopy` returns `1` when it copied files successfully.
 
-You can set `$PSNativeCommandUseErrorActionPreference` in PowerShell 7.6 to `$True` so a non-zero exit code is treated as an error and respects `$ErrorActionPreference`.
+In PowerShell 7.4 and newer, you can set `$PSNativeCommandUseErrorActionPreference = $True` so a non-zero exit code is treated as an error and respects `$ErrorActionPreference`. Turning this on makes robocopy's "success" exit code of 1 throw an error.
 
 Now that we know how to catch when a native command errors, let's look at the error stream of a command that fails.
 
@@ -696,7 +709,43 @@ PS> $LASTEXITCODE
 1
 ```
 
-The error message went to the screen instead of into our variable. PowerShell only captures standard output. Standard error goes to the error stream. If you want both, redirect with `2>&1`. In Windows PowerShell 5.1, those lines come back as error records and show up in red even when everything is fine. That's a common reason a script that works perfectly looks like it failed.
+The error message went to the screen instead of into our variable. PowerShell only captures standard output. Standard error goes to the error stream, so it skips right past our assignment.
+
+That would be easy enough to work around if standard error only had errors in it. But git also writes its normal status and progress messages there. Here is a checkout that worked:
+
+```powershell
+PS> $branch = git checkout feature
+Switched to branch 'feature'
+PS> "branch [$branch]"
+branch []
+PS> $LASTEXITCODE
+0
+```
+
+Nothing went wrong, and we still didn't capture the message. If you want both streams, redirect standard error into the output with `2>&1`.
+
+```powershell
+PS> $result = git checkout main 2>&1
+PS> $result.GetType().FullName
+System.Management.Automation.ErrorRecord
+```
+
+We captured the message this time, but PowerShell wrapped every line from standard error in an error record. That's the same success message, now dressed up as an error.
+
+In Windows PowerShell 5.1, this gets worse. If you set `$ErrorActionPreference = 'Stop'` like I suggested in the last section, those error records become terminating errors.
+
+```powershell
+PS> $ErrorActionPreference = 'Stop'
+PS> $result = git checkout main 2>&1
+git : Switched to branch 'main'
+At line:1 char:11
++ $result = git checkout main 2>&1
++           ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Switched to branch 'main':String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+```
+
+The checkout worked, and the script still died. That's a common reason a script that works perfectly looks like it failed. PowerShell 7 doesn't throw here, but you still get error records back. Either way, let `$LASTEXITCODE` tell you whether the command worked, and treat anything on standard error as more output.
 
 
 # Classes
@@ -716,8 +765,8 @@ class Folder {
 
 ```powershell
 PS> $result = [Folder]::new().Create("C:\Temp\TestFolder")
-PS> $result.Count
-1
+PS> $result
+Created folder at C:\Temp\TestFolder
 ```
 
 Inside a method, only `return` sends anything back and everything else is thrown away. That is what a developer expected from functions all along. So they get it here and nowhere else.
