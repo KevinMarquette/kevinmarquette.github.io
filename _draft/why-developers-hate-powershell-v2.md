@@ -7,10 +7,10 @@ tags: [PowerShell, Developer Experience]
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
 
-At the time of writting this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both.
+At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both.
 
 <!--more-->
-I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening. because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quick but its hard to avoid that.
+I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quick, but it's hard to avoid that.
 
 # Index
 
@@ -60,15 +60,15 @@ LastName []
 Dear , Kevin Marquette
 ```
 
-Both values ended up in `$FirstName` so `$LastName` is empty. This is the point where a developer either switches to named arguments or searches for how to call a function in PowerShell. An Admin would never think to use parentheses there.
+Both values ended up in `$FirstName` so `$LastName` is empty. This is the point where a developer either switches to named parameters or searches for how to call a function in PowerShell. An admin would never think to use parentheses there.
 
 ## What really happened
 
-PowerShell passes unnamed arguments by position and `("Kevin", "Marquette")` happens to be valid syntax for an array of two strings.  So we passed one argument, an array, to the first parameter. Then `$LastName` was never given a value. When an array is placed inside a string, PowerShell joins the elements with a space. That is how `$FirstName` became `Kevin Marquette`.
+PowerShell binds unnamed arguments to parameters by position, and `("Kevin", "Marquette")` happens to be valid syntax for an array of two strings. So we passed one argument, an array, to the first parameter. Then `$LastName` was never given a value. When an array is placed inside a string, PowerShell joins the elements with a space. That is how `$FirstName` became `Kevin Marquette`.
 
 This is how the call should look:
 
-``` powershell
+```powershell
 PS> writeIntro "Kevin" "Marquette"
 Dear Marquette, Kevin
 PS> writeIntro -FirstName "Kevin" -LastName "Marquette"
@@ -87,7 +87,7 @@ Marquette
 
 So a developer sees `.Split(" ")` work and reasonably assumes functions work the same way when they don't. Commands use shell syntax and methods use programming syntax, and you will see both in the same script.
 
-# return values
+# Return values
 
 I can't tell you how many times I have seen developers get frustrated with that first example in their first hour of PowerShell. But it doesn't stop there. Let's use the return value from `writeIntro`, the version with the debug output still in it.
 
@@ -100,9 +100,9 @@ FirstName [Kevin] LastName [Marquette] Dear Marquette, Kevin. I am writing to yo
 
 Our debug messages ended up in the email. The function returned three values when we only expected one.
 
-The whole point of `return` in other languages is to return the specified value and exit. In PowerShell, [`return`](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return) exits the function, and the value you give it is added to the output. It doesn't stop anything else from being output. Every value that is not captured or redirected is sent to the pipeline, and the caller gets all of it.
+The whole point of `return` in other languages is to return the specified value and exit. In PowerShell, [`return`](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return) exits the function, and the value you give it is added to the output. It doesn't stop anything else from being output. Everything a function outputs goes into the pipeline, which is how PowerShell passes values from one command to the next, one item at a time. Every value that is not captured or redirected is sent to the pipeline, and the caller gets all of it.
 
-If you want debug messages that stay out of the return value, my preference is `Write-Verbose`. It writes to the verbose stream, which stays hidden until you ask for it with `-Verbose`. Lets switch to the modern PowerShell style for functions with a `param` block and add `[CmdletBinding()]` to the function (consider it boilerplate for now). That gives us the `-Verbose` switch automatically. And I'll also addopt the Verb-Noun naming standards going forward. More on that at the end.
+If you want debug messages that stay out of the return value, my preference is `Write-Verbose`. It writes to the verbose stream, which stays hidden until you ask for it with `-Verbose`. Let's switch to the modern PowerShell style for functions with a `param` block and add `[CmdletBinding()]` to the function (consider it boilerplate for now). That gives us the `-Verbose` switch automatically. I'll also adopt the Verb-Noun naming standard going forward. More on that at the end.
 
 ```powershell
 function Get-Intro {
@@ -126,7 +126,7 @@ You'll see a lot of `Write-Host` used for this in other people's code. It also s
 
 ## Output you didn't know about
 
-`echo` is an alias for `Write-Output` and that might might be too obvious, so let's try a different example that will often catch a regular PowerShell scripter off guard:
+`echo` is an alias for `Write-Output` and that might be too obvious, so let's try a different example that will often catch a regular PowerShell scripter off guard:
 
 ```powershell
 function New-Folder {
@@ -207,7 +207,7 @@ System.String
 
 We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null`. Most of the time, PowerShell doesn't care what the type is and will often do the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
 
-If you absolutly have to preserve the collection, then you can use the unary comma operator to wrap the collection in another array or use `Write-Output -NoEnumerate`.
+If you absolutely have to preserve the collection, then you can use the unary comma operator to wrap the collection in another array or use `Write-Output -NoEnumerate`.
 
 ```powershell
 # unary comma operator
@@ -223,11 +223,13 @@ function Get-Names {
 }
 ```
 
-That comma operator is easy to miss and looks like a typo to anyone who doesn't know the trick. In practice, this is most commonly resolved on the callers side by wrapping the results in an array.
+That comma operator is easy to miss and looks like a typo to anyone who doesn't know the trick. In practice, this is most commonly resolved on the caller's side by wrapping the results in an array.
 
-``` powershell
-    $names = @(Get-Names)
+```powershell
+$names = @(Get-Names)
 ```
+
+I cover unrolling, `@()`, and the other collection types in [Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 # Comparison operators
 
@@ -264,7 +266,29 @@ PowerShell uses these named [comparison operators](https://learn.microsoft.com/p
 | `\|\|` | `-or` |
 | `!` | `-not` or `!` |
 
+## Case doesn't matter
 
+Developers expect `==` on two strings to be case-sensitive. PowerShell ignores case by default.
+
+```powershell
+PS> 'Kevin' -eq 'kevin'
+True
+PS> 'Kevin' -ceq 'kevin'
+False
+```
+
+Every string operator has a `c` version when you need case to matter: `-ceq`, `-clike`, `-cmatch`, `-creplace`, `-ccontains`. The same rule applies to hashtable keys, and to variable and command names. `$FirstName` and `$firstname` are the same variable.
+
+Here is the part that catches people. Methods come from dotnet, and they follow dotnet rules.
+
+```powershell
+PS> 'Kevin' -like '*kevin*'
+True
+PS> 'Kevin'.Contains('kevin')
+False
+```
+
+Operators ignore case and methods don't. It's the same split we saw with calling functions, and you will see both in the same script.
 
 ## The left side wins
 
@@ -355,6 +379,8 @@ PS> "Hello $user.Name"
 Hello @{Name=Kevin}.Name
 ```
 
+If `[pscustomobject]` is new to you, I cover it in [Everything you wanted to know about PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog).
+
 PowerShell only expands the variable `$user`. The `.Name` is left as text. To use a property or any other expression in a string, wrap it in a `$()` subexpression.
 
 ```powershell
@@ -409,7 +435,7 @@ PS> $null -eq $value
 False
 ```
 
-I see this one a lot when someone is trying to do the right thing by using strongly typed parameters and correctly checking everything for `$null`. If you want to know whether the caller passed the parameter at all, ask `$PSBoundParameters`.
+I see this one a lot when someone is trying to do the right thing by using strongly typed parameters and correctly checking everything for `$null`. If you want to know whether the caller used the parameter at all, ask `$PSBoundParameters`.
 
 ```powershell
 if ($PSBoundParameters.ContainsKey('LastName')) {
@@ -417,7 +443,7 @@ if ($PSBoundParameters.ContainsKey('LastName')) {
 }
 ```
 
-While you might be tempted to reach for `[string]::IsNullOrEmpty($LastName)`, PowerShell will treat `$null` and the empty `[string]` as `$False` so don't over think it:
+While you might be tempted to reach for `[string]::IsNullOrEmpty($LastName)`, PowerShell will treat `$null` and the empty `[string]` as `$False` so don't overthink it:
 
 ```powershell
 if ($LastName) {
@@ -432,7 +458,7 @@ I go into more detail on this in [Everything you wanted to know about $null](/20
 
 Sometimes we get so used to code working a certain way, we forget that is not how it actually works. Here is a function that will likely pass all its tests.
 
-``` powershell
+```powershell
 function Invoke-SecureRequest {
     param([string]$Uri)
     if($Uri -match '^https'){
@@ -448,7 +474,7 @@ function Invoke-SecureRequest {
 
 But then you get that one user that always manages to break things:
 
-``` powershell
+```powershell
 PS> Invoke-SecureRequest -URI "https://www.google.com"
 True
 PS> Invoke-SecureRequest -URI "http://www.google.com"
@@ -461,13 +487,13 @@ PS> Invoke-SecureRequest -URI $Secure
 True
 ```
 
-That example output will only match the first time you run it in a session. And thats the clue to understanding this one. You might have noticed that there are code paths in the function that do not set a value for `$secure`. That should be fine becuase we expect that it will be `$null` by default when it is not already set to a value (and that will be `$False` when evaluated). All your testing will prove it works correctly that way.
+That example output will only match the first time you run it in a session. And that's the clue to understanding this one. You might have noticed that there are code paths in the function that do not set a value for `$secure`. That should be fine because we expect that it will be `$null` by default when it is not already set to a value (and that will be `$False` when evaluated). All your testing will prove it works correctly that way.
 
 The catch is that PowerShell uses dynamic [scope](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes) (most languages use lexical scope) so a function can read every variable from the scope that called it. When it assigns a value to one of those variables, it creates a new local variable with the same name, and the original is left alone. It's based on who called the function, not where the function was written.
 
 This is one of the scenarios where even Strict Mode won't catch issues with you mixing scope within a script. The real version of this bug is the variable left over from your last F5/F8 run, not a user who happens to name a variable `$Secure`.
 
-Lets look at a more direct demonstration of dynamic scope:
+Let's look at a more direct demonstration of dynamic scope:
 
 ```powershell
 function Get-ServerName {
@@ -488,7 +514,7 @@ Server is []
 
 `Get-ServerName` never defines `$server` and nobody passes it in. It works when `Connect-Server` calls it and comes back empty when we call it directly. A function that depends on a variable it was never given works fine in testing and fails when someone calls it from a new place.
 
-I pretend that it doesn't work like that and pass everything a function needs as a parameter and output everything it produces. If you really need to change a variable outside the function, use a script scope modifier like `$script:Count` so it's obvious you are doing it on purpose.
+I pretend that it doesn't work like that and pass everything a function needs through its parameters and output everything it produces. If you really need to change a variable outside the function, use a script scope modifier like `$script:Count` so it's obvious you are doing it on purpose.
 
 
 ## Variables you can't name
@@ -632,7 +658,7 @@ caught: Cannot find path 'C:\DoesNotExist' because it does not exist.
 Or set `$ErrorActionPreference = 'Stop'` at the top of a script to change the default for everything after it. I go into much more detail in [Everything you ever wanted to know about exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 
-# Native commands
+## Native commands
 
 Executables like `git`, `robocopy`, or `msiexec` don't throw errors at all. They return an exit code that PowerShell puts into `$LASTEXITCODE`:
 
@@ -706,17 +732,26 @@ A few of the other rough edges:
 
 While I was writing this post, Copilot kept trying to autocomplete the output of my examples. Every time I started typing the result of `writeIntro("Kevin", "Marquette")`, it suggested `Dear Marquette, Kevin`. It wanted to "fix" my examples so they showed what a developer expected instead of what PowerShell does.
 
-AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so they apply general programming patterns to PowerShell without understanding where it is different. They make the same mistakes a developer make:
+AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so they apply general programming patterns to PowerShell without understanding where it is different. They make the same mistakes developers make:
 
 * Calling functions with parentheses and commas.
 * Using `return` and expecting it to be the only output.
+* Using `echo` or `Write-Host` for debug messages instead of `Write-Verbose`.
+* Leaving output from commands like `New-Item` uncaptured inside a function.
 * Using `ArrayList.Add()` without capturing the index.
+* Returning a collection and expecting the caller to get an array.
+* Using `>` or `==` instead of `-gt` and `-eq`.
+* Using a method like `.Contains()` and expecting it to ignore case like the operators do.
 * Putting `$null` on the right side of a comparison.
+* Treating the string `"False"` from a config file as `$False`.
+* Writing `"$user.Name"` instead of `"$($user.Name)"`.
+* Checking a `[string]` parameter for `$null` to see if the caller used it.
+* Reading a variable that was never set in the function, so it picks one up from the caller.
+* Naming a variable `$input`, `$args`, or `$matches`.
+* Using `-Path` instead of `-LiteralPath` for paths that came from somewhere else.
+* Passing relative paths to dotnet methods.
 * Wrapping cmdlets in `try/catch` without `-ErrorAction Stop`.
 * Not checking `$LASTEXITCODE` after calling an executable.
-* Writing `"$user.Name"` instead of `"$($user.Name)"`.
-* Checking a `[string]` parameter for `$null` to see if it was passed.
-* Using `Write-Host` for debug messages instead of `Write-Verbose`.
 
 If you use these tools to help with PowerShell, this list is a good review checklist. The code can often look right and still have one of these bugs.
 
@@ -727,8 +762,13 @@ I have spent this whole post showing things that work differently than developer
 PowerShell was built for admins who were learning to automate. It's a shell first and a programming language second. Picture someone typing at a console:
 
 * Spaces between arguments are faster to type than parentheses and commas.
-* `>` should write to a file, because that's what it does in every other shell.
 * Typing an expression should show you the result without wrapping it in `print`.
+* Commands should pass items down the pipeline one at a time, so the next command can start working on the first one right away.
+* `>` should write to a file, because that's what it does in every other shell.
+* Windows doesn't care about case, so the shell shouldn't either.
+* Almost everything you type or read from a file starts out as text, so the shell should convert types for you.
+* `*.log` should just work anywhere you can give a path.
+* The variables you set at the console should be available to the commands you run next.
 * One bad server out of 500 shouldn't stop the other 499.
 
 ## Verbosity is a feature
@@ -743,8 +783,10 @@ I'll admit that I enjoy code golf. I have given presentations on how to squeeze 
 
 # Closing remarks
 
-We covered a lot of ground. output and return values, unrolling, operators, type conversion, truthiness, strings, errors, scope, native commands, paths, and classes. If you came to PowerShell from another language, I hope this explains a few of the moments that made you want to throw your keyboard. If PowerShell is your first language, maybe now you will see why you get so much resistance from your developer friends.
+We covered a lot of ground: calling functions, output and return values, unrolling, operators, case sensitivity, type conversion, truthiness, strings, scope, automatic variables, paths, errors, native commands, and classes. If you came to PowerShell from another language, I hope this explains a few of the moments that made you want to throw your keyboard. If PowerShell is your first language, maybe now you will see why you get so much resistance from your developer friends.
 
 Not all of this is going to matter to you today, and that's fine. My hope is that the next time PowerShell does something you don't expect, you'll remember there was a reason for it, and you'll know where to look.
+
+Several of these topics have a deep dive of their own if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog), [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 If I missed one that tripped you up early on, let me know.
