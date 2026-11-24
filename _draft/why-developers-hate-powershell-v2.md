@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell: Why developers hate PowerShell"
+title: "Why developers hate PowerShell"
 date: 2026-11-22
 tags: [PowerShell, Developer Experience]
 ---
@@ -468,10 +468,10 @@ Here is a function that will pass all of its tests and still has a bug in it.
 ```powershell
 function Invoke-SecureRequest {
     param([string]$Uri)
-    if ($Uri -match '^https'){
+    if ($Uri -match '^https') {
         $secure = $True
     }
-    if ($secure)  {
+    if ($secure) {
         # Invoke-WebRequest $Uri
         return $True
     }
@@ -498,7 +498,7 @@ That example output will only match the first time you run it in a session. And 
 
 The catch is that PowerShell uses dynamic [scope](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes) (most languages use lexical scope) so a function can read every variable from the scope that called it. When it assigns a value to one of those variables, it creates a new local variable with the same name, and the original is left alone. It's based on who called the function, not where the function was written.
 
-This is one of the scenarios where Strict Mode won't always catch this one, because the variable does exist. It just isn't the one you meant. The real version of this bug is the variable left over from your last F5/F8 run creating a dirty session, not a user who happens to name a variable `$Secure`.
+The real version of this bug is the variable left over from your last F5/F8 run creating a dirty session, not a user who happens to name a variable `$Secure`. Strict Mode would have caught this one in a clean session, because the http test would throw. But once you have a dirty session with `$Secure` defined, the variable does exist and Strict Mode is happy. It just isn't the one you meant.
 
 Let's look at a more direct demonstration of dynamic scope:
 
@@ -617,7 +617,7 @@ $path = Convert-Path -Path 'names.txt'
 [System.IO.File]::ReadAllText($path)
 ```
 
-The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working dirctory) variable.
+The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working directory) variable.
 
 ```powershell
 Join-Path -Path $PWD -ChildPath 'names.txt'
@@ -802,7 +802,7 @@ AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so 
 * Wrapping cmdlets in `try/catch` without `-ErrorAction Stop`.
 * Not checking `$LASTEXITCODE` after calling an executable.
 
-If you use these tools to help with PowerShell, this list is a good review checklist. The code can often look right and still have one of these bugs.
+If you use these tools to help write PowerShell, this list is a good review checklist. The code can often look right and still have one of these bugs.
 
 # Why PowerShell works this way
 
