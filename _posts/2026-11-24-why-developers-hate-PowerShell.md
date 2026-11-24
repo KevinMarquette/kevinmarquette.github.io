@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Why developers hate PowerShell"
-date: 2026-11-22
-tags: [PowerShell, Developer Experience]
+date: 2026-11-24
+tags: [PowerShell, DeveloperExperience]
 ---
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
@@ -208,7 +208,7 @@ PS> $result.GetType().FullName
 System.String
 ```
 
-We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null`. Most of the time, PowerShell doesn't care what the type is and does the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
+We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null` (technically its an `AutomationNull`). Most of the time, PowerShell doesn't care what the type is and does the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
 
 If you absolutely have to preserve the collection, then you can use the unary comma operator to wrap the collection in another array or use `Write-Output -NoEnumerate`.
 
@@ -617,11 +617,13 @@ $path = Convert-Path -Path 'names.txt'
 [System.IO.File]::ReadAllText($path)
 ```
 
-The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working directory) variable.
+The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working directory). Unless you are on a PSDrive path that dotnet doesn't understand.
 
 ```powershell
-Join-Path -Path $PWD -ChildPath 'names.txt'
+$path = Join-Path -Path $PWD -ChildPath 'names.txt'
 ```
+
+
 
 # Error handling
 
@@ -696,7 +698,7 @@ PS> $LASTEXITCODE
 
 You have to check `$LASTEXITCODE` yourself after each call. Be careful, because not every tool uses `0` for success and everything else for failure. `robocopy` returns `1` when it copied files successfully.
 
-In PowerShell 7.4 and newer, you can set `$PSNativeCommandUseErrorActionPreference = $True` so a non-zero exit code is treated as an error and respects `$ErrorActionPreference`. Turning this on makes robocopy's "success" exit code of 1 throw an error.
+In PowerShell 7.4 and newer, you can set `$PSNativeCommandUseErrorActionPreference = $True` so a non-zero exit code is treated as an error and respects `$ErrorActionPreference`. Turning this on makes robocopy's "success" exit code of 1 throw an error if `$ErrorActionPreference` is `Stop`.
 
 Now that we know how to catch when a native command errors, let's look at the error stream of a command that fails.
 
@@ -774,7 +776,7 @@ Inside a method, only `return` sends anything back and everything else is thrown
 A few of the other rough edges:
 
 * Classes are compiled when the script is parsed. To use a class from a module outside that module, you need `using module` at the top of the script. `Import-Module` isn't enough.
-* Once a class has been loaded, you can't reload a new version of it in the same session. You end up opening new terminals over and over while you develop.
+* Once a class has been loaded though using module, you can't reload a new version of it in the same session. You end up opening new terminals over and over while you develop.
 * Method calls use the method syntax with commas and parentheses, so a script that mixes classes and functions has both calling styles side by side.
 
 # AI makes the same mistakes
