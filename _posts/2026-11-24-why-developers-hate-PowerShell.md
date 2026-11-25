@@ -531,6 +531,8 @@ False
 
 The first one converted `"01"` to a number. The second converted `1` to a string, and `"01"` is not `"1"`.
 
+> ... left-side-wins. For a C# developer that's not just blasphemy, it's unthinkable (a design goal of C# was to get rid of that 'holdover' from C++) - so left-side-wins is SO counter-intuitive. - u/AngryPets
+
 ## Arrays on the left
 
 When the left side is an array, the comparison operators turn into filters. They return every item that matches instead of `$True` or `$False`.
