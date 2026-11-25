@@ -65,7 +65,7 @@ At line:1 char:1
 
 On a Windows desktop, PowerShell won't run any scripts out of the box. The [execution policy](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) defaults to `Restricted` (Windows Server defaults to `RemoteSigned`).
 
-The execution policy is not a security boundary. It's a safety feature that keeps an admin from running a script by accident. Anyone can get around it with `powershell.exe -ExecutionPolicy Bypass`. I set it once on each machine to `RemoteSigned` for my user and forget about it.
+The execution policy is not a security boundary. It's a safety feature that keeps an admin from running a script by accident. Anyone can get around it by copy/pasting a self contained script in the terminal. I set it once on each machine to `RemoteSigned` for my user and forget about it.
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
