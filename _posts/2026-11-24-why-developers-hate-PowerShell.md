@@ -11,7 +11,7 @@ Using and learning PowerShell is a very different experience if you already have
 I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
 
 <!--more-->
-At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. [Windows PowerShell 5.1 is now deprecated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation), but it's still installed on every Windows machine, so you will keep running into it.
+At the time of writing this, PowerShell 7.7 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. [Windows PowerShell 5.1 is now deprecated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation), but it's still installed on every Windows machine, so you will keep running into it.
 
 # Index
 
