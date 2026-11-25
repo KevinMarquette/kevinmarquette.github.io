@@ -1,13 +1,14 @@
 ---
-layout: feed
+layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Kevin Marquette's Blog</title>
-	<link href="https://powershellexplained.comblog/atom.xml" rel="self"/>
-	<link href="https://powershellexplained.comblog"/>
+	<link href="{{ site.url }}/blog/atom.xml" rel="self"/>
+	<link href="{{ site.url }}/"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	{% comment %}Feed and entry ids must stay the same, or readers will show every post as new again.{% endcomment %}
 	<id>https://powershellexplained.comblog</id>
 	<author>
 		<name>Kevin Marquette</name>
@@ -16,8 +17,8 @@ layout: feed
 
 	{% for post in site.posts %}
 		<entry>
-			<title>{{ post.title }}</title>
-			<link href="http://kevinmarquette.github.io{{ post.url }}"/>
+			<title>{{ post.title | xml_escape }}</title>
+			<link href="{{ site.url }}{{ post.url }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
 			<id>https://powershellexplained.com{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>

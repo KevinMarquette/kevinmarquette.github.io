@@ -13,7 +13,9 @@ Task RecentPosts -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscr
 }
 
 Task Build {
-    docker run --rm -it --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder jekyll/jekyll /bin/sh -c 'cd /srv/jekyll; bundle update; bundle install; bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
+    # No -it so this also runs from scripts and CI. Run 'bundle update' by hand when you want newer gems.
+    docker run --rm --volume=$($PSScriptRoot):/srv/jekyll --name blogbuilder jekyll/jekyll /bin/sh -c 'cd /srv/jekyll && bundle install && bundle exec jekyll build --source /srv/jekyll/. --destination /srv/jekyll/_site/.'
+    if ($LASTEXITCODE -ne 0) { throw "Jekyll build failed with exit code [$LASTEXITCODE]" }
 }
 
 Task Run {
