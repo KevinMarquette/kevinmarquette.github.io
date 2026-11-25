@@ -9,7 +9,7 @@ Task Image {
 }
 
 Task RecentPosts -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\_includes\recent-posts.md" {
-    .\UpdateRecentPosts.ps1
+    & "$psscriptroot\UpdateRecentPosts.ps1"
 }
 
 Task Build {

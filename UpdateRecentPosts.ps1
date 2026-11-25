@@ -1,33 +1,37 @@
-﻿[cmdletbinding()]
+﻿[CmdletBinding()]
 param(
-    $path = 'C:\source\kevinmarquette.github.io\_posts\*.md' 
+    [string]$Path,
+    [string]$OutputPath,
+    [int]$Count = 8
 )
-$path = (LS $path | sort name -Descending | select -First 8).fullname
+
+# Windows PowerShell 5.1 doesn't populate $PSScriptRoot in param defaults
+if (-not $Path) { $Path = Join-Path -Path $PSScriptRoot -ChildPath '_posts\*.md' }
+if (-not $OutputPath) { $OutputPath = Join-Path -Path $PSScriptRoot -ChildPath '_includes\recent-posts.md' }
+
 $lineTemplate = '* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=recent)'
-$template = @'
----
-layout: post
-title: "{Title:Powershell: PSGraph, A graph module built on GraphViz}"
-date: {Date:2017-01-30}
-tags: [{Tags:PowerShell,PSGraph,GraphViz}]
----
-'@ 
 
-$output = foreach ($node in $path)
+$postList = Get-ChildItem -Path $Path |
+    Sort-Object -Property Name -Descending |
+    Select-Object -First $Count
+
+$output = foreach ($file in $postList)
 {
-
-   
-
-    $parsedValues = Get-Content $node -raw | ConvertFrom-String -TemplateContent $template
-    $tags = $parsedValues | where Tags | % {$_.Tags -split ','} | % {$_.trim()}
-
-    $postInfo = [pscustomobject]@{
-        Post  = (Split-Path $node -Leaf).Replace('.md', '')
-        Title = $parsedValues | where Title | % Title 
-        Tags  = $tags
-        Date  = $parsedValues | where Date | % Date
+    $values = @{}
+    $lines = Get-Content -LiteralPath $file.FullName -Encoding UTF8
+    if ($lines[0].Trim() -eq '---') {
+        foreach ($line in $lines | Select-Object -Skip 1) {
+            if ($line.Trim() -eq '---') { break }
+            if ($line -match '^(?<key>[\w-]+):\s*(?<value>.*?)\s*$') {
+                $values[$Matches.key] = $Matches.value
+            }
+        }
     }
-    $lineTemplate -f $postInfo.Date, $postInfo.Title, $postInfo.Post
+
+    $title = $values['title'] -replace '^(["''])(.*)\1$', '$2'
+    $lineTemplate -f $values['date'], $title, $file.BaseName
 }
 
-$output | Set-Content -Path 'C:\source\kevinmarquette.github.io\_includes\recent-posts.md'
+# WriteAllLines writes UTF-8 without a BOM in both Windows PowerShell 5.1 and PowerShell 7
+$fullOutputPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputPath)
+[System.IO.File]::WriteAllLines($fullOutputPath, [string[]]$output)
