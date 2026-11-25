@@ -45,6 +45,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-04-22 [Powershell: Remote install software](/2017-04-22-Powershell-installing-remote-software/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-05-27 [Powershell: Building a Module, one microstep at a time](/2017-05-27-Powershell-module-building-basics/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2018-10-15 [Powershell: Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2026-11-24 [Why developers hate PowerShell](/2026-11-24-why-developers-hate-PowerShell/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='Build'></a>
 # Build
@@ -63,6 +64,11 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2017-02-19 [Powershell: Creating and using custom attributes](/2017-02-19-Powershell-custom-attribute-validator-transform/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-02-20 [Powershell: Creating parameter validators and transforms](/2017-02-20-Powershell-creating-parameter-validators-and-transforms/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
+<a name='DeveloperExperience'></a>
+# DeveloperExperience
+
+* 2026-11-24 [Why developers hate PowerShell](/2026-11-24-why-developers-hate-PowerShell/?utm_source=blog&utm_medium=blog&utm_content=tags)
+
 <a name='DevOps'></a>
 # DevOps
 
@@ -77,6 +83,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 # DotNet
 
 * 2017-11-20 [Powershell: Concatenate strings using StringBuilder](/2017-11-20-Powershell-StringBuilder/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2026-11-24 [Why developers hate PowerShell](/2026-11-24-why-developers-hate-PowerShell/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='DSC'></a>
 # DSC
@@ -174,6 +181,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 <a name='Other'></a>
 # Other
 
+* 2016-08-27 [Kevin Marquette, Old Content](/2016-08-27-kevin-marquette-old-content/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-08-27 [Kevin Marquette, Launches Site (test post)](/2016-08-27-kevin-marquette-site-launched/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2016-09-11 [How I understand WOL (Wake on Lan)](/2016-09-11-How-I-understand-WOL-Wake-on-Lan/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2017-03-25 [Mnemonic wordlist](/2017-03-25-mnemonic-wordlist/?utm_source=blog&utm_medium=blog&utm_content=tags)
@@ -255,11 +263,7 @@ This is a collection of all the tags I use in my blog and links back to the page
 * 2019-08-11 [Powershell: Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2020-03-10 [Powershell: How to Disable SMBv3 Compression](/2020-03-10-Powershell-disable-smb3-compression/?utm_source=blog&utm_medium=blog&utm_content=tags)
 * 2020-03-15 [Powershell: Everything you wanted to know about ShouldProcess](/2020-03-15-Powershell-shouldprocess-whatif-confirm-shouldcontinue-everything/?utm_source=blog&utm_medium=blog&utm_content=tags)
-
-<a name='powershellexplained.com'></a>
-# powershellexplained.com
-
-* 2019-01-02 [What happened to kevinmarquette.github.io?](/2019-01-02-domain-name-changed/?utm_source=blog&utm_medium=blog&utm_content=tags)
+* 2026-11-24 [Why developers hate PowerShell](/2026-11-24-why-developers-hate-PowerShell/?utm_source=blog&utm_medium=blog&utm_content=tags)
 
 <a name='PowerShellGet'></a>
 # PowerShellGet

@@ -1,56 +1,65 @@
-﻿$path = "C:\source\kevinmarquette.github.io\_posts"
-$tagFile = 'C:\source\kevinmarquette.github.io\tags.md'
-$postList = LS $path -Filter *.md
+﻿[CmdletBinding()]
+param(
+    [string]$Path,
+    [string]$TagFile
+)
 
-$template = @'
----
-layout: post
-title: "{Title:Powershell: PSGraph, A graph module built on GraphViz}"
-date: {Date:2017-01-30}
-tags: [{Tags:PowerShell,PSGraph,GraphViz}]
----
-'@
+# Windows PowerShell 5.1 doesn't populate $PSScriptRoot in param defaults
+if (-not $Path) { $Path = Join-Path -Path $PSScriptRoot -ChildPath '_posts' }
+if (-not $TagFile) { $TagFile = Join-Path -Path $PSScriptRoot -ChildPath 'tags.md' }
+
+function Get-PostFrontMatter {
+    param([System.IO.FileInfo]$File)
+
+    $lines = Get-Content -LiteralPath $File.FullName -Encoding UTF8
+    if ($lines.Count -lt 2 -or $lines[0].Trim() -ne '---') {
+        Write-Warning "No front matter found in [$($File.Name)]"
+        return
+    }
+
+    $values = @{}
+    foreach ($line in $lines | Select-Object -Skip 1) {
+        if ($line.Trim() -eq '---') { break }
+        if ($line -match '^(?<key>[\w-]+):\s*(?<value>.*?)\s*$') {
+            $values[$Matches.key] = $Matches.value
+        }
+    }
+
+    $title = $values['title'] -replace '^(["''])(.*)\1$', '$2'
+    $tags = @()
+    if ($values['tags']) {
+        $tags = $values['tags'].Trim('[', ']') -split ',' |
+            ForEach-Object { $_.Trim().Trim('"', "'") } |
+            Where-Object { $_ }
+    }
+
+    [pscustomobject]@{
+        Post  = $File.BaseName
+        Title = $title
+        Date  = $values['date']
+        Tags  = $tags
+    }
+}
 
 $tagList = @{}
-foreach($file in $postList)
-{
-    $parsedValues = Get-Content $file.FullName -raw | ConvertFrom-String -TemplateContent $template
-    $tags = $parsedValues | where Tags | %{$_.Tags -split ','}
+foreach ($file in Get-ChildItem -LiteralPath $Path -Filter *.md) {
+    $post = Get-PostFrontMatter -File $file
+    if ($null -eq $post) { continue }
 
-    $post = [pscustomobject]@{
-        Post = $file.basename
-        Title = $parsedValues | where Title | % Title 
-        Tags  = $tags
-        Date = $parsedValues | where Date | % Date
+    if (-not $post.Tags) {
+        Write-Verbose "No tags in [$($file.Name)]"
     }
 
-    foreach($tag in $tags)
-    {
-        $tag = $tag.Trim()
-        If(-Not $tagList.ContainsKey($tag))
-        {
-            $tagList[$tag] = @{}
+    foreach ($tag in $post.Tags) {
+        if (-not $tagList.ContainsKey($tag)) {
+            $tagList[$tag] = [System.Collections.Generic.List[object]]::new()
         }
-
-        $tagList[$tag][$post.date] = $post
+        $tagList[$tag].Add($post)
     }
 }
 
-$keyList = $tagList.Keys | Sort-Object
-
-$taginfo = foreach($key in $keyList)
-{
-    Write-Output ''
-    Write-Output "<a name='$key'></a>"
-    Write-Output "# $key"
-    Write-Output ''
-    foreach($post in $tagList[$key].Values | Sort-Object Date)
-    {
-        Write-Output ("* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=tags)" -f $post.Date, $post.Title, $post.Post)
-    }
-}
-
-Set-Content -Path $tagFile -Value @'
+$output = [System.Collections.Generic.List[string]]::new()
+$header = @'
 ---
 layout: page
 title: Tags
@@ -62,5 +71,19 @@ This is a collection of all the tags I use in my blog and links back to the page
 * TOC
 {:toc}
 '@
+# Split so the here-string's line endings don't depend on how this file was saved
+$output.AddRange([string[]]($header -split '\r?\n'))
 
-Add-Content -Path $tagFile -Value $taginfo
+foreach ($key in $tagList.Keys | Sort-Object) {
+    $output.Add('')
+    $output.Add("<a name='$key'></a>")
+    $output.Add("# $key")
+    $output.Add('')
+    foreach ($post in $tagList[$key] | Sort-Object -Property Date, Post) {
+        $output.Add(("* {0} [{1}](/{2}/?utm_source=blog&utm_medium=blog&utm_content=tags)" -f $post.Date, $post.Title, $post.Post))
+    }
+}
+
+# WriteAllLines writes UTF-8 without a BOM in both Windows PowerShell 5.1 and PowerShell 7
+$fullTagPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($TagFile)
+[System.IO.File]::WriteAllLines($fullTagPath, $output)

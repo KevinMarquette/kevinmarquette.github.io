@@ -1,7 +1,7 @@
 Task Default UpdateTags, RecentPosts, Build, Image
 
 Task UpdateTags -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\tags.md" {
-    .\UpdateTags.ps1
+    & "$psscriptroot\UpdateTags.ps1"
 }
 
 Task Image {
