@@ -1065,7 +1065,7 @@ AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so 
 * Using a method like `.Contains()` and expecting it to ignore case like the operators do.
 * Passing plain text with `.` or `\` in it to `-replace` or `-split` without `[regex]::Escape()`.
 * Putting `$null` on the right side of a comparison.
-* Treating the string `"False"` from a config file as `$False`.
+* Converting a `"False"` string from a config file or CSV to bool instead of testing with `-eq 'true'`.
 
 **Variables**
 
@@ -1090,9 +1090,9 @@ If you use these tools to help write PowerShell, this list is a good review chec
 
 # Why PowerShell works this way
 
-I have spent this whole post showing things that work differently than developers expect. I'm not saying any of these are mistakes (even though I might not like them). They were decisions, and they make more sense when you remember who PowerShell was built for.
+I spent this whole post showing things that work differently than developers expect. I'm not saying any of these are mistakes (even though I might not like them). They were decisions, and they make more sense when you remember who PowerShell was built for.
 
-PowerShell was built for admins who were learning to automate. It's a shell first and a programming language second, and it was built for Windows first.
+PowerShell was built for admins who were learning to automate. It's a Windows shell first and a programming language second.
 
 Picture an admin managing Windows:
 
@@ -1128,6 +1128,6 @@ We covered a lot of ground: running scripts, execution policy, aliases, objects 
 
 Not all of this is going to matter to you today, and that's fine. My hope is that the next time PowerShell does something you don't expect, you'll remember there was a reason for it, and you'll know where to look.
 
-Several of these topics have a deep dive of their own if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [comparison operators and the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog), [regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog), [strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
+I have deep dive articles on all of these if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [comparison operators and the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog), [regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog), [strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 If I missed one that tripped you up early on, let me know.
