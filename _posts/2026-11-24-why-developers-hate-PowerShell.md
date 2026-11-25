@@ -2,7 +2,7 @@
 layout: post
 title: "Why developers hate PowerShell"
 date: 2026-11-24
-tags: [PowerShell, DeveloperExperience]
+tags: [PowerShell, Basics, DotNet, DeveloperExperience]
 ---
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
@@ -10,7 +10,7 @@ Using and learning PowerShell is a very different experience if you already have
 I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
 
 <!--more-->
-At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. With that said, [PowerShell 5.1 is now depreciated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation)...but it's still installed on every Windows machine, so you will keep running into it.
+At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. [Windows PowerShell 5.1 is now deprecated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation), but it's still installed on every Windows machine, so you will keep running into it.
 
 # Index
 
@@ -467,6 +467,8 @@ PowerShell uses these named [comparison operators](https://learn.microsoft.com/p
 | `\|\|` | `-or` |
 | `!` | `-not` or `!` |
 
+I cover all of these and several more in [Everything you wanted to know about the IF statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog).
+
 ## Case doesn't matter
 
 Developers expect `==` on two strings to be case-sensitive. PowerShell ignores case by default.
@@ -601,6 +603,8 @@ PowerShell only expands the variable `$user`. The `.Name` is left as text. To us
 PS> "Hello $($user.Name)"
 Hello Kevin
 ```
+
+There are a lot more ways to build strings in [Everything you wanted to know about variable substitution in strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog).
 
 A few other [quoting rules](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules) catch developers:
 
@@ -790,7 +794,7 @@ The second read got nothing because the first read already used up the items. `$
 
 # Paths and files
 
-Admins work with file paths all day, and PowerShell has a few rules for paths and files that developers don't expect.
+Admins work with file paths all day, and PowerShell has a few rules for paths and files that developers don't expect. For the basics of working with paths and reading and writing files, see [The many ways to read and write to files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog).
 
 ## Wildcards in paths
 
@@ -1036,32 +1040,50 @@ A few of the other rough edges:
 
 While I was writing this post, Copilot kept trying to autocomplete the output of my examples. Every time I started typing the result of `writeIntro("Kevin", "Marquette")`, it suggested `Dear Marquette, Kevin`. It wanted to "fix" my examples so they showed what a developer expected instead of what PowerShell does.
 
-AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so they apply general programming patterns to PowerShell without understanding where it is different. They make the same mistakes developers make:
+AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so they apply general programming patterns to PowerShell without understanding where it is different. They make the same mistakes developers make.
+
+**Commands and objects**
 
 * Using Unix flags with aliases, like `ls -la` or `rm -rf`.
 * Parsing command output as text instead of using its properties.
 * Putting `Format-Table` in the middle of a pipeline or before `Export-Csv`.
+
+**Functions and output**
+
 * Calling functions with parentheses and commas.
 * Using `return` and expecting it to be the only output.
-* Using `return` inside `ForEach-Object` and expecting it to exit the function.
 * Using `echo` or `Write-Host` for debug messages instead of `Write-Verbose`.
 * Leaving output from commands like `New-Item` uncaptured inside a function.
 * Using `ArrayList.Add()` without capturing the index.
 * Returning a collection and expecting the caller to get an array.
+* Using `return` inside `ForEach-Object` and expecting it to exit the function.
+
+**Operators**
+
 * Using `>` or `==` instead of `-gt` and `-eq`.
 * Using a method like `.Contains()` and expecting it to ignore case like the operators do.
 * Passing plain text with `.` or `\` in it to `-replace` or `-split` without `[regex]::Escape()`.
 * Putting `$null` on the right side of a comparison.
 * Treating the string `"False"` from a config file as `$False`.
+
+**Variables**
+
 * Writing `"$user.Name"` instead of `"$($user.Name)"`.
 * Checking a `[string]` parameter for `$null` to see if the caller used it.
 * Reading a variable that was never set in the function, so it picks one up from the caller.
 * Naming a variable `$input`, `$args`, or `$matches`.
+
+**Paths and files**
+
 * Using `-Path` instead of `-LiteralPath` for paths that came from somewhere else.
 * Passing relative paths to dotnet methods.
 * Writing files without `-Encoding` and assuming they come out as UTF-8.
+
+**Errors and native commands**
+
 * Wrapping cmdlets in `try/catch` without `-ErrorAction Stop`.
 * Not checking `$LASTEXITCODE` after calling an executable.
+* Treating anything on standard error as a failure.
 
 If you use these tools to help write PowerShell, this list is a good review checklist. The code can often look right and still have one of these bugs.
 
@@ -1069,13 +1091,21 @@ If you use these tools to help write PowerShell, this list is a good review chec
 
 I have spent this whole post showing things that work differently than developers expect. I'm not saying any of these are mistakes (even though I might not like them). They were decisions, and they make more sense when you remember who PowerShell was built for.
 
-PowerShell was built for admins who were learning to automate. It's a shell first and a programming language second. Picture someone typing at a console:
+PowerShell was built for admins who were learning to automate. It's a shell first and a programming language second, and it was built for Windows first.
+
+Picture an admin managing Windows:
+
+* Windows exposes its management through APIs that return structured data, so the shell should pass objects instead of text.
+* A user shouldn't be able to run a script by accident, so scripts don't run out of the box and the current folder isn't searched for commands.
+* Someone coming from `cmd` or Unix should be able to type `dir` or `ls` and get something useful.
+* Windows doesn't care about case, so the shell shouldn't either.
+
+Now picture that same admin typing at a console:
 
 * Spaces between arguments are faster to type than parentheses and commas.
 * Typing an expression should show you the result without wrapping it in `print`.
 * Commands should pass items down the pipeline one at a time, so the next command can start working on the first one right away.
 * `>` should write to a file, because that's what it does in every other shell.
-* Windows doesn't care about case, so the shell shouldn't either.
 * Almost everything you type or read from a file starts out as text, so the shell should convert types for you.
 * `*.log` should just work anywhere you can give a path.
 * The variables you set at the console should be available to the commands you run next.
@@ -1097,6 +1127,6 @@ We covered a lot of ground: running scripts, execution policy, aliases, objects 
 
 Not all of this is going to matter to you today, and that's fine. My hope is that the next time PowerShell does something you don't expect, you'll remember there was a reason for it, and you'll know where to look.
 
-Several of these topics have a deep dive of their own if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [hashtables](/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/?utm_source=blog&utm_medium=blog), [PSCustomObject](/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
+Several of these topics have a deep dive of their own if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [comparison operators and the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog), [regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog), [strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 If I missed one that tripped you up early on, let me know.
