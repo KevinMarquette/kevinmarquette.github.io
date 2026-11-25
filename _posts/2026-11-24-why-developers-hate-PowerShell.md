@@ -10,12 +10,175 @@ Using and learning PowerShell is a very different experience if you already have
 I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
 
 <!--more-->
-At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both.
+At the time of writing this, PowerShell 7.6 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. With that said, [PowerShell 5.1 is now depreciated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation)...but it's still installed on every Windows machine, so you will keep running into it.
 
 # Index
 
 * TOC
 {:toc}
+
+# Your first script
+
+Let's start where most developers start. You open a terminal, write a small script, and try to run it.
+
+## Running a script
+
+Here is the simplest of scripts. Save this as `hello.ps1` in `C:\Temp`.
+
+```powershell
+echo "Hello World"
+```
+
+Then call it by name from that folder, the way you would in a `cmd` prompt.
+
+```powershell
+PS C:\Temp> hello.ps1
+hello.ps1 : The term 'hello.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ hello.ps1
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (hello.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command hello.ps1 was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\hello.ps1". See "get-help about_Command_Precedence" for more details.
+```
+
+The file is right there, and PowerShell says it doesn't know what it is. Always read the PowerShell error messages because they tend to explain the problem (I can't tell you the number of times I have read the error message off the screen to someone asking for help). The suggestion at the bottom tells us what to do. PowerShell doesn't run scripts from the current folder unless you give it a path, so we have to call it as `.\hello.ps1` (`./hello.ps1` works too).
+
+If you come from bash, this one is familiar because bash works the same way. If you come from `cmd`, it's new. It's there for safety.
+
+## Execution policy
+
+So we add the `.\` and try again.
+
+```powershell
+PS C:\Temp> .\hello.ps1
+.\hello.ps1 : File C:\Temp\hello.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\hello.ps1
++ ~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+On a Windows desktop, PowerShell won't run any scripts out of the box. The [execution policy](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) defaults to `Restricted` (Windows Server defaults to `RemoteSigned`).
+
+The execution policy is not a security boundary. It's a safety feature that keeps an admin from running a script by accident. Anyone can get around it with `powershell.exe -ExecutionPolicy Bypass`. I set it once on each machine to `RemoteSigned` for my user and forget about it.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+`RemoteSigned` runs any script you wrote yourself and requires scripts downloaded from the internet to be signed. If you downloaded a script and you trust it, `Unblock-File` removes the downloaded flag. On Linux and macOS, PowerShell 7 doesn't enforce an execution policy at all.
+
+```powershell
+PS C:\Temp> .\hello.ps1
+Hello World
+```
+
+That's two errors before we got our first line of output.
+
+## Familiar commands
+
+Now that scripts run, let's try a command we already know.
+
+```powershell
+PS C:\Temp> ls -la
+Get-ChildItem : A parameter cannot be found that matches parameter name 'la'.
+At line:1 char:4
++ ls -la
++    ~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+```
+
+`ls` exists, but it isn't the `ls` you know. On Windows, PowerShell ships with [aliases](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases) that map common `cmd` and Unix command names to its own cmdlets. `ls` and `dir` both run `Get-ChildItem`. `cat` is `Get-Content`, `rm` is `Remove-Item`, `cp` is `Copy-Item`, and `cd` is `Set-Location`. The names are familiar, but the parameters belong to the cmdlet. That's why `ls -la` and `rm -rf` both fail. What you wanted was `Get-ChildItem -Force` and `Remove-Item -Recurse -Force`.
+
+You can see what any alias points to with `Get-Alias`.
+
+```powershell
+PS> Get-Alias -Name ls
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           ls -> Get-ChildItem
+```
+
+A few of these are worse than an error. In Windows PowerShell 5.1, `curl` and `wget` are aliases for `Invoke-WebRequest`, so typing `curl` runs something that isn't curl at all. `sc` is `Set-Content` instead of the service control tool. PowerShell 7 removed those three, so `curl` now runs the real `curl.exe` that ships with Windows. `where` is still `Where-Object` instead of `where.exe` in both versions.
+
+The irony is that these aliases were added to make PowerShell easier for people coming from Linux. The idea was that a Unix admin could sit down at PowerShell, type `ls`, and get something useful. But once you know the real command, an alias that looks like it but takes different parameters gets in the way more than it helps.
+
+That came to a head when PowerShell went open source in 2016. One of the very first community pull requests was [a request to remove the `curl` and `wget` aliases](https://github.com/PowerShell/PowerShell/pull/1901), and it came from Daniel Stenberg, the creator of curl. It got a lot of attention. The PowerShell team closed it at the time because removing them was a breaking change for existing Windows scripts, but the message was received.
+
+So when PowerShell came to Linux and macOS, the team left those aliases out on purpose. PowerShell on those platforms doesn't define `ls`, `cp`, `rm`, or `cat`, so the native commands run. The same `ls` in a script does two different things depending on where it runs. That is one more reason to use full command names in our scripts.
+
+## Output is objects
+
+Let's run the real command and look at the output.
+
+```powershell
+PS C:\Temp> Get-ChildItem -File
+
+    Directory: C:\Temp
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/21/2026   9:15 AM             13 hello.ps1
+-a----        11/20/2026   4:42 PM             16 names.txt
+-a----        11/18/2026   1:07 PM           2048 report.csv
+```
+
+A developer looks at that and sees text. The natural next step is to parse it: split each line on spaces, grab the last column, regex out the size. Don't. That table isn't the output. It's how PowerShell displays the output. Commands return objects, and the table is only drawn at the very end when those objects reach the screen.
+
+```powershell
+PS C:\Temp> $files = Get-ChildItem -File
+PS C:\Temp> $files[0].Name
+hello.ps1
+PS C:\Temp> $files[0].Length
+13
+PS C:\Temp> $files[0].LastWriteTime.DayOfWeek
+Saturday
+```
+
+`Length` is a real number and `LastWriteTime` is a real `DateTime`. Because they are objects, the next command can sort or filter on those properties directly, with no text parsing at all.
+
+```powershell
+PS C:\Temp> Get-ChildItem -File | Sort-Object -Property Length -Descending | Select-Object -Property Name, Length
+
+Name       Length
+----       ------
+report.csv   2048
+names.txt      16
+hello.ps1      13
+```
+
+Passing objects from one command to the next like this is the pipeline. The rest of this post keeps coming back to it, so keep it in mind.
+
+Unix tools grew up passing text to each other because so much of the system is exposed as files. Windows exposes most of its management through APIs that return structured data, so PowerShell passes objects instead.
+
+## Format-Table breaks the objects
+
+Developers like clean output, so `Format-Table` shows up early. Here is a use of it that I see often.
+
+```powershell
+PS C:\Temp> $files = Get-ChildItem -File | Format-Table -Property Name, Length
+PS C:\Temp> $files[0].Name
+PS C:\Temp> $files[0].GetType().FullName
+Microsoft.PowerShell.Commands.Internal.Format.FormatStartData
+```
+
+Our file objects are gone. `Format-Table` doesn't return files. It returns formatting instructions that tell the console how to draw a table. Those don't have a `Name` property, so we got nothing back. Pipe them to `Export-Csv` and you get a file full of columns like `ClassId2e4f51ef21dd47e99d3c952918aff9cd` instead of your data.
+
+The `Format-*` commands belong at the very end of the line, and only when the output is going to the screen. If you want fewer properties, use `Select-Object` like we did above. It keeps them as objects.
+
+```powershell
+PS C:\Temp> $files = Get-ChildItem -File | Select-Object -Property Name, Length
+PS C:\Temp> $files[0].Name
+hello.ps1
+```
+
+Now that we can run a script and we know commands return objects, the next thing a developer does is start writing functions. What could go wrong?
 
 # Calling functions
 
@@ -41,7 +204,7 @@ Dear , Kevin Marquette
 
 I want you to pause for a moment and think through the output of both calls. This is valid PowerShell that a developer would intuitively expect to work. It's especially frustrating because the first one almost worked and the second one is obviously wrong.
 
-Let's add some debug output to see what is happening. I'm going to use `echo` instead of a better alternative to set the stage for another issue later on.
+Let's add some debug output with `echo`, like we did in our first script.
 
 ```powershell
 function writeIntro([string]$FirstName, [string]$LastName) {
@@ -100,7 +263,7 @@ FirstName [Kevin] LastName [Marquette] Dear Marquette, Kevin. I am writing to yo
 
 Our debug messages ended up in the email. The function returned three values when we only expected one.
 
-The whole point of `return` in other languages is to return the specified value and exit. In PowerShell, [`return`](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return) exits the function, and the value you give it is added to the output. It doesn't stop anything else from being output. Everything a function outputs goes into the pipeline, which is how PowerShell passes values from one command to the next, one item at a time. Every value that is not captured or redirected is sent to the pipeline, and the caller gets all of it.
+The whole point of `return` in other languages is to return the specified value and exit. In PowerShell, [`return`](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return) exits the function, and the value you give it is added to the output. It doesn't stop anything else from being output. Remember the pipeline? Everything a function outputs goes into it for the next thing in the pipeline to handle.
 
 If you want debug messages that stay out of the return value, my preference is `Write-Verbose`. It writes to the verbose stream, which stays hidden until you ask for it with `-Verbose`.
 
@@ -128,7 +291,7 @@ You'll see a lot of `Write-Host` used for this in other people's code. It also s
 
 ## Output you didn't know about
 
-`echo` is an alias for `Write-Output` and that might be too obvious, so let's try a different example that will often catch a regular PowerShell scripter off guard:
+Remember aliases? `echo` is an alias for `Write-Output` and that might be too obvious for some of my readers, so let's try a different example that will often catch a regular PowerShell scripter off guard:
 
 ```powershell
 function New-Folder {
@@ -208,7 +371,7 @@ PS> $result.GetType().FullName
 System.String
 ```
 
-We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null` (technically its an `AutomationNull`). Most of the time, PowerShell doesn't care what the type is and does the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
+We asked for the first name and got the first letter. Checking the type shows that we got a string back instead of an array. This is because PowerShell unrolls collections and sends each item down the pipeline one at a time. An empty array would have given us a `$null` (technically it's an `AutomationNull`). Most of the time, PowerShell doesn't care what the type is and does the right thing. But a developer expecting strongly typed objects will always be surprised by that behavior.
 
 If you absolutely have to preserve the collection, then you can use the unary comma operator to wrap the collection in another array or use `Write-Output -NoEnumerate`.
 
@@ -234,6 +397,39 @@ $names = @(Get-Names)
 
 I cover unrolling, `@()`, and the other collection types in [Everything you wanted to know about arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
+## ForEach-Object
+
+Before we move on, there is one more place where `return` doesn't do what a developer expects. Here is the same loop written with the `foreach` statement and with the `ForEach-Object` cmdlet, inside a function that should return the first name it finds.
+
+```powershell
+function Get-FirstName {
+    foreach ($name in 'Kevin','Alex') {
+        return $name
+    }
+    return 'nobody'
+}
+
+function Get-FirstNameObject {
+    'Kevin','Alex' | ForEach-Object {
+        return $PSItem
+    }
+    return 'nobody'
+}
+```
+
+```powershell
+PS> Get-FirstName
+Kevin
+PS> Get-FirstNameObject
+Kevin
+Alex
+nobody
+```
+
+The `foreach` version exits the function on the first name, just like we wanted. In the `ForEach-Object` example, `$PSItem` (or `$_`) is the current item on the pipeline. Here it outputs every name and then keeps going to the end of the function.
+
+The `{ }` we give `ForEach-Object` is a script block, and it runs once for each item. `return` exits that one run of the script block, not the loop and not the function, so it acts like `continue`. Be careful with `break` and `continue` in there too. They don't apply to the script block. They look for a loop outside of it, and if there isn't one, they can stop your whole script.
+
 # Comparison operators
 
 This is a fun one because it doesn't throw an error:
@@ -255,7 +451,7 @@ Mode                 LastWriteTime         Length Name
 -a----        11/21/2026  11:36 PM             10 5
 ```
 
-There is now a file named `5` with `10` in it. In a shell, `>` [redirects output to a file](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection). That is what it has meant in shells for decades, and admins expect it. The redirection produced no output, so the `if` statement saw nothing and treated it as `$False`.
+There is now a file named `5` with `10` in it. In a shell, `>` [redirects output to a file](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection). That is what it has meant in shells for decades, and admins expect it. The redirection produced no output, so the `if` statement saw nothing and treated it as `$False`. (If you are wondering why a file holding `10` is 10 bytes, we'll come back to that in the encoding section.)
 
 PowerShell uses these named [comparison operators](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) instead:
 
@@ -294,6 +490,21 @@ False
 ```
 
 Operators ignore case and methods don't. It's the same split we saw with calling functions, and you will see both in the same script.
+
+## Some operators use regex
+
+Several string operators have a method with the same name, and they look like they do the same thing. This is the third time I called out where operators and methods have disagreed.
+
+```powershell
+PS> '1.2.3'.Replace('.', '-')
+1-2-3
+PS> '1.2.3' -replace '.', '-'
+-----
+```
+
+The method replaced the dots. The operator replaced every character. `-replace`, `-split`, and `-match` all take a [regular expression](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions), and in regex a `.` matches any character. `.Replace()` and `.Split()` treat the text you give them as plain text.
+
+The main reason I wrote [The many ways to use regex in PowerShell](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog) was because I witnessed a developer make this exact mistake.
 
 ## The left side wins
 
@@ -434,7 +645,7 @@ PS> Get-Welcome -FirstName "Kevin"
 Hello Kevin .
 ```
 
-Our `$null` check never matched. `[string]` is not nullable in PowerShell, so unlike C#, a `[string]` variable can never be `$null`. When you cast `$null` to a `[string]`, you get an empty string.
+Our `$null` check never matched. PowerShell converts `$null` to an empty string whenever it's assigned to a [string], so unlike C#, it can never be `$null`. When you cast `$null` to a `[string]`, you get an empty string.
 
 ```powershell
 PS> [string]$value = $null
@@ -461,7 +672,7 @@ if ($LastName) {
 I go into more detail on this in [Everything you wanted to know about $null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 
-## Dynamic Scope
+## Dynamic scope
 
 Here is a function that will pass all of its tests and still has a bug in it.
 
@@ -577,9 +788,9 @@ The second read got nothing because the first read already used up the items. `$
 
 
 
-# Paths
+# Paths and files
 
-Admins work with file paths all day, and PowerShell has a couple of rules for paths that developers don't expect.
+Admins work with file paths all day, and PowerShell has a few rules for paths and files that developers don't expect.
 
 ## Wildcards in paths
 
@@ -617,13 +828,55 @@ $path = Convert-Path -Path 'names.txt'
 [System.IO.File]::ReadAllText($path)
 ```
 
-The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working directory). Unless you are on a PSDrive path that dotnet doesn't understand.
+The call to `Convert-Path` will fail if the file doesn't exist. You can build a path with `Join-Path` and the `$PWD` (present working directory).
 
 ```powershell
 $path = Join-Path -Path $PWD -ChildPath 'names.txt'
 ```
 
+PowerShell supports PSDrives other then the filesystem like `HKLM:\` for the registry or `Cert:\` for the certificate store and dotnet does not understand them.
 
+## Encoding
+
+Remember the file named `5` that we created by accident with `>`? It held `10` and a line break, which is four characters. `Get-ChildItem` said it was 10 bytes. Let's look inside it.
+
+```powershell
+PS C:\Temp> Format-Hex -Path .\5
+
+           Path: C:\Temp\5
+
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   FF FE 31 00 30 00 0D 00 0A 00                    ÿþ1.0.....
+```
+
+In Windows PowerShell 5.1, `>` and `Out-File` write UTF-16 by default. The first two bytes are a byte order mark (BOM), and then every character takes two bytes. Most other tools expect UTF-8, so they see a file full of null bytes. Git will sometimes decide the file is binary and refuse to show you a diff.
+
+It gets worse, because 5.1 isn't consistent with itself. `Set-Content` and `Add-Content` use the system's ANSI code page instead. The same script can write two files in two different encodings depending on which command you used.
+
+The same problem happens in reverse when 5.1 reads your scripts. Save this as `cafe.ps1` in an editor that defaults to UTF-8 without a BOM, like VS Code.
+
+```powershell
+"Café"
+```
+
+```powershell
+PS C:\Temp> .\cafe.ps1
+CafÃ©
+```
+
+Without a BOM, Windows PowerShell 5.1 assumes the script is in the ANSI code page and reads the two bytes of `é` as two separate characters. A pasted smart quote or em dash can do the same thing and break your script in places that look perfectly fine in the editor.
+
+PowerShell 7 fixed all of this. It reads and writes UTF-8 without a BOM everywhere by default. If your scripts still have to run on 5.1, here is what I would do:
+
+* Save scripts that have any non-ASCII characters as UTF-8 with a BOM.
+* Pass `-Encoding` every time you write a file so the result doesn't depend on which command or version you used.
+
+```powershell
+Set-Content -Path '.\names.txt' -Value ('Kevin','Alex') -Encoding 'utf8'
+```
+
+Be aware that `utf8` means something different in each version. In 5.1 it writes UTF-8 with a BOM. In PowerShell 7 it writes UTF-8 without one, and `utf8BOM` is the option if you need it.
 
 # Error handling
 
@@ -776,7 +1029,7 @@ Inside a method, only `return` sends anything back and everything else is thrown
 A few of the other rough edges:
 
 * Classes are compiled when the script is parsed. To use a class from a module outside that module, you need `using module` at the top of the script. `Import-Module` isn't enough.
-* Once a class has been loaded though using module, you can't reload a new version of it in the same session. You end up opening new terminals over and over while you develop.
+* Once a class has been loaded through using module, you can't reload a new version of it in the same session. You end up opening new terminals over and over while you develop.
 * Method calls use the method syntax with commas and parentheses, so a script that mixes classes and functions has both calling styles side by side.
 
 # AI makes the same mistakes
@@ -785,14 +1038,19 @@ While I was writing this post, Copilot kept trying to autocomplete the output of
 
 AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so they apply general programming patterns to PowerShell without understanding where it is different. They make the same mistakes developers make:
 
+* Using Unix flags with aliases, like `ls -la` or `rm -rf`.
+* Parsing command output as text instead of using its properties.
+* Putting `Format-Table` in the middle of a pipeline or before `Export-Csv`.
 * Calling functions with parentheses and commas.
 * Using `return` and expecting it to be the only output.
+* Using `return` inside `ForEach-Object` and expecting it to exit the function.
 * Using `echo` or `Write-Host` for debug messages instead of `Write-Verbose`.
 * Leaving output from commands like `New-Item` uncaptured inside a function.
 * Using `ArrayList.Add()` without capturing the index.
 * Returning a collection and expecting the caller to get an array.
 * Using `>` or `==` instead of `-gt` and `-eq`.
 * Using a method like `.Contains()` and expecting it to ignore case like the operators do.
+* Passing plain text with `.` or `\` in it to `-replace` or `-split` without `[regex]::Escape()`.
 * Putting `$null` on the right side of a comparison.
 * Treating the string `"False"` from a config file as `$False`.
 * Writing `"$user.Name"` instead of `"$($user.Name)"`.
@@ -801,6 +1059,7 @@ AI tools learned from a lot more C#, Python, and JavaScript than PowerShell, so 
 * Naming a variable `$input`, `$args`, or `$matches`.
 * Using `-Path` instead of `-LiteralPath` for paths that came from somewhere else.
 * Passing relative paths to dotnet methods.
+* Writing files without `-Encoding` and assuming they come out as UTF-8.
 * Wrapping cmdlets in `try/catch` without `-ErrorAction Stop`.
 * Not checking `$LASTEXITCODE` after calling an executable.
 
@@ -834,7 +1093,7 @@ I'll admit that I enjoy code golf. I have given presentations on how to squeeze 
 
 # Closing remarks
 
-We covered a lot of ground: calling functions, output and return values, unrolling, operators, case sensitivity, type conversion, truthiness, strings, scope, automatic variables, paths, errors, native commands, and classes. If you came to PowerShell from another language, I hope this explains a few of the moments that made you want to throw your keyboard. If PowerShell is your first language, maybe now you will see why you get so much resistance from your developer friends.
+We covered a lot of ground: running scripts, execution policy, aliases, objects and formatting, calling functions, output and return values, unrolling, operators, case sensitivity, type conversion, truthiness, strings, scope, automatic variables, paths, encoding, errors, native commands, and classes. If you came to PowerShell from another language, I hope this explains a few of the moments that made you want to throw your keyboard. If PowerShell is your first language, maybe now you will see why you get so much resistance from your developer friends.
 
 Not all of this is going to matter to you today, and that's fine. My hope is that the next time PowerShell does something you don't expect, you'll remember there was a reason for it, and you'll know where to look.
 
