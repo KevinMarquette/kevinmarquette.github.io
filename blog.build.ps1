@@ -5,7 +5,7 @@ Task UpdateTags -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscri
 }
 
 Task Image {
-    .\CreateTitleImage.ps1
+    & "$psscriptroot\CreateTitleImage.ps1"
 }
 
 Task RecentPosts -Inputs (Get-Item "$psscriptroot\_posts\*.md") -Outputs "$psscriptroot\_includes\recent-posts.md" {

@@ -3,6 +3,7 @@ layout: post
 title: "Why developers hate PowerShell"
 date: 2026-11-24
 tags: [PowerShell, Basics, DotNet, DeveloperExperience]
+share-img: "/img/share-img/2026-11-24-why-developers-hate-PowerShell.png"
 ---
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
