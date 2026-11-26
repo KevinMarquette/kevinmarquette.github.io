@@ -48,6 +48,7 @@ Interactive regex calculators:
 * [regex101.com](http://regex101.com/)
 * [www.debuggex.com](https://www.debuggex.com)
 * [regexhero.net](http://regexhero.net/tester/)
+* [extendsclass.com](https://extendsclass.com/regex-tester.html)
 
 Documentation and training:
 
