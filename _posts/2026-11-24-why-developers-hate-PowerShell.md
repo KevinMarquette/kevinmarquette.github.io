@@ -8,7 +8,7 @@ share-img: "/img/share-img/2026-11-24-why-developers-hate-PowerShell.png"
 
 Using and learning PowerShell is a very different experience if you already have a background in programming. You bring intuitions and assumptions with you from other languages, and PowerShell breaks a lot of them in your first few scripts because it wasn't written for you. PowerShell was built for admins managing systems and learning to automate. You might also notice that AI coding assistants make the same mistakes for the same reasons.
 
-I am going to walk through the things I have seen developers struggle with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
+I am going to walk through the things I have seen developers get frustrated with from their perspective. I'll show you what the developer sees first, then what's really happening, because I want to recreate some of the experience that developers have when they first run into them. Some of these issues get advanced really quickly, but it's hard to avoid that.
 
 <!--more-->
 At the time of writing this, PowerShell 7.7 is the most recent version. I will call out a few places where 7.x behaves differently than 5.1, but the vast majority of this post applies to both. [Windows PowerShell 5.1 is now deprecated](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5137172-windows-powershell-5-1-deprecation), but it's still installed on every Windows machine, so you will keep running into it.
@@ -20,7 +20,7 @@ At the time of writing this, PowerShell 7.7 is the most recent version. I will c
 
 # Your first script
 
-Let's start where most developers start. You open a terminal, write a small script, and try to run it.
+Let's start where most Windows developers start. You open a terminal, write a small script, and try to run it.
 
 ## Running a script
 
@@ -1133,3 +1133,5 @@ Not all of this is going to matter to you today, and that's fine. My hope is tha
 I have deep dive articles on all of these if you want to keep going: [arrays](/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [comparison operators and the if statement](/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog), [regex](/2017-07-31-Powershell-regex-regular-expression/?utm_source=blog&utm_medium=blog), [strings](/2017-01-13-powershell-variable-substitution-in-strings/?utm_source=blog&utm_medium=blog), [$null](/2018-12-23-Powershell-null-everything-you-wanted-to-know/?utm_source=blog&utm_medium=blog), [files](/2017-03-18-Powershell-reading-and-saving-data-to-files/?utm_source=blog&utm_medium=blog), and [exceptions](/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/?utm_source=blog&utm_medium=blog).
 
 If I missed one that tripped you up early on, let me know.
+
+* [r/PowerShell](https://www.reddit.com/r/PowerShell/comments/1y59ozl/why_developers_hate_powershell/)
